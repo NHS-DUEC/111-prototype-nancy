@@ -134,6 +134,11 @@ ul.link-list {
   padding: 0;
 }
 
+ul.address-list {
+  list-style-type: none;
+  padding: 0;
+}
+
 .tel {
   white-space: nowrap;
 }
@@ -423,6 +428,7 @@ details summary {
   text-decoration: underline;
   display: inline-block;
   cursor: pointer;
+  color: #005eb8;
 }
 
 details summary:focus {
@@ -1077,7 +1083,13 @@ textarea:focus {
 
 .info {
   border-top: 2px solid #f0f4f5;
+  border-bottom: 2px solid #f0f4f5;
+  padding: 8px;
   background-color: #fefefe;
+}
+
+.info > .cta {
+  margin-bottom: 16px;
 }
 
 .message {
