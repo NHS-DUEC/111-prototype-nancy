@@ -14,7 +14,13 @@
 
 .info {
   border-top: 2px solid $grey-5;
+  border-bottom: 2px solid $grey-5;
+  padding: $leading;
   background-color: tint($grey-5, 90);
+
+  > .cta {
+    margin-bottom: $leading*2;
+  }
 }
 
 .message {
