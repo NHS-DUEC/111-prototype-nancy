@@ -1,0 +1,25 @@
+form {
+  @extend %contain-floats;
+  display: block;
+}
+
+.form-group {
+  @extend %contain-floats;
+
+  clear: both;
+
+  &.-controls {
+    margin: $leading 0;
+
+    @include media(mid) {
+      float: left;
+    }
+
+    & .button {
+      @include media(mid) {
+        float: right;
+      }
+    }
+  }
+
+}

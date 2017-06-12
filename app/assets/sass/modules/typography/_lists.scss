@@ -1,0 +1,23 @@
+ul, ol {
+  margin: $leading 0 $leading*2 0;
+  padding-left: 1em;
+  list-style-position: outside;
+}
+
+ul {
+  list-style-type: disc;
+}
+
+ol {
+  list-style-type: decimal;
+}
+
+li {
+    margin:  0 0 $leading 0;
+    padding-left: 0;
+}
+
+ul.link-list {
+    list-style-type: none;
+    padding: 0;
+}
