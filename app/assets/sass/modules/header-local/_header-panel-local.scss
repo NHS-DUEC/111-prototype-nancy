@@ -1,8 +1,12 @@
 .header-panel {
   color: $white;
   background-color: $nhs-blue;
-  padding: $leading*2 $leading $leading $leading;
+  padding: $leading*2 $leading*3 $leading*2 $leading*3;
   margin-bottom: 32px;
+
+  >.heading-xlarge {
+    padding-top: $leading*2;
+  }
 
   @include media(mid) {
     padding: $leading*3 $leading*2 $leading*2 $leading*2;
@@ -10,6 +14,8 @@
 
   .header {
     margin-bottom: $leading*2;
+
+
   }
 
   .content-seperator {
