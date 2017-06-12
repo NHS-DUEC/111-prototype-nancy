@@ -3,12 +3,13 @@ html {
 }
 
 #global-footer {
+  background-color: $nhs-blue;
+  border-top: $baseline-grid-unit solid $dark-blue;
+  color: $white;
   margin-top: $leading*4;
-  padding-top: $leading;
+  padding-top: $leading*4;
   padding-bottom: $leading;
   min-height: 80px;
-  border-top: 1px solid $grey-4;
-  background-color: $grey-5;
 }
 
 .footer-container {
@@ -21,5 +22,19 @@ html {
     display: block;
     width: 79px;
     height: 32px;
+    padding-bottom: $leading*4;
+    float: left;
   }
+
+  .footer-service-name {
+    display: inline;
+    color: $white;
+    margin-left: $leading*2;
+    line-height: 32px;
+  }
+
+ .link-list li {
+    clear: both;
+  }
+
 }

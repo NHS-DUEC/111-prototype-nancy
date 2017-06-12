@@ -443,12 +443,13 @@ html {
 }
 
 #global-footer {
+  background-color: #005eb8;
+  border-top: 4px solid #003087;
+  color: #fff;
   margin-top: 32px;
-  padding-top: 8px;
+  padding-top: 32px;
   padding-bottom: 8px;
   min-height: 80px;
-  border-top: 1px solid #d8dde0;
-  background-color: #f0f4f5;
 }
 
 .footer-container {
@@ -460,6 +461,19 @@ html {
   display: block;
   width: 79px;
   height: 32px;
+  padding-bottom: 32px;
+  float: left;
+}
+
+.footer-container .footer-service-name {
+  display: inline;
+  color: #fff;
+  margin-left: 16px;
+  line-height: 32px;
+}
+
+.footer-container .link-list li {
+  clear: both;
 }
 
 .-date div {
