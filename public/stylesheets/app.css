@@ -1025,12 +1025,7 @@ textarea:focus {
 .header-logo {
   display: block;
   margin-bottom: 4px;
-}
-
-@media (min-width: 500px) {
-  .header-logo {
-    float: left;
-  }
+  float: left;
 }
 
 .header-logo img {
@@ -1040,14 +1035,14 @@ textarea:focus {
 }
 
 .service-name {
-  display: block;
+  display: inline;
   color: #425563;
+  margin-left: 16px;
 }
 
 @media (min-width: 500px) {
   .service-name {
     display: inline;
-    margin-left: 8px;
     line-height: 32px;
   }
 }

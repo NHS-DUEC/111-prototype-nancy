@@ -17,10 +17,7 @@
 .header-logo {
   display: block;
   margin-bottom: $leading/2;
-
-  @include media(mid) {
-    float: left;
-  }
+  float: left;
 
   img {
     display: block;
@@ -30,12 +27,12 @@
 }
 
 .service-name {
-  display: block;
+  display: inline;
   color: $grey-1;
+  margin-left: $leading*2;
 
   @include media(mid) {
     display: inline;
-    margin-left: $leading;
     line-height: 32px;
   }
 }
