@@ -3,6 +3,12 @@
   border-bottom: 3px solid $nhs-blue;
   padding-top: $leading*4;
   padding: $leading*3;
+  padding-left:0px;
+  padding-right:0px;
+
+  @include media(large) {
+    padding-left:20px;
+  }
 
   @include media(mid) {
     padding-top: $leading*2;
@@ -12,6 +18,9 @@
 .header-container {
   @extend %block;
   padding-top: $leading*2;
+
+
+
 }
 
 .header-logo {
@@ -36,3 +45,4 @@
     line-height: 32px;
   }
 }
+
