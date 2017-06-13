@@ -1,11 +1,15 @@
-# Register with a GP prototypes
-Design prototypes for Register with a GP project
+# 111 online protypes
+Design prototypes for 111 online project
 
 Note this is prototype code. Not intended for production use.
 
+
+### Note: For information on the NHS.UK front end, then go to:
+https://github.com/nhsuk/frontend (https://github.com/nhsuk/frontend)
+
 ## Getting started
 Clone this repo:
-`git clone git@github.com:nhsuk/register-with-a-gp-prototypes.git`
+`git clone https://thebottlerocket@gitlab.com/thebottlerocket/111-prototypes.git`
 
 Install the dependencies:
 `npm install`
@@ -13,6 +17,4 @@ Install the dependencies:
 Start local development (Sass and Nodemon watching):
 `grunt`
 
-### Note: GP lookup functionality
 
-This prototype uses the Alpha GP Lookup prototype (http://gp-lookup-demo.herokuapp.com) to do lookups via CORS.
