@@ -205,6 +205,22 @@ a:focus {
   padding-top: 4px;
 }
 
+.banner, .banner--alpha, .banner--beta {
+  display: inline;
+  padding: 4px;
+  font-size: 16px;
+  font-weight: 700;
+  margin-left: 16px;
+}
+
+.banner--alpha {
+  background-color: #006747;
+}
+
+.banner--beta {
+  background-color: #ffb81c;
+}
+
 .breadcrumb {
   list-style-type: none;
   margin: 0;
@@ -443,12 +459,13 @@ html {
 }
 
 #global-footer {
+  background-color: #005eb8;
+  border-top: 4px solid #003087;
+  color: #fff;
   margin-top: 32px;
-  padding-top: 8px;
+  padding-top: 32px;
   padding-bottom: 8px;
   min-height: 80px;
-  border-top: 1px solid #d8dde0;
-  background-color: #f0f4f5;
 }
 
 .footer-container {
@@ -460,6 +477,23 @@ html {
   display: block;
   width: 79px;
   height: 32px;
+  padding-bottom: 32px;
+  float: left;
+}
+
+.footer-container .footer-service-name {
+  display: inline;
+  color: #fff;
+  margin-left: 16px;
+  line-height: 32px;
+}
+
+.footer-container .footer-service-banner {
+  color: #231f20;
+}
+
+.footer-container .link-list li {
+  clear: both;
 }
 
 .-date div {
@@ -996,6 +1030,14 @@ textarea:focus {
   border-bottom: 3px solid #005eb8;
   padding-top: 32px;
   padding: 24px;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+@media (min-width: 980px) {
+  #global-header {
+    padding-left: 20px;
+  }
 }
 
 @media (min-width: 500px) {
@@ -1011,12 +1053,7 @@ textarea:focus {
 .header-logo {
   display: block;
   margin-bottom: 4px;
-}
-
-@media (min-width: 500px) {
-  .header-logo {
-    float: left;
-  }
+  float: left;
 }
 
 .header-logo img {
@@ -1026,14 +1063,14 @@ textarea:focus {
 }
 
 .service-name {
-  display: block;
+  display: inline;
   color: #425563;
+  margin-left: 16px;
 }
 
 @media (min-width: 500px) {
   .service-name {
     display: inline;
-    margin-left: 8px;
     line-height: 32px;
   }
 }
@@ -1041,8 +1078,12 @@ textarea:focus {
 .header-panel {
   color: #fff;
   background-color: #005eb8;
-  padding: 16px 8px 8px 8px;
+  padding: 16px 24px 16px 24px;
   margin-bottom: 32px;
+}
+
+.header-panel > .heading-xlarge {
+  padding-top: 16px;
 }
 
 @media (min-width: 500px) {
@@ -1057,7 +1098,7 @@ textarea:focus {
 
 .header-panel .content-seperator {
   width: 130px;
-  height: 2px;
+  height: 4px;
   background-color: #337ec6;
   margin-bottom: 16px;
 }
@@ -1115,7 +1156,7 @@ textarea:focus {
 
 .callout {
   padding: 8px 24px;
-  margin-bottom: 16px;
+  margin-bottom: 32px;
   background-color: #fff;
 }
 
@@ -1247,13 +1288,17 @@ body, pre.user-input {
 }
 
 .content {
-  padding-top: 16px;
+  padding-top: 48px;
 }
 
 @media (min-width: 640px) {
   .f-right {
     float: right;
   }
+}
+
+.content-block {
+  margin-bottom: 48px;
 }
 
 .grid-row {

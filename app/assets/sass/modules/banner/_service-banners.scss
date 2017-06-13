@@ -1,0 +1,17 @@
+.banner {
+  display: inline;
+  padding: $leading/2;
+  font-size: $smallprint;
+  font-weight: $boldweight;
+  margin-left: $leading*2;
+}
+
+.banner--alpha {
+  @extend .banner;
+  background-color: $dark-green;
+}
+
+.banner--beta {
+  @extend .banner;
+  background-color: $yellow;
+}

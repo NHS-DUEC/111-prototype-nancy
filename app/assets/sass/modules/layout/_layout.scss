@@ -21,7 +21,7 @@ body {
 }
 
 .content {
-  padding-top: $leading*2;
+  padding-top: $leading*6;
 }
 
 // float a column right instead of left
@@ -29,4 +29,8 @@ body {
   @include media(640px) {
     float: right;
   }
+}
+
+.content-block {
+  margin-bottom: $leading*6;
 }
