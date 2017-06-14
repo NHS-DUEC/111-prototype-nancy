@@ -1,21 +1,21 @@
 {
-  "name": "register-with-a-gp-prototypes",
+  "name": "111-prototypes",
   "version": "1.0.0",
-  "description": "Register with a GP design prototypes",
+  "description": "111 online prototypes",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nhsuk/register-with-a-gp-prototypes.git"
+    "url": ""
   },
-  "author": "Demotive",
+  "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/nhsuk/register-with-a-gp-prototypes/issues"
+    "url": "https://gitlab.com/thebottlerocket/111-prototypes/issues"
   },
-  "homepage": "https://github.com/nhsuk/register-with-a-gp-prototypes#readme",
+  "homepage": "https://gitlab.com/thebottlerocket/111-prototypes#readme",
   "dependencies": {
     "babel-plugin-transform-react-jsx": "^6.8.0",
     "babel-preset-es2015": "^6.18.0",
