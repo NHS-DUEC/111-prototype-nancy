@@ -596,12 +596,12 @@ input[type='password'] {
   display: block;
   width: 100%;
   margin: 8px 0 16px 0;
-  padding: 4px;
+  padding: 8px;
   border: 2px solid #005eb8;
   font-family: inherit;
   font-size: inherit;
   font-weight: 400;
-  line-height: 16px;
+  line-height: 32px;
 }
 
 @media (min-width: 500px) {
@@ -1034,12 +1034,6 @@ textarea:focus {
   padding-right: 0px;
 }
 
-@media (min-width: 980px) {
-  #global-header {
-    padding-left: 20px;
-  }
-}
-
 @media (min-width: 500px) {
   #global-header {
     padding-top: 16px;
@@ -1089,6 +1083,12 @@ textarea:focus {
 @media (min-width: 500px) {
   .header-panel {
     padding: 24px 16px 16px 16px;
+  }
+}
+
+@media (min-width: 500px) {
+  .header-panel {
+    padding-left: 32px;
   }
 }
 
@@ -1405,4 +1405,10 @@ body, pre.user-input {
 
 .shunt-2 {
   margin-top: 32px;
+}
+
+.content-seperator {
+  width: 130px;
+  height: 4px;
+  background-color: #005eb8;
 }

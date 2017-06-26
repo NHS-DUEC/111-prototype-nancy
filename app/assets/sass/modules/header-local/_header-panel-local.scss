@@ -12,6 +12,10 @@
     padding: $leading*3 $leading*2 $leading*2 $leading*2;
   }
 
+  @include media(mid) {
+    padding-left: $leading*4;
+  }
+
   .header {
     margin-bottom: $leading*2;
 
