@@ -29,7 +29,10 @@ router.post('/clinical-callback/clinical-callback', function (req, res) {
       }
     });
   } else {
-    
+
+  res.render('clinical-callback/details_1', {
+    session: req.session
+  }); 
     // strip spaces
     // var cleaned = req.session.postcode.replace(/\s+/g, '').toLowerCase();
 
