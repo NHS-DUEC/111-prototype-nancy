@@ -139,6 +139,10 @@ ul.address-list {
   padding: 0;
 }
 
+ul.tabular-data {
+  list-style-type: none;
+}
+
 .tel {
   white-space: nowrap;
 }
@@ -1410,5 +1414,6 @@ body, pre.user-input {
 .content-seperator {
   width: 130px;
   height: 4px;
-  background-color: #005eb8;
+  background-color: #f0f4f5;
+  margin-bottom: 32px;
 }
