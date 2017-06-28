@@ -59,3 +59,15 @@
   background-color: $blue;
   color: $white;
 }
+
+.callout-reference {
+
+  p {
+    margin-bottom: 0;
+    color: $grey-3;
+  }
+
+  h3 {
+    margin-top: 0;
+  }
+}

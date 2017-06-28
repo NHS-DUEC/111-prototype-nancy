@@ -1265,6 +1265,15 @@ textarea:focus {
   color: #fff;
 }
 
+.callout-reference p {
+  margin-bottom: 0;
+  color: #aeb7bd;
+}
+
+.callout-reference h3, .callout-reference .heading-large {
+  margin-top: 0;
+}
+
 .nhsid-container {
   margin: 16px auto;
   padding: 32px 0 0 0;
