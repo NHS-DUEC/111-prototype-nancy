@@ -30,9 +30,9 @@ router.post('/clinical-callback/clinical-callback', function (req, res) {
     });
   } else {
 
-  res.render('clinical-callback/details_1', {
-    session: req.session
-  }); 
+    res.render('clinical-callback/details_1', {
+      session: req.session
+    }); 
     // strip spaces
     // var cleaned = req.session.postcode.replace(/\s+/g, '').toLowerCase();
 
@@ -90,4 +90,23 @@ router.post('/clinical-callback/clinical-callback', function (req, res) {
     // });
   }
 })
-  
+
+// Contact details ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+router.post('/clinical-callback/details_1', function (req, res) {
+
+  res.render('/clinical-callback/confirm-details', {
+    session: req.session
+  });
+
+})
+
+// Confirm contact details +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+router.post('/clinical-callback/confirm-details', function (req, res) {
+
+  res.render('clinical-callback/callback-confirmed', {
+    session: req.session
+  });
+
+})

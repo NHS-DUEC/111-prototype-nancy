@@ -77,15 +77,16 @@
 
   &.-bordered {
     border: 2px solid $grey-5;
-    background-color: $grey-5;
-    padding: 2px $leading/2;
+    // border: none;
+    background-color: $white;
+    padding: 2px $leading*2;
     color: $nhs-blue;
     margin-right: $leading/4;
     font-weight: $bodyweight;
 
   }
   &.-bordered:hover {
-    background-color: $grey-4;
+    background-color: $grey-5;
   }
 
   &.-small {
@@ -96,3 +97,4 @@
   }
 
 }
+

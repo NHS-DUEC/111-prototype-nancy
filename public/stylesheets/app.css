@@ -1,4 +1,3 @@
-@import url("//fast.fonts.net/cssapi/4c65968f-c33e-4eb6-9a5d-ab4f81a0543f.css");
 .prototype-warning-inner, .breadcrumb, .footer-container, .-date, .error-summary, form, .form-group, #global-header, .signage, .nhsid-container, .header-container,
 .content, .grid-row {
   zoom: 1;
@@ -141,6 +140,35 @@ ul.address-list {
 
 ul.tabular-data {
   list-style-type: none;
+  padding-left: 0;
+}
+
+li.tabular-data-row {
+  border-bottom: 1px solid #f0f4f5;
+  padding-top: 16px;
+  padding-bottom: 80px;
+  display: block;
+  clear: both;
+}
+
+@media (min-width: 980px) {
+  li.tabular-data-row {
+    padding-bottom: 48px;
+  }
+}
+
+li.tabular-data-row > div {
+  display: inline-block;
+  clear: both;
+}
+
+li.tabular-data-row > .detail {
+  float: left;
+}
+
+li.tabular-data-row > .edit {
+  float: right;
+  margin-top: 8px;
 }
 
 .tel {
@@ -328,15 +356,15 @@ a:focus {
 
 .button.-bordered {
   border: 2px solid #f0f4f5;
-  background-color: #f0f4f5;
-  padding: 2px 4px;
+  background-color: #fff;
+  padding: 2px 16px;
   color: #005eb8;
   margin-right: 2px;
   font-weight: 400;
 }
 
 .button.-bordered:hover {
-  background-color: #d8dde0;
+  background-color: #f0f4f5;
 }
 
 .button.-small {
