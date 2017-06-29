@@ -651,6 +651,17 @@ form {
   }
 }
 
+.select-address {
+  display: block;
+  cursor: pointer;
+  height: 4rem;
+  line-height: 3rem;
+  padding: 0 1rem;
+  border: 2px solid RGB(230, 230, 230);
+  width: 100%;
+  font-size: 20px;
+}
+
 input[type='text'],
 input[type='number'],
 input[type='tel'],

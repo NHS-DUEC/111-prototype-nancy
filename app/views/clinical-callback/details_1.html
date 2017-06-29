@@ -78,10 +78,57 @@
         What is your home address?
       </legend>
 
-      <div class="form-group {% if errors.name %}-errors{% endif %}">
-        <label for="last-name">Address</label>
-        <input type="text" id="last-name" name="last-name" value="{{ session.name.lastName }}">
+
+      {% if error.general %}
+        <div class="error-summary">
+          <div>
+            <p>{{ error.general }}</p>
+          </div>
+        </div>
+      {% endif %}
+
+      {% if error.postcode %}
+        <div class="error-summary">
+          <div>
+            <p>{{ error.postcode }}</p>
+          </div>
+        </div>
+      {% endif %}
+
+      <div class="form-group {% if error.postcode %}-errors{% endif %}">
+        <div>
+          <label for="postcode">Your postcode</label>
+          <input type="text" id="postcode" name="postcode" value="{{ session.postcode }}" class="-small">
+        </div>
       </div>
+
+      <div class="form-group">
+        <div>
+          <label for="postcode">What is your address?</label>
+            <label class="select-label">
+            <select class="select-address" id="AddressInfoViewModel_SelectedAddressFromPicker" name="AddressInfoViewModel.SelectedAddressFromPicker"><option selected="selected" value="0">17 addresses found. Please choose...</option>
+            <option value="72670120">Ernst And Young</option>
+            <option value="72670626">2 Plan Ltd</option>
+            <option value="72670729">Water Lane</option>
+            <option value="72674514">Bridgewater Place</option>
+            <option value="72675190">Nationwide Building Society</option>
+            <option value="72675191">Royal Bank Of Scotland</option>
+            <option value="72675193">Dwf</option>
+            <option value="72677896">Bdo Stoy Hayward</option>
+            <option value="72677897">Bridgewater Place</option>
+            <option value="72677898">Ghd</option>
+            <option value="72733674">Water Lane</option>
+            <option value="72733675">Water Lane</option>
+            <option value="72743951">Bridgewater Place</option>
+            <option value="72743975">Eversheds Llp</option>
+            <option value="72745383">Ernst And Young</option>
+            <option value="72751968">Hscic</option>
+            <option value="72751969">Eversheds Llp</option>
+            </select>
+            </label>
+        </div>
+      </div>
+
     </fieldset>
 
     <div class="content-seperator"></div>
