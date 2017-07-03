@@ -11,7 +11,7 @@
 
 <div class="measure">
 
-  <form  method="post" class="measure">
+  <form  method="post" class="formmodule">
 
       <fieldset>
 
@@ -23,31 +23,44 @@
         </div>
       {% endif %}
 
-      <div class="form-group {% if error %}-errors{% endif %}">
-          <label for="check-person-self" class="block-label">
+      <div class="form form-group {% if error %}-errors{% endif %}">
+          <label for="check-person-self" class="block-label" data-target="self-data">
           For myself
-          <input type="radio" id="check-person-self" name="check-person" value="yes" data-target="self-data" {% if session.check-person == "self" %}checked="checked"{% endif %}>
+          <input type="radio" id="check-person-self" name="check-person" value="yes"  {% if session.check-person == "self" %}checked="checked"{% endif %}>
           </label>
         </div>
 
-        <div class="js-hidden" id="self-data">
+        <div class="js-hidden toggle-content" id="self-data">
           <div class="form-group {% if errors.name %}-errors{% endif %}">
-            <label for="first-name">First name</label>
-            <input type="text" id="first-name" name="first-name" value="{{ session.name.firstName }}">
+            <label for="first-name">Your first name</label>
+            <input type="text" id="first-name" name="first-name" value="{{ session.name-self.firstName }}">
           </div>
           <div class="form-group {% if errors.name %}-errors{% endif %}">
-            <label for="last-name">Last name</label>
-            <input type="text" id="last-name" name="last-name" value="{{ session.name.lastName }}">
+            <label for="last-name">Your last name</label>
+            <input type="text" id="last-name" name="last-name" value="{{ session.name-self.lastName }}">
           </div>
         </div>
 
+     </fieldset>
+
+    <fieldset>
         <div class="form-group {% if error %}-errors{% endif %}">
-          <label for="check-person-other" class="block-label">
+          <label for="check-person-other" class="block-label" data-target="other-data">
             For someone else
             <input type="radio" id="check-person-other" name="check-person" value="no" {% if session.check-person == "other" %}checked="checked"{% endif %}>
           </label>
         </div>
 
+        <div class="js-hidden toggle-content" id="other-data">
+          <div class="form-group {% if errors.name %}-errors{% endif %}">
+            <label for="first-name">Their name</label>
+            <input type="text" id="first-name" name="first-name" value="{{ session.name-other.firstName }}">
+          </div>
+          <div class="form-group {% if errors.name %}-errors{% endif %}">
+            <label for="last-name">Their Last name</label>
+            <input type="text" id="last-name" name="last-name" value="{{ session.name-otjer.lastName }}">
+          </div>
+        </div>
     </fieldset>
 
     

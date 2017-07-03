@@ -1,3 +1,4 @@
+@import url("//fast.fonts.net/cssapi/4c65968f-c33e-4eb6-9a5d-ab4f81a0543f.css");
 .prototype-warning-inner, .breadcrumb, .footer-container, .-date, .error-summary, form, .form-group, #global-header, .signage, .nhsid-container, .header-container,
 .content, .grid-row {
   zoom: 1;
@@ -14,7 +15,6 @@
 .hidden,
 .js-enabled .js-hidden {
   display: none;
-  visibility: hidden;
 }
 
 /* Hide only visually, but have it available for screenreaders */
@@ -649,6 +649,17 @@ form {
   .form-group.-controls .button {
     float: right;
   }
+}
+
+.js-enabled .toggle-content {
+  display: none;
+}
+
+.toggle-content {
+  padding-top: 16px;
+  margin-left: 20px;
+  padding-left: 16px;
+  border-left: 4px solid #0072ce;
 }
 
 .select-address {

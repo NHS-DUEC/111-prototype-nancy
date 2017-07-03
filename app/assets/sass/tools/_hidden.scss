@@ -2,7 +2,8 @@
 .hidden,
 .js-enabled .js-hidden {
   display: none;
-  visibility: hidden; }
+  // visibility: hidden; 
+}
 
 /* Hide only visually, but have it available for screenreaders */
 .visually-hidden,
