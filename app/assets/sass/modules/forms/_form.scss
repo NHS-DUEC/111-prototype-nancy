@@ -23,3 +23,26 @@ form {
   }
 
 }
+
+// Hide toggled content
+.js-enabled .toggle-content {
+    display: none;
+}
+
+.toggle-content {
+  padding-top: $leading*2;
+  margin-left:$leading*2+(4px);
+  padding-left:$leading*2;
+  border-left: $leading/2 solid $bright-blue;
+}
+
+.select-address {
+    display: block;
+    cursor: pointer;
+    height: 4rem;
+    line-height: 3rem;
+    padding: 0 1rem;
+    border: 2px solid RGB(230,230,230);
+    width: 100%;
+    font-size: 20px;
+}

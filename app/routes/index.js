@@ -29,10 +29,11 @@ router.post('/clinical-callback/clinical-callback', function (req, res) {
       }
     });
   } else {
+    res.redirect('details_2');
+    // res.render('clinical-callback/details_2', {
+    //   session: req.session
+    // }); 
 
-  res.render('clinical-callback/details_1', {
-    session: req.session
-  }); 
     // strip spaces
     // var cleaned = req.session.postcode.replace(/\s+/g, '').toLowerCase();
 
@@ -90,4 +91,27 @@ router.post('/clinical-callback/clinical-callback', function (req, res) {
     // });
   }
 })
-  
+// Check person +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+router.post('/clinical-callback/check-person', function (req, res) {
+  res.render('clinical-callback/details_2', {
+    session: req.session
+  });
+})
+
+// Contact details - single page contact form +++++++++++++++++++++++++++++++++
+
+router.get('/clinical-callback/details_2', function (req, res) {
+  res.render('clinical-callback/details_2', {
+    session: req.session
+  });
+
+});
+
+router.post('/clinical-callback/details_2', function (req, res) {
+  res.redirect('confirm_details');
+  // res.render('/clinical-callback/confirm-details', {
+  //   session: req.session
+  // });
+})
+

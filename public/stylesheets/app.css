@@ -11,6 +11,43 @@
   clear: both;
 }
 
+/* Hide for both screenreaders and browsers */
+.hidden,
+.js-enabled .js-hidden {
+  display: none;
+}
+
+/* Hide only visually, but have it available for screenreaders */
+.visually-hidden,
+.visuallyhidden {
+  position: absolute;
+  left: -9999em;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  /*
+   * Extends the .visuallyhidden class to allow the element to be
+   * focusable when navigated to via the keyboard
+   */
+}
+
+.visually-hidden.focusable:active, .visually-hidden.focusable:focus,
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+
+/* Hide visually and from screenreaders, but maintain layout */
+.invisible {
+  visibility: hidden;
+}
+
 body, pre.user-input,
 .body {
   color: #231f20;
@@ -141,6 +178,35 @@ ul.address-list {
 
 ul.tabular-data {
   list-style-type: none;
+  padding-left: 0;
+}
+
+li.tabular-data-row {
+  border-bottom: 1px solid #f0f4f5;
+  padding-top: 16px;
+  padding-bottom: 80px;
+  display: block;
+  clear: both;
+}
+
+@media (min-width: 980px) {
+  li.tabular-data-row {
+    padding-bottom: 48px;
+  }
+}
+
+li.tabular-data-row > div {
+  display: inline-block;
+  clear: both;
+}
+
+li.tabular-data-row > .detail {
+  float: left;
+}
+
+li.tabular-data-row > .edit {
+  float: right;
+  margin-top: 8px;
 }
 
 .tel {
@@ -280,7 +346,7 @@ a:focus {
 .button:link, .button:hover, .button:focus, .button:visited {
   text-decoration: none;
   color: #fff;
-  background-color: #007f3b;
+  background-color: #006747;
 }
 
 .button:focus {
@@ -328,15 +394,15 @@ a:focus {
 
 .button.-bordered {
   border: 2px solid #f0f4f5;
-  background-color: #f0f4f5;
-  padding: 2px 4px;
+  background-color: #fff;
+  padding: 2px 16px;
   color: #005eb8;
   margin-right: 2px;
   font-weight: 400;
 }
 
 .button.-bordered:hover {
-  background-color: #d8dde0;
+  background-color: #f0f4f5;
 }
 
 .button.-small {
@@ -583,6 +649,28 @@ form {
   .form-group.-controls .button {
     float: right;
   }
+}
+
+.js-enabled .toggle-content {
+  display: none;
+}
+
+.toggle-content {
+  padding-top: 16px;
+  margin-left: 20px;
+  padding-left: 16px;
+  border-left: 4px solid #0072ce;
+}
+
+.select-address {
+  display: block;
+  cursor: pointer;
+  height: 4rem;
+  line-height: 3rem;
+  padding: 0 1rem;
+  border: 2px solid RGB(230, 230, 230);
+  width: 100%;
+  font-size: 20px;
 }
 
 input[type='text'],
@@ -1235,6 +1323,15 @@ textarea:focus {
 .callout--disposition {
   background-color: #005eb8;
   color: #fff;
+}
+
+.callout-reference p {
+  margin-bottom: 0;
+  color: #aeb7bd;
+}
+
+.callout-reference h3, .callout-reference .heading-large {
+  margin-top: 0;
 }
 
 .nhsid-container {

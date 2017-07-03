@@ -28,4 +28,40 @@ ul.link-list {
 
  ul.tabular-data {
   list-style-type: none;
+  padding-left: 0;
+
+  @include media(mid) {
+     // padding-left: $leading*4;
+  }
+
  }
+
+li.tabular-data-row {
+
+  border-bottom: 1px solid $grey-5;
+  padding-top: $leading*2;
+  padding-bottom: $leading*10;
+  display: block;
+
+  @include media(large) {
+    padding-bottom: $leading*6;
+  }
+
+  // min-height: $leading*6;
+  clear: both;
+
+  > div {
+    display: inline-block;
+    clear: both;
+  }
+
+  > .detail {
+    float: left;
+  }
+
+  > .edit {
+    float: right;
+        margin-top: $leading;
+  }
+
+}
