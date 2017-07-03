@@ -346,7 +346,7 @@ a:focus {
 .button:link, .button:hover, .button:focus, .button:visited {
   text-decoration: none;
   color: #fff;
-  background-color: #007f3b;
+  background-color: #006747;
 }
 
 .button:focus {
