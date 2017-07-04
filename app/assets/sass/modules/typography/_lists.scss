@@ -44,10 +44,9 @@ li.tabular-data-row {
   display: block;
 
   @include media(large) {
-    padding-bottom: $leading*6;
+    padding-bottom: $leading*4;
   }
 
-  // min-height: $leading*6;
   clear: both;
 
   > div {
@@ -62,6 +61,18 @@ li.tabular-data-row {
   > .edit {
     float: right;
         margin-top: $leading;
+  }
+
+  >.callout {
+    margin-bottom: 0;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: $leading*2;
+
+    @include media(mid){
+      width: initial;
+      // margin: 0 0 $leading*4 0;
+    }
   }
 
 }

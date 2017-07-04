@@ -6,3 +6,8 @@ pre.user-input {
   @extend body;
   font-size: inherit;
 }
+
+
+p.tabular-prefix {
+    @extend .heading-prefix;
+}

@@ -13,6 +13,12 @@
   background-color: $grey-5;
 }
 
+.callout--bordered {
+  border: solid $grey-4;
+  background-color: $grey-5;
+  border-width: $baseline-grid-unit/2 0;
+}
+
 .callout--info {
   background-color: $grey-5;
   border: solid $grey-2;
