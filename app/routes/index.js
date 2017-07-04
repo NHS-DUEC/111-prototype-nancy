@@ -18,21 +18,24 @@ router.get('/clinical-callback', function (req, res) {
 
 router.post('/clinical-callback/clinical-callback', function (req, res) {
 
-  req.session.postcode = req.body['postcode'];
-  req.session.building = req.body['building'];
+  if (!req.session.homeAddress) {
+    req.session.homeAddress = {}
+  }
+
+  req.session.homeAddress.postcode = req.body['postcode'];
+  req.session.homeAddress.building = req.body['building'];
 
   if (req.body['postcode'] === '') {
     res.render('clinical-callback/clinical-callback', {
       session: req.session,
       error: {
-        postcode: 'Please enter your home postcode'
+        postcode: 'Please enter your postcode'
       }
     });
   } else {
+    
     res.redirect('details_2');
-    // res.render('clinical-callback/details_2', {
-    //   session: req.session
-    // }); 
+
 
     // strip spaces
     // var cleaned = req.session.postcode.replace(/\s+/g, '').toLowerCase();
@@ -115,3 +118,28 @@ router.post('/clinical-callback/details_2', function (req, res) {
   // });
 })
 
+// Home address manual +++++++++++++++++++++++++++++++++
+
+router.post('/clinical-callback/home-address-manual', function (req, res) {
+
+    if (!req.session.homeAddress) {
+    req.session.homeAddress = {}
+  }
+
+  req.session.homeAddress.address = [
+    req.body['address-1'],
+    req.body['address-2'],
+    req.body['address-3'],
+    req.body['address-4']
+  ];
+  req.session.homeAddress.postcode = req.body['postcode'];
+
+  if (!req.body['address-1'] && !req.body['address-4']) {
+    res.render('clinical-callback/home-address-manual', {
+      error: 'Please enter your full address'
+    });
+  } else {
+    res.redirect('details_2');
+  }
+  
+})
