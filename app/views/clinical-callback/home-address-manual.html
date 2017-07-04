@@ -1,19 +1,23 @@
 {% extends '_layouts/layout.html' %}
 
 {% block page_title %}
-  Your address :
-  {% if practiceName %}
-    Register with {{ practiceName }}
-  {% else %}
-    {{serviceName}}
-  {% endif %}
 {% endblock %}
 
 {% block content %}
+      
+    <div class="header-panel">
+      <h1 class="heading-xlarge">What is your address</h1>
+    </div>
+    
+<form method="post" class="measure">
 
-  <h1 class="primary">What is your address?</h1>
+    {% set back = 'clinical-callback' %}
+<!--       {% if session.edit == true %}
+      {% set back = 'confirm-details' %}
+    {% endif %} -->
+    <a href="{{ back }}" class="button -back">Back</a>
 
-  <form method="post" class="measure">
+
     <fieldset>
 
       {% if error %}
@@ -59,15 +63,11 @@
     </fieldset>
 
     <div class="form-group -controls">
-      <button type="submit" class="button">Continue</button>
-      {% set back = 'home-address' %}
-      {% if session.edit == true %}
-        {% set back = 'confirm-details' %}
-      {% endif %}
-      <a href="{{ back }}" class="button -back">Back</a>
+      <button type="submit" class="button">Next</button>
     </div>
 
   </form>
+
 {% endblock %}
 
 {% block footer %}{% endblock %}
