@@ -132,7 +132,7 @@ h6 a {
   text-decoration: none;
 }
 
-.heading-prefix {
+.heading-prefix, p.tabular-prefix {
   display: block;
   font-size: 20px;
   line-height: 1;
@@ -191,7 +191,7 @@ li.tabular-data-row {
 
 @media (min-width: 980px) {
   li.tabular-data-row {
-    padding-bottom: 48px;
+    padding-bottom: 32px;
   }
 }
 
@@ -207,6 +207,19 @@ li.tabular-data-row > .detail {
 li.tabular-data-row > .edit {
   float: right;
   margin-top: 8px;
+}
+
+li.tabular-data-row > .callout {
+  margin-bottom: 0;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 16px;
+}
+
+@media (min-width: 500px) {
+  li.tabular-data-row > .callout {
+    width: initial;
+  }
 }
 
 .tel {
@@ -1258,6 +1271,12 @@ textarea:focus {
 
 .callout--muted {
   background-color: #f0f4f5;
+}
+
+.callout--bordered {
+  border: solid #d8dde0;
+  background-color: #f0f4f5;
+  border-width: 2px 0;
 }
 
 .callout--info {

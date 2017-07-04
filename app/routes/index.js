@@ -112,10 +112,7 @@ router.get('/clinical-callback/details_2', function (req, res) {
 });
 
 router.post('/clinical-callback/details_2', function (req, res) {
-  res.redirect('confirm_details');
-  // res.render('/clinical-callback/confirm-details', {
-  //   session: req.session
-  // });
+  res.redirect('confirm_details_lite');
 })
 
 // Home address manual +++++++++++++++++++++++++++++++++
