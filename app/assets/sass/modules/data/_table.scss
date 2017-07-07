@@ -1,0 +1,86 @@
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-top: 1px solid $grey-4;
+  margin-bottom: $leading*2;
+
+  @include media(mid) {
+  margin-bottom: $leading*4;
+  }
+
+  caption {
+    @extend h2;
+
+    font-weight: normal;
+    text-align: left;
+    padding: 0 $leading/2 $leading $leading/2;
+  }
+
+  tr {
+    border-bottom: 1px solid $grey-4;
+  }
+
+  th, td {
+    display: block;
+    padding: $leading $leading/8 $leading/2 $leading/8;
+
+    text-align: left;
+    vertical-align: top;
+
+    font-weight: $bodyweight;
+    font-size: $smallprint;
+    line-height: $leading*1.5;
+
+    @include media(mid) {
+      display: table-cell;
+      padding: $leading $leading/2;
+    }
+  }
+
+  th {
+    padding-bottom: 0;
+    font-weight: $boldweight;
+    color: $grey-1;
+
+    @include media(mid) {
+      padding-bottom: $leading;
+      font-weight: $bodyweight;
+    }
+  }
+
+  .control {
+    text-align: right;
+
+    .button {
+      margin-right: 0;
+      line-height: $leading;
+      padding: $leading;
+
+      @include media(mid) {
+        display: inline-block;
+      }
+    }
+  }
+
+  &.natural {
+    width: 100%;
+
+    @include media(mid) {
+      width: auto;
+    }
+  }
+
+  &.compact {
+    margin-bottom: $leading;
+
+    th, td {
+      display: table-cell;
+      padding: leading/4;
+
+      @include media(mid) {
+        padding: leading/2;
+      }
+    }
+  }
+
+}

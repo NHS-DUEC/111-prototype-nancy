@@ -1,0 +1,100 @@
+// Fix unwanted button padding in Firefox
+.button::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+.button {
+  box-sizing: border-box;
+  display: inline-block;
+  font-family: inherit;
+  font-weight: $boldweight;
+  font-size: inherit;
+  line-height: $leading*6;
+  width: 100%;
+  padding: 0 $leading*4;
+  margin: 0 0 $leading 0;
+  text-align: center;
+  color: $white;
+  background-color: $green;
+  cursor: pointer;
+  border: 1px solid $green;
+  -webkit-appearance: none;
+
+
+  &:link,
+  &:hover,
+  &:focus,
+  &:visited {
+    text-decoration: none;
+    color: $white;
+    background-color: $dark-green;
+  }
+
+  &:focus {
+    outline: 0;
+    -webkit-box-shadow: 0 0 0 5px $focus-colour;
+    -moz-box-shadow: 0 0 0 5px $focus-colour;
+    box-shadow: 0 0 0 5px $focus-colour;
+  }
+
+  @include media(mid) {
+    width: auto;
+    margin: 0 $leading 0 0;
+  }
+
+  &.-back {
+    background-color: transparent;
+    border: transparent;
+    border-left: 0;
+    padding-left: 0;
+    color: $grey-2;
+    font-weight: $bodyweight;
+    font-size: $smallprint;
+    text-decoration: underline;
+
+    &::before {
+      content: "";
+      display: inline-block;
+      margin-right: $leading/2;
+      width: 0;
+      height: 0;
+      border-top: 5px solid transparent;
+      border-bottom: 5px solid transparent;
+      border-right: 5px solid $grey-2;
+    }
+  }
+
+  &.-secondary {
+    background-color: tint($nhs-blue, 90);
+    border-color: tint($nhs-blue, 80);
+    color: $black;
+    font-weight: $bodyweight;
+  }
+}
+
+.button {
+
+  &.-bordered {
+    border: 2px solid $grey-5;
+    // border: none;
+    background-color: $white;
+    padding: 2px $leading*2;
+    color: $nhs-blue;
+    margin-right: $leading/4;
+    font-weight: $bodyweight;
+
+  }
+  &.-bordered:hover {
+    background-color: $grey-5;
+  }
+
+  &.-small {
+    @extends .-bordered;
+    margin-top: $leading/2;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+}
+

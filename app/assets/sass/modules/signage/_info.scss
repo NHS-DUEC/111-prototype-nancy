@@ -1,0 +1,45 @@
+.signage {
+  @extend %contain-floats;
+  margin: $leading*2 0;
+
+  & > div {
+    float: left;
+    padding: 0 $leading;
+
+    @include media(mid) {
+      padding: 0 $leading*2;
+    }
+  }
+}
+
+.info {
+  border-top: 2px solid $grey-5;
+  border-bottom: 2px solid $grey-5;
+  padding: $leading;
+  background-color: tint($grey-5, 90);
+
+  > .cta {
+    margin-bottom: $leading*2;
+  }
+}
+
+.message {
+  border-top: 2px solid $yellow;
+  background-color: tint($yellow, 90);
+  color: darken($yellow, 30);
+}
+
+.completion {
+  border-top: 2px solid $light-green;
+  background-color: tint($light-green, 90);
+}
+
+.info-pop {
+  color: $nhs-blue;
+  font-weight: $boldweight;
+  border: 4px solid currentcolor;
+}
+
+.subtle-push {
+  border: 2px solid tint($nhs-blue, 50);
+}

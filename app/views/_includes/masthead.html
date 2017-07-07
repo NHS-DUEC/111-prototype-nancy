@@ -1,0 +1,17 @@
+<header role="banner" id="global-header">
+  <div class="header-container">
+    <a href="/" class="header-logo" title="Go to the index page">
+      <img src="/images/nhs-logotype-blue.svg" alt="NHS" />
+    </a>
+    {% if not suppressServiceName %}
+      <span class="service-name">
+        {% if practiceName %}
+          {{ practiceName }}
+        {% else %}
+          {{serviceName}}
+        {% endif %}
+      </span>
+    {% endif %}
+    <div class="banner banner--beta">BETA</div>
+  </div>
+</header>

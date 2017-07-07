@@ -1,0 +1,196 @@
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}
+{% endblock %}
+
+{% block content %}
+
+<div class="header-panel">
+  <h1 class="heading-xlarge">Enter your details</h1>
+</div>
+
+<div class="measure">
+
+  <form  method="post" class="measure">
+
+    {% if errors.name %}
+      <div class="error-summary">
+        <div>
+          <p>{{ errors.name }}</p>
+        </div>
+      </div>
+    {% endif %}
+
+    <fieldset>
+      <legend class="secondary">
+        Who are you asking for?
+      </legend>
+      <div class="form form-group {% if error %}-errors{% endif %}">
+          <label for="check-person-self" class="block-label" data-target="self-data">
+          For myself
+          <input type="radio" id="check-person-self" name="check-person" value="yes"  {% if session.check-person == "self" %}checked="checked"{% endif %}>
+          </label>
+        </div>
+
+        <div class="js-hidden toggle-content" id="self-data">
+          <div class="form-group {% if errors.name %}-errors{% endif %}">
+            <label for="first-name">First name</label>
+            <input type="text" id="first-name" name="first-name" value="">
+          </div>
+          <div class="form-group {% if errors.name %}-errors{% endif %}">
+            <label for="last-name">Last name</label>
+            <input type="text" id="last-name" name="last-name" value="">
+          </div>
+        </div>
+
+        <div class="form-group {% if error %}-errors{% endif %}">
+          <label for="check-person-other" class="block-label" data-target="other-data">
+            For someone else
+            <input type="radio" id="check-person-other" name="check-person" value="no" {% if session.check-person == "other" %}checked="checked"{% endif %}>
+          </label>
+        </div>
+
+        <div class="js-hidden toggle-content" id="other-data">
+          <div class="form-group {% if errors.name %}-errors{% endif %}">
+            <label for="first-name">First name</label>
+            <input type="text" id="first-name" name="first-name" value="">
+          </div>
+          <div class="form-group {% if errors.name %}-errors{% endif %}">
+            <label for="last-name">Last name</label>
+            <input type="text" id="last-name" name="last-name" value="">
+          </div>
+          <div class="content-seperator"></div>
+          <div>
+            <h3>Enter the details of someone we can speak to</h3>
+            <div class="form-group {% if errors.name %}-errors{% endif %}">
+              <label for="first-name">First name</label>
+              <input type="text" id="first-name" name="first-name" value="">
+            </div>
+            <div class="form-group {% if errors.name %}-errors{% endif %}">
+              <label for="last-name">Last name</label>
+              <input type="text" id="last-name" name="last-name" value="">
+            </div>
+          </div>
+        </div>
+
+    </fieldset>
+
+    <div class="content-seperator"></div>
+
+    <fieldset>
+      <legend class="secondary">
+        What is your date of birth?
+      </legend>
+      <p class="form-hint">
+        For example, 31 / 12 / 1980
+      </p>
+      {% if error %}
+        <div class="error-summary">
+          <div>
+            <p>{{ error }}</p>
+          </div>
+        </div>
+      {% endif %}
+
+      <div class="form-group -date {% if error %}-errors{% endif %}">
+        <div>
+          <label for="dob-day">Day</label>
+          <input type="text" id="dob-day" name="dob-day" value="{{ session.dob.day }}" class="day" maxlength="2">
+        </div>
+        <div>
+          <label for="dob-month">Month</label>
+          <input type="text" id="dob-month" name="dob-month" value="{{ session.dob.month }}" class="month" maxlength="2">
+        </div>
+        <div>
+          <label for="dob-year">Year</label>
+          <input type="text" id="dob-year" name="dob-year" value="{{ session.dob.year }}" class="year" maxlength="4">
+        </div>
+      </div>
+
+    </fieldset>
+
+ <div class="content-seperator"></div>
+
+    <fieldset>
+      <legend class="secondary">
+        What is your current address?
+      </legend>
+
+
+      {% if error.general %}
+        <div class="error-summary">
+          <div>
+            <p>{{ error.general }}</p>
+          </div>
+        </div>
+      {% endif %}
+
+      {% if error.postcode %}
+        <div class="error-summary">
+          <div>
+            <p>{{ error.postcode }}</p>
+          </div>
+        </div>
+      {% endif %}
+
+      <div class="form-group {% if error.postcode %}-errors{% endif %}">
+        <div>
+          <label for="postcode">Your postcode</label>
+          <input type="text" id="postcode" name="postcode" value="{{ session.homeAddress.postcode }}" class="-small">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div>
+          <label for="postcode">What is your address?</label>
+            <label class="select-label">
+            <select class="select-address" id="AddressInfoViewModel_SelectedAddressFromPicker" name="AddressInfoViewModel.SelectedAddressFromPicker"><option selected="selected" value="0">17 addresses found. Please choose...</option>
+            <option value="72670120">Ernst And Young</option>
+            <option value="72670626">2 Plan Ltd</option>
+            <option value="72670729">Water Lane</option>
+            <option value="72674514">Bridgewater Place</option>
+            <option value="72675190">Nationwide Building Society</option>
+            <option value="72675191">Royal Bank Of Scotland</option>
+            <option value="72675193">Dwf</option>
+            <option value="72677896">Bdo Stoy Hayward</option>
+            <option value="72677897">Bridgewater Place</option>
+            <option value="72677898">Ghd</option>
+            <option value="72733674">Water Lane</option>
+            <option value="72733675">Water Lane</option>
+            <option value="72743951">Bridgewater Place</option>
+            <option value="72743975">Eversheds Llp</option>
+            <option value="72745383">Ernst And Young</option>
+            <option value="72751968">Hscic</option>
+            <option value="72751969">Eversheds Llp</option>
+            </select>
+            </label>
+        </div>
+      </div>
+
+    </fieldset>
+
+    <div class="content-seperator"></div>
+
+    <fieldset>
+      <legend class="secondary">
+        What is your phone number?
+      </legend> 
+
+      <div class="form-group {% if errors.name %}-errors{% endif %}">
+        <label for="last-name">Telephone number</label>
+        <input type="text" id="last-name" name="last-name" value="{{ session.name.lastName }}">
+      </div>
+    </fieldset>
+
+
+    <div class="form-group -controls">
+      <button type="submit" class="button">Next</button>
+    </div>
+
+  </form>
+
+</div>
+
+{% endblock %}
+
+{% block footer %}{% endblock %}

@@ -1,0 +1,19 @@
+details {
+  margin: $leading*2 0;
+
+
+  summary {
+    text-decoration: underline;
+    display: inline-block;
+    cursor: pointer;
+    color: $nhs-blue;
+
+
+    &:focus {
+      outline: 0;
+      -webkit-box-shadow: 0 0 0 5px $focus-colour;
+      -moz-box-shadow: 0 0 0 5px $focus-colour;
+      box-shadow: 0 0 0 5px $focus-colour;
+    }
+  }
+}

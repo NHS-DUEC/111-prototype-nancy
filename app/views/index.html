@@ -1,0 +1,31 @@
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}Index : {{serviceName}}{% endblock %}
+
+{% block content %}
+
+<div class="header-panel">
+  <h1 class="heading-xlarge">111 prototypes</h1>
+</div>
+
+  <h2>Dental dispositions</h2>
+  <p>12/6/2017</p>
+  <ul>
+    <li><p><a href="/disposition/dentist-urgently">Dentist - urgently</a></p></li>
+    <li><p><a href="/disposition/dentist-today">Dentist - today</a></p></li>
+    <li><p><a href="/disposition/dentist-today-tomorrow">Dentist - today or tomorrow</a></p></li>
+    <li><p><a href="/disposition/dentist-next-few-days">Dentist - next few days</a></p></li>
+  </ul>
+  <h2>Clinical callback disposition</h2>
+  <p>26/6/2017</p>
+  <div class="content-seperator"></div>
+  <h3>Journey: Post-code to callback confirmation</h3>
+  <p>Containing single page details form</p>
+  <ul>
+    <li><p><a href="/clinical-callback/clinical-callback">Start</a></p></li>
+  </ul>
+
+{% endblock %}
+
+{% block footer %}{% endblock %}
+

@@ -1,0 +1,13 @@
+p {
+  margin: $leading*2 0 $leading*2 0;
+}
+
+pre.user-input {
+  @extend body;
+  font-size: inherit;
+}
+
+
+p.tabular-prefix {
+    @extend .heading-prefix;
+}
