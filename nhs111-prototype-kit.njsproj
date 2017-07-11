@@ -1,0 +1,236 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{f9e7f344-6053-4e69-b217-b6abf5260d92}</ProjectGuid>
+    <ProjectHome />
+    <ProjectView>ShowAllFiles</ProjectView>
+    <StartupFile>Gruntfile.js</StartupFile>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <ProjectTypeGuids>{3AF33F2E-1136-4D97-BBB7-1795711AC8B8};{349c5851-65df-11da-9384-00065b846f21};{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}</ProjectTypeGuids>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <StartWebBrowser>True</StartWebBrowser>
+    <DebuggerPort>3000</DebuggerPort>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
+  <ItemGroup>
+    <Content Include="app.json" />
+    <Content Include="package.json" />
+    <Content Include="README.md" />
+    <Compile Include="Gruntfile.js" />
+    <Compile Include="server.js" />
+    <Compile Include="app\config.js" />
+    <Compile Include="lib\utils.js" />
+    <Compile Include="app\routes\index.js" />
+    <Content Include="app\views\index.html" />
+    <Content Include="app\assets\sass\app.scss" />
+    <Content Include="app\assets\sass\tools\_contain-floats.scss" />
+    <Content Include="app\assets\sass\tools\_hidden.scss" />
+    <Content Include="app\assets\sass\tools\_media-queries.scss" />
+    <Content Include="app\assets\sass\tools\_tints.scss" />
+    <Content Include="app\assets\sass\variables\_colours.scss" />
+    <Content Include="app\assets\sass\variables\_frutiger.scss" />
+    <Content Include="app\assets\sass\variables\_system.scss" />
+    <Content Include="app\assets\sass\modules\banner\_prototype.scss" />
+    <Content Include="app\assets\sass\modules\banner\_service-banners.scss" />
+    <Content Include="app\assets\sass\modules\callout\_callout.scss" />
+    <Content Include="app\assets\sass\modules\controls\_breadcrumbs.scss" />
+    <Content Include="app\assets\sass\modules\controls\_buttons.scss" />
+    <Content Include="app\assets\sass\modules\data\_table.scss" />
+    <Content Include="app\assets\sass\modules\disclosure\_details.scss" />
+    <Content Include="app\assets\sass\modules\footer-global\_footer.scss" />
+    <Content Include="app\assets\sass\modules\forms\_date.scss" />
+    <Content Include="app\assets\sass\modules\forms\_errors.scss" />
+    <Content Include="app\assets\sass\modules\forms\_fieldset.scss" />
+    <Content Include="app\assets\sass\modules\forms\_form.scss" />
+    <Content Include="app\assets\sass\modules\forms\_input-hinted.scss" />
+    <Content Include="app\assets\sass\modules\forms\_input.scss" />
+    <Content Include="app\assets\sass\modules\forms\_label.scss" />
+    <Content Include="app\assets\sass\modules\forms\_radio-checkbox.scss" />
+    <Content Include="app\assets\sass\modules\forms\_textarea.scss" />
+    <Content Include="app\assets\sass\modules\gp-details\_gp-details.scss" />
+    <Content Include="app\assets\sass\modules\gp-lookup\_gp-lookup.scss" />
+    <Content Include="app\assets\sass\modules\header-global\_header-global.scss" />
+    <Content Include="app\assets\sass\modules\header-local\_header-panel-local.scss" />
+    <Content Include="app\assets\sass\modules\layout\_grid.scss" />
+    <Content Include="app\assets\sass\modules\layout\_layout.scss" />
+    <Content Include="app\assets\sass\modules\layout\_spacing.scss" />
+    <Content Include="app\assets\sass\modules\nhsid\_nhsid.scss" />
+    <Content Include="app\assets\sass\modules\service-banner\_service-banner.scss" />
+    <Content Include="app\assets\sass\modules\signage\_info.scss" />
+    <Content Include="app\assets\sass\modules\typography\_base.scss" />
+    <Content Include="app\assets\sass\modules\typography\_formatting.scss" />
+    <Content Include="app\assets\sass\modules\typography\_headings.scss" />
+    <Content Include="app\assets\sass\modules\typography\_links.scss" />
+    <Content Include="app\assets\sass\modules\typography\_lists.scss" />
+    <Content Include="app\assets\sass\modules\typography\_paragraphs.scss" />
+    <Content Include="app\assets\sass\tools\mixins\_addons.scss" />
+    <Content Include="app\views\clinical-callback\callback-confirmed.html" />
+    <Content Include="app\views\clinical-callback\check-person.html" />
+    <Content Include="app\views\clinical-callback\clinical-callback.html" />
+    <Content Include="app\views\clinical-callback\clinical-callback_2.html" />
+    <Content Include="app\views\clinical-callback\confirm_details.html" />
+    <Content Include="app\views\clinical-callback\confirm_details_lite.html" />
+    <Content Include="app\views\clinical-callback\details_1.html" />
+    <Content Include="app\views\clinical-callback\details_2.html" />
+    <Content Include="app\views\clinical-callback\home-address-manual.html" />
+    <Content Include="app\views\disposition\dentist.html" />
+    <Content Include="app\views\disposition\dentist-next-few-days.html" />
+    <Content Include="app\views\disposition\dentist-today-tomorrow.html" />
+    <Content Include="app\views\disposition\dentist-today.html" />
+    <Content Include="app\views\disposition\dentist-urgently.html" />
+    <Content Include="app\views\gp-reg\allergies-details.html" />
+    <Content Include="app\views\gp-reg\any-allergies.html" />
+    <Content Include="app\views\gp-reg\armed-forces-enlistment-date.html" />
+    <Content Include="app\views\gp-reg\armed-forces-service-number.html" />
+    <Content Include="app\views\gp-reg\armed-forces.html" />
+    <Content Include="app\views\gp-reg\confirm-details.html" />
+    <Content Include="app\views\gp-reg\contact-email.html" />
+    <Content Include="app\views\gp-reg\contact-telephone.html" />
+    <Content Include="app\views\gp-reg\current-gp.html" />
+    <Content Include="app\views\gp-reg\current-medication-details.html" />
+    <Content Include="app\views\gp-reg\current-medication.html" />
+    <Content Include="app\views\gp-reg\date-of-birth.html" />
+    <Content Include="app\views\gp-reg\gp-details.html" />
+    <Content Include="app\views\gp-reg\gp-lookup.html" />
+    <Content Include="app\views\gp-reg\history.html" />
+    <Content Include="app\views\gp-reg\home-address-manual.html" />
+    <Content Include="app\views\gp-reg\home-address-postcode.html" />
+    <Content Include="app\views\gp-reg\home-address-result.html" />
+    <Content Include="app\views\gp-reg\name.html" />
+    <Content Include="app\views\gp-reg\nhs-number-details.html" />
+    <Content Include="app\views\gp-reg\nhs-number.html" />
+    <Content Include="app\views\gp-reg\nhsid-auth.html" />
+    <Content Include="app\views\gp-reg\nhsid-confirm-details.html" />
+    <Content Include="app\views\gp-reg\nhsid-sign-in.html" />
+    <Content Include="app\views\gp-reg\nhsid.html" />
+    <Content Include="app\views\gp-reg\previous-name-details.html" />
+    <Content Include="app\views\gp-reg\previous-name.html" />
+    <Content Include="app\views\gp-reg\previous-address-manual.html" />
+    <Content Include="app\views\gp-reg\previous-address-postcode.html" />
+    <Content Include="app\views\gp-reg\previous-address-result.html" />
+    <Content Include="app\views\gp-reg\previous-address.html" />
+    <Content Include="app\views\gp-reg\registration-submitted.html" />
+    <Content Include="app\views\gp-reg\start.html" />
+    <Content Include="app\views\gp-reg\_email-gp-notification.html" />
+    <Content Include="app\views\_includes\email-submission-table.html" />
+    <Content Include="app\views\_includes\footer.html" />
+    <Content Include="app\views\_includes\masthead.html" />
+    <Content Include="app\views\_includes\prototype-warning.html" />
+    <Content Include="app\views\_layouts\gp-email-layout.html" />
+    <Content Include="app\views\_layouts\layout.html" />
+    <Content Include="app\views\_layouts\nhsid-layout.html" />
+    <Content Include="app\views\_layouts\user-email-layout.html" />
+    <Content Include="public\images\apple-touch-icon.png" />
+    <Content Include="public\images\favicon.png" />
+    <Content Include="public\images\logotype-nhs-colour.png" />
+    <Content Include="public\images\logotype-nhs-colour@2x.png" />
+    <Content Include="public\images\logotype-nhs-colour__reverse.png" />
+    <Content Include="public\images\logotype-nhs-colour__reverse@2x.png" />
+    <Content Include="public\images\logotype-nhs-mono.png" />
+    <Content Include="public\images\opengraph-image.png" />
+    <Content Include="public\images\favicon.ico" />
+    <Content Include="public\images\icon-search.svg" />
+    <Content Include="public\images\nhs-logotype-blue.svg" />
+    <Content Include="public\images\nhs-logotype-footer.svg" />
+    <Content Include="public\images\person-placeholder.svg" />
+    <Content Include="public\images\puff-donation.svg" />
+    <Compile Include="public\scripts\application.js" />
+    <Compile Include="public\scripts\jquery-1.12.4.min.js" />
+    <Compile Include="public\scripts\react-dom.js" />
+    <Compile Include="public\scripts\react.js" />
+    <Compile Include="public\scripts\selection-buttons.js" />
+    <Content Include="public\stylesheets\app.css" />
+    <Content Include="public\scripts\gp-details\catchment.json" />
+    <Compile Include="public\scripts\gp-lookup\components.js" />
+    <Compile Include="public\scripts\gp-lookup\lookup.js" />
+    <Content Include="src\gp-lookup\components.jsx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="app" />
+    <Folder Include="app\assets" />
+    <Folder Include="app\assets\sass" />
+    <Folder Include="app\assets\sass\modules" />
+    <Folder Include="app\assets\sass\modules\banner" />
+    <Folder Include="app\assets\sass\modules\callout" />
+    <Folder Include="app\assets\sass\modules\controls" />
+    <Folder Include="app\assets\sass\modules\data" />
+    <Folder Include="app\assets\sass\modules\disclosure" />
+    <Folder Include="app\assets\sass\modules\footer-global" />
+    <Folder Include="app\assets\sass\modules\forms" />
+    <Folder Include="app\assets\sass\modules\gp-details" />
+    <Folder Include="app\assets\sass\modules\gp-lookup" />
+    <Folder Include="app\assets\sass\modules\header-global" />
+    <Folder Include="app\assets\sass\modules\header-local" />
+    <Folder Include="app\assets\sass\modules\layout" />
+    <Folder Include="app\assets\sass\modules\nhsid" />
+    <Folder Include="app\assets\sass\modules\service-banner" />
+    <Folder Include="app\assets\sass\modules\signage" />
+    <Folder Include="app\assets\sass\modules\typography" />
+    <Folder Include="app\assets\sass\tools" />
+    <Folder Include="app\assets\sass\tools\mixins" />
+    <Folder Include="app\assets\sass\variables" />
+    <Folder Include="app\routes" />
+    <Folder Include="app\views" />
+    <Folder Include="app\views\_includes" />
+    <Folder Include="app\views\_layouts" />
+    <Folder Include="app\views\clinical-callback" />
+    <Folder Include="app\views\disposition" />
+    <Folder Include="app\views\gp-reg" />
+    <Folder Include="lib" />
+    <Folder Include="public" />
+    <Folder Include="public\images" />
+    <Folder Include="public\scripts" />
+    <Folder Include="public\scripts\gp-details" />
+    <Folder Include="public\scripts\gp-lookup" />
+    <Folder Include="public\stylesheets" />
+    <Folder Include="src" />
+    <Folder Include="src\gp-lookup" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <!--Do not delete the following Import Project.  While this appears to do nothing it is a marker for setting TypeScript properties before our import that depends on them.-->
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="False" />
+  <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsTools.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:48022/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://localhost:1337</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+        <WebProjectProperties>
+          <StartPageUrl>
+          </StartPageUrl>
+          <StartAction>CurrentPage</StartAction>
+          <AspNetDebugging>True</AspNetDebugging>
+          <SilverlightDebugging>False</SilverlightDebugging>
+          <NativeDebugging>False</NativeDebugging>
+          <SQLDebugging>False</SQLDebugging>
+          <ExternalProgram>
+          </ExternalProgram>
+          <StartExternalURL>
+          </StartExternalURL>
+          <StartCmdLineArguments>
+          </StartCmdLineArguments>
+          <StartWorkingDirectory>
+          </StartWorkingDirectory>
+          <EnableENC>False</EnableENC>
+          <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
