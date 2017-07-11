@@ -35,63 +35,6 @@ router.post('/clinical-callback/clinical-callback', function (req, res) {
   } else {
     
     res.redirect('details_2');
-
-
-    // strip spaces
-    // var cleaned = req.session.postcode.replace(/\s+/g, '').toLowerCase();
-
-    // request('https://api.getAddress.io/v2/uk/' + cleaned + '/?api-key=' + postcode_api + '&format=true', function (error, response, body) {
-    //   if (!error) {
-    //     if (response.statusCode == 200) {
-    //       var parsed = JSON.parse(body);
-    //       var addresses = parsed['Addresses'];
-    //       addresses.sort(naturalSort);
-    //       var filtered = [];
-
-    //       if (req.session.building !== '') {
-    //         for (var i=0; i<addresses.length; i++) {
-    //           //var current = addresses[i][0];
-    //           var current = addresses[i].toString().toLowerCase();
-    //           if (current.indexOf(req.session.building.toLowerCase()) !== -1) {
-    //             filtered.push(addresses[i]);
-    //           }
-    //         }
-
-    //         if (filtered.length === 0) {
-    //           // Nothing found for this combo of building / postcode
-    //           // So just display the postcode results?
-    //           req.session.addressResults = addresses;
-    //           res.render('v1_1/home-address-result', {
-    //             message: 'No exact match has been found, showing all addresses for ' + req.session.postcode,
-    //             session: req.session
-    //           });
-    //         } else {
-    //           req.session.addressResults = filtered;
-    //           res.render('v1_1/home-address-result', {
-    //             session: req.session
-    //           });
-    //         }
-
-    //       } else {
-
-    //         req.session.addressResults = addresses;
-
-    //         res.render('v1_1/home-address-result', {
-    //           session: req.session
-    //         });
-
-    //       }
-    //     }
-
-    //   } else {
-    //     // res.render('v1_1/home-address-postcode', {
-    //     //   error: {
-    //     //     general: 'Sorry, there’s been a problem looking up your address. Please try again.'
-    //     //   },
-    //     //   session: req.session
-    //     // });
-    //   }
-    // });
   }
 })
 // Check person +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -106,16 +49,19 @@ router.post('/clinical-callback/check-person', function (req, res) {
 
 router.get('/clinical-callback/details_2', function (req, res) {
   res.render('clinical-callback/details_2', {
-    session: req.session
+        session: req.session
   });
 
 });
 
 router.post('/clinical-callback/details_2', function (req, res) {
-  res.redirect('confirm_details_lite');
+    SetPersonalDetailsSessionData(req);
+    res.redirect('confirm_details_lite');
 })
 
 // Home address manual +++++++++++++++++++++++++++++++++
+
+
 
 router.post('/clinical-callback/home-address-manual', function (req, res) {
 
@@ -140,3 +86,43 @@ router.post('/clinical-callback/home-address-manual', function (req, res) {
   }
   
 })
+
+function SetPersonalDetailsSessionData(req) {
+    if (!req.session.homeAddress) {
+        req.session.homeAddress = {}
+    }
+    
+    if (!req.session.patient) {
+        req.session.patient = {
+            dob: {}
+        }
+    }
+    
+    if (!req.session.informant) {
+        req.session.informant = {}
+    }
+
+    req.session.homeAddress.address = [
+        req.body['address-1'],
+        req.body['address-2'],
+        req.body['address-3'],
+        req.body['address-4']
+    ];
+    if (req.body['check-person'] == "self") {
+        req.session.patient.firstName = req.body['self-first-name'];
+        req.session.patient.lastName = req.body['self-last-name'];
+    } else {
+        req.session.patient.firstName = req.body['first-name'];
+        req.session.patient.lastName = req.body['last-name'];
+    }
+    req.session.homeAddress.postcode = req.body['postcode'];
+    req.session.telephoneNumber = req.body['tel-number'];
+
+    req.session.informant.firstName = req.body['informant-first-name'];
+    req.session.informant.lastName = req.body['informant-last-name'];
+    req.session.checkPerson = req.body['check-person'];
+
+    req.session.patient.dob.day = req.body['dob-day'];
+    req.session.patient.dob.month = req.body['dob-month'];
+    req.session.patient.dob.year = req.body['dob-year'];
+}
