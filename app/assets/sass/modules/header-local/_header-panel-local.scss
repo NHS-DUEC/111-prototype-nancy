@@ -14,6 +14,7 @@
 
   @include media(mid) {
     padding-left: $leading*4;
+    padding-right: $leading*4;
   }
 
   .header {
