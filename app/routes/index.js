@@ -96,11 +96,10 @@ function phoneNumberVerificationTest(req) {
 function scramblePhoneNumber(number) {
     var chars = number.split("");
     var lastdigit = Number(chars[chars.length - 1]);
-    var newlastDigit = lastdigit;
-    while (newlastDigit == lastdigit) {
-        newlastDigit = getRandomInt(0, 10);
-    }
-    chars[chars.length - 1] = newlastDigit;
+    var newLastDigit = 8;
+    if (lastdigit < 9) newLastDigit = lastdigit + 1;
+    
+    chars[chars.length - 1] = newLastDigit;
     return chars.join("");
 }
 
