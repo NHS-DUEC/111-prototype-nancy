@@ -55,7 +55,8 @@ router.get('/clinical-callback/details_2', function (req, res) {
 });
 
 router.post('/clinical-callback/details_2', function (req, res) {
-    SetPersonalDetailsSessionData(req);
+    setPersonalDetailsSessionData(req);
+    phoneNumberVerificationTest(req);
     res.redirect('confirm_details_lite');
 })
 
@@ -87,7 +88,26 @@ router.post('/clinical-callback/home-address-manual', function (req, res) {
   
 })
 
-function SetPersonalDetailsSessionData(req) {
+function phoneNumberVerificationTest(req) {
+    if (!req.session.numberVerificationTestPerformed) req.session.telephoneNumber = scramblePhoneNumber(req.session.telephoneNumber);
+    req.session.numberVerificationTestPerformed = true;
+}
+
+function scramblePhoneNumber(number) {
+    var chars = number.split("");
+    var lastdigit = Number(chars[chars.length - 1]);
+    var newLastDigit = 8;
+    if (lastdigit < 9) newLastDigit = lastdigit + 1;
+    
+    chars[chars.length - 1] = newLastDigit;
+    return chars.join("");
+}
+
+function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function setPersonalDetailsSessionData(req) {
     if (!req.session.homeAddress) {
         req.session.homeAddress = {}
     }
