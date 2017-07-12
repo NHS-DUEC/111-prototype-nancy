@@ -1,0 +1,65 @@
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}
+{% endblock %}
+
+{% block content %}
+
+<div class="header-panel">
+  <h1 class="heading-xlarge">Book a phone call with a 111 Nurse</h1>
+  <div class="content-seperator"></div>
+  <div class="precis">Enter your current postcode so we can find a suitable local service.</div>
+</div>
+
+<div class="measure">
+
+  <div class="content-block">
+  <p>The 111 nurse will check your answers and</p>
+
+  <ul>
+    <li>advise you what to do</li>
+    <li>if necessary, book an appointment with an NHS service</li>
+  </ul>
+
+  <!-- <h3 class="extra-spacing-top">Enter your current postcode so we can find a suitable local service.</h3> -->
+
+  <form method="post" class="formmodule extra-spacing-top">
+    <fieldset>
+
+      {% if error.general %}
+        <div class="error-summary">
+          <div>
+            <p>{{ error.general }}</p>
+          </div>
+        </div>
+      {% endif %}
+
+      {% if error.postcode %}
+        <div class="error-summary">
+          <div>
+            <p>{{ error.postcode }}</p>
+          </div>
+        </div>
+      {% endif %}
+
+      <div class="form-group {% if error.postcode %}-errors{% endif %}">
+        <div>
+          <label for="postcode">Your postcode</label>
+          <input type="text" id="postcode" name="postcode" value="{{ session.postcode }}" class="-small">
+        </div>
+      </div>
+    </fieldset>
+
+    <!-- <p><a href="home-address-manual">I’ll type in my address</a></p> -->
+
+    <div class="form-group -controls">
+      <button type="submit" class="button">Next</button>
+    </div>
+
+  </form>
+ 
+</div>
+
+{% endblock %}
+
+{% block footer %}{% endblock %}

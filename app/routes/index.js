@@ -37,6 +37,57 @@ router.post('/clinical-callback/clinical-callback', function (req, res) {
     res.redirect('details_2');
   }
 })
+
+// Multi-part journey ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// Postcode ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+router.get('/clinical-callback', function (req, res) {
+  res.render('clinical-callback/mp-clinical-callback', {
+    session: req.session
+  });
+
+});
+
+router.post('/clinical-callback/mp-clinical-callback', function (req, res) {
+
+  if (!req.session.homeAddress) {
+    req.session.homeAddress = {}
+  }
+
+  req.session.homeAddress.postcode = req.body['postcode'];
+  req.session.homeAddress.building = req.body['building'];
+
+  if (req.body['postcode'] === '') {
+    res.render('clinical-callback/mp-clinical-callback', {
+      session: req.session,
+      error: {
+        postcode: 'Please enter your postcode'
+      }
+    });
+  } else {
+    
+    res.redirect('mp-details_who');
+  }
+})
+
+// Multi-part journey ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// Which person +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+router.post('/clinical-callback/mp-details_who', function (req, res) {
+    setPerson(req);
+    res.redirect('mp-details');
+})
+
+// Multi-part journey ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// set details +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+router.post('/clinical-callback/mp-details', function (req, res) {
+    setDetails(req);
+    phoneNumberVerificationTest(req);
+    res.redirect('confirm_details_lite');
+})
+
 // Check person +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 router.post('/clinical-callback/check-person', function (req, res) {
@@ -62,8 +113,6 @@ router.post('/clinical-callback/details_2', function (req, res) {
 
 // Home address manual +++++++++++++++++++++++++++++++++
 
-
-
 router.post('/clinical-callback/home-address-manual', function (req, res) {
 
     if (!req.session.homeAddress) {
@@ -88,10 +137,14 @@ router.post('/clinical-callback/home-address-manual', function (req, res) {
   
 })
 
+// phone verifcation test  +++++++++++++++++++++++++++++++++
+
 function phoneNumberVerificationTest(req) {
     if (!req.session.numberVerificationTestPerformed) req.session.telephoneNumber = scramblePhoneNumber(req.session.telephoneNumber);
     req.session.numberVerificationTestPerformed = true;
 }
+
+// Scramble +++++++++++++++++++++++++++++++++
 
 function scramblePhoneNumber(number) {
     var chars = number.split("");
@@ -106,6 +159,8 @@ function scramblePhoneNumber(number) {
 function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
+
+// Set personal details +++++++++++++++++++++++++++++++++
 
 function setPersonalDetailsSessionData(req) {
     if (!req.session.homeAddress) {
@@ -146,3 +201,78 @@ function setPersonalDetailsSessionData(req) {
     req.session.patient.dob.month = req.body['dob-month'];
     req.session.patient.dob.year = req.body['dob-year'];
 }
+
+
+// Multi-part +++++++++++++++++++++++++++++++++
+// set person +++++++++++++++++++++++++++++++++
+
+function setPerson(req){
+
+    if (!req.session.pronoun) {
+        req.session.pronoun = {}
+    }
+
+    if (!req.session.patient) {
+        req.session.patient = {
+            dob: {}
+        }
+    }
+    
+    if (!req.session.informant) {
+        req.session.informant = {}
+    }
+
+    if (req.body['check-person'] == "self") {
+        //capture pateints name data
+        req.session.patient.firstName = req.body['self-first-name'];
+        req.session.patient.lastName = req.body['self-last-name'];
+        req.session.pronoun = 'your';
+        console.log (req.session.pronoun);
+    } else {
+        //capture pateints name data
+        req.session.patient.firstName = req.body['first-name'];
+        req.session.patient.lastName = req.body['last-name'];
+
+        //capture informant data - this details of someone to speak to.
+        req.session.informant.firstName = req.body['informant-first-name'];
+        req.session.informant.lastName = req.body['informant-last-name'];
+
+        req.session.pronoun = 'their';
+        console.log (req.session.pronoun);
+    }    
+}
+
+// Multi-part +++++++++++++++++++++++++++++++++
+// set details +++++++++++++++++++++++++++++++++
+
+function setDetails(req) {
+
+    if (!req.session.patient) {
+        req.session.patient = {
+            dob: {}
+        }
+    }
+    
+    if (!req.session.homeAddress) {
+        req.session.homeAddress = {}
+    }
+
+    // capture home address details
+    req.session.homeAddress.address = [
+        req.body['address-1'],
+        req.body['address-2'],
+        req.body['address-3'],
+        req.body['address-4']
+    ];
+
+    // capture postcode and telephone number
+    req.session.homeAddress.postcode = req.body['postcode'];
+    req.session.telephoneNumber = req.body['tel-number'];
+
+    //capture patient DOB
+    req.session.patient.dob.day = req.body['dob-day'];
+    req.session.patient.dob.month = req.body['dob-month'];
+    req.session.patient.dob.year = req.body['dob-year'];
+
+}
+
