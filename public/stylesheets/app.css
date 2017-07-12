@@ -55,6 +55,7 @@ body, pre.user-input,
   font-weight: 400;
   font-size: 20px;
   line-height: 32px;
+  letter-spacing: 0.3px;
 }
 
 .measure, .gp-finder-search {
@@ -120,6 +121,10 @@ h3, .heading-large,
 .smallprint {
   font-size: 16px;
   color: #f0f4f5;
+}
+
+.extra-spacing-top {
+  padding-top: 24px;
 }
 
 /* remove undelines for a tags used as anchors */
@@ -1194,6 +1199,7 @@ textarea:focus {
 @media (min-width: 500px) {
   .header-panel {
     padding-left: 32px;
+    padding-right: 32px;
   }
 }
 
