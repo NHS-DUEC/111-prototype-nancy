@@ -227,7 +227,6 @@ function setPerson(req){
         req.session.patient.firstName = req.body['self-first-name'];
         req.session.patient.lastName = req.body['self-last-name'];
         req.session.pronoun = 'your';
-        console.log (req.session.pronoun);
     } else {
         //capture pateints name data
         req.session.patient.firstName = req.body['first-name'];
@@ -238,7 +237,6 @@ function setPerson(req){
         req.session.informant.lastName = req.body['informant-last-name'];
 
         req.session.pronoun = 'their';
-        console.log (req.session.pronoun);
     }    
 }
 
@@ -252,7 +250,7 @@ function setDetails(req) {
             dob: {}
         }
     }
-    
+
     if (!req.session.homeAddress) {
         req.session.homeAddress = {}
     }
