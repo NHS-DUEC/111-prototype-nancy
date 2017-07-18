@@ -13,18 +13,16 @@
 
   <form  method="post" class="measure">
 
-    {% if errors.name %}
-      <div class="error-summary">
-        <div>
-          <p>{{ errors.name }}</p>
-        </div>
-      </div>
-    {% endif %}
-
     <fieldset>
-<!--       <legend class="secondary">
-        Who are you asking for?
-      </legend> -->
+
+      {% if error.general %}
+        <div class="error-summary">
+          <div>
+            <p>{{ error.general }}</p>
+          </div>
+        </div>
+      {% endif %}
+
       <div class="form form-group {% if error %}-errors{% endif %}">
           <label for="check-person-self" class="block-label" data-target="self-data">
           For myself

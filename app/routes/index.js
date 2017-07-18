@@ -65,7 +65,6 @@ router.post('/clinical-callback/mp-clinical-callback', function (req, res) {
       }
     });
   } else {
-    
     res.redirect('mp-details_who');
   }
 })
@@ -74,8 +73,66 @@ router.post('/clinical-callback/mp-clinical-callback', function (req, res) {
 // Which person +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 router.post('/clinical-callback/mp-details_who', function (req, res) {
-    setPerson(req);
-    res.redirect('mp-details');
+    
+    if (!req.session.pronoun) {
+        req.session.pronoun = {}
+    }
+
+    if (!req.session.patient) {
+        req.session.patient = {
+            dob: {}
+        }
+    }
+    
+    if (!req.session.informant) {
+        req.session.informant = {}
+    }
+
+    if (req.body['check-person'] == "self") {
+        //capture pateints name data
+        req.session.patient.firstName = req.body['self-first-name'];
+        req.session.patient.lastName = req.body['self-last-name'];
+        req.session.pronoun = 'your';
+
+        res.redirect('mp-details');
+
+        // //check the form is filled correctly
+        // if (req.body['self-first-name'] === '' && req.body['self-last-name'] === '') {
+        //   res.render('clinical-callback/mp-details_who', {
+        //     session: req.session,
+        //     error: {
+        //       general: 'Please enter a name'
+        //     }
+        //   });
+        // } else {
+        //   // go to details
+        //   res.redirect('mp-details');
+        // }
+
+    } else if (req.body['check-person'] == "other"){
+        //capture pateints name data
+        req.session.patient.firstName = req.body['first-name'];
+        req.session.patient.lastName = req.body['last-name'];
+
+        //capture informant data - this details of someone to speak to.
+        req.session.informant.firstName = req.body['informant-first-name'];
+        req.session.informant.lastName = req.body['informant-last-name'];
+
+        req.session.pronoun = 'their';
+
+        // go to details
+        res.redirect('mp-details');
+
+    } else {
+
+        res.render('clinical-callback/mp-details_who', {
+          session: req.session,
+          error: {
+            general: 'Please select who the service is for'
+          }
+        });
+
+      }
 })
 
 // Multi-part journey ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -238,6 +295,7 @@ function setPerson(req){
 
         req.session.pronoun = 'their';
     }    
+
 }
 
 // Multi-part +++++++++++++++++++++++++++++++++
