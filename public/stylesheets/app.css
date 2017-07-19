@@ -142,6 +142,7 @@ h6 a {
   font-size: 20px;
   line-height: 1;
   color: #918f90;
+  margin-bottom: 0px;
 }
 
 p {
@@ -187,16 +188,16 @@ ul.tabular-data {
 }
 
 li.tabular-data-row {
+  border-top: 1px solid #f0f4f5;
   border-bottom: 1px solid #f0f4f5;
   padding-top: 16px;
-  padding-bottom: 80px;
   display: block;
   clear: both;
 }
 
 @media (min-width: 980px) {
   li.tabular-data-row {
-    padding-bottom: 32px;
+    padding-bottom: 8px;
   }
 }
 
@@ -211,7 +212,7 @@ li.tabular-data-row > .detail {
 
 li.tabular-data-row > .edit {
   float: right;
-  margin-top: 8px;
+  margin-top: 32px;
 }
 
 li.tabular-data-row > .callout {

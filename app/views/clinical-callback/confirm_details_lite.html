@@ -12,16 +12,23 @@
 <div class="measure">
   
   <div class="content-block">
+
+    <p>Is the following information correct?</p>
+
     <ul class="tabular-data">
       <li class="tabular-data-row">
-        <p class="tabular-prefix">We will call on this number:</p>
-        <div class="callout callout--bordered"><p class="heading-xlarge">{{ session.telephoneNumber }}</p></div>
+        <div>
+          <p class="tabular-prefix">We will call on this number:</p>
+          <p class="heading-xlarge data-display">{{ session.telephoneNumber }}</p>
+        </div>
         <a class="button -bordered edit" href="details_2">Change</a>
       </li>
     </ul>
-        <div class="form-group -controls">
+
+      <div class="form-group -controls">
         <a href="callback-confirmed"><div class="button">Book a phone call</div></a>
       </div>
+
   </div>
 
 </div>

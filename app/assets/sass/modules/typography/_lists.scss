@@ -38,13 +38,14 @@ ul.link-list {
 
 li.tabular-data-row {
 
+  border-top: 1px solid $grey-5;
   border-bottom: 1px solid $grey-5;
   padding-top: $leading*2;
-  padding-bottom: $leading*10;
+  // padding-bottom: $leading*10;
   display: block;
 
   @include media(large) {
-    padding-bottom: $leading*4;
+    padding-bottom: $leading;
   }
 
   clear: both;
@@ -60,7 +61,7 @@ li.tabular-data-row {
 
   > .edit {
     float: right;
-        margin-top: $leading;
+    margin-top: $leading*4;
   }
 
   >.callout {
