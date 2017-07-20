@@ -13,10 +13,10 @@
 
   <form  method="post" class="measure">
 
-    {% if errors.dob %}
+    {% if error.general %}
       <div class="error-summary">
         <div>
-          <p>{{ errors.dob }}</p>
+          <p>{{ error.general }}</p>
         </div>
       </div>
     {% endif %}
@@ -28,15 +28,15 @@
       <p class="form-hint">
         For example, 31 / 12 / 1980
       </p>
-      {% if error %}
-        <div class="error-summary">
-          <div>
-            <p>{{ error }}</p>
-          </div>
-        </div>
-      {% endif %}
 
-      <div class="form-group -date {% if error %}-errors{% endif %}">
+      <div class="form-group -date {% if error %}-errors error-indent{% endif %}">
+
+        {% if error.dob %}
+          <div class="error-hint">
+            <p>{{ error.dob }}</p>
+          </div>
+        {% endif %}
+              
         <div>
           <label for="dob-day">Day</label>
           <input type="text" id="dob-day" name="dob-day" value="{{ session.patient.dob.day }}" class="day" maxlength="2">

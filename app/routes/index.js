@@ -61,6 +61,7 @@ router.post('/clinical-callback/mp-clinical-callback', function (req, res) {
     res.render('clinical-callback/mp-clinical-callback', {
       session: req.session,
       error: {
+        general: 'A valid postcode is required to receive a callback',
         postcode: 'Please enter your postcode'
       }
     });
@@ -149,7 +150,7 @@ router.post('/clinical-callback/mp-telephone', function (req, res) {
           session: req.session,
           error: {
             general: 'A telephone number is required to receive a callback',
-            telephone: 'Please enter a telephone number'
+            telephone: 'Please enter a telephone number',
           }
       });
     } else {
@@ -164,7 +165,37 @@ router.post('/clinical-callback/mp-telephone', function (req, res) {
 // set D.O.B. ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 router.post('/clinical-callback/mp-dob', function (req, res) {
-    setDOB(req);
+    
+    if (!req.session.patient) {
+        req.session.patient = {
+            dob: {}
+        }
+    }
+
+    //capture patient DOB
+    req.session.patient.dob.day = req.body['dob-day'];
+    req.session.patient.dob.month = req.body['dob-month'];
+    req.session.patient.dob.year = req.body['dob-year'];
+
+  if (req.body['dob-day'] === '' || req.body['dob-month'] === '' || req.body['dob-year'] === '') {
+    res.render('clinical-callback/mp-dob', {
+      session: req.session,
+      error: {
+        general: 'A date of birth is required to receive a callback',
+        dob: 'Please enter your date of birth'
+      }
+    });
+  } else {
+    res.redirect('mp-address-lookup');
+  }
+
+})
+
+
+// Multi-part journey +++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// set address. ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+router.post('/clinical-callback/mp-address-lookup', function (req, res) {
     res.redirect('mp-confirm_details_lite');
 })
 

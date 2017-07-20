@@ -600,6 +600,10 @@ html {
   clear: both;
 }
 
+.-date > .error-hint {
+  width: 100%;
+}
+
 .-date div {
   float: left;
   padding-right: 1em;
@@ -608,10 +612,12 @@ html {
 .-date .day,
 .-date .month {
   width: 3em;
+  margin-bottom: 0px;
 }
 
 .-date .year {
   width: 4em;
+  margin-bottom: 0px;
 }
 
 .error-summary {
@@ -643,6 +649,11 @@ html {
 .js-enabled .form-group.-errors .selection-button-radio::before,
 .js-enabled .form-group.-errors .selection-button-checkbox::before {
   border-color: #da291c;
+}
+
+.error-indent {
+  padding-left: 32px;
+  border-left: 4px solid #da291c;
 }
 
 fieldset {
@@ -694,6 +705,10 @@ form {
   margin-left: 20px;
   padding-left: 16px;
   border-left: 4px solid #0072ce;
+}
+
+.toggle-content-error {
+  border-color: #da291c;
 }
 
 .select-address {

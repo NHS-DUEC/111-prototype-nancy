@@ -30,12 +30,12 @@
           </label>
         </div>
 
-        <div class="js-hidden toggle-content" id="self-data">
-          <div class="form-group {% if errors.name %}-errors{% endif %}">
+        <div class="js-hidden toggle-content {% if error %}toggle-content-error{% endif %}" id="self-data">
+          <div class="form-group {% if error %}-errors{% endif %}">
             <label for="first-name">First name</label>
               <input type="text" id="self-first-name" name="self-first-name" value="{{session.patient.firstName}}">
           </div>
-          <div class="form-group {% if errors.name %}-errors{% endif %}">
+          <div class="form-group {% if error %}-errors{% endif %}">
             <label for="last-name">Last name</label>
               <input type="text" id="self-last-name" name="self-last-name" value="{{session.patient.lastName}}">
           </div>
@@ -48,12 +48,12 @@
           </label>
         </div>
 
-        <div class="js-hidden toggle-content" id="other-data">
-          <div class="form-group {% if errors.name %}-errors{% endif %}">
+        <div class="js-hidden toggle-content {% if error %}toggle-content-error{% endif %}" id="other-data">
+          <div class="form-group {% if error %}-errors{% endif %}">
             <label for="first-name">First name</label>
               <input type="text" id="first-name" name="first-name" value="{{session.patient.firstName}}">
           </div>
-          <div class="form-group {% if errors.name %}-errors{% endif %}">
+          <div class="form-group {% if error %}-errors{% endif %}">
             <label for="last-name">Last name</label>
               <input type="text" id="last-name" name="last-name" value="{{session.patient.lastName}}">
           </div>
@@ -61,11 +61,11 @@
           <div>
             <h3>Enter the details of someone we can speak to</h3>
             <p>The person we speak to, should be able to answer questions on behalf of another person.</p>
-            <div class="form-group {% if errors.name %}-errors{% endif %}">
+            <div class="form-group {% if error %}-errors{% endif %}">
               <label for="first-name">First name</label>
                 <input type="text" id="informant-first-name" name="informant-first-name" value="{{session.informant.firstName}}">
             </div>
-            <div class="form-group {% if errors.name %}-errors{% endif %}">
+            <div class="form-group {% if error %}-errors{% endif %}">
               <label for="last-name">Last name</label>
                 <input type="text" id="informant-last-name" name="informant-last-name" value="{{session.informant.lastName}}">
             </div>

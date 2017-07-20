@@ -2,6 +2,10 @@
 
   @extend %contain-floats;
 
+  >.error-hint {
+    width: 100%;
+  }
+
   div {
     float: left;
     padding-right: 1em;
@@ -10,10 +14,12 @@
   .day,
   .month {
     width: 3em;
+    margin-bottom: 0px;
   }
 
   .year {
     width: 4em;
+    margin-bottom: 0px;
   }
 
 }
