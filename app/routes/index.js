@@ -94,7 +94,7 @@ router.post('/clinical-callback/mp-details_who', function (req, res) {
         req.session.patient.lastName = req.body['self-last-name'];
         req.session.pronoun = 'your';
 
-        res.redirect('mp-details');
+        res.redirect('mp-telephone');
 
         // //check the form is filled correctly
         // if (req.body['self-first-name'] === '' && req.body['self-last-name'] === '') {
@@ -121,7 +121,7 @@ router.post('/clinical-callback/mp-details_who', function (req, res) {
         req.session.pronoun = 'their';
 
         // go to details
-        res.redirect('mp-details');
+        res.redirect('mp-telephone');
 
     } else {
 
@@ -137,20 +137,35 @@ router.post('/clinical-callback/mp-details_who', function (req, res) {
 
 
 // Multi-part journey ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-// set details +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// set telephone +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
-router.post('/clinical-callback/mp-details', function (req, res) {
-    setDetails(req);
-    phoneNumberVerificationTest(req);
-    res.redirect('mp-address-lookup');
+router.post('/clinical-callback/mp-telephone', function (req, res) {
+
+    req.session.telephoneNumber = req.body['tel-number'];
+
+    if (!req.body['tel-number']) {
+      res.render('clinical-callback/mp-telephone', {
+          session: req.session,
+          error: {
+            general: 'A telephone number is required to receive a callback',
+            telephone: 'Please enter a telephone number'
+          }
+      });
+    } else {
+      res.redirect('mp-dob');
+    }
+
+  phoneNumberVerificationTest(req);
+
 })
 
 // Multi-part journey ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-// set phone and D.O.B. ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// set D.O.B. ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-router.post('/clinical-callback/mp-address-lookup', function (req, res) {
-    res.redirect('confirm_details_lite');
+router.post('/clinical-callback/mp-dob', function (req, res) {
+    setDOB(req);
+    res.redirect('mp-confirm_details_lite');
 })
 
 // Check person +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -306,32 +321,17 @@ function setPerson(req){
 
 }
 
-// Multi-part +++++++++++++++++++++++++++++++++
-// set details +++++++++++++++++++++++++++++++++
 
-function setDetails(req) {
+// Multi-part +++++++++++++++++++++++++++++++++
+// set DOB ++++++++++++++++++++++++++++++
+
+function setDOB(req) {
 
     if (!req.session.patient) {
         req.session.patient = {
             dob: {}
         }
     }
-
-    if (!req.session.homeAddress) {
-        req.session.homeAddress = {}
-    }
-
-    // capture home address details
-    req.session.homeAddress.address = [
-        req.body['address-1'],
-        req.body['address-2'],
-        req.body['address-3'],
-        req.body['address-4']
-    ];
-
-    // capture postcode and telephone number
-    req.session.homeAddress.postcode = req.body['postcode'];
-    req.session.telephoneNumber = req.body['tel-number'];
 
     //capture patient DOB
     req.session.patient.dob.day = req.body['dob-day'];

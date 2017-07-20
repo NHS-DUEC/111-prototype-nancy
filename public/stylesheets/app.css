@@ -1,10 +1,10 @@
 @import url("//fast.fonts.net/cssapi/4c65968f-c33e-4eb6-9a5d-ab4f81a0543f.css");
-.prototype-warning-inner, .breadcrumb, .footer-container, .-date, .error-summary, form, .form-group, #global-header, .signage, .nhsid-container, .header-container,
+li.tabular-data-row, .prototype-warning-inner, .breadcrumb, .footer-container, .-date, .error-summary, form, .form-group, #global-header, .signage, .nhsid-container, .header-container,
 .content, .grid-row {
   zoom: 1;
 }
 
-.prototype-warning-inner:after, .breadcrumb:after, .footer-container:after, .-date:after, .error-summary:after, form:after, .form-group:after, #global-header:after, .signage:after, .nhsid-container:after, .header-container:after,
+li.tabular-data-row:after, .prototype-warning-inner:after, .breadcrumb:after, .footer-container:after, .-date:after, .error-summary:after, form:after, .form-group:after, #global-header:after, .signage:after, .nhsid-container:after, .header-container:after,
 .content:after, .grid-row:after {
   content: "";
   display: block;
@@ -192,6 +192,8 @@ li.tabular-data-row {
   border-bottom: 1px solid #f0f4f5;
   padding-top: 16px;
   display: block;
+  padding-bottom: 16px;
+  margin-bottom: 24px;
   clear: both;
 }
 
@@ -212,7 +214,12 @@ li.tabular-data-row > .detail {
 
 li.tabular-data-row > .edit {
   float: right;
-  margin-top: 32px;
+}
+
+@media (min-width: 980px) {
+  li.tabular-data-row > .edit {
+    margin-top: 32px;
+  }
 }
 
 li.tabular-data-row > .callout {

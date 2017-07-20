@@ -13,24 +13,13 @@
 
   <form  method="post" class="measure">
 
-    {% if errors.telephone %}
+    {% if errors.dob %}
       <div class="error-summary">
         <div>
-          <p>{{ errors.telephone }}</p>
+          <p>{{ errors.dob }}</p>
         </div>
       </div>
     {% endif %}
-
-    <fieldset>
-      <legend class="secondary">
-        What phone number can we call back on?
-      </legend> 
-
-      <div class="form-group {% if errors.name %}-errors{% endif %}">
-        <label for="last-name">Telephone number</label>
-          <input type="text" id="tel-number" name="tel-number" value="{{ session.telephoneNumber }}">
-      </div>
-    </fieldset>
 
     <fieldset>
       <legend class="secondary">
