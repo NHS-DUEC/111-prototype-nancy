@@ -1,10 +1,10 @@
 @import url("//fast.fonts.net/cssapi/4c65968f-c33e-4eb6-9a5d-ab4f81a0543f.css");
-.prototype-warning-inner, .breadcrumb, .footer-container, .-date, .error-summary, form, .form-group, #global-header, .signage, .nhsid-container, .header-container,
+li.tabular-data-row, .prototype-warning-inner, .breadcrumb, .footer-container, .-date, .error-summary, form, .form-group, #global-header, .signage, .nhsid-container, .header-container,
 .content, .grid-row {
   zoom: 1;
 }
 
-.prototype-warning-inner:after, .breadcrumb:after, .footer-container:after, .-date:after, .error-summary:after, form:after, .form-group:after, #global-header:after, .signage:after, .nhsid-container:after, .header-container:after,
+li.tabular-data-row:after, .prototype-warning-inner:after, .breadcrumb:after, .footer-container:after, .-date:after, .error-summary:after, form:after, .form-group:after, #global-header:after, .signage:after, .nhsid-container:after, .header-container:after,
 .content:after, .grid-row:after {
   content: "";
   display: block;
@@ -142,6 +142,7 @@ h6 a {
   font-size: 20px;
   line-height: 1;
   color: #918f90;
+  margin-bottom: 0px;
 }
 
 p {
@@ -187,16 +188,18 @@ ul.tabular-data {
 }
 
 li.tabular-data-row {
+  border-top: 1px solid #f0f4f5;
   border-bottom: 1px solid #f0f4f5;
   padding-top: 16px;
-  padding-bottom: 80px;
   display: block;
+  padding-bottom: 16px;
+  margin-bottom: 24px;
   clear: both;
 }
 
 @media (min-width: 980px) {
   li.tabular-data-row {
-    padding-bottom: 32px;
+    padding-bottom: 8px;
   }
 }
 
@@ -211,7 +214,12 @@ li.tabular-data-row > .detail {
 
 li.tabular-data-row > .edit {
   float: right;
-  margin-top: 8px;
+}
+
+@media (min-width: 980px) {
+  li.tabular-data-row > .edit {
+    margin-top: 32px;
+  }
 }
 
 li.tabular-data-row > .callout {
@@ -225,6 +233,10 @@ li.tabular-data-row > .callout {
   li.tabular-data-row > .callout {
     width: initial;
   }
+}
+
+.data-display-telephone {
+  min-height: 48px;
 }
 
 .tel {
@@ -542,6 +554,10 @@ details summary:focus {
   box-shadow: 0 0 0 5px #ffb81c;
 }
 
+details.extra-vert-spacing {
+  margin-top: 32px;
+}
+
 html {
   background-color: #f0f4f5;
 }
@@ -584,6 +600,10 @@ html {
   clear: both;
 }
 
+.-date > .error-hint {
+  width: 100%;
+}
+
 .-date div {
   float: left;
   padding-right: 1em;
@@ -592,10 +612,12 @@ html {
 .-date .day,
 .-date .month {
   width: 3em;
+  margin-bottom: 0px;
 }
 
 .-date .year {
   width: 4em;
+  margin-bottom: 0px;
 }
 
 .error-summary {
@@ -627,6 +649,11 @@ html {
 .js-enabled .form-group.-errors .selection-button-radio::before,
 .js-enabled .form-group.-errors .selection-button-checkbox::before {
   border-color: #da291c;
+}
+
+.error-indent {
+  padding-left: 32px;
+  border-left: 4px solid #da291c;
 }
 
 fieldset {
@@ -678,6 +705,10 @@ form {
   margin-left: 20px;
   padding-left: 16px;
   border-left: 4px solid #0072ce;
+}
+
+.toggle-content-error {
+  border-color: #da291c;
 }
 
 .select-address {
@@ -1234,10 +1265,10 @@ textarea:focus {
 }
 
 .info {
-  border-top: 2px solid #f0f4f5;
-  border-bottom: 2px solid #f0f4f5;
+  margin-left: 4px;
+  border-left: 4px solid #0072ce;
   padding: 8px;
-  background-color: #fefefe;
+  background-color: #f0f4f5;
 }
 
 .info > .cta {
@@ -1538,4 +1569,8 @@ body, pre.user-input {
   height: 4px;
   background-color: #f0f4f5;
   margin-bottom: 32px;
+}
+
+.content-seperator_equalvertspacing {
+  margin-top: 32px;
 }

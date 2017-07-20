@@ -12,7 +12,6 @@ var utils = require('./lib/utils.js')
 var config = require('./app/config.js')
 
 var index = require('./app/routes/index');
-
 var app = express()
 
 // Grab environment variables specified in Procfile or as Heroku config vars
