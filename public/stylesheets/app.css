@@ -228,6 +228,10 @@ li.tabular-data-row > .callout {
   }
 }
 
+.data-display-telephone {
+  min-height: 48px;
+}
+
 .tel {
   white-space: nowrap;
 }
@@ -541,6 +545,10 @@ details summary:focus {
   -webkit-box-shadow: 0 0 0 5px #ffb81c;
   -moz-box-shadow: 0 0 0 5px #ffb81c;
   box-shadow: 0 0 0 5px #ffb81c;
+}
+
+details.extra-vert-spacing {
+  margin-top: 32px;
 }
 
 html {
@@ -1235,10 +1243,10 @@ textarea:focus {
 }
 
 .info {
-  border-top: 2px solid #f0f4f5;
-  border-bottom: 2px solid #f0f4f5;
+  margin-left: 4px;
+  border-left: 4px solid #0072ce;
   padding: 8px;
-  background-color: #fefefe;
+  background-color: #f0f4f5;
 }
 
 .info > .cta {
@@ -1539,4 +1547,8 @@ body, pre.user-input {
   height: 4px;
   background-color: #f0f4f5;
   margin-bottom: 32px;
+}
+
+.content-seperator_equalvertspacing {
+  margin-top: 32px;
 }

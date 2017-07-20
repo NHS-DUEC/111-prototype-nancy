@@ -135,6 +135,7 @@ router.post('/clinical-callback/mp-details_who', function (req, res) {
       }
 })
 
+
 // Multi-part journey ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // set details +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
@@ -142,6 +143,13 @@ router.post('/clinical-callback/mp-details_who', function (req, res) {
 router.post('/clinical-callback/mp-details', function (req, res) {
     setDetails(req);
     phoneNumberVerificationTest(req);
+    res.redirect('mp-address-lookup');
+})
+
+// Multi-part journey ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// set phone and D.O.B. ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+router.post('/clinical-callback/mp-address-lookup', function (req, res) {
     res.redirect('confirm_details_lite');
 })
 
