@@ -6,7 +6,7 @@
 {% block content %}
 
 <div class="header-panel">
-  <h1 class="heading-xlarge">Enter details to book a phone call</h1>
+  <h1 class="heading-xlarge">What is {{ session.pronoun }} home address?</h1>
 </div>
 
 <div class="measure">
@@ -22,10 +22,6 @@
     {% endif %}
 
     <fieldset>
-      <legend class="secondary">
-        What is {{ session.pronoun }} current address?
-      </legend>
-
 
       {% if error.general %}
         <div class="error-summary">
@@ -43,16 +39,18 @@
         </div>
       {% endif %}
 
+      <p>This should be {{ session.pronoun }} home address, not {{ session.pronoun }} current location.</p>
+
       <div class="form-group {% if error.postcode %}-errors{% endif %}">
         <div>
-          <label for="postcode">{{ session.pronoun }} postcode</label>
+          <label for="postcode">Postcode</label>
           <input type="text" id="postcode" name="postcode" value="{{ session.homeAddress.postcode }}" class="-small">
         </div>
       </div>
 
       <div class="form-group">
         <div>
-          <label for="postcode">What is {{ session.pronoun }} address?</label>
+          <label for="postcode">Select {{ session.pronoun }} address</label>
             <label class="select-label">
             <select class="select-address" id="AddressInfoViewModel_SelectedAddressFromPicker" name="AddressInfoViewModel.SelectedAddressFromPicker"><option selected="selected" value="0">17 addresses found. Please choose...</option>
             <option value="72670120">Ernst And Young</option>
@@ -83,7 +81,7 @@
       <summary>Why am I being asked this question?</summary>
       <div class="signage">
         <div class="info">
-          <p>Having a specific address connects you to care in your local area. It can also help the 111 nurse access any care records when they phone you back.</p>
+          <p>Your address can help a 111 nurse access your care records. We will also be able to give details of suitable NHS services available at the time we call you back. You may be referred to another service or we may book an appointment nearby.</p>
         </div>
       </div>
     </details>

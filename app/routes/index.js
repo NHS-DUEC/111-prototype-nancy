@@ -182,7 +182,7 @@ router.post('/clinical-callback/mp-dob', function (req, res) {
       session: req.session,
       error: {
         general: 'A date of birth is required to receive a callback',
-        dob: 'Please enter your date of birth'
+        dob: 'Please enter a date of birth'
       }
     });
   } else {
