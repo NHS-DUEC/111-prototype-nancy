@@ -14,6 +14,15 @@
 <div class="measure">
 
   <div class="content-block">
+
+  {% if error.general %}
+    <div class="error-summary">
+      <div>
+        <p>{{ error.general }}</p>
+      </div>
+    </div>
+  {% endif %}
+
   <p>The 111 nurse will check your answers and</p>
 
   <ul>
@@ -24,25 +33,16 @@
   <form method="post" class="formmodule">
     <fieldset>
 
-      {% if error.general %}
-        <div class="error-summary">
-          <div>
-            <p>{{ error.general }}</p>
-          </div>
-        </div>
-      {% endif %}
-
-      {% if error.postcode %}
-        <div class="error-summary">
-          <div>
-            <p>{{ error.postcode }}</p>
-          </div>
-        </div>
-      {% endif %}
-
-      <div class="form-group {% if error.postcode %}-errors{% endif %}">
+      <div class="form-group {% if error.postcode %}-errors error-indent{% endif %}">
         <div>
           <label for="postcode">Your postcode</label>
+
+          {% if error.postcode %}
+            <div class="error-hint">
+              <p>{{ error.postcode }}</p>
+            </div>
+          {% endif %}
+
           <input type="text" id="postcode" name="postcode" value="{{ session.postcode }}" class="-small">
         </div>
       </div>

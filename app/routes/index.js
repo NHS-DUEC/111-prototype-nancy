@@ -29,6 +29,7 @@ router.post('/clinical-callback/clinical-callback', function (req, res) {
     res.render('clinical-callback/clinical-callback', {
       session: req.session,
       error: {
+        general: 'A valid postcode is required to receive a callback',
         postcode: 'Please enter your postcode'
       }
     });

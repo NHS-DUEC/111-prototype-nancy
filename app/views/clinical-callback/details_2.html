@@ -13,14 +13,6 @@
 
   <form  method="post" class="measure">
 
-    {% if errors.name %}
-      <div class="error-summary">
-        <div>
-          <p>{{ errors.name }}</p>
-        </div>
-      </div>
-    {% endif %}
-
     <fieldset>
       <legend class="secondary">
         Who are you asking for?
@@ -80,19 +72,25 @@
 
     <fieldset>
       <legend class="secondary">
+        What phone number can we call back on?
+      </legend> 
+
+      <div class="form-group {% if errors.name %}-errors{% endif %}">
+        <label for="last-name">Telephone number</label>
+          <input type="text" id="tel-number" name="tel-number" value="{{ session.telephoneNumber }}">
+      </div>
+    </fieldset>
+
+    <div class="content-seperator"></div>
+
+    <fieldset>
+      <legend class="secondary">
         Date of birth
       </legend>
-      <p>This is the date of birth of the person needing care</p>
+      <p>This is the date of birth of the person needing care.</p>
       <p class="form-hint">
         For example, 31 / 12 / 1980
       </p>
-      {% if error %}
-        <div class="error-summary">
-          <div>
-            <p>{{ error }}</p>
-          </div>
-        </div>
-      {% endif %}
 
       <div class="form-group -date {% if error %}-errors{% endif %}">
         <div>
@@ -117,15 +115,6 @@
       <legend class="secondary">
         Home address
       </legend>
-
-      {% if error.general %}
-        <div class="error-summary">
-          <div>
-            <p>{{ error.general }}</p>
-          </div>
-        </div>
-      {% endif %}
-
 
       <div class="form-group {% if error.postcode %}-errors{% endif %}">
         <div>
@@ -162,20 +151,6 @@
       </div>
 
     </fieldset>
-
-    <div class="content-seperator"></div>
-
-    <fieldset>
-      <legend class="secondary">
-        What phone number can we call back on?
-      </legend> 
-
-      <div class="form-group {% if errors.name %}-errors{% endif %}">
-        <label for="last-name">Telephone number</label>
-          <input type="text" id="tel-number" name="tel-number" value="{{ session.telephoneNumber }}">
-      </div>
-    </fieldset>
-
 
     <div class="form-group -controls">
       <button type="submit" class="button">Next</button>
