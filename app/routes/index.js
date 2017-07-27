@@ -148,8 +148,8 @@ router.post('/clinical-callback/mp-telephone', function (req, res) {
       req.session.telephoneNumber = {}
     }
 
-    if (!req.session.willEdit) {
-      req.session.willEdit = {}
+    if (!req.session.editElement) {
+      req.session.editElement = {}
     }
 
     req.session.telephoneNumber = req.body['tel-number'];
@@ -163,12 +163,9 @@ router.post('/clinical-callback/mp-telephone', function (req, res) {
           }
       });
     } else {
-      
-      // check to see if if we are editing an element or not
-      // If I knew how to do returns in Javascript I would write this as a
-      // seperate function.
 
-      switch(req.session.willEdit){
+      // check to see if if we are editing an element or not
+      switch(req.session.editElement){
         case 'telephone':
           res.redirect('mp-confirm_details_lite');  
           break;
@@ -226,18 +223,22 @@ router.post('/clinical-callback/mp-address-lookup', function (req, res) {
 
 router.post('/clinical-callback/mp-confirm_details_lite', function (req, res) {
 
-    if (!req.session.willEdit) {
-        req.session.willEdit = {}
+    if (!req.session.editElement) {
+        req.session.editElement = {}
     }
 
-    req.session.willEdit = req.body['willEdit'];
+    req.session.editElement = req.body['element'];
 
-    //dodgy boolean hack as true is a string
-    if(req.session.willEdit === 'telephone') {
-      res.redirect('mp-telephone');
+    //move to page depending on the element you are editing
+    switch(req.session.editElement){
+      case 'telephone':
+        res.redirect('mp-telephone');
+        break;
+      default:
+        res.redirect('mp-confirm_details_lite'); //redirect to same page
     }
+
 })
-
 
 
 // Check person +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -411,4 +412,5 @@ function setDOB(req) {
     req.session.patient.dob.year = req.body['dob-year'];
 
 }
+
 
