@@ -216,9 +216,9 @@ li.tabular-data-row > .edit {
   float: right;
 }
 
-@media (min-width: 980px) {
+@media (min-width: 500px) {
   li.tabular-data-row > .edit {
-    margin-top: 32px;
+    margin-top: 40px;
   }
 }
 
