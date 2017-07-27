@@ -21,7 +21,11 @@
           <p class="tabular-prefix">We will call on this number:</p>
           <p class="heading-xlarge data-display-telephone">{{ session.telephoneNumber }}</p>
         </div>
-        <a class="button -bordered edit" href="mp-telephone">Change</a>
+        <form method="post" class="">
+          <input type="hidden" name="willEdit" value="telephone">
+          <button type="submit" class="button -bordered edit">Change</button>
+        </form>
+        <!-- <a class="button -bordered edit" href="mp-telephone">Change</a> -->
       </li>
     </ul>
 

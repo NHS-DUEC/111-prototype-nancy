@@ -144,6 +144,14 @@ router.post('/clinical-callback/mp-details_who', function (req, res) {
 
 router.post('/clinical-callback/mp-telephone', function (req, res) {
 
+    if (!req.session.telephoneNumber) {
+      req.session.telephoneNumber = {}
+    }
+
+    if (!req.session.willEdit) {
+      req.session.willEdit = {}
+    }
+
     req.session.telephoneNumber = req.body['tel-number'];
 
     if (!req.body['tel-number']) {
@@ -155,7 +163,20 @@ router.post('/clinical-callback/mp-telephone', function (req, res) {
           }
       });
     } else {
-      res.redirect('mp-dob');
+      
+      // check to see if if we are editing an element or not
+      // If I knew how to do returns in Javascript I would write this as a
+      // seperate function.
+
+      switch(req.session.willEdit){
+        case 'telephone':
+          res.redirect('mp-confirm_details_lite');  
+          break;
+        default:
+          res.redirect('mp-dob');
+      }
+
+      
     }
 
   phoneNumberVerificationTest(req);
@@ -199,6 +220,25 @@ router.post('/clinical-callback/mp-dob', function (req, res) {
 router.post('/clinical-callback/mp-address-lookup', function (req, res) {
     res.redirect('mp-confirm_details_lite');
 })
+
+// Multi-part journey +++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// change phone number ++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+router.post('/clinical-callback/mp-confirm_details_lite', function (req, res) {
+
+    if (!req.session.willEdit) {
+        req.session.willEdit = {}
+    }
+
+    req.session.willEdit = req.body['willEdit'];
+
+    //dodgy boolean hack as true is a string
+    if(req.session.willEdit === 'telephone') {
+      res.redirect('mp-telephone');
+    }
+})
+
+
 
 // Check person +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
