@@ -1,4 +1,4 @@
-@import url("//fast.fonts.net/cssapi/4c65968f-c33e-4eb6-9a5d-ab4f81a0543f.css");
+@import url("//assets.nhs.uk/fonts/nhsuk-fonts-1.1.0.css");
 li.tabular-data-row, .prototype-warning-inner, .breadcrumb, .footer-container, .-date, .error-summary, form, .form-group, #global-header, .signage, .nhsid-container, .header-container,
 .content, .grid-row {
   zoom: 1;
@@ -51,7 +51,7 @@ li.tabular-data-row:after, .prototype-warning-inner:after, .breadcrumb:after, .f
 body, pre.user-input,
 .body {
   color: #231f20;
-  font-family: "Neue Frutiger W01", sans-serif;
+  font-family: "Frutiger W01", sans-serif;
   font-weight: 400;
   font-size: 20px;
   line-height: 32px;
@@ -216,9 +216,9 @@ li.tabular-data-row > .edit {
   float: right;
 }
 
-@media (min-width: 980px) {
+@media (min-width: 500px) {
   li.tabular-data-row > .edit {
-    margin-top: 32px;
+    margin-top: 40px;
   }
 }
 

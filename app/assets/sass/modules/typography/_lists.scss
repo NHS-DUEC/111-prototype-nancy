@@ -64,8 +64,8 @@ li.tabular-data-row {
   > .edit {
     float: right;
     
-    @include media(large) {
-     margin-top: $leading*4;
+    @include media(mid) {
+     margin-top: $leading*5;
     }
   }
 

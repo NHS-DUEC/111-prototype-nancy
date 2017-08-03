@@ -29,6 +29,7 @@ router.post('/clinical-callback/clinical-callback', function (req, res) {
     res.render('clinical-callback/clinical-callback', {
       session: req.session,
       error: {
+        general: 'A valid postcode is required to receive a callback',
         postcode: 'Please enter your postcode'
       }
     });
@@ -143,6 +144,14 @@ router.post('/clinical-callback/mp-details_who', function (req, res) {
 
 router.post('/clinical-callback/mp-telephone', function (req, res) {
 
+    if (!req.session.telephoneNumber) {
+      req.session.telephoneNumber = {}
+    }
+
+    if (!req.session.editElement) {
+      req.session.editElement = {}
+    }
+
     req.session.telephoneNumber = req.body['tel-number'];
 
     if (!req.body['tel-number']) {
@@ -154,7 +163,17 @@ router.post('/clinical-callback/mp-telephone', function (req, res) {
           }
       });
     } else {
-      res.redirect('mp-dob');
+
+      // check to see if if we are editing an element or not
+      switch(req.session.editElement){
+        case 'telephone':
+          res.redirect('mp-confirm_details_lite');  
+          break;
+        default:
+          res.redirect('mp-dob');
+      }
+
+      
     }
 
   phoneNumberVerificationTest(req);
@@ -182,7 +201,7 @@ router.post('/clinical-callback/mp-dob', function (req, res) {
       session: req.session,
       error: {
         general: 'A date of birth is required to receive a callback',
-        dob: 'Please enter your date of birth'
+        dob: 'Please enter a date of birth'
       }
     });
   } else {
@@ -198,6 +217,29 @@ router.post('/clinical-callback/mp-dob', function (req, res) {
 router.post('/clinical-callback/mp-address-lookup', function (req, res) {
     res.redirect('mp-confirm_details_lite');
 })
+
+// Multi-part journey +++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// change phone number ++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+router.post('/clinical-callback/mp-confirm_details_lite', function (req, res) {
+
+    if (!req.session.editElement) {
+        req.session.editElement = {}
+    }
+
+    req.session.editElement = req.body['element'];
+
+    //move to page depending on the element you are editing
+    switch(req.session.editElement){
+      case 'telephone':
+        res.redirect('mp-telephone');
+        break;
+      default:
+        res.redirect('mp-confirm_details_lite'); //redirect to same page
+    }
+
+})
+
 
 // Check person +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
@@ -370,4 +412,5 @@ function setDOB(req) {
     req.session.patient.dob.year = req.body['dob-year'];
 
 }
+
 
