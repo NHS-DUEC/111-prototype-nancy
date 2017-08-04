@@ -1,2 +1,0 @@
-C:\DASProjects\Development\nhs111-prototype-kit\obj\Debug\nhs111-prototype-kit.njsprojResolveAssemblyReference.cache
-C:\DASProjects\Development\nhs111-prototype-kit\bin\Microsoft.NodejsTools.WebRole.dll
