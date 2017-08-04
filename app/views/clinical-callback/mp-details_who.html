@@ -49,6 +49,7 @@
         </div>
 
         <div class="js-hidden toggle-content {% if error %}toggle-content-error{% endif %}" id="other-data">
+            <h3>Enter the details of the person needing care</h3>
           <div class="form-group {% if error %}-errors{% endif %}">
             <label for="first-name">First name</label>
               <input type="text" id="first-name" name="first-name" value="{{session.patient.firstName}}">

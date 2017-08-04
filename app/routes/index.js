@@ -29,8 +29,8 @@ router.post('/clinical-callback/clinical-callback', function (req, res) {
     res.render('clinical-callback/clinical-callback', {
       session: req.session,
       error: {
-        general: 'A valid postcode is required to receive a callback',
-        postcode: 'Please enter your postcode'
+        general: 'A valid postcode is required to book a phone call',
+        postcode: 'Please enter a postcode'
       }
     });
   } else {
@@ -62,8 +62,8 @@ router.post('/clinical-callback/mp-clinical-callback', function (req, res) {
     res.render('clinical-callback/mp-clinical-callback', {
       session: req.session,
       error: {
-        general: 'A valid postcode is required to receive a callback',
-        postcode: 'Please enter your postcode'
+        general: 'A valid postcode is required to book a phone call',
+        postcode: 'Please enter a postcode'
       }
     });
   } else {
@@ -158,8 +158,8 @@ router.post('/clinical-callback/mp-telephone', function (req, res) {
       res.render('clinical-callback/mp-telephone', {
           session: req.session,
           error: {
-            general: 'A telephone number is required to receive a callback',
-            telephone: 'Please enter a telephone number',
+            general: 'A phone number is required to book a call',
+            telephone: 'Please enter a phone number',
           }
       });
     } else {
@@ -200,7 +200,7 @@ router.post('/clinical-callback/mp-dob', function (req, res) {
     res.render('clinical-callback/mp-dob', {
       session: req.session,
       error: {
-        general: 'A date of birth is required to receive a callback',
+        general: 'A date of birth is required to book a phone call',
         dob: 'Please enter a date of birth'
       }
     });

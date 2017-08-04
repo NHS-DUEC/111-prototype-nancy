@@ -43,15 +43,15 @@
               
         <div>
           <label for="dob-day">Day</label>
-          <input type="text" id="dob-day" name="dob-day" value="{{ session.patient.dob.day }}" class="day" maxlength="2">
+          <input type="number" id="dob-day" name="dob-day" value="{{ session.patient.dob.day }}" class="day" maxlength="2">
         </div>
         <div>
           <label for="dob-month">Month</label>
-          <input type="text" id="dob-month" name="dob-month" value="{{ session.patient.dob.month }}" class="month" maxlength="2">
+          <input type="number" id="dob-month" name="dob-month" value="{{ session.patient.dob.month }}" class="month" maxlength="2">
         </div>
         <div>
           <label for="dob-year">Year</label>
-          <input type="text" id="dob-year" name="dob-year" value="{{ session.patient.dob.year }}" class="year" maxlength="4">
+          <input type="number" id="dob-year" name="dob-year" value="{{ session.patient.dob.year }}" class="year" maxlength="4">
         </div>
       </div>
 

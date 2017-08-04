@@ -6,7 +6,7 @@
 {% block content %}
 
 <div class="header-panel">
-  <h1 class="heading-xlarge">What is {{ session.pronoun }} home address?</h1>
+  <h1 class="heading-xlarge">What is {{ session.pronoun }} current location?</h1>
 </div>
 
 <div class="measure">
@@ -39,7 +39,6 @@
         </div>
       {% endif %}
 
-      <p>This should be {{ session.pronoun }} home address, not {{ session.pronoun }} current location.</p>
 
       <div class="form-group {% if error.postcode %}-errors{% endif %}">
         <div>
@@ -81,7 +80,7 @@
       <summary>Why am I being asked this question?</summary>
       <div class="signage">
         <div class="info">
-          <p>Your address can help a 111 nurse access your care records. We will also be able to give details of suitable NHS services available at the time we call you back. You may be referred to another service or we may book an appointment nearby.</p>
+          <p>We will use your address to find details of suitable NHS services in case we need to book an appointment nearby.</p>
         </div>
       </div>
     </details>
