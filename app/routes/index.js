@@ -259,9 +259,19 @@ router.get('/clinical-callback/details_2', function (req, res) {
 });
 
 router.post('/clinical-callback/details_2', function (req, res) {
-    setPersonalDetailsSessionData(req);
-    phoneNumberVerificationTest(req);
-    res.redirect('confirm_details_lite');
+	if (!req.body['tel-number']) {
+      res.render('clinical-callback/details_2', {
+          session: req.session,
+          error: {
+            general: 'A phone number is required to book a call',
+            telephone: 'Please enter a phone number',
+          }
+      });
+    } else {
+		setPersonalDetailsSessionData(req);
+		phoneNumberVerificationTest(req);
+		res.redirect('confirm_details_lite');
+	}
 })
 
 // Home address manual +++++++++++++++++++++++++++++++++
