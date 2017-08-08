@@ -13,11 +13,19 @@
 
   <form  method="post" class="measure">
 
+	{% if error.general %}
+      <div class="error-summary">
+        <div>
+          <p>{{ error.general }}</p>
+        </div>
+      </div>
+    {% endif %}
+  
     <fieldset>
       <legend class="secondary">
         Who are you asking for?
       </legend>
-      <div class="form form-group {% if error %}-errors{% endif %}">
+      <div class="form form-group {% if error.who %}-errors{% endif %}">
           <label for="check-person-self" class="block-label" data-target="self-data">
           For myself
           <input type="radio" id="check-person-self" name="check-person" value="self"  {% if session.checkPerson == "self" %}checked="checked"{% endif %}>
@@ -35,7 +43,7 @@
           </div>
         </div>
 
-        <div class="form-group {% if error %}-errors{% endif %}">
+        <div class="form-group {% if error.who %}-errors{% endif %}">
           <label for="check-person-other" class="block-label" data-target="other-data">
             For someone else
               <input type="radio" id="check-person-other" name="check-person" value="other" {% if session.checkPerson =="other" %}checked="checked" {% endif %}>
@@ -75,9 +83,14 @@
       <legend class="secondary">
         What phone number can we call back on?
       </legend> 
-
-      <div class="form-group {% if errors.name %}-errors{% endif %}">
-        <label for="last-name">Telephone number</label>
+	  
+      <div class="form-group {% if error.telephone %}-errors error-indent{% endif %}">
+        <label for="tel-number">Phone number</label>
+			{% if error.telephone %}
+            <div class="error-hint">
+              <p>{{ error.telephone }}</p>
+            </div>
+			{% endif %}
           <input type="tel" id="tel-number" name="tel-number" value="{{ session.telephoneNumber }}">
       </div>
     </fieldset>
@@ -93,7 +106,7 @@
         For example, 31 / 12 / 1980
       </p>
 
-      <div class="form-group -date {% if error %}-errors{% endif %}">
+      <div class="form-group -date {% if error.date %}-errors{% endif %}">
         <div>
           <label for="dob-day">Day</label>
           <input type="number" id="dob-day" name="dob-day" value="{{ session.patient.dob.day }}" class="day" maxlength="2">
