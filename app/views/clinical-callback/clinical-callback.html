@@ -6,25 +6,34 @@
 {% block content %}
 
 <div class="header-panel">
-  <h1 class="heading-xlarge">Book a phone call with a 111 Nurse</h1>
+  <h1 class="heading-xlarge">A nurse from 111 will phone you</h1> <!-- A 111 nurse will phone you A nurse from 111 will phone you -->
   <div class="content-seperator"></div>
-  <div class="precis">They will phone you back in 20 minutes</div>
+  <div class="precis">Enter a postcode so we can find a suitable local service</div>
 </div>
 
 <div class="measure">
 
   <div class="content-block">
-  <p>The 111 nurse will check your answers and</p>
+
+  <p>The 111 nurse will have your answers and</p>
 
   <ul>
     <li>advise you what to do</li>
     <li>if necessary, book an appointment with an NHS service</li>
   </ul>
 
-  <h3 class="extra-spacing-top">Enter your current postcode so we can find a suitable local service.</h3>
+  <!-- <h3 class="extra-spacing-top">Enter your current postcode so we can find a suitable local service.</h3> -->
+  <div class="callout callout--info">
+  <p>This postcode finds the nearest 111 service and is where you will get care. It's usually your home postcode.</p> <!--  The 111 phone call you receive will be based on the post code you enter -->
+  <!-- A postcode locates the nearest 111 services. This is where you will get care and it's usually your home postcode.  -->
+  </div>
 
   <form method="post" class="formmodule">
     <fieldset>
+
+<!--     <legend class="secondary">
+      What is your Postcode
+    </legend> -->
 
       {% if error.general %}
         <div class="error-summary">
@@ -44,7 +53,9 @@
 
       <div class="form-group {% if error.postcode %}-errors{% endif %}">
         <div>
-          <label for="postcode">Your postcode</label>
+          <label for="postcode">Postcode</label>
+          <!-- <p class="form-hint">Your current postcode helps locate the nearest 111 service who can phone you</p> -->
+         <!--  <p>This is so we can find a local service </p> -->
           <input type="text" id="postcode" name="postcode" value="{{ session.postcode }}" class="-small">
         </div>
       </div>
