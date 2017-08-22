@@ -75,19 +75,6 @@
                 <label for="last-name">Last name</label>
                 <input type="text" id="last-name" name="last-name" value="{{session.patient.lastName}}">
             </div>
-            <div class="content-seperator"></div>
-            <div>
-                <h3>Enter the details of someone we can speak to</h3>
-                <p>We'll need them to be able to answer questions about the person needing care.</p>
-                <div class="form-group {% if errors.name %}-errors{% endif %}">
-                    <label for="first-name">First name</label>
-                    <input type="text" id="informant-first-name" name="informant-first-name" value="{{session.informant.firstName}}">
-                </div>
-                <div class="form-group {% if errors.name %}-errors{% endif %}">
-                    <label for="last-name">Last name</label>
-                    <input type="text" id="informant-last-name" name="informant-last-name" value="{{session.informant.lastName}}">
-                </div>
-            </div>
         </div>
 
     </fieldset>
@@ -107,20 +94,6 @@
             </div>
 			{% endif %}
           <input type="tel" id="tel-number" name="tel-number" value="{{ session.telephoneNumber }}">
-      </div>
-    </fieldset>
-
-    <div class="content-seperator"></div>
-
-    <fieldset>
-      <legend class="secondary">
-
-        What phone number can we call?
-      </legend> 
-
-      <div class="form-group {% if errors.name %}-errors{% endif %}">
-        <label for="last-name">Phone number</label>
-          <input type="text" id="tel-number" name="tel-number" value="{{ session.telephoneNumber }}">
       </div>
     </fieldset>
 
@@ -173,11 +146,7 @@
 
       <div class="form-group">
         <div>
-<<<<<<< HEAD
-          <label for="postcode">Select address</label>
-=======
           <label for="postcode">What is the address?</label>
->>>>>>> master
             <label class="select-label">
             <select class="select-address" id="AddressInfoViewModel_SelectedAddressFromPicker" name="AddressInfoViewModel.SelectedAddressFromPicker"><option selected="selected" value="0">17 addresses found. Please choose...</option>
             <option value="72670120">Ernst And Young</option>
