@@ -29,7 +29,8 @@ router.post('/clinical-callback/clinical-callback', function (req, res) {
     res.render('clinical-callback/clinical-callback', {
       session: req.session,
       error: {
-        postcode: 'Please enter your postcode'
+        general: 'A valid postcode is required to book a phone call',
+        postcode: 'Please enter a postcode'
       }
     });
   } else {
@@ -61,8 +62,8 @@ router.post('/clinical-callback/mp-clinical-callback', function (req, res) {
     res.render('clinical-callback/mp-clinical-callback', {
       session: req.session,
       error: {
-        general: 'A valid postcode is required to receive a callback',
-        postcode: 'Please enter your postcode'
+        general: 'A valid postcode is required to book a phone call',
+        postcode: 'Please enter a postcode'
       }
     });
   } else {
@@ -143,18 +144,36 @@ router.post('/clinical-callback/mp-details_who', function (req, res) {
 
 router.post('/clinical-callback/mp-telephone', function (req, res) {
 
+    if (!req.session.telephoneNumber) {
+      req.session.telephoneNumber = {}
+    }
+
+    if (!req.session.editElement) {
+      req.session.editElement = {}
+    }
+
     req.session.telephoneNumber = req.body['tel-number'];
 
     if (!req.body['tel-number']) {
       res.render('clinical-callback/mp-telephone', {
           session: req.session,
           error: {
-            general: 'A telephone number is required to receive a callback',
-            telephone: 'Please enter a telephone number',
+            general: 'A phone number is required to book a call',
+            telephone: 'Please enter a phone number',
           }
       });
     } else {
-      res.redirect('mp-dob');
+
+      // check to see if if we are editing an element or not
+      switch(req.session.editElement){
+        case 'telephone':
+          res.redirect('mp-confirm_details_lite');  
+          break;
+        default:
+          res.redirect('mp-dob');
+      }
+
+      
     }
 
   phoneNumberVerificationTest(req);
@@ -181,8 +200,8 @@ router.post('/clinical-callback/mp-dob', function (req, res) {
     res.render('clinical-callback/mp-dob', {
       session: req.session,
       error: {
-        general: 'A date of birth is required to receive a callback',
-        dob: 'Please enter your date of birth'
+        general: 'A date of birth is required to book a phone call',
+        dob: 'Please enter a date of birth'
       }
     });
   } else {
@@ -198,6 +217,29 @@ router.post('/clinical-callback/mp-dob', function (req, res) {
 router.post('/clinical-callback/mp-address-lookup', function (req, res) {
     res.redirect('mp-confirm_details_lite');
 })
+
+// Multi-part journey +++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// change phone number ++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+router.post('/clinical-callback/mp-confirm_details_lite', function (req, res) {
+
+    if (!req.session.editElement) {
+        req.session.editElement = {}
+    }
+
+    req.session.editElement = req.body['element'];
+
+    //move to page depending on the element you are editing
+    switch(req.session.editElement){
+      case 'telephone':
+        res.redirect('mp-telephone');
+        break;
+      default:
+        res.redirect('mp-confirm_details_lite'); //redirect to same page
+    }
+
+})
+
 
 // Check person +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
@@ -217,9 +259,19 @@ router.get('/clinical-callback/details_2', function (req, res) {
 });
 
 router.post('/clinical-callback/details_2', function (req, res) {
-    setPersonalDetailsSessionData(req);
-    phoneNumberVerificationTest(req);
-    res.redirect('confirm_details_lite');
+	if (!req.body['tel-number']) {
+      res.render('clinical-callback/details_2', {
+          session: req.session,
+          error: {
+            general: 'A phone number is required to book a call',
+            telephone: 'Please enter a phone number',
+          }
+      });
+    } else {
+		setPersonalDetailsSessionData(req);
+		phoneNumberVerificationTest(req);
+		res.redirect('confirm_details_lite');
+	}
 })
 
 // Home address manual +++++++++++++++++++++++++++++++++
@@ -370,4 +422,5 @@ function setDOB(req) {
     req.session.patient.dob.year = req.body['dob-year'];
 
 }
+
 

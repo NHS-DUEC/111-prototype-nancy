@@ -13,11 +13,21 @@
 
   <form  method="post" class="measure">
 
+
+	{% if error.general %}
+      <div class="error-summary">
+        <div>
+          <p>{{ error.general }}</p>
+        </div>
+      </div>
+    {% endif %}
+  
+
     <fieldset>
       <legend class="secondary">
         Who needs help?
       </legend>
-      <div class="form form-group {% if error %}-errors{% endif %}">
+      <div class="form form-group {% if error.who %}-errors{% endif %}">
           <label for="check-person-self" class="block-label" data-target="self-data">
           Myself
           <input type="radio" id="check-person-self" name="check-person" value="self"  {% if session.checkPerson == "self" %}checked="checked"{% endif %}>
@@ -35,7 +45,7 @@
           </div>
         </div>
 
-        <div class="form-group {% if error %}-errors{% endif %}">
+        <div class="form-group {% if error.who %}-errors{% endif %}">
           <label for="check-person-other" class="block-label" data-target="other-data">
             Someone else
               <input type="radio" id="check-person-other" name="check-person" value="other" {% if session.checkPerson =="other" %}checked="checked" {% endif %}>
@@ -43,6 +53,7 @@
         </div>
 
         <div class="js-hidden toggle-content" id="other-data">
+
           <div class="form-group {% if errors.name %}-errors{% endif %}">
             <label for="first-name">First name</label>
               <input type="text" id="first-name" name="first-name" value="{{session.patient.firstName}}">
@@ -55,23 +66,55 @@
           <div>
             <h3>Enter the details of someone we can speak to</h3>
             <p>They need to be able to answer questions about the person needing care.</p>
+
             <div class="form-group {% if errors.name %}-errors{% endif %}">
-              <label for="first-name">First name</label>
-                <input type="text" id="informant-first-name" name="informant-first-name" value="{{session.informant.firstName}}">
+                <label for="first-name">First name</label>
+                <input type="text" id="first-name" name="first-name" value="{{session.patient.firstName}}">
             </div>
             <div class="form-group {% if errors.name %}-errors{% endif %}">
-              <label for="last-name">Last name</label>
-                <input type="text" id="informant-last-name" name="informant-last-name" value="{{session.informant.lastName}}">
+                <label for="last-name">Last name</label>
+                <input type="text" id="last-name" name="last-name" value="{{session.patient.lastName}}">
             </div>
-          </div>
+            <div class="content-seperator"></div>
+            <div>
+                <h3>Enter the details of someone we can speak to</h3>
+                <p>We'll need them to be able to answer questions about the person needing care.</p>
+                <div class="form-group {% if errors.name %}-errors{% endif %}">
+                    <label for="first-name">First name</label>
+                    <input type="text" id="informant-first-name" name="informant-first-name" value="{{session.informant.firstName}}">
+                </div>
+                <div class="form-group {% if errors.name %}-errors{% endif %}">
+                    <label for="last-name">Last name</label>
+                    <input type="text" id="informant-last-name" name="informant-last-name" value="{{session.informant.lastName}}">
+                </div>
+            </div>
         </div>
 
     </fieldset>
 
     <div class="content-seperator"></div>
 
+    <fieldset id="tel-number-fields">
+      <legend class="secondary">
+        What phone number can we call back on?
+      </legend> 
+	  
+      <div class="form-group {% if error.telephone %}-errors error-indent{% endif %}">
+        <label for="tel-number">Phone number</label>
+			{% if error.telephone %}
+            <div class="error-hint">
+              <p>{{ error.telephone }}</p>
+            </div>
+			{% endif %}
+          <input type="tel" id="tel-number" name="tel-number" value="{{ session.telephoneNumber }}">
+      </div>
+    </fieldset>
+
+    <div class="content-seperator"></div>
+
     <fieldset>
       <legend class="secondary">
+
         What phone number can we call?
       </legend> 
 
@@ -85,6 +128,7 @@
 
     <fieldset>
       <legend class="secondary">
+
         Date of birth
       </legend>
       <p>This is the date of birth of the person needing care.</p>
@@ -92,18 +136,18 @@
         For example, 31 / 12 / 1980
       </p>
 
-      <div class="form-group -date {% if error %}-errors{% endif %}">
+      <div class="form-group -date {% if error.date %}-errors{% endif %}">
         <div>
           <label for="dob-day">Day</label>
-          <input type="text" id="dob-day" name="dob-day" value="{{ session.patient.dob.day }}" class="day" maxlength="2">
+          <input type="number" id="dob-day" name="dob-day" value="{{ session.patient.dob.day }}" class="day" maxlength="2">
         </div>
         <div>
           <label for="dob-month">Month</label>
-          <input type="text" id="dob-month" name="dob-month" value="{{ session.patient.dob.month }}" class="month" maxlength="2">
+          <input type="number" id="dob-month" name="dob-month" value="{{ session.patient.dob.month }}" class="month" maxlength="2">
         </div>
         <div>
           <label for="dob-year">Year</label>
-          <input type="text" id="dob-year" name="dob-year" value="{{ session.patient.dob.year }}" class="year" maxlength="4">
+          <input type="number" id="dob-year" name="dob-year" value="{{ session.patient.dob.year }}" class="year" maxlength="4">
         </div>
       </div>
 
@@ -113,10 +157,12 @@
 
     <fieldset>
       <legend class="secondary">
+
         Current location <!-- Where are you now? -->
       </legend>
       
       <p>We need this in case the person needing care requires emergency help.</p>
+
 
       <div class="form-group {% if error.postcode %}-errors{% endif %}">
         <div>
@@ -127,7 +173,11 @@
 
       <div class="form-group">
         <div>
+<<<<<<< HEAD
           <label for="postcode">Select address</label>
+=======
+          <label for="postcode">What is the address?</label>
+>>>>>>> master
             <label class="select-label">
             <select class="select-address" id="AddressInfoViewModel_SelectedAddressFromPicker" name="AddressInfoViewModel.SelectedAddressFromPicker"><option selected="selected" value="0">17 addresses found. Please choose...</option>
             <option value="72670120">Ernst And Young</option>

@@ -6,7 +6,7 @@
 {% block content %}
 
 <div class="header-panel">
-  <h1 class="heading-xlarge">Enter details to book a phone call</h1>
+  <h1 class="heading-xlarge">What phone number can we call back on?</h1>
 </div>
 
 <div class="measure">
@@ -22,19 +22,19 @@
     {% endif %}
 
     <fieldset>
-      <legend class="secondary">
+<!--       <legend class="secondary">
         What phone number can we call back on?
-      </legend> 
+      </legend>  -->
 
       <div class="form-group {% if error.telephone %}-errors error-indent{% endif %}">
-        <label for="last-name">Telephone number</label>
+        <label for="last-name">Phone number</label>
 
           {% if error.telephone %}
             <div class="error-hint">
               <p>{{ error.telephone }}</p>
             </div>
           {% endif %}
-          <input type="text" id="tel-number" name="tel-number" value="{{ session.telephoneNumber }}">
+          <input type="tel" id="tel-number" name="tel-number" value="{{ session.telephoneNumber }}">
 
       </div>
     </fieldset>

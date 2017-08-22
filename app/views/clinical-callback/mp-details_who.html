@@ -49,6 +49,7 @@
         </div>
 
         <div class="js-hidden toggle-content {% if error %}toggle-content-error{% endif %}" id="other-data">
+            <h3>Enter the details of the person needing care</h3>
           <div class="form-group {% if error %}-errors{% endif %}">
             <label for="first-name">First name</label>
               <input type="text" id="first-name" name="first-name" value="{{session.patient.firstName}}">
@@ -60,7 +61,7 @@
           <div class="content-seperator content-seperator_equalvertspacing"></div>
           <div>
             <h3>Enter the details of someone we can speak to</h3>
-            <p>The person we speak to, should be able to answer questions on behalf of another person.</p>
+            <p>We'll need them to be able to answer questions about the person needing care.</p>
             <div class="form-group {% if error %}-errors{% endif %}">
               <label for="first-name">First name</label>
                 <input type="text" id="informant-first-name" name="informant-first-name" value="{{session.informant.firstName}}">

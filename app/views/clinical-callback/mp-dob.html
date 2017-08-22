@@ -6,7 +6,7 @@
 {% block content %}
 
 <div class="header-panel">
-  <h1 class="heading-xlarge">Enter details to book a phone call</h1>
+  <h1 class="heading-xlarge">What is {{ session.pronoun }} date of birth?</h1>
 </div>
 
 <div class="measure">
@@ -22,9 +22,13 @@
     {% endif %}
 
     <fieldset>
-      <legend class="secondary">
+
+<!--       <legend class="secondary">
         What is {{ session.pronoun }} date of birth?
-      </legend>
+      </legend> -->
+
+      <p>This is the date of birth of the person needing care</p>
+
       <p class="form-hint">
         For example, 31 / 12 / 1980
       </p>
@@ -39,15 +43,15 @@
               
         <div>
           <label for="dob-day">Day</label>
-          <input type="text" id="dob-day" name="dob-day" value="{{ session.patient.dob.day }}" class="day" maxlength="2">
+          <input type="number" id="dob-day" name="dob-day" value="{{ session.patient.dob.day }}" class="day" maxlength="2">
         </div>
         <div>
           <label for="dob-month">Month</label>
-          <input type="text" id="dob-month" name="dob-month" value="{{ session.patient.dob.month }}" class="month" maxlength="2">
+          <input type="number" id="dob-month" name="dob-month" value="{{ session.patient.dob.month }}" class="month" maxlength="2">
         </div>
         <div>
           <label for="dob-year">Year</label>
-          <input type="text" id="dob-year" name="dob-year" value="{{ session.patient.dob.year }}" class="year" maxlength="4">
+          <input type="number" id="dob-year" name="dob-year" value="{{ session.patient.dob.year }}" class="year" maxlength="4">
         </div>
       </div>
 
