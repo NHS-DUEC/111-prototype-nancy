@@ -6,43 +6,49 @@
 {% block content %}
 
 <div class="header-panel">
-  <h1 class="heading-xlarge">Book a phone call with a 111 Nurse</h1>
+  <h1 class="heading-xlarge">A nurse from 111 will phone you</h1> <!-- A 111 nurse will phone you A nurse from 111 will phone you -->
   <div class="content-seperator"></div>
-  <div class="precis">Enter your current postcode so we can find a suitable local service</div>
+
+  <div class="precis">Enter a postcode so we can find a suitable local service</div>
+
 </div>
 
 <div class="measure">
 
   <div class="content-block">
 
-  {% if error.general %}
-    <div class="error-summary">
-      <div>
-        <p>{{ error.general }}</p>
-      </div>
-    </div>
-  {% endif %}
+      {% if error.general %}
+        <div class="error-summary">
+          <div>
+            <p>{{ error.general }}</p>
+          </div>
+        </div>
+      {% endif %}
 
-  <p>The 111 nurse will check your answers and</p>
+  <p>The 111 nurse should phone in 20 minutes and will</p>
 
   <ul>
+    <li>have your answers</li>
     <li>advise you what to do</li>
-    <li>if necessary, book an appointment with an NHS service</li>
+    <li>book an appointment, if needed, with an NHS service</li>
   </ul>
 
-  <form method="post" class="formmodule extra-spacing-top">
-    <fieldset>
+  <div class="callout callout--info">
+  <p>This postcode finds the nearest 111 service and is where you will get care. It's usually your home postcode.</p>
+  </div>
 
+  <form method="post" class="formmodule">
+    <fieldset>
       <div class="form-group {% if error.postcode %}-errors error-indent{% endif %}">
         <div>
-          <label for="postcode">Your postcode</label>
-
+          <label for="postcode">Postcode</label>
           {% if error.postcode %}
             <div class="error-hint">
-              <p>{{ error.postcode }}</p>
+              <div>
+                <p>{{ error.postcode }}</p>
+              </div>
             </div>
           {% endif %}
-
           <input type="text" id="postcode" name="postcode" value="{{ session.postcode }}" class="-small">
         </div>
       </div>
