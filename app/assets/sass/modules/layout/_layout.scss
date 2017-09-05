@@ -34,3 +34,9 @@ body {
 .content-block {
   margin-bottom: $leading*6;
 }
+
+.postcode-inline-change input,a {
+  display: inline;
+  margin-right: $leading*2;
+}
+
