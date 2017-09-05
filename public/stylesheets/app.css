@@ -622,14 +622,17 @@ html {
 
 .error-summary {
   margin: 16px 0;
-}
-
-.error-summary > div {
-  float: left;
   border-top: 2px solid #da291c;
   background-color: #fbeae8;
-  padding: 0 16px;
+  padding: 16px 16px;
   color: #ad2116;
+  width: 80%;
+}
+
+@media (min-width: 500px) {
+  .error-summary {
+    width: 90%;
+  }
 }
 
 .error-summary a {

@@ -1,0 +1,193 @@
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}
+{% endblock %}
+
+{% block content %}
+
+<div class="header-panel">
+  <h1 class="heading-xlarge">Enter details</h1>
+</div>
+
+<div class="measure">
+
+  <form  method="post" class="measure">
+
+      <div class="error-summary">
+        <div>
+          <h3 class="heading-large">There's a problem</h3>
+          <p><a href="#">Please select who needs help</a></p>
+          <p><a href="#">Please enter a telephone number</a></p>
+          <p><a href="#">Please enter a date of birth</a></p>
+        </div>
+      </div>
+  
+    <fieldset>
+      <legend class="secondary -errors">Who needs help?</legend>
+
+      <div class="error-indent">
+      <div class="error-hint">
+        <p>Please select who needs help</p>
+      
+    </div>
+      <div class="form form-group -errors">
+          <label for="check-person-self" class="block-label" data-target="self-data">
+          Myself
+          <input type="radio" id="check-person-self" name="check-person" value="self"  {% if session.checkPerson == "self" %}checked="checked"{% endif %}>
+          </label>
+        </div>
+
+        <div class="js-hidden toggle-content" id="self-data">
+          <div class="form-group {% if errors.name %}-errors{% endif %}">
+            <label for="first-name">First name</label>
+              <input type="text" id="self-first-name" name="self-first-name" value="{{session.patient.firstName}}">
+          </div>
+          <div class="form-group {% if errors.name %}-errors{% endif %}">
+            <label for="last-name">Last name</label>
+              <input type="text" id="self-last-name" name="self-last-name" value="{{session.patient.lastName}}">
+          </div>
+        </div>
+
+        <div class="form-group -errors">
+          <label for="check-person-other" class="block-label" data-target="other-data">
+            Someone else
+              <input type="radio" id="check-person-other" name="check-person" value="other" {% if session.checkPerson =="other" %}checked="checked" {% endif %}>
+          </label>
+        </div>
+
+        <div class="js-hidden toggle-content" id="other-data">
+
+          <div class="form-group {% if errors.name %}-errors{% endif %}">
+            <label for="first-name">First name</label>
+              <input type="text" id="first-name" name="first-name" value="{{session.patient.firstName}}">
+          </div>
+          <div class="form-group {% if errors.name %}-errors{% endif %}">
+            <label for="last-name">Last name</label>
+              <input type="text" id="last-name" name="last-name" value="{{session.patient.lastName}}">
+          </div>
+          <div class="content-seperator"></div>
+          <div>
+            <h3>Enter the details of someone we can speak to</h3>
+            <p>They need to be able to answer questions about the person needing care.</p>
+
+            <div class="form-group {% if errors.name %}-errors{% endif %}">
+                <label for="first-name">First name</label>
+                <input type="text" id="first-name" name="first-name" value="{{session.patient.firstName}}">
+            </div>
+            <div class="form-group {% if errors.name %}-errors{% endif %}">
+                <label for="last-name">Last name</label>
+                <input type="text" id="last-name" name="last-name" value="{{session.patient.lastName}}">
+            </div>
+        </div>
+</div>
+    </fieldset>
+
+    <div class="content-seperator"></div>
+
+    <fieldset id="tel-number-fields">
+      <legend class="secondary">
+        What phone number can we call back on?
+      </legend> 
+	  
+      <div class="form-group -errors error-indent">
+        <label for="tel-number">Phone number</label>
+
+        <div class="error-hint">
+          <p>Please enter a telephone number</p>
+        </div>
+
+          <input type="tel" id="tel-number" name="tel-number" value="{{ session.telephoneNumber }}">
+      </div>
+    </fieldset>
+
+    <div class="content-seperator"></div>
+
+    <fieldset>
+      <legend class="secondary">
+
+        Date of birth
+      </legend>
+      <p>This is the date of birth of the person needing care.</p>
+      <p class="form-hint">
+        For example, 31 / 12 / 1980
+      </p>
+
+        <div class="error-hint">
+          <p>Please enter your date of birth</p>
+        </div>
+
+      <div class="form-group -date -errors error-indent">
+        <div>
+          <label for="dob-day">Day</label>
+          <input type="number" id="dob-day" name="dob-day" value="{{ session.patient.dob.day }}" class="day" maxlength="2">
+        </div>
+        <div>
+          <label for="dob-month">Month</label>
+          <input type="number" id="dob-month" name="dob-month" value="{{ session.patient.dob.month }}" class="month" maxlength="2">
+        </div>
+        <div>
+          <label for="dob-year">Year</label>
+          <input type="number" id="dob-year" name="dob-year" value="{{ session.patient.dob.year }}" class="year" maxlength="4">
+        </div>
+      </div>
+
+    </fieldset>
+
+ <div class="content-seperator"></div>
+
+    <fieldset>
+      <legend class="secondary">
+
+        Current location <!-- Where are you now? -->
+      </legend>
+      
+      <p>We need this in case the person needing care requires emergency help.</p>
+
+
+      <div class="form-group {% if error.postcode %}-errors{% endif %}">
+        <div>
+          <label for="postcode">Postcode</label>
+          <input type="text" id="postcode" name="postcode" value="{{ session.homeAddress.postcode }}" class="-small">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div>
+          <label for="postcode">What is the address?</label>
+            <label class="select-label">
+            <select class="select-address" id="AddressInfoViewModel_SelectedAddressFromPicker" name="AddressInfoViewModel.SelectedAddressFromPicker"><option selected="selected" value="0">17 addresses found. Please choose...</option>
+            <option value="72670120">Ernst And Young</option>
+            <option value="72670626">2 Plan Ltd</option>
+            <option value="72670729">Water Lane</option>
+            <option value="72674514">Bridgewater Place</option>
+            <option value="72675190">Nationwide Building Society</option>
+            <option value="72675191">Royal Bank Of Scotland</option>
+            <option value="72675193">Dwf</option>
+            <option value="72677896">Bdo Stoy Hayward</option>
+            <option value="72677897">Bridgewater Place</option>
+            <option value="72677898">Ghd</option>
+            <option value="72733674">Water Lane</option>
+            <option value="72733675">Water Lane</option>
+            <option value="72743951">Bridgewater Place</option>
+            <option value="72743975">Eversheds Llp</option>
+            <option value="72745383">Ernst And Young</option>
+            <option value="72751968">Hscic</option>
+            <option value="72751969">Eversheds Llp</option>
+            </select>
+            </label>
+        </div>
+      </div>
+
+    </fieldset>
+
+    <div class="form-group -controls">
+      <button type="submit" class="button">Next</button>
+    </div>
+
+  </form>
+
+</div>
+
+{% endblock %}
+
+{% block footer %}{% endblock %}
