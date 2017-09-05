@@ -19,6 +19,7 @@
           <p><a href="#">Please select who needs help</a></p>
           <p><a href="#">Please enter a telephone number</a></p>
           <p><a href="#">Please enter a date of birth</a></p>
+          <p><a href="#">Please enter a postcode</a></p>
         </div>
       </div>
   
@@ -144,10 +145,19 @@
       <p>We need this in case the person needing care requires emergency help.</p>
 
 
-      <div class="form-group {% if error.postcode %}-errors{% endif %}">
+      <div class="form-group -errors error-indent form-group-extra-bottom-margin">
         <div>
           <label for="postcode">Postcode</label>
-          <input type="text" id="postcode" name="postcode" value="{{ session.homeAddress.postcode }}" class="-small">
+
+          <div class="error-hint">
+            <p>Please enter your postcode</p>
+          </div>
+
+          <div class="postcode-inline-change">
+            <input type="text" id="postcode" name="postcode" value="{{ session.homeAddress.postcode }}" class="-small postcode">
+            <a href="#" class="button -bordered">Change postcode</a>
+          </div>
+
         </div>
       </div>
 

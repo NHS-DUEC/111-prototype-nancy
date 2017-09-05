@@ -620,6 +620,10 @@ html {
   margin-bottom: 0px;
 }
 
+.postcode {
+  margin-bottom: 0px !important;
+}
+
 .error-summary {
   margin: 16px 0;
   border-top: 2px solid #da291c;
@@ -697,6 +701,10 @@ form {
   .form-group.-controls .button {
     float: right;
   }
+}
+
+.form-group-extra-bottom-margin {
+  margin-bottom: 32px;
 }
 
 .js-enabled .toggle-content {
@@ -1459,6 +1467,11 @@ body, pre.user-input {
 
 .content-block {
   margin-bottom: 48px;
+}
+
+.postcode-inline-change input, a {
+  display: inline;
+  margin-right: 16px;
 }
 
 .grid-row {

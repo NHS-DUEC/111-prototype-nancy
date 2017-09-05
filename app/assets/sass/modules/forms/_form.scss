@@ -21,8 +21,11 @@ form {
       }
     }
   }
-
 }
+
+ .form-group-extra-bottom-margin {
+    margin-bottom: $leading*4;
+  }
 
 // Hide toggled content
 .js-enabled .toggle-content {

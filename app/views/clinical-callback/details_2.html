@@ -141,8 +141,10 @@
       <div class="form-group {% if error.postcode %}-errors{% endif %}">
         <div>
           <label for="postcode">Postcode</label>
-          <input type="text" id="postcode" name="postcode" value="{{ session.homeAddress.postcode }}" class="-small">
-        </div>
+          <div class="postcode-inline-change">
+            <input type="text" id="postcode" name="postcode" value="{{ session.homeAddress.postcode }}" class="-small">
+            <a href="#" class="button -bordered">Change postcode</a>
+          </div>
       </div>
 
       <div class="form-group">
