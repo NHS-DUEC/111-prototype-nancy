@@ -24,6 +24,10 @@ ul.link-list {
  ul.address-list{
     list-style-type: none;
     padding: 0;
+
+    > li {
+        margin: 0;
+    }
  }
 
  ul.tabular-data {
