@@ -4,12 +4,20 @@
 		"selected_items":
 		[
 			[
-				"bor",
-				"border-bottom"
+				"mar",
+				"margin"
 			],
 			[
-				"mar",
-				"margin-top"
+				"margin",
+				"margin-right"
+			],
+			[
+				"m",
+				"mb	margin-bottom"
+			],
+			[
+				"bor",
+				"border-bottom"
 			],
 			[
 				"fl",
@@ -100,10 +108,6 @@
 				"padding-bottom"
 			],
 			[
-				"margin",
-				"margin-bottom"
-			],
-			[
 				"details",
 				"details_2"
 			],
@@ -166,10 +170,6 @@
 			[
 				"fon",
 				"font-weight"
-			],
-			[
-				"m",
-				"m	margin"
 			],
 			[
 				"a",
@@ -423,6 +423,70 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "app/assets/sass/app.scss",
+			"settings":
+			{
+				"buffer_size": 1572,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/service-list/service-list.html",
+			"settings":
+			{
+				"buffer_size": 3659,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/index.html",
+			"settings":
+			{
+				"buffer_size": 1736,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/assets/sass/modules/callout/_callout.scss",
+			"settings":
+			{
+				"buffer_size": 1308,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/assets/sass/modules/layout/_spacing.scss",
+			"settings":
+			{
+				"buffer_size": 299,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/assets/sass/modules/typography/_lists.scss",
+			"settings":
+			{
+				"buffer_size": 1307,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/assets/sass/modules/cards/_service-card.scss",
+			"settings":
+			{
+				"buffer_size": 959,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/assets/sass/modules/signage/_info.scss",
+			"settings":
+			{
+				"buffer_size": 738,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -472,6 +536,7 @@
 	},
 	"file_history":
 	[
+		"/Users/tim/Documents/NHS/111-prototypes/app/views/service-list/postcode-second.html",
 		"/Users/tim/Documents/designhealthfacility/_includes/header.html",
 		"/Users/tim/Documents/designhealthfacility/_sass/modules/typography/_base.scss",
 		"/Users/tim/Documents/designhealthfacility/_posts/2016-09-25-why-first-post.markdown",
@@ -598,8 +663,7 @@
 		"/Users/tim/Documents/NHS/111-prototypes/Gruntfile.js",
 		"/Users/tim/Documents/NHS/simple-conditions-prototypes/Gruntfile.js",
 		"/Users/tim/Documents/NHS/111-prototypes/app/assets/sass/modules/signage/_info.scss",
-		"/Users/tim/Documents/NHS/111-prototypes/app/assets/sass/tools/_media-queries.scss",
-		"/Users/tim/Documents/NHS/111-prototypes/app/assets/sass/modules/typography/_formatting.scss"
+		"/Users/tim/Documents/NHS/111-prototypes/app/assets/sass/tools/_media-queries.scss"
 	],
 	"find":
 	{
@@ -775,13 +839,235 @@
 	"groups":
 	[
 		{
+			"selected": 1,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "app/assets/sass/app.scss",
+					"settings":
+					{
+						"buffer_size": 1572,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1563,
+								1563
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/views/service-list/service-list.html",
+					"settings":
+					{
+						"buffer_size": 3659,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2073,
+								2073
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 952.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "app/views/index.html",
+					"settings":
+					{
+						"buffer_size": 1736,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1647,
+								1647
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "app/assets/sass/modules/callout/_callout.scss",
+					"settings":
+					{
+						"buffer_size": 1308,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								293,
+								275
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "app/assets/sass/modules/layout/_spacing.scss",
+					"settings":
+					{
+						"buffer_size": 299,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								264,
+								264
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "app/assets/sass/modules/typography/_lists.scss",
+					"settings":
+					{
+						"buffer_size": 1307,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								355,
+								355
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 292.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		},
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 6,
+					"file": "app/assets/sass/modules/cards/_service-card.scss",
+					"settings":
+					{
+						"buffer_size": 959,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								61,
+								61
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "app/assets/sass/modules/signage/_info.scss",
+					"settings":
+					{
+						"buffer_size": 738,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								178,
+								118
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],
