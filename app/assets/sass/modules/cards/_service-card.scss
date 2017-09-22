@@ -1,0 +1,20 @@
+.card {
+  @extend %contain-floats;
+  display: inline-block;
+
+
+  border: 1px solid $grey-5;
+  border-left: $leading/2 solid $grey-5;
+  padding: $leading;
+  margin-bottom: $leading;
+  margin-right: $leading*2;
+
+    @include media(mid) {
+      width:50%;
+    }
+
+  > .cta {
+    margin-bottom: $leading*2;
+  }
+
+}

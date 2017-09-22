@@ -1,0 +1,1139 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"mar",
+				"margin"
+			],
+			[
+				"margin",
+				"margin-right"
+			],
+			[
+				"m",
+				"mb	margin-bottom"
+			],
+			[
+				"bor",
+				"border-bottom"
+			],
+			[
+				"fl",
+				"fl:r	float:right"
+			],
+			[
+				"in",
+				"inline-block"
+			],
+			[
+				"le",
+				"left"
+			],
+			[
+				"align",
+				"vertical-align"
+			],
+			[
+				"inlin",
+				"inline-block"
+			],
+			[
+				"inl",
+				"inline-block"
+			],
+			[
+				"b",
+				"b	bottom"
+			],
+			[
+				"bo",
+				"border"
+			],
+			[
+				"pad",
+				"padding"
+			],
+			[
+				"p",
+				"p	padding"
+			],
+			[
+				"padd",
+				"padding"
+			],
+			[
+				"ba",
+				"background"
+			],
+			[
+				"form",
+				"form-group"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"min",
+				"min-width"
+			],
+			[
+				"wil",
+				"willgoTo"
+			],
+			[
+				"we",
+				"willEdit"
+			],
+			[
+				"link",
+				"link-colour-hover"
+			],
+			[
+				"la",
+				"lastName"
+			],
+			[
+				"lis",
+				"lis:n	list-style:none"
+			],
+			[
+				"li",
+				"lisi:n	list-style-image:none"
+			],
+			[
+				"pa",
+				"padding-bottom"
+			],
+			[
+				"details",
+				"details_2"
+			],
+			[
+				"detais",
+				"details_1"
+			],
+			[
+				"to",
+				"toggle"
+			],
+			[
+				"cl",
+				"cl:r	clear:right"
+			],
+			[
+				"mi",
+				"mih	min-height"
+			],
+			[
+				"magin",
+				"margin-bottom"
+			],
+			[
+				"po",
+				"pos:r	position:relative"
+			],
+			[
+				"ri",
+				"right"
+			],
+			[
+				"fo",
+				"font-weight"
+			],
+			[
+				"f",
+				"fl	float"
+			],
+			[
+				"con",
+				"contain-floats"
+			],
+			[
+				"marg",
+				"margin-top"
+			],
+			[
+				"P",
+				"padding-left"
+			],
+			[
+				"t",
+				"th	Tag"
+			],
+			[
+				"td",
+				"td	Tag"
+			],
+			[
+				"fon",
+				"font-weight"
+			],
+			[
+				"a",
+				"vertical-align"
+			],
+			[
+				"bord",
+				"border-box"
+			],
+			[
+				"bl",
+				"block"
+			],
+			[
+				"o",
+				"overflow"
+			],
+			[
+				"Ma",
+				"max-height"
+			],
+			[
+				"line",
+				"line-height"
+			],
+			[
+				"font",
+				"font-weight"
+			],
+			[
+				"border",
+				"border-top"
+			],
+			[
+				"padding",
+				"padding-left"
+			],
+			[
+				"backgroundc",
+				"background-color"
+			],
+			[
+				"z",
+				"z-index"
+			],
+			[
+				"spac",
+				"space-between"
+			],
+			[
+				"space",
+				"distribute-space"
+			],
+			[
+				"te",
+				"text-align"
+			],
+			[
+				"no",
+				"none"
+			],
+			[
+				"gre",
+				"green-dark"
+			],
+			[
+				"n",
+				"none"
+			],
+			[
+				"v",
+				"va	vertical-align"
+			],
+			[
+				"tex",
+				"text-top"
+			],
+			[
+				"list",
+				"list:n	list-style-type:none"
+			],
+			[
+				"Pa",
+				"padding-top"
+			],
+			[
+				"c",
+				"cl:b	clear:both"
+			],
+			[
+				"max",
+				"max-width"
+			],
+			[
+				"wor",
+				"work-modules"
+			],
+			[
+				"button",
+				"button-outline"
+			],
+			[
+				"lin",
+				"line-height"
+			],
+			[
+				"ma",
+				"margin-bottom"
+			],
+			[
+				"wid",
+				"width"
+			],
+			[
+				"nh",
+				"nhs-light-blue"
+			],
+			[
+				"heading",
+				"heading-allcaps"
+			],
+			[
+				"di",
+				"display"
+			],
+			[
+				"ligh",
+				"light-grey"
+			],
+			[
+				"ex",
+				"extend"
+			],
+			[
+				"focus",
+				"focus-title"
+			],
+			[
+				"h",
+				"height"
+			],
+			[
+				"dark",
+				"dark-blue"
+			],
+			[
+				"wi",
+				"width"
+			],
+			[
+				"image",
+				"image-module"
+			],
+			[
+				"dar",
+				"dark-blue"
+			],
+			[
+				"light",
+				"light-blue2"
+			],
+			[
+				"text",
+				"text-decoration"
+			],
+			[
+				"cur",
+				"cur:p	cursor:pointer"
+			],
+			[
+				"hea",
+				"header_module"
+			],
+			[
+				"bold",
+				"boldweight"
+			],
+			[
+				"body",
+				"bodyweight"
+			],
+			[
+				"r",
+				"rgba()"
+			],
+			[
+				"co",
+				"color"
+			],
+			[
+				"paddin",
+				"padding-bottom"
+			],
+			[
+				"u",
+				"ul	Tag"
+			],
+			[
+				"se",
+				"section	Tag"
+			],
+			[
+				"main",
+				"main-container"
+			],
+			[
+				"red",
+				"redirect"
+			],
+			[
+				"que",
+				"questionArray"
+			],
+			[
+				"qu",
+				"questionArray"
+			],
+			[
+				"mo",
+				"mobile"
+			],
+			[
+				"mob",
+				"mobile_number"
+			],
+			[
+				"find",
+				"06_finding_your_records_multiple"
+			],
+			[
+				"num",
+				"numberOfTries"
+			],
+			[
+				"pta",
+				"ptaRoutes"
+			],
+			[
+				"pt",
+				"ptaRoutes"
+			],
+			[
+				"l",
+				"lastName"
+			],
+			[
+				"fie",
+				"FIELDSET	Tag"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "app/assets/sass/app.scss",
+			"settings":
+			{
+				"buffer_size": 1572,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/service-list/service-list.html",
+			"settings":
+			{
+				"buffer_size": 3659,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/index.html",
+			"settings":
+			{
+				"buffer_size": 1736,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/assets/sass/modules/callout/_callout.scss",
+			"settings":
+			{
+				"buffer_size": 1308,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/assets/sass/modules/layout/_spacing.scss",
+			"settings":
+			{
+				"buffer_size": 299,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/assets/sass/modules/typography/_lists.scss",
+			"settings":
+			{
+				"buffer_size": 1307,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/assets/sass/modules/cards/_service-card.scss",
+			"settings":
+			{
+				"buffer_size": 959,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/assets/sass/modules/signage/_info.scss",
+			"settings":
+			{
+				"buffer_size": 738,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"",
+				"HTML: Wrap Selection With Tag"
+			],
+			[
+				"Pack",
+				"Package Control: Install Package"
+			],
+			[
+				"pacl",
+				"Preferences: Package Control Settings – Default"
+			],
+			[
+				"pack",
+				"Package Control: List Packages"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Add Repository"
+			],
+			[
+				"back",
+				"Preferences: Browse Packages"
+			]
+		],
+		"width": 575.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/tim/Documents/NHS/111-prototypes/app/views/service-list/postcode-second.html",
+		"/Users/tim/Documents/designhealthfacility/_includes/header.html",
+		"/Users/tim/Documents/designhealthfacility/_sass/modules/typography/_base.scss",
+		"/Users/tim/Documents/designhealthfacility/_posts/2016-09-25-why-first-post.markdown",
+		"/Users/tim/Documents/designhealthfacility/_sass/modules/typography/_lists.scss",
+		"/Users/tim/Documents/designhealthfacility/_sass/modules/page-components/_site-header.scss",
+		"/Users/tim/Documents/designhealthfacility/take-part.md",
+		"/Users/tim/Documents/designhealthfacility/_sass/modules/layout/_skeleton.scss",
+		"/Users/tim/Documents/designhealthfacility/_sass/tools/_tints.scss",
+		"/Users/tim/Documents/designhealthfacility/_posts/2017-07-04-welcome-test.markdown",
+		"/Users/tim/Documents/designhealthfacility/_posts/2016-09-25-welcome-to-jekyll.markdown",
+		"/Users/tim/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/Users/tim/Documents/designhealthfacility/_sass/variables/_colours.scss",
+		"/Users/tim/Documents/designhealthfacility/_sass/modules/layout/_layout.scss",
+		"/Users/tim/Documents/designhealthfacility/_layouts/index.html",
+		"/Users/tim/Documents/designhealthfacility/_layouts/default.html",
+		"/Users/tim/Documents/designhealthfacility/index.html",
+		"/Users/tim/Documents/designhealthfacility/_layouts/post.html",
+		"/Users/tim/Documents/designhealthfacility/_sass/variables/_mreaves.scss",
+		"/Users/tim/Documents/designhealthfacility/about.md",
+		"/Users/tim/Documents/designhealthfacility/join.md",
+		"/Users/tim/Documents/designhealthfacility/_sass/modules/typography/_links.scss",
+		"/Users/tim/Documents/jekylltest/index.html",
+		"/Users/tim/Documents/designhealthfacility/_sass/modules/page-components/_hero.scss",
+		"/Users/tim/Documents/designhealthfacility/_layouts/page.html",
+		"/Users/tim/Documents/NHS/111-prototypes/app/assets/sass/modules/forms/_fieldset.scss",
+		"/Users/tim/Documents/NHS/111-prototypes/app/assets/sass/modules/forms/_form.scss",
+		"/Users/tim/Documents/NHS/111-prototypes/app/assets/sass/modules/header-local/_header-panel-local.scss",
+		"/Users/tim/Documents/NHS/111-prototypes/app/assets/sass/app.scss",
+		"/Users/tim/Documents/NHS/111-prototypes/app/assets/sass/modules/forms/_date.scss",
+		"/Users/tim/Documents/NHS/111-prototypes/app/assets/sass/modules/controls/_buttons.scss",
+		"/Users/tim/Documents/NHS/111-prototypes/app/assets/sass/modules/layout/_layout.scss",
+		"/Users/tim/Desktop/hosts/hosts",
+		"/Users/tim/Documents/NHS/111-prototypes/app/views/disposition/dentist_dx20.html",
+		"/Users/tim/Documents/NHS/111-prototypes/app/views/index.html",
+		"/Users/tim/Documents/NHS/111-prototypes/app/views/disposition/dentist_dx17.html",
+		"/Users/tim/Documents/NHS/111-prototypes/app/views/disposition/dentist.html",
+		"/Users/tim/Documents/NHS/111-prototypes/app/views/clinical-callback/clinical-callback.html",
+		"/Users/tim/Documents/NHS/111-prototypes/app/views/clinical-callback/details_2.html",
+		"/Users/tim/Documents/NHS/111-prototypes/app/routes/index.js",
+		"/Users/tim/Documents/NHS/111-prototypes/app/config.js",
+		"/Users/tim/Documents/NHS/111-prototypes/app/assets/sass/modules/callout/_callout.scss",
+		"/Users/tim/Documents/NHS/111-prototypes/app/views/clinical-callback/mp-confirm_details_lite.html",
+		"/Users/tim/Documents/NHS/111-prototypes/app/views/clinical-callback/mp-clinical-callback.html",
+		"/Users/tim/Documents/NHS/111-prototypes/app/assets/sass/modules/typography/_lists.scss",
+		"/Users/tim/Documents/NHS/frontend/src/scss/environment/settings/_colours.scss",
+		"/Users/tim/Documents/NHS/111-prototypes/app/views/clinical-callback/clinical-callback_2.html",
+		"/Users/tim/Documents/NHS/111-prototypes/app/views/clinical-callback/mp-address-lookup.html",
+		"/Users/tim/Documents/NHS/111-prototypes/app/views/clinical-callback/mp-telephone.html",
+		"/Users/tim/Documents/NHS/111-prototypes/app/assets/sass/modules/typography/_base.scss",
+		"/Users/tim/Documents/NHS/111-prototypes/app/assets/sass/variables/_frutiger.scss",
+		"/Users/tim/Documents/NHS/111-prototypes/app/views/clinical-callback/mp-dob.html",
+		"/Users/tim/Documents/NHS/111-prototypes/app/views/clinical-callback/mp-details_who.html",
+		"/Users/tim/Documents/NHS/111-prototypes/app/views/clinical-callback/callback-confirmed.html",
+		"/Users/tim/Documents/designhealthfacility/_config.yml",
+		"/Users/tim/Documents/designhealthfacility/.gitignore",
+		"/Users/tim/Documents/designhealthfacility/_sass/modules/page-components/_seperator.scss",
+		"/Users/tim/Documents/designhealthfacility/feed.xml",
+		"/Users/tim/Documents/NHS/111-prototypes/package.json",
+		"/Users/tim/Documents/NHS/111-prototypes/app/views/clinical-callback/mp-details.html",
+		"/Users/tim/Documents/NHS/111-prototypes/server.js",
+		"/Users/tim/Documents/NHS/register-with-a-gp-prototypes/server.js",
+		"/Users/tim/Documents/NHS/111-prototypes/.env",
+		"/Users/tim/Documents/NHS/111-prototypes/app/assets/sass/modules/typography/_headings.scss",
+		"/Users/tim/Documents/designhealthfacility/_sass/modules/page-components/_post-list.scss",
+		"/Users/tim/Documents/NHS/111-prototypes/app/assets/sass/variables/_colours.scss",
+		"/Users/tim/Documents/jekylltest/_config.yml",
+		"/Users/tim/Documents/jekyll/testsite/_config.yml",
+		"/Users/tim/Documents/timothyallan/index.html",
+		"/Users/tim/Documents/NHS/111-prototypes/app/assets/sass/modules/typography/_paragraphs.scss",
+		"/Users/tim/Documents/NHS/111-prototypes/app/views/clinical-callback/confirm_details_lite.html",
+		"/Users/tim/Documents/NHS/111-prototypes/app/assets/sass/modules/data/_table.scss",
+		"/Users/tim/Documents/NHS/111-prototypes/app/assets/sass/tools/_hidden.scss",
+		"/Users/tim/Documents/NHS/111-prototypes/app/views/_layouts/layout.html",
+		"/Users/tim/Documents/NHS/111-prototypes/public/scripts/application.js",
+		"/Users/tim/Documents/NHS/register-with-a-gp-prototypes/app/routes/mvp.v1.js",
+		"/Users/tim/Documents/NHS/111-prototypes/app/views/clinical-callback/confirm_details.html",
+		"/Users/tim/Documents/NHS/register-with-a-gp-prototypes/app/routes/mvp.v1.3.js",
+		"/Users/tim/Documents/NHS/111-prototypes/app/views/clinical-callback/check-person.html",
+		"/Users/tim/Documents/NHS/register-with-a-gp-prototypes/app/routes/v1.1.js",
+		"/Users/tim/Documents/NHS/111-prototypes/app/views/clinical-callback/details_1.html",
+		"/Users/tim/Documents/tax-frontend-prototype/source/assets/stylesheets/elements/_forms.scss",
+		"/Users/tim/Documents/NHS/111-prototypes/public/scripts/selection-buttons.js",
+		"/Users/tim/Documents/NHS/111-prototypes/app/views/gp-reg/armed-forces.html",
+		"/Users/tim/Documents/NHS/register-with-a-gp-prototypes/app/views/v1_1/nhs-number.html",
+		"/Users/tim/Documents/NHS/register-with-a-gp-prototypes/app/views/v1_1/home-address-result.html",
+		"/Users/tim/Documents/2fa-prototype/README.md",
+		"/Users/tim/Documents/2fa-prototype/app/views/01_set_up_phone.html",
+		"/Users/tim/Documents/2fa-prototype/app/views/01_second_try.html",
+		"/Users/tim/Documents/2fa-prototype/app/views/00_start_launch.html",
+		"/Users/tim/Documents/2fa-prototype/app/assets/javascripts/application.js",
+		"/Users/tim/Documents/2fa-prototype/app/views/layout.html",
+		"/Users/tim/Documents/2fa-prototype/app/views/includes/scripts.html",
+		"/Users/tim/Documents/NHS/111-prototypes/app/assets/sass/modules/forms/_label.scss",
+		"/Users/tim/Documents/NHS/register-with-a-gp-prototypes/app/views/v1_1/date-of-birth.html",
+		"/Users/tim/Documents/NHS/111-prototypes/app/views/clinical-callback/interstitial.html",
+		"/Users/tim/Documents/NHS/111-prototypes/app/views/clinical-callback/home-address-result.html",
+		"/Users/tim/Documents/NHS/111-prototypes/app/assets/sass/modules/layout/_spacing.scss",
+		"/Users/tim/Documents/NHS/register-with-a-gp-prototypes/.env",
+		"/Users/tim/Documents/NHS/register-with-a-gp-prototypes/app/views/v1_1/name.html",
+		"/Users/tim/Documents/NHS/111-prototypes/app/views/gp-reg/home-address-postcode.html",
+		"/Users/tim/Documents/NHS/111-prototypes/app/assets/sass/modules/header-global/_header-global.scss",
+		"/Users/tim/Documents/NHS/register-with-a-gp-prototypes/app/views/v1_1/home-address-postcode.html",
+		"/Users/tim/Documents/NHS/register-with-a-gp-prototypes/app/views/v1_1/home-address-manual.html",
+		"/Users/tim/Documents/NHS/111-prototypes/app/assets/sass/modules/forms/_input.scss",
+		"/Users/tim/Documents/NHS/seegp/views/index.html",
+		"/Users/tim/Documents/NHS/register-with-a-gp-prototypes/app/views/index.html",
+		"/Users/tim/Documents/NHS/111-prototypes/app/assets/sass/modules/typography/_links.scss",
+		"/Users/tim/Documents/NHS/111-prototypes/.gitignore",
+		"/Users/tim/Documents/NHS/111-prototypes/app/views/_includes/masthead.html",
+		"/Users/tim/Documents/NHS/111-prototypes/app/assets/sass/modules/banner/_service-banners.scss",
+		"/Users/tim/Documents/NHS/111-prototypes/app/views/disposition/dentist-today.html",
+		"/Users/tim/Documents/NHS/111-prototypes/app/views/disposition/dentist-next-few-days.html",
+		"/Users/tim/Documents/NHS/111-prototypes/app/views/disposition/dentist-today-tomorrow.html",
+		"/Users/tim/Documents/NHS/111-prototypes/README.md",
+		"/Users/tim/Documents/NHS/111-prototypes/app.json",
+		"/Users/tim/Documents/NHS/111-prototypes/app/views/_includes/footer.html",
+		"/Users/tim/Documents/NHS/111-prototypes/app/assets/sass/modules/footer-global/_footer.scss",
+		"/Users/tim/Documents/NHS/111-prototypes/app/views/gp-reg/confirm-details.html",
+		"/Users/tim/Documents/NHS/111-prototypes/app/views/gp-reg/current-gp.html",
+		"/Users/tim/Documents/NHS/register-with-a-gp-prototypes/app/views/vision_v1/start.html",
+		"/Users/tim/Documents/NHS/frontend/src/scss/components/local-header/_local-header.scss",
+		"/Users/tim/Documents/NHS/111-prototypes/app/assets/sass/modules/disclosure/_details.scss",
+		"/Users/tim/Documents/NHS/frontend/src/scss/components/_global-footer.scss",
+		"/Users/tim/Documents/NHS/111-prototypes/Gruntfile.js",
+		"/Users/tim/Documents/NHS/simple-conditions-prototypes/Gruntfile.js",
+		"/Users/tim/Documents/NHS/111-prototypes/app/assets/sass/modules/signage/_info.scss",
+		"/Users/tim/Documents/NHS/111-prototypes/app/assets/sass/tools/_media-queries.scss"
+	],
+	"find":
+	{
+		"height": 36.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			"/Users/tim/Documents/designhealthfacility",
+			"<open folders>",
+			"/Users/tim/Documents/designhealthfacility",
+			"/Users/tim/Documents/NHS/111-prototypes/app",
+			"/Users/tim/Documents/NHS/register-with-a-gp-prototypes/",
+			"/Users/tim/Documents/NHS/register-with-a-gp-prototypes/app",
+			"/Users/tim/Documents/NHS/111-prototypes/app/",
+			"/Users/tim/Documents/NHS/111-prototypes/app/assets/sass",
+			"",
+			"/Users/tim/Documents/NHS/seegp/assets/stylesheets",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"-webkit",
+			"-webkit-margin-after",
+			"page-content",
+			"$page-col",
+			"page-colour",
+			"details_2",
+			"edit",
+			"willEdit",
+			"mp-tele",
+			"mp-confirm_details_lite",
+			"seperator",
+			"logotype",
+			"patient",
+			"firstName",
+			"$heavyweight",
+			"$nhs-blue",
+			"nhs",
+			"tabular-data",
+			"enter your",
+			"homeAddress",
+			"button",
+			"js-hidden",
+			"tabular-data",
+			"E20 1BX",
+			"invisible",
+			"js-hidden",
+			"armed-forces-yes",
+			"core",
+			"tabular-data",
+			"primary",
+			"console.log",
+			"POSTCODE_API",
+			"request",
+			"postcode_api",
+			"request",
+			"input[type='text']",
+			"content-seperator",
+			"components",
+			"config",
+			"v1",
+			"*.js",
+			"emails",
+			"v1",
+			"mvp.v1.js",
+			"v1.1,js",
+			"v1.js",
+			"vision.v1.js",
+			"footer-container",
+			"emails.js",
+			"index.js",
+			"routes.js",
+			"username",
+			".content",
+			"user-input",
+			"$leading",
+			"sass",
+			"baseline-grid-unit",
+			"callout",
+			".service-name",
+			"Register with",
+			"BETA",
+			"(64)",
+			"$$",
+			"including",
+			"heading-xlarge ",
+			">\n",
+			"table",
+			"element-padding",
+			"font-small",
+			"baseline-grid-unit",
+			"–--",
+			"core-",
+			"font-",
+			"font",
+			"jquery-1.12.3.min.js",
+			"jquery",
+			"nomineeHelp",
+			"border-radius",
+			"umbili",
+			"hard",
+			"pagination",
+			"interval",
+			"duration",
+			"header-prefix",
+			"2.4",
+			"24",
+			"raleway",
+			"$text-colour",
+			"\n",
+			"static",
+			"></",
+			"smallprint",
+			"contain-floats ",
+			"blog",
+			"information",
+			"breakElement",
+			"runExperiment",
+			"runQualifying",
+			"start",
+			"minInterval",
+			"exposureDuration",
+			"see you",
+			"small white",
+			"media-query",
+			"cookie",
+			"$dark-grey",
+			"$grey",
+			"$light-grey",
+			"global-header",
+			"grey-2",
+			"module--type",
+			"opt-out-button-grey",
+			"$feedback-button-green",
+			"$dark-green",
+			"$drk-green",
+			".6",
+			"letter-spacing",
+			"'",
+			"callout",
+			"group",
+			"class=\"heading\"",
+			"fright",
+			"before",
+			"transit",
+			"mtree.js",
+			"4th",
+			"980",
+			"500px"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"editElement",
+			"(56)"
+		],
+		"reverse": true,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "app/assets/sass/app.scss",
+					"settings":
+					{
+						"buffer_size": 1572,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1563,
+								1563
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/views/service-list/service-list.html",
+					"settings":
+					{
+						"buffer_size": 3659,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2073,
+								2073
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 952.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "app/views/index.html",
+					"settings":
+					{
+						"buffer_size": 1736,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1647,
+								1647
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "app/assets/sass/modules/callout/_callout.scss",
+					"settings":
+					{
+						"buffer_size": 1308,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								293,
+								275
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "app/assets/sass/modules/layout/_spacing.scss",
+					"settings":
+					{
+						"buffer_size": 299,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								264,
+								264
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "app/assets/sass/modules/typography/_lists.scss",
+					"settings":
+					{
+						"buffer_size": 1307,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								355,
+								355
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 292.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 6,
+					"file": "app/assets/sass/modules/cards/_service-card.scss",
+					"settings":
+					{
+						"buffer_size": 959,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								61,
+								61
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "app/assets/sass/modules/signage/_info.scss",
+					"settings":
+					{
+						"buffer_size": 738,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								178,
+								118
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 34.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.5,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 297.0,
+	"status_bar_visible": true
+}

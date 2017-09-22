@@ -1,10 +1,10 @@
 @import url("//assets.nhs.uk/fonts/nhsuk-fonts-1.1.0.css");
-li.tabular-data-row, .prototype-warning-inner, .breadcrumb, .footer-container, .-date, .error-summary, form, .form-group, #global-header, .signage, .nhsid-container, .header-container,
+li.tabular-data-row, .prototype-warning-inner, .breadcrumb, .footer-container, .-date, .error-summary, form, .form-group, #global-header, .signage, .card, .nhsid-container, .header-container,
 .content, .grid-row {
   zoom: 1;
 }
 
-li.tabular-data-row:after, .prototype-warning-inner:after, .breadcrumb:after, .footer-container:after, .-date:after, .error-summary:after, form:after, .form-group:after, #global-header:after, .signage:after, .nhsid-container:after, .header-container:after,
+li.tabular-data-row:after, .prototype-warning-inner:after, .breadcrumb:after, .footer-container:after, .-date:after, .error-summary:after, form:after, .form-group:after, #global-header:after, .signage:after, .card:after, .nhsid-container:after, .header-container:after,
 .content:after, .grid-row:after {
   content: "";
   display: block;
@@ -180,6 +180,10 @@ ul.link-list {
 ul.address-list {
   list-style-type: none;
   padding: 0;
+}
+
+ul.address-list > li {
+  margin: 0;
 }
 
 ul.tabular-data {
@@ -1279,7 +1283,7 @@ textarea:focus {
   margin-left: 4px;
   border-left: 4px solid #0072ce;
   padding: 8px;
-  background-color: #f0f4f5;
+  background-color: #425563;
 }
 
 .info > .cta {
@@ -1399,6 +1403,25 @@ textarea:focus {
 
 .callout-reference h3, .callout-reference .heading-large {
   margin-top: 0;
+}
+
+.card {
+  display: inline-block;
+  border: 1px solid #f0f4f5;
+  border-left: 4px solid #f0f4f5;
+  padding: 8px;
+  margin-bottom: 8px;
+  margin-right: 16px;
+}
+
+@media (min-width: 500px) {
+  .card {
+    width: 50%;
+  }
+}
+
+.card > .cta {
+  margin-bottom: 16px;
 }
 
 .nhsid-container {
@@ -1587,6 +1610,7 @@ body, pre.user-input {
   margin-bottom: 32px;
 }
 
-.content-seperator_equalvertspacing {
-  margin-top: 32px;
+.content-seperator--equalvertspacing {
+  margin-top: 16px;
+  margin-bottom: 16px;
 }
