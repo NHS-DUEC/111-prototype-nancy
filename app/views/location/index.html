@@ -8,6 +8,16 @@
 <div class="measure">
   
   <div class="content-block">
+
+    {% if error.general %}
+        <div class="error-summary">
+          <div>
+            <h3>There's a problem</h3>
+            <p><a href="">{{ error.general }}</a></p>
+          </div>
+        </div>
+    {% endif %}
+
     <h1>Enter your postcode</h1> <!-- Getting help near you -->
     <p>Now, tell us where you are to get the right help.</p>
 

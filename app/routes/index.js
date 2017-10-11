@@ -428,31 +428,71 @@ function setDOB(req) {
 // find location
 
 router.post('/location/index', function (req, res) {
-  
+
     if (!req.session.postcode) {
          req.session.postcode = req.body['postcode'];
     }
 
   if (req.body['postcode'] === '') {
-      res.render('location/index', {
+
+      req.session.postcode = '';
+
+      res.render('location/index', {      
           session: req.session,
           error: {
-            general: 'A valid postcode is required to book a phone call',
-            postcode: 'Please enter an postcode',
+            general: 'A full valid UK postcode is required',
+            postcode: 'Please enter a postcode'
           }
+          
       });
   } else if (req.body['postcode'].length < 4)  {
         res.render('location/index', {
           session: req.session,
           error: {
-            general: 'A valid postcode is required to book a phone call',
-            postcode: 'This is not a correct UK postcode',
+            general: 'A full valid UK postcode is required',
+            postcode: 'This is not a correct UK postcode'
           }
       });
   
     } else {
       res.redirect('/service-list/service-list');
   }
+  
 })
 
+router.post('/location/address-auto-display', function (req, res) {
+  res.redirect('/service-list/service-list');
+})
 
+router.post('/location/index_man_auto_error', function (req, res) {
+
+    if (!req.session.postcode) {
+         req.session.postcode = req.body['postcode'];
+    }
+
+    if (req.body['postcode'] === '') {
+
+        req.session.postcode = '';
+
+        res.render('location/index', {      
+            session: req.session,
+            error: {
+              general: 'A full valid UK postcode is required',
+              postcode: 'Please enter a postcode'
+            }
+            
+        });
+    } else if (req.body['postcode'].length < 4)  {
+          res.render('location/index', {
+            session: req.session,
+            error: {
+              general: 'A full valid UK postcode is required',
+              postcode: 'This is not a correct UK postcode'
+            }
+        });
+    
+      } else {
+        res.redirect('/service-list/service-list');
+    }
+
+})

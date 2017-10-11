@@ -2,10 +2,10 @@
   @extend %contain-floats;
 
   margin: $leading*2 0;
-  border-top: 2px solid $red;
+  border-top: 4px solid $red;
   background-color: tint($red, 90);
   padding: $leading*2 $leading*2;
-  color: darken($red, 10);
+  color: $red;
   width: 80%;
 
   @include media(mid) {
@@ -13,7 +13,7 @@
   }
 
   a {
-    color: darken($red, 10);
+    color: $red;
   }
 }
 

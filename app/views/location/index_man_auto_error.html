@@ -6,7 +6,16 @@
 {% block content %}
 
 <div class="measure">
-  
+
+    {% if error.general %}
+        <div class="error-summary">
+          <div>
+            <h3>There's a problem</h3>
+            <p><a href="">{{ error.general }}</a></p>
+          </div>
+        </div>
+    {% endif %}
+      
   <div class="content-block">
     <h1>Enter your postcode</h1> <!-- Getting help near you -->
     <p>We were unable to find your location.</p>

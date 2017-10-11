@@ -127,6 +127,10 @@ h3, .heading-large,
   padding-top: 24px;
 }
 
+.emphasis {
+  font-weight: 700;
+}
+
 /* remove undelines for a tags used as anchors */
 h1 a, .heading-xxlarge a, .primary a,
 h2 a, .heading-xlarge a, table caption a, .secondary a,
@@ -323,7 +327,7 @@ a.link-prototype:visted {
   padding: 4px;
   font-size: 16px;
   font-weight: 700;
-  margin-left: 16px;
+  margin-left: 8px;
 }
 
 .banner--alpha {
@@ -639,10 +643,10 @@ html {
 
 .error-summary {
   margin: 16px 0;
-  border-top: 2px solid #da291c;
+  border-top: 4px solid #da291c;
   background-color: #fbeae8;
   padding: 16px 16px;
-  color: #ad2116;
+  color: #da291c;
   width: 80%;
 }
 
@@ -653,7 +657,7 @@ html {
 }
 
 .error-summary a {
-  color: #ad2116;
+  color: #da291c;
 }
 
 .error-hint {
@@ -1218,6 +1222,7 @@ textarea:focus {
   display: block;
   margin-bottom: 4px;
   float: left;
+  margin-right: 0px;
 }
 
 .header-logo img {
@@ -1229,7 +1234,7 @@ textarea:focus {
 .service-name {
   display: inline;
   color: #425563;
-  margin-left: 16px;
+  margin-left: 8px;
 }
 
 @media (min-width: 500px) {
@@ -1508,7 +1513,7 @@ body, pre.user-input {
 
 .postcode-inline-change input, a {
   display: inline;
-  margin-right: 16px;
+  margin-right: 8px;
 }
 
 .grid-row {
