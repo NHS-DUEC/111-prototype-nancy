@@ -21,6 +21,11 @@
   }
 }
 
+.location-display {
+  margin-top: $leading;
+  margin-bottom: $leading;
+}
+
 .js-enabled .block-label {
   input {
     position: absolute;

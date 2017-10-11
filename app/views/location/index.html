@@ -1,0 +1,46 @@
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}
+{% endblock %}
+
+{% block content %}
+
+<div class="measure">
+  
+  <div class="content-block">
+    <h1>Enter your postcode</h1> <!-- Getting help near you -->
+    <p>Now, tell us where you are to get the right help.</p>
+
+  <form method="post" class="formmodule">
+    <fieldset>
+      <div class="form-group {% if error.general %}-errors error-indent{% endif %}">
+        <div>
+          <label for="postcode">Postcode</label>
+          {% if error.postcode %}
+            <div class="error-hint">
+              <div>
+                <p>{{ error.postcode }}</p>
+              </div>
+            </div>
+          {% endif %}
+          <input type="text" id="postcode" name="postcode" value="{{ session.postcode }}" class="-small">
+        </div>
+      </div>
+    </fieldset>
+
+    <div class="form-group -controls">
+      <button type="submit" class="button">Next</button>
+    </div>
+
+  </form>
+
+    <p><a href="address-auto-display">Use my location</a></p>
+
+    <p><a href="index_man_auto_error" class="link-prototype">If user denies location browser access</a></p>
+  </div>
+
+</div>
+
+{% endblock %}
+
+{% block footer %}{% endblock %}

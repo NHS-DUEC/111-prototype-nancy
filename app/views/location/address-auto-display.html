@@ -1,0 +1,38 @@
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}
+{% endblock %}
+
+{% block content %}
+
+<div class="measure">
+  
+  <div class="content-block">
+    <h1>Are you here?</h1> 
+    <p>Knowing where you are helps us find the right care.</p>
+
+    <form action="select-address" method="post">
+
+      <label for="address-00" class="block-label location-display">Shirland Road, London, W9 3JJ
+      <input type="radio" id="address-00" name="address" value="01">
+      </label>
+
+      <label for="address-01" class="block-label location-display">Formosa Street, London, W9 3JJ
+      <input type="radio" id="address-01" name="address" value="01">
+      </label>
+
+      <div class="form-group -controls">
+        <button type="submit" class="button">Yes</button>
+      </div>
+
+  </form>
+
+    <p><a href="index">No, I'll enter my postcode.</a></p>
+
+  </div>
+
+</div>
+
+{% endblock %}
+
+{% block footer %}{% endblock %}

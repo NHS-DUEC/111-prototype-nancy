@@ -424,3 +424,35 @@ function setDOB(req) {
 }
 
 
+// location - address lookup.
+// find location
+
+router.post('/location/index', function (req, res) {
+  
+    if (!req.session.postcode) {
+         req.session.postcode = req.body['postcode'];
+    }
+
+  if (req.body['postcode'] === '') {
+      res.render('location/index', {
+          session: req.session,
+          error: {
+            general: 'A valid postcode is required to book a phone call',
+            postcode: 'Please enter an postcode',
+          }
+      });
+  } else if (req.body['postcode'].length < 4)  {
+        res.render('location/index', {
+          session: req.session,
+          error: {
+            general: 'A valid postcode is required to book a phone call',
+            postcode: 'This is not a correct UK postcode',
+          }
+      });
+  
+    } else {
+      res.redirect('/service-list/service-list');
+  }
+})
+
+

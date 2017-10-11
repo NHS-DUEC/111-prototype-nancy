@@ -73,7 +73,7 @@ h1, .heading-xxlarge, .primary,
 @media (min-width: 500px) {
   h1, .heading-xxlarge, .primary,
   .h1 {
-    font-size: 48px;
+    font-size: 46px;
     line-height: 64px;
   }
 }
@@ -81,7 +81,7 @@ h1, .heading-xxlarge, .primary,
 @media (min-width: 980px) {
   h1, .heading-xxlarge, .primary,
   .h1 {
-    font-size: 56px;
+    font-size: 52px;
     line-height: 64px;
   }
 }
@@ -285,6 +285,15 @@ a:focus {
 
 .link--reverse-polarity:focus {
   outline: 3px solid #ffb81c;
+}
+
+a.link-prototype {
+  font-size: 16px;
+  color: #d8dde0;
+}
+
+a.link-prototype:visted {
+  color: #d8dde0;
 }
 
 .prototype-warning {
@@ -865,6 +874,11 @@ label .form-hint {
   top: 0;
   width: 38px;
   height: 38px;
+}
+
+.location-display {
+  margin-top: 8px;
+  margin-bottom: 8px;
 }
 
 .js-enabled .block-label input {

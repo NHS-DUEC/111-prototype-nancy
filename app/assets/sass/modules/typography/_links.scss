@@ -24,3 +24,12 @@ a {
   @include link-reverse-polarity;
 }
 
+a.link-prototype {
+  font-size: 16px;
+  color: $grey-4;
+}
+
+a.link-prototype:visted {
+  color: $grey-4;
+}
+

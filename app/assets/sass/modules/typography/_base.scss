@@ -29,12 +29,12 @@ h1,
   line-height: $leading*6; 
 
   @include media(mid) {
-    font-size: 48px;
+    font-size: 46px;
     line-height: $leading*8;
   }
 
   @include media(large) {
-    font-size: 56px;
+    font-size: 52px;
     line-height: $leading*8;
   }
 }
