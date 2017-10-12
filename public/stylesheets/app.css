@@ -73,7 +73,7 @@ h1, .heading-xxlarge, .primary,
 @media (min-width: 500px) {
   h1, .heading-xxlarge, .primary,
   .h1 {
-    font-size: 48px;
+    font-size: 46px;
     line-height: 64px;
   }
 }
@@ -81,7 +81,7 @@ h1, .heading-xxlarge, .primary,
 @media (min-width: 980px) {
   h1, .heading-xxlarge, .primary,
   .h1 {
-    font-size: 56px;
+    font-size: 52px;
     line-height: 64px;
   }
 }
@@ -125,6 +125,10 @@ h3, .heading-large,
 
 .extra-spacing-top {
   padding-top: 24px;
+}
+
+.emphasis {
+  font-weight: 700;
 }
 
 /* remove undelines for a tags used as anchors */
@@ -287,6 +291,15 @@ a:focus {
   outline: 3px solid #ffb81c;
 }
 
+a.link-prototype {
+  font-size: 16px;
+  color: #d8dde0;
+}
+
+a.link-prototype:visted {
+  color: #d8dde0;
+}
+
 .prototype-warning {
   background-color: #768692;
   color: #d9e1e2;
@@ -314,7 +327,7 @@ a:focus {
   padding: 4px;
   font-size: 16px;
   font-weight: 700;
-  margin-left: 16px;
+  margin-left: 8px;
 }
 
 .banner--alpha {
@@ -630,10 +643,10 @@ html {
 
 .error-summary {
   margin: 16px 0;
-  border-top: 2px solid #da291c;
+  border-top: 4px solid #da291c;
   background-color: #fbeae8;
   padding: 16px 16px;
-  color: #ad2116;
+  color: #da291c;
   width: 80%;
 }
 
@@ -644,7 +657,7 @@ html {
 }
 
 .error-summary a {
-  color: #ad2116;
+  color: #da291c;
 }
 
 .error-hint {
@@ -865,6 +878,11 @@ label .form-hint {
   top: 0;
   width: 38px;
   height: 38px;
+}
+
+.location-display {
+  margin-top: 8px;
+  margin-bottom: 8px;
 }
 
 .js-enabled .block-label input {
@@ -1204,6 +1222,7 @@ textarea:focus {
   display: block;
   margin-bottom: 4px;
   float: left;
+  margin-right: 0px;
 }
 
 .header-logo img {
@@ -1215,7 +1234,7 @@ textarea:focus {
 .service-name {
   display: inline;
   color: #425563;
-  margin-left: 16px;
+  margin-left: 8px;
 }
 
 @media (min-width: 500px) {
@@ -1494,7 +1513,7 @@ body, pre.user-input {
 
 .postcode-inline-change input, a {
   display: inline;
-  margin-right: 16px;
+  margin-right: 8px;
 }
 
 .grid-row {

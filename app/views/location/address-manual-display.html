@@ -1,0 +1,55 @@
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}
+{% endblock %}
+
+{% block content %}
+
+<div class="measure">
+  
+  <div class="content-block">
+
+  <form action="select-address" method="post">
+    <fieldset>
+      <legend class="primary">
+        What is your address?
+      </legend>
+    </fieldset>
+
+    <div class="form-group">
+      <label for="address-00" class="block-label">2A Bravington Road, London, W9 3AH
+      <input type="radio" id="address-00" name="address" value="01">
+      </label>
+
+      <label for="address-01" class="block-label">4A Bravington Road, London, W9 3AH
+      <input type="radio" id="address-01" name="address" value="01">
+      </label>
+
+      <label for="address-02" class="block-label">6A Bravington Road, London, W9 3AH
+      <input type="radio" id="address-02" name="address" value="01">
+      </label>
+
+      <label for="address-03" class="block-label">8A Bravington Road, London, W9 3AH
+      <input type="radio" id="address-03" name="address" value="01">
+      </label>
+  
+      <label for="address-04" class="block-label">10A Bravington Road, London, W9 3AH
+      <input type="radio" id="address-04" name="address" value="01">
+      </label>
+    </div>
+
+    <div class="form-group -controls">
+      <button type="submit" class="button">Next</button>
+    </div>
+
+  </form>  
+
+  <p><a href="address-manual">I’ll type in my address</a></p>
+
+  </div>
+
+</div>
+
+{% endblock %}
+
+{% block footer %}{% endblock %}

@@ -32,12 +32,15 @@
     width: 79px;
     height: 32px;
   }
+
+    margin-right:0px;
+
 }
 
 .service-name {
   display: inline;
   color: $grey-1;
-  margin-left: $leading*2;
+  margin-left: $leading*1;
 
   @include media(mid) {
     display: inline;
