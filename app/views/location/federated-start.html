@@ -1,0 +1,62 @@
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}
+{% endblock %}
+
+{% block content %}
+
+<div class="measure">
+  
+  <div class="content-block">
+
+    {% if error.general %}
+        <div class="error-summary">
+          <div>
+            <h3>There's a problem</h3>
+            <p><a href="">{{ error.general }}</a></p>
+          </div>
+        </div>
+    {% endif %}
+    
+    <h1>Getting help from 111&nbsp;online</h1> <!-- Getting help near you -->
+    <p>You can use 111 online through a free website or app.</p>
+    <p>Use this service when:</p>
+    <ul>
+        <li>you’re not sure what to do about your symptoms</li>
+        <li>you need medical help, but not an ambulance</li>
+    </ul>
+    <div class="content-seperator"></div>
+    <h2 class="heading-large">Tell us where you are now to get the right help.</h2>
+    <form method="post" class="formmodule">
+        <fieldset>
+          <div class="form-group {% if error.general %}-errors error-indent{% endif %}">
+            <div>
+              <label for="postcode">Postcode</label>
+              {% if error.postcode %}
+                <div class="error-hint">
+                  <div>
+                    <p>{{ error.postcode }}</p>
+                  </div>
+                </div>
+              {% endif %}
+              <input type="text" id="postcode" name="postcode" value="{{ session.postcode }}" class="-small">
+            </div>
+          </div>
+        </fieldset>
+
+        <div class="form-group -controls">
+          <button type="submit" class="button">Next</button>
+        </div>
+
+      </form>
+        <p><a href="address-auto-display">Use my location</a></p>
+
+      </div>
+
+  </div>
+
+</div>
+
+{% endblock %}
+
+{% block footer %}{% endblock %}
