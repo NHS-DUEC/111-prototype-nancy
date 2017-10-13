@@ -427,7 +427,15 @@ function setDOB(req) {
 // location - address lookup.
 // find location
 
-router.post('/location/index', function (req, res) {
+router.get('/location/', function (req, res) {
+  req.session.destroy();
+  res.render('index.html');
+});
+
+
+// postcode lookup
+
+router.post('/location/postcode', function (req, res) {
 
     if (!req.session.postcode) {
          req.session.postcode = req.body['postcode'];
@@ -437,7 +445,7 @@ router.post('/location/index', function (req, res) {
 
       req.session.postcode = '';
 
-      res.render('location/index', {      
+      res.render('location/postcode', {      
           session: req.session,
           error: {
             general: 'A full valid UK postcode is required',
@@ -446,7 +454,7 @@ router.post('/location/index', function (req, res) {
           
       });
   } else if (req.body['postcode'].length < 4)  {
-        res.render('location/index', {
+        res.render('location/postcode', {
           session: req.session,
           error: {
             general: 'A full valid UK postcode is required',
@@ -455,10 +463,72 @@ router.post('/location/index', function (req, res) {
       });
   
     } else {
+
       res.redirect('/service-list/service-list');
   }
   
 })
+
+// postcode lookup on federated start page.
+
+router.post('/location/federated-start', function (req, res) {
+
+    if (!req.session.postcode) {
+         req.session.postcode = req.body['postcode'];
+    }
+
+  if (req.body['postcode'] === '') {
+
+      req.session.postcode = '';
+
+      res.render('location/federated-start', {      
+          session: req.session,
+          error: {
+            general: 'A full valid UK postcode is required',
+            postcode: 'Please enter a postcode'
+          }
+          
+      });
+  } else if (req.body['postcode'].length < 4)  {
+        res.render('location/federated-start', {
+          session: req.session,
+          error: {
+            general: 'A full valid UK postcode is required',
+            postcode: 'This is not a correct UK postcode'
+          }
+      });
+  
+    } else {
+      res.redirect(whichService(req.body['postcode']));
+       
+  }
+  
+})
+
+function whichService (enteredPostCode) {
+  
+  var returnedObject = '';
+
+  console.log(enteredPostCode);
+
+  //decide which url it goes to
+
+  if (enteredPostCode === 'LS15123') {
+    var returnedObject = 'service-111-online';
+    return returnedObject;
+   } else if (enteredPostCode === 'SW1123') {
+    var returnedObject = 'service-babylon';
+    return returnedObject;
+  } else if (enteredPostCode === 'SU30123') {
+    var returnedObject = 'service-expert-24';
+    return returnedObject;
+  } else {
+    var returnedObject = 'federated-start';
+    return returnedObject;
+  }
+
+}
+
 
 router.post('/location/address-auto-display', function (req, res) {
   res.redirect('/service-list/service-list');
@@ -496,3 +566,4 @@ router.post('/location/index_man_auto_error', function (req, res) {
     }
 
 })
+
