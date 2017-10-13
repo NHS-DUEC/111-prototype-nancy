@@ -6,6 +6,10 @@
 {% block content %}
 <style type="text/css">
     a { margin-right: 0; }
+    .list--numbered {
+        counter-reset: a;
+        padding-left: 0;
+    }
     .list--numbered li:before {
         content: counter(a);
         counter-increment: a;
