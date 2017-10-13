@@ -4,7 +4,27 @@
 {% endblock %}
 
 {% block content %}
-
+<style type="text/css">
+    a { margin-right: 0; }
+    .list--numbered li:before {
+        content: counter(a);
+        counter-increment: a;
+        border: 3px solid #005eb8;
+        border-radius: 50px;
+        color: #005eb8;
+        display: inline-block;
+        font-weight: 700;
+        height: 40px;
+        margin-right: .5em;
+        text-align: center;
+        width: 40px;
+    }
+    @media (min-width: 925px) {
+        .page-section *+* {
+            margin-top: 32px;
+        }
+    }
+</style>
 <div id="wrapper">
     <h1>How does <span aria-label="1 1 1">111</span> work online?</h1>
     <p>Tell us the symptom you're concerned about and:</p>
@@ -26,7 +46,7 @@
         </p>
     </div>
     <p>If you're looking for NHS opening times or contact information, use <a href="#">NHS Choices</a>.</p>
-    <button type="submit" class="button--next go">Start</button>
+    <button type="submit" class="button button--next go">Start</button>
 
 </div>
 
