@@ -510,16 +510,18 @@ function whichService (enteredPostCode) {
   var returnedObject = '';
 
   console.log(enteredPostCode);
-
+  enteredPostCode = enteredPostCode.replace(/\s/g, '');
+  enteredPostCode = enteredPostCode.toLowerCase();
+ console.log(enteredPostCode);
   //decide which url it goes to
 
-  if (enteredPostCode === 'LS15123') {
+  if (enteredPostCode === 'ls15123') {
     var returnedObject = 'service-111-online';
     return returnedObject;
-   } else if (enteredPostCode === 'SW1123') {
+   } else if (enteredPostCode === 'sw1123') {
     var returnedObject = 'service-babylon';
     return returnedObject;
-  } else if (enteredPostCode === 'SU30123') {
+  } else if (enteredPostCode === 'su30123') {
     var returnedObject = 'service-expert-24';
     return returnedObject;
   } else {
@@ -531,7 +533,7 @@ function whichService (enteredPostCode) {
 
 
 router.post('/location/address-auto-display', function (req, res) {
-  res.redirect('/service-list/service-list');
+  res.redirect('service-111-online');
 })
 
 router.post('/location/index_man_auto_error', function (req, res) {
