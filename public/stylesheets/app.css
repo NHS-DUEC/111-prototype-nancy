@@ -176,6 +176,43 @@ li {
   padding-left: 0;
 }
 
+.list--numbered {
+  counter-reset: a;
+  padding-left: 0;
+}
+
+.list--numbered li {
+  list-style: none;
+  padding-bottom: 16px;
+}
+
+.list--numbered li:before {
+  content: counter(a);
+  counter-increment: a;
+  border: 3px solid #005eb8;
+  border-radius: 50px;
+  color: #005eb8;
+  display: inline-block;
+  font-weight: 700;
+  height: 40px;
+  margin-right: .5em;
+  text-align: center;
+  width: 40px;
+  line-height: 2.0em;
+}
+
+@media (min-width: 925px) {
+  .page-section * + * {
+    margin-top: 32px;
+  }
+}
+
+@media (min-width: 925px) {
+  .page-section * + * {
+    margin-top: 32px;
+  }
+}
+
 ul.link-list {
   list-style-type: none;
   padding: 0;
