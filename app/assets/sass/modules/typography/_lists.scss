@@ -90,3 +90,30 @@ li.tabular-data-row {
 .data-display-telephone {
   min-height: $leading*6;
 }
+
+.app-panel {
+      list-style: none;
+      padding:$leading*2 0 0 0;
+      display: inline-block;
+
+ >.icon {
+    float: left;
+    margin-right:$leading*2;
+ }
+  >.header{
+    @extend h2;
+    float: left;
+    width: 300px;
+    display: inline-block;
+    margin: 0;
+
+  }
+
+  >.description p {
+    float: left;
+    width: 300px;
+    display: inline-block;
+    margin: 0;
+  }
+
+}

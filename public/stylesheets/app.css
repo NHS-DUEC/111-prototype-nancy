@@ -86,7 +86,7 @@ h1, .heading-xxlarge, .primary,
   }
 }
 
-h2, .heading-xlarge, table caption, .secondary,
+h2, .heading-xlarge, .app-panel > .header, table caption, .secondary,
 .h2 {
   margin: 16px 0;
   font-size: 28px;
@@ -95,7 +95,7 @@ h2, .heading-xlarge, table caption, .secondary,
 }
 
 @media (min-width: 500px) {
-  h2, .heading-xlarge, table caption, .secondary,
+  h2, .heading-xlarge, .app-panel > .header, table caption, .secondary,
   .h2 {
     font-size: 32px;
     line-height: 48px;
@@ -103,7 +103,7 @@ h2, .heading-xlarge, table caption, .secondary,
 }
 
 @media (min-width: 980px) {
-  h2, .heading-xlarge, table caption, .secondary,
+  h2, .heading-xlarge, .app-panel > .header, table caption, .secondary,
   .h2 {
     font-size: 36px;
     line-height: 48px;
@@ -133,7 +133,7 @@ h3, .heading-large,
 
 /* remove undelines for a tags used as anchors */
 h1 a, .heading-xxlarge a, .primary a,
-h2 a, .heading-xlarge a, table caption a, .secondary a,
+h2 a, .heading-xlarge a, .app-panel > .header a, table caption a, .secondary a,
 h3 a, .heading-large a,
 h4 a, .heading-body a,
 h5 a,
@@ -245,6 +245,31 @@ li.tabular-data-row > .callout {
 
 .data-display-telephone {
   min-height: 48px;
+}
+
+.app-panel {
+  list-style: none;
+  padding: 16px 0 0 0;
+  display: inline-block;
+}
+
+.app-panel > .icon {
+  float: left;
+  margin-right: 16px;
+}
+
+.app-panel > .header {
+  float: left;
+  width: 300px;
+  display: inline-block;
+  margin: 0;
+}
+
+.app-panel > .description p {
+  float: left;
+  width: 300px;
+  display: inline-block;
+  margin: 0;
 }
 
 .tel {
@@ -1632,4 +1657,8 @@ body, pre.user-input {
 .content-seperator--equalvertspacing {
   margin-top: 16px;
   margin-bottom: 16px;
+}
+
+.content-seperator--grey3 {
+  background-color: #aeb7bd;
 }
