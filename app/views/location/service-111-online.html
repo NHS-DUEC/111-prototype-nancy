@@ -4,56 +4,27 @@
 {% endblock %}
 
 {% block content %}
-<style type="text/css">
-    a { margin-right: 0; }
-    .list--numbered {
-        counter-reset: a;
-        padding-left: 0;
-    }
-    .list--numbered li {
-      list-style: none;
-    }
-    .list--numbered li:before {
-        content: counter(a);
-        counter-increment: a;
-        border: 3px solid #005eb8;
-        border-radius: 50px;
-        color: #005eb8;
-        display: inline-block;
-        font-weight: 700;
-        height: 40px;
-        margin-right: .5em;
-        text-align: center;
-        width: 40px;
-    }
-    @media (min-width: 925px) {
-        .page-section *+* {
-            margin-top: 32px;
-        }
-    }
-</style>
-<div id="wrapper">
-    <h1>How does <span aria-label="1 1 1">111</span> work online?</h1>
-    <p>Tell us the symptom you're concerned about and:</p>
+
+<div class="measure">
+  
+  <div class="content-block">
+
+    <h1>How 111 online works</h1> <!-- Getting help near you -->
     <ol class="list--numbered">
-        <li>
-            answer a number of questions
-        </li>
-        <li>
-            get advice on who you need to see, and how urgently
-        </li>
-        <li>
-            find the right local NHS service for your needs
-        </li>
+        <li>answer questions about your symptoms - some are to rule out more serious conditions </li>
+        <li>get advice on what NHS service you might need and how urgently</li>
     </ol>
-    <p>The service doesn't diagnose specific conditions.</p>
-    <div class="callout callout--attention">
-        <p>
-            This online service is for people aged 5 and over. It's not a substitute for a medical consultation. See <a href="#">terms and conditions</a>.
-        </p>
+
+    <div class="callout callout--info">
+        <p>Call 111 if you're asking about someone under 5</p>
     </div>
-    <p>If you're looking for NHS opening times or contact information, use <a href="#">NHS Choices</a>.</p>
-    <button type="submit" class="button button--next go">Start</button>
+
+    <div class=""><p>The service is not a replacement for seeing a health professional. It doesn’t diagnose conditions.</p></div>
+
+    <a href="#" class="button">Start</a>
+
+        <p>If you’re looking for NHS opening times or contact information, use <a href="https://beta.nhs.uk/">NHS Choices.</a></p>
+  </div>
 
 </div>
 

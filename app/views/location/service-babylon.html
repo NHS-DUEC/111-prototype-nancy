@@ -5,39 +5,43 @@
 
 {% block content %}
 
-<link href="/stylesheets/nhsuk.css" rel="stylesheet" />
+<div class="measure">
+  
+    <div class="content-block">
 
-<div id="wrapper">
-    <section>
-        <div class="local-header">
-            <h1 class="local-header__title">111 online in your area</h1>
-            <div class="local-header__intro">
-                <p>We have a free app that you can use to help you get the best advice.</p>
-            </div>
+        <h1>How 111 online works</h1> <!-- Getting help near you -->
+        <ol class="list--numbered">
+            <li>download a free app</li>
+            <li>answer questions about your symptoms</li>
+            <li>get advice on what NHS service you might need and how urgently</li>
+        </ol>
+        
+        <div class="callout callout--info">
+            <p>Call 111 if you're asking about:</p>
+            <ul>
+                <li>someone under 17</li>
+                <li>dental services</li>
+                <li>mental health care</li>
+            </ul>
         </div>
-    </section>
 
-    <ul class="link-list">
-        <li class="link-list__item">
-            You can download an <a href="https://itunes.apple.com/gb/app/nhs-111/id1196229018?mt=8">Apple app</a> or an <a href="https://play.google.com/store/apps/details?id=com.babylon.nhs&hl=en_GB">Android app</a> for your phone or tablet.
-            <br/>
-            <a href="https://itunes.apple.com/gb/app/nhs-111/id1196229018?mt=8">
-                <img src="/images/111appleapp.jpg" width="319px" height="335px" alt="" />
-            </a>
-            <a href="https://play.google.com/store/apps/details?id=com.babylon.nhs&hl=en_GB">
-                <img src="/images/111androidapp.jpg" width="322px" height="335px" alt="" />
-            </a>
-        </li>
-    </ul>
+        <p>This app is run by Babylon Health who provide 111 online in your area. It’s free to use and points you to the right NHS care. </p>
 
-    <section class="callout callout--info">
-        <p>
-            If you don't want to use an app, call 111 for help and advice.
-        </p>
-        <p>
-            If you're looking for local NHS services, opening times, or general health information, use <a href="#">NHS Choices</a>.
-        </p>
-    </section>
+        <div class="callout callout--muted">
+            <ul class="app-panel">
+                <li class="icon"><img src="/images/nhs_111_app_icon.png" /></li>
+                <li class="header">NHS 111</li>
+                <li class="description"><p class="">Provided by Babylon Health</p></li>
+            </ul>
+            <div class="content-seperator content-seperator--grey3"></div>
+            
+            <a href="https://play.google.com/store/apps/details?id=com.babylon.nhs"><img alt="Get it on Google Play" src="/images/google_play_badge.png" height="48"/></a>
+            <a href="https://itunes.apple.com/gb/app/nhs-111/id1196229018?mt=8"><img src="/images/app_store_badge_US-UK_135x40.svg" height="48"/></a>
+        </div>
+
+        <p>If you don’t want to use an app call 111 for health advice.</p>
+
+    </div>
 
 </div>
 
