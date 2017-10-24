@@ -64,7 +64,7 @@ body, pre.user-input,
 
 h1, .heading-xxlarge, .primary,
 .h1 {
-  margin: 16px 0;
+  margin: 16px 0 32px 0;
   font-size: 40px;
   font-weight: 700;
   line-height: 48px;
@@ -884,7 +884,7 @@ input::-webkit-inner-spin-button {
 label {
   display: block;
   width: 100%;
-  font-weight: 400;
+  font-weight: 700;
 }
 
 .form-hint {
@@ -893,8 +893,8 @@ label {
   margin: 8px 0 16px 0;
   font-size: 16px;
   font-weight: 400;
-  line-height: 16px;
-  color: #5C6770;
+  line-height: 24px;
+  color: #768692;
 }
 
 label .form-hint {
@@ -1560,7 +1560,7 @@ body, pre.user-input {
 }
 
 .content {
-  padding-top: 48px;
+  padding-top: 32px;
 }
 
 @media (min-width: 640px) {

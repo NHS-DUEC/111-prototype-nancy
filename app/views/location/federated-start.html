@@ -23,8 +23,8 @@
         <li>answer questions about your symptoms - some are to rule out more serious conditions</li>
         <li>get advice on what NHS service you might need and how urgently</li>
     </ul>
-    <!-- <div class="content-seperator"></div> -->
-    <h2>You might not be at home when you need help.</h2>
+ 
+    <div class="callout callout--info"><h3>You might not be at home when you need help.</h3></div>
     <!-- <p></p> -->
     <p>If you tell us where you are we can: </p>
     <ul>
@@ -32,13 +32,12 @@
         <li>connect you to a local NHS service if we need to - this could be a call from a doctor or booking an appointment</li>
     </ul>
 
-    <h3 class="heading-large">Postcode</h3>
-    <p>This could be your home postcode or wherever you want help</p>
     <form method="post" class="formmodule">
         <fieldset>
           <div class="form-group {% if error.general %}-errors error-indent{% endif %}">
             <div>
               <label for="postcode">Postcode</label>
+              <span class="form-hint">This could be your home postcode or wherever you want help</span>
               {% if error.postcode %}
                 <div class="error-hint">
                   <div>
@@ -46,7 +45,7 @@
                   </div>
                 </div>
               {% endif %}
-              <input type="text" id="postcode" name="postcode" value="{{ session.postcode }}" class="-small">
+              <div class="postcode-inline-change"><input type="text" id="postcode" name="postcode" value="{{ session.postcode }}" class="-small"><a href="address-auto-display" class="button -bordered">Use current location</a></div>
             </div>
           </div>
         </fieldset>
@@ -56,7 +55,6 @@
         </div>
 
       </form>
-        <p><a href="address-auto-display">Use my location</a></p>
 
       </div>
 
