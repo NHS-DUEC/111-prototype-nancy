@@ -1,0 +1,33 @@
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}
+{% endblock %}
+
+{% block content %}
+
+<div class="measure">
+  
+  <div class="content-block">
+
+    {% if error.general %}
+        <div class="error-summary">
+          <div>
+            <h3>There's a problem</h3>
+            <p><a href="">{{ error.general }}</a></p>
+          </div>
+        </div>
+    {% endif %}
+    
+        <h1>111 online is not in this area</h1> <!-- Getting help near you -->
+        <p>Check your location details and try again.</p>
+        <p>The service is not yet available in all parts of the country.</p>
+        <a href="/location/federated-start" class="button">Try again</a>
+        
+  </div>
+
+</div>
+
+
+{% endblock %}
+
+{% block footer %}{% endblock %}

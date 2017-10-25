@@ -64,7 +64,7 @@ body, pre.user-input,
 
 h1, .heading-xxlarge, .primary,
 .h1 {
-  margin: 16px 0;
+  margin: 16px 0 16px 0;
   font-size: 40px;
   font-weight: 700;
   line-height: 48px;
@@ -113,7 +113,7 @@ h2, .heading-xlarge, .app-panel > .header, table caption, .secondary,
 h3, .heading-large,
 .h3 {
   margin: 16px 0;
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 700;
   line-height: 32px;
 }
@@ -290,9 +290,21 @@ li.tabular-data-row > .callout {
   display: inline-block;
 }
 
+.app-panel > .appstore {
+  clear: both;
+}
+
+@media (min-width: 600px) {
+  .app-panel > .appstore {
+    width: 100%;
+    padding-top: 25px;
+    margin-left: 120px;
+  }
+}
+
 .app-panel > .icon {
   float: left;
-  margin-right: 16px;
+  margin-right: 32px;
 }
 
 .app-panel > .header {
@@ -302,11 +314,20 @@ li.tabular-data-row > .callout {
   margin: 0;
 }
 
-.app-panel > .description p {
+.app-panel > .description {
   float: left;
   width: 300px;
   display: inline-block;
   margin: 0;
+  font-size: 16px;
+  color: #768692;
+}
+
+.app-panel > .description > ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  line-height: 16px;
 }
 
 .tel {
@@ -519,6 +540,21 @@ a.link-prototype:visted {
   margin-top: 4px;
   font-size: 16px;
   line-height: 24px;
+}
+
+.button.-location {
+  @extends .-small;
+  padding: 12px 16px;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+@media (min-width: 500px) {
+  .button.-location {
+    margin-top: 8px;
+    margin-left: -4px;
+    position: absolute;
+  }
 }
 
 table {
@@ -884,7 +920,7 @@ input::-webkit-inner-spin-button {
 label {
   display: block;
   width: 100%;
-  font-weight: 400;
+  font-weight: 700;
 }
 
 .form-hint {
@@ -893,8 +929,8 @@ label {
   margin: 8px 0 16px 0;
   font-size: 16px;
   font-weight: 400;
-  line-height: 16px;
-  color: #5C6770;
+  line-height: 24px;
+  color: #768692;
 }
 
 label .form-hint {
@@ -1560,7 +1596,7 @@ body, pre.user-input {
 }
 
 .content {
-  padding-top: 48px;
+  padding-top: 32px;
 }
 
 @media (min-width: 640px) {
