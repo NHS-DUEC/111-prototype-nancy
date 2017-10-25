@@ -132,8 +132,11 @@ li.tabular-data-row {
       display: inline-block;
 
   >.appstore {
-    @media (max-width: 600px) {
-      clear: both;
+    clear: both;
+    @media (min-width: 600px) {
+      width: 100%;
+      padding-top: 25px;
+      margin-left: 120px;
     }
   }
 

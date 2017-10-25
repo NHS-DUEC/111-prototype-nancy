@@ -290,9 +290,15 @@ li.tabular-data-row > .callout {
   display: inline-block;
 }
 
-@media (max-width: 600px) {
+.app-panel > .appstore {
+  clear: both;
+}
+
+@media (min-width: 600px) {
   .app-panel > .appstore {
-    clear: both;
+    width: 100%;
+    padding-top: 25px;
+    margin-left: 120px;
   }
 }
 
