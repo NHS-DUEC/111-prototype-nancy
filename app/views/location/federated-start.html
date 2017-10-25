@@ -18,19 +18,34 @@
         </div>
     {% endif %}
     
-    <h1>How 111 online works</h1> <!-- Getting help near you -->
+        <h1>How 111 online works</h1> <!-- Getting help near you -->
+    <div class="">
+              <p>1. You answer questions about your symptoms - some are to rule out more serious conditions</p>
+        <p>2. You'll get advice on what NHS service you might need and how urgently</p>
+<!--     <ul>
+        <li>answer questions about your symptoms - some are to rule out more serious conditions</li>
+        <li>get advice on what NHS service you might need and how urgently</li>
+    </ul> -->
+  </div>
+
+<!--     <h1>Getting help</h1> 
+    <div class="">
+      <h3>How 111 online works</h3>
     <ul>
         <li>answer questions about your symptoms - some are to rule out more serious conditions</li>
         <li>get advice on what NHS service you might need and how urgently</li>
     </ul>
- 
-    <div class="callout callout--info"><h3>You might not be at home when you need help.</h3></div>
+  </div> -->
+    <!-- <div class="callout callout--info"><h3>You might not be at home when you need help.</h3></div> -->
     <!-- <p></p> -->
-    <p>If you tell us where you are we can: </p>
-    <ul>
-        <li>give you the 111 online service in that area - this might be a website or an app depending on where you are </li>
+    <div class=""></div>
+    <h2>Are you are home or somewhere else?</h2>
+    <p>Telling us where you are means we can connect you to a local NHS service. This could be a call from a doctor or booking an appointment</p>
+    <!-- <div class="callout callout--info"><h3>You might not be at home when you need help.</h3></div> -->
+<!--     <ul>
+       
         <li>connect you to a local NHS service if we need to - this could be a call from a doctor or booking an appointment</li>
-    </ul>
+    </ul> -->
 
     <form method="post" class="formmodule">
         <fieldset>
@@ -45,7 +60,7 @@
                   </div>
                 </div>
               {% endif %}
-              <div class="postcode-inline-change"><input type="text" id="postcode" name="postcode" value="{{ session.postcode }}" class="-small"><a href="address-auto-display" class="button -bordered">Use current location</a></div>
+              <div class="postcode-inline-change"><input type="text" id="postcode" name="postcode" value="{{ session.postcode }}" class="-small"><a href="address-auto-display" class="button -bordered -location">Use current location</a></div> <!--  -->
             </div>
           </div>
         </fieldset>

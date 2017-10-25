@@ -521,6 +521,14 @@ a.link-prototype:visted {
   line-height: 24px;
 }
 
+.button.-location {
+  @extends .-small;
+  margin-top: 4px;
+  padding: 2px 16px;
+  font-size: 16px;
+  line-height: 24px;
+}
+
 table {
   width: 100%;
   border-collapse: collapse;

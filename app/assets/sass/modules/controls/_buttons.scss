@@ -96,5 +96,13 @@
     line-height: 24px;
   }
 
+    &.-location {
+    @extends .-small;
+    margin-top: $leading/2;
+    padding: 2px $leading*2;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
 }
 
