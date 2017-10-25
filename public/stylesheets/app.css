@@ -64,7 +64,7 @@ body, pre.user-input,
 
 h1, .heading-xxlarge, .primary,
 .h1 {
-  margin: 16px 0 0 0;
+  margin: 16px 0 16px 0;
   font-size: 40px;
   font-weight: 700;
   line-height: 48px;
