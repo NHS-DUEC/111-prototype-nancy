@@ -98,10 +98,16 @@
 
     &.-location {
     @extends .-small;
-    margin-top: $leading/2;
-    padding: 2px $leading*2;
+    padding: 12px $leading*2 ;
     font-size: 16px;
     line-height: 24px;
+
+    @include media(mid) {
+    margin-top: 8px;
+    margin-left: -4px;
+    position: absolute;
+    }
+
   }
 
 }

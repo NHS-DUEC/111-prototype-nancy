@@ -522,10 +522,10 @@ function whichService (enteredPostCode) {
     var returnedObject = 'service-babylon';
     return returnedObject;
   } else if (enteredPostCode === 'su30123') {
-    var returnedObject = 'service-expert-24';
+    var returnedObject = 'https://www.111onlinesuffolk.careuk.com/portal/careuk/';
     return returnedObject;
   } else {
-    var returnedObject = 'federated-start';
+    var returnedObject = 'federated-fail';
     return returnedObject;
   }
 
