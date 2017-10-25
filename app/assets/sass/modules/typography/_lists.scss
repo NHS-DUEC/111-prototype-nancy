@@ -131,13 +131,15 @@ li.tabular-data-row {
       padding:$leading*2 0 0 0;
       display: inline-block;
 
+  >.appstore {
+    @media (max-width: 500px) {
+      clear: both;
+    }
+  }
+
  >.icon {
     float: left;
     margin-right:$leading*4;
-
-    @include media(mid) {
-      min-height: 300px;
-    }
  }
 
   >.header{

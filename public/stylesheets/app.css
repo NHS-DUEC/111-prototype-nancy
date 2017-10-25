@@ -290,15 +290,15 @@ li.tabular-data-row > .callout {
   display: inline-block;
 }
 
+@media (max-width: 500px) {
+  .app-panel > .appstore {
+    clear: both;
+  }
+}
+
 .app-panel > .icon {
   float: left;
   margin-right: 32px;
-}
-
-@media (min-width: 500px) {
-  .app-panel > .icon {
-    min-height: 300px;
-  }
 }
 
 .app-panel > .header {
