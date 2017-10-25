@@ -13,10 +13,10 @@
 }
 
 .info {
-  margin-left:$leading*0.5;
+  // margin-left:$leading*0.5;
   border-left: $leading/2 solid $bright-blue;
   padding: $leading;
-  background-color: $grey-1;
+  background-color: $grey-5;
 
   > .cta {
     margin-bottom: $leading*2;
