@@ -533,7 +533,7 @@ function whichService (enteredPostCode) {
 
 
 router.post('/location/address-auto-display', function (req, res) {
-  res.redirect('service-111-online');
+  res.redirect('service-babylon');
 })
 
 router.post('/location/index_man_auto_error', function (req, res) {
