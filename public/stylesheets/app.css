@@ -1397,10 +1397,9 @@ textarea:focus {
 }
 
 .info {
-  margin-left: 4px;
   border-left: 4px solid #0072ce;
   padding: 8px;
-  background-color: #425563;
+  background-color: #f0f4f5;
 }
 
 .info > .cta {
