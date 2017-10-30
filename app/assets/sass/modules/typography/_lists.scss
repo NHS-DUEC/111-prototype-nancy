@@ -131,24 +131,48 @@ li.tabular-data-row {
       padding:$leading*2 0 0 0;
       display: inline-block;
 
+  >.appstore {
+    clear: both;
+    @media (min-width: 600px) {
+      width: 100%;
+      padding-top: 25px;
+      margin-left: 120px;
+    }
+  }
+
  >.icon {
     float: left;
-    margin-right:$leading*2;
+    margin-right:$leading*4;
  }
+
   >.header{
     @extend h2;
     float: left;
     width: 300px;
     display: inline-block;
     margin: 0;
+    
+    @include media(mid) {
+      
+    }
 
   }
 
-  >.description p {
+  >.description {
     float: left;
     width: 300px;
     display: inline-block;
     margin: 0;
+    font-size: 16px;
+    color: $grey-2;
+
+    > ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      line-height: $leading*2;
+    }
+
   }
 
 }
