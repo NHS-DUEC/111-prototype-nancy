@@ -21,24 +21,19 @@
         <h1>How 111 online works</h1> <!-- Getting help near you -->
     <div class="">
         <p>1. You answer questions about your symptoms - some are to rule out more serious conditions</p>
-        <p>2. You'll get advice on what NHS service you might need and how urgently</p>
+        <p>2. You'll get advice on what NHS service you might need and how urgently  - this could be a phone call from a doctor or details of where to go</p>
     </div>
 
-    <div class=""></div>
-    <h2>Are you are at home or somewhere else?</h2>
-    <p>Telling us where you are means we can get you the right care. This could be:</p>
-    <ul>
-    <li>a call from a doctor</li>
-    <li>booking you an appointment</li>
-    </ul>
-
+    <div class="content-seperator content-seperator--equalvertspacing"></div>
+    <h2>Getting help wherever you are</h2> <!-- Getting help no matter where you are -->
+    <p>You might need 111 online when you’re not at home, or you’re asking about someone else. Tell us where you are so we can get the right service for that area.</p>
 
     <form method="post" class="formmodule">
         <fieldset>
           <div class="form-group {% if error.general %}-errors error-indent{% endif %}">
             <div>
               <label for="postcode">Postcode</label>
-              <span class="form-hint">This could be your home postcode or wherever you want help</span>
+              <!-- <span class="form-hint">This could be your home postcode or wherever you want help</span> -->
               {% if error.postcode %}
                 <div class="error-hint">
                   <div>
@@ -46,7 +41,7 @@
                   </div>
                 </div>
               {% endif %}
-              <div class="postcode-inline-change"><input type="text" id="postcode" name="postcode" value="{{ session.postcode }}" class="-small"><a href="address-auto-display" class="button -bordered -location">Use current location</a></div> <!--  -->
+              <div class="postcode-inline-change"><input type="text" id="postcode" name="postcode" value="{{ session.postcode }}" class="-small"><br /><a href="address-auto-display" class="">I dont know my postcode</a></div> <!--  -->
             </div>
           </div>
         </fieldset>
