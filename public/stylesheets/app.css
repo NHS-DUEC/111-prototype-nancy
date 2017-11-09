@@ -471,6 +471,7 @@ a.link-prototype:visted {
   cursor: pointer;
   border: 1px solid #007f3b;
   -webkit-appearance: none;
+  border-radius: 0;
 }
 
 .button:link, .button:hover, .button:focus, .button:visited {

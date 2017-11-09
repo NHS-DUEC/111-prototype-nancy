@@ -19,14 +19,15 @@
     {% endif %}
     
         <h1>How 111 online works</h1> <!-- Getting help near you -->
+        <p>The online service is the same as the 111 telephone service.</p>
     <div class="">
         <p>1. You answer questions about your symptoms - some are to rule out more serious conditions</p>
-        <p>2. You'll get advice on what NHS service you might need and how urgently  - this could be a phone call from a doctor or details of where to go</p>
+        <p>2. You’ll find out what to do next - what NHS service you might need and how urgently</p>
     </div>
 
     <div class="content-seperator content-seperator--equalvertspacing"></div>
     <h2>Getting help wherever you are</h2> <!-- Getting help no matter where you are -->
-    <p>You might need 111 online when you’re not at home, or you’re asking about someone else. Tell us where you are so we can get the right service for that area.</p>
+    <p>You might not always be at home when you need help. Tell us where you are to get the 111 online service in that area.</p>
 
     <form method="post" class="formmodule">
         <fieldset>
@@ -41,7 +42,7 @@
                   </div>
                 </div>
               {% endif %}
-              <div class="postcode-inline-change"><input type="text" id="postcode" name="postcode" value="{{ session.postcode }}" class="-small"><br /><a href="address-auto-display" class="">I dont know my postcode</a></div> <!--  -->
+              <div class="postcode-inline-change"><input type="text" id="postcode" name="postcode" value="{{ session.postcode }}" class="-small"></div> <!--  -->
             </div>
           </div>
         </fieldset>

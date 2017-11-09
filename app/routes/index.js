@@ -505,6 +505,40 @@ router.post('/location/federated-start', function (req, res) {
   
 })
 
+router.post('/location/postcode-service', function (req, res) {
+
+    if (!req.session.postcode) {
+         req.session.postcode = req.body['postcode'];
+    }
+
+  if (req.body['postcode'] === '') {
+
+      req.session.postcode = '';
+
+      res.render('location/federated-start', {      
+          session: req.session,
+          error: {
+            general: 'A full valid UK postcode is required',
+            postcode: 'Please enter a postcode'
+          }
+          
+      });
+  } else if (req.body['postcode'].length < 4)  {
+        res.render('location/federated-start', {
+          session: req.session,
+          error: {
+            general: 'A full valid UK postcode is required',
+            postcode: 'This is not a correct UK postcode'
+          }
+      });
+  
+    } else {
+      res.redirect('gp-dx');
+       
+  }
+  
+})
+
 function whichService (enteredPostCode) {
   
   var returnedObject = '';
