@@ -1,0 +1,89 @@
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}
+{% endblock %}
+
+{% block content %}
+
+<div class="measure">
+  
+  <div class="content-block">
+
+    {% if error.general %}
+        <div class="error-summary">
+          <div>
+            <h3>There's a problem</h3>
+            <p><a href="">{{ error.general }}</a></p>
+          </div>
+        </div>
+    {% endif %}
+
+    <h1>Where are you?</h1> <!-- Getting help near you -->
+    <!-- <p></p> -->
+    <p>Knowing where you are helps us find services in your area.</p>
+
+   <form  method="post" class="formmodule">
+
+      <fieldset>
+
+      {% if error %}
+        <div class="error-summary">
+          <div>
+            <p>{{ error }}</p>
+          </div>
+        </div>
+      {% endif %}
+
+      <div class="form form-group {% if error %}-errors{% endif %}">
+          <label for="check-person-self" class="block-label" data-target="self-data">
+          For myself
+          <input type="radio" id="check-person-self" name="check-person" value="yes"  {% if session.check-person == "self" %}checked="checked"{% endif %}>
+          </label>
+        </div>
+
+        <div class="js-hidden toggle-content" id="self-data">
+          <div class="form-group {% if errors.name %}-errors{% endif %}">
+            <label for="first-name">Your first name</label>
+            <input type="text" id="first-name" name="first-name" value="{{ session.name-self.firstName }}">
+          </div>
+          <div class="form-group {% if errors.name %}-errors{% endif %}">
+            <label for="last-name">Your last name</label>
+            <input type="text" id="last-name" name="last-name" value="{{ session.name-self.lastName }}">
+          </div>
+        </div>
+
+     </fieldset>
+
+    <fieldset>
+        <div class="form-group {% if error %}-errors{% endif %}">
+          <label for="check-person-other" class="block-label" data-target="other-data">
+            For someone else
+            <input type="radio" id="check-person-other" name="check-person" value="no" {% if session.check-person == "other" %}checked="checked"{% endif %}>
+          </label>
+        </div>
+
+        <div class="js-hidden toggle-content" id="other-data">
+          <div class="form-group {% if errors.name %}-errors{% endif %}">
+            <label for="first-name">Their name</label>
+            <input type="text" id="first-name" name="first-name" value="{{ session.name-other.firstName }}">
+          </div>
+          <div class="form-group {% if errors.name %}-errors{% endif %}">
+            <label for="last-name">Their Last name</label>
+            <input type="text" id="last-name" name="last-name" value="{{ session.name-otjer.lastName }}">
+          </div>
+        </div>
+    </fieldset>
+
+    <div class="form-group -controls">
+      <button type="submit" class="button">Next</button>
+    </div>
+
+  </form>
+
+  </div>
+
+</div>
+
+{% endblock %}
+
+{% block footer %}{% endblock %}
