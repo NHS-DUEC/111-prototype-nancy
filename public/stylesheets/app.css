@@ -410,7 +410,7 @@ a.link-prototype:visted {
   padding: 4px;
   font-size: 16px;
   font-weight: 700;
-  margin-left: 8px;
+  text-transform: uppercase;
 }
 
 .banner--alpha {
@@ -714,6 +714,12 @@ html {
 
 .footer-container .link-list li {
   clear: both;
+  font-size: 16px;
+  max-width: 30em;
+}
+
+.footer-container .link-list li > p {
+  line-height: 24px;
 }
 
 .-date > .error-hint {
@@ -1334,6 +1340,7 @@ textarea:focus {
   display: inline;
   color: #425563;
   margin-left: 8px;
+  margin-right: 8px;
 }
 
 @media (min-width: 500px) {
@@ -1541,6 +1548,21 @@ textarea:focus {
   margin-bottom: 16px;
 }
 
+.phase-banner {
+  padding: 5.3333333333px 0;
+  display: block;
+  margin: 0;
+  font-size: 16px;
+  font-weight: 200;
+  border-bottom: 1px solid #e6eff8;
+  margin-bottom: 32px;
+}
+
+.phase-banner > .phase-message {
+  color: #425563;
+  padding-left: 8px;
+}
+
 .nhsid-container {
   margin: 16px auto;
   padding: 32px 0 0 0;
@@ -1593,10 +1615,6 @@ body, pre.user-input {
     padding-left: 0;
     padding-right: 0;
   }
-}
-
-.content {
-  padding-top: 32px;
 }
 
 @media (min-width: 640px) {
@@ -1730,6 +1748,11 @@ body, pre.user-input {
 .content-seperator--equalvertspacing {
   margin-top: 16px;
   margin-bottom: 16px;
+}
+
+.content-seperator--equalvertspacing--large {
+  margin-top: 40px;
+  margin-bottom: 32px;
 }
 
 .content-seperator--grey3 {

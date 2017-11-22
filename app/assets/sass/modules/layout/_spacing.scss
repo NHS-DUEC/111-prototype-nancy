@@ -18,6 +18,11 @@
     margin-bottom: $leading*2;
 }
 
+.content-seperator--equalvertspacing--large {
+    margin-top: $leading*5;
+    margin-bottom: $leading*4;
+}
+
 .content-seperator--grey3 {
     background-color: $grey-3;
 }

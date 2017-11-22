@@ -39,6 +39,12 @@ html {
 
  .link-list li {
     clear: both;
+    font-size: $smallprint;
+    max-width: 30em;
+    
+    > p {
+      line-height: $leading*3;
+    }
   }
 
 }

@@ -3,7 +3,8 @@
   padding: $leading/2;
   font-size: $smallprint;
   font-weight: $boldweight;
-  margin-left: $leading*1;
+  // margin-left: $leading*1;
+  text-transform: uppercase;
 }
 
 .banner--alpha {

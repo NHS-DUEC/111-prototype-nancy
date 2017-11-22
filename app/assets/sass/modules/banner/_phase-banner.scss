@@ -1,0 +1,17 @@
+.phase-banner {
+    padding: $leading/1.5 0;
+    display: block;
+    margin: 0;
+    font-size: $smallprint;
+    font-weight: $lightweight;
+    border-bottom: 1px solid $blue-10;
+    // padding-bottom: $leading;
+    margin-bottom: $leading*4;
+
+
+    >.phase-message {
+        color: $grey-1;
+            padding-left: $leading;
+    }
+}
+
