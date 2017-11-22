@@ -41,6 +41,7 @@
   display: inline;
   color: $grey-1;
   margin-left: $leading*1;
+  margin-right: $leading;
 
   @include media(mid) {
     display: inline;
