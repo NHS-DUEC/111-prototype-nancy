@@ -8,7 +8,6 @@ body {
 %block,
 .content {
   @extend %contain-floats;
-  
   max-width: 960px;
   margin: 0 auto;
   padding-left: 20px;
@@ -32,8 +31,7 @@ body {
   margin-bottom: $leading*6;
 }
 
-.postcode-inline-change input,a {
+.postcode-inline-change input {
   display: inline;
   margin-right: $leading*1;
 }
-
