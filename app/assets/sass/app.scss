@@ -6,8 +6,6 @@
 @import "tools/mixins/addons";
 @import "tools/hidden";
 
-
-
 @import "variables/colours";
 @import "variables/frutiger";
 //@import "variables/system";
@@ -46,13 +44,9 @@
 @import "modules/callout/callout";
 @import "modules/cards/service-card";
 @import "modules/banner/phase-banner.scss";
-
-
 @import "modules/nhsid/nhsid";
 
 // Layout and grid
 @import "modules/layout/layout";
 @import "modules/layout/grid";
 @import "modules/layout/spacing";
-
-//mixins
