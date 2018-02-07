@@ -53,7 +53,7 @@ body, pre.user-input,
   color: #231f20;
   font-family: "Frutiger W01", sans-serif;
   font-weight: 400;
-  font-size: 20px;
+  font-size: 19px;
   line-height: 32px;
   letter-spacing: 0.3px;
 }
@@ -463,13 +463,14 @@ a.link-prototype:visted {
   font-size: inherit;
   line-height: 48px;
   width: 100%;
-  padding: 0 32px;
+  padding: 0 24px;
   margin: 0 0 8px 0;
   text-align: center;
   color: #fff;
   background-color: #007f3b;
   cursor: pointer;
-  border: 1px solid #007f3b;
+  border: 0;
+  box-shadow: 0 2px 0 #003317;
   -webkit-appearance: none;
   border-radius: 0;
 }
@@ -927,7 +928,6 @@ input::-webkit-inner-spin-button {
 label {
   display: block;
   width: 100%;
-  font-weight: 700;
 }
 
 .form-hint {
@@ -1105,6 +1105,10 @@ textarea:focus {
   box-shadow: 0 0 0 5px #ffb81c;
 }
 
+.feedback {
+  height: 150px;
+}
+
 .gp-local-header {
   display: inline-block;
 }
@@ -1198,7 +1202,7 @@ textarea:focus {
 }
 
 .gp-finder-results .result-title {
-  font-size: 20px;
+  font-size: 19px;
   font-weight: 400;
   color: #005eb8;
   text-decoration: underline;
@@ -1439,10 +1443,25 @@ textarea:focus {
   padding: 8px 24px;
   margin-bottom: 32px;
   background-color: #fff;
+  clear: both;
 }
 
 .callout:focus {
   outline: 3px solid #ffb81c;
+}
+
+.callout--inline {
+  display: block;
+  margin: 8px 0;
+  padding: 8px 16px;
+}
+
+@media (min-width: 768px) {
+  .callout--inline {
+    display: inline;
+    white-space: nowrap;
+    margin: 0 8px;
+  }
 }
 
 .callout--muted {
@@ -1627,7 +1646,7 @@ body, pre.user-input {
   margin-bottom: 48px;
 }
 
-.postcode-inline-change input, a {
+.postcode-inline-change input {
   display: inline;
   margin-right: 8px;
 }
