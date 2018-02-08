@@ -1,0 +1,85 @@
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}
+{% endblock %}
+
+{% block body_css_classes %}modal-present{% endblock %}
+
+{% block content %}
+
+<div class="measure">
+  <h1 class="heading-xlarge">Is the pain so bad you need to keep completely still?</h1>
+  <div class="callout callout--info">
+    <p>For example, the pain is unbearable if you move even a small amount.</p>
+  </div>
+
+  <form id="test">
+    <div class="form-group">
+      <fieldset>
+        <label class="block-label">
+          <input id="yes" name="answer" value="yes" type="radio" class="selection-button-radio">
+          <span>Yes</span>
+        </label>
+        <label class="block-label">
+          <input id="not-sure" name="answer" value="not-sure" type="radio" class="selection-button-radio">
+          I’m not sure
+        </label>
+        <label class="block-label">
+          <input id="no" name="answer" value="no" type="radio" class="selection-button-radio">
+          No
+        </label>
+      </fieldset>
+    </div>
+    <button class="button" type="submit">Next question</button>
+  </form>
+</div>
+
+<section class="page-section">
+  <details class="measure">
+    <summary>
+        <span class="details__arrow"></span>
+        Help us improve this question
+    </summary>
+    <div>
+      <form>
+        <p>Does it make sense? Do you understand all the words?</p>
+        <p>We use feedback to make the service better but can't reply to any comments. Don't include any medical or personal information like your name or email.</p>
+        <textarea class="feedback" cols="20"></textarea>
+        <button class="button">Send feedback</button>
+      </form>
+    </div>
+  </details>
+</section>
+
+<div id="test-warning" class="js-hidden modal-background">
+  <div class="modal-container">
+    <div class="callout callout--warning callout--inline modal-sticky">
+      <p class="emphasis">This means you’ll be asked to dial 999</p>
+      <p>
+        <a href="#" id="cancel">I don’t need an ambulance</a>
+      </p>
+      <p>
+        <a href="hard-interrupt--disposition" class="button">Next</a>
+      </p>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block body_after %}
+  <script>
+    $('#test input').on('change', function() {
+      if ($('#test input:checked').val() === 'yes') {
+        $('#test-warning').removeClass('js-hidden');
+      } else {
+        $('#test-warning').addClass('js-hidden');
+      }
+    });
+    $('#test-warning #cancel').on('click', function(e) {
+      e.preventDefault();
+      $('#test-warning').addClass('js-hidden');
+      $('#yes').prop('checked', false).parent().removeClass('selected');
+    });
+  </script>
+{% endblock %}

@@ -34,7 +34,7 @@ router.post('/clinical-callback/clinical-callback', function (req, res) {
       }
     });
   } else {
-    
+
     res.redirect('details_2');
   }
 })
@@ -75,7 +75,7 @@ router.post('/clinical-callback/mp-clinical-callback', function (req, res) {
 // Which person +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 router.post('/clinical-callback/mp-details_who', function (req, res) {
-    
+
     if (!req.session.pronoun) {
         req.session.pronoun = {}
     }
@@ -85,7 +85,7 @@ router.post('/clinical-callback/mp-details_who', function (req, res) {
             dob: {}
         }
     }
-    
+
     if (!req.session.informant) {
         req.session.informant = {}
     }
@@ -167,13 +167,13 @@ router.post('/clinical-callback/mp-telephone', function (req, res) {
       // check to see if if we are editing an element or not
       switch(req.session.editElement){
         case 'telephone':
-          res.redirect('mp-confirm_details_lite');  
+          res.redirect('mp-confirm_details_lite');
           break;
         default:
           res.redirect('mp-dob');
       }
 
-      
+
     }
 
   phoneNumberVerificationTest(req);
@@ -184,7 +184,7 @@ router.post('/clinical-callback/mp-telephone', function (req, res) {
 // set D.O.B. ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 router.post('/clinical-callback/mp-dob', function (req, res) {
-    
+
     if (!req.session.patient) {
         req.session.patient = {
             dob: {}
@@ -297,7 +297,7 @@ router.post('/clinical-callback/home-address-manual', function (req, res) {
   } else {
     res.redirect('details_2');
   }
-  
+
 })
 
 // phone verifcation test  +++++++++++++++++++++++++++++++++
@@ -314,7 +314,7 @@ function scramblePhoneNumber(number) {
     var lastdigit = Number(chars[chars.length - 1]);
     var newLastDigit = 8;
     if (lastdigit < 9) newLastDigit = lastdigit + 1;
-    
+
     chars[chars.length - 1] = newLastDigit;
     return chars.join("");
 }
@@ -329,13 +329,13 @@ function setPersonalDetailsSessionData(req) {
     if (!req.session.homeAddress) {
         req.session.homeAddress = {}
     }
-    
+
     if (!req.session.patient) {
         req.session.patient = {
             dob: {}
         }
     }
-    
+
     if (!req.session.informant) {
         req.session.informant = {}
     }
@@ -380,7 +380,7 @@ function setPerson(req){
             dob: {}
         }
     }
-    
+
     if (!req.session.informant) {
         req.session.informant = {}
     }
@@ -400,7 +400,7 @@ function setPerson(req){
         req.session.informant.lastName = req.body['informant-last-name'];
 
         req.session.pronoun = 'their';
-    }    
+    }
 
 }
 
@@ -445,13 +445,13 @@ router.post('/location/postcode', function (req, res) {
 
       req.session.postcode = '';
 
-      res.render('location/postcode', {      
+      res.render('location/postcode', {
           session: req.session,
           error: {
             general: 'A full valid UK postcode is required',
             postcode: 'Please enter a postcode'
           }
-          
+
       });
   } else if (req.body['postcode'].length < 4)  {
         res.render('location/postcode', {
@@ -461,12 +461,12 @@ router.post('/location/postcode', function (req, res) {
             postcode: 'This is not a correct UK postcode'
           }
       });
-  
+
     } else {
 
       res.redirect('/service-list/service-list');
   }
-  
+
 })
 
 // postcode lookup on federated start page.
@@ -481,13 +481,13 @@ router.post('/location/federated-start', function (req, res) {
 
       req.session.postcode = '';
 
-      res.render('location/federated-start', {      
+      res.render('location/federated-start', {
           session: req.session,
           error: {
             general: 'A full valid UK postcode is required',
             postcode: 'Please enter a postcode'
           }
-          
+
       });
   } else if (req.body['postcode'].length < 4)  {
         res.render('location/federated-start', {
@@ -497,12 +497,12 @@ router.post('/location/federated-start', function (req, res) {
             postcode: 'This is not a correct UK postcode'
           }
       });
-  
+
     } else {
       res.redirect(whichService(req.body['postcode']));
-       
+
   }
-  
+
 })
 
 router.post('/location/postcode-service', function (req, res) {
@@ -515,13 +515,13 @@ router.post('/location/postcode-service', function (req, res) {
 
       req.session.postcode = '';
 
-      res.render('location/federated-start', {      
+      res.render('location/federated-start', {
           session: req.session,
           error: {
             general: 'A full valid UK postcode is required',
             postcode: 'Please enter a postcode'
           }
-          
+
       });
   } else if (req.body['postcode'].length < 4)  {
         res.render('location/federated-start', {
@@ -531,16 +531,16 @@ router.post('/location/postcode-service', function (req, res) {
             postcode: 'This is not a correct UK postcode'
           }
       });
-  
+
     } else {
       res.redirect('gp-dx');
-       
+
   }
-  
+
 })
 
 function whichService (enteredPostCode) {
-  
+
   var returnedObject = '';
 
   console.log(enteredPostCode);
@@ -580,13 +580,13 @@ router.post('/location/index_man_auto_error', function (req, res) {
 
         req.session.postcode = '';
 
-        res.render('location/index', {      
+        res.render('location/index', {
             session: req.session,
             error: {
               general: 'A full valid UK postcode is required',
               postcode: 'Please enter a postcode'
             }
-            
+
         });
     } else if (req.body['postcode'].length < 4)  {
           res.render('location/index', {
@@ -596,10 +596,20 @@ router.post('/location/index_man_auto_error', function (req, res) {
               postcode: 'This is not a correct UK postcode'
             }
         });
-    
+
       } else {
         res.redirect('/service-list/service-list');
     }
 
 })
 
+
+// Hard interrupt +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+router.post('/emergency-feedback/hard-interrupt--question-1', function(req, res) {
+  if (req.body['answer'] === 'yes') {
+    res.redirect('/emergency-feedback/hard-interrupt--interrupt');
+  } else {
+    res.send('another question');
+  }
+});

@@ -1,0 +1,10 @@
+.interrupt {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media (min-height: 600px) {
+    margin-bottom: $baseline-grid-unit*16;
+    margin-top: $baseline-grid-unit*16;
+  }
+}
