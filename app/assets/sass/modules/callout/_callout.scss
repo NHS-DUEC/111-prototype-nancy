@@ -1,4 +1,5 @@
 .callout {
+  display: block;
   // @include element-padding;
   padding: $baseline-grid-unit*2 $baseline-grid-unit*6;
   margin-bottom: $baseline-grid-unit*8;
@@ -7,18 +8,6 @@
 
   &:focus {
     outline: 3px solid $focus-colour;
-  }
-}
-
-.callout--inline {
-  display: block;
-  margin: $baseline-grid-unit*2 0;
-  padding: $baseline-grid-unit*2  $baseline-grid-unit*4;
-
-  @include media(768px) {
-    display: inline;
-    white-space: nowrap;
-    margin: 0 $baseline-grid-unit*2;
   }
 }
 

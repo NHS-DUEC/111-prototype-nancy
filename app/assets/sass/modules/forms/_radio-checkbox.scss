@@ -6,10 +6,10 @@
   margin: $leading 0;
   cursor: pointer;
 
-  @include media(mid) {
+  /*@include media(mid) {
     float: left;
     clear: both;
-  }
+  }*/
 
   input {
     position: absolute;
