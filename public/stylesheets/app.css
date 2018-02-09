@@ -1569,6 +1569,7 @@ textarea:focus {
 }
 
 .modal-container {
+  position: fixed;
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -1577,8 +1578,6 @@ textarea:focus {
 }
 
 .modal-sticky {
-  position: sticky;
-  top: 32px;
   margin: 0 16px;
 }
 

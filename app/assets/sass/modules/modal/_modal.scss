@@ -13,6 +13,7 @@
 }
 
 .modal-container {
+  position: fixed;
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -21,7 +22,5 @@
 }
 
 .modal-sticky {
-  position: sticky;
-  top: $baseline-grid-unit*8;
   margin: 0 $baseline-grid-unit*4;
 }
