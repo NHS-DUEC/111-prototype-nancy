@@ -61,9 +61,9 @@
 <div id="test-warning" class="js-hidden modal-background">
   <div class="modal-container">
     <div class="callout callout--warning callout--inline modal-sticky">
-      <p class="emphasis">This means you’ll be asked to dial 999</p>
+      <p class="emphasis">This means you’ll be asked to call 999</p>
       <p>
-        <a href="#" id="cancel">I don’t need an ambulance</a>
+        <a href="#" id="cancel">I won’t call 999</a>
       </p>
       <p>
         <a href="hard-interrupt--disposition" class="button">Next</a>
@@ -77,7 +77,7 @@
 {% block body_after %}
   <script>
     $('#test input').on('change', function() {
-      if ($('#test input:checked').val() === 'yes') {
+      if ($('#test input:checked').val() === 'yes' || $('#test input:checked').val() === 'not-sure') {
         $('#test-warning').removeClass('js-hidden');
       } else {
         $('#test-warning').addClass('js-hidden');
@@ -86,7 +86,7 @@
     $('#test-warning #cancel').on('click', function(e) {
       e.preventDefault();
       $('#test-warning').addClass('js-hidden');
-      $('#yes').prop('checked', false).parent().removeClass('selected');
+      $('#yes, #not-sure').prop('checked', false).parent().removeClass('selected');
     });
   </script>
 {% endblock %}

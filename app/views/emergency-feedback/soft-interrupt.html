@@ -27,13 +27,16 @@
             Yes &ndash; you have a new rash and feel severely ill
           </span>
         </label>
-        <div class="interrupt--mini callout--warning js-hidden" id="test-warning">
-          This means you’ll be asked to dial 999
+        <div class="interrupt--mini callout--warning js-hidden" id="test-warning-yes">
+          This means you’ll be asked to call 999
         </div>
         <label class="block-label">
           <input id="not-sure" name="answer" value="not-sure" type="radio" class="selection-button-radio">
           I’m not sure
         </label>
+        <div class="interrupt--mini callout--warning js-hidden" id="test-warning-unsure">
+          This means you’ll be asked to call 999
+        </div>
         <label class="block-label">
           <input id="no" name="answer" value="no" type="radio" class="selection-button-radio">
           No
@@ -66,10 +69,12 @@
 {% block body_after %}
   <script>
     $('#test input').on('change', function() {
+      $('#test-warning-yes, #test-warning-unsure').addClass('js-hidden');
       if ($('#test input:checked').val() === 'yes') {
-        $('#test-warning').removeClass('js-hidden');
-      } else {
-        $('#test-warning').addClass('js-hidden');
+        $('#test-warning-yes').removeClass('js-hidden');
+      }
+      if ($('#test input:checked').val() === 'not-sure') {
+        $('#test-warning-unsure').removeClass('js-hidden');
       }
     });
   </script>
