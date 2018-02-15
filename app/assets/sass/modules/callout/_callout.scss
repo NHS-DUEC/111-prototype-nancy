@@ -1,8 +1,10 @@
 .callout {
-  // @include element-padding; 
+  display: block;
+  // @include element-padding;
   padding: $baseline-grid-unit*2 $baseline-grid-unit*6;
   margin-bottom: $baseline-grid-unit*8;
   background-color: $white;
+  clear: both;
 
   &:focus {
     outline: 3px solid $focus-colour;

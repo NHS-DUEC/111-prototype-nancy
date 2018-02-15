@@ -1,10 +1,10 @@
 @import url("//assets.nhs.uk/fonts/nhsuk-fonts-1.1.0.css");
-li.tabular-data-row, .prototype-warning-inner, .breadcrumb, .footer-container, .-date, .error-summary, form, .form-group, #global-header, .signage, .card, .nhsid-container, .header-container,
+li.tabular-data-row, .prototype-warning-inner, .card, .breadcrumb, .footer-container, .-date, .error-summary, form, .form-group, #global-header, .nhsid-container, .signage, .header-container,
 .content, .grid-row {
   zoom: 1;
 }
 
-li.tabular-data-row:after, .prototype-warning-inner:after, .breadcrumb:after, .footer-container:after, .-date:after, .error-summary:after, form:after, .form-group:after, #global-header:after, .signage:after, .card:after, .nhsid-container:after, .header-container:after,
+li.tabular-data-row:after, .prototype-warning-inner:after, .card:after, .breadcrumb:after, .footer-container:after, .-date:after, .error-summary:after, form:after, .form-group:after, #global-header:after, .nhsid-container:after, .signage:after, .header-container:after,
 .content:after, .grid-row:after {
   content: "";
   display: block;
@@ -53,7 +53,7 @@ body, pre.user-input,
   color: #231f20;
   font-family: "Frutiger W01", sans-serif;
   font-weight: 400;
-  font-size: 20px;
+  font-size: 19px;
   line-height: 32px;
   letter-spacing: 0.3px;
 }
@@ -383,6 +383,21 @@ a.link-prototype:visted {
   color: #d8dde0;
 }
 
+.phase-banner {
+  padding: 5.3333333333px 0;
+  display: block;
+  margin: 0;
+  font-size: 16px;
+  font-weight: 200;
+  border-bottom: 1px solid #e6eff8;
+  margin-bottom: 32px;
+}
+
+.phase-banner > .phase-message {
+  color: #425563;
+  padding-left: 8px;
+}
+
 .prototype-warning {
   background-color: #768692;
   color: #d9e1e2;
@@ -419,6 +434,121 @@ a.link-prototype:visted {
 
 .banner--beta {
   background-color: #ffb81c;
+}
+
+.callout {
+  display: block;
+  padding: 8px 24px;
+  margin-bottom: 32px;
+  background-color: #fff;
+  clear: both;
+}
+
+.callout:focus {
+  outline: 3px solid #ffb81c;
+}
+
+.callout--muted {
+  background-color: #f0f4f5;
+}
+
+.callout--bordered {
+  border: solid #d8dde0;
+  background-color: #f0f4f5;
+  border-width: 2px 0;
+}
+
+.callout--info {
+  background-color: #f0f4f5;
+  border: solid #768692;
+  border-width: 0 0 0 4px;
+}
+
+.callout--attention {
+  border: 8px solid #0072ce;
+}
+
+.callout--warning {
+  background-color: #fdf2d5;
+  border: solid #fada8b;
+  border-width: 4px 0;
+}
+
+.callout--alert {
+  background-color: #f5e6e4;
+  border-top: 8px solid #da291c;
+}
+
+.callout--severe {
+  background-color: #da291c;
+  color: #fff;
+}
+
+.callout--severe a:link {
+  color: #fff;
+}
+
+.callout--severe a:visited {
+  color: #fff;
+}
+
+.callout--severe a:hover {
+  color: #d4efff;
+}
+
+.callout--severe a:active {
+  color: #d4efff;
+}
+
+.callout--severe a:focus {
+  outline: 3px solid #ffb81c;
+}
+
+.callout--error {
+  border: 4px solid #da291c;
+}
+
+.callout--compact {
+  display: inline-block;
+}
+
+@media (min-width: desktop) {
+  .callout--compact {
+    padding: 16px 24px;
+  }
+}
+
+.callout--disposition {
+  background-color: #005eb8;
+  color: #fff;
+}
+
+.callout-reference p {
+  margin-bottom: 0;
+  color: #aeb7bd;
+}
+
+.callout-reference h3, .callout-reference .heading-large {
+  margin-top: 0;
+}
+
+.card {
+  display: inline-block;
+  border: 1px solid #f0f4f5;
+  border-left: 4px solid #f0f4f5;
+  padding: 8px;
+  margin-bottom: 8px;
+  margin-right: 16px;
+}
+
+@media (min-width: 500px) {
+  .card {
+    width: 50%;
+  }
+}
+
+.card > .cta {
+  margin-bottom: 16px;
 }
 
 .breadcrumb {
@@ -463,13 +593,14 @@ a.link-prototype:visted {
   font-size: inherit;
   line-height: 48px;
   width: 100%;
-  padding: 0 32px;
+  padding: 0 24px;
   margin: 0 0 8px 0;
   text-align: center;
   color: #fff;
   background-color: #007f3b;
   cursor: pointer;
-  border: 1px solid #007f3b;
+  border: 0;
+  box-shadow: 0 2px 0 #003317;
   -webkit-appearance: none;
   border-radius: 0;
 }
@@ -927,7 +1058,6 @@ input::-webkit-inner-spin-button {
 label {
   display: block;
   width: 100%;
-  font-weight: 700;
 }
 
 .form-hint {
@@ -967,13 +1097,10 @@ label .form-hint {
   padding: 7px 0 7px 50px;
   margin: 8px 0;
   cursor: pointer;
-}
-
-@media (min-width: 500px) {
-  .block-label {
+  /*@include media(mid) {
     float: left;
     clear: both;
-  }
+  }*/
 }
 
 .block-label input {
@@ -1105,6 +1232,10 @@ textarea:focus {
   box-shadow: 0 0 0 5px #ffb81c;
 }
 
+.feedback {
+  height: 150px;
+}
+
 .gp-local-header {
   display: inline-block;
 }
@@ -1198,7 +1329,7 @@ textarea:focus {
 }
 
 .gp-finder-results .result-title {
-  font-size: 20px;
+  font-size: 19px;
   font-weight: 400;
   color: #005eb8;
   text-decoration: underline;
@@ -1389,6 +1520,99 @@ textarea:focus {
   font-weight: 200;
 }
 
+.interrupt {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-height: 600px) {
+  .interrupt {
+    margin-bottom: 64px;
+    margin-top: 64px;
+  }
+}
+
+.interrupt--mini {
+  display: block;
+  position: relative;
+  clear: both;
+  margin: 12px 0 20px 0;
+  padding: 8px;
+  border-width: 4px;
+}
+
+.interrupt--mini:before {
+  content: ' ';
+  position: absolute;
+  left: 4px;
+  top: -16px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 12px 16px 12px;
+  border-color: transparent transparent #fada8b transparent;
+}
+
+.modal-present {
+  position: relative;
+}
+
+.modal-background {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  background-color: rgba(66, 85, 99, 0.75);
+}
+
+.modal-container {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-sticky {
+  margin: 0 16px;
+}
+
+.nhsid-container {
+  margin: 16px auto;
+  padding: 32px 0 0 0;
+  background: #005eb8 url("/images/nhs-logotype-blue.svg") no-repeat 8px 8px;
+  background-size: 70px;
+}
+
+@media (min-width: 500px) {
+  .nhsid-container {
+    max-width: 480px;
+  }
+}
+
+.nhsid-container > div {
+  background-color: #f2f7fb;
+  padding: 16px 16px 8px 16px;
+}
+
+.nhsid-container input[type='text'],
+.nhsid-container input[type='password'] {
+  width: 100%;
+}
+
+.nhsid-container .nhsid-secondary-controls {
+  clear: both;
+  border-top: 1px solid #d9e7f4;
+  margin-top: 16px;
+  padding-top: 8px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
 .signage {
   margin: 16px 0;
 }
@@ -1435,166 +1659,6 @@ textarea:focus {
   border: 2px solid #80afdc;
 }
 
-.callout {
-  padding: 8px 24px;
-  margin-bottom: 32px;
-  background-color: #fff;
-}
-
-.callout:focus {
-  outline: 3px solid #ffb81c;
-}
-
-.callout--muted {
-  background-color: #f0f4f5;
-}
-
-.callout--bordered {
-  border: solid #d8dde0;
-  background-color: #f0f4f5;
-  border-width: 2px 0;
-}
-
-.callout--info {
-  background-color: #f0f4f5;
-  border: solid #768692;
-  border-width: 0 0 0 4px;
-}
-
-.callout--attention {
-  border: 8px solid #0072ce;
-}
-
-.callout--warning {
-  background-color: #fdf2d5;
-  border: solid #fada8b;
-  border-width: 4px 0;
-}
-
-.callout--alert {
-  background-color: #f5e6e4;
-  border-top: 8px solid #da291c;
-}
-
-.callout--severe {
-  background-color: #da291c;
-  color: #fff;
-}
-
-.callout--severe a:link {
-  color: #fff;
-}
-
-.callout--severe a:visited {
-  color: #fff;
-}
-
-.callout--severe a:hover {
-  color: #d4efff;
-}
-
-.callout--severe a:active {
-  color: #d4efff;
-}
-
-.callout--severe a:focus {
-  outline: 3px solid #ffb81c;
-}
-
-.callout--error {
-  border: 4px solid #da291c;
-}
-
-.callout--compact {
-  display: inline-block;
-}
-
-@media (min-width: desktop) {
-  .callout--compact {
-    padding: 16px 24px;
-  }
-}
-
-.callout--disposition {
-  background-color: #005eb8;
-  color: #fff;
-}
-
-.callout-reference p {
-  margin-bottom: 0;
-  color: #aeb7bd;
-}
-
-.callout-reference h3, .callout-reference .heading-large {
-  margin-top: 0;
-}
-
-.card {
-  display: inline-block;
-  border: 1px solid #f0f4f5;
-  border-left: 4px solid #f0f4f5;
-  padding: 8px;
-  margin-bottom: 8px;
-  margin-right: 16px;
-}
-
-@media (min-width: 500px) {
-  .card {
-    width: 50%;
-  }
-}
-
-.card > .cta {
-  margin-bottom: 16px;
-}
-
-.phase-banner {
-  padding: 5.3333333333px 0;
-  display: block;
-  margin: 0;
-  font-size: 16px;
-  font-weight: 200;
-  border-bottom: 1px solid #e6eff8;
-  margin-bottom: 32px;
-}
-
-.phase-banner > .phase-message {
-  color: #425563;
-  padding-left: 8px;
-}
-
-.nhsid-container {
-  margin: 16px auto;
-  padding: 32px 0 0 0;
-  background: #005eb8 url("/images/nhs-logotype-blue.svg") no-repeat 8px 8px;
-  background-size: 70px;
-}
-
-@media (min-width: 500px) {
-  .nhsid-container {
-    max-width: 480px;
-  }
-}
-
-.nhsid-container > div {
-  background-color: #f2f7fb;
-  padding: 16px 16px 8px 16px;
-}
-
-.nhsid-container input[type='text'],
-.nhsid-container input[type='password'] {
-  width: 100%;
-}
-
-.nhsid-container .nhsid-secondary-controls {
-  clear: both;
-  border-top: 1px solid #d9e7f4;
-  margin-top: 16px;
-  padding-top: 8px;
-  font-size: 16px;
-  line-height: 1.5;
-}
-
 body, pre.user-input {
   margin: 0;
   padding: 0;
@@ -1627,7 +1691,7 @@ body, pre.user-input {
   margin-bottom: 48px;
 }
 
-.postcode-inline-change input, a {
+.postcode-inline-change input {
   display: inline;
   margin-right: 8px;
 }

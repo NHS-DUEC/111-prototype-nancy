@@ -1,0 +1,31 @@
+.interrupt {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media (min-height: 600px) {
+    margin-bottom: $baseline-grid-unit*16;
+    margin-top: $baseline-grid-unit*16;
+  }
+}
+
+.interrupt--mini {
+  display: block;
+  position: relative;
+  clear: both;
+  margin: $baseline-grid-unit*3 0 $baseline-grid-unit*5 0;
+  padding: $baseline-grid-unit*2;
+  border-width: $baseline-grid-unit;
+
+  &:before {
+    content: ' ';
+    position: absolute;
+    left: $baseline-grid-unit;
+    top: -$baseline-grid-unit*4;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 12px 16px 12px;
+    border-color: transparent transparent $yellow-50 transparent;
+  }
+}

@@ -29,7 +29,7 @@
     "express": "^4.14.0",
     "express-session": "^1.14.1",
     "express-validator": "^2.20.10",
-    "grunt": "^1.0.1",
+    "grunt": "^1.0.2",
     "grunt-babel": "^6.0.0",
     "grunt-cli": "^1.2.0",
     "grunt-concurrent": "^2.3.1",

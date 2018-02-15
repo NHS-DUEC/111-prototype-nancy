@@ -6,8 +6,6 @@
 @import "tools/mixins/addons";
 @import "tools/hidden";
 
-
-
 @import "variables/colours";
 @import "variables/frutiger";
 //@import "variables/system";
@@ -21,8 +19,11 @@
 @import "modules/typography/links";
 
 // Modules
+@import "modules/banner/phase-banner";
 @import "modules/banner/prototype";
 @import "modules/banner/service-banners";
+@import "modules/callout/callout";
+@import "modules/cards/service-card";
 @import "modules/controls/breadcrumbs";
 @import "modules/controls/buttons";
 @import "modules/data/table";
@@ -42,17 +43,12 @@
 @import "modules/gp-lookup/gp-lookup";
 @import "modules/header-global/header-global";
 @import "modules/header-local/header-panel-local";
-@import "modules/signage/info";
-@import "modules/callout/callout";
-@import "modules/cards/service-card";
-@import "modules/banner/phase-banner.scss";
-
-
+@import "modules/interrupt/interrupt";
+@import "modules/modal/modal";
 @import "modules/nhsid/nhsid";
+@import "modules/signage/info";
 
 // Layout and grid
 @import "modules/layout/layout";
 @import "modules/layout/grid";
 @import "modules/layout/spacing";
-
-//mixins

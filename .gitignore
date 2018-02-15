@@ -42,3 +42,6 @@ jspm_packages
 # sublime project files
 .sublime-project
 .sublime-workspace
+
+# sass temp files
+.sass-cache
