@@ -266,7 +266,6 @@
                     <div id="AddressList" style="margin-top:25px;">
                         <label class="block-label-legend" for="AddressInfoViewModel_SelectedAddressFromPicker">What is the address?</label>
                         <div class="form-group ">
-                            <span class="field-validation-valid" data-valmsg-for="AddressInfoViewModel.AddressPicker" data-valmsg-replace="false">Please select the address</span>
                             <select class="select-address" id="AddressInfoViewModel_SelectedAddressFromPicker" name="AddressInfoViewModel.SelectedAddressFromPicker">
                                 <option selected="selected" value="">11 addresses found. Please choose...</option>
                                 <option value="72208697">62 The Avenue</option>
@@ -567,6 +566,12 @@
             $(".survey-banner-wrap").hide();
         });
 </script>
+
+<style>
+.field-validation-valid {
+    display: none;
+}
+</style>
 {% endblock %}
 {% block footer %}
 {% endblock %}
