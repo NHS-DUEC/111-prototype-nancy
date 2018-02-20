@@ -1,0 +1,253 @@
+{% extends '_layouts/layout.html' %}
+{% block page_title %}
+{% endblock %}
+{% block content %}
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+<main class="clearfix measure" id="content" role="main">
+
+            <fieldset>
+                <legend>
+                    <h2>Current location</h2>
+                </legend>
+
+                <p class="form-info">We need this in case the person needing care requires emergency help.</p>
+                <div class="find-address-panel choose-postcode">
+                    <div class="form-group ">
+                        <div>
+                            <label class="block-label-legend" for="AddressInfoViewModel_PreviouslyEnteredPostcode">Postcode</label>
+                            <div class="inline-details">
+                                <input class="form-control form-control-8-chars" id="AddressInfoViewModel_PreviouslyEnteredPostcode" name="AddressInfoViewModel.PreviouslyEnteredPostcode"
+                                    readonly="readonly" type="text" value="LS17 7NZ">
+                                <button style="cursor: pointer;" type="button" class="button--next button--secondary find-address button" id="findMyAddress">Find address</button>
+                            </div>
+                        </div>
+                        <p style="color:red; display: none;" id="no-results-message">Sorry, we couldn't find an address using that postcode.
+                            <br>Please enter your address below or try a different postcode.</p>
+                    </div>
+                </div>
+
+                <div class="form-group choose-address" >
+                    <div id="AddressList" style="margin-top:25px; display: none;">
+                        <label class="block-label-legend" for="AddressInfoViewModel_SelectedAddressFromPicker">What is the address?</label>
+                        <div class="form-group ">
+                            <span class="field-validation-valid" data-valmsg-for="AddressInfoViewModel.AddressPicker" data-valmsg-replace="false">Please select the address</span>
+                            <select class="select-address" id="AddressInfoViewModel_SelectedAddressFromPicker" name="AddressInfoViewModel.SelectedAddressFromPicker">
+                                <option selected="selected" value="">11 addresses found. Please choose...</option>
+                                <option value="72208697">62 The Avenue</option>
+                                <option value="72208703">64 The Avenue</option>
+                                <option value="72208706">66 The Avenue</option>
+                                <option value="72208707">68 The Avenue</option>
+                                <option value="72208708">70 The Avenue</option>
+                                <option value="72208710">72 The Avenue</option>
+                                <option value="72208711">72A The Avenue</option>
+                                <option value="72208713">74 The Avenue</option>
+                                <option value="72208715">76 The Avenue</option>
+                                <option value="72523636">60 The Avenue</option>
+                                <option value="10024950671">The Close</option>
+                            </select>
+                            <input id="AddressInfoViewModel_AddressOptions" name="AddressInfoViewModel.AddressOptions" type="hidden" value="[{&quot;Postcode&quot;:&quot;LS17 7NZ&quot;,&quot;HouseNumber&quot;:&quot;62&quot;,&quot;AddressLine1&quot;:&quot;62 The Avenue&quot;,&quot;AddressLine2&quot;:&quot;Alwoodley&quot;,&quot;City&quot;:&quot;Leeds&quot;,&quot;County&quot;:&quot;&quot;,&quot;UPRN&quot;:&quot;72208697&quot;,&quot;IsPostcodeFirst&quot;:false,&quot;IsInPilotArea&quot;:false},{&quot;Postcode&quot;:&quot;LS17 7NZ&quot;,&quot;HouseNumber&quot;:&quot;64&quot;,&quot;AddressLine1&quot;:&quot;64 The Avenue&quot;,&quot;AddressLine2&quot;:&quot;Alwoodley&quot;,&quot;City&quot;:&quot;Leeds&quot;,&quot;County&quot;:&quot;&quot;,&quot;UPRN&quot;:&quot;72208703&quot;,&quot;IsPostcodeFirst&quot;:false,&quot;IsInPilotArea&quot;:false},{&quot;Postcode&quot;:&quot;LS17 7NZ&quot;,&quot;HouseNumber&quot;:&quot;66&quot;,&quot;AddressLine1&quot;:&quot;66 The Avenue&quot;,&quot;AddressLine2&quot;:&quot;Alwoodley&quot;,&quot;City&quot;:&quot;Leeds&quot;,&quot;County&quot;:&quot;&quot;,&quot;UPRN&quot;:&quot;72208706&quot;,&quot;IsPostcodeFirst&quot;:false,&quot;IsInPilotArea&quot;:false},{&quot;Postcode&quot;:&quot;LS17 7NZ&quot;,&quot;HouseNumber&quot;:&quot;68&quot;,&quot;AddressLine1&quot;:&quot;68 The Avenue&quot;,&quot;AddressLine2&quot;:&quot;Alwoodley&quot;,&quot;City&quot;:&quot;Leeds&quot;,&quot;County&quot;:&quot;&quot;,&quot;UPRN&quot;:&quot;72208707&quot;,&quot;IsPostcodeFirst&quot;:false,&quot;IsInPilotArea&quot;:false},{&quot;Postcode&quot;:&quot;LS17 7NZ&quot;,&quot;HouseNumber&quot;:&quot;70&quot;,&quot;AddressLine1&quot;:&quot;70 The Avenue&quot;,&quot;AddressLine2&quot;:&quot;Alwoodley&quot;,&quot;City&quot;:&quot;Leeds&quot;,&quot;County&quot;:&quot;&quot;,&quot;UPRN&quot;:&quot;72208708&quot;,&quot;IsPostcodeFirst&quot;:false,&quot;IsInPilotArea&quot;:false},{&quot;Postcode&quot;:&quot;LS17 7NZ&quot;,&quot;HouseNumber&quot;:&quot;72&quot;,&quot;AddressLine1&quot;:&quot;72 The Avenue&quot;,&quot;AddressLine2&quot;:&quot;Alwoodley&quot;,&quot;City&quot;:&quot;Leeds&quot;,&quot;County&quot;:&quot;&quot;,&quot;UPRN&quot;:&quot;72208710&quot;,&quot;IsPostcodeFirst&quot;:false,&quot;IsInPilotArea&quot;:false},{&quot;Postcode&quot;:&quot;LS17 7NZ&quot;,&quot;HouseNumber&quot;:&quot;72&quot;,&quot;AddressLine1&quot;:&quot;72A The Avenue&quot;,&quot;AddressLine2&quot;:&quot;&quot;,&quot;City&quot;:&quot;Leeds&quot;,&quot;County&quot;:&quot;&quot;,&quot;UPRN&quot;:&quot;72208711&quot;,&quot;IsPostcodeFirst&quot;:false,&quot;IsInPilotArea&quot;:false},{&quot;Postcode&quot;:&quot;LS17 7NZ&quot;,&quot;HouseNumber&quot;:&quot;74&quot;,&quot;AddressLine1&quot;:&quot;74 The Avenue&quot;,&quot;AddressLine2&quot;:&quot;Alwoodley&quot;,&quot;City&quot;:&quot;Leeds&quot;,&quot;County&quot;:&quot;&quot;,&quot;UPRN&quot;:&quot;72208713&quot;,&quot;IsPostcodeFirst&quot;:false,&quot;IsInPilotArea&quot;:false},{&quot;Postcode&quot;:&quot;LS17 7NZ&quot;,&quot;HouseNumber&quot;:&quot;76&quot;,&quot;AddressLine1&quot;:&quot;76 The Avenue&quot;,&quot;AddressLine2&quot;:&quot;Alwoodley&quot;,&quot;City&quot;:&quot;Leeds&quot;,&quot;County&quot;:&quot;&quot;,&quot;UPRN&quot;:&quot;72208715&quot;,&quot;IsPostcodeFirst&quot;:false,&quot;IsInPilotArea&quot;:false},{&quot;Postcode&quot;:&quot;LS17 7NZ&quot;,&quot;HouseNumber&quot;:&quot;60&quot;,&quot;AddressLine1&quot;:&quot;60 The Avenue&quot;,&quot;AddressLine2&quot;:&quot;Alwoodley&quot;,&quot;City&quot;:&quot;Leeds&quot;,&quot;County&quot;:&quot;&quot;,&quot;UPRN&quot;:&quot;72523636&quot;,&quot;IsPostcodeFirst&quot;:false,&quot;IsInPilotArea&quot;:false},{&quot;Postcode&quot;:&quot;LS17 7NZ&quot;,&quot;HouseNumber&quot;:&quot;0&quot;,&quot;AddressLine1&quot;:&quot;The Close&quot;,&quot;AddressLine2&quot;:&quot;&quot;,&quot;City&quot;:&quot;Alwoodley&quot;,&quot;County&quot;:&quot;Leeds&quot;,&quot;UPRN&quot;:&quot;10024950671&quot;,&quot;IsPostcodeFirst&quot;:false,&quot;IsInPilotArea&quot;:false}]">
+                            <a class="button--next button--link manual-entry-link" href="#" type="button">Enter address manually</a>
+
+                        </div>
+
+                    </div>
+
+                    <p id="addressInfo" style="display: none;">
+                        64 The Avenue<br>
+                        Avenue Ave.<br>
+                        Somewhere nice<br>
+                        LS17 7NZ<br>
+                        <a href="#" class='change-address'>Change address</a>
+                    </p>
+                    <div id="addressPanel" class="address-panel" style="display: none;">
+                        <h3 class="heading-medium" id="manual-entry-title">Enter address</h3>
+                        <fieldset>
+                            <legend class="form-label block-label-legend">Street</legend>
+                            <div class="form-group inline-details ">
+                                <label class="block-label-legend" class="util-visuallyhidden" for="AddressInfoViewModel_AddressLine1">Address line 1</label>
+                                <span class="field-validation-valid" data-valmsg-for="AddressInfoViewModel.AddressLine1" data-valmsg-replace="false">Please enter the first line of the address</span>
+                                <input class="form-control" data-val="true" data-val-required="&#39;Address Line1&#39; should not be empty." id="AddressInfoViewModel_AddressLine1"
+                                    name="AddressInfoViewModel.AddressLine1" type="text" value="">
+                            </div>
+                            <div class="inline-details">
+                                <label class="block-label-legend" class="util-visuallyhidden" for="AddressInfoViewModel_AddressLine2">Address line 2</label>
+                                <input class="form-control" id="AddressInfoViewModel_AddressLine2" name="AddressInfoViewModel.AddressLine2" type="text" value="">
+                            </div>
+                        </fieldset>
+                        <div class="form-group inline-details ">
+                            <label class="block-label-legend" for="AddressInfoViewModel_City">City</label>
+                            <span class="field-validation-valid" data-valmsg-for="AddressInfoViewModel.City" data-valmsg-replace="false">Please enter a city</span>
+                            <input class="form-control" data-val="true" data-val-required="&#39;City&#39; should not be empty." id="AddressInfoViewModel_City"
+                                name="AddressInfoViewModel.City" type="text" value="">
+                        </div>
+                        <div class="inline-details">
+                            <label class="block-label-legend" for="AddressInfoViewModel_County">County</label>
+                            <input class="form-control" id="AddressInfoViewModel_County" name="AddressInfoViewModel.County" type="text" value="">
+                        </div>
+                        <div class="form-group inline-details ">
+                            <label class="block-label-legend" for="AddressInfoViewModel_Postcode">Postcode</label>
+                            <span class="field-validation-valid" data-valmsg-for="AddressInfoViewModel.Postcode" data-valmsg-replace="true"></span>
+                            <input class="form-control" data-val="true" data-val-required="&#39;Postcode&#39; should not be empty." id="AddressInfoViewModel_Postcode"
+                                name="AddressInfoViewModel.Postcode" type="text" value="">
+                        </div>
+                        <button class="button" id="next">Next</button>
+                    </div>
+                </div>
+
+            </fieldset>
+
+
+
+
+            <script type="text/javascript">
+                var addressList = $.parseJSON($("#AddressInfoViewModel_AddressOptions").val());
+                $(".find-address-panel").show();
+                $(".address-panel").hide();
+
+
+
+                $(function () {
+                    var addresses = [];
+                    $('#findMyAddress').css('cursor', 'pointer');
+                    $(document).on('click', '#findMyAddress', function (event) {
+                        postcodeChangeLink('show', $(this))
+                    });
+
+                    $(".manual-entry-link").click(function (e) {
+                        var parent = $(this).parents('fieldset')
+                        e.preventDefault();
+                        $(".address-panel", parent).show();
+                        $("#AddressList", parent).hide();
+                        $(this).hide();
+                    });
+                });
+
+                $(".postcode-change-link").click(function (e) {
+                    e.preventDefault();
+                    postcodeChangeLink("hide", $(this));
+                });
+
+                function postcodeChangeLink(flag, el) {
+                    var parent = $(el).parents('fieldset')
+                    if (flag === "hide") {
+                        $('.choose-postcode').show()
+                        $('#AddressList').hide()
+                    } else if (flag === "show", parent) {
+                        $('.choose-postcode').hide()
+                        $('#AddressList').show()
+
+                    }
+                }
+
+                $('#PatientInformantDetails_Home_No').change(function(e) {
+                    $('.toggle-content').hide()
+                    $(this).parent().siblings('.toggle-content').show()
+                })
+            </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+
+            /* if ($('.form-group').length > 0) {
+     
+                 // Add/remove selected class
+                 $('.block-label').find('input[type=radio], input[type=checkbox]').click(function () {
+     
+                     $('input:not(:checked)').parent().parent().removeClass('selected');
+                     $('input:checked').parent().parent().addClass('selected');
+     
+                     $('.toggle-content').hide();
+     
+                     var target = $('input:checked').parent().parent().attr('data-target');
+                     var $target = $('#' + target);
+     
+                     $target.css('display', 'inline-block');
+                     $target.attr('aria-expanded', true);
+     
+     
+                 });
+     
+                 // For pre-checked inputs, show toggled content
+                 var target = $('input:checked').parent().parent().attr('data-target');
+                 $('#' + target).css('display', 'inline-block');
+     
+             }*/
+
+
+            stopPageLoadingIndicator();
+            toggleInformant($('#Informant'));
+        });
+
+        $(document).on('click', '#submitDetails', function (event) {
+            if ($("#personalDetailForm").valid()) startPageLoadingIndicator('Contacting your selected service...');
+        });
+
+        $(document).on('click', '#Informant', function () {
+            toggleInformant($(this));
+        });
+
+        window.onpageshow = function (event) {
+            stopPageLoadingIndicator();
+        };
+
+
+        $('.select-address').change(function(e) {
+            $('#addressInfo').show();
+            $('#AddressList').hide();
+        })
+
+        $('.change-address').click(function(e) {
+            e.preventDefault();
+            $('#addressInfo').hide();
+            $('#AddressList').hide();
+            $('.choose-postcode').show();
+        })
+
+        $('#next').click(function(e) {
+            e.preventDefault();
+            $('#addressInfo').show();
+            $('#AddressList').hide();
+            $('.address-panel').hide();
+        })
+
+        function toggleInformant($informantCheckbox) {
+            if ($informantCheckbox.is(':checked')) {
+                $('#informant-details').show();
+            }
+            else {
+                $('#informant-details').hide();
+                $('#Informant_Forename').val('');
+                $('#Informant_Surname').val('');
+            }
+        }
+    </script>
+
+</main>
+
+
+<script>
+
+    $(document)
+        .ready(function () {
+            if (!$.cookie("nhs111-survey-link-banner")) {
+                $(".survey-banner-wrap").show();
+            }
+        });
+
+    $("#AgreeButton")
+        .click(function () {
+            $.cookie("nhs111-survey-link-banner", "survey-link-yes", { path: '/', secure: true });
+            $(".survey-banner-wrap").hide();
+        });
+
+    $("#PostponeButton")
+        .click(function () {
+            $(".survey-banner-wrap").hide();
+        });
+</script>
+{% endblock %}
+{% block footer %}
+{% endblock %}

@@ -940,6 +940,12 @@ form {
   clear: both;
 }
 
+.form-group.-inline {
+  display: inline-block;
+  margin: 0;
+  margin-right: 2em;
+}
+
 .form-group.-controls {
   margin: 8px 0;
 }
@@ -1028,6 +1034,16 @@ input[type='password']:focus {
   -webkit-box-shadow: 0 0 0 5px #ffb81c;
   -moz-box-shadow: 0 0 0 5px #ffb81c;
   box-shadow: 0 0 0 5px #ffb81c;
+}
+
+@media (min-width: 500px) {
+  input[type='text'].-tiny,
+  input[type='number'].-tiny,
+  input[type='tel'].-tiny,
+  input[type='email'].-tiny,
+  input[type='password'].-tiny {
+    width: 3em;
+  }
 }
 
 @media (min-width: 500px) {
