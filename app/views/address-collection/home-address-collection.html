@@ -1,0 +1,424 @@
+{% extends '_layouts/layout.html' %}
+{% block page_title %}
+{% endblock %}
+{% block content %}
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+<div class="header-panel">
+    <h1 class="heading-xlarge">
+        Enter details
+    </h1>
+</div>
+<main class="clearfix measure" id="content" role="main">
+
+    <form  id="personalDetailForm" method="post" novalidate="novalidate">
+        <input id="SessionId" name="SessionId" type="hidden" value="ae2eeb95-7d5f-42b6-a0b1-f2e5571d2d0c">
+        <div class="section-item last">
+
+
+
+            <fieldset class="form-group ">
+             
+                <legend>
+                    <h2>Who needs help?</h2>
+                </legend>
+                <span class="field-validation-valid" data-valmsg-for="PatientInformantDetails.Informant" data-valmsg-replace="false">Please tell us who needs help</span>
+                <div>
+                    <label for="PatientInformantDetails_Informant_Self" class="block-label selection-button-radio" name="PatientInformantDetails_Informant"
+                        data-target="self-data">
+                        <input class="selection-button-radio" data-val="true" data-val-required="&#39;Informant&#39; must not be empty."
+                            id="PatientInformantDetails_Informant_Self" name="PatientInformantDetails.Informant" type="radio"
+                            value="Self">Me</label>
+
+                    <div class="toggle-content panel">
+                        <div class="form-group ">
+                            <label class="block-label-legend" for="PatientInformantDetails_SelfName_Forename">First name</label>
+                            <span class="field-validation-valid" data-valmsg-for="PatientInformantDetails.SelfName.Forename" data-valmsg-replace="false">Please enter your first name</span>
+                            <input class="form-control form-control-15-chars" data-val="true" data-val-personname="Specify Name" data-val-personname-prefixelement="Forename"
+                                id="PatientInformantDetails_SelfName_Forename" name="PatientInformantDetails.SelfName.Forename"
+                                type="text" value="">
+                        </div>
+                        <div class="form-group ">
+                            <label class="block-label-legend" for="PatientInformantDetails_SelfName_Surname">Last name</label>
+                            <span class="field-validation-valid" data-valmsg-for="PatientInformantDetails.SelfName.Surname" data-valmsg-replace="false">Please enter your last name</span>
+                            <input class="form-control form-control-15-chars" data-val="true" data-val-personname="Specify Name" data-val-personname-prefixelement="Surname"
+                                id="PatientInformantDetails_SelfName_Surname" name="PatientInformantDetails.SelfName.Surname"
+                                type="text" value="">
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <label for="PatientInformantDetails_Informant_ThirdParty" class="block-label selection-button-radio" name="PatientInformantDetails_Informant"
+                        data-target="other-data">
+                        <input class="selection-button-radio" id="PatientInformantDetails_Informant_ThirdParty" name="PatientInformantDetails.Informant"
+                            type="radio" value="ThirdParty">Someone else</label>
+
+                    <div class="toggle-content panel">
+                        <h3>Enter the name of the person needing care</h3>
+                        <div class="form-group ">
+                            <label class="block-label-legend" for="PatientInformantDetails_PatientName_Forename">First name</label>
+                            <span class="field-validation-valid" data-valmsg-for="PatientInformantDetails.PatientName.Forename" data-valmsg-replace="false">Please enter the first name of the person needing care</span>
+                            <input class="form-control form-control-15-chars" data-val="true" data-val-personname="Specify Name" data-val-personname-prefixelement="Forename"
+                                id="PatientInformantDetails_PatientName_Forename" name="PatientInformantDetails.PatientName.Forename"
+                                type="text" value="">
+                        </div>
+                        <div class="form-group ">
+                            <label class="block-label-legend" for="PatientInformantDetails_PatientName_Surname">Last name</label>
+                            <span class="field-validation-valid" data-valmsg-for="PatientInformantDetails.PatientName.Surname" data-valmsg-replace="false">Please enter the last name of the person needing care</span>
+                            <input class="form-control form-control-15-chars" data-val="true" data-val-personname="Specify Name" data-val-personname-prefixelement="Surname"
+                                id="PatientInformantDetails_PatientName_Surname" name="PatientInformantDetails.PatientName.Surname"
+                                type="text" value="">
+                        </div>
+
+                        <div class="content-seperator content-seperator_equalvertspacing"></div>
+
+                        <div>
+                            <h3 class="heading-small">Enter your name</h3>
+                            <p class="form-info">You need to be able to answer questions about the person needing care.</p>
+                            <div class="form-group ">
+                                <label class="block-label-legend" for="PatientInformantDetails_InformantName_Forename">First name</label>
+                                <span class="field-validation-valid" data-valmsg-for="PatientInformantDetails.InformantName.Forename" data-valmsg-replace="false">Please enter your first name</span>
+                                <input class="form-control form-control-15-chars" data-val="true" data-val-personname="Specify Name" data-val-personname-prefixelement="Forename"
+                                    id="PatientInformantDetails_InformantName_Forename" name="PatientInformantDetails.InformantName.Forename"
+                                    type="text" value="">
+                            </div>
+                            <div class="form-group ">
+                                <label class="block-label-legend" for="PatientInformantDetails_InformantName_Surname">Last name</label>
+                                <span class="field-validation-valid" data-valmsg-for="PatientInformantDetails.InformantName.Surname" data-valmsg-replace="false">Please enter your last name</span>
+                                <input class="form-control form-control-15-chars" data-val="true" data-val-personname="Specify Name" data-val-personname-prefixelement="Surname"
+                                    id="PatientInformantDetails_InformantName_Surname" name="PatientInformantDetails.InformantName.Surname"
+                                    type="text" value="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </fieldset>
+
+            <div class="content-seperator content-seperator_equalvertspacing"></div>
+
+            <fieldset id="tel-number-fields">
+                <legend>
+                    <h2>
+                        What phone number can we call back on?
+                    </h2>
+                </legend>
+
+                <div class="form-group  ">
+                    <label class="block-label-legend" for="UserInfo_TelephoneNumber">Phone number</label>
+                    <input class="form-control form-textbox form-control-16-chars" data-val="true" data-val-length="&#39;Telephone Number&#39; must be between 9 and 15 characters."
+                        data-val-length-max="15" data-val-length-min="9" data-val-required="&#39;Telephone Number&#39; should not be empty."
+                        id="UserInfo_TelephoneNumber" name="UserInfo.TelephoneNumber" placeholder="Landline or mobile number"
+                        type="tel" value="">
+                </div>
+            </fieldset>
+
+            <div class="content-seperator content-seperator_equalvertspacing"></div>
+
+            <fieldset>
+                <legend>
+                    <h2>
+                        Date of birth
+                    </h2>
+                </legend>
+                <p>This is the date of birth of the person needing care.</p>
+                <p class="form-hint">For example, 31 / 12 / 1980</p>
+
+                <div class="form-group ">
+                    <div class="form-group -inline">
+                        <label class="block-label-legend" for="UserInfo_Day">Day</label>
+                        <input class="form-control form-textbox -tiny" data-val="true" data-val-day="Incorrect Day" data-val-day-prefixelement="Day"
+                            data-val-number="The field Day must be a number." id="UserInfo_Day" max="31" maxlength="2" min="1"
+                            name="UserInfo.Day" placeholder="DD" type="number" value="">
+                    </div>
+                    <div class="form-group -inline">
+                        <label class="block-label-legend" for="UserInfo_Month">Month</label>
+                        <input class="form-control form-textbox -tiny" data-val="true" data-val-month="Incorrect Month" data-val-month-prefixelement="Month"
+                            data-val-number="The field Month must be a number." id="UserInfo_Month" max="12" maxlength="2" min="1"
+                            name="UserInfo.Month" placeholder="MM" type="number" value="">
+                    </div>
+                    <div class="form-group -inline">
+                        <label class="block-label-legend" for="UserInfo_Year">Year</label>
+                        <input class="form-control form-textbox -tiny" data-val="true" data-val-number="The field Year must be a number." data-val-year="Incorrect Year"
+                            data-val-year-prefixelement="Year" id="UserInfo_Year" maxlength="4" min="0" name="UserInfo.Year"
+                            placeholder="YYYY" type="number" value="">
+                    </div>
+                    <input data-val="true" data-val-date="The field DoB must be a date." data-val-dateofbirth="Incorrect Date" data-val-dateofbirth-prefixelement="DoB"
+                        id="UserInfo_DoB" name="UserInfo.DoB" type="hidden" value="">
+                </div>
+            </fieldset>
+            <div class="content-seperator content-seperator_equalvertspacing"></div>
+
+
+
+            <fieldset>
+                <legend>
+                    <h2>Location</h2>
+                </legend>
+                <h3>Current location</h3>
+
+                <p class="form-info">We need this in case the person needing care requires emergency help.</p>
+                <div class="address-container">
+                    <div class="find-address-panel choose-postcode">
+                        <div class="form-group ">
+                            <div>
+                                <label class="block-label-legend" for="AddressInfoViewModel_PreviouslyEnteredPostcode">Postcode</label>
+                                <div class="inline-details">
+                                    <input class="form-control form-control-8-chars -small" id="AddressInfoViewModel_PreviouslyEnteredPostcode" name="AddressInfoViewModel.PreviouslyEnteredPostcode"
+                                        readonly="readonly" type="text" value="LS17 7NZ">
+                                    <button style="cursor: pointer;" type="button" class="button--next button-button--secondary find-address button button--secondary" id="findMyAddress">Find address</button>
+                                </div>
+                            </div>
+                            <p style="color:red; display: none;" id="no-results-message">Sorry, we couldn't find an address using that postcode.
+                                <br>Please enter your address below or try a different postcode.</p>
+                        </div>
+                    </div>
+
+                    <div class="form-group choose-address" >
+                        <div id="AddressList" style="display: none;">
+                            <label class="block-label-legend" for="AddressInfoViewModel_SelectedAddressFromPicker">What is the address?</label>
+                            <div class="form-group ">
+                                <select class="select-address" id="AddressInfoViewModel_SelectedAddressFromPicker" name="AddressInfoViewModel.SelectedAddressFromPicker">
+                                    <option selected="selected" value="">11 addresses found. Please choose...</option>
+                                    <option value="72208697">62 The Avenue</option>
+                                    <option value="72208703">64 The Avenue</option>
+                                    <option value="72208706">66 The Avenue</option>
+                                    <option value="72208707">68 The Avenue</option>
+                                    <option value="72208708">70 The Avenue</option>
+                                    <option value="72208710">72 The Avenue</option>
+                                    <option value="72208711">72A The Avenue</option>
+                                    <option value="72208713">74 The Avenue</option>
+                                    <option value="72208715">76 The Avenue</option>
+                                    <option value="72523636">60 The Avenue</option>
+                                    <option value="10024950671">The Close</option>
+                                </select>
+                                <input id="AddressInfoViewModel_AddressOptions" name="AddressInfoViewModel.AddressOptions" type="hidden" value="[{&quot;Postcode&quot;:&quot;LS17 7NZ&quot;,&quot;HouseNumber&quot;:&quot;62&quot;,&quot;AddressLine1&quot;:&quot;62 The Avenue&quot;,&quot;AddressLine2&quot;:&quot;Alwoodley&quot;,&quot;City&quot;:&quot;Leeds&quot;,&quot;County&quot;:&quot;&quot;,&quot;UPRN&quot;:&quot;72208697&quot;,&quot;IsPostcodeFirst&quot;:false,&quot;IsInPilotArea&quot;:false},{&quot;Postcode&quot;:&quot;LS17 7NZ&quot;,&quot;HouseNumber&quot;:&quot;64&quot;,&quot;AddressLine1&quot;:&quot;64 The Avenue&quot;,&quot;AddressLine2&quot;:&quot;Alwoodley&quot;,&quot;City&quot;:&quot;Leeds&quot;,&quot;County&quot;:&quot;&quot;,&quot;UPRN&quot;:&quot;72208703&quot;,&quot;IsPostcodeFirst&quot;:false,&quot;IsInPilotArea&quot;:false},{&quot;Postcode&quot;:&quot;LS17 7NZ&quot;,&quot;HouseNumber&quot;:&quot;66&quot;,&quot;AddressLine1&quot;:&quot;66 The Avenue&quot;,&quot;AddressLine2&quot;:&quot;Alwoodley&quot;,&quot;City&quot;:&quot;Leeds&quot;,&quot;County&quot;:&quot;&quot;,&quot;UPRN&quot;:&quot;72208706&quot;,&quot;IsPostcodeFirst&quot;:false,&quot;IsInPilotArea&quot;:false},{&quot;Postcode&quot;:&quot;LS17 7NZ&quot;,&quot;HouseNumber&quot;:&quot;68&quot;,&quot;AddressLine1&quot;:&quot;68 The Avenue&quot;,&quot;AddressLine2&quot;:&quot;Alwoodley&quot;,&quot;City&quot;:&quot;Leeds&quot;,&quot;County&quot;:&quot;&quot;,&quot;UPRN&quot;:&quot;72208707&quot;,&quot;IsPostcodeFirst&quot;:false,&quot;IsInPilotArea&quot;:false},{&quot;Postcode&quot;:&quot;LS17 7NZ&quot;,&quot;HouseNumber&quot;:&quot;70&quot;,&quot;AddressLine1&quot;:&quot;70 The Avenue&quot;,&quot;AddressLine2&quot;:&quot;Alwoodley&quot;,&quot;City&quot;:&quot;Leeds&quot;,&quot;County&quot;:&quot;&quot;,&quot;UPRN&quot;:&quot;72208708&quot;,&quot;IsPostcodeFirst&quot;:false,&quot;IsInPilotArea&quot;:false},{&quot;Postcode&quot;:&quot;LS17 7NZ&quot;,&quot;HouseNumber&quot;:&quot;72&quot;,&quot;AddressLine1&quot;:&quot;72 The Avenue&quot;,&quot;AddressLine2&quot;:&quot;Alwoodley&quot;,&quot;City&quot;:&quot;Leeds&quot;,&quot;County&quot;:&quot;&quot;,&quot;UPRN&quot;:&quot;72208710&quot;,&quot;IsPostcodeFirst&quot;:false,&quot;IsInPilotArea&quot;:false},{&quot;Postcode&quot;:&quot;LS17 7NZ&quot;,&quot;HouseNumber&quot;:&quot;72&quot;,&quot;AddressLine1&quot;:&quot;72A The Avenue&quot;,&quot;AddressLine2&quot;:&quot;&quot;,&quot;City&quot;:&quot;Leeds&quot;,&quot;County&quot;:&quot;&quot;,&quot;UPRN&quot;:&quot;72208711&quot;,&quot;IsPostcodeFirst&quot;:false,&quot;IsInPilotArea&quot;:false},{&quot;Postcode&quot;:&quot;LS17 7NZ&quot;,&quot;HouseNumber&quot;:&quot;74&quot;,&quot;AddressLine1&quot;:&quot;74 The Avenue&quot;,&quot;AddressLine2&quot;:&quot;Alwoodley&quot;,&quot;City&quot;:&quot;Leeds&quot;,&quot;County&quot;:&quot;&quot;,&quot;UPRN&quot;:&quot;72208713&quot;,&quot;IsPostcodeFirst&quot;:false,&quot;IsInPilotArea&quot;:false},{&quot;Postcode&quot;:&quot;LS17 7NZ&quot;,&quot;HouseNumber&quot;:&quot;76&quot;,&quot;AddressLine1&quot;:&quot;76 The Avenue&quot;,&quot;AddressLine2&quot;:&quot;Alwoodley&quot;,&quot;City&quot;:&quot;Leeds&quot;,&quot;County&quot;:&quot;&quot;,&quot;UPRN&quot;:&quot;72208715&quot;,&quot;IsPostcodeFirst&quot;:false,&quot;IsInPilotArea&quot;:false},{&quot;Postcode&quot;:&quot;LS17 7NZ&quot;,&quot;HouseNumber&quot;:&quot;60&quot;,&quot;AddressLine1&quot;:&quot;60 The Avenue&quot;,&quot;AddressLine2&quot;:&quot;Alwoodley&quot;,&quot;City&quot;:&quot;Leeds&quot;,&quot;County&quot;:&quot;&quot;,&quot;UPRN&quot;:&quot;72523636&quot;,&quot;IsPostcodeFirst&quot;:false,&quot;IsInPilotArea&quot;:false},{&quot;Postcode&quot;:&quot;LS17 7NZ&quot;,&quot;HouseNumber&quot;:&quot;0&quot;,&quot;AddressLine1&quot;:&quot;The Close&quot;,&quot;AddressLine2&quot;:&quot;&quot;,&quot;City&quot;:&quot;Alwoodley&quot;,&quot;County&quot;:&quot;Leeds&quot;,&quot;UPRN&quot;:&quot;10024950671&quot;,&quot;IsPostcodeFirst&quot;:false,&quot;IsInPilotArea&quot;:false}]">
+                                <a class="button--next button--link change-address" href="#" type="button">Change address</a>
+
+                            </div>
+
+                        </div>
+
+                        <p id="addressInfo" style="display: none;">
+                            64 The Avenue<br>
+                            Avenue Ave.<br>
+                            Somewhere nice<br>
+                            LS17 7NZ<br>
+                            <a href="#" class='change-address'>Change address</a>
+                        </p>
+                        <div id="addressPanel" class="address-panel" style="display: none;">
+                            <fieldset>
+                                <legend class="form-label block-label-legend">Building and street</legend>
+                                <div class="form-group inline-details ">
+                                    <input class="form-control" data-val="true" data-val-required="&#39;Address Line1&#39; should not be empty." id="AddressInfoViewModel_AddressLine1"
+                                        name="AddressInfoViewModel.AddressLine1" type="text" value="64 The Avenue">
+                                </div>
+                                <div class="inline-details">
+                                    <input class="form-control" id="AddressInfoViewModel_AddressLine2" name="AddressInfoViewModel.AddressLine2" type="text" value="Avenue Ave.">
+                                </div>
+                            </fieldset>
+                            <div class="form-group inline-details ">
+                                <label class="block-label-legend" for="AddressInfoViewModel_City">Town or city</label>
+                                <input class="form-control" data-val="true" data-val-required="&#39;City&#39; should not be empty." id="AddressInfoViewModel_City"
+                                    name="AddressInfoViewModel.City" type="text" value="Somewhere nice">
+                            </div>
+                            <div class="form-group inline-details ">
+                                <label class="block-label-legend" for="AddressInfoViewModel_Postcode">Postcode</label>
+                                <input class="form-control" data-val="true" data-val-required="&#39;Postcode&#39; should not be empty." id="AddressInfoViewModel_Postcode"
+                                    name="AddressInfoViewModel.Postcode" type="text" value="LS17 7NZ">
+                            </div>
+                            <button class="button button--secondary confirm-address" type="button">Confirm Address</button>
+                        </div>
+                    </div>
+                </div>
+
+            <fieldset class="form-group address-container"  style="margin-top: 25px;">
+
+                <h3>Home address</h3>
+                <p>We need to know the home address of the person needing care</p>
+                <div>
+                    
+                    <label  for="PatientInformantDetails_Home_Yes" class="block-label selection-button-radio" name="PatientInformantDetails_Informant" data-target="self-data"><input class="multiple-choice__input" data-val="true" data-val-required="&#39;Informant&#39; must not be empty." id="PatientInformantDetails_Home_Yes"
+                        name="PatientInformantDetails.Informant" type="radio" value="Self">Current address is home address</label>
+
+
+                </div>
+
+                <div>
+                    
+                    <label  for="PatientInformantDetails_Home_No" class="block-label selection-button-radio" name="PatientInformantDetails_Informant" data-target="other-data"><input class="multiple-choice__input" id="PatientInformantDetails_Home_No" name="PatientInformantDetails.Informant" type="radio"
+                        value="ThirdParty">Current address is not home address</label>
+
+                    <div class="toggle-content panel">
+                        <fieldset>
+                        <div class="find-address-panel choose-postcode">
+                        <div class="form-group ">
+                            <div>
+                                <label class="block-label-legend" for="AddressInfoViewModel_PreviouslyEnteredPostcode">Home Postcode <span style="font-weight: normal">(optional)</span></label>
+                                <div class="inline-details">
+                                    <input class="form-control form-control-8-chars -small" id="AddressInfoViewModel_PreviouslyEnteredPostcode" name="AddressInfoViewModel.PreviouslyEnteredPostcode"
+                                        readonly="readonly" type="text" value="LS17 7NZ">
+                                    <button style="cursor: pointer;" type="button" class="button--next button-button--secondary find-address button button--secondary" id="findMyAddress">Find address</button>
+                                </div>
+                            </div>
+                            <p style="color:red; display: none;" id="no-results-message">Sorry, we couldn't find an address using that postcode.
+                                <br>Please enter your address below or try a different postcode.</p>
+                        </div>
+                </div>
+
+                <div class="form-group choose-address" >
+                    <div id="AddressList" style="display: none;">
+                        <label class="block-label-legend" for="AddressInfoViewModel_SelectedAddressFromPicker">What is the address?</label>
+                        <div class="form-group ">
+                            <select class="select-address" id="AddressInfoViewModel_SelectedAddressFromPicker" name="AddressInfoViewModel.SelectedAddressFromPicker">
+                                <option selected="selected" value="">11 addresses found. Please choose...</option>
+                                <option value="72208697">62 The Avenue</option>
+                                <option value="72208703">64 The Avenue</option>
+                                <option value="72208706">66 The Avenue</option>
+                                <option value="72208707">68 The Avenue</option>
+                                <option value="72208708">70 The Avenue</option>
+                                <option value="72208710">72 The Avenue</option>
+                                <option value="72208711">72A The Avenue</option>
+                                <option value="72208713">74 The Avenue</option>
+                                <option value="72208715">76 The Avenue</option>
+                                <option value="72523636">60 The Avenue</option>
+                                <option value="10024950671">The Close</option>
+                            </select>
+                            <input id="AddressInfoViewModel_AddressOptions" name="AddressInfoViewModel.AddressOptions" type="hidden" value="[{&quot;Postcode&quot;:&quot;LS17 7NZ&quot;,&quot;HouseNumber&quot;:&quot;62&quot;,&quot;AddressLine1&quot;:&quot;62 The Avenue&quot;,&quot;AddressLine2&quot;:&quot;Alwoodley&quot;,&quot;City&quot;:&quot;Leeds&quot;,&quot;County&quot;:&quot;&quot;,&quot;UPRN&quot;:&quot;72208697&quot;,&quot;IsPostcodeFirst&quot;:false,&quot;IsInPilotArea&quot;:false},{&quot;Postcode&quot;:&quot;LS17 7NZ&quot;,&quot;HouseNumber&quot;:&quot;64&quot;,&quot;AddressLine1&quot;:&quot;64 The Avenue&quot;,&quot;AddressLine2&quot;:&quot;Alwoodley&quot;,&quot;City&quot;:&quot;Leeds&quot;,&quot;County&quot;:&quot;&quot;,&quot;UPRN&quot;:&quot;72208703&quot;,&quot;IsPostcodeFirst&quot;:false,&quot;IsInPilotArea&quot;:false},{&quot;Postcode&quot;:&quot;LS17 7NZ&quot;,&quot;HouseNumber&quot;:&quot;66&quot;,&quot;AddressLine1&quot;:&quot;66 The Avenue&quot;,&quot;AddressLine2&quot;:&quot;Alwoodley&quot;,&quot;City&quot;:&quot;Leeds&quot;,&quot;County&quot;:&quot;&quot;,&quot;UPRN&quot;:&quot;72208706&quot;,&quot;IsPostcodeFirst&quot;:false,&quot;IsInPilotArea&quot;:false},{&quot;Postcode&quot;:&quot;LS17 7NZ&quot;,&quot;HouseNumber&quot;:&quot;68&quot;,&quot;AddressLine1&quot;:&quot;68 The Avenue&quot;,&quot;AddressLine2&quot;:&quot;Alwoodley&quot;,&quot;City&quot;:&quot;Leeds&quot;,&quot;County&quot;:&quot;&quot;,&quot;UPRN&quot;:&quot;72208707&quot;,&quot;IsPostcodeFirst&quot;:false,&quot;IsInPilotArea&quot;:false},{&quot;Postcode&quot;:&quot;LS17 7NZ&quot;,&quot;HouseNumber&quot;:&quot;70&quot;,&quot;AddressLine1&quot;:&quot;70 The Avenue&quot;,&quot;AddressLine2&quot;:&quot;Alwoodley&quot;,&quot;City&quot;:&quot;Leeds&quot;,&quot;County&quot;:&quot;&quot;,&quot;UPRN&quot;:&quot;72208708&quot;,&quot;IsPostcodeFirst&quot;:false,&quot;IsInPilotArea&quot;:false},{&quot;Postcode&quot;:&quot;LS17 7NZ&quot;,&quot;HouseNumber&quot;:&quot;72&quot;,&quot;AddressLine1&quot;:&quot;72 The Avenue&quot;,&quot;AddressLine2&quot;:&quot;Alwoodley&quot;,&quot;City&quot;:&quot;Leeds&quot;,&quot;County&quot;:&quot;&quot;,&quot;UPRN&quot;:&quot;72208710&quot;,&quot;IsPostcodeFirst&quot;:false,&quot;IsInPilotArea&quot;:false},{&quot;Postcode&quot;:&quot;LS17 7NZ&quot;,&quot;HouseNumber&quot;:&quot;72&quot;,&quot;AddressLine1&quot;:&quot;72A The Avenue&quot;,&quot;AddressLine2&quot;:&quot;&quot;,&quot;City&quot;:&quot;Leeds&quot;,&quot;County&quot;:&quot;&quot;,&quot;UPRN&quot;:&quot;72208711&quot;,&quot;IsPostcodeFirst&quot;:false,&quot;IsInPilotArea&quot;:false},{&quot;Postcode&quot;:&quot;LS17 7NZ&quot;,&quot;HouseNumber&quot;:&quot;74&quot;,&quot;AddressLine1&quot;:&quot;74 The Avenue&quot;,&quot;AddressLine2&quot;:&quot;Alwoodley&quot;,&quot;City&quot;:&quot;Leeds&quot;,&quot;County&quot;:&quot;&quot;,&quot;UPRN&quot;:&quot;72208713&quot;,&quot;IsPostcodeFirst&quot;:false,&quot;IsInPilotArea&quot;:false},{&quot;Postcode&quot;:&quot;LS17 7NZ&quot;,&quot;HouseNumber&quot;:&quot;76&quot;,&quot;AddressLine1&quot;:&quot;76 The Avenue&quot;,&quot;AddressLine2&quot;:&quot;Alwoodley&quot;,&quot;City&quot;:&quot;Leeds&quot;,&quot;County&quot;:&quot;&quot;,&quot;UPRN&quot;:&quot;72208715&quot;,&quot;IsPostcodeFirst&quot;:false,&quot;IsInPilotArea&quot;:false},{&quot;Postcode&quot;:&quot;LS17 7NZ&quot;,&quot;HouseNumber&quot;:&quot;60&quot;,&quot;AddressLine1&quot;:&quot;60 The Avenue&quot;,&quot;AddressLine2&quot;:&quot;Alwoodley&quot;,&quot;City&quot;:&quot;Leeds&quot;,&quot;County&quot;:&quot;&quot;,&quot;UPRN&quot;:&quot;72523636&quot;,&quot;IsPostcodeFirst&quot;:false,&quot;IsInPilotArea&quot;:false},{&quot;Postcode&quot;:&quot;LS17 7NZ&quot;,&quot;HouseNumber&quot;:&quot;0&quot;,&quot;AddressLine1&quot;:&quot;The Close&quot;,&quot;AddressLine2&quot;:&quot;&quot;,&quot;City&quot;:&quot;Alwoodley&quot;,&quot;County&quot;:&quot;Leeds&quot;,&quot;UPRN&quot;:&quot;10024950671&quot;,&quot;IsPostcodeFirst&quot;:false,&quot;IsInPilotArea&quot;:false}]">
+                            <a class="button--next button--link change-address" href="#" type="button">Change address</a>
+
+                        </div>
+
+                    </div>
+
+                    <p id="addressInfo" style="display: none;">
+                        643 The Avenue<br>
+                        Not Avenue Ave.<br>
+                        Somewhere rubbish<br>
+                        AB17 7NZ<br>
+                        <a href="#" class='change-address'>Change address</a>
+                    </p>
+                    <div id="addressPanel" class="address-panel" style="display: none;">
+                        <fieldset>
+                            <legend class="form-label block-label-legend">Building and street</legend>
+                                <div class="form-group inline-details ">
+                                    <input class="form-control" data-val="true" data-val-required="&#39;Address Line1&#39; should not be empty." id="AddressInfoViewModel_AddressLine1"
+                                        name="AddressInfoViewModel.AddressLine1" type="text" value="64 The Avenue">
+                                </div>
+                                <div class="inline-details">
+                                    <input class="form-control" id="AddressInfoViewModel_AddressLine2" name="AddressInfoViewModel.AddressLine2" type="text" value="Avenue Ave.">
+                                </div>
+                            </fieldset>
+                            <div class="form-group inline-details ">
+                                <label class="block-label-legend" for="AddressInfoViewModel_City">Town or city</label>
+                                <input class="form-control" data-val="true" data-val-required="&#39;City&#39; should not be empty." id="AddressInfoViewModel_City"
+                                    name="AddressInfoViewModel.City" type="text" value="Somewhere nice">
+                            </div>
+                            <div class="form-group inline-details ">
+                                <label class="block-label-legend" for="AddressInfoViewModel_Postcode">Postcode</label>
+                                <input class="form-control" data-val="true" data-val-required="&#39;Postcode&#39; should not be empty." id="AddressInfoViewModel_Postcode"
+                                    name="AddressInfoViewModel.Postcode" type="text" value="LS17 7NZ">
+                            </div>
+                        <button class="button confirm-address button--secondary" type="button">Confirm Address</button>
+                    </div>
+                </div>
+
+            </fieldset>
+
+
+
+
+
+
+                    </div>
+                </div>
+
+            </fieldset>
+
+            </fieldset>
+
+
+
+            <div class="content-seperator content-seperator_equalvertspacing"></div>
+
+
+<style>
+.field-validation-valid {
+    display: none;
+}
+
+.button--secondary {
+    background-color: #425563;
+}
+
+.button--secondary:hover,
+.button--secondary:focus {
+    background-color: #384854;
+}
+</style>
+
+            <div class="personal-details-content">
+
+                <div class="inline-details">
+                    <p class="submit-details-disclaimer">
+                        By clicking Submit my details, you agree to share your information with other NHS organisations. See our
+                        <a
+                            href="https://ci.staging.111.service.nhs.uk/Help/Privacy" target="_blank">privacy policy</a> for more information.
+                    </p>
+                    <button type="submit" class="button" id="submitDetails">Submit my details</button>
+                </div>
+            </div>
+        </div>
+        </section>
+    </form>
+
+</main>
+
+
+<script>
+
+    $('input[type=radio]').change(function(e) {
+        $('.toggle-content', $(this).parent()).hide()
+        $(this).parent().siblings('.toggle-content').show()
+    })
+
+
+    $('.select-address').change(function(e) {
+        var parent = $(this).parents('.address-container')
+        $('#addressInfo', parent).show();
+        $('#AddressList', parent).hide();
+    })
+
+    $('.change-address').click(function(e) {
+        e.preventDefault();
+        var parent = $(this).parents('.address-container')
+        $('#addressInfo', parent).hide();
+        $('#AddressList', parent).hide();
+        $('.choose-postcode', parent).hide();
+        $('.address-panel', parent).show();
+    })
+
+    $('.confirm-address').click(function(e) {
+        e.preventDefault();
+        var parent = $(this).parents('.address-container')
+        $('#addressInfo', parent).show();
+        $('#AddressList', parent).hide();
+        $('.address-panel', parent).hide();
+    })
+
+    $('.find-address').click(function(e) {
+        e.preventDefault();
+        var parent = $(this).parents('.address-container')
+        $('.choose-postcode', parent).hide();
+        $('#addressInfo', parent).hide();
+        $('#AddressList', parent).show();
+        $('.address-panel', parent).hide();
+    })
+</script>
+
+{% endblock %}
+{% block footer %}
+{% endblock %}
