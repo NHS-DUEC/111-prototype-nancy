@@ -1,0 +1,83 @@
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}NHS 111{% endblock %}
+
+{% block content %}
+
+<div class="measure">
+  <h1 class="heading-xlarge">
+    Do you feel so ill that you can't think or do anything else and have the following?
+  </h1>
+  <div class="callout callout--info">
+    <p>
+      This question is checking for signs of meningitis or other serious conditions.
+    </p>
+  </div>
+
+  <form id="test">
+    <div class="form-group">
+      <fieldset>
+        <label class="block-label">
+          <input id="chin" name="answer" value="chin" type="radio" class="selection-button-radio">
+          <span>
+            You can’t move your chin down to your chest
+          </span>
+        </label>
+        <div class="interrupt--mini callout--warning js-hidden" id="test-warning-chin">
+          This means you’ll be asked to call 999
+        </div>
+        <label class="block-label">
+          <input id="light" name="answer" value="light" type="radio" class="selection-button-radio">
+          <span>
+            You can’t stand any light, even from a phone screen
+          </span>
+        </label>
+        <div class="interrupt--mini callout--warning js-hidden" id="test-warning-light">
+          This means you’ll be asked to call 999
+        </div>
+        <label class="block-label">
+          <input id="not-sure" name="answer" value="not-sure" type="radio" class="selection-button-radio">
+          I’m not sure
+        </label>
+        <label class="block-label">
+          <input id="no" name="answer" value="no" type="radio" class="selection-button-radio">
+          No
+        </label>
+      </fieldset>
+    </div>
+    <a href="disposition" class="button">Next question</a>
+  </form>
+</div>
+
+<section class="page-section">
+  <details class="measure">
+    <summary>
+        <span class="details__arrow"></span>
+        Help us improve this question
+    </summary>
+    <div>
+      <form>
+        <p>Does it make sense? Do you understand all the words?</p>
+        <p>We use feedback to make the service better but can't reply to any comments. Don't include any medical or personal information like your name or email.</p>
+        <textarea class="feedback" cols="20"></textarea>
+        <button class="button">Send feedback</button>
+      </form>
+    </div>
+  </details>
+</section>
+
+{% endblock %}
+
+{% block body_after %}
+  <script>
+    $('#test input').on('change', function() {
+      $('#test-warning-chin, #test-warning-light').addClass('js-hidden');
+      if ($('#test input:checked').val() === 'chin') {
+        $('#test-warning-chin').removeClass('js-hidden');
+      }
+      if ($('#test input:checked').val() === 'light') {
+        $('#test-warning-light').removeClass('js-hidden');
+      }
+    });
+  </script>
+{% endblock %}
