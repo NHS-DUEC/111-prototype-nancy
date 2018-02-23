@@ -6,14 +6,11 @@
 
 <div class="measure">
   <h1 class="heading-xlarge">
-    Do you have a new rash that won’t go away when you press a glass on it, and
-    you also feel severely ill?
+    Do you feel so ill that you can't think or do anything else and have the following?
   </h1>
   <div class="callout callout--info">
     <p>
-      The rash can be a sign of meningitis. The rash may be red-blue, purple,
-      brown, pin-prick size or larger blotches or blood blisters. On darker skin,
-      check the paler areas such as inside the mouth, palms or soles.
+      This question is checking for signs of meningitis or other serious conditions.
     </p>
   </div>
 
@@ -21,21 +18,27 @@
     <div class="form-group">
       <fieldset>
         <label class="block-label">
-          <input id="yes" name="answer" value="yes" type="radio" class="selection-button-radio">
+          <input id="chin" name="answer" value="chin" type="radio" class="selection-button-radio">
           <span>
-            Yes &ndash; you have a new rash and feel severely ill
+            You can’t move your chin down to your chest
           </span>
         </label>
-        <div class="interrupt--mini callout--warning js-hidden" id="test-warning-yes">
+        <div class="interrupt--mini callout--warning js-hidden" id="test-warning-chin">
+          This means you’ll be asked to call 999
+        </div>
+        <label class="block-label">
+          <input id="light" name="answer" value="light" type="radio" class="selection-button-radio">
+          <span>
+            You can’t stand any light, even from a phone screen
+          </span>
+        </label>
+        <div class="interrupt--mini callout--warning js-hidden" id="test-warning-light">
           This means you’ll be asked to call 999
         </div>
         <label class="block-label">
           <input id="not-sure" name="answer" value="not-sure" type="radio" class="selection-button-radio">
           I’m not sure
         </label>
-        <div class="interrupt--mini callout--warning js-hidden" id="test-warning-unsure">
-          This means you’ll be asked to call 999
-        </div>
         <label class="block-label">
           <input id="no" name="answer" value="no" type="radio" class="selection-button-radio">
           No
@@ -68,12 +71,12 @@
 {% block body_after %}
   <script>
     $('#test input').on('change', function() {
-      $('#test-warning-yes, #test-warning-unsure').addClass('js-hidden');
-      if ($('#test input:checked').val() === 'yes') {
-        $('#test-warning-yes').removeClass('js-hidden');
+      $('#test-warning-chin, #test-warning-light').addClass('js-hidden');
+      if ($('#test input:checked').val() === 'chin') {
+        $('#test-warning-chin').removeClass('js-hidden');
       }
-      if ($('#test input:checked').val() === 'not-sure') {
-        $('#test-warning-unsure').removeClass('js-hidden');
+      if ($('#test input:checked').val() === 'light') {
+        $('#test-warning-light').removeClass('js-hidden');
       }
     });
   </script>
