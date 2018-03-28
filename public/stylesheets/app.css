@@ -532,6 +532,13 @@ a.link-prototype:visted {
   margin-top: 0;
 }
 
+.callout--terms {
+  /*font-size: $smallprint;
+  line-height: $leading*3;*/
+  padding: 8px 24px;
+  border: 4px solid #d8dde0;
+}
+
 .card {
   display: inline-block;
   border: 1px solid #f0f4f5;

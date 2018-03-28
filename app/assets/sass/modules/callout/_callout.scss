@@ -79,3 +79,10 @@
     margin-top: 0;
   }
 }
+
+.callout--terms {
+  /*font-size: $smallprint;
+  line-height: $leading*3;*/
+  padding: $baseline-grid-unit*2 $baseline-grid-unit*6;
+  border: $baseline-grid-unit solid $grey-4;
+}
