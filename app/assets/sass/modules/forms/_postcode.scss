@@ -1,3 +1,13 @@
 .postcode {
-    margin-bottom: 0px !important;
+  @extend %contain-floats;
+
+  @include media(mid) {
+    div {
+      float: left;
+      padding-right: 1em;
+    }
+    .location {
+      margin-top: $leading*6;
+    }
+  }
 }
