@@ -1,10 +1,10 @@
 @import url("//assets.nhs.uk/fonts/nhsuk-fonts-1.1.0.css");
-li.tabular-data-row, .prototype-warning-inner, .card, .breadcrumb, .footer-container, .-date, .error-summary, form, .form-group, #global-header, .nhsid-container, .signage, .header-container,
+li.tabular-data-row, .prototype-warning-inner, .card, .breadcrumb, .footer-container, .-date, .postcode, .error-summary, form, .form-group, #global-header, .nhsid-container, .signage, .header-container,
 .content, .grid-row {
   zoom: 1;
 }
 
-li.tabular-data-row:after, .prototype-warning-inner:after, .card:after, .breadcrumb:after, .footer-container:after, .-date:after, .error-summary:after, form:after, .form-group:after, #global-header:after, .nhsid-container:after, .signage:after, .header-container:after,
+li.tabular-data-row:after, .prototype-warning-inner:after, .card:after, .breadcrumb:after, .footer-container:after, .-date:after, .postcode:after, .error-summary:after, form:after, .form-group:after, #global-header:after, .nhsid-container:after, .signage:after, .header-container:after,
 .content:after, .grid-row:after {
   content: "";
   display: block;
@@ -873,8 +873,14 @@ html {
   margin-bottom: 0px;
 }
 
-.postcode {
-  margin-bottom: 0px !important;
+@media (min-width: 500px) {
+  .postcode div {
+    float: left;
+    padding-right: 1em;
+  }
+  .postcode .location {
+    margin-top: 48px;
+  }
 }
 
 .error-summary {
@@ -1816,6 +1822,10 @@ body, pre.user-input {
 
 .shunt-2 {
   margin-top: 32px;
+}
+
+.shunt-3 {
+  margin-top: 48px;
 }
 
 .content-seperator {
