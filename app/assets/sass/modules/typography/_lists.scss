@@ -102,7 +102,7 @@ li.tabular-data-row {
 
   > .edit {
     float: right;
-    
+
     @include media(mid) {
      margin-top: $leading*5;
     }
@@ -151,9 +151,9 @@ li.tabular-data-row {
     width: 300px;
     display: inline-block;
     margin: 0;
-    
+
     @include media(mid) {
-      
+
     }
 
   }
@@ -177,3 +177,13 @@ li.tabular-data-row {
 
 }
 
+
+// NHS.UK redesign typography which can be used for testing
+.nhs-redesign {
+  ul {
+    margin-bottom: $baseline-grid-unit*5;
+  }
+  li {
+    margin-bottom: $baseline-grid-unit*2;
+  }
+}

@@ -12,7 +12,8 @@ body,
   font-family: $family;
   font-weight: $bodyweight;
   font-size: $body;
-  line-height: $leading*4;
+  //line-height: $leading*4;
+  line-height: $baseline-grid-unit*8;
   letter-spacing: 0.3px;
 }
 
@@ -76,4 +77,67 @@ h3,
 
 .emphasis {
   font-weight: $boldweight;
+}
+
+
+// NHS.UK redesign typography which can be used for testing
+body.nhs-redesign {
+  font-size: 17px;
+  line-height: $baseline-grid-unit*7;
+  @include media(mid) {
+    font-size: 19px;
+    line-height: $baseline-grid-unit*8;
+  }
+}
+
+.nhs-redesign {
+
+  h1,
+    .h1 {
+    font-size: 32px;
+    font-weight: $boldweight;
+    line-height: 1.125;
+    margin: $leading*2 0 $baseline-grid-unit*10 0;
+    @include media(mid) {
+      font-size: 48px;
+      line-height: 1.166;
+      margin: $leading*2 0 $baseline-grid-unit*14 0;
+    }
+  }
+
+  h2,
+  .h2 {
+    font-size: 24px;
+    font-weight: $boldweight;
+    line-height: 1.333;
+    margin: $leading*2 0 $baseline-grid-unit*10 0;
+    @include media(mid) {
+      font-size: 32px;
+      line-height: 1.25;
+      margin: $leading*2 0 $baseline-grid-unit*14 0;
+    }
+  }
+
+  h3,
+  .h3 {
+    font-size: 20px;
+    font-weight: $boldweight;
+    line-height: 1.4;
+    margin: $leading*2 0 $baseline-grid-unit*8 0;
+    @include media(mid) {
+      font-size: 24px;
+      line-height: 1.333;
+      margin: $leading*2 0 $baseline-grid-unit*10 0;
+    }
+  }
+
+  .lede {
+    font-size: 20px;
+    line-height: $baseline-grid-unit*8;
+    @include media(mid) {
+      font-size: 24px;
+      line-height: 1.5;
+    }
+  }
+
 }

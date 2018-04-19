@@ -131,6 +131,81 @@ h3, .heading-large,
   font-weight: 700;
 }
 
+body.nhs-redesign, pre.nhs-redesign.user-input {
+  font-size: 17px;
+  line-height: 28px;
+}
+
+@media (min-width: 500px) {
+  body.nhs-redesign, pre.nhs-redesign.user-input {
+    font-size: 19px;
+    line-height: 32px;
+  }
+}
+
+.nhs-redesign h1, .nhs-redesign .heading-xxlarge, .nhs-redesign .primary,
+.nhs-redesign .h1 {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.125;
+  margin: 16px 0 40px 0;
+}
+
+@media (min-width: 500px) {
+  .nhs-redesign h1, .nhs-redesign .heading-xxlarge, .nhs-redesign .primary,
+  .nhs-redesign .h1 {
+    font-size: 48px;
+    line-height: 1.166;
+    margin: 16px 0 56px 0;
+  }
+}
+
+.nhs-redesign h2, .nhs-redesign .heading-xlarge, .nhs-redesign .app-panel > .header, .nhs-redesign table caption, table .nhs-redesign caption, .nhs-redesign .secondary,
+.nhs-redesign .h2 {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.333;
+  margin: 16px 0 40px 0;
+}
+
+@media (min-width: 500px) {
+  .nhs-redesign h2, .nhs-redesign .heading-xlarge, .nhs-redesign .app-panel > .header, .nhs-redesign table caption, table .nhs-redesign caption, .nhs-redesign .secondary,
+  .nhs-redesign .h2 {
+    font-size: 32px;
+    line-height: 1.25;
+    margin: 16px 0 56px 0;
+  }
+}
+
+.nhs-redesign h3, .nhs-redesign .heading-large,
+.nhs-redesign .h3 {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.4;
+  margin: 16px 0 32px 0;
+}
+
+@media (min-width: 500px) {
+  .nhs-redesign h3, .nhs-redesign .heading-large,
+  .nhs-redesign .h3 {
+    font-size: 24px;
+    line-height: 1.333;
+    margin: 16px 0 40px 0;
+  }
+}
+
+.nhs-redesign .lede {
+  font-size: 20px;
+  line-height: 32px;
+}
+
+@media (min-width: 500px) {
+  .nhs-redesign .lede {
+    font-size: 24px;
+    line-height: 1.5;
+  }
+}
+
 /* remove undelines for a tags used as anchors */
 h1 a, .heading-xxlarge a, .primary a,
 h2 a, .heading-xlarge a, .app-panel > .header a, table caption a, .secondary a,
@@ -155,6 +230,26 @@ p {
 
 pre.user-input {
   font-size: inherit;
+}
+
+body.nhs-redesign p, pre.nhs-redesign.user-input p {
+  margin-bottom: 16px;
+}
+
+@media (min-width: 500px) {
+  body.nhs-redesign p, pre.nhs-redesign.user-input p {
+    margin-bottom: 32px;
+  }
+}
+
+body.nhs-redesign .lede, pre.nhs-redesign.user-input .lede {
+  margin-bottom: 24px;
+}
+
+@media (min-width: 500px) {
+  body.nhs-redesign .lede, pre.nhs-redesign.user-input .lede {
+    margin-bottom: 20px;
+  }
 }
 
 ul, ol {
@@ -328,6 +423,14 @@ li.tabular-data-row > .callout {
   padding: 0;
   margin: 0;
   line-height: 16px;
+}
+
+.nhs-redesign ul {
+  margin-bottom: 20px;
+}
+
+.nhs-redesign li {
+  margin-bottom: 8px;
 }
 
 .tel {
@@ -796,7 +899,6 @@ details {
 
 details summary {
   text-decoration: underline;
-  display: inline-block;
   cursor: pointer;
   color: #005eb8;
 }
