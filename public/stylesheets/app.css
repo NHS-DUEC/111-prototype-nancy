@@ -641,6 +641,30 @@ a.link-prototype:visted {
   border: 4px solid #d8dde0;
 }
 
+.nhs-redesign .callout {
+  padding: 24px;
+}
+
+.nhs-redesign .callout h1, .nhs-redesign .callout .heading-xxlarge, .nhs-redesign .callout .primary, .nhs-redesign .callout h2, .nhs-redesign .callout .heading-xlarge, .nhs-redesign .callout .app-panel > .header, .nhs-redesign .callout table caption, table .nhs-redesign .callout caption, .nhs-redesign .callout .secondary, .nhs-redesign .callout h3, .nhs-redesign .callout .heading-large {
+  margin: 0;
+}
+
+.nhs-redesign .callout p {
+  margin-bottom: 0;
+  margin-top: 24px;
+}
+
+@media (min-width: 500px) {
+  .nhs-redesign .callout p {
+    margin-bottom: 0;
+    margin-top: 28px;
+  }
+}
+
+.nhs-redesign .callout p:first-child {
+  margin-top: 0;
+}
+
 .card {
   display: inline-block;
   border: 1px solid #f0f4f5;
