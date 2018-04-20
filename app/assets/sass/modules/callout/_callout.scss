@@ -86,3 +86,31 @@
   padding: $baseline-grid-unit*2 $baseline-grid-unit*6;
   border: $baseline-grid-unit solid $grey-4;
 }
+
+// NHS.UK redesign typography which can be used for testing
+.nhs-redesign {
+
+  .callout {
+
+    padding: $baseline-grid-unit*6;
+
+    h1, h2, h3 {
+      margin: 0;
+    }
+
+    p {
+      margin-bottom: 0;
+      margin-top: 24px;
+      @include media(mid) {
+        margin-bottom: 0;
+        margin-top: 28px;
+      }
+
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+
+  }
+
+}
