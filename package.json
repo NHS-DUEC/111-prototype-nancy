@@ -40,7 +40,6 @@
     "grunt-sass": "^1.2.1",
     "javascript-natural-sort": "^0.7.1",
     "load-grunt-tasks": "^3.5.2",
-    "nhsuk-frontend": "github:nhsuk/frontend",
     "nunjucks": "^3.0.0",
     "nunjucks-date-filter": "^0.1.1",
     "portscanner": "^1.0.0",
