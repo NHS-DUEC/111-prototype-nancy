@@ -1,0 +1,70 @@
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhs-redesign{% endblock %}
+
+{% block content %}
+
+<div class="content-block measure">
+  <form method="post">
+    <div class="form-group">
+      <div class="search">
+        <input type="text" id="search" name="search" value="knee pain">
+        <button type="submit" class="button">Search</button>
+      </div>
+    </div>
+  </form>
+
+  <p class="form-hint">3 topics found</p>
+
+
+  <a href="#" class="search-result">
+    <span class="search-result-title">
+      Leg injury without a cut or wound
+    </span>
+    <span class="search-result-description">
+      A leg injury above the ankle, within the last 7 days, that didn't cut the skin.
+    </span>
+  </a>
+
+  <a href="#" class="search-result">
+    <span class="search-result-title">
+      Leg injury with a cut or wound
+    </span>
+    <span class="search-result-description">
+      An injury to the leg, hip, thigh, <span class="highlighter">knee</span>, calf, shin or ankle in the last 7 days, that has a cut, wound or graze.
+    </span>
+  </a>
+
+  <a href="#" class="search-result">
+    <span class="search-result-title">
+      Swollen or painful legs, <span class="highlighter">knees</span>, ankles or feet
+    </span>
+    <span class="search-result-description">
+      Painful or swollen legs, <span class="highlighter">knees</span>, ankles or feet. Pain or swelling in the hips or bum.
+    </span>
+  </a>
+
+</div>
+
+<div class="content-block measure">
+  <details>
+    <summary>I can’t find the right topic</summary>
+    <ul>
+      <li>Choose from the <a href="#">full list of 130 topics</a>
+    </ul>
+  </details>
+</div>
+
+<div class="content-seperator content-seperator--equalvertspacing--large"></div>
+
+<div class="content-block measure">
+  <details>
+    <summary>Help us improve</summary>
+  </details>
+</div>
+
+{% endblock %}
+
+{% block footer %}{% endblock %}

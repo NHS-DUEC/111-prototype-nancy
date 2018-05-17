@@ -1,10 +1,10 @@
 @import url("//assets.nhs.uk/fonts/nhsuk-fonts-1.1.0.css");
-li.tabular-data-row, .prototype-warning-inner, .card, .breadcrumb, .footer-container, .-date, .postcode, .error-summary, form, .form-group, #global-header, .nhsid-container, .signage, .header-container,
+li.tabular-data-row, .prototype-warning-inner, .card, .breadcrumb, .footer-container, .-date, .postcode, .error-summary, form, .form-group, .search, #global-header, .nhsid-container, .signage, .header-container,
 .content, .grid-row {
   zoom: 1;
 }
 
-li.tabular-data-row:after, .prototype-warning-inner:after, .card:after, .breadcrumb:after, .footer-container:after, .-date:after, .postcode:after, .error-summary:after, form:after, .form-group:after, #global-header:after, .nhsid-container:after, .signage:after, .header-container:after,
+li.tabular-data-row:after, .prototype-warning-inner:after, .card:after, .breadcrumb:after, .footer-container:after, .-date:after, .postcode:after, .error-summary:after, form:after, .form-group:after, .search:after, #global-header:after, .nhsid-container:after, .signage:after, .header-container:after,
 .content:after, .grid-row:after {
   content: "";
   display: block;
@@ -1351,6 +1351,28 @@ label .form-hint {
   opacity: 1;
 }
 
+.search-label {
+  margin: 32px 0;
+}
+
+.search .button {
+  background-color: #005eb8;
+  box-shadow: none;
+  border: 2px solid #005eb8;
+}
+
+@media (min-width: 500px) {
+  .search input[type="text"] {
+    float: left;
+    width: calc(75% - 4px);
+    margin-top: 0;
+  }
+  .search .button {
+    float: left;
+    width: calc(25% - 4px);
+  }
+}
+
 textarea {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -1765,6 +1787,28 @@ textarea:focus {
   padding-top: 8px;
   font-size: 16px;
   line-height: 1.5;
+}
+
+.search-result {
+  display: block;
+  text-decoration: none;
+  margin-bottom: 24px;
+}
+
+.search-result-title {
+  display: block;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.search-result-description {
+  color: #231f20;
+}
+
+.highlighter {
+  padding-left: 2px;
+  padding-right: 2px;
+  background-color: #fdf2d5;
 }
 
 .signage {
