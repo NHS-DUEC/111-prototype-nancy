@@ -1905,6 +1905,14 @@ body, pre.user-input {
   margin-right: 8px;
 }
 
+@media (min-width: 980px) {
+  .sticky-element {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+  }
+}
+
 .grid-row {
   display: block;
   margin-left: -1.7%;
@@ -1950,13 +1958,25 @@ body, pre.user-input {
 }
 
 .grid-1-4 {
-  width: 21.6%;
-  float: left;
+  width: 96.6%;
+}
+
+@media (min-width: 640px) {
+  .grid-1-4 {
+    width: 21.6%;
+    float: left;
+  }
 }
 
 .grid-3-4 {
-  width: 71.6%;
-  float: left;
+  width: 96.6%;
+}
+
+@media (min-width: 640px) {
+  .grid-3-4 {
+    width: 71.6%;
+    float: left;
+  }
 }
 
 .grid-1-6 {
