@@ -2,7 +2,7 @@
 
 {% block page_title %}{% endblock %}
 
-{% block body_css_classes %}nhs-redesign{% endblock %}
+{% block body_css_classes %}{% endblock %}
 
 {% block content %}
 
@@ -21,11 +21,13 @@
   <div class="grid-3-4">
     <div class="measure">
 
-      <div class="category">
-        <h2 id="bodymap">Parts of the body</h2>
+      <div class="category collapse">
+        <div class="collapse-title">
+          <h2 class="category-level-1" id="bodymap">Parts of the body</h2>
+        </div>
 
-        <div class="subcategory">
-          <h3>Head and face</h3>
+        <div class="collapse-content">
+          <div class="content-seperator content-seperator--equalvertspacing"></div>
           <!--
           "head",
           "face",
@@ -46,223 +48,255 @@
           "chin",
           "jaw",
           -->
-          <a href="#" class="topic">
-            <span class="topic-title">
-              Hair falling out or thinning
-            </span>
-            <span class="topic-description">
-              Hair loss from any part of the body. Losing hair in patches or clumps.
-            </span>
-          </a>
-          <a href="#" class="topic">
-            <span class="topic-title">
-              Head, face or neck injury with a cut or wound
-            </span>
-            <span class="topic-description">
-              An injury to any part of the face (but not eyes or teeth), head or neck, which has cut the skin, within the last 7 days.
-            </span>
-          </a>
-          <a href="#" class="topic">
-            <span class="topic-title">
-              Head, face or neck injury without a cut or wound
-            </span>
-            <span class="topic-description">
-              An injury to the head, face or neck within the last 7 days that didn't cut the skin.
-            </span>
-          </a>
-          <a href="#" class="topic">
-            <span class="topic-title">
-              Swollen or painful face or neck
-            </span>
-            <span class="topic-description">
-              Swelling, lumps or pain in the face or neck. Swollen glands.
-            </span>
-          </a>
-          <a href="#" class="topic">
-            <span class="topic-title">
-              Headache or migraine
-            </span>
-            <span class="topic-description">
-              Throbbing or intense pain or a tight band around the head. Visual problems like flashing lights with a headache.
-            </span>
-          </a>
-          <a href="#" class="topic">
-            <span class="topic-title">
-              Sinusitis
-            </span>
-            <span class="topic-description">
-              A problem with the sinuses. Face pain around the cheeks, eyes or forehead. A runny nose and a high temperature.
-            </span>
-          </a>
-          <a href="#" class="topic">
-            <span class="topic-title">
-              Earache
-            </span>
-            <span class="topic-description">
-              Ear pain, swelling, or fluid leaking from the ear. A painful blocked ear. New deafness with pain. Ringing in the ear.
-            </span>
-          </a>
-          <a href="#" class="topic">
-            <span class="topic-title">
-              Hearing problems or blocked ear
-            </span>
-            <span class="topic-description">
-              Hearing problems or deafness without earache. Blocked ear or fluid leaking from the ear with no pain.
-            </span>
-          </a>
-          <a href="#" class="topic">
-            <span class="topic-title">
-              Fluid or wax coming from the ear with no loss of hearing
-            </span>
-            <span class="topic-description">
-              Fluid, ear wax or watery discharge from one or both ears but without any loss of hearing.
-            </span>
-          </a>
-          <a href="#" class="topic">
-            <span class="topic-title">
-              Something in the ear
-            </span>
-            <span class="topic-description">
-              An object stuck inside the ear. An insect in the ear.
-            </span>
-          </a>
-          <a href="#" class="topic">
-            <span class="topic-title">
-              Something in the eye
-            </span>
-            <span class="topic-description">
-              Dirt, dust or an object has gone into the eyes. Something sprayed or splashed into the eyes.
-            </span>
-          </a>
-          <a href="#" class="topic">
-            <span class="topic-title">
-              Eye injury or cut
-            </span>
-            <span class="topic-description">
-              An injury to the eye or eye socket within the last 7 days that has caused a cut or wound.
-            </span>
-          </a>
-          <a href="#" class="topic">
-            <span class="topic-title">
-              Eye injury without cut or wound
-            </span>
-            <span class="topic-description">
-              An injury to the eye or eye socket within the last 7 days without any cut or wound.
-            </span>
-          </a>
-          <a href="#" class="topic">
-            <span class="topic-title">
-              Eye or eyelid problems
-            </span>
-            <span class="topic-description">
-              Sore, yellow, red or bloodshot eyes. Loss of or changes in vision. Swollen, sticky, itchy or sore eyelids. A lump on the eyelid.
-            </span>
-          </a>
-          <a href="#" class="topic">
-            <span class="topic-title">
-              Blocked or stuffy nose
-            </span>
-            <span class="topic-description">
-              A congested or blocked nose. Sinus problems.
-            </span>
-          </a>
-          <a href="#" class="topic">
-            <span class="topic-title">
-              Nosebleed	A bleeding nose.
-            </span>
-          </a>
-          <a href="#" class="topic">
-            <span class="topic-title">
-              Nosebleed after an injury
-            </span>
-            <span class="topic-description">
-              A bleeding nose following an injury.
-            </span>
-          </a>
-          <a href="#" class="topic">
-            <span class="topic-title">
-              Something stuck in the nose
-            </span>
-            <span class="topic-description">
-              An object stuck inside a nostril.
-            </span>
-          </a>
-          <a href="#" class="topic">
-            <span class="topic-title">
-              Mouth ulcers
-            </span>
-            <span class="topic-description">
-              Mouth, lip, tongue or gum ulcers. Sore white or grey patches inside the mouth.
-            </span>
-          </a>
-          <a href="#" class="topic">
-            <span class="topic-title">
-              Dental injuries
-            </span>
-            <span class="topic-description">
-              Dental problems caused by an injury, such as knocked out or broken teeth. Injuries to the gums or the inside of the mouth.
-            </span>
-          </a>
-          <a href="#" class="topic">
-            <span class="topic-title">
-              Toothache after an injury
-            </span>
-            <span class="topic-description">
-              Toothache and pain caused by an injury, such as broken, cracked or knocked out teeth. Bleeding or injuries to the gums or mouth. Swelling or lumps on the face or jaw. Problems opening or closing the mouth.
-            </span>
-          </a>
-          <a href="#" class="topic">
-            <span class="topic-title">
-              Toothache, swelling and other dental problems
-            </span>
-            <span class="topic-description">
-              Bleeding from the mouth, teeth or gums. Painful  teeth or gums. Swelling or lumps on the gums, mouth or jaw. A crown, bridge, fillings, denture or brace problem. A broken tooth, or teeth not caused by an injury.
-            </span>
-          </a>
-          <a href="#" class="topic">
-            <span class="topic-title">
-              Locked or aching jaw
-            </span>
-            <span class="topic-description">
-              Problems opening or closing the mouth or jaw.
-            </span>
-          </a>
-        </div>
+          <div class="collapse-title">
+            <h3 class="category-level-2">Head, hair and face</h3>
+          </div>
+          <div class="collapse-content">
+            <a href="#" class="topic">
+              <span class="topic-title">
+                Hair falling out or thinning
+              </span>
+              <span class="topic-description">
+                Hair loss from any part of the body. Losing hair in patches or clumps.
+              </span>
+            </a>
+            <a href="#" class="topic">
+              <span class="topic-title">
+                Head, face or neck injury with a cut or wound
+              </span>
+              <span class="topic-description">
+                An injury to any part of the face (but not eyes or teeth), head or neck, which has cut the skin, within the last 7 days.
+              </span>
+            </a>
+            <a href="#" class="topic">
+              <span class="topic-title">
+                Head, face or neck injury without a cut or wound
+              </span>
+              <span class="topic-description">
+                An injury to the head, face or neck within the last 7 days that didn't cut the skin.
+              </span>
+            </a>
+            <a href="#" class="topic">
+              <span class="topic-title">
+                Swollen or painful face or neck
+              </span>
+              <span class="topic-description">
+                Swelling, lumps or pain in the face or neck. Swollen glands.
+              </span>
+            </a>
+            <a href="#" class="topic">
+              <span class="topic-title">
+                Headache or migraine
+              </span>
+              <span class="topic-description">
+                Throbbing or intense pain or a tight band around the head. Visual problems like flashing lights with a headache.
+              </span>
+            </a>
+            <a href="#" class="topic">
+              <span class="topic-title">
+                Sinusitis
+              </span>
+              <span class="topic-description">
+                A problem with the sinuses. Face pain around the cheeks, eyes or forehead. A runny nose and a high temperature.
+              </span>
+            </a>
+            <div class="content-seperator content-seperator--equalvertspacing"></div>
+          </div>
 
-        <div class="subcategory">
-          <h3>Neck and throat</h3>
-          <!--
-          "neck",
-          "throat",
-          -->
-          <a href="#" class="topic">
-            <span class="topic-title">
-              Sore throat
-            </span>
-            <span class="topic-description">
-              A painful throat, with or without problems swallowing. A hoarse, croaky or lost voice, with or without a sore throat.
-            </span>
-          </a>
-          <a href="#" class="topic">
-            <span class="topic-title">
-              Difficulty swallowing
-            </span>
-            <span class="topic-description">
-              Having trouble swallowing or unable to swallow, without a sore throat.
-            </span>
-          </a>
-          <a href="#" class="topic">
-            <span class="topic-title">
-              Swollen or painful face or neck
-            </span>
-            <span class="topic-description">
-              Swelling, lumps or pain in the face or neck. Swollen glands.
-            </span>
-          </a>
-        </div>
+          <div class="collapse-title">
+            <h3 class="category-level-2">Ears</h3>
+          </div>
 
-        <div class="subcategory">
-          <h3>Shoulders, arms and hands</h3>
+          <div class="collapse-content">
+            <a href="#" class="topic">
+              <span class="topic-title">
+                Earache
+              </span>
+              <span class="topic-description">
+                Ear pain, swelling, or fluid leaking from the ear. A painful blocked ear. New deafness with pain. Ringing in the ear.
+              </span>
+            </a>
+            <a href="#" class="topic">
+              <span class="topic-title">
+                Hearing problems or blocked ear
+              </span>
+              <span class="topic-description">
+                Hearing problems or deafness without earache. Blocked ear or fluid leaking from the ear with no pain.
+              </span>
+            </a>
+            <a href="#" class="topic">
+              <span class="topic-title">
+                Fluid or wax coming from the ear with no loss of hearing
+              </span>
+              <span class="topic-description">
+                Fluid, ear wax or watery discharge from one or both ears but without any loss of hearing.
+              </span>
+            </a>
+            <a href="#" class="topic">
+              <span class="topic-title">
+                Something in the ear
+              </span>
+              <span class="topic-description">
+                An object stuck inside the ear. An insect in the ear.
+              </span>
+            </a>
+          </div>
+
+          <div class="collapse-title">
+            <h3 class="category-level-2">Eyes</h3>
+          </div>
+
+          <div class="collapse-content">
+            <a href="#" class="topic">
+              <span class="topic-title">
+                Something in the eye
+              </span>
+              <span class="topic-description">
+                Dirt, dust or an object has gone into the eyes. Something sprayed or splashed into the eyes.
+              </span>
+            </a>
+            <a href="#" class="topic">
+              <span class="topic-title">
+                Eye injury or cut
+              </span>
+              <span class="topic-description">
+                An injury to the eye or eye socket within the last 7 days that has caused a cut or wound.
+              </span>
+            </a>
+            <a href="#" class="topic">
+              <span class="topic-title">
+                Eye injury without cut or wound
+              </span>
+              <span class="topic-description">
+                An injury to the eye or eye socket within the last 7 days without any cut or wound.
+              </span>
+            </a>
+            <a href="#" class="topic">
+              <span class="topic-title">
+                Eye or eyelid problems
+              </span>
+              <span class="topic-description">
+                Sore, yellow, red or bloodshot eyes. Loss of or changes in vision. Swollen, sticky, itchy or sore eyelids. A lump on the eyelid.
+              </span>
+            </a>
+            <h4 class="collapse-level-3">Nose</h4>
+            <a href="#" class="topic">
+              <span class="topic-title">
+                Blocked or stuffy nose
+              </span>
+              <span class="topic-description">
+                A congested or blocked nose. Sinus problems.
+              </span>
+            </a>
+            <a href="#" class="topic">
+              <span class="topic-title">
+                Nosebleed	A bleeding nose.
+              </span>
+            </a>
+            <a href="#" class="topic">
+              <span class="topic-title">
+                Nosebleed after an injury
+              </span>
+              <span class="topic-description">
+                A bleeding nose following an injury.
+              </span>
+            </a>
+            <a href="#" class="topic">
+              <span class="topic-title">
+                Something stuck in the nose
+              </span>
+              <span class="topic-description">
+                An object stuck inside a nostril.
+              </span>
+            </a>
+          </div>
+
+          <div class="collapse-title">
+            <h3 class="category-level-2">Jaw, mouth and teeth</h3>
+          </div>
+
+          <div class="collapse-content">
+            <a href="#" class="topic">
+              <span class="topic-title">
+                Mouth ulcers
+              </span>
+              <span class="topic-description">
+                Mouth, lip, tongue or gum ulcers. Sore white or grey patches inside the mouth.
+              </span>
+            </a>
+            <a href="#" class="topic">
+              <span class="topic-title">
+                Dental injuries
+              </span>
+              <span class="topic-description">
+                Dental problems caused by an injury, such as knocked out or broken teeth. Injuries to the gums or the inside of the mouth.
+              </span>
+            </a>
+            <a href="#" class="topic">
+              <span class="topic-title">
+                Toothache after an injury
+              </span>
+              <span class="topic-description">
+                Toothache and pain caused by an injury, such as broken, cracked or knocked out teeth. Bleeding or injuries to the gums or mouth. Swelling or lumps on the face or jaw. Problems opening or closing the mouth.
+              </span>
+            </a>
+            <a href="#" class="topic">
+              <span class="topic-title">
+                Toothache, swelling and other dental problems
+              </span>
+              <span class="topic-description">
+                Bleeding from the mouth, teeth or gums. Painful  teeth or gums. Swelling or lumps on the gums, mouth or jaw. A crown, bridge, fillings, denture or brace problem. A broken tooth, or teeth not caused by an injury.
+              </span>
+            </a>
+            <a href="#" class="topic">
+              <span class="topic-title">
+                Locked or aching jaw
+              </span>
+              <span class="topic-description">
+                Problems opening or closing the mouth or jaw.
+              </span>
+            </a>
+          </div>
+
+          <div class="content-seperator content-seperator--equalvertspacing"></div>
+
+          <div class="collapse-title">
+            <h3 class="category-level-2">Neck and throat</h3>
+            <!--
+            "neck",
+            "throat",
+            -->
+          </div>
+
+          <div class="collapse-content">
+            <a href="#" class="topic">
+              <span class="topic-title">
+                Sore throat
+              </span>
+              <span class="topic-description">
+                A painful throat, with or without problems swallowing. A hoarse, croaky or lost voice, with or without a sore throat.
+              </span>
+            </a>
+            <a href="#" class="topic">
+              <span class="topic-title">
+                Difficulty swallowing
+              </span>
+              <span class="topic-description">
+                Having trouble swallowing or unable to swallow, without a sore throat.
+              </span>
+            </a>
+            <a href="#" class="topic">
+              <span class="topic-title">
+                Swollen or painful face or neck
+              </span>
+              <span class="topic-description">
+                Swelling, lumps or pain in the face or neck. Swollen glands.
+              </span>
+            </a>
+          </div>
+
+          <div class="content-seperator content-seperator--equalvertspacing"></div>
+
           <!--
           "arm", "arms",
           "shoulder", "shoulders", "shoulderblade", "shoulderblades",
@@ -276,98 +310,117 @@
           "knuckle", "knuckles",
           "fingernail", "fingernails",
           -->
-          <a href="#" class="topic">
-            <span class="topic-title">
-              Shoulder problems
-            </span>
-            <span class="topic-description">
-              Ache or stiffness in one or both shoulders. Unusual feelings or weakness.
-            </span>
-          </a>
-          <a href="#" class="topic">
-            <span class="topic-title">
-              Swollen or painful arm
-            </span>
-            <span class="topic-description">
-              Pain or swelling in the arm or elbow.
-            </span>
-          </a>
-          <a href="#" class="topic">
-            <span class="topic-title">
-              Arm injury with a cut or wound
-            </span>
-            <span class="topic-description">
-              An injury to the arm or shoulder in the last 7 days, that has caused a cut or wound.
-            </span>
-          </a>
-          <a href="#" class="topic">
-            <span class="topic-title">
-              Arm injury without a cut or wound
-            </span>
-            <span class="topic-description">
-              An injury to the arm, wrist or shoulder within the last 7 days, that has not cut the skin. A dislocated shoulder or arm.
-            </span>
-          </a>
-          <a href="#" class="topic">
-            <span class="topic-title">
-              Cold arm or arm changing colour
-            </span>
-            <span class="topic-description">
-              A cold, painless arm. White, blue, or black colour in one or both arms.
-            </span>
-          </a>
-          <a href="#" class="topic">
-            <span class="topic-title">
-              Hand or wrist injury with a cut or wound
-            </span>
-            <span class="topic-description">
-              An injury to the hand or wrist within the last 7 days that has cut the skin.
-            </span>
-          </a>
-          <a href="#" class="topic">
-            <span class="topic-title">
-              Hand or wrist injury without a cut or wound
-            </span>
-            <span class="topic-description">
-              A hand or wrist injury in the last 7 days that hasn't cut the skin.
-            </span>
-          </a>
-          <a href="#" class="topic">
-            <span class="topic-title">
-              Swollen or painful hand, finger or wrist
-            </span>
-            <span class="topic-description">
-              Pain or swelling in the hand, fingers, nails or wrist.
-            </span>
-          </a>
-          <a href="#" class="topic">
-            <span class="topic-title">
-              Finger or thumb injury with a cut or wound
-            </span>
-            <span class="topic-description">
-              A finger or thumb injury within the last 7 days that has cut the skin.
-            </span>
-          </a>
-          <a href="#" class="topic">
-            <span class="topic-title">
-              Finger or thumb injury without a cut or wound
-            </span>
-            <span class="topic-description">
-              A finger or thumb injury within the last 7 days that hasn't cut the skin.
-            </span>
-          </a>
-          <a href="#" class="topic">
-            <span class="topic-title">
-              Fingernail injury
-            </span>
-            <span class="topic-description">
-              Any injury to the fingernail or nails in the last 7 days.
-            </span>
-          </a>
-        </div>
+          <div class="collapse-title">
+            <h3 class="category-level-2">Shoulders</h3>
+          </div>
 
-        <div class="subcategory">
-          <h3>Torso - front, back and sides</h3>
+          <div class="collapse-content">
+            <a href="#" class="topic">
+              <span class="topic-title">
+                Shoulder problems
+              </span>
+              <span class="topic-description">
+                Ache or stiffness in one or both shoulders. Unusual feelings or weakness.
+              </span>
+            </a>
+          </div>
+
+          <div class="collapse-title">
+            <h3 class="category-level-2">Arms</h3>
+          </div>
+
+          <div class="collapse-content">
+            <a href="#" class="topic">
+              <span class="topic-title">
+                Swollen or painful arm
+              </span>
+              <span class="topic-description">
+                Pain or swelling in the arm or elbow.
+              </span>
+            </a>
+            <a href="#" class="topic">
+              <span class="topic-title">
+                Arm injury with a cut or wound
+              </span>
+              <span class="topic-description">
+                An injury to the arm or shoulder in the last 7 days, that has caused a cut or wound.
+              </span>
+            </a>
+            <a href="#" class="topic">
+              <span class="topic-title">
+                Arm injury without a cut or wound
+              </span>
+              <span class="topic-description">
+                An injury to the arm, wrist or shoulder within the last 7 days, that has not cut the skin. A dislocated shoulder or arm.
+              </span>
+            </a>
+            <a href="#" class="topic">
+              <span class="topic-title">
+                Cold arm or arm changing colour
+              </span>
+              <span class="topic-description">
+                A cold, painless arm. White, blue, or black colour in one or both arms.
+              </span>
+            </a>
+          </div>
+
+          <div class="collapse-title">
+            <h3 class="category-level-2">Wrists, hands and fingers</h3>
+          </div>
+
+          <div class="collapse-content">
+            <a href="#" class="topic">
+              <span class="topic-title">
+                Hand or wrist injury with a cut or wound
+              </span>
+              <span class="topic-description">
+                An injury to the hand or wrist within the last 7 days that has cut the skin.
+              </span>
+            </a>
+            <a href="#" class="topic">
+              <span class="topic-title">
+                Hand or wrist injury without a cut or wound
+              </span>
+              <span class="topic-description">
+                A hand or wrist injury in the last 7 days that hasn't cut the skin.
+              </span>
+            </a>
+            <a href="#" class="topic">
+              <span class="topic-title">
+                Swollen or painful hand, finger or wrist
+              </span>
+              <span class="topic-description">
+                Pain or swelling in the hand, fingers, nails or wrist.
+              </span>
+            </a>
+            <a href="#" class="topic">
+              <span class="topic-title">
+                Finger or thumb injury with a cut or wound
+              </span>
+              <span class="topic-description">
+                A finger or thumb injury within the last 7 days that has cut the skin.
+              </span>
+            </a>
+            <a href="#" class="topic">
+              <span class="topic-title">
+                Finger or thumb injury without a cut or wound
+              </span>
+              <span class="topic-description">
+                A finger or thumb injury within the last 7 days that hasn't cut the skin.
+              </span>
+            </a>
+            <a href="#" class="topic">
+              <span class="topic-title">
+                Fingernail injury
+              </span>
+              <span class="topic-description">
+                Any injury to the fingernail or nails in the last 7 days.
+              </span>
+            </a>
+          </div>
+
+          <div class="content-seperator content-seperator--equalvertspacing"></div>
+
           <!--
           "torso",
           "collarbone",
@@ -381,106 +434,125 @@
           "flank",
           "stomach",
           -->
-          <a href="#" class="topic">
-            <span class="topic-title">
-              Chest or upper back injury with a cut or wound
-            </span>
-            <span class="topic-description">
-              An injury to the chest or upper back (the collarbone to the bottom of the ribcage) within the last 7 days that has cut the skin.
-            </span>
-          </a>
-          <a href="#" class="topic">
-            <span class="topic-title">
-              Chest or upper back injury without a cut or wound
-            </span>
-            <span class="topic-description">
-              An injury to the chest or upper back within the last 7 days, that hasn't cut the skin. Injuries from the collarbone to bottom of the ribcage.
-            </span>
-          </a>
-          <a href="#" class="topic">
-            <span class="topic-title">
-              Chest pain or breathing problems
-            </span>
-            <span class="topic-description">
-              Any chest or upper back pain. Chest pain with or without arm, shoulder, neck or jaw pain. Tightness in the chest. Wheezing, panting or feeling out of breath. Difficult or noisy breathing.
-            </span>
-          </a>
-          <a href="#" class="topic">
-            <span class="topic-title">
-              Breast problems
-            </span>
-            <span class="topic-description">
-              Problems with the breast or nipple. Breast pain or lumps. Discharge or bleeding. Nipple or breast changes. Sore, tender breasts. Mastitis.
-            </span>
-          </a>
-          <a href="#" class="topic">
-            <span class="topic-title">
-              Breastfeeding problems
-            </span>
-            <span class="topic-description">
-              Problems getting the baby to attach to the breast. Cracked or sore nipples, or a painful breast that is making breastfeeding difficult.
-            </span>
-          </a>
-          <a href="#" class="topic">
-            <span class="topic-title">
-              Injury to the stomach or side of body with a cut or wound
-            </span>
-            <span class="topic-description">
-              An injury to the tummy (abdomen), or sides (flank) within the last 7 days that has cut the skin.
-            </span>
-          </a>
-          <a href="#" class="topic">
-            <span class="topic-title">
-              Stomach or side injury without a cut or wound
-            </span>
-            <span class="topic-description">
-              An injury to the tummy (abdomen), or sides (flank) within the last 7 days that has not cut the skin.
-            </span>
-          </a>
-          <a href="#" class="topic">
-            <span class="topic-title">
-              Stomach pain
-            </span>
-            <span class="topic-description">
-              Tummy (abdominal) pain with or without other symptoms such as diarrhoea, vomiting or a high temperature.
-            </span>
-          </a>
-          <a href="#" class="topic">
-            <span class="topic-title">
-              Pain in the side of the body
-            </span>
-            <span class="topic-description">
-              Pain on either side of the body, between the ribs and hips. Affecting one side only at the back (love handles) or with stomach pain.
-            </span>
-          </a>
-          <a href="#" class="topic">
-            <span class="topic-title">
-              Lower back injury with a cut or wound
-            </span>
-            <span class="topic-description">
-              An injury to the lower back (below the rib cage) or bottom in the last 7 days with a cut, wound or graze.
-            </span>
-          </a>
-          <a href="#" class="topic">
-            <span class="topic-title">
-              Lower back injury without a cut or wound
-            </span>
-            <span class="topic-description">
-              An injury to the lower back (below the rib cage) or bottom in the last 7 days that hasn't cut the skin.
-            </span>
-          </a>
-          <a href="#" class="topic">
-            <span class="topic-title">
-              Lower back pain
-            </span>
-            <span class="topic-description">
-              Pain or ache in the lower part of the back.
-            </span>
-          </a>
-        </div>
+          <div class="collapse-title">
+            <h3 class="category-level-2">Chest and upper back</h3>
+          </div>
 
-        <div class="subcategory">
-          <h3>Groin, genitals and bum</h3>
+          <div class="collapse-content">
+            <a href="#" class="topic">
+              <span class="topic-title">
+                Chest or upper back injury with a cut or wound
+              </span>
+              <span class="topic-description">
+                An injury to the chest or upper back (the collarbone to the bottom of the ribcage) within the last 7 days that has cut the skin.
+              </span>
+            </a>
+            <a href="#" class="topic">
+              <span class="topic-title">
+                Chest or upper back injury without a cut or wound
+              </span>
+              <span class="topic-description">
+                An injury to the chest or upper back within the last 7 days, that hasn't cut the skin. Injuries from the collarbone to bottom of the ribcage.
+              </span>
+            </a>
+            <a href="#" class="topic">
+              <span class="topic-title">
+                Chest pain or breathing problems
+              </span>
+              <span class="topic-description">
+                Any chest or upper back pain. Chest pain with or without arm, shoulder, neck or jaw pain. Tightness in the chest. Wheezing, panting or feeling out of breath. Difficult or noisy breathing.
+              </span>
+            </a>
+            <a href="#" class="topic">
+              <span class="topic-title">
+                Breast problems
+              </span>
+              <span class="topic-description">
+                Problems with the breast or nipple. Breast pain or lumps. Discharge or bleeding. Nipple or breast changes. Sore, tender breasts. Mastitis.
+              </span>
+            </a>
+            <a href="#" class="topic">
+              <span class="topic-title">
+                Breastfeeding problems
+              </span>
+              <span class="topic-description">
+                Problems getting the baby to attach to the breast. Cracked or sore nipples, or a painful breast that is making breastfeeding difficult.
+              </span>
+            </a>
+          </div>
+
+          <div class="collapse-title">
+            <h3 class="category-level-2">Stomach and sides</h3>
+          </div>
+
+          <div class="collapse-content">
+            <a href="#" class="topic">
+              <span class="topic-title">
+                Injury to the stomach or side of body with a cut or wound
+              </span>
+              <span class="topic-description">
+                An injury to the tummy (abdomen), or sides (flank) within the last 7 days that has cut the skin.
+              </span>
+            </a>
+            <a href="#" class="topic">
+              <span class="topic-title">
+                Stomach or side injury without a cut or wound
+              </span>
+              <span class="topic-description">
+                An injury to the tummy (abdomen), or sides (flank) within the last 7 days that has not cut the skin.
+              </span>
+            </a>
+            <a href="#" class="topic">
+              <span class="topic-title">
+                Stomach pain
+              </span>
+              <span class="topic-description">
+                Tummy (abdominal) pain with or without other symptoms such as diarrhoea, vomiting or a high temperature.
+              </span>
+            </a>
+            <a href="#" class="topic">
+              <span class="topic-title">
+                Pain in the side of the body
+              </span>
+              <span class="topic-description">
+                Pain on either side of the body, between the ribs and hips. Affecting one side only at the back (love handles) or with stomach pain.
+              </span>
+            </a>
+          </div>
+
+          <div class="collapse-title">
+            <h3 class="category-level-2">Lower back</h3>
+          </div>
+
+          <div class="collapse-content">
+            <a href="#" class="topic">
+              <span class="topic-title">
+                Lower back injury with a cut or wound
+              </span>
+              <span class="topic-description">
+                An injury to the lower back (below the rib cage) or bottom in the last 7 days with a cut, wound or graze.
+              </span>
+            </a>
+            <a href="#" class="topic">
+              <span class="topic-title">
+                Lower back injury without a cut or wound
+              </span>
+              <span class="topic-description">
+                An injury to the lower back (below the rib cage) or bottom in the last 7 days that hasn't cut the skin.
+              </span>
+            </a>
+            <a href="#" class="topic">
+              <span class="topic-title">
+                Lower back pain
+              </span>
+              <span class="topic-description">
+                Pain or ache in the lower part of the back.
+              </span>
+            </a>
+          </div>
+
+          <div class="content-seperator content-seperator--equalvertspacing"></div>
+
           <!--
           "groin",
           "genital", "genitals",
@@ -494,119 +566,131 @@
           "bottom",
           "buttock", "buttocks",
           -->
-          <a href="#" class="topic">
-            <span class="topic-title">
-              Groin pain or swelling
-            </span>
-            <span class="topic-description">
-              Pain or swelling in the groin (between the waist and upper thighs).
-            </span>
-          </a>
-          <a href="#" class="topic">
-            <span class="topic-title">
-              Genital injury with cut or wound
-            </span>
-            <span class="topic-description">
-              An injury to the genitals within the last 7 days that has cut the skin. Cuts, wounds or grazes anywhere on the vagina or the area between the anus and vagina.
-            </span>
-          </a>
-          <a href="#" class="topic">
-            <span class="topic-title">
-              Genital injury without a cut or wound
-            </span>
-            <span class="topic-description">
-              An injury to the penis, scrotum, testicles or between the anus and scrotum, within the last 7 days, that has not cut the skin.
-            </span>
-          </a>
-          <a href="#" class="topic">
-            <span class="topic-title">
-              Itchy vagina
-            </span>
-            <span class="topic-description">
-              Sore or itchy vagina.
-            </span>
-          </a>
-          <a href="#" class="topic">
-            <span class="topic-title">
-              Late or missed period
-            </span>
-            <span class="topic-description">
-              Late or missed periods. No periods. Periods haven't started. Periods have stopped.
-            </span>
-          </a>
-          <a href="#" class="topic">
-            <span class="topic-title">
-              Bleeding from the vagina
-            </span>
-            <span class="topic-description">
-              Heavy periods, bleeding after sex or unexpected bleeding. Bleeding or spotting when pregnant.
-            </span>
-          </a>
-          <a href="#" class="topic">
-            <span class="topic-title">
-              Discharge from the vagina	Vaginal discharge, with or without tummy pain.
-            </span>
-          </a>
-          <a href="#" class="topic">
-            <span class="topic-title">
-              Vaginal lump or swelling
-            </span>
-            <span class="topic-description">
-              Any lump, cyst, swelling or pain in or around the vagina. Swollen or sore labia.
-            </span>
-          </a>
-          <a href="#" class="topic">
-            <span class="topic-title">
-              Something stuck in the vagina
-            </span>
-            <span class="topic-description">
-              An item such as a tampon, cap, condom or other object, that's got stuck in the vagina.
-            </span>
-          </a>
-          <a href="#" class="topic">
-            <span class="topic-title">
-              Penis, testicle or scrotum problems
-            </span>
-            <span class="topic-description">
-              Male genital problems, with or without tummy pain.
-            </span>
-          </a>
-          <a href="#" class="topic">
-            <span class="topic-title">
-              Something stuck in or around the penis
-            </span>
-            <span class="topic-description">
-              An object stuck inside or around the penis.
-            </span>
-          </a>
-          <a href="#" class="topic">
-            <span class="topic-title">
-              Something stuck in the bottom
-            </span>
-            <span class="topic-description">
-              An object stuck in the back passage.
-            </span>
-          </a>
-          <a href="#" class="topic">
-            <span class="topic-title">
-              Bottom pain, swelling lump or itch
-            </span>
-            <span class="topic-description">
-              Pain, itching or swelling in or around the bum (anus or rectum). Lumps in or around the bottom.
-            </span>
-          </a>
-          <a href="#" class="topic">
-            <span class="topic-title">
-              Bleeding from the bottom
-            </span>
-            <span class="topic-description">
-              Spots of blood on the toilet paper. Streaks of blood in poo. Red or black coloured poo.
-            </span>
-          </a>
-        </div>
+          <div class="collapse-title">
+            <h3 class="category-level-2">Groin and genitals</h3>
+          </div>
 
-        <div class="subcategory">
-          <h3>Hips, legs and feet</h3>
+          <div class="collapse-content">
+            <a href="#" class="topic">
+              <span class="topic-title">
+                Groin pain or swelling
+              </span>
+              <span class="topic-description">
+                Pain or swelling in the groin (between the waist and upper thighs).
+              </span>
+            </a>
+            <a href="#" class="topic">
+              <span class="topic-title">
+                Genital injury with cut or wound
+              </span>
+              <span class="topic-description">
+                An injury to the genitals within the last 7 days that has cut the skin. Cuts, wounds or grazes anywhere on the vagina or the area between the anus and vagina.
+              </span>
+            </a>
+            <a href="#" class="topic">
+              <span class="topic-title">
+                Genital injury without a cut or wound
+              </span>
+              <span class="topic-description">
+                An injury to the penis, scrotum, testicles or between the anus and scrotum, within the last 7 days, that has not cut the skin.
+              </span>
+            </a>
+            <a href="#" class="topic">
+              <span class="topic-title">
+                Itchy vagina
+              </span>
+              <span class="topic-description">
+                Sore or itchy vagina.
+              </span>
+            </a>
+            <a href="#" class="topic">
+              <span class="topic-title">
+                Late or missed period
+              </span>
+              <span class="topic-description">
+                Late or missed periods. No periods. Periods haven't started. Periods have stopped.
+              </span>
+            </a>
+            <a href="#" class="topic">
+              <span class="topic-title">
+                Bleeding from the vagina
+              </span>
+              <span class="topic-description">
+                Heavy periods, bleeding after sex or unexpected bleeding. Bleeding or spotting when pregnant.
+              </span>
+            </a>
+            <a href="#" class="topic">
+              <span class="topic-title">
+                Discharge from the vagina	Vaginal discharge, with or without tummy pain.
+              </span>
+            </a>
+            <a href="#" class="topic">
+              <span class="topic-title">
+                Vaginal lump or swelling
+              </span>
+              <span class="topic-description">
+                Any lump, cyst, swelling or pain in or around the vagina. Swollen or sore labia.
+              </span>
+            </a>
+            <a href="#" class="topic">
+              <span class="topic-title">
+                Something stuck in the vagina
+              </span>
+              <span class="topic-description">
+                An item such as a tampon, cap, condom or other object, that's got stuck in the vagina.
+              </span>
+            </a>
+            <a href="#" class="topic">
+              <span class="topic-title">
+                Penis, testicle or scrotum problems
+              </span>
+              <span class="topic-description">
+                Male genital problems, with or without tummy pain.
+              </span>
+            </a>
+            <a href="#" class="topic">
+              <span class="topic-title">
+                Something stuck in or around the penis
+              </span>
+              <span class="topic-description">
+                An object stuck inside or around the penis.
+              </span>
+            </a>
+          </div>
+
+          <div class="collapse-title">
+            <h3 class="category-level-2">Bottom</h3>
+          </div>
+
+          <div class="collapse-content">
+            <a href="#" class="topic">
+              <span class="topic-title">
+                Something stuck in the bottom
+              </span>
+              <span class="topic-description">
+                An object stuck in the back passage.
+              </span>
+            </a>
+            <a href="#" class="topic">
+              <span class="topic-title">
+                Bottom pain, swelling lump or itch
+              </span>
+              <span class="topic-description">
+                Pain, itching or swelling in or around the bum (anus or rectum). Lumps in or around the bottom.
+              </span>
+            </a>
+            <a href="#" class="topic">
+              <span class="topic-title">
+                Bleeding from the bottom
+              </span>
+              <span class="topic-description">
+                Spots of blood on the toilet paper. Streaks of blood in poo. Red or black coloured poo.
+              </span>
+            </a>
+          </div>
+
+          <div class="content-seperator content-seperator--equalvertspacing"></div>
+
           <!--
           "leg", "legs",
           "hip", "hips",
@@ -622,82 +706,93 @@
           "heel", "heels",
           "arch", "arches"
           -->
-          <a href="#" class="topic">
-            <span class="topic-title">
-              Leg injury with a cut or wound
-            </span>
-            <span class="topic-description">
-              An injury to the leg, hip, thigh, knee, calf, shin or ankle in the last 7 days, that has a cut, wound or graze.
-            </span>
-          </a>
-          <a href="#" class="topic">
-            <span class="topic-title">
-              Leg injury without a cut or wound
-            </span>
-            <span class="topic-description">
-              A leg injury above the ankle, within the last 7 days, that didn't cut the skin.
-            </span>
-          </a>
-          <a href="#" class="topic">
-            <span class="topic-title">
-              Swollen or painful legs, knees, ankles or feet
-            </span>
-            <span class="topic-description">
-              Painful or swollen legs, knees, ankles or feet. Pain or swelling in the hips or bum.
-            </span>
-          </a>
-          <a href="#" class="topic">
-            <span class="topic-title">
-              Cold leg or leg changing colour
-            </span>
-            <span class="topic-description">
-              A cold, painless leg. White, blue or black colour in one or both legs.
-            </span>
-          </a>
-          <a href="#" class="topic">
-            <span class="topic-title">
-              Ankle or foot injury with a cut or wound
-            </span>
-            <span class="topic-description">
-              An injury to the ankle or foot that has any type of cut or wound.
-            </span>
-          </a>
-          <a href="#" class="topic">
-            <span class="topic-title">
-              Ankle or foot injury without a cut or wound
-            </span>
-            <span class="topic-description">
-              An injury to the ankle or foot that doesn't have any type of cut or wound. Sprained ankle.
-            </span>
-          </a>
-          <a href="#" class="topic">
-            <span class="topic-title">
-              Toe injury with a cut or wound
-            </span>
-            <span class="topic-description">
-              An injury to one or more toes within the last 7 days that has cut the skin.
-            </span>
-          </a>
-          <a href="#" class="topic">
-            <span class="topic-title">
-              Toe injury without a cut or wound
-            </span>
-            <span class="topic-description">
-              A toe injury within the last 7 days that hasn't  cut the skin.
-            </span>
-          </a>
-          <a href="#" class="topic">
-            <span class="topic-title">
-              Toenail injury
-            </span>
-            <span class="topic-description">
-              An injury to one or more toenails within the last 7 days. Painful, broken, ingrown or loose toenails.
-            </span>
-          </a>
+          <div class="collapse-title">
+            <h3 class="category-level-2">Hips and legs</h3>
+          </div>
+
+          <div class="collapse-content">
+            <a href="#" class="topic">
+              <span class="topic-title">
+                Leg injury with a cut or wound
+              </span>
+              <span class="topic-description">
+                An injury to the leg, hip, thigh, knee, calf, shin or ankle in the last 7 days, that has a cut, wound or graze.
+              </span>
+            </a>
+            <a href="#" class="topic">
+              <span class="topic-title">
+                Leg injury without a cut or wound
+              </span>
+              <span class="topic-description">
+                A leg injury above the ankle, within the last 7 days, that didn't cut the skin.
+              </span>
+            </a>
+            <a href="#" class="topic">
+              <span class="topic-title">
+                Swollen or painful legs, knees, ankles or feet
+              </span>
+              <span class="topic-description">
+                Painful or swollen legs, knees, ankles or feet. Pain or swelling in the hips or bum.
+              </span>
+            </a>
+            <a href="#" class="topic">
+              <span class="topic-title">
+                Cold leg or leg changing colour
+              </span>
+              <span class="topic-description">
+                A cold, painless leg. White, blue or black colour in one or both legs.
+              </span>
+            </a>
+          </div>
+
+          <div class="collapse-title">
+            <h3 class="category-level-2">Feet, ankles and toes</h3>
+          </div>
+
+          <div class="collapse-content">
+            <a href="#" class="topic">
+              <span class="topic-title">
+                Ankle or foot injury with a cut or wound
+              </span>
+              <span class="topic-description">
+                An injury to the ankle or foot that has any type of cut or wound.
+              </span>
+            </a>
+            <a href="#" class="topic">
+              <span class="topic-title">
+                Ankle or foot injury without a cut or wound
+              </span>
+              <span class="topic-description">
+                An injury to the ankle or foot that doesn't have any type of cut or wound. Sprained ankle.
+              </span>
+            </a>
+            <a href="#" class="topic">
+              <span class="topic-title">
+                Toe injury with a cut or wound
+              </span>
+              <span class="topic-description">
+                An injury to one or more toes within the last 7 days that has cut the skin.
+              </span>
+            </a>
+            <a href="#" class="topic">
+              <span class="topic-title">
+                Toe injury without a cut or wound
+              </span>
+              <span class="topic-description">
+                A toe injury within the last 7 days that hasn't  cut the skin.
+              </span>
+            </a>
+            <a href="#" class="topic">
+              <span class="topic-title">
+                Toenail injury
+              </span>
+              <span class="topic-description">
+                An injury to one or more toenails within the last 7 days. Painful, broken, ingrown or loose toenails.
+              </span>
+            </a>
+          </div>
+
         </div>
-
-
-
       </div>
 
 <!--
@@ -1096,4 +1191,27 @@
 
 {% endblock %}
 
-{% block footer %}{% endblock %}
+{% block body_after %}
+<script>
+  $(function() {
+    $('.collapse-content').hide();
+    var $collapseControl = $('.collapse-title');
+    $collapseControl.on('click', function(e) {
+      var $this = $(this);
+      if ($this.hasClass('open')) {
+        $this
+          .removeClass('open')
+          .next()
+          .slideUp(); // do this with css ffs
+          //.css('display', 'none');
+      } else {
+        $this
+          .addClass('open')
+          .next()
+          .slideDown(); // do this with css ffs
+          //.css('display', 'block');
+      }
+    });
+  });
+</script>
+{% endblock %}

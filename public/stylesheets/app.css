@@ -937,6 +937,10 @@ details.extra-vert-spacing {
   margin-top: 32px;
 }
 
+.js-enabled .collapse-content {
+  display: none;
+}
+
 html {
   background-color: #f0f4f5;
 }
@@ -1798,6 +1802,56 @@ textarea:focus {
   padding-top: 8px;
   font-size: 16px;
   line-height: 1.5;
+}
+
+.category {
+  padding-bottom: 16px;
+  border-bottom: 4px solid #f0f4f5;
+}
+
+.nhs-redesign .category-level-1,
+.category-level-1 {
+  font-size: 19px;
+  font-weight: 400;
+  cursor: pointer;
+  margin: 0;
+  transition-property: font-size;
+  transition-duration: 0.3s;
+}
+
+.open .nhs-redesign .category-level-1,
+.open .category-level-1 {
+  font-size: 28px;
+}
+
+.nhs-redesign .category-level-2,
+.category-level-2 {
+  font-size: 19px;
+  font-weight: 400;
+  cursor: pointer;
+  margin: 0;
+  transition-property: font-size;
+  transition-duration: 0.3s;
+}
+
+.open .nhs-redesign .category-level-2,
+.open .category-level-2 {
+  font-size: 24px;
+}
+
+.nhs-redesign .category-level-3,
+.category-level-3 {
+  font-size: 19px;
+  font-weight: 400;
+  cursor: pointer;
+  margin: 0;
+  transition-property: font-size;
+  transition-duration: 0.3s;
+}
+
+.open .nhs-redesign .category-level-3,
+.open .category-level-3 {
+  font-size: 22px;
 }
 
 .topic {
