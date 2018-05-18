@@ -1757,6 +1757,17 @@ textarea:focus {
   margin: 0 16px;
 }
 
+.nav-a-z a {
+  display: inline-block;
+  min-width: 1em;
+  padding: 2px 8px;
+  margin-bottom: 4px;
+  text-decoration: none;
+  text-align: center;
+  font-weight: 700;
+  border: 1px solid #d8dde0;
+}
+
 .nhsid-container {
   margin: 16px auto;
   padding: 32px 0 0 0;
@@ -1789,19 +1800,19 @@ textarea:focus {
   line-height: 1.5;
 }
 
-.search-result {
+.topic {
   display: block;
   text-decoration: none;
   margin-bottom: 24px;
 }
 
-.search-result-title {
+.topic-title {
   display: block;
   font-weight: 700;
   text-decoration: underline;
 }
 
-.search-result-description {
+.topic-description {
   color: #231f20;
 }
 

@@ -1,16 +1,16 @@
-.search-result {
+.topic {
   display: block;
   text-decoration: none;
   margin-bottom: $baseline-grid-unit*6;
 }
 
-.search-result-title {
+.topic-title {
   display: block;
   font-weight: $boldweight;
   text-decoration: underline;
 }
 
-.search-result-description {
+.topic-description {
   color: $text-colour;
 }
 
