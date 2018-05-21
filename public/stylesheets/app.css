@@ -1768,8 +1768,14 @@ textarea:focus {
   margin-bottom: 4px;
   text-decoration: none;
   text-align: center;
-  font-weight: 700;
   border: 1px solid #d8dde0;
+}
+
+.nav-a-z a:hover,
+.nav-a-z .selected {
+  color: #fff;
+  background-color: #005eb8;
+  border-color: #005eb8;
 }
 
 .nhsid-container {
@@ -1804,54 +1810,30 @@ textarea:focus {
   line-height: 1.5;
 }
 
-.category {
-  padding-bottom: 16px;
-  border-bottom: 4px solid #f0f4f5;
-}
-
 .nhs-redesign .category-level-1,
 .category-level-1 {
-  font-size: 19px;
   font-weight: 400;
+  color: #005eb8;
+  text-decoration: underline;
   cursor: pointer;
-  margin: 0;
-  transition-property: font-size;
-  transition-duration: 0.3s;
+  position: relative;
+  padding-left: 24px;
 }
 
-.open .nhs-redesign .category-level-1,
-.open .category-level-1 {
-  font-size: 28px;
+.nhs-redesign .category-level-1::before,
+.category-level-1::before {
+  position: absolute;
+  left: 0;
+  content: '+';
 }
 
-.nhs-redesign .category-level-2,
-.category-level-2 {
-  font-size: 19px;
-  font-weight: 400;
-  cursor: pointer;
-  margin: 0;
-  transition-property: font-size;
-  transition-duration: 0.3s;
+.open .nhs-redesign .category-level-1::before,
+.open .category-level-1::before {
+  content: '-';
 }
 
-.open .nhs-redesign .category-level-2,
-.open .category-level-2 {
-  font-size: 24px;
-}
-
-.nhs-redesign .category-level-3,
-.category-level-3 {
-  font-size: 19px;
-  font-weight: 400;
-  cursor: pointer;
-  margin: 0;
-  transition-property: font-size;
-  transition-duration: 0.3s;
-}
-
-.open .nhs-redesign .category-level-3,
-.open .category-level-3 {
-  font-size: 22px;
+.category-content {
+  padding-left: 24px;
 }
 
 .topic {

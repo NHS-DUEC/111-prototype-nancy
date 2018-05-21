@@ -6,10 +6,12 @@
     margin-bottom: $baseline-grid-unit;
     text-decoration: none;
     text-align: center;
-    font-weight: $boldweight;
     border: 1px solid $grey-4;
-
-    @include media(mid) {
-    }
+  }
+  a:hover,
+  .selected {
+    color: $white;
+    background-color: $nhs-blue;
+    border-color: $nhs-blue;
   }
 }
