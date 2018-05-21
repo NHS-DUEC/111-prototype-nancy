@@ -1,12 +1,16 @@
 .nav-a-z {
   a {
+    font-size: 17px;
     display: inline-block;
     min-width: 1em;
     padding: $baseline-grid-unit/2 $baseline-grid-unit*2;
     margin-bottom: $baseline-grid-unit;
     text-decoration: none;
-    text-align: center;
     border: 1px solid $grey-4;
+
+    @include  media(mid) {
+      font-size: $body;
+    }
   }
   a:hover,
   .selected {

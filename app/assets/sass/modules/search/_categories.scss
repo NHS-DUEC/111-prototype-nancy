@@ -1,3 +1,9 @@
+.collapse-title {
+  &:focus {
+    outline: 3px solid $focus-colour;
+  }
+}
+
 .nhs-redesign .category-level-1,
 .category-level-1 {
   font-weight: $bodyweight;
