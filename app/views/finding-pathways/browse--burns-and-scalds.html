@@ -6,30 +6,8 @@
 
 {% block content %}
 
-<div class="measure">
-  <h1 class="heading-xxlarge">Browse topics</h1>
-</div>
-
-<div class="nav-a-z">
-  <a href="browse--parts-of-the-body">Parts of the body</a>
-  <a href="browse--blood-and-bleeding">Blood and bleeding</a>
-  <a href="browse--burns-and-scalds" class="selected">Burns (including sunburn) and scalds</a>
-  <a href="browse--coughs-colds-and-breathing-problems">Coughs, colds and breathing problems</a>
-  <a href="browse--diahrroea-sickness-and-vomiting">Diahrroea, sickness and vomiting</a>
-  <a href="browse--dizzinges-falls-and-faints">Dizziness, falls and faints</a>
-  <a href="browse--high-temperature-and-heatstroke">High temperature and heatstroke</a>
-  <a href="browse--periods">Periods</a>
-  <a href="browse--pregnancy-and-breastfeeding">Pregnancy and breastfeeding</a>
-  <a href="browse--problems-with-medical-devices">Problems with medical devices</a>
-  <a href="browse--problems-with-weeing-or-pooing">Problems with weeing or pooing</a>
-  <a href="browse--sexual-health">Sexual health</a>
-  <a href="browse--strange-body-sensations">Strange body sensations</a>
-  <a href="browse--wound-problems">Wound problems</a>
-</div>
-
-<div class="content-block measure shunt-3">
-
-  <h2>Burns (including sunburn) and scalds</h2>
+<div class="content-block measure">
+  <h1 class="h2">Burns (including sunburn) and scalds</h1>
 
   <a href="#" class="topic">
     <span class="topic-title">
@@ -48,7 +26,7 @@
       Burns caused by chemicals.
     </span>
   </a>
-  
+
   <a href="#" class="topic">
     <span class="topic-title">
       Sunburn
@@ -58,6 +36,25 @@
     </span>
   </a>
 
+  <div class="content-seperator content-seperator--equalvertspacing--large"></div>
+
+</div>
+
+<div class="nav-a-z shunt-3">
+  <a href="browse--parts-of-the-body">Parts of the body</a>
+  <a href="browse--blood-and-bleeding">Blood and bleeding</a>
+  <a href="browse--burns-and-scalds" class="selected">Burns (including sunburn) and scalds</a>
+  <a href="browse--coughs-colds-and-breathing-problems">Coughs, colds and breathing problems</a>
+  <a href="browse--diahrroea-sickness-and-vomiting">Diahrroea, sickness and vomiting</a>
+  <a href="browse--dizzinges-falls-and-faints">Dizziness, falls and faints</a>
+  <a href="browse--high-temperature-and-heatstroke">High temperature and heatstroke</a>
+  <a href="browse--periods">Periods</a>
+  <a href="browse--pregnancy-and-breastfeeding">Pregnancy and breastfeeding</a>
+  <a href="browse--problems-with-medical-devices">Problems with medical devices</a>
+  <a href="browse--problems-with-weeing-or-pooing">Problems with weeing or pooing</a>
+  <a href="browse--sexual-health">Sexual health</a>
+  <a href="browse--strange-body-sensations">Strange body sensations</a>
+  <a href="browse--wound-problems">Wound problems</a>
 </div>
 
 <div class="content-block measure">
@@ -84,33 +81,4 @@
 {% endblock %}
 
 {% block body_after %}
-<script>
-  $(function() {
-    $('.collapse-content').hide();
-    var $collapseControl = $('.collapse-title');
-    $collapseControl
-      .attr('tabindex', '0')
-      .keyup(function(e) {
-        if (e.keyCode === 13) {
-          $(this).click();
-        }
-      })
-      .on('click', function(e) {
-        var $this = $(this);
-        if ($this.hasClass('open')) {
-          $this
-            .removeClass('open')
-            .next()
-            //.slideUp(); // do this with css ffs
-            .css('display', 'none');
-        } else {
-          $this
-            .addClass('open')
-            .next()
-            //.slideDown(); // do this with css ffs
-            .css('display', 'block');
-        }
-      });
-  });
-</script>
 {% endblock %}

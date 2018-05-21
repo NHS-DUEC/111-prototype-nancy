@@ -6,51 +6,9 @@
 
 {% block content %}
 
-<div class="measure">
-  <h1 class="heading-xxlarge">Browse topics</h1>
-</div>
+<div class="content-block measure">
+  <h1 class="h2">Parts of the body</h1>
 
-<div class="nav-a-z">
-  <a href="browse--parts-of-the-body" class="selected">Parts of the body</a>
-  <a href="browse--blood-and-bleeding">Blood and bleeding</a>
-  <a href="browse--burns-and-scalds">Burns (including sunburn) and scalds</a>
-  <a href="browse--coughs-colds-and-breathing-problems">Coughs, colds and breathing problems</a>
-  <a href="browse--diahrroea-sickness-and-vomiting">Diahrroea, sickness and vomiting</a>
-  <a href="browse--dizzinges-falls-and-faints">Dizziness, falls and faints</a>
-  <a href="browse--high-temperature-and-heatstroke">High temperature and heatstroke</a>
-  <a href="browse--periods">Periods</a>
-  <a href="browse--pregnancy-and-breastfeeding">Pregnancy and breastfeeding</a>
-  <a href="browse--problems-with-medical-devices">Problems with medical devices</a>
-  <a href="browse--problems-with-weeing-or-pooing">Problems with weeing or pooing</a>
-  <a href="browse--sexual-health">Sexual health</a>
-  <a href="browse--strange-body-sensations">Strange body sensations</a>
-  <a href="browse--wound-problems">Wound problems</a>
-</div>
-
-<div class="content-block measure shunt-3">
-
-  <h2>Parts of the body</h2>
-
-  <!--
-  "head",
-  "face",
-  "ear", "ears",
-  "forehead",
-  "temple", "temples",
-  "brow", "brows",
-  "eyebrow", "eyebrows",
-  "eye", "eyes",
-  "cheek", "cheeks",
-  "nose",
-  "nostril", "nostrils",
-  "mouth",
-  "tooth", "teeth",
-  "gum", "gums",
-  "tongue",
-  "lip", "lips",
-  "chin",
-  "jaw",
-  -->
   <div class="collapse-title">
     <h3 class="category-level-1">Head, hair and face</h3>
   </div>
@@ -103,7 +61,6 @@
         A problem with the sinuses. Face pain around the cheeks, eyes or forehead. A runny nose and a high temperature.
       </span>
     </a>
-    <div class="content-seperator content-seperator--equalvertspacing"></div>
   </div>
 
   <div class="collapse-title">
@@ -182,7 +139,13 @@
         Sore, yellow, red or bloodshot eyes. Loss of or changes in vision. Swollen, sticky, itchy or sore eyelids. A lump on the eyelid.
       </span>
     </a>
-    <h4 class="collapse-level-3">Nose</h4>
+  </div>
+
+  <div class="collapse-title">
+    <h3 class="category-level-1">Nose</h3>
+  </div>
+
+  <div class="collapse-content category-content">
     <a href="#" class="topic">
       <span class="topic-title">
         Blocked or stuffy nose
@@ -268,10 +231,6 @@
 
   <div class="collapse-title">
     <h3 class="category-level-1">Neck and throat</h3>
-    <!--
-    "neck",
-    "throat",
-    -->
   </div>
 
   <div class="collapse-content category-content">
@@ -303,19 +262,6 @@
 
   <div class="content-seperator content-seperator--equalvertspacing--large"></div>
 
-  <!--
-  "arm", "arms",
-  "shoulder", "shoulders", "shoulderblade", "shoulderblades",
-  "elbow", "elbows",
-  "wrist", "wrists",
-  "forearm", "forearms",
-  "hand", "hands",
-  "finger", "fingers",
-  "thumb", "thumbs",
-  "palm", "palms",
-  "knuckle", "knuckles",
-  "fingernail", "fingernails",
-  -->
   <div class="collapse-title">
     <h3 class="category-level-1">Shoulders</h3>
   </div>
@@ -427,19 +373,6 @@
 
   <div class="content-seperator content-seperator--equalvertspacing--large"></div>
 
-  <!--
-  "torso",
-  "collarbone",
-  "chest",
-  "rib", "ribs",
-  "breast", "breasts",
-  "nipple", "nipples",
-  "back",
-  "abdomen",
-  "side",
-  "flank",
-  "stomach",
-  -->
   <div class="collapse-title">
     <h3 class="category-level-1">Chest and upper back</h3>
   </div>
@@ -559,19 +492,6 @@
 
   <div class="content-seperator content-seperator--equalvertspacing--large"></div>
 
-  <!--
-  "groin",
-  "genital", "genitals",
-  "penis",
-  "scrotum",
-  "testicle", "testicles",
-  "vagina",
-  "labia",
-  "anus",
-  "rectum",
-  "bottom",
-  "buttock", "buttocks",
-  -->
   <div class="collapse-title">
     <h3 class="category-level-1">Groin and genitals</h3>
   </div>
@@ -697,21 +617,6 @@
 
   <div class="content-seperator content-seperator--equalvertspacing--large"></div>
 
-  <!--
-  "leg", "legs",
-  "hip", "hips",
-  "thigh", "thighs",
-  "knee", "knees",
-  "shin", "shins",
-  "calf", "calves",
-  "ankle", "ankles",
-  "foot", "feet",
-  "toe", "toes",
-  "toenail", "toenails",
-  "sole", "soles",
-  "heel", "heels",
-  "arch", "arches"
-  -->
   <div class="collapse-title">
     <h3 class="category-level-1">Hips and legs</h3>
   </div>
@@ -800,6 +705,24 @@
 
   <div class="content-seperator content-seperator--equalvertspacing--large"></div>
 
+</div>
+
+<div class="nav-a-z shunt-3">
+  <h2 class="heading-large">Browse topics</h2>
+  <a href="browse--parts-of-the-body" class="selected">Parts of the body</a>
+  <a href="browse--blood-and-bleeding">Blood and bleeding</a>
+  <a href="browse--burns-and-scalds">Burns (including sunburn) and scalds</a>
+  <a href="browse--coughs-colds-and-breathing-problems">Coughs, colds and breathing problems</a>
+  <a href="browse--diahrroea-sickness-and-vomiting">Diahrroea, sickness and vomiting</a>
+  <a href="browse--dizzinges-falls-and-faints">Dizziness, falls and faints</a>
+  <a href="browse--high-temperature-and-heatstroke">High temperature and heatstroke</a>
+  <a href="browse--periods">Periods</a>
+  <a href="browse--pregnancy-and-breastfeeding">Pregnancy and breastfeeding</a>
+  <a href="browse--problems-with-medical-devices">Problems with medical devices</a>
+  <a href="browse--problems-with-weeing-or-pooing">Problems with weeing or pooing</a>
+  <a href="browse--sexual-health">Sexual health</a>
+  <a href="browse--strange-body-sensations">Strange body sensations</a>
+  <a href="browse--wound-problems">Wound problems</a>
 </div>
 
 <div class="content-block measure">
