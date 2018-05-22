@@ -7,44 +7,29 @@
 {% block content %}
 
 <div class="content-block measure">
-  <form method="post">
+  <form method="get" action="start">
     <div class="form-group">
       <div class="search">
-        <input type="text" id="search" name="search" value="knee pain">
+        <input type="text" id="query" name="query" value="{{ query }}">
         <button type="submit" class="button">Search</button>
       </div>
     </div>
   </form>
 
-  <p class="form-hint">3 topics found</p>
+  {% if results %}
+  <p class="form-hint">{{ results.length }} topics found</p>
+  {% endif %}
 
-
+  {% for result in results %}
   <a href="#" class="topic">
     <span class="topic-title">
-      Leg injury without a cut or wound
+      {{ result._source.DigitalTitles }}
     </span>
     <span class="topic-description">
-      A leg injury above the ankle, within the last 7 days, that didn't cut the skin.
+      {{ result._source.DigitalDescription }}
     </span>
   </a>
-
-  <a href="#" class="topic">
-    <span class="topic-title">
-      Leg injury with a cut or wound
-    </span>
-    <span class="topic-description">
-      An injury to the leg, hip, thigh, <span class="highlighter">knee</span>, calf, shin or ankle in the last 7 days, that has a cut, wound or graze.
-    </span>
-  </a>
-
-  <a href="#" class="topic">
-    <span class="topic-title">
-      Swollen or painful legs, <span class="highlighter">knees</span>, ankles or feet
-    </span>
-    <span class="topic-description">
-      Painful or swollen legs, <span class="highlighter">knees</span>, ankles or feet. Pain or swelling in the hips or bum.
-    </span>
-  </a>
+  {% endfor %}
 
 </div>
 
@@ -56,7 +41,7 @@
     </p>
 
     {% include 'finding-pathways/_partial-nhsuk-advice.html' %}
-    
+
     <p>
       If you don’t know what to look for you can <a href="#">rule out serious conditions.</a></p>
     </p>

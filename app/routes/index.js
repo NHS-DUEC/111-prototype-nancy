@@ -1,6 +1,9 @@
 var express = require('express')
 var router = express.Router()
 
+var client = require('../../lib/elasticsearch.js')
+var bodymap = require('../../data/bodymap.js')
+
 router.get('/', function (req, res) {
   req.session.destroy();
   res.render('index.html');
@@ -611,5 +614,115 @@ router.post('/emergency-feedback/hard-interrupt--question-1', function(req, res)
     res.redirect('/emergency-feedback/hard-interrupt--interrupt');
   } else {
     res.send('another question');
+  }
+});
+
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// Finding Pathways work - May 2018 ++++++++++++++++++++++++++++++++++++++++++++
+// Elasticsearch +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+/*
+app.get('/finding-pathways/search', function (req, res) {
+  if (req.query.query) {
+    var query = req.query.query;
+    var queryString = '';
+    // split the string and check for body keywords
+    query
+      .split(' ')
+      .forEach(function (val, index, array) {
+        if (bodymap.indexOf(val) !== -1) {
+          val += "^5"
+        }
+        queryString += val + ' ';
+      });
+
+    queryObj = {
+      "query_string" : {
+        "fields" : ["bodymap", "DigitalDescription", "DigitalTitles", "CommonTerms"],
+        "query" : queryString,
+        "analyzer" : "custom_english"
+      }
+    }
+
+    client.search({
+      index: 'pathways',
+      body: { query: queryObj }},
+      function (error,response,status) {
+        if (error){
+          res.send("search error: "+error);
+        } else {
+          res.render('keywords.html', {
+            'elasticQuery': queryObj,
+            'results': response.hits.hits,
+            'query': query
+          });
+        }
+    });
+  } else {
+    res.render('keywords.html');
+  }
+});
+*/
+
+router.get('/finding-pathways/start', function (req, res) {
+  console.log('query: ' + req.query.query);
+  if (req.query.query) {
+    var query = req.query.query;
+    var minShould = '';
+    // split the string and check for body keywords
+    query
+      .split(' ')
+      .forEach(function (val, index, array) {
+        if (bodymap.indexOf(val) !== -1) {
+          minShould += val + " "
+        }
+      });
+
+    if (minShould === '') {
+      queryObj = {
+        "bool": {
+          "should": [
+            {"match": { "DigitalDescription": query }},
+            {"match": { "DigitalTitles": query }},
+            {"match": { "CommonTerms": query }},
+            {"match": { "bodymap": query }}
+          ]
+        }
+      }
+    } else {
+      queryObj = {
+        "bool": {
+          "must": {
+            "match": {
+              "bodymap": minShould
+            }
+          },
+          "should": [
+            {"match": { "DigitalDescription": query }},
+            {"match": { "DigitalTitles": query }},
+            {"match": { "CommonTerms": query }},
+            {"match": { "bodymap": query }}
+          ],
+        }
+      }
+    }
+
+    client.search({
+      index: 'pathways_truncated',
+      body: { query: queryObj }},
+      function (error,response,status) {
+        if (error){
+          res.send("search error: "+error);
+        } else {
+          res.render('finding-pathways/results.html', {
+            'elasticQuery': queryObj,
+            'results': response.hits.hits,
+            'query': query
+          });
+        }
+    });
+  } else {
+    res.render('finding-pathways/start.html');
   }
 });

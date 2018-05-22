@@ -1,0 +1,21 @@
+PUT pathways
+{
+  "settings": {
+    "number_of_shards": 1
+  },
+  "analysis": {
+    "analyzer": {
+      "custom_english": {
+        "type": "english",
+        "stopwords": [
+          "a", "an", "and", "are", "as", "at", "be", "but", "by", "for", "if",
+          "in", "into", "is", "it", "of", "on", "or", "such", "that", "the",
+          "their", "then", "there", "these", "they", "this", "to", "was",
+          "will", "with", "without", "where"
+        ]
+      }
+    }
+  }
+}
+
+curl -H 'Content-Type: application/x-ndjson' -XPOST 'localhost:9200/pathways_truncated/_doc/_bulk?pretty' --data-binary @searchdata.json

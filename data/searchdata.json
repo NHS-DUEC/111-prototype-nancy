@@ -1,0 +1,238 @@
+{"index":{"_id":"PA171"}}
+{"DigitalTitles":"Stroke","DigitalDescription":"Concerns about a stroke, TIA or mini stroke.","CommonTerms":["Stroke","FAST","lopsided face","slurred speech","garbled speech","tia","mini stroke","cva"],"bodymap":[]}
+{"index":{"_id":"PW1010"}}
+{"DigitalTitles":"Genital injury with cut or wound","DigitalDescription":"An injury to the genitals within the last 7 days that has cut the skin. Cuts, wounds or grazes anywhere on the vagina or the area between the anus and vagina.","CommonTerms":[],"bodymap":["genital", "genitals", "vagina", "labia", "rectum", "anus"]}
+{"index":{"_id":"PW1012"}}
+{"DigitalTitles":"Genital injury with cut or wound","DigitalDescription":"Cuts, wounds or grazes to the penis, scrotum, testicles or the area between the anus and scrotum, within the last 7 days.","CommonTerms":[],"bodymap":["genital", "genitals", "penis", "scrotum", "testicle", "testicles", "rectum", "anus"]}
+{"index":{"_id":"PW1028"}}
+{"DigitalTitles":"Palpitations","DigitalDescription":"Feeling the heart is beating too fast or too slow. Pounding or irregular heartbeat. Racing heart, fluttering in the chest, skipped beats.","CommonTerms":["fluttering heart","heart skipping a beat","heart racing","feel heart pounding","feel heart beating","pounding heart","noticeable heartbeats"],"bodymap":[]}
+{"index":{"_id":"PW1034"}}
+{"DigitalTitles":"Swallowed or breathed in an object","DigitalDescription":"Accidentally swallowing or inhaling something. Choking or inhaling an object. Something stuck in the throat.","CommonTerms":["swallowed a coin","swallowed a magnet"," swallowed a battery","swallowed a sharp object","inhaled an object"],"bodymap":[]}
+{"index":{"_id":"PW1040"}}
+{"DigitalTitles":"Cold or flu","DigitalDescription":"A blocked or runny nose, sneezing, aching muscles, headaches, pain in the face and coughing.","CommonTerms":["common cold","head cold","respiratory problem","runny nose","streaming cold"," bug"," sniffle","snivel","sore bones","aching bones"],"bodymap":[]}
+{"index":{"_id":"PW1046"}}
+{"DigitalTitles":"Sinusitis","DigitalDescription":"A problem with the sinuses. Face pain around the cheeks, eyes or forehead. A runny nose and a high temperature.","CommonTerms":["face pain","painful sinuses","sinus infection","sinus headache"],"bodymap":["nose", "head", "face", "cheek", "cheeks", "eye", "eyes", "temple", "temples", "forehead"]}
+{"index":{"_id":"PW1070"}}
+{"DigitalTitles":"Tiredness","DigitalDescription":"Feeling tired or exhausted (fatigue) most of the time, or tiring easily.","CommonTerms":["worn out","lack of energy","no energy","over tired","exhausted","weary","drained","fatigue/fatigued"],"bodymap":[]}
+{"index":{"_id":"PW1091"}}
+{"DigitalTitles":"Bottom pain, swelling lump or itch","DigitalDescription":"Pain, itching or swelling in or around the bum (anus or rectum). Lumps in or around the bottom.","CommonTerms":["bum","bottom","rectal","rectum","anus","itchy","arse","backside"],"bodymap":["anus", "bottom"]}
+{"index":{"_id":"PW1098"}}
+{"DigitalTitles":"Something in the eye","DigitalDescription":"Dirt, dust or an object has gone into the eyes. Something sprayed or splashed into the eyes.","CommonTerms":["fly in eye","dust in eye","splash in eye","irritated eyes","red eyes","rubbing eye"],"bodymap":["eye", "eyes"]}
+{"index":{"_id":"PW1102"}}
+{"DigitalTitles":"Vaginal lump or swelling","DigitalDescription":"Any lump, cyst, swelling or pain in or around the vagina. Swollen or sore labia.","CommonTerms":["vaginal problem","painful vagina","swollen vagina","clitoris"],"bodymap":["genital", "genitals", "vagina", "labia"]}
+{"index":{"_id":"PW1114"}}
+{"DigitalTitles":"Breastfeeding problems","DigitalDescription":"Problems getting the baby to attach to the breast. Cracked or sore nipples, or a painful breast that is making breastfeeding difficult.","CommonTerms":["breast pain","breast size","breast shape","discharge","nipple discharge","nipple changes","mastitis","sore boobs","tender breasts","engorged breast","full breast","too much milk"],"bodymap":["breast", "breasts", "nipple", "nipples"]}
+{"index":{"_id":"PW1116"}}
+{"DigitalTitles":"Genital injury without a cut or wound","DigitalDescription":"An injury anywhere on the genitals in the last 7 days that hasn't cut the skin.","CommonTerms":[],"bodymap":["genital", "genitals", "vagina", "labia"]}
+{"index":{"_id":"PW1118"}}
+{"DigitalTitles":"Genital injury without a cut or wound","DigitalDescription":"An injury to the penis, scrotum, testicles or between the anus and scrotum, within the last 7 days, that has not cut the skin.","CommonTerms":[],"bodymap":["genital", "genitals", "penis", "scrotum", "testicle", "testicles"]}
+{"index":{"_id":"PW1140"}}
+{"DigitalTitles":"Shoulder problems","DigitalDescription":"Ache or stiffness in one or both shoulders. Unusual feelings or weakness.","CommonTerms":[],"bodymap":["shoulder", "shoulders", "shoulderblade", "shoulderblades"]}
+{"index":{"_id":"PW1158"}}
+{"DigitalTitles":"Constipation","DigitalDescription":"Can't poo or finding it hard to poo, with or without tummy pain.","CommonTerms":["can't poo","not moved bowels","not had bowels opened","bowel movements","hard poo","straining on the toilet"],"bodymap":[]}
+{"index":{"_id":"PW1164"}}
+{"DigitalTitles":"Swollen or painful arm","DigitalDescription":"Pain or swelling in the arm or elbow.","CommonTerms":["arm pain","arm swelling","elbow pain","lower arm","upper arm","upper arm pain","upper arm swelling","lower arm pain","lower arm swelling","elbow swelling","fore arm","pain in fore arm","swelling in fore arm"],"bodymap":["arm", "arms", "elbow", "elbows", "forearm", "forearm"]}
+{"index":{"_id":"PW1234"}}
+{"DigitalTitles":"Leg injury with a cut or wound","DigitalDescription":"An injury to the leg, hip, thigh, knee, calf, shin or ankle in the last 7 days, that has a cut, wound or graze.","CommonTerms":["knee injury","hip injury","thigh injury","leg injury","broken ankle","shin", "shins"],"bodymap":["hip", "hips", "leg", "legs", "thigh", "thighs", "knee", "knees", "calf", "calves", "shin", "shins", "ankle", "ankles"]}
+{"index":{"_id":"PW1240"}}
+{"DigitalTitles":"Leg injury without a cut or wound","DigitalDescription":"A leg injury above the ankle, within the last 7 days, that didn't cut the skin.","CommonTerms":["knee injury","hip injury","thigh injury"],"bodymap":["hip", "hips", "leg", "legs", "thigh", "thighs", "knee", "knees", "calf", "calves", "shin", "shins"]}
+{"index":{"_id":"PW1259"}}
+{"DigitalTitles":"Splinters or problems with piercings","DigitalDescription":"A problem with a small object stuck in the skin. Wood or glass splinters. Problems with piercings.","CommonTerms":["foreign body","stud","ring","foreign object"],"bodymap":[]}
+{"index":{"_id":"PW1260"}}
+{"DigitalTitles":"Hand or wrist injury with a cut or wound","DigitalDescription":"An injury to the hand or wrist within the last 7 days that has cut the skin.","CommonTerms":[],"bodymap":["hand", "hands", "wrist", "wrists", "palm", "palms"]}
+{"index":{"_id":"PW1264"}}
+{"DigitalTitles":"Finger or thumb injury with a cut or wound","DigitalDescription":"A finger or thumb injury within the last 7 days that has cut the skin.","CommonTerms":["bleeding finger"],"bodymap":["hand", "hands", "finger", "fingers", "knuckle", "knuckles", "thumb", "thumbs"]}
+{"index":{"_id":"PW1267"}}
+{"DigitalTitles":"Hand or wrist injury without a cut or wound","DigitalDescription":"A hand or wrist injury in the last 7 days that hasn't cut the skin.","CommonTerms":["hand injury","bumped hand","hurt wrist","swollen hand"],"bodymap":["hand", "hands", "wrist", "wrists", "palm", "palms"]}
+{"index":{"_id":"PW1270"}}
+{"DigitalTitles":"Finger or thumb injury without a cut or wound","DigitalDescription":"A finger or thumb injury within the last 7 days that hasn't cut the skin.","CommonTerms":["finger", "fingers", "knuckle", "knuckles","thumb", "thumbs","bruised finger","swollen finger","finger swelling","tingling finger","numb finger"],"bodymap":["hand", "hands", "finger", "fingers", "knuckle", "knuckles", "thumb", "thumbs"]}
+{"index":{"_id":"PW1282"}}
+{"DigitalTitles":"Toe injury without a cut or wound","DigitalDescription":"A toe injury within the last 7 days that hasn't  cut the skin.","CommonTerms":[],"bodymap":["foot", "feet", "toe", "toes"]}
+{"index":{"_id":"PW1301"}}
+{"DigitalTitles":"Glue on the skin","DigitalDescription":"Something is glued to the skin, or the skin has been glued together.","CommonTerms":["superglue","super glue","skin stuck together"],"bodymap":[]}
+{"index":{"_id":"PW1323"}}
+{"DigitalTitles":"Mouth ulcers","DigitalDescription":"Mouth, lip, tongue or gum ulcers. Sore white or grey patches inside the mouth.","CommonTerms":["mouth sores","sores in the mouth","painful sores in the mouth","ulcerated tongue","ulcerated mouth"],"bodymap":["mouth", "lip", "lips", "tongue", "gum", "gums"]}
+{"index":{"_id":"PW1345"}}
+{"DigitalTitles":"Other symptoms","DigitalDescription":"","CommonTerms":[],"bodymap":[]}
+{"index":{"_id":"PW1496"}}
+{"DigitalTitles":"Difficulty swallowing","DigitalDescription":"Having trouble swallowing or unable to swallow, without a sore throat","CommonTerms":["Dysphagia","Lump in throat"],"bodymap":["throat"]}
+{"index":{"_id":"PW1512"}}
+{"DigitalTitles":"Ankle or foot injury without a cut or wound","DigitalDescription":"An injury to the ankle or foot that doesn't have any type of cut or wound. Sprained ankle.","CommonTerms":["Twisted ankle","sprained ankle","strained ankle","broken ankle"],"bodymap":["ankle", "ankles", "foot", "feet", "toe", "toes", "heel", "heels", "sole", "soles", "arch", "arches"]}
+{"index":{"_id":"PW1518"}}
+{"DigitalTitles":"Ankle or foot injury with a cut or wound","DigitalDescription":"An injury to the ankle or foot that has any type of cut or wound.","CommonTerms":["Twisted ankle","sprained ankle","strained ankle","broken ankle","cut ankle","cut foot","grazed foot","wound on foot"],"bodymap":["ankle", "ankles", "foot", "feet", "toe", "toes", "heel", "heels", "sole", "soles", "arch", "arches"]}
+{"index":{"_id":"PW1526"}}
+{"DigitalTitles":"Toe injury with a cut or wound","DigitalDescription":"An injury to one or more toes within the last 7 days that has cut the skin.","CommonTerms":[],"bodymap":["toe", "toes"]}
+{"index":{"_id":"PW1528"}}
+{"DigitalTitles":"Something in the ear","DigitalDescription":"An object stuck inside the ear. An insect in the ear.","CommonTerms":["fly in ear","cotton bud in ear","ear pain","ear bud","earbud","cottonbud"],"bodymap":["ear", "ears"]}
+{"index":{"_id":"PW1529"}}
+{"DigitalTitles":"Something stuck in the nose","DigitalDescription":"An object stuck inside a nostril.","CommonTerms":[],"bodymap":["nose", "nostril", "nostrils"]}
+{"index":{"_id":"PW1530"}}
+{"DigitalTitles":"Something stuck in or around the penis","DigitalDescription":"An object stuck inside or around the penis.","CommonTerms":["foreign body","foreign object"],"bodymap":["penis", "genital", "genitals"]}
+{"index":{"_id":"PW1531"}}
+{"DigitalTitles":"Something stuck in the bottom","DigitalDescription":"An object stuck in the back passage.","CommonTerms":["foreign body","foreign object"],"bodymap":["bottom", "rectum", "anus"]}
+{"index":{"_id":"PW1532"}}
+{"DigitalTitles":"Something stuck in the vagina","DigitalDescription":"An item such as a tampon, cap, condom or other object, that's got stuck in the vagina.","CommonTerms":["something in the vagina","something stuck in the vagina","object in the vagina","tampon stuck in the vagina","condom stuck inside me","lost tampon","cap stuck"],"bodymap":["vagina", "genital", "genitals"]}
+{"index":{"_id":"PW1543"}}
+{"DigitalTitles":"Self-harm","DigitalDescription":"Self-harm (eg cutting, burning, substance abuse, anorexia or bulimia) as a way of dealing with difficult feelings. Swallowing, breathing in or injecting something poisionous on purpose.","CommonTerms":["Overdose","cutting myself","injuring myself","self inflicted injury","swallowed something on purpose","inhaled something on purpose","taken something on purpose","Suicidal feelings","drug misuse","alcohol misuse","undereating","burning skin"],"bodymap":[]}
+{"index":{"_id":"PW1544"}}
+{"DigitalTitles":"Swollen or painful face or neck","DigitalDescription":"Swelling, lumps or pain in the face or neck. Swollen glands.","CommonTerms":["lump in face","lump in neck","neck lump","swollen glands","mumps"],"bodymap":["face", "neck"]}
+{"index":{"_id":"PW1551"}}
+{"DigitalTitles":"Drunk too much alcohol","DigitalDescription":"Too much to drink. Being sick or feeling ill because of alcoholic drinks.","CommonTerms":["drunk","inebriated","pissed","sloshed","wasted","intoxicated"],"bodymap":[]}
+{"index":{"_id":"PW1553"}}
+{"DigitalTitles":"Diarrhoea and vomiting","DigitalDescription":"Runny or watery poo and being sick, with or without tummy pain.","CommonTerms":["tummy upset","the runs","watery poo","loose poo","loose motions","loose bowels","norovirus","noro virus","norovirus symptoms","noro virus","gastroenteritis","stomach bug","bug","sick and diarrhoea","food poisoning"],"bodymap":[]}
+{"index":{"_id":"PW1559"}}
+{"DigitalTitles":"Itchy vagina","DigitalDescription":"Sore or itchy vagina.","CommonTerms":["Thrush"],"bodymap":["vagina", "genital", "genitals"]}
+{"index":{"_id":"PW1564"}}
+{"DigitalTitles":"Penis, testicle or scrotum problems","DigitalDescription":"Male genital problems, with or without tummy pain.","CommonTerms":[],"bodymap":["penis", "testicle", "testicles", "scrotum"]}
+{"index":{"_id":"PW1567"}}
+{"DigitalTitles":"Catheter problems","DigitalDescription":"A problem with a blocked or leaking catheter. Pain from a catheter. Trouble removing or inserting a catheter.","CommonTerms":["catheter","suprapubic","urethral","urinary catheter","drain","drainage","bag\n"],"bodymap":[]}
+{"index":{"_id":"PW1570"}}
+{"DigitalTitles":"Fingernail injury","DigitalDescription":"Any injury to the fingernail or nails in the last 7 days.","CommonTerms":["Nail bed","finger nail","finger nails","thumbnail","bruised nail","nails"],"bodymap":["fingernail", "fingernails", "thumbnail", "thumbnails", "finger", "fingers", "knuckle", "knuckles", "thumb", "thumbs"]}
+{"index":{"_id":"PW1575"}}
+{"DigitalTitles":"Bites or stings","DigitalDescription":"Any bite or sting from animals, humans, insects, reptiles or water creatures. Bitten by a pet or wild animal.","CommonTerms":["human bite","animal bite","insect bite","insect sting","spider bite","snake bite","water creature bite","dog bite","cat bite","wild rat bite","bat bite","water creature sting","multiple stings","reptile bite","fish bite","hamster bite","gerbil bite"],"bodymap":[]}
+{"index":{"_id":"PW1590"}}
+{"DigitalTitles":"Cuts, scratches or grazes","DigitalDescription":"A small cut, scratch or graze that might have gravel, dirt or grit inside.","CommonTerms":[],"bodymap":[]}
+{"index":{"_id":"PW1593"}}
+{"DigitalTitles":"Toenail injury","DigitalDescription":"An injury to one or more toenails within the last 7 days. Painful, broken, ingrown or loose toenails.","CommonTerms":[],"bodymap":["toe", "toes", "toenail", "toenails"]}
+{"index":{"_id":"PW1596"}}
+{"DigitalTitles":"Lower back injury without a cut or wound","DigitalDescription":"An injury to the lower back (below the rib cage) or bottom in the last 7 days that hasn't cut the skin.","CommonTerms":["lower back pain","fall down stairs","bum","buttocks","bruise"],"bodymap":["back", "bottom"]}
+{"index":{"_id":"PW1603"}}
+{"DigitalTitles":"Breast problems","DigitalDescription":"Any problems with the breast or nipple. Lumps, pain or any worries about skin changes.","CommonTerms":["breast pain","breast size","breast shape","discharge","nipple discharge","nipple changes","mastitis","sore boobs","tender breasts","bleeding from the nipple"],"bodymap":["breast", "breasts", "nipple", "nipples"]}
+{"index":{"_id":"PW1610"}}
+{"DigitalTitles":"Toothache, swelling and other dental problems","DigitalDescription":"Bleeding from the mouth, teeth or gums. Painful  teeth or gums. Swelling or lumps on the gums, mouth or jaw. A crown, bridge, fillings, denture or brace problem. A broken tooth, or teeth not caused by an injury.","CommonTerms":["dental problem","dental bleeding","bleeding gums","broken tooth","lost filling","broken bridge","broken denture","toothproblem","abcess","implant","brace","swollen gums","crown","cap"],"bodymap":["mouth", "tooth", "teeth", "gum", "gums", "jaw"]}
+{"index":{"_id":"PW1614"}}
+{"DigitalTitles":"Swollen or painful hand, finger or wrist","DigitalDescription":"Pain or swelling in the hand, fingers, nails or wrist.","CommonTerms":["Painful finger","Swollen hand","Painful hand","Swollen wrist","Painful wrist","Painful nail","nails"],"bodymap":["wrist", "wrists", "hand", "hands", "finger", "fingers", "knuckle", "knuckles", "thumb", "thumbs", "palm", "palms"]}
+{"index":{"_id":"PW1625"}}
+{"DigitalTitles":"Blisters","DigitalDescription":"Blisters from something rubbing against the skin, such as new shoes.","CommonTerms":["friction blisters","rubbing"],"bodymap":[]}
+{"index":{"_id":"PW1627"}}
+{"DigitalTitles":"Eye or eyelid problems","DigitalDescription":"Sore, yellow, red or bloodshot eyes. Loss of or changes in vision. Swollen, sticky, itchy or sore eyelids. A lump on the eyelid.","CommonTerms":["yellow eyes","whites of eyes turned yellow","blood in white of the eye","bloodshot eye","dandruff of the eyelids","double vision","eye discharge","flashing lights","floaters","styes","contact lens problems","welding flash","conjunctivitis"],"bodymap":["eye", "eyes", "eyelid"]}
+{"index":{"_id":"PW1651"}}
+{"DigitalTitles":"Coughing up blood","DigitalDescription":"Coughing up blood in sick (vomit), phlegm or mucus.","CommonTerms":["chest infection","bronchitis","coughing","cough"],"bodymap":[]}
+{"index":{"_id":"PW1676"}}
+{"DigitalTitles":"Late or missed period","DigitalDescription":"Late or missed periods. No periods. Periods haven't started. Periods have stopped.","CommonTerms":["Amenorrhoea","stopped periods","late period","menopause","puberty","worried pregnant"],"bodymap":[]}
+{"index":{"_id":"PW1678"}}
+{"DigitalTitles":"Hair falling out or thinning","DigitalDescription":"Hair loss from any part of the body. Losing hair in patches or clumps.","CommonTerms":["alopecia"],"bodymap":[]}
+{"index":{"_id":"PW1683"}}
+{"DigitalTitles":"Numbness or unusual sensation","DigitalDescription":"Strange feelings in the skin anywhere on the body. Numbness, burning, tingling or pins and needles.","CommonTerms":[],"bodymap":[]}
+{"index":{"_id":"PW1684"}}
+{"DigitalTitles":"Sexual or period problems","DigitalDescription":"Physical or emotional problems with sexual health or sexuality. Worries about sexually transmitted infections (STIs), HIV/AIDs. Premenstrual symptoms (PMT/PMS). Menopause.","CommonTerms":["bleeding problems"," STI","the pill","condom","broken condom","contraception","morning after pill","missed pill","unprotected sex"],"bodymap":[]}
+{"index":{"_id":"PW1685"}}
+{"DigitalTitles":"Male sexual problems","DigitalDescription":"A physical or emotional problem with sexual health or activity. Worries about sexually transmitted infections (STIs), HIV/AIDS","CommonTerms":["bleeding and sex","broken condom","contraception","unprotected sex"],"bodymap":[]}
+{"index":{"_id":"PW1686"}}
+{"DigitalTitles":"Sleep problems","DigitalDescription":"Problems sleeping, getting to sleep or staying asleep. Tiredness. Insomnia.","CommonTerms":["can't sleep","problem sleeping","sleeping problems","unable to sleep","awake all night","can't get to sleep","not enough sleep","sleeping badly","not sleeping"],"bodymap":[]}
+{"index":{"_id":"PW1702"}}
+{"DigitalTitles":"Fluid or wax coming from the ear with no loss of hearing","DigitalDescription":"Fluid, ear wax or watery discharge from one or both ears but without any loss of hearing.","CommonTerms":[],"bodymap":["ear", "ears"]}
+{"index":{"_id":"PW1709"}}
+{"DigitalTitles":"Problems with wounds, plaster casts or metal rods","DigitalDescription":"New problems from a wound that has already been treated by a doctor or nurse. Pain or problems with plaster casts, metal rods or drainage tubes.","CommonTerms":["painful plaster cast","surgical drain","wound vac"],"bodymap":[]}
+{"index":{"_id":"PW1712"}}
+{"DigitalTitles":"Locked or aching jaw","DigitalDescription":"Problems opening or closing the mouth or jaw.","CommonTerms":[],"bodymap":["mouth", "jaw"]}
+{"index":{"_id":"PW1713"}}
+{"DigitalTitles":"Nosebleed after an injury","DigitalDescription":"A bleeding nose following an injury.","CommonTerms":["bloody nose"],"bodymap":["nose"]}
+{"index":{"_id":"PW1719"}}
+{"DigitalTitles":"Stoma problems","DigitalDescription":"A problem with any stoma or bag attached to the body.","CommonTerms":["stoma","bag","nephrostomy","ileostomy","colostomy","urostamy","jejunostomy","gastrostomy"],"bodymap":[]}
+{"index":{"_id":"PW1733"}}
+{"DigitalTitles":"Cold arm or arm changing colour","DigitalDescription":"A cold, painless arm. White, blue, or black colour in one or both arms.","CommonTerms":[],"bodymap":["arm", "arms"]}
+{"index":{"_id":"PW1734"}}
+{"DigitalTitles":"Cold leg or leg changing colour","DigitalDescription":"A cold, painless leg. White, blue or black colour in one or both legs.","CommonTerms":[],"bodymap":["leg", "legs", "thigh", "thighs"]}
+{"index":{"_id":"PW1746"}}
+{"DigitalTitles":"Diabetic blood sugar problems","DigitalDescription":"Diabetic blood sugar levels are too high or too low. A sudden problem with blood sugar levels.","CommonTerms":["blood glucose","insulin","hypoglycaemia","hyperglycaemia"],"bodymap":[]}
+{"index":{"_id":"PW1749"}}
+{"DigitalTitles":"Behaving strangely","DigitalDescription":"Any odd behaviour. Seeing or hearing things that aren’t there. Can't stay awake. New changes or an existing condition getting worse.","CommonTerms":["memory loss","acting differently","out of character","Hearing voices"," hallucinations","confused","mental health","drowsiness"],"bodymap":[]}
+{"index":{"_id":"PW1751"}}
+{"DigitalTitles":"Mental health","DigitalDescription":"Low mood, feeling depressed or stressed. Panic attacks or anxiety. Trouble sleeping. Seeing or hearing things that aren't there. Drink and drug problems.","CommonTerms":["feeling low","drug abuse advice","solvent abuse advice","anxious","insomnia","panic attack","post natal depression","baby blues","bipolar","delusional","post traumatic stress disorder","ptsd","adhd","schizophrenia","suicidal","manic","eating disorder","ocd","sad","seasonal affective disorder","suicide","overdose","sertraline overdose","Panic Attack"," Schizophrenia","Bipolar","Borderline personality disorder"," BPD","Hypomania and mania","Obsessive compulsive disorder","OCD","Personality disorders","Paranoia","postnatal depression","Psychosis","Suicidal feelings"],"bodymap":[]}
+{"index":{"_id":"PW1759"}}
+{"DigitalTitles":"Loss of bowel control","DigitalDescription":"An urge to poo that can't be controlled. Soiling or staining underwear. May also include constipation or diarrhoea, bloating or wind.","CommonTerms":["faecal incontinence"],"bodymap":[]}
+{"index":{"_id":"PW1762"}}
+{"DigitalTitles":"Hearing problems or blocked ear","DigitalDescription":"Hearing problems or deafness without earache. Blocked ear or fluid leaking from the ear with no pain.","CommonTerms":["hearing loss","loss of hearing","going deaf","can't hear","deafness","tinnitus","hearing loss","glue ear"],"bodymap":["ear", "ears"]}
+{"index":{"_id":"PW1763"}}
+{"DigitalTitles":"Can't feel baby move as much","DigitalDescription":"Worries that the baby isn't moving as much as usual. Baby's movements are slower or have stopped.","CommonTerms":["Slow baby movements","can't feel kicks","no kicking","No baby movement","Reduced baby movement","Unborn baby isn't moving","can't feel baby","baby movements feel different"],"bodymap":[]}
+{"index":{"_id":"PW1764"}}
+{"DigitalTitles":"Trembling or shaking","DigitalDescription":"Shaking or trembling (tremor).","CommonTerms":["hands shaking","tremor","body shaking","epileptic fit","seizure","fit"],"bodymap":[]}
+{"index":{"_id":"PW1771"}}
+{"DigitalTitles":"Rashes, itchy skin, spots or blisters","DigitalDescription":"Skin problems (including moles). Eczema or ringworm. Scabies, lice or athlete's foot. Chickenpox or shingles. Lumps, bruises or yellow skin. Problems with birthmarks and tattoos.","CommonTerms":["acne","pimples","impetigo","chickenpox","eczema","measles","red skin","pink red rash","heat rash","prickly heat","hives","fungal infection","white spots","whiteheads","chickenpox","shingles","chicken pox","dermatitis"],"bodymap":[]}
+{"index":{"_id":"PW1775"}}
+{"DigitalTitles":"Hiccups","DigitalDescription":"Hiccups, with possible fever. Hiccups won't stop.","CommonTerms":["hiccup","persistent hiccups","hiccuping"],"bodymap":[]}
+{"index":{"_id":"PW1776"}}
+{"DigitalTitles":"Wound problems","DigitalDescription":"A wound from an injury, operation or burn that has been seen by a nurse or doctor.","CommonTerms":["surgical wound","operation wound","surgery wound"],"bodymap":[]}
+{"index":{"_id":"PW500"}}
+{"DigitalTitles":"Stomach or side injury without a cut or wound","DigitalDescription":"An injury to the tummy (abdomen), or sides (flank) within the last 7 days that hasn't cut the skin.","CommonTerms":["Stomach injury","tummy injury","abdominal injury","flank injury","abdo"],"bodymap":["abdomen", "side", "flank", "stomach"]}
+{"index":{"_id":"PW508"}}
+{"DigitalTitles":"Injury to the stomach or side of body with a cut or wound","DigitalDescription":"An injury to the tummy (abdomen), or sides (flank) within the last 7 days that has cut the skin.","CommonTerms":["Stomach injury","tummy injury","abdomen injury","flank injury"],"bodymap":["abdomen", "side", "flank", "stomach"]}
+{"index":{"_id":"PW516"}}
+{"DigitalTitles":"Stomach pain","DigitalDescription":"Tummy (abdominal) pain with or without other symptoms such as diarrhoea, vomiting or a high temperature.","CommonTerms":["trapped wind"," tummy ache","acid reflux","heart burn","stomach cramps","gut ache","indigestion","stomach bug","bug","gripe"," gastro-oesophageal reflux disease","gord","stomach ulcer","stomach ache","gallstones"],"bodymap":["stomach"]}
+{"index":{"_id":"PW556"}}
+{"DigitalTitles":"Breathing problems","DigitalDescription":"Chest, rib or upper back pain when breathing. Wheezing, panting or feeling out of breath. Difficult or noisy breathing.","CommonTerms":["asthma attack","struggling to breathe","hard to breathe","breathless","breathlessness","pnuemonia","chest infection","bronchitis"],"bodymap":["chest", "rib", "ribs", "back"]}
+{"index":{"_id":"PW564"}}
+{"DigitalTitles":"Chemical burns","DigitalDescription":"Burns caused by chemicals.","CommonTerms":[],"bodymap":[]}
+{"index":{"_id":"PW572"}}
+{"DigitalTitles":"Toothache after an injury","DigitalDescription":"Toothache and pain caused by an injury, such as broken, cracked or knocked out teeth. Bleeding or injuries to the gums or mouth. Swelling or lumps on the face or jaw. Problems opening or closing the mouth.","CommonTerms":["dental injury","injury to mouth","injury to teeth","hit in mouth","damage to teeth"],"bodymap":["mouth", "tooth", "teeth", "gum", "gums", "face", "jaw"]}
+{"index":{"_id":"PW580"}}
+{"DigitalTitles":"Burns from heat","DigitalDescription":"A scald from hot liquid or a burn from touching something hot, such as an iron or a flame.","CommonTerms":["scald","singe","inhaled fumes","burn from microwave","burn from cooker"],"bodymap":[]}
+{"index":{"_id":"PW588"}}
+{"DigitalTitles":"Chest or upper back injury without a cut or wound","DigitalDescription":"An injury to the chest or upper back within the last 7 days, that hasn't cut the skin. Injuries from the collarbone to bottom of the ribcage.","CommonTerms":["chest injury","upper back","collarbone","collar bone","painful injury"],"bodymap":["chest", "back", "rib", "ribs", "collarbone"]}
+{"index":{"_id":"PW596"}}
+{"DigitalTitles":"Chest or upper back injury with a cut or wound","DigitalDescription":"An injury to the chest or upper back (the collarbone to the bottom of the ribcage) within the last 7 days that has cut the skin.","CommonTerms":[],"bodymap":["chest", "back", "rib", "ribs", "collarbone"]}
+{"index":{"_id":"PW620"}}
+{"DigitalTitles":"Dental injuries","DigitalDescription":"Dental problems caused by an injury, such as knocked out or broken teeth. Injuries to the gums or the inside of the mouth.","CommonTerms":[],"bodymap":["mouth", "tooth", "teeth", "gum", "gums"]}
+{"index":{"_id":"PW628"}}
+{"DigitalTitles":"Diarrhoea","DigitalDescription":"Runny or watery poo, with or without pain in the tummy.","CommonTerms":["tummy upset","the runs","watery poo","loose poo","loose motions","loose bowels","The trots","runny tummy","the runs","gippy tummy","frequent stools","watery stools","upset stomach","the squits","bug"],"bodymap":[]}
+{"index":{"_id":"PW636"}}
+{"DigitalTitles":"Dizziness","DigitalDescription":"Feeling dizzy, off balance, lightheaded or as if the room is spinning (vertigo).","CommonTerms":["light headed","head spinning","off balance","feeling woozy","loss of balance"," labyrinthitis"],"bodymap":[]}
+{"index":{"_id":"PW644"}}
+{"DigitalTitles":"Problems with weeing (passing urine)","DigitalDescription":"Pain, stinging or burning while weeing (passing urine). Weeing too often or smelly wee.","CommonTerms":["Urinary problems","water infection","bladder infection","bladder problem","burning when weeing","stinging when weeing","","pain when weeing","cystitis","urinary incontinence","UTI"," urinary tract infection","peeing problems","hurts when I pee","cloudy urine","weak bladder","pain when urinating","leaking urine","UTI pain","cloudy wee"],"bodymap":[]}
+{"index":{"_id":"PW655"}}
+{"DigitalTitles":"Earache","DigitalDescription":"Ear pain, swelling, or fluid leaking from the ear. A painful blocked ear. New deafness with pain. Ringing in the ear.","CommonTerms":["Ear pain","ear ache","pain in ear","sore ear","ear hurts","red ear","swollen ear","blocked ear","ringing in the ear","deafness","painful ear","tinnitus","hearing loss","ear infection","glue ear"],"bodymap":["ear", "ears"]}
+{"index":{"_id":"PW660"}}
+{"DigitalTitles":"Eye injury without cut or wound","DigitalDescription":"An injury to the eye or eye socket within the last 7 days without any cut or wound.","CommonTerms":[],"bodymap":["eye", "eyes"]}
+{"index":{"_id":"PW668"}}
+{"DigitalTitles":"Eye injury or cut","DigitalDescription":"An injury to the eye or eye socket within the last 7 days that has caused a cut or wound.","CommonTerms":[],"bodymap":["eye", "eyes"]}
+{"index":{"_id":"PW684"}}
+{"DigitalTitles":"Head, face or neck injury without a cut or wound","DigitalDescription":"An injury to the head, face or neck within the last 7 days that didn't cut the skin.","CommonTerms":["forehead injury","chin injury","mouth injury","ear injury","scalp injury","tongue injury"],"bodymap":["head", "face", "temple", "temples", "forehead", "brow", "brows", "eyebrow", "eyebrows", "nose", "nostril", "nostrils", "cheek", "cheeks", "mouth", "lip", "lips", "chin", "neck", "throat"]}
+{"index":{"_id":"PW692"}}
+{"DigitalTitles":"Head, face or neck injury with a cut or wound","DigitalDescription":"An injury to any part of the face (but not eyes or teeth), head or neck, which has cut the skin, within the last 7 days.","CommonTerms":["forehead injury","chin injury","mouth injury","ear injury","scalp injury","tongue injury"],"bodymap":["head", "face", "temple", "temples", "forehead", "brow", "brows", "eyebrow", "eyebrows", "nose", "nostril", "nostrils", "cheek", "cheeks", "mouth", "lip", "lips", "chin", "neck", "throat"]}
+{"index":{"_id":"PW700"}}
+{"DigitalTitles":"Falling, fainting or passing out","DigitalDescription":"A fall, faint, blackout or loss of consciousness, with no injury.","CommonTerms":["blacked out","passed out","keeled over","dropped to the floor","out of it","collapsed"," syncope","black out"],"bodymap":[]}
+{"index":{"_id":"PW708"}}
+{"DigitalTitles":"Fever or high temperature","DigitalDescription":"Chills and shivering, or hot to touch. A high temperature, with no other symptoms.","CommonTerms":["high temperature","high fever","burning up","feels hot","running a temperature","hot to touch","clammy","sweaty"],"bodymap":[]}
+{"index":{"_id":"PW716"}}
+{"DigitalTitles":"Pain in the side of the body","DigitalDescription":"Pain on either side of the body, between the ribs and hips. Affecting one side only at the back (love handles) or with stomach pain.","CommonTerms":["Loin pain","flank pain","kidney area","love handles","right side pain","left side pain","kidney stones"],"bodymap":["side", "flank"]}
+{"index":{"_id":"PW728"}}
+{"DigitalTitles":"Groin pain or swelling","DigitalDescription":"Pain or swelling in the groin (between the waist and upper thighs).","CommonTerms":["lump in groin","pain in testicles","hernia","sportsman hernia","swollen glands"],"bodymap":["groin"]}
+{"index":{"_id":"PW752"}}
+{"DigitalTitles":"Headache or migraine","DigitalDescription":"Throbbing or intense pain or a tight band around the head. Visual problems like flashing lights with a headache.","CommonTerms":["Sore head","painful head","pain in head","really bad headache","tension headache","cluster headache","stress headache","sore eyes"],"bodymap":["head", "temple", "temples"]}
+{"index":{"_id":"PW774"}}
+{"DigitalTitles":"Swollen or painful legs, knees, ankles or feet","DigitalDescription":"Painful or swollen legs, knees, ankles or feet. Pain or swelling in the hips, backside or buttocks.","CommonTerms":["lower leg","lower limb","upper leg","painful foot","swollen foot","painful toes","swollen toes","painful calf","swollen calf","swollen shin","painful shin","swollen thigh","painful thigh","painful hip","swollen hip","swollen buttock","sore feet","gout","leg ulcer","oedema","infected toe","ingrowing toenail","red toe","swollen toe"],"bodymap":["leg", "legs", "hip", "hips", "knee", "knees", "ankle", "ankles", "foot", "feet", "bottom", "buttock", "buttocks"]}
+{"index":{"_id":"PW782"}}
+{"DigitalTitles":"Lower back pain","DigitalDescription":"Pain or ache in the lower part of the back.","CommonTerms":["lumbar pain","pain in lumbar region","back ache","bad back","lumbago","backache"],"bodymap":["back"]}
+{"index":{"_id":"PW798"}}
+{"DigitalTitles":"Lower back injury with a cut or wound","DigitalDescription":"An injury to the lower back (below the rib cage) or bottom in the last 7 days with a cut, wound or graze.","CommonTerms":["lower back pain","fall down stairs","bum","buttocks","bruise"],"bodymap":["back", "bottom"]}
+{"index":{"_id":"PW818"}}
+{"DigitalTitles":"Nosebleed","DigitalDescription":"A bleeding nose.","CommonTerms":["bloody nose"],"bodymap":["nose"]}
+{"index":{"_id":"PW846"}}
+{"DigitalTitles":"Bleeding from the bottom","DigitalDescription":"Spots of blood on the toilet paper. Streaks of blood in poo. Red or black coloured poo.","CommonTerms":["rectal bleeding","bloody poo","blood in poo"],"bodymap":["bottom", "rectum", "anus"]}
+{"index":{"_id":"PW854"}}
+{"DigitalTitles":"Sore throat","DigitalDescription":"A painful throat, with or without problems swallowing. A hoarse, croaky or lost voice, with or without a sore throat.","CommonTerms":["lost voice","croaky voice","laryngitis","swollen glands","tonsillitis","raspy voice","husky voice"],"bodymap":["throat"]}
+{"index":{"_id":"PW881"}}
+{"DigitalTitles":"Accidental overdose or taking something harmful","DigitalDescription":"Accidentally taking, swallowing, breathing in or injecting something poisonous. Taking too many painkillers or an overdose of medicine like insulin.","CommonTerms":["medicine overdose","accidental poisoning","breathing in or swallowing something poisonous","accidental","paracetamol"],"bodymap":[]}
+{"index":{"_id":"PW886"}}
+{"DigitalTitles":"Difficulty weeing","DigitalDescription":"Problems with weeing (passing urine), such as only being able to wee very small amounts, or can't wee at all.","CommonTerms":["can't pass urine","unable to pass urine","not able to pass urine","can't go","cannot wee","can't wee","catheters"],"bodymap":[]}
+{"index":{"_id":"PW894"}}
+{"DigitalTitles":"Arm injury without a cut or wound","DigitalDescription":"An injury to the arm, wrist or shoulder within the last 7 days, that has not cut the skin. A dislocated shoulder or arm.","CommonTerms":["arm injury","shoulder injury","wrist injury","no wound","dislocation","dislocated"],"bodymap":["arm", "arms", "shoulder", "shoulders", "shoulderblade", "shoulderblades", "elbow", "elbows", "forearm", "forearm", "wrist", "wrists"]}
+{"index":{"_id":"PW902"}}
+{"DigitalTitles":"Arm injury with a cut or wound","DigitalDescription":"An injury to the arm or shoulder in the last 7 days, that has caused a cut or wound.","CommonTerms":["injured arm","hurt shoulder","hurt wrist","cut arm","cut wrist","cut shoulder","bleeding arm"],"bodymap":["arm", "arms", "shoulder", "shoulders", "shoulderblade", "shoulderblades", "elbow", "elbows", "forearm", "forearm", "wrist", "wrists"]}
+{"index":{"_id":"PW910"}}
+{"DigitalTitles":"Bleeding from the vagina","DigitalDescription":"Heavy periods, bleeding after sex or unexpected bleeding. Bleeding or spotting when pregnant.","CommonTerms":["menorrhagia","menstrual bleeding"],"bodymap":["vagina", "genital", "genitals"]}
+{"index":{"_id":"PW915"}}
+{"DigitalTitles":"Discharge from the vagina","DigitalDescription":"Vaginal discharge, with or without tummy pain.","CommonTerms":["Thrush","green discharge","brown discharge","bloody discharge"],"bodymap":["vagina", "genital", "genitals"]}
+{"index":{"_id":"PW936"}}
+{"DigitalTitles":"Vomiting or nausea","DigitalDescription":"Being or feeling sick.","CommonTerms":["tummy upset","feeling sick","bug","gastroenteritis","feeling queasy","throwing up"],"bodymap":[]}
+{"index":{"_id":"PW961"}}
+{"DigitalTitles":"Blood in wee (urine)","DigitalDescription":"Bloody, red or pink wee (urine)","CommonTerms":["bleeding urine (wee)"],"bodymap":[]}
+{"index":{"_id":"PW975"}}
+{"DigitalTitles":"Cough","DigitalDescription":"Hacking, tickly or dry cough, without other cold symptoms. Coughing up phlegm or mucus.","CommonTerms":["productive cough","rasping cough","Chest infection","bronchitis","chesty","persistent cough"],"bodymap":["chest"]}
+{"index":{"_id":"PW981"}}
+{"DigitalTitles":"Blocked or stuffy nose","DigitalDescription":"A congested or blocked nose. Sinus problems.","CommonTerms":[],"bodymap":["nose"]}
+{"index":{"_id":"PW987"}}
+{"DigitalTitles":"Sunburn","DigitalDescription":"Burns caused by the sun or a tanning sunbed or lamp. Red, warm, sore, tender, or peeling skin.","CommonTerms":[],"bodymap":[]}
+{"index":{"_id":"PW998"}}
+{"DigitalTitles":"Heatstroke","DigitalDescription":"Overheating caused by being in hot temperatures or by exercising too much.","CommonTerms":["heat stroke","heat exhaustion","sun stroke","sunstroke"],"bodymap":[]}
