@@ -35,3 +35,11 @@ body {
   display: inline;
   margin-right: $leading*1;
 }
+
+.sticky-element {
+  @include media(large) {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+  }
+}

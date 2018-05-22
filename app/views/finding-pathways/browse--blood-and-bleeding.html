@@ -1,0 +1,150 @@
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}{% endblock %}
+
+{% block content %}
+
+<div class="content-block measure">
+  <h1 class="h2">Blood and bleeding</h1>
+
+  <a href="#" class="topic">
+    <span class="topic-title">
+      Diabetic blood sugar problems
+    </span>
+    <span class="topic-description">
+      Diabetic blood sugar levels are too high or too low. A sudden problem with blood sugar levels.
+    </span>
+  </a>
+
+  <a href="#" class="topic">
+    <span class="topic-title">
+      Coughing up blood
+    </span>
+    <span class="topic-description">
+      Coughing up blood in sick (vomit), phlegm or mucus.
+    </span>
+  </a>
+
+  <a href="#" class="topic">
+    <span class="topic-title">
+      Nosebleed
+    </span>
+    <span class="topic-description">
+      A bleeding nose.
+    </span>
+  </a>
+
+  <a href="#" class="topic">
+    <span class="topic-title">
+      Nosebleed after an injury
+    </span>
+    <span class="topic-description">
+      A bleeding nose following an injury.
+    </span>
+  </a>
+
+  <a href="#" class="topic">
+    <span class="topic-title">
+      Bleeding from the bottom
+    </span>
+    <span class="topic-description">
+      Spots of blood on the toilet paper. Streaks of blood in poo. Red or black coloured poo.
+    </span>
+  </a>
+
+  <a href="#" class="topic">
+    <span class="topic-title">
+      Bleeding from the vagina
+    </span>
+    <span class="topic-description">
+      Heavy periods, bleeding after sex or unexpected bleeding. Bleeding or spotting when pregnant.
+    </span>
+  </a>
+
+  <a href="#" class="topic">
+    <span class="topic-title">
+      Late or missed period
+    </span>
+    <span class="topic-description">
+      Late or missed periods. No periods. Periods haven't started. Periods have stopped.
+    </span>
+  </a>
+
+  <div class="content-seperator content-seperator--equalvertspacing--large"></div>
+
+</div>
+
+<div class="nav-a-z shunt-3">
+  <h2 class="heading-large">Browse topics</h2>
+  <a href="browse--parts-of-the-body">Parts of the body</a>
+  <a href="browse--blood-and-bleeding" class="selected">Blood and bleeding</a>
+  <a href="browse--burns-and-scalds">Burns (including sunburn) and scalds</a>
+  <a href="browse--coughs-colds-and-breathing-problems">Coughs, colds and breathing problems</a>
+  <a href="browse--diahrroea-sickness-and-vomiting">Diahrroea, sickness and vomiting</a>
+  <a href="browse--dizzinges-falls-and-faints">Dizziness, falls and faints</a>
+  <a href="browse--high-temperature-and-heatstroke">High temperature and heatstroke</a>
+  <a href="browse--periods">Periods</a>
+  <a href="browse--pregnancy-and-breastfeeding">Pregnancy and breastfeeding</a>
+  <a href="browse--problems-with-medical-devices">Problems with medical devices</a>
+  <a href="browse--problems-with-weeing-or-pooing">Problems with weeing or pooing</a>
+  <a href="browse--sexual-health">Sexual health</a>
+  <a href="browse--strange-body-sensations">Strange body sensations</a>
+  <a href="browse--wound-problems">Wound problems</a>
+</div>
+
+<div class="content-block measure">
+  <details>
+    <summary>I can’t find the right topic</summary>
+    {% include 'finding-pathways/_partial-full-list-link.html' %}
+
+    {% include 'finding-pathways/_partial-nhsuk-advice.html' %}
+
+    <p>
+      If you don’t know what to look for you can <a href="#">rule out serious conditions.</a></p>
+    </p>
+  </details>
+</div>
+
+<div class="content-seperator content-seperator--equalvertspacing--large"></div>
+
+<div class="content-block measure">
+  <details>
+    <summary>Help us improve</summary>
+  </details>
+</div>
+
+{% endblock %}
+
+{% block body_after %}
+<script>
+  $(function() {
+    $('.collapse-content').hide();
+    var $collapseControl = $('.collapse-title');
+    $collapseControl
+      .attr('tabindex', '0')
+      .keyup(function(e) {
+        if (e.keyCode === 13) {
+          $(this).click();
+        }
+      })
+      .on('click', function(e) {
+        var $this = $(this);
+        if ($this.hasClass('open')) {
+          $this
+            .removeClass('open')
+            .next()
+            //.slideUp(); // do this with css ffs
+            .css('display', 'none');
+        } else {
+          $this
+            .addClass('open')
+            .next()
+            //.slideDown(); // do this with css ffs
+            .css('display', 'block');
+        }
+      });
+  });
+</script>
+{% endblock %}

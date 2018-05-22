@@ -1,0 +1,76 @@
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhs-redesign{% endblock %}
+
+{% block content %}
+
+<div class="content-block measure">
+  <form method="post">
+    <div class="form-group">
+      <div class="search">
+        <input type="text" id="search" name="search" value="knee pain">
+        <button type="submit" class="button">Search</button>
+      </div>
+    </div>
+  </form>
+
+  <p class="form-hint">3 topics found</p>
+
+
+  <a href="#" class="topic">
+    <span class="topic-title">
+      Leg injury without a cut or wound
+    </span>
+    <span class="topic-description">
+      A leg injury above the ankle, within the last 7 days, that didn't cut the skin.
+    </span>
+  </a>
+
+  <a href="#" class="topic">
+    <span class="topic-title">
+      Leg injury with a cut or wound
+    </span>
+    <span class="topic-description">
+      An injury to the leg, hip, thigh, <span class="highlighter">knee</span>, calf, shin or ankle in the last 7 days, that has a cut, wound or graze.
+    </span>
+  </a>
+
+  <a href="#" class="topic">
+    <span class="topic-title">
+      Swollen or painful legs, <span class="highlighter">knees</span>, ankles or feet
+    </span>
+    <span class="topic-description">
+      Painful or swollen legs, <span class="highlighter">knees</span>, ankles or feet. Pain or swelling in the hips or bum.
+    </span>
+  </a>
+
+</div>
+
+<div class="content-block measure">
+  <details>
+    <summary>I can’t find the right topic</summary>
+    <p>
+      You can browse <a href="browse">topics by category.</a>
+    </p>
+
+    {% include 'finding-pathways/_partial-nhsuk-advice.html' %}
+    
+    <p>
+      If you don’t know what to look for you can <a href="#">rule out serious conditions.</a></p>
+    </p>
+  </details>
+</div>
+
+<div class="content-seperator content-seperator--equalvertspacing--large"></div>
+
+<div class="content-block measure">
+  <details>
+    <summary>Help us improve</summary>
+  </details>
+</div>
+
+{% endblock %}
+
+{% block footer %}{% endblock %}

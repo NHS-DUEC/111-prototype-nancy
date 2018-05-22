@@ -1,10 +1,10 @@
 @import url("//assets.nhs.uk/fonts/nhsuk-fonts-1.1.0.css");
-li.tabular-data-row, .prototype-warning-inner, .card, .breadcrumb, .footer-container, .-date, .postcode, .error-summary, form, .form-group, #global-header, .nhsid-container, .signage, .header-container,
+li.tabular-data-row, .prototype-warning-inner, .card, .breadcrumb, .footer-container, .-date, .postcode, .error-summary, form, .form-group, .search, #global-header, .nhsid-container, .signage, .header-container,
 .content, .grid-row {
   zoom: 1;
 }
 
-li.tabular-data-row:after, .prototype-warning-inner:after, .card:after, .breadcrumb:after, .footer-container:after, .-date:after, .postcode:after, .error-summary:after, form:after, .form-group:after, #global-header:after, .nhsid-container:after, .signage:after, .header-container:after,
+li.tabular-data-row:after, .prototype-warning-inner:after, .card:after, .breadcrumb:after, .footer-container:after, .-date:after, .postcode:after, .error-summary:after, form:after, .form-group:after, .search:after, #global-header:after, .nhsid-container:after, .signage:after, .header-container:after,
 .content:after, .grid-row:after {
   content: "";
   display: block;
@@ -937,6 +937,10 @@ details.extra-vert-spacing {
   margin-top: 32px;
 }
 
+.js-enabled .collapse-content {
+  display: none;
+}
+
 html {
   background-color: #f0f4f5;
 }
@@ -1351,6 +1355,28 @@ label .form-hint {
   opacity: 1;
 }
 
+.search-label {
+  margin: 32px 0;
+}
+
+.search .button {
+  background-color: #005eb8;
+  box-shadow: none;
+  border: 2px solid #005eb8;
+}
+
+@media (min-width: 500px) {
+  .search input[type="text"] {
+    float: left;
+    width: calc(75% - 4px);
+    margin-top: 0;
+  }
+  .search .button {
+    float: left;
+    width: calc(25% - 4px);
+  }
+}
+
 textarea {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -1735,6 +1761,29 @@ textarea:focus {
   margin: 0 16px;
 }
 
+.nav-a-z a {
+  font-size: 17px;
+  display: inline-block;
+  min-width: 1em;
+  padding: 2px 8px;
+  margin-bottom: 4px;
+  text-decoration: none;
+  border: 1px solid #d8dde0;
+}
+
+@media (min-width: 500px) {
+  .nav-a-z a {
+    font-size: 19px;
+  }
+}
+
+.nav-a-z a:hover,
+.nav-a-z .selected {
+  color: #fff;
+  background-color: #005eb8;
+  border-color: #005eb8;
+}
+
 .nhsid-container {
   margin: 16px auto;
   padding: 32px 0 0 0;
@@ -1765,6 +1814,58 @@ textarea:focus {
   padding-top: 8px;
   font-size: 16px;
   line-height: 1.5;
+}
+
+.collapse-title:focus {
+  outline: 3px solid #ffb81c;
+}
+
+.nhs-redesign .category-level-1,
+.category-level-1 {
+  font-weight: 400;
+  color: #005eb8;
+  text-decoration: underline;
+  cursor: pointer;
+  position: relative;
+  padding-left: 24px;
+}
+
+.nhs-redesign .category-level-1::before,
+.category-level-1::before {
+  position: absolute;
+  left: 0;
+  content: '+';
+}
+
+.open .nhs-redesign .category-level-1::before,
+.open .category-level-1::before {
+  content: '-';
+}
+
+.category-content {
+  padding-left: 24px;
+}
+
+.topic {
+  display: block;
+  text-decoration: none;
+  margin-bottom: 24px;
+}
+
+.topic-title {
+  display: block;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.topic-description {
+  color: #231f20;
+}
+
+.highlighter {
+  padding-left: 2px;
+  padding-right: 2px;
+  background-color: #fdf2d5;
 }
 
 .signage {
@@ -1850,6 +1951,14 @@ body, pre.user-input {
   margin-right: 8px;
 }
 
+@media (min-width: 980px) {
+  .sticky-element {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+  }
+}
+
 .grid-row {
   display: block;
   margin-left: -1.7%;
@@ -1895,13 +2004,25 @@ body, pre.user-input {
 }
 
 .grid-1-4 {
-  width: 21.6%;
-  float: left;
+  width: 96.6%;
+}
+
+@media (min-width: 640px) {
+  .grid-1-4 {
+    width: 21.6%;
+    float: left;
+  }
 }
 
 .grid-3-4 {
-  width: 71.6%;
-  float: left;
+  width: 96.6%;
+}
+
+@media (min-width: 640px) {
+  .grid-3-4 {
+    width: 71.6%;
+    float: left;
+  }
 }
 
 .grid-1-6 {

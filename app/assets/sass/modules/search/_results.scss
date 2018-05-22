@@ -1,0 +1,21 @@
+.topic {
+  display: block;
+  text-decoration: none;
+  margin-bottom: $baseline-grid-unit*6;
+}
+
+.topic-title {
+  display: block;
+  font-weight: $boldweight;
+  text-decoration: underline;
+}
+
+.topic-description {
+  color: $text-colour;
+}
+
+.highlighter {
+  padding-left: $baseline-grid-unit/2;
+  padding-right: $baseline-grid-unit/2;
+  background-color: $yellow-10;
+}

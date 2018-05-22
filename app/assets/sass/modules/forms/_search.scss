@@ -1,0 +1,28 @@
+.search-label {
+  margin: $baseline-grid-unit*8 0;
+}
+
+.search {
+  @extend %contain-floats;
+
+  .button {
+    background-color: $nhs-blue;
+    box-shadow: none;
+    border: 2px solid $nhs-blue;
+  }
+
+  @include media(mid) {
+
+    input[type="text"] {
+      float: left;
+      width: calc(75% - 4px);
+      margin-top: 0;
+    }
+
+    .button {
+      float: left;
+      width: calc(25% - 4px);
+    }
+
+  }
+}

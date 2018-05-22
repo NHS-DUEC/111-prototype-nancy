@@ -1,0 +1,33 @@
+.collapse-title {
+  &:focus {
+    outline: 3px solid $focus-colour;
+  }
+}
+
+.nhs-redesign .category-level-1,
+.category-level-1 {
+  font-weight: $bodyweight;
+  color: $link-colour;
+  text-decoration: underline;
+  cursor: pointer;
+  position: relative;
+  padding-left: $baseline-grid-unit*6;
+
+  &::before {
+    position: absolute;
+    left: 0;
+    content: '+';
+  }
+}
+
+.open .nhs-redesign .category-level-1,
+.open .category-level-1 {
+
+  &::before {
+    content: '-';
+  }
+}
+
+.category-content {
+  padding-left: $baseline-grid-unit*6;
+}
