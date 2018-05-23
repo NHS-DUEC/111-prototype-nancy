@@ -714,7 +714,12 @@ router.get('/finding-pathways/start', function (req, res) {
         if (error){
           res.send("search error: "+error);
         } else {
-          if (response.hits.hits > 0) {
+          res.render('finding-pathways/results.html', {
+            'elasticQuery': queryObj,
+            'results': response.hits.hits,
+            'query': query
+          });
+          /*if (response.hits.hits > 0) {
             res.render('finding-pathways/results.html', {
               'elasticQuery': queryObj,
               'results': response.hits.hits,
@@ -724,7 +729,7 @@ router.get('/finding-pathways/start', function (req, res) {
             res.render('finding-pathways/no-results.html', {
               'query': query
             });
-          }
+          }*/
         }
     });
   } else {
