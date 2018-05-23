@@ -211,7 +211,7 @@
 {"index":{"_id":"PW846"}}
 {"DigitalTitles":"Bleeding from the bottom","DigitalDescription":"Spots of blood on the toilet paper. Streaks of blood in poo. Red or black coloured poo.","CommonTerms":["rectal bleeding","bloody poo","blood in poo"],"bodymap":["bottom", "rectum", "anus"]}
 {"index":{"_id":"PW854"}}
-{"DigitalTitles":"Sore throat","DigitalDescription":"A painful throat, with or without problems swallowing. A hoarse, croaky or lost voice, with or without a sore throat.","CommonTerms":["lost voice","croaky voice","laryngitis","swollen glands","tonsillitis","raspy voice","husky voice"],"bodymap":["throat"]}
+{"DigitalTitles":"Sore throat","DigitalDescription":"A painful throat, with or without problems swallowing. A hoarse, croaky or lost voice, with or without a sore throat.","CommonTerms":["lost voice","croaky voice","laryngitis","swollen glands","tonsillitis","raspy voice","husky voice"],"bodymap":["throat", "tonsils", "tonsil"]}
 {"index":{"_id":"PW881"}}
 {"DigitalTitles":"Accidental overdose or taking something harmful","DigitalDescription":"Accidentally taking, swallowing, breathing in or injecting something poisonous. Taking too many painkillers or an overdose of medicine like insulin.","CommonTerms":["medicine overdose","accidental poisoning","breathing in or swallowing something poisonous","accidental","paracetamol"],"bodymap":[]}
 {"index":{"_id":"PW886"}}

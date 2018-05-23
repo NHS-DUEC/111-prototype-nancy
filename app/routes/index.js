@@ -623,7 +623,7 @@ router.post('/emergency-feedback/hard-interrupt--question-1', function(req, res)
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 /*
-app.get('/finding-pathways/search', function (req, res) {
+router.get('/finding-pathways/start', function (req, res) {
   if (req.query.query) {
     var query = req.query.query;
     var queryString = '';
@@ -640,19 +640,18 @@ app.get('/finding-pathways/search', function (req, res) {
     queryObj = {
       "query_string" : {
         "fields" : ["bodymap", "DigitalDescription", "DigitalTitles", "CommonTerms"],
-        "query" : queryString,
-        "analyzer" : "custom_english"
+        "query" : queryString
       }
     }
 
     client.search({
-      index: 'pathways',
+      index: 'pathways_truncated',
       body: { query: queryObj }},
       function (error,response,status) {
         if (error){
           res.send("search error: "+error);
         } else {
-          res.render('keywords.html', {
+          res.render('finding-pathways/results.html', {
             'elasticQuery': queryObj,
             'results': response.hits.hits,
             'query': query
@@ -660,7 +659,7 @@ app.get('/finding-pathways/search', function (req, res) {
         }
     });
   } else {
-    res.render('keywords.html');
+    res.render('finding-pathways/start.html');
   }
 });
 */
@@ -714,12 +713,12 @@ router.get('/finding-pathways/start', function (req, res) {
         if (error){
           res.send("search error: "+error);
         } else {
-          res.render('finding-pathways/results.html', {
+          /*res.render('finding-pathways/results.html', {
             'elasticQuery': queryObj,
             'results': response.hits.hits,
             'query': query
-          });
-          /*if (response.hits.hits > 0) {
+          });*/
+          if (response.hits.hits.length >= 1) {
             res.render('finding-pathways/results.html', {
               'elasticQuery': queryObj,
               'results': response.hits.hits,
@@ -729,7 +728,7 @@ router.get('/finding-pathways/start', function (req, res) {
             res.render('finding-pathways/no-results.html', {
               'query': query
             });
-          }*/
+          }
         }
     });
   } else {
