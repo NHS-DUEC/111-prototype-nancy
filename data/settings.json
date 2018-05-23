@@ -1,4 +1,4 @@
-PUT pathways
+PUT pathways_truncated
 {
   "settings": {
     "number_of_shards": 1
@@ -19,3 +19,5 @@ PUT pathways
 }
 
 curl -H 'Content-Type: application/x-ndjson' -XPOST 'localhost:9200/pathways_truncated/_doc/_bulk?pretty' --data-binary @searchdata.json
+
+curl -H 'Content-Type: application/x-ndjson' -XPOST 'BONSAI_URL/pathways_truncated/doc/_bulk?pretty' --data-binary @searchdata.json
