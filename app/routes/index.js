@@ -666,7 +666,6 @@ app.get('/finding-pathways/search', function (req, res) {
 */
 
 router.get('/finding-pathways/start', function (req, res) {
-  console.log('query: ' + req.query.query);
   if (req.query.query) {
     var query = req.query.query;
     var minShould = '';
@@ -715,11 +714,17 @@ router.get('/finding-pathways/start', function (req, res) {
         if (error){
           res.send("search error: "+error);
         } else {
-          res.render('finding-pathways/results.html', {
-            'elasticQuery': queryObj,
-            'results': response.hits.hits,
-            'query': query
-          });
+          if (response.hits.hits > 0) {
+            res.render('finding-pathways/results.html', {
+              'elasticQuery': queryObj,
+              'results': response.hits.hits,
+              'query': query
+            });
+          } else {
+            res.render('finding-pathways/no-results.html', {
+              'query': query
+            });
+          }
         }
     });
   } else {

@@ -76,7 +76,8 @@
 
 </div>
 
-{% include 'finding-pathways/_partial-category-nav.html' %}
+{% import 'finding-pathways/_partial-category-nav.html' as navs %}
+{{ navs.categories(usetitle='true') }}
 
 <div class="content-block measure">
   <details>

@@ -7,50 +7,68 @@
 {% block content %}
 
 <div class="content-block measure">
-  <h1 class="h2">Strange body sensations</h1>
+  <h1 class="h2">Mental health and sleep problems</h1>
 
   <a href="/weird-questions" class="topic">
     <span class="topic-title">
-      Hiccups
+      Accidental overdose or taking something harmful
     </span>
     <span class="topic-description">
-      Hiccups, with possible fever. Hiccups won't stop.
+      Accidentally taking, swallowing, breathing in or injecting something poisonous. Taking too many painkillers or an overdose of medicine like insulin.
     </span>
   </a>
 
   <a href="/weird-questions" class="topic">
     <span class="topic-title">
-      Numbness or unusual sensation
+      Behaving strangely
     </span>
     <span class="topic-description">
-      Strange feelings in the skin anywhere on the body. Numbness, burning, tingling or pins and needles.
+      Any odd behaviour. Seeing or hearing things that aren't there. Can't stay awake. New changes or an existing condition getting worse.
     </span>
   </a>
 
   <a href="/weird-questions" class="topic">
     <span class="topic-title">
-      Palpitations
+      Drunk too much alcohol
     </span>
     <span class="topic-description">
-      Feeling the heart is beating too fast or too slow. Pounding or irregular heartbeat. Racing heart, fluttering in the chest, skipped beats.
+      Too much to drink. Being sick or feeling ill because of alcoholic drinks.
     </span>
   </a>
 
   <a href="/weird-questions" class="topic">
     <span class="topic-title">
-      Stroke
+      Mental health
     </span>
     <span class="topic-description">
-      Concerns about a stroke, TIA or mini stroke.
+      Low mood, feeling depressed or stressed. Panic attacks or anxiety. Trouble sleeping. Seeing or hearing things that aren't there. Drink and drug problems.
     </span>
   </a>
 
   <a href="/weird-questions" class="topic">
     <span class="topic-title">
-      Trembling or shaking
+      Self-harm
     </span>
     <span class="topic-description">
-      Shaking or trembling (tremor).
+      Self-harm (eg cutting, burning, substance abuse, anorexia or bulimia) as a way of dealing with difficult feelings. Swallowing, breathing in or injecting something poisionous on purpose.
+    </span>
+  </a>
+
+  <a href="/weird-questions" class="topic">
+    <span class="topic-title">
+      Sleep problems
+    </span>
+    <span class="topic-description">
+      Problems sleeping, getting to sleep or staying asleep. Tiredness. Insomnia.
+    </span>
+  </a>
+
+  <a href="/weird-questions" class="topic">
+    <span class="topic-title">
+      Tiredness
+    </span>
+    <span class="topic-description">
+      Feeling tired or exhausted (fatigue) most of the time, or tiring easily.
     </span>
   </a>
 
@@ -58,7 +76,8 @@
 
 </div>
 
-{% include 'finding-pathways/_partial-category-nav.html' %}
+{% import 'finding-pathways/_partial-category-nav.html' as navs %}
+{{ navs.categories(usetitle='true') }}
 
 <div class="content-block measure">
   <details>

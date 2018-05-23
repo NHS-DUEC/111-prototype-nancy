@@ -20,6 +20,15 @@
 
   <a href="/weird-questions" class="topic">
     <span class="topic-title">
+      Trembling or shaking
+    </span>
+    <span class="topic-description">
+      Shaking or trembling (tremor).
+    </span>
+  </a>
+
+  <a href="/weird-questions" class="topic">
+    <span class="topic-title">
       Chest pain or breathing problems
     </span>
     <span class="topic-description">
@@ -40,7 +49,8 @@
 
 </div>
 
-{% include 'finding-pathways/_partial-category-nav.html' %}
+{% import 'finding-pathways/_partial-category-nav.html' as navs %}
+{{ navs.categories(usetitle='true') }}
 
 <div class="content-block measure">
   <details>
