@@ -1,0 +1,29 @@
+<script>
+  $(function() {
+    $('.collapse-content').hide();
+    var $collapseControl = $('.collapse-title');
+    $collapseControl
+      .attr('tabindex', '0')
+      .keyup(function(e) {
+        if (e.keyCode === 13) {
+          $(this).click();
+        }
+      })
+      .on('click', function(e) {
+        var $this = $(this);
+        if ($this.hasClass('open')) {
+          $this
+            .removeClass('open')
+            .next()
+            //.slideUp(); // do this with css ffs
+            .css('display', 'none');
+        } else {
+          $this
+            .addClass('open')
+            .next()
+            //.slideDown(); // do this with css ffs
+            .css('display', 'block');
+        }
+      });
+  });
+</script>

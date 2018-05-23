@@ -1,0 +1,16 @@
+<script>
+  $(function() {
+    var page = window.location.href;
+    page = page.split('/');
+    var pageTitle = page[page.length-1];
+
+    var $navlinks = $('.nav-a-z a');
+
+    $navlinks.each(function() {
+      $this = $(this);
+      if ($this.attr('href') === pageTitle) {
+        $this.addClass('selected');
+      }
+    });
+  });
+</script>
