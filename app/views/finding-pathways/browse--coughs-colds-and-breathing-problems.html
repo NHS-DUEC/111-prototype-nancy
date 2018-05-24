@@ -9,7 +9,7 @@
 <div class="content-block measure">
   <h1 class="h2">Coughs, colds and breathing problems</h1>
 
-  <a href="#" class="topic">
+  <a href="/weird-questions" class="topic">
     <span class="topic-title">
       Blocked or stuffy nose
     </span>
@@ -18,7 +18,7 @@
     </span>
   </a>
 
-  <a href="#" class="topic">
+  <a href="/weird-questions" class="topic">
     <span class="topic-title">
       Chest pain or breathing problems
     </span>
@@ -27,7 +27,7 @@
     </span>
   </a>
 
-  <a href="#" class="topic">
+  <a href="/weird-questions" class="topic">
     <span class="topic-title">
       Cold or flu
     </span>
@@ -36,7 +36,7 @@
     </span>
   </a>
 
-  <a href="#" class="topic">
+  <a href="/weird-questions" class="topic">
     <span class="topic-title">
       Cough
     </span>
@@ -45,7 +45,7 @@
     </span>
   </a>
 
-  <a href="#" class="topic">
+  <a href="/weird-questions" class="topic">
     <span class="topic-title">
       Sinusitis
     </span>
@@ -58,23 +58,8 @@
 
 </div>
 
-<div class="nav-a-z shunt-3">
-  <h2 class="heading-large">Browse topics</h2>
-  <a href="browse--parts-of-the-body">Parts of the body</a>
-  <a href="browse--blood-and-bleeding">Blood and bleeding</a>
-  <a href="browse--burns-and-scalds">Burns (including sunburn) and scalds</a>
-  <a href="browse--coughs-colds-and-breathing-problems" class="selected">Coughs, colds and breathing problems</a>
-  <a href="browse--diahrroea-sickness-and-vomiting">Diahrroea, sickness and vomiting</a>
-  <a href="browse--dizzinges-falls-and-faints">Dizziness, falls and faints</a>
-  <a href="browse--high-temperature-and-heatstroke">High temperature and heatstroke</a>
-  <a href="browse--periods">Periods</a>
-  <a href="browse--pregnancy-and-breastfeeding">Pregnancy and breastfeeding</a>
-  <a href="browse--problems-with-medical-devices">Problems with medical devices</a>
-  <a href="browse--problems-with-weeing-or-pooing">Problems with weeing or pooing</a>
-  <a href="browse--sexual-health">Sexual health</a>
-  <a href="browse--strange-body-sensations">Strange body sensations</a>
-  <a href="browse--wound-problems">Wound problems</a>
-</div>
+{% import 'finding-pathways/_partial-category-nav.html' as navs %}
+{{ navs.categories(usetitle='true') }}
 
 <div class="content-block measure">
   <details>
@@ -100,4 +85,5 @@
 {% endblock %}
 
 {% block body_after %}
+  {% include 'finding-pathways/_partial-selected-category-script.html' %}
 {% endblock %}

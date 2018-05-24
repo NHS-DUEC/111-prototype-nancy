@@ -91,6 +91,15 @@ body.nhs-redesign {
 
 .nhs-redesign {
 
+  .body {
+    font-size: 17px;
+    line-height: $baseline-grid-unit*7;
+    @include media(mid) {
+      font-size: 19px;
+      line-height: $baseline-grid-unit*8;
+    }
+  }
+
   h1,
   .h1 {
     font-size: 32px;
