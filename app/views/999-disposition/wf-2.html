@@ -1,0 +1,55 @@
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}
+{% endblock %}
+
+{% block content %}
+
+<div class="">
+
+  <div class="content-block" style="border: 2px solid #ccc; padding:0 32px;">
+    <h1>Let us call you</h1>
+  </div>
+
+  <div class="content-block" style="border: 2px solid #ccc; padding:0 32px;">
+    <p>
+      Your answers suggest you may have something seriously wrong. You should
+      <b>speak to a nurse</b> or <b>call 999</b> now.
+    </p>
+    <p>
+      <a href="#">Let me review my answers</a>
+    </p>
+  </div>
+
+  <div class="content-block" style="border: 2px solid #ccc; padding:0 32px;">
+    <h2>A nurse from 111 can phone you</h2>
+    <p>
+      Fill in your details and a medical professional will call you within 30 minutes.
+    </p>
+    <form class="form">
+      <div class="form-group">
+        <label>What number should we call you on?</label>
+        <input type="text" value="">
+      </div>
+      <div class="form-group">
+        <label>Your name</label>
+        <input type="text" value="">
+      </div>
+      <div class="form-group">
+        <label>Your date of birth</label>
+        <input type="text" value="">
+      </div>
+      <div class="form-group">
+        <label>Your address</label>
+        <textarea></textarea>
+      </div>
+      <div class="form-group">
+        <button class="button">Request call</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block footer %}{% endblock %}
