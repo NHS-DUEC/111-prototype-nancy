@@ -123,7 +123,7 @@
 {"index":{"_id":"PW1702"}}
 {"DigitalTitles":"Fluid or wax coming from the ear with no loss of hearing","DigitalDescription":"Fluid, ear wax or watery discharge from one or both ears but without any loss of hearing.","CommonTerms":[],"bodymap":["ear", "ears"]}
 {"index":{"_id":"PW1709"}}
-{"DigitalTitles":"Problems with wounds, plaster casts or metal rods","DigitalDescription":"New problems from a wound that has already been treated by a doctor or nurse. Pain or problems with plaster casts, metal rods or drainage tubes.","CommonTerms":["painful plaster cast","surgical drain","wound vac"],"bodymap":[]}
+{"DigitalTitles":"Problems with wounds, plaster casts or metal rods","DigitalDescription":"New problems from a wound that has already been treated by a doctor or nurse. Pain or problems with stitches, staples, plaster casts, metal rods or drainage tubes.","CommonTerms":["painful plaster cast","surgical drain","wound vac"],"bodymap":[]}
 {"index":{"_id":"PW1712"}}
 {"DigitalTitles":"Locked or aching jaw","DigitalDescription":"Problems opening or closing the mouth or jaw.","CommonTerms":[],"bodymap":["mouth", "jaw"]}
 {"index":{"_id":"PW1713"}}
@@ -153,7 +153,7 @@
 {"index":{"_id":"PW1775"}}
 {"DigitalTitles":"Hiccups","DigitalDescription":"Hiccups, with possible fever. Hiccups won't stop.","CommonTerms":["hiccup","persistent hiccups","hiccuping"],"bodymap":[]}
 {"index":{"_id":"PW1776"}}
-{"DigitalTitles":"Wound problems","DigitalDescription":"A wound from an injury, operation or burn that has been seen by a nurse or doctor.","CommonTerms":["surgical wound","operation wound","surgery wound"],"bodymap":[]}
+{"DigitalTitles":"Wound problems","DigitalDescription":"A problem with wound (that had been seen by a nurse or doctor). The wound is more than 7 days old.","CommonTerms":["surgical wound","operation wound","surgery wound"],"bodymap":[]}
 {"index":{"_id":"PW500"}}
 {"DigitalTitles":"Stomach or side injury without a cut or wound","DigitalDescription":"An injury to the tummy (abdomen), or sides (flank) within the last 7 days that hasn't cut the skin.","CommonTerms":["Stomach injury","tummy injury","abdominal injury","flank injury","abdo"],"bodymap":["abdomen", "side", "flank", "stomach"]}
 {"index":{"_id":"PW508"}}
