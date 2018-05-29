@@ -679,28 +679,28 @@ router.get('/finding-pathways/start', function (req, res) {
 
     if (minShould === '') {
       queryObj = {
-        "bool": {
-          "should": [
-            {"match": { "DigitalDescription": query }},
-            {"match": { "DigitalTitles": query }},
-            {"match": { "CommonTerms": query }},
-            {"match": { "bodymap": query }}
+        bool: {
+          should: [
+            {match: { DigitalDescription: query }},
+            {match: { DigitalTitles: query }},
+            {match: { CommonTerms: query }},
+            {match: { bodymap: query }}
           ]
         }
       }
     } else {
       queryObj = {
-        "bool": {
-          "must": {
-            "match": {
-              "bodymap": minShould
+        bool: {
+          must: {
+            match: {
+              bodymap: minShould
             }
           },
-          "should": [
-            {"match": { "DigitalDescription": query }},
-            {"match": { "DigitalTitles": query }},
-            {"match": { "CommonTerms": query }},
-            {"match": { "bodymap": query }}
+          should: [
+            {match: { DigitalDescription: query }},
+            {match: { DigitalTitles: query }},
+            {match: { CommonTerms: query }},
+            {match: { bodymap: query }}
           ],
         }
       }
@@ -708,16 +708,21 @@ router.get('/finding-pathways/start', function (req, res) {
 
     client.search({
       index: 'pathways_truncated',
-      body: { query: queryObj }},
-      function (error,response,status) {
+      body: {
+        query: queryObj,
+        highlight: {
+          pre_tags: ['<span class="highlighter">'],
+          post_tags: ['</span>'],
+          fields: {
+            DigitalTitles: {},
+            DigitalDescription: {}
+          }
+        }
+      }
+    }, function (error,response,status) {
         if (error){
           res.send("search error: "+error);
         } else {
-          /*res.render('finding-pathways/results.html', {
-            'elasticQuery': queryObj,
-            'results': response.hits.hits,
-            'query': query
-          });*/
           if (response.hits.hits.length >= 1) {
             res.render('finding-pathways/results.html', {
               'elasticQuery': queryObj,

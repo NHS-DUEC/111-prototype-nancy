@@ -20,13 +20,23 @@
   <p class="form-hint">{{ results.length }} topics found</p>
   {% endif %}
 
+
+
   {% for result in results %}
   <a href="/weird-questions" class="topic">
     <span class="topic-title">
-      {{ result._source.DigitalTitles }}
+      {% if result.highlight.DigitalTitles %}
+        {{ result.highlight.DigitalTitles | safe }}
+      {% else %}
+        {{ result._source.DigitalTitles }}
+      {% endif %}
     </span>
     <span class="topic-description">
-      {{ result._source.DigitalDescription }}
+      {% if result.highlight.DigitalDescription %}
+        {{ result.highlight.DigitalDescription | safe }}
+      {% else %}
+        {{ result._source.DigitalDescription }}
+      {% endif %}
     </span>
   </a>
   {% endfor %}
