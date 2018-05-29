@@ -55,6 +55,12 @@
   border: $baseline-grid-unit solid $red;
 }
 
+.callout--info-alert {
+  background-color: $red-10;
+  border: solid $red;
+  border-width: 0 0 0 $baseline-grid-unit;
+}
+
 .callout--compact {
   display: inline-block;
 

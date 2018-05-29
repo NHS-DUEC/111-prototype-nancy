@@ -622,6 +622,12 @@ a.link-prototype:visted {
   border: 4px solid #da291c;
 }
 
+.callout--info-alert {
+  background-color: #f5e6e4;
+  border: solid #da291c;
+  border-width: 0 0 0 4px;
+}
+
 .callout--compact {
   display: inline-block;
 }
@@ -794,7 +800,7 @@ a.link-prototype:visted {
 
 .button.-secondary {
   background-color: #e6eff8;
-  border-color: #ccdff1;
+  box-shadow: 0 2px 0 #80afdc;
   color: #231f20;
   font-weight: 400;
 }
