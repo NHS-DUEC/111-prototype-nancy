@@ -1,10 +1,10 @@
 @import url("//assets.nhs.uk/fonts/nhsuk-fonts-1.1.0.css");
-li.tabular-data-row, .prototype-warning-inner, .card, .breadcrumb, .footer-container, .-date, .postcode, .error-summary, form, .form-group, .search, #global-header, .nhsid-container, .signage, .header-container,
+li.tabular-data-row, .prototype-warning-inner, .card, .breadcrumb, .footer-container, .-date, .postcode, .error-summary, form, .form-group, .search, #global-header, .nhsid-container, .signage, .survey-banner > div, .header-container,
 .content, .grid-row {
   zoom: 1;
 }
 
-li.tabular-data-row:after, .prototype-warning-inner:after, .card:after, .breadcrumb:after, .footer-container:after, .-date:after, .postcode:after, .error-summary:after, form:after, .form-group:after, .search:after, #global-header:after, .nhsid-container:after, .signage:after, .header-container:after,
+li.tabular-data-row:after, .prototype-warning-inner:after, .card:after, .breadcrumb:after, .footer-container:after, .-date:after, .postcode:after, .error-summary:after, form:after, .form-group:after, .search:after, #global-header:after, .nhsid-container:after, .signage:after, .survey-banner > div:after, .header-container:after,
 .content:after, .grid-row:after {
   content: "";
   display: block;
@@ -550,6 +550,15 @@ a.link-prototype:visted {
   background-color: #ffb81c;
 }
 
+.survey-banner {
+  background-color: #ffdc8e;
+  padding: 8px 0;
+}
+
+.survey-banner > div {
+  font-size: 16px;
+}
+
 .callout {
   display: block;
   padding: 8px 24px;
@@ -785,6 +794,7 @@ a.link-prototype:visted {
   font-weight: 400;
   font-size: 16px;
   text-decoration: underline;
+  box-shadow: none;
 }
 
 .button.-back::before {
@@ -960,14 +970,13 @@ details.extra-vert-spacing {
 }
 
 html {
-  background-color: #f0f4f5;
+  background-color: #005eb8;
 }
 
 #global-footer {
   background-color: #005eb8;
   border-top: 4px solid #003087;
   color: #fff;
-  margin-top: 32px;
   padding-top: 32px;
   padding-bottom: 8px;
   min-height: 80px;
@@ -1938,7 +1947,7 @@ body, pre.user-input {
   background-color: #fff;
 }
 
-.prototype-warning-inner, .footer-container, .header-container,
+.prototype-warning-inner, .survey-banner > div, .footer-container, .header-container,
 .content {
   max-width: 960px;
   margin: 0 auto;
@@ -1947,7 +1956,7 @@ body, pre.user-input {
 }
 
 @media (min-width: 980px) {
-  .prototype-warning-inner, .footer-container, .header-container,
+  .prototype-warning-inner, .survey-banner > div, .footer-container, .header-container,
   .content {
     padding-left: 0;
     padding-right: 0;

@@ -1,0 +1,8 @@
+.survey-banner {
+  background-color: tint($yellow, 50);
+  padding: $baseline-grid-unit*2 0;
+  & > div {
+    @extend %block;
+    font-size: $smallprint;
+  }
+}

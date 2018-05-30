@@ -54,6 +54,7 @@
     font-weight: $bodyweight;
     font-size: $smallprint;
     text-decoration: underline;
+    box-shadow: none;
 
     &::before {
       content: "";
@@ -98,7 +99,7 @@
     line-height: 24px;
   }
 
-    &.-location {
+  &.-location {
     @extends .-small;
     padding: 12px $leading*2 ;
     font-size: 16px;

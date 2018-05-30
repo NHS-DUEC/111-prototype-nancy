@@ -5,9 +5,10 @@
 
 {% block content %}
 <div class="content-block measure">
+  <a href="options" class="button -back">Back</a>
   <h1 class="h2">Book a call with a 111 nurse</h1>
 
-  <form class="form">
+  <form class="form" action="call-booked">
     <div class="form-group">
       <label for="name">Your name</label>
       <input name="name" id="name" type="text" value="">
@@ -22,13 +23,5 @@
   </form>
 </div>
 
-<div class="content-block measure">
-  <div class="callout callout--info-alert">
-    <p>If you don’t get a call in 30 minutes or your symptoms get worse call 999.</p>
-  </div>
-</div>
-
 
 {% endblock %}
-
-{% block footer %}{% endblock %}
