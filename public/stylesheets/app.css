@@ -594,7 +594,7 @@ a.link-prototype:visted {
 .callout--warning {
   background-color: #fdf2d5;
   border: solid #fada8b;
-  border-width: 4px 0;
+  border-width: 0 0 0 4px;
 }
 
 .callout--alert {

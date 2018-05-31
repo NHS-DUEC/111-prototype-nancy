@@ -9,7 +9,7 @@
     Have you got a sudden agonising headache like you've been hit on the head with something hard?
   </h1>
 
-  <div class="callout callout--info">
+  <div class="callout callout--warning">
     <p>
       This means a blinding pain that came on within seconds and is unlike
       anything you’ve felt before.
@@ -19,10 +19,11 @@
   <form id="test">
     <div class="form-group">
       <fieldset>
+
         <label class="block-label">
-          <input id="yes" name="answer" value="yes" type="radio" class="selection-button-radio">
-          <span>
-            Yes
+          <input id="yes" name="answer" value="yes" type="radio" class="selection-button-radio" checked="true">
+          <span class="highlighter">
+            You answered "yes" which means we can’t rule out bleeding on the brain
           </span>
         </label>
         <label class="block-label">
@@ -39,7 +40,7 @@
   </form>
 </div>
 
-<section class="page-section">
+<section class="page-section content-block">
   <details class="measure">
     <summary>
         <span class="details__arrow"></span>

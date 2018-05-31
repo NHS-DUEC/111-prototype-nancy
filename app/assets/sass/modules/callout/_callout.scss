@@ -34,7 +34,7 @@
 .callout--warning {
   background-color: $yellow-10;
   border: solid $yellow-50;
-  border-width: $baseline-grid-unit 0;
+  border-width: 0 0 0 $baseline-grid-unit;
 }
 
 .callout--alert {
