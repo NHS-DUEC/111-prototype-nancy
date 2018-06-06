@@ -1,0 +1,39 @@
+.location {
+  @extend %contain-floats;
+  background-color: $grey-5;
+
+  @include media(mid) {
+    border-left: $baseline-grid-unit solid $grey-2;
+    width: 100%;
+  }
+
+  .address-section,
+  .map-section {
+    @include media(mid) {
+      /*display: table-cell;
+      vertical-align: top;*/
+      box-sizing: border-box;
+      float: left;
+    }
+  }
+
+  .address-section {
+    padding: $baseline-grid-unit * 4;
+    @include media(mid) {
+      width: 25%;
+    }
+  }
+
+  .map-section {
+    @include media(mid) {
+      width: 75%;
+    }
+  }
+
+  #map {
+    height: 300px;
+    @include media(mid) {
+      height: 400px;
+    }
+  }
+}
