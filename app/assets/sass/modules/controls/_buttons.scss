@@ -55,6 +55,7 @@
     font-size: $smallprint;
     text-decoration: underline;
     box-shadow: none;
+    width: auto;
 
     &::before {
       content: "";
