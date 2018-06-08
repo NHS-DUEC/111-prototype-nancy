@@ -1,0 +1,52 @@
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}
+{% endblock %}
+
+{% block content %}
+
+<form class="content-block measure form" action="">
+  <h1>Who needs help?</h1>
+
+  <div class="callout callout--info">
+    <p>If you’re doing this on behalf of someone else, use their details here.</p>
+  </div>
+
+  <div class="form-group">
+    <label for="name"><b>Name</b></label>
+    <input name="name" id="name" type="text" value="">
+  </div>
+
+  <fieldset>
+    <legend><b>Date of birth</b></legend>
+    <div class="form-group -date">
+      <div>
+        <label for="dob-day">Day</label>
+        <input type="number" id="dob-day" name="dob-day" value="" class="day" maxlength="2">
+      </div>
+      <div>
+        <label for="dob-month">Month</label>
+        <input type="number" id="dob-month" name="dob-month" value="" class="month" maxlength="2">
+      </div>
+      <div>
+        <label for="dob-year">Year</label>
+        <input type="number" id="dob-year" name="dob-year" value="" class="year" maxlength="4">
+      </div>
+    </div>
+  </fieldset>
+
+  <details class="shunt-2">
+    <summary>Why are you asking for a name and date of birth?</summary>
+    <p>
+      Reasons. So we can look up your details, find your NHS number and GP?
+    </p>
+  </details>
+
+  <div class="form-group -controls">
+    <a href="book-call-number" class="button">Next</a>
+    <a href="book-call-start" class="button -back">Back</a>
+  </div>
+</form>
+
+
+{% endblock %}

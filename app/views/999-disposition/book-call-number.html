@@ -4,21 +4,25 @@
 {% endblock %}
 
 {% block content %}
-<div class="content-block measure">
-  <h1>number</h1>
-
-  <form class="form" action="">
-    <div class="form-group">
-      <label for="tel">Tell us the phone number to call you on</label>
-      <input name="tel" id="tel" type="text" value="">
-    </div>
-
-    <div class="form-group -controls">
-      <a href="book-call-003" class="button">Next</a>
-      <a href="book-call-001" class="button -back">Back</a>
-    </div>
-  </form>
-</div>
+<form class="content-block measure form" action="">
+  <h1>What number should we call?</h1>
+  <div class="form-group">
+    <p>You can:</p>
+    <ul>
+      <li>enter a landline or mobile number</li>
+      <li>enter a textphone number</li>
+    </ul>
+    <p>
+      If you need a translator you can ask for one when you start the call.
+    </p>
+    <label for="tel"><b>Number to call</b></label>
+    <input name="tel" id="tel" type="text" value="">
+  </div>
+  <div class="form-group -controls">
+    <a href="book-call-confirm-location" class="button">Next</a>
+    <a href="book-call-demographics" class="button -back">Back</a>
+  </div>
+</form>
 
 
 {% endblock %}
