@@ -16,7 +16,6 @@ router.get('/clinical-callback', function (req, res) {
   res.render('clinical-callback/clinical-callback', {
     session: req.session
   });
-
 });
 
 router.post('/clinical-callback/clinical-callback', function (req, res) {
@@ -713,6 +712,7 @@ router.get('/finding-pathways/start', function (req, res) {
         highlight: {
           pre_tags: ['<span class="highlighter">'],
           post_tags: ['</span>'],
+          number_of_fragments: 0,
           fields: {
             DigitalTitles: {},
             DigitalDescription: {}
@@ -738,5 +738,29 @@ router.get('/finding-pathways/start', function (req, res) {
     });
   } else {
     res.render('finding-pathways/start.html');
+  }
+});
+
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// Book a call - June 2018 +++++++++++++++++++++++++++++++++++++++++++++++++++++
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+router.get('/999-disposition/book-call-start', function(req, res) {
+  // zero out a namespaced session obj
+  req.session.callBooking = {};
+  res.render('999-disposition/book-call-start');
+});
+
+router.post('/999-disposition/book-call-demographics', function(req, res) {
+  if (req.body['name'] === '') {
+
+  }
+});
+
+router.post('/999-disposition/book-call-confirm-location', function (req, res) {
+  if (req.body['locationConfirmed'] === 'yes') {
+    res.redirect('book-call-check-your-answers');
+  } else {
+    res.redirect('book-call-change-location');
   }
 });
