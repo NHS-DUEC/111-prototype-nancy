@@ -645,16 +645,35 @@ router.get('/finding-pathways/start', function (req, res) {
 
     client.search({
       index: 'pathways_truncated',
-      body: { query: queryObj }},
-      function (error,response,status) {
+      body: {
+        from: 0,
+        size: 120,
+        query: queryObj,
+        highlight: {
+          pre_tags: ['<span class="highlighter">'],
+          post_tags: ['</span>'],
+          number_of_fragments: 0,
+          fields: {
+            DigitalTitles: {},
+            DigitalDescription: {}
+          }
+        }
+      }
+    }, function (error,response,status) {
         if (error){
           res.send("search error: "+error);
         } else {
-          res.render('finding-pathways/results.html', {
-            'elasticQuery': queryObj,
-            'results': response.hits.hits,
-            'query': query
-          });
+          if (response.hits.hits.length >= 1) {
+            res.render('finding-pathways/results.html', {
+              'elasticQuery': queryObj,
+              'results': response.hits.hits,
+              'query': query
+            });
+          } else {
+            res.render('finding-pathways/no-results.html', {
+              'query': query
+            });
+          }
         }
     });
   } else {
@@ -708,6 +727,8 @@ router.get('/finding-pathways/start', function (req, res) {
     client.search({
       index: 'pathways_truncated',
       body: {
+        from: 0,
+        size: 120,
         query: queryObj,
         highlight: {
           pre_tags: ['<span class="highlighter">'],
