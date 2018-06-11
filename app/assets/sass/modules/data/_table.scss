@@ -25,7 +25,7 @@ table {
     padding: $leading $leading/8 $leading/2 $leading/8;
 
     text-align: left;
-    vertical-align: top;
+    //vertical-align: top;
 
     font-weight: $bodyweight;
     font-size: $smallprint;
@@ -50,16 +50,6 @@ table {
 
   .control {
     text-align: right;
-
-    .button {
-      margin-right: 0;
-      line-height: $leading;
-      padding: $leading;
-
-      @include media(mid) {
-        display: inline-block;
-      }
-    }
   }
 
   &.natural {

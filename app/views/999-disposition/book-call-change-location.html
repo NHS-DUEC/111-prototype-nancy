@@ -1,0 +1,88 @@
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}
+{% endblock %}
+
+{% block content %}
+<div class="measure">
+  <h1 class="h2">Where do you need help?</h1>
+</div>
+
+<div class="content-block measure">
+  <input type="text" id="searchTextField">
+  <a href="#" id="geolocate">Use my location</a>
+</div>
+
+<div class="location">
+  <div id="map">
+    <img src="https://maps.googleapis.com/maps/api/staticmap?center=51.496263,-0.100788&markers=color:red%7C51.496263,-0.100788&zoom=17&size=640x320&key=AIzaSyDP454skpvnlft08MDIcZG_khm-sBHmFbM" alt="">
+  </div>
+</div>
+
+<div class="content-block shunt measure form">
+  <div class="form-group -controls">
+    <a href="book-call-check-your-answers" class="button">Next</a>
+    <a href="book-call-number" class="button -back">Back</a>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block body_after %}
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDP454skpvnlft08MDIcZG_khm-sBHmFbM&libraries=places"></script>
+<script>
+  doGeo = function() {
+    navigator.geolocation.getCurrentPosition(function(position) {
+      var pos = {
+        lat: position.coords.latitude,
+        lng: position.coords.longitude
+      };
+      // do stuff with the pos object
+      mapObj.setCenter(pos);
+    }, function() {
+      // handle errors here
+    });
+  }
+
+  $(function() {
+
+    var point = {
+      lat: 51.496263, lng: -0.100788
+    }
+    mapObj = new google.maps.Map(document.getElementById('map'), {
+      center: point,
+      zoom: 17,
+      zoomControl: true,
+      mapTypeControl: false,
+      scaleControl: true,
+      streetViewControl: false,
+      rotateControl: false,
+      fullscreenControl: false
+    });
+    marker = new google.maps.Marker({position: point, map: mapObj});
+    google.maps.event.addListener(mapObj, 'center_changed', function() {
+      // 0.1 seconds after the center of the map has changed,
+      // set back the marker position.
+      window.setTimeout(function() {
+        var center = mapObj.getCenter();
+        marker.setPosition(center);
+      }, 100);
+    });
+
+    var geolocate = document.getElementById('geolocate');
+    $('#geolocate').on('click', function(e) {
+      e.preventDefault();
+      doGeo();
+    });
+
+    var input = document.getElementById('searchTextField');
+    var searchBox = new google.maps.places.SearchBox(input, {
+      componentRestrictions: {country: 'gb'}
+    });
+    //mapObj.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+    //mapObj.controls[google.maps.ControlPosition.TOP_LEFT].push(geolocate);
+
+  });
+
+</script>
+{% endblock %}
