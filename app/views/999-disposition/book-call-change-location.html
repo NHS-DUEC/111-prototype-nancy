@@ -19,7 +19,7 @@
   </div>
 </div>
 
-<div class="content-block shunt measure form">
+<div class="content-block shunt clearfix">
   <div class="form-group -controls">
     <a href="book-call-check-your-answers" class="button">Next</a>
     <a href="book-call-number" class="button -back">Back</a>
@@ -78,6 +78,15 @@
     var input = document.getElementById('searchTextField');
     var searchBox = new google.maps.places.SearchBox(input, {
       componentRestrictions: {country: 'gb'}
+    });
+
+    searchBox.addListener('places_changed', function() {
+      var places = searchBox.getPlaces();
+      
+      if (places.length == 0) {
+        return;
+      }
+
     });
     //mapObj.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
     //mapObj.controls[google.maps.ControlPosition.TOP_LEFT].push(geolocate);

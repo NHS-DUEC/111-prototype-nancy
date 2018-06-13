@@ -790,7 +790,7 @@ a.link-prototype:visted {
   border: transparent;
   border-left: 0;
   padding-left: 0;
-  color: #768692;
+  color: #425563;
   font-weight: 400;
   font-size: 16px;
   text-decoration: underline;
@@ -806,7 +806,7 @@ a.link-prototype:visted {
   height: 0;
   border-top: 5px solid transparent;
   border-bottom: 5px solid transparent;
-  border-right: 5px solid #768692;
+  border-right: 5px solid #425563;
 }
 
 .button.-secondary {
@@ -880,7 +880,7 @@ table th, table td {
   text-align: left;
   font-weight: 400;
   font-size: 16px;
-  line-height: 12px;
+  line-height: 1.5;
 }
 
 @media (min-width: 500px) {
@@ -1036,8 +1036,7 @@ html {
 
 .error-summary {
   margin: 16px 0;
-  border-top: 4px solid #da291c;
-  background-color: #fbeae8;
+  border: 4px solid #da291c;
   padding: 16px 16px;
   color: #da291c;
   width: 80%;
@@ -1058,6 +1057,15 @@ html {
   color: #da291c;
 }
 
+.form-group.-errors {
+  border-left: 4px solid #da291c;
+  padding-left: 16px;
+}
+
+.form-group.-errors label {
+  color: #da291c;
+}
+
 .form-group.-errors input,
 .form-group.-errors textarea {
   border-color: #da291c;
@@ -1069,8 +1077,8 @@ html {
 }
 
 .error-indent {
-  padding-left: 32px;
   border-left: 4px solid #da291c;
+  padding-left: 16px;
 }
 
 fieldset {

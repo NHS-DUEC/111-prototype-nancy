@@ -11,7 +11,11 @@
     <tr>
       <th scope="row">Name</th>
       <td>
-        Name
+        {% if session.callBooking.name === '' %}
+          Name not given
+        {% else %}
+          {{ session.callBooking.name }}
+        {% endif %}
       </td>
       <td class="control">
         <a href="book-call-demographics" class="button -secondary">Change</a>
@@ -20,7 +24,13 @@
     <tr>
       <th scope="row">Date of birth</th>
       <td>
-        DOB
+        {% if session.callBooking.dob.day === '' %}
+          Date of birth not given
+        {% else %}
+          {{ session.callBooking.dob.day }} /
+          {{ session.callBooking.dob.month }} /
+          {{ session.callBooking.dob.year }}
+        {% endif %}
       </td>
       <td class="control">
         <a href="book-call-demographics" class="button -secondary">Change</a>
@@ -29,7 +39,7 @@
     <tr>
       <th scope="row">Number to call</th>
       <td>
-        No
+        {{ session.callBooking.tel }}
       </td>
       <td class="control">
         <a href="book-call-number" class="button -secondary">Change</a>
@@ -38,10 +48,10 @@
     <tr>
       <th scope="row">Location</th>
       <td>
-        hmmm
+        {{ session.callBooking.location | safe }}
       </td>
       <td class="control">
-        <a href="book-confirm-location" class="button -secondary">Change</a>
+        <a href="book-call-confirm-location" class="button -secondary">Change</a>
       </td>
     </tr>
   </table>

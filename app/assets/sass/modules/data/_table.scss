@@ -29,7 +29,7 @@ table {
 
     font-weight: $bodyweight;
     font-size: $smallprint;
-    line-height: $leading*1.5;
+    line-height: 1.5;
 
     @include media(mid) {
       display: table-cell;

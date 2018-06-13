@@ -769,12 +769,30 @@ router.get('/finding-pathways/start', function (req, res) {
 router.get('/999-disposition/book-call-start', function(req, res) {
   // zero out a namespaced session obj
   req.session.callBooking = {};
+  req.session.callBooking.dob = {};
+  req.session.callBooking.location = 'Skipton House<br>50 London Road<br>London<br>SE1 6LH';
   res.render('999-disposition/book-call-start');
 });
 
 router.post('/999-disposition/book-call-demographics', function(req, res) {
-  if (req.body['name'] === '') {
+  req.session.callBooking.name = req.body['name'];
+  req.session.callBooking.dob.day = req.body['dob-day'];
+  req.session.callBooking.dob.month = req.body['dob-month'];
+  req.session.callBooking.dob.year = req.body['dob-year'];
+  res.redirect('book-call-number');
+});
 
+router.post('/999-disposition/book-call-number', function(req, res) {
+  if (req.body['tel'] === '') {
+    res.render('999-disposition/book-call-number', {
+      error: {
+        general: '<a href="#tel">We need a valid number to call</a>',
+        tel: 'Please enter a valid number'
+      }
+    });
+  } else {
+    req.session.callBooking.tel = req.body['tel'];
+    res.redirect('book-call-confirm-location');
   }
 });
 
