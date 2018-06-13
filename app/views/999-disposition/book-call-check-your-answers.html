@@ -1,0 +1,66 @@
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}
+{% endblock %}
+
+{% block content %}
+<div class="content-block measure clearfix">
+  <h1>Check your details</h1>
+
+  <table class="shunt-3">
+    <tr>
+      <th scope="row">Name</th>
+      <td>
+        {% if session.callBooking.name === '' %}
+          Name not given
+        {% else %}
+          {{ session.callBooking.name }}
+        {% endif %}
+      </td>
+      <td class="control">
+        <a href="book-call-demographics" class="button -secondary">Change</a>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Date of birth</th>
+      <td>
+        {% if session.callBooking.dob.day === '' %}
+          Date of birth not given
+        {% else %}
+          {{ session.callBooking.dob.day }} /
+          {{ session.callBooking.dob.month }} /
+          {{ session.callBooking.dob.year }}
+        {% endif %}
+      </td>
+      <td class="control">
+        <a href="book-call-demographics" class="button -secondary">Change</a>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Number to call</th>
+      <td>
+        {{ session.callBooking.tel }}
+      </td>
+      <td class="control">
+        <a href="book-call-number" class="button -secondary">Change</a>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Location</th>
+      <td>
+        {{ session.callBooking.location | safe }}
+      </td>
+      <td class="control">
+        <a href="book-call-confirm-location" class="button -secondary">Change</a>
+      </td>
+    </tr>
+  </table>
+
+  <div class="form-group -controls">
+    <a href="call-booked" class="button">Book call</a>
+    <a href="book-call-confirm-location" class="button -back">Back</a>
+  </div>
+
+</div>
+
+{% endblock %}

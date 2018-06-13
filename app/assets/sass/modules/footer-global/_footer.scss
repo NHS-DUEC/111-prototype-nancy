@@ -1,12 +1,12 @@
 html {
-  background-color: $grey-5;
+  background-color: $nhs-blue;
 }
 
 #global-footer {
   background-color: $nhs-blue;
   border-top: $baseline-grid-unit solid $dark-blue;
   color: $white;
-  margin-top: $leading*4;
+  //margin-top: $leading*4;
   padding-top: $leading*4;
   padding-bottom: $leading;
   min-height: 80px;
@@ -41,7 +41,7 @@ html {
     clear: both;
     font-size: $smallprint;
     max-width: 30em;
-    
+
     > p {
       line-height: $leading*3;
     }

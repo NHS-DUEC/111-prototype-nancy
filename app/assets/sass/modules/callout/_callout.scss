@@ -34,7 +34,7 @@
 .callout--warning {
   background-color: $yellow-10;
   border: solid $yellow-50;
-  border-width: $baseline-grid-unit 0;
+  border-width: 0 0 0 $baseline-grid-unit;
 }
 
 .callout--alert {
@@ -53,6 +53,12 @@
 
 .callout--error {
   border: $baseline-grid-unit solid $red;
+}
+
+.callout--info-alert {
+  background-color: $red-10;
+  border: solid $red;
+  border-width: 0 0 0 $baseline-grid-unit;
 }
 
 .callout--compact {

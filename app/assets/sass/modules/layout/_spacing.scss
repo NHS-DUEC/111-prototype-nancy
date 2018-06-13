@@ -1,3 +1,7 @@
+.clearfix {
+  @extend %contain-floats;
+}
+
 .shunt {
   margin-top: $leading*2;
 }

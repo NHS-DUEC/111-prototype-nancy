@@ -1,0 +1,68 @@
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}
+{% endblock %}
+
+{% block content %}
+<div class="measure">
+  <h1>Is this where you need help?</h1>
+</div>
+
+<div class="location">
+  <div class="address-section">
+    Skipton House<br>
+    50 London Road<br>
+    London<br>
+    SE1 6LH
+  </div>
+  <div class="map-section">
+    <div id="map">
+      <img src="https://maps.googleapis.com/maps/api/staticmap?center=51.496263,-0.100788&markers=color:red%7C51.496263,-0.100788&zoom=17&size=640x320&key=AIzaSyDP454skpvnlft08MDIcZG_khm-sBHmFbM" alt="">
+    </div>
+  </div>
+</div>
+
+<script>
+  var map;
+  function initMap() {
+    var point = {lat: 51.496263, lng: -0.100788}
+    var map = new google.maps.Map(document.getElementById('map'), {
+      center: point,
+      zoom: 17,
+      zoomControl: true,
+      mapTypeControl: true,
+      scaleControl: true,
+      streetViewControl: false,
+      rotateControl: false,
+      fullscreenControl: false
+    });
+    var marker = new google.maps.Marker({position: point, map: map});
+  }
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDP454skpvnlft08MDIcZG_khm-sBHmFbM&callback=initMap" async defer></script>
+
+
+<form class="content-block shunt measure form" method="post">
+  <fieldset>
+    <div class="form-group">
+      <label for="yes" class="block-label">
+        Yes, this is the place where help is needed
+        <input type="radio" id="yes" name="locationConfirmed" value="yes">
+      </label>
+    </div>
+
+    <div class="form-group">
+      <label for="no" class="block-label">
+        No, I need to change the location
+        <input type="radio" id="no" name="locationConfirmed" value="no">
+      </label>
+    </div>
+  </fieldset>
+
+  <div class="form-group -controls">
+    <button type="submit" class="button">Next</button>
+    <a href="book-call-number" class="button -back">Back</a>
+  </div>
+</form>
+
+{% endblock %}

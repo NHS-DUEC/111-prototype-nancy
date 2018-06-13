@@ -16,7 +16,6 @@ router.get('/clinical-callback', function (req, res) {
   res.render('clinical-callback/clinical-callback', {
     session: req.session
   });
-
 });
 
 router.post('/clinical-callback/clinical-callback', function (req, res) {
@@ -646,16 +645,35 @@ router.get('/finding-pathways/start', function (req, res) {
 
     client.search({
       index: 'pathways_truncated',
-      body: { query: queryObj }},
-      function (error,response,status) {
+      body: {
+        from: 0,
+        size: 120,
+        query: queryObj,
+        highlight: {
+          pre_tags: ['<span class="highlighter">'],
+          post_tags: ['</span>'],
+          number_of_fragments: 0,
+          fields: {
+            DigitalTitles: {},
+            DigitalDescription: {}
+          }
+        }
+      }
+    }, function (error,response,status) {
         if (error){
           res.send("search error: "+error);
         } else {
-          res.render('finding-pathways/results.html', {
-            'elasticQuery': queryObj,
-            'results': response.hits.hits,
-            'query': query
-          });
+          if (response.hits.hits.length >= 1) {
+            res.render('finding-pathways/results.html', {
+              'elasticQuery': queryObj,
+              'results': response.hits.hits,
+              'query': query
+            });
+          } else {
+            res.render('finding-pathways/no-results.html', {
+              'query': query
+            });
+          }
         }
     });
   } else {
@@ -709,10 +727,13 @@ router.get('/finding-pathways/start', function (req, res) {
     client.search({
       index: 'pathways_truncated',
       body: {
+        from: 0,
+        size: 120,
         query: queryObj,
         highlight: {
           pre_tags: ['<span class="highlighter">'],
           post_tags: ['</span>'],
+          number_of_fragments: 0,
           fields: {
             DigitalTitles: {},
             DigitalDescription: {}
@@ -738,5 +759,47 @@ router.get('/finding-pathways/start', function (req, res) {
     });
   } else {
     res.render('finding-pathways/start.html');
+  }
+});
+
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// Book a call - June 2018 +++++++++++++++++++++++++++++++++++++++++++++++++++++
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+router.get('/999-disposition/book-call-start', function(req, res) {
+  // zero out a namespaced session obj
+  req.session.callBooking = {};
+  req.session.callBooking.dob = {};
+  req.session.callBooking.location = 'Skipton House<br>50 London Road<br>London<br>SE1 6LH';
+  res.render('999-disposition/book-call-start');
+});
+
+router.post('/999-disposition/book-call-demographics', function(req, res) {
+  req.session.callBooking.name = req.body['name'];
+  req.session.callBooking.dob.day = req.body['dob-day'];
+  req.session.callBooking.dob.month = req.body['dob-month'];
+  req.session.callBooking.dob.year = req.body['dob-year'];
+  res.redirect('book-call-number');
+});
+
+router.post('/999-disposition/book-call-number', function(req, res) {
+  if (req.body['tel'] === '') {
+    res.render('999-disposition/book-call-number', {
+      error: {
+        general: '<a href="#tel">We need a valid number to call</a>',
+        tel: 'Please enter a valid number'
+      }
+    });
+  } else {
+    req.session.callBooking.tel = req.body['tel'];
+    res.redirect('book-call-confirm-location');
+  }
+});
+
+router.post('/999-disposition/book-call-confirm-location', function (req, res) {
+  if (req.body['locationConfirmed'] === 'yes') {
+    res.redirect('book-call-check-your-answers');
+  } else {
+    res.redirect('book-call-change-location');
   }
 });

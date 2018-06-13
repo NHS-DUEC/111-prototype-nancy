@@ -9,7 +9,7 @@
 {"index":{"_id":"PW1034"}}
 {"DigitalTitles":"Swallowed or breathed in an object","DigitalDescription":"Accidentally swallowing or inhaling something. Choking or inhaling an object. Something stuck in the throat.","CommonTerms":["swallowed a coin","swallowed a magnet"," swallowed a battery","swallowed a sharp object","inhaled an object"],"bodymap":[]}
 {"index":{"_id":"PW1040"}}
-{"DigitalTitles":"Cold or flu","DigitalDescription":"A blocked or runny nose, sneezing, aching muscles, headaches, pain in the face and coughing.","CommonTerms":["common cold","head cold","respiratory problem","runny nose","streaming cold"," bug"," sniffle","snivel","sore bones","aching bones"],"bodymap":[]}
+{"DigitalTitles":"Cold or flu","DigitalDescription":"A blocked or runny nose, sneezing, aching muscles, headaches, pain in the face and coughing.","CommonTerms":["common cold","head cold","respiratory problem","runny nose","streaming cold"," bug"," sniffle","snivel","sore bones","aching bones"],"bodymap":["nose"]}
 {"index":{"_id":"PW1046"}}
 {"DigitalTitles":"Sinusitis","DigitalDescription":"A problem with the sinuses. Face pain around the cheeks, eyes or forehead. A runny nose and a high temperature.","CommonTerms":["face pain","painful sinuses","sinus infection","sinus headache"],"bodymap":["nose", "head", "face", "cheek", "cheeks", "eye", "eyes", "temple", "temples", "forehead"]}
 {"index":{"_id":"PW1070"}}

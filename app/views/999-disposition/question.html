@@ -1,0 +1,76 @@
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}NHS 111{% endblock %}
+
+{% block content %}
+
+<div class="content-block measure">
+  <a href="options" class="button -back">Back</a>
+
+  <h1 class="heading-xlarge">
+    Have you got a sudden agonising headache like you've been hit on the head with something hard?
+  </h1>
+
+  <div class="callout callout--warning">
+    <p>
+      This means a blinding pain that came on within seconds and is unlike
+      anything you’ve felt before.
+    </p>
+  </div>
+
+  <form id="test">
+    <div class="form-group">
+      <fieldset>
+
+        <label class="block-label">
+          <input id="yes" name="answer" value="yes" type="radio" class="selection-button-radio" checked="true">
+          <span class="highlighter">
+            Your answer "yes" means we can’t rule out bleeding on the brain
+          </span>
+        </label>
+        <label class="block-label">
+          <input id="not-sure" name="answer" value="not-sure" type="radio" class="selection-button-radio">
+          I’m not sure
+        </label>
+        <label class="block-label">
+          <input id="no" name="answer" value="no" type="radio" class="selection-button-radio">
+          No
+        </label>
+      </fieldset>
+    </div>
+    <a href="question-2" class="button">Next question</a>
+  </form>
+</div>
+
+<section class="page-section content-block">
+  <details class="measure">
+    <summary>
+        <span class="details__arrow"></span>
+        Help us improve this question
+    </summary>
+    <div>
+      <form>
+        <p>Does it make sense? Do you understand all the words?</p>
+        <p>We use feedback to make the service better but can't reply to any comments. Don't include any medical or personal information like your name or email.</p>
+        <textarea class="feedback" cols="20"></textarea>
+        <button class="button">Send feedback</button>
+      </form>
+    </div>
+  </details>
+</section>
+
+{% endblock %}
+
+{% block body_after %}
+  <script>
+    $('#test input').on('change', function() {
+      $('#test-warning-yes, #test-warning-unsure').addClass('js-hidden');
+      if ($('#test input:checked').val() === 'yes') {
+        $('#test-warning-yes').removeClass('js-hidden');
+      }
+      if ($('#test input:checked').val() === 'not-sure') {
+        $('#test-warning-unsure').removeClass('js-hidden');
+      }
+    });
+  </script>
+{% endblock %}
