@@ -810,14 +810,6 @@ router.post('/999-disposition/book-call-number', function(req, res) {
     });
   } else {
     req.session.callBooking.tel = req.body['tel'];
-    res.redirect('book-call-confirm-location');
-  }
-});
-
-router.post('/999-disposition/book-call-confirm-location', function (req, res) {
-  if (req.body['locationConfirmed'] === 'yes') {
     res.redirect('book-call-check-your-answers');
-  } else {
-    res.redirect('book-call-change-location');
   }
 });
