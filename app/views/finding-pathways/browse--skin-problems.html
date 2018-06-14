@@ -5,6 +5,7 @@
 {% block body_css_classes %}{% endblock %}
 
 {% block content %}
+{% include 'finding-pathways/_partial-category-back-link.html' %}
 
 <div class="content-block measure">
   <h1 class="h2">Skin problems</h1>
@@ -53,13 +54,7 @@
       A small cut, scratch or graze that might have gravel, dirt or grit inside.
     </span>
   </a>
-
-  <div class="content-seperator content-seperator--equalvertspacing--large"></div>
-
 </div>
-
-{% import 'finding-pathways/_partial-category-nav.html' as navs %}
-{{ navs.categories(usetitle='true') }}
 
 <div class="content-block measure">
   <details>

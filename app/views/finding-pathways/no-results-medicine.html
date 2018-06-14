@@ -1,0 +1,54 @@
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhs-redesign{% endblock %}
+
+{% block content %}
+
+<div class="content-block measure">
+
+  <div class="callout callout--attention shunt-2">
+    <h1 class="body" style="margin:0;">
+      It looks like you’re searching for a type of medicine
+    </h1>
+    <p>
+      Try <a href="https://nhs.uk">NHS.UK</a> for information on
+      <a href="javascript: return false;">how to take medicines, and their side
+      effects</a>
+    </p>
+  </div>
+
+  <p>
+    You can also <a href="javascript:document.getElementById('query').focus();">
+    search again</a>, or browse <a href="browse">topics by category.</a>
+  </p>
+
+  <form method="get" action="start">
+    <div class="form-group">
+      <div class="search">
+        <input type="text" id="query" name="query" value="">
+        <button type="submit" class="button">Search</button>
+      </div>
+    </div>
+  </form>
+
+  {% include 'finding-pathways/_partial-nhsuk-advice.html' %}
+
+  <p>
+    If you don’t know what to look for you can <a href="/weird-questions">rule out serious conditions.</a></p>
+  </p>
+
+</div>
+
+<div class="content-seperator content-seperator--equalvertspacing--large"></div>
+
+<div class="content-block measure">
+  <details>
+    <summary>Help us improve</summary>
+  </details>
+</div>
+
+{% endblock %}
+
+{% block footer %}{% endblock %}

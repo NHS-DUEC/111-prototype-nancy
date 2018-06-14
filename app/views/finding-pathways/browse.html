@@ -6,6 +6,10 @@
 
 {% block content %}
 
+<div>
+  <a href="start" class="button -back">Back to search</a>
+</div>
+
 <div class="measure">
   <h1 class="heading-xxlarge">Browse topics</h1>
 </div>
@@ -13,7 +17,7 @@
 {% import 'finding-pathways/_partial-category-nav.html' as navs %}
 {{ navs.categories(usetitle='false') }}
 
-<div class="content-block measure">
+<div class="content-block shunt-2 measure">
   <details>
     <summary>I can’t find the right topic</summary>
     {% include 'finding-pathways/_partial-full-list-link.html' %}
@@ -22,9 +26,6 @@
 
     <p>
       If you don’t know what to look for you can <a href="/weird-questions">rule out serious conditions.</a></p>
-    </p>
-    <p>
-      Go back to <a href="start">search.</a></p>
     </p>
   </details>
 </div>

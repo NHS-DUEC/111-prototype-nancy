@@ -5,6 +5,7 @@
 {% block body_css_classes %}{% endblock %}
 
 {% block content %}
+{% include 'finding-pathways/_partial-category-back-link.html' %}
 
 <div class="content-block measure">
   <h1 class="h2">Diarrhoea, sickness or vomiting</h1>
@@ -44,13 +45,7 @@
       Too much to drink. Being sick or feeling ill because of alcoholic drinks.
     </span>
   </a>
-
-  <div class="content-seperator content-seperator--equalvertspacing--large"></div>
-
 </div>
-
-{% import 'finding-pathways/_partial-category-nav.html' as navs %}
-{{ navs.categories(usetitle='true') }}
 
 <div class="content-block measure">
   <details>
