@@ -780,16 +780,16 @@ router.post('/999-disposition/book-call-min', function(req, res) {
   }
 });
 
-router.get('/999-disposition/book-call-start', function(req, res) {
-  // zero out a namespaced session obj
-  req.session.callBooking = {};
-  req.session.callBooking.dob = {};
-  // default to Skipton house
-  req.session.callBooking.location = {};
-  req.session.callBooking.location.address = 'Skipton House<br>50 London Road<br>London<br>SE1 6LH';
-  req.session.callBooking.location.latitude = '51.496231699999996';
-  req.session.callBooking.location.longitude = '-0.1007993';
-  res.render('999-disposition/book-call-start');
+router.get('/999-disposition/book-call-demographics', function(req, res) {
+  if (!req.session.callBooking) {
+    // zero out a namespaced session obj
+    req.session.callBooking = {};
+    req.session.callBooking.name = '';
+    req.session.callBooking.dob = {};
+    req.session.callBooking.postcode = '';
+    req.session.callBooking.tel = '';
+  }
+  res.render('999-disposition/book-call-demographics');
 });
 
 router.post('/999-disposition/book-call-demographics', function(req, res) {
@@ -797,6 +797,7 @@ router.post('/999-disposition/book-call-demographics', function(req, res) {
   req.session.callBooking.dob.day = req.body['dob-day'];
   req.session.callBooking.dob.month = req.body['dob-month'];
   req.session.callBooking.dob.year = req.body['dob-year'];
+  req.session.callBooking.postcode = req.body['postcode'];
   res.redirect('book-call-number');
 });
 
@@ -812,4 +813,10 @@ router.post('/999-disposition/book-call-number', function(req, res) {
     req.session.callBooking.tel = req.body['tel'];
     res.redirect('book-call-check-your-answers');
   }
+});
+
+router.get('/999-disposition/call-booked', function(req, res) {
+  // zero out a namespaced session obj
+  req.session.callBooking = {};
+  res.render('999-disposition/call-booked');
 });

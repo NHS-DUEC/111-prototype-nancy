@@ -15,9 +15,25 @@
   </div>
 
   <div class="form-group">
-    <label for="name"><b>Name</b> (optional)</label>
+    <label for="name"><b>Full name</b> (optional)</label>
     <input name="name" id="name" type="text" value="{{ session.callBooking.name }}" autocomplete="off">
   </div>
+
+  <!--
+  <fieldset>
+    <legend><b>Name</b> (optional)</legend>
+    <div class="form-group">
+      <div>
+        <label for="first-name">First name</label>
+        <input type="text" id="first-name" name="first-name" value="{{ session.callBooking.name.first_name }}" autocomplete="off">
+      </div>
+      <div>
+        <label for="second-name">Second name</label>
+        <input type="text" id="second-name" name="second-name" value="{{ session.callBooking.name.second_name }}" autocomplete="off">
+      </div>
+    </div>
+  </fieldset>
+  -->
 
   <div class="content-seperator content-seperator--equalvertspacing--large"></div>
 
@@ -41,6 +57,12 @@
 
   <div class="content-seperator content-seperator--equalvertspacing--large"></div>
 
+  <div class="form-group">
+    <label for="postcode"><b>Home postcode</b> (optional)</label>
+    <input type="text" id="postcode" name="postcode" class="postcode" value="{{ session.callBooking.postcode }}" autocomplete="off">
+  </div>
+
+  <!--
   <fieldset>
     <legend><b>Home address</b> (optional)</legend>
     <div class="form-group">
@@ -63,6 +85,7 @@
       </div>
     </div>
   </fieldset>
+  -->
 
   <details class="shunt-2">
     <summary>Why are you asking for this information?</summary>
@@ -75,7 +98,7 @@
 
   <div class="form-group -controls">
     <button type="submit" class="button">Next</button>
-    <a href="book-call-start" class="button -back">Back</a>
+    <a href="options" class="button -back">Back</a>
   </div>
 </form>
 

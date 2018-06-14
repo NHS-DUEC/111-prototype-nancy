@@ -37,21 +37,25 @@
       </td>
     </tr>
     <tr>
+      <th scope="row">Home postcode</th>
+      <td>
+        {% if session.callBooking.postcode === '' %}
+          Postcode not given
+        {% else %}
+          {{ session.callBooking.postcode }}
+        {% endif %}
+      </td>
+      <td class="control">
+        <a href="book-call-demographics" class="button -secondary">Change</a>
+      </td>
+    </tr>
+    <tr>
       <th scope="row">Number to call</th>
       <td>
         {{ session.callBooking.tel }}
       </td>
       <td class="control">
         <a href="book-call-number" class="button -secondary">Change</a>
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">Location</th>
-      <td>
-        {{ session.callBooking.location | safe }}
-      </td>
-      <td class="control">
-        <a href="book-call-confirm-location" class="button -secondary">Change</a>
       </td>
     </tr>
   </table>
