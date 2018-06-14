@@ -1034,6 +1034,12 @@ html {
   }
 }
 
+@media (min-width: 500px) {
+  input[type='text'].postcode {
+    width: 32%;
+  }
+}
+
 .error-summary {
   margin: 16px 0;
   border: 4px solid #da291c;

@@ -10,8 +10,7 @@
 
   <div class="callout callout--info">
     <p>
-      If you’re doing this on behalf of someone else, enter their name and date
-      of birth here.
+      If you’re doing this on behalf of someone else, enter their details here.
     </p>
   </div>
 
@@ -19,6 +18,8 @@
     <label for="name"><b>Name</b> (optional)</label>
     <input name="name" id="name" type="text" value="{{ session.callBooking.name }}" autocomplete="off">
   </div>
+
+  <div class="content-seperator content-seperator--equalvertspacing--large"></div>
 
   <fieldset>
     <legend><b>Date of birth</b> (optional)</legend>
@@ -38,11 +39,36 @@
     </div>
   </fieldset>
 
+  <div class="content-seperator content-seperator--equalvertspacing--large"></div>
+
+  <fieldset>
+    <legend><b>Home address</b> (optional)</legend>
+    <div class="form-group">
+      <div>
+        <label for="address-1">Building and street</label>
+        <input type="text" id="address-1" name="address-1" value="{{ session.callBooking.address.address_1 }}" autocomplete="off">
+        <input type="text" id="address-2" name="address-2" value="{{ session.callBooking.address.address_2 }}" autocomplete="off">
+      </div>
+      <div>
+        <label for="town-city">Town or city</label>
+        <input type="text" id="town-city" name="town-city" value="{{ session.callBooking.address.city }}" autocomplete="off">
+      </div>
+      <div>
+        <label for="town-county">County</label>
+        <input type="text" id="town-county" name="town-county" value="{{ session.callBooking.address.county }}" autocomplete="off">
+      </div>
+      <div>
+        <label for="postcode">Postcode</label>
+        <input type="text" id="postcode" name="postcode" class="postcode" value="{{ session.callBooking.address.postcode }}" autocomplete="off">
+      </div>
+    </div>
+  </fieldset>
+
   <details class="shunt-2">
-    <summary>Why are you asking for a name and date of birth?</summary>
+    <summary>Why are you asking for this information?</summary>
     <div class="callout callout--info shunt">
       <p>
-        Reasons. So we can look up your details, find your NHS number and GP?
+        So we can look up your details, find your NHS number and GP. Um.
       </p>
     </div>
   </details>
