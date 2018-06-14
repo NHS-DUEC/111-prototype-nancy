@@ -766,10 +766,25 @@ router.get('/finding-pathways/start', function (req, res) {
 // Book a call - June 2018 +++++++++++++++++++++++++++++++++++++++++++++++++++++
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+// Simple journey - telephone required
+router.post('/999-disposition/book-call-min', function(req, res) {
+  if (req.body['tel'] === '') {
+    res.render('999-disposition/book-call-min', {
+      error: {
+        general: '<a href="#tel">We need a valid number to call</a>',
+        tel: 'Please enter a valid number'
+      }
+    });
+  } else {
+    res.redirect('call-booked');
+  }
+});
+
 router.get('/999-disposition/book-call-start', function(req, res) {
   // zero out a namespaced session obj
   req.session.callBooking = {};
   req.session.callBooking.dob = {};
+  // default to Skipton house
   req.session.callBooking.location = 'Skipton House<br>50 London Road<br>London<br>SE1 6LH';
   res.render('999-disposition/book-call-start');
 });
