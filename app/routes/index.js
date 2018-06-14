@@ -785,7 +785,10 @@ router.get('/999-disposition/book-call-start', function(req, res) {
   req.session.callBooking = {};
   req.session.callBooking.dob = {};
   // default to Skipton house
-  req.session.callBooking.location = 'Skipton House<br>50 London Road<br>London<br>SE1 6LH';
+  req.session.callBooking.location = {};
+  req.session.callBooking.location.address = 'Skipton House<br>50 London Road<br>London<br>SE1 6LH';
+  req.session.callBooking.location.latitude = '51.496231699999996';
+  req.session.callBooking.location.longitude = '-0.1007993';
   res.render('999-disposition/book-call-start');
 });
 

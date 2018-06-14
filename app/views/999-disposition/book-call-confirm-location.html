@@ -10,14 +10,11 @@
 
 <div class="location">
   <div class="address-section">
-    Skipton House<br>
-    50 London Road<br>
-    London<br>
-    SE1 6LH
+    {{ session.callBooking.location.address | safe }}
   </div>
   <div class="map-section">
     <div id="map">
-      <img src="https://maps.googleapis.com/maps/api/staticmap?center=51.496263,-0.100788&markers=color:red%7C51.496263,-0.100788&zoom=17&size=640x320&key=AIzaSyDP454skpvnlft08MDIcZG_khm-sBHmFbM" alt="">
+      <img src="https://maps.googleapis.com/maps/api/staticmap?center={{ session.callBooking.location.latitude }},{{ session.callBooking.location.longitude }}&markers=color:red%7C51.496263,-0.100788&zoom=17&size=640x320&key=AIzaSyDP454skpvnlft08MDIcZG_khm-sBHmFbM" alt="">
     </div>
   </div>
 </div>
@@ -25,7 +22,10 @@
 <script>
   var map;
   function initMap() {
-    var point = {lat: 51.496263, lng: -0.100788}
+    var point = {
+      lat: {{ session.callBooking.location.latitude }},
+      lng: {{ session.callBooking.location.longitude }}
+    }
     var map = new google.maps.Map(document.getElementById('map'), {
       center: point,
       zoom: 17,
