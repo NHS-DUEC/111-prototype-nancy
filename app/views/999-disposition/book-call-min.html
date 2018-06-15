@@ -5,7 +5,11 @@
 
 {% block content %}
 <div class="content-block measure">
-  <a href="options" class="button -back">Back</a>
+
+  {% if back is not defined %}
+    {% set back = "options" %}
+  {% endif %}
+  <a href="{{ back }}" class="button -back">Back</a>
 
   {% if error %}
     <div class="error-summary">

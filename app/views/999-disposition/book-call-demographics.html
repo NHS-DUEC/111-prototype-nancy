@@ -99,7 +99,10 @@
 
   <div class="form-group -controls">
     <button type="submit" class="button">Next</button>
-    <a href="options" class="button -back">Back</a>
+    {% if back is not defined %}
+      {% set back = "/index" %}
+    {% endif %}
+    <a href="{{ back }}" class="button -back">Back</a>
   </div>
 </form>
 

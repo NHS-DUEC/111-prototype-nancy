@@ -825,7 +825,7 @@ router.get('/999-disposition/call-booked', function(req, res) {
 // "lead with callback" scenario
 router.post('/999-disposition/disposition-callback-first-001', function(req, res) {
   if (req.body['revisitQuestion'] === 'yes') {
-    res.redirect('/999-disposition/question');
+    res.redirect('/999-disposition/question?from=disposition-callback-first-001');
   } else {
     res.redirect('/999-disposition/disposition-callback-first-002');
   }
@@ -842,4 +842,26 @@ router.post('/999-disposition/disposition-callback-first-002', function(req, res
   } else {
     res.redirect('call-booked');
   }
+});
+
+// handling 'back' links from multiple routes in
+router.get('/999-disposition/options', function(req, res) {
+  var backUrl = req.query['from'];
+  res.render('999-disposition/options', {
+    back: backUrl
+  });
+});
+
+router.get('/999-disposition/question', function(req, res) {
+  var backUrl = req.query['from'];
+  res.render('999-disposition/question', {
+    back: backUrl
+  });
+});
+
+router.get('/999-disposition/book-call-min', function(req, res) {
+  var backUrl = req.query['from'];
+  res.render('999-disposition/book-call-min', {
+    back: backUrl
+  });
 });
