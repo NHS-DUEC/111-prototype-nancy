@@ -5,11 +5,7 @@
 
 {% block content %}
 <div class="content-block measure">
-
-  {% if back is not defined %}
-    {% set back = "options" %}
-  {% endif %}
-  <a href="{{ back }}" class="button -back">Back</a>
+  <a href="disposition-callback-first-001" class="button -back">Back</a>
 
   {% if error %}
     <div class="error-summary">
@@ -18,15 +14,15 @@
     </div>
   {% endif %}
 
-  <h1 class="h2">Book a call</h1>
+  <h1 class="h2">Book a call with a nurse</h1>
 
   <p>
-    The nurse will have your answers. They’ll tell you if you need an ambulance
-    or other medical help.
+    You’ll get a call within 30 minutes. The nurse will have your answers and
+    will send an ambulance if you need one.
   </p>
 
   <p>
-    You can have a translator if you need one.
+    You can have a translator if you’d like one.
   </p>
 
   <form class="form" method="post">

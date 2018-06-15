@@ -15,7 +15,7 @@
 
 <div class="location">
   <div id="map">
-    <img src="https://maps.googleapis.com/maps/api/staticmap?center=51.496263,-0.100788&markers=color:red%7C51.496263,-0.100788&zoom=17&size=640x320&key=AIzaSyDP454skpvnlft08MDIcZG_khm-sBHmFbM" alt="">
+    <img src="https://maps.googleapis.com/maps/api/staticmap?center={{ session.callBooking.location.latitude }},{{ session.callBooking.location.longitude }}&markers=color:red%7C51.496263,-0.100788&zoom=17&size=640x320&key=AIzaSyDP454skpvnlft08MDIcZG_khm-sBHmFbM" alt="">
   </div>
 </div>
 
@@ -25,6 +25,11 @@
     <a href="book-call-number" class="button -back">Back</a>
   </div>
 </div>
+
+<form id="new-location" method="post">
+  <input type="text" id="latitude" value="{{ session.callBooking.location.latitude }}">
+  <input type="text" id="longitude" value="{{ session.callBooking.location.longitude }}">
+</form>
 
 {% endblock %}
 
@@ -37,6 +42,8 @@
         lat: position.coords.latitude,
         lng: position.coords.longitude
       };
+      $('#latitude').val(pos.lat);
+      $('#longitude').val(pos.lng);
       // do stuff with the pos object
       mapObj.setCenter(pos);
     }, function() {
@@ -47,7 +54,8 @@
   $(function() {
 
     var point = {
-      lat: 51.496263, lng: -0.100788
+      lat: {{ session.callBooking.location.latitude }},
+      lng: {{ session.callBooking.location.longitude }}
     }
     mapObj = new google.maps.Map(document.getElementById('map'), {
       center: point,
@@ -66,6 +74,8 @@
       window.setTimeout(function() {
         var center = mapObj.getCenter();
         marker.setPosition(center);
+        $('#latitude').val(center.lat);
+        $('#longitude').val(center.lng);
       }, 100);
     });
 
@@ -82,7 +92,7 @@
 
     searchBox.addListener('places_changed', function() {
       var places = searchBox.getPlaces();
-      
+
       if (places.length == 0) {
         return;
       }

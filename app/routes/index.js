@@ -766,12 +766,31 @@ router.get('/finding-pathways/start', function (req, res) {
 // Book a call - June 2018 +++++++++++++++++++++++++++++++++++++++++++++++++++++
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-router.get('/999-disposition/book-call-start', function(req, res) {
-  // zero out a namespaced session obj
-  req.session.callBooking = {};
-  req.session.callBooking.dob = {};
-  req.session.callBooking.location = 'Skipton House<br>50 London Road<br>London<br>SE1 6LH';
-  res.render('999-disposition/book-call-start');
+// Simple journey - telephone required
+router.post('/999-disposition/book-call-min', function(req, res) {
+  if (req.body['tel'] === '') {
+    res.render('999-disposition/book-call-min', {
+      error: {
+        general: '<a href="#tel">We need a valid number to call</a>',
+        tel: 'Enter a valid number'
+      }
+    });
+  } else {
+    res.redirect('call-booked');
+  }
+});
+
+// PDS journey - some demographics requested
+router.get('/999-disposition/book-call-demographics', function(req, res) {
+  if (!req.session.callBooking) {
+    // zero out a namespaced session obj
+    req.session.callBooking = {};
+    req.session.callBooking.name = '';
+    req.session.callBooking.dob = {};
+    req.session.callBooking.postcode = '';
+    req.session.callBooking.tel = '';
+  }
+  res.render('999-disposition/book-call-demographics');
 });
 
 router.post('/999-disposition/book-call-demographics', function(req, res) {
@@ -779,6 +798,7 @@ router.post('/999-disposition/book-call-demographics', function(req, res) {
   req.session.callBooking.dob.day = req.body['dob-day'];
   req.session.callBooking.dob.month = req.body['dob-month'];
   req.session.callBooking.dob.year = req.body['dob-year'];
+  req.session.callBooking.postcode = req.body['postcode'];
   res.redirect('book-call-number');
 });
 
@@ -787,19 +807,61 @@ router.post('/999-disposition/book-call-number', function(req, res) {
     res.render('999-disposition/book-call-number', {
       error: {
         general: '<a href="#tel">We need a valid number to call</a>',
-        tel: 'Please enter a valid number'
+        tel: 'Enter a valid number'
       }
     });
   } else {
     req.session.callBooking.tel = req.body['tel'];
-    res.redirect('book-call-confirm-location');
+    res.redirect('book-call-check-your-answers');
   }
 });
 
-router.post('/999-disposition/book-call-confirm-location', function (req, res) {
-  if (req.body['locationConfirmed'] === 'yes') {
-    res.redirect('book-call-check-your-answers');
+router.get('/999-disposition/call-booked', function(req, res) {
+  // zero out a namespaced session obj
+  req.session.callBooking = {};
+  res.render('999-disposition/call-booked');
+});
+
+// "lead with callback" scenario
+router.post('/999-disposition/disposition-callback-first-001', function(req, res) {
+  if (req.body['revisitQuestion'] === 'yes') {
+    res.redirect('/999-disposition/question?from=disposition-callback-first-001');
   } else {
-    res.redirect('book-call-change-location');
+    res.redirect('/999-disposition/disposition-callback-first-002');
   }
+});
+
+router.post('/999-disposition/disposition-callback-first-002', function(req, res) {
+  if (req.body['tel'] === '') {
+    res.render('999-disposition/disposition-callback-first-002', {
+      error: {
+        general: '<a href="#tel">We need a valid number to call</a>',
+        tel: 'Enter a valid number'
+      }
+    });
+  } else {
+    res.redirect('call-booked');
+  }
+});
+
+// handling 'back' links from multiple routes in
+router.get('/999-disposition/options', function(req, res) {
+  var backUrl = req.query['from'];
+  res.render('999-disposition/options', {
+    back: backUrl
+  });
+});
+
+router.get('/999-disposition/question', function(req, res) {
+  var backUrl = req.query['from'];
+  res.render('999-disposition/question', {
+    back: backUrl
+  });
+});
+
+router.get('/999-disposition/book-call-min', function(req, res) {
+  var backUrl = req.query['from'];
+  res.render('999-disposition/book-call-min', {
+    back: backUrl
+  });
 });

@@ -6,7 +6,12 @@
 {% block content %}
 
 <div class="content-block measure">
-  <a href="disposition" class="button -back">Back</a>
+
+  {% if back is not defined %}
+    {% set back = "disposition" %}
+  {% endif %}
+  <a href="{{ back }}" class="button -back">Back</a>
+
   <h2>You can change your answers</h2>
   <p>You’re being asked to call 999 because you answered “yes” to this question:</p>
   <div class="callout callout--bordered">
@@ -17,20 +22,18 @@
   </div>
   <p>This means we can’t rule out bleeding on the brain.</p>
   <p>
-    <a href="question">Go back to this question</a>
+    <a href="question?from=options">Change your answer to this question</a>
   </p>
-</div>
 
-<div class="content-seperator content-seperator--equalvertspacing--large"></div>
+  <div class="content-seperator content-seperator--equalvertspacing--large"></div>
 
-<div class="content-block measure">
   <h2>Or book a call with a nurse</h2>
   <p>
     You’ll get a call within 30 minutes. The nurse will find the right service
     for you. This will be quicker than going to A&amp;E.
   </p>
   <p>
-    <a href="book-call-min">Book a call</a>
+    <a href="book-call-min?from=options">Book a call</a>
   </p>
 </div>
 

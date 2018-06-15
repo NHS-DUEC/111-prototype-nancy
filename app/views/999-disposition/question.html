@@ -5,7 +5,11 @@
 {% block content %}
 
 <div class="content-block measure">
-  <a href="options" class="button -back">Back</a>
+
+  {% if back is not defined %}
+    {% set back = "options" %}
+  {% endif %}
+  <a href="{{ back }}" class="button -back">Back</a>
 
   <h1 class="heading-xlarge">
     Have you got a sudden agonising headache like you've been hit on the head with something hard?
@@ -38,7 +42,7 @@
         </label>
       </fieldset>
     </div>
-    <a href="question-2" class="button">Next question</a>
+    <a href="javascript: return false;" class="button">Next question</a>
   </form>
 </div>
 
@@ -59,18 +63,4 @@
   </details>
 </section>
 
-{% endblock %}
-
-{% block body_after %}
-  <script>
-    $('#test input').on('change', function() {
-      $('#test-warning-yes, #test-warning-unsure').addClass('js-hidden');
-      if ($('#test input:checked').val() === 'yes') {
-        $('#test-warning-yes').removeClass('js-hidden');
-      }
-      if ($('#test input:checked').val() === 'not-sure') {
-        $('#test-warning-unsure').removeClass('js-hidden');
-      }
-    });
-  </script>
 {% endblock %}
