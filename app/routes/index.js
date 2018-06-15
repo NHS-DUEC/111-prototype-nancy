@@ -772,7 +772,7 @@ router.post('/999-disposition/book-call-min', function(req, res) {
     res.render('999-disposition/book-call-min', {
       error: {
         general: '<a href="#tel">We need a valid number to call</a>',
-        tel: 'Please enter a valid number'
+        tel: 'Enter a valid number'
       }
     });
   } else {
@@ -807,7 +807,7 @@ router.post('/999-disposition/book-call-number', function(req, res) {
     res.render('999-disposition/book-call-number', {
       error: {
         general: '<a href="#tel">We need a valid number to call</a>',
-        tel: 'Please enter a valid number'
+        tel: 'Enter a valid number'
       }
     });
   } else {
@@ -836,7 +836,7 @@ router.post('/999-disposition/disposition-callback-first-002', function(req, res
     res.render('999-disposition/disposition-callback-first-002', {
       error: {
         general: '<a href="#tel">We need a valid number to call</a>',
-        tel: 'Please enter a valid number'
+        tel: 'Enter a valid number'
       }
     });
   } else {
