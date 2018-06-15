@@ -830,3 +830,16 @@ router.post('/999-disposition/disposition-callback-first-001', function(req, res
     res.redirect('/999-disposition/disposition-callback-first-002');
   }
 });
+
+router.post('/999-disposition/disposition-callback-first-002', function(req, res) {
+  if (req.body['tel'] === '') {
+    res.render('999-disposition/disposition-callback-first-002', {
+      error: {
+        general: '<a href="#tel">We need a valid number to call</a>',
+        tel: 'Please enter a valid number'
+      }
+    });
+  } else {
+    res.redirect('call-booked');
+  }
+});
