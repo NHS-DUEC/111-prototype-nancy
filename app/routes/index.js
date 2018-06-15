@@ -780,6 +780,7 @@ router.post('/999-disposition/book-call-min', function(req, res) {
   }
 });
 
+// PDS journey - some demographics requested
 router.get('/999-disposition/book-call-demographics', function(req, res) {
   if (!req.session.callBooking) {
     // zero out a namespaced session obj
@@ -819,4 +820,13 @@ router.get('/999-disposition/call-booked', function(req, res) {
   // zero out a namespaced session obj
   req.session.callBooking = {};
   res.render('999-disposition/call-booked');
+});
+
+// "lead with callback" scenario
+router.post('/999-disposition/disposition-callback-first-001', function(req, res) {
+  if (req.body['revisitQuestion'] === 'yes') {
+    res.redirect('/999-disposition/question');
+  } else {
+    res.redirect('/999-disposition/disposition-callback-first-002');
+  }
 });

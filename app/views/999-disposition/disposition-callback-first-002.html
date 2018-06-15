@@ -1,0 +1,48 @@
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}
+{% endblock %}
+
+{% block content %}
+<div class="content-block measure">
+  <a href="disposition-callback-first-001" class="button -back">Back</a>
+
+  {% if error %}
+    <div class="error-summary">
+      <span class="h3">There’s a problem with the following:</span>
+      <p>{{ error.general | safe }}</p>
+    </div>
+  {% endif %}
+
+  <h1 class="h2">Book a call with a nurse</h1>
+
+  <p>
+    You’ll get a call within 30 minutes. The nurse will have your answers and
+    find the right service for you. This will be quicker than going to A&E.
+  </p>
+
+  <p>
+    You can have a translator if you need one.
+  </p>
+
+  <form class="form" method="post">
+    <div class="form-group shunt-2">
+      <label for="name"><b>Your name</b> (optional)</label>
+      <input name="name" id="name" type="text" value="">
+    </div>
+    <div class="form-group shunt-2 {% if error.tel %}-errors{% endif %}">
+      <label for="tel"><b>Tell us the number to call you on</b></label>
+      {% if error.tel %}
+        <p class="error-hint">{{ error.tel }}</p>
+      {% endif %}
+      <p class="form-hint">You can enter a textphone number</p>
+      <input name="tel" id="tel" type="tel" value="">
+    </div>
+    <div class="form-group -controls">
+      <button type="submit" class="button">Book call</button>
+    </div>
+  </form>
+</div>
+
+
+{% endblock %}
