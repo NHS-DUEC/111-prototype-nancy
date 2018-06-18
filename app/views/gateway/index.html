@@ -25,11 +25,11 @@
               <label for="postcode">Postcode</label>
               <input type="text" id="postcode" name="postcode" class="-small">
             </div>
-            <div class="geolocate-link"><a href="address-auto-display">Use my current location</a></div>
+            <div class="geolocate-link"><a href="#" id="geolocate">Use my current location</a></div>
           </div>
         </fieldset>
         <div class="form-group -controls">
-          <button type="submit" class="button">Next</button>
+          <a href="/gateway/emergency-check" class="button">Next</a>
         </div>
       </form>
   </div>
@@ -48,4 +48,13 @@
 
 {% endblock %}
 
-{% block footer %}{% endblock %}
+{% block body_after %}
+<script type="text/javascript">
+  $(function() {
+    $('#geolocate').on('click', function(e) {
+      e.preventDefault();
+      $('#postcode').val('SE1 6LH');
+    });
+  })
+</script>
+{% endblock %}

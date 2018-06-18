@@ -27,7 +27,7 @@
 
 
   {% for result in results %}
-  <a href="/weird-questions" class="topic">
+  <a href="/weird-questions?pw={{ result._id }}" class="topic">
     <span class="topic-title">
       {% if result.highlight.DigitalTitles %}
         {{ result.highlight.DigitalTitles | safe }}
@@ -57,7 +57,7 @@
     {% include 'finding-pathways/_partial-nhsuk-advice.html' %}
 
     <p>
-      If you don’t know what to look for you can <a href="/weird-questions">rule out serious conditions.</a></p>
+      If you don’t know what to look for you can <a href="/weird-questions?pw=other">rule out serious conditions.</a></p>
     </p>
   </details>
 </div>
