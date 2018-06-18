@@ -671,7 +671,7 @@ router.get('/finding-pathways/start', function (req, res) {
       index: 'pathways_truncated',
       body: {
         from: 0,
-        size: 120,
+        size: 10,
         query: queryObj,
         highlight: {
           pre_tags: ['<span class="highlighter">'],
@@ -758,7 +758,7 @@ router.get('/finding-pathways/start', function (req, res) {
       index: 'pathways_truncated',
       body: {
         from: 0,
-        size: 120,
+        size: 10,
         query: queryObj,
         highlight: {
           pre_tags: ['<span class="highlighter">'],
