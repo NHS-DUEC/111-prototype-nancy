@@ -795,6 +795,7 @@ router.get('/finding-pathways/start', function (req, res) {
     }
 
     client.search({
+      //index: 'pathways_truncated',
       index: 'pathways_full',
       body: {
         from: 0,
