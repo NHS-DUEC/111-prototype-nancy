@@ -838,6 +838,14 @@ router.get('/finding-pathways/start', function (req, res) {
   }
 });
 
+// Browse index ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+router.get('/finding-pathways/browse', function(req, res) {
+  setDefaults(req);
+  res.render('finding-pathways/browse.html', {
+    'session': req.session
+  });
+});
+
 // Browse a-z ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 router.get('/finding-pathways/browse-a-z', function(req, res) {
   setDefaults(req);
@@ -862,6 +870,39 @@ router.get('/finding-pathways/browse-a-z', function(req, res) {
         res.send("search error: "+error);
       } else {
         res.render('finding-pathways/browse-a-z.html', {
+          'results': response.hits.hits
+        });
+      }
+  });
+});
+
+// Browse category +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+router.get('/finding-pathways/categories/:category', function(req, res) {
+  // req.params: { "category": "accidental-overdose-or-swallowed-an-object" }
+  setDefaults(req);
+  client.search({
+    //index: 'pathways_truncated',
+    index: 'pathways_full',
+    body: {
+      from: 0,
+      size: 200,
+      query: {
+        bool: {
+          must: [
+            {match: { PW_Age: req.session.demographics.ageCategory }},
+            {match: { PW_Gender: req.session.demographics.sex }},
+            {match: { categories: req.params['category'] }}
+          ]
+        }
+      },
+      sort: 'DigitalTitles.keyword'
+    }
+  }, function (error,response,status) {
+      if (error){
+        res.send("search error: "+error);
+      } else {
+        res.render('finding-pathways/browse-category.html', {
+          'category': req.params['category'],
           'results': response.hits.hits
         });
       }

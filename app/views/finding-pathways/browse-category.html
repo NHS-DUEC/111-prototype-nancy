@@ -2,37 +2,44 @@
 
 {% block page_title %}{% endblock %}
 
-{% block body_css_classes %}{% endblock %}
+{% block body_css_classes %}nhs-redesign{% endblock %}
 
 {% block content %}
 {% include 'finding-pathways/_partial-category-back-link.html' %}
 
 <div class="content-block measure">
-  <h1 class="h2">Hiccups, pins and needles</h1>
+  <h1 class="heading-xxlarge">{{ category | title | replace("-", " ") }}</h1>
 
-  <a href="/weird-questions?pw=PW1775" class="topic">
+  <!--
+  Age: {{ session.demographics.age }}
+  Age: {{ session.demographics.ageCategory }}
+  Sex: {{ session.demographics.sex }}
+  -->
+
+  {% for result in results %}
+  <!--
+  {{ result._source.PW_Age }}
+  {{ result._source.PW_Gender }}
+  {{ result._source.categories }}
+  -->
+  <a href="/weird-questions?pw={{ result._id }}" class="topic">
     <span class="topic-title">
-      Hiccups
+      {{ result._source.DigitalTitles }}
     </span>
     <span class="topic-description">
-      Hiccups, with possible fever. Hiccups won't stop.
+      {{ result._source.DigitalDescription }}
     </span>
   </a>
+  {% endfor %}
 
-  <a href="/weird-questions?pw=PW1683" class="topic">
-    <span class="topic-title">
-      Numbness or unusual sensation
-    </span>
-    <span class="topic-description">
-      Strange feelings in the skin anywhere on the body. Numbness, burning, tingling or pins and needles.
-    </span>
-  </a>
 </div>
 
-<div class="content-block measure">
+<div class="content-block shunt-2 measure">
   <details>
     <summary>I can’t find the right topic</summary>
-    {% include 'finding-pathways/_partial-full-list-link.html' %}
+    <p>
+      You can try <a href="start">searching again</a> or <a href="browse">browsing topics by category.</a>
+    </p>
 
     {% include 'finding-pathways/_partial-nhsuk-advice.html' %}
 
@@ -52,6 +59,4 @@
 
 {% endblock %}
 
-{% block body_after %}
-  {% include 'finding-pathways/_partial-selected-category-script.html' %}
-{% endblock %}
+{% block footer %}{% endblock %}

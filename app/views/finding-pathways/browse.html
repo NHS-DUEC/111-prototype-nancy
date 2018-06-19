@@ -14,8 +14,32 @@
   <h1 class="heading-xxlarge">Browse topics</h1>
 </div>
 
-{% import 'finding-pathways/_partial-category-nav.html' as navs %}
-{{ navs.categories(usetitle='false') }}
+<!--
+ session.demographics.sex = {{ session.demographics.sex }}
+-->
+<div class="nav-a-z shunt-3">
+  <a href="/finding-pathways/categories/accidental-overdose-or-swallowed-an-object">Accidental overdose, or swallowed an object</a>
+  <a href="/finding-pathways/categories/blood-and-bleeding">Blood and bleeding</a>
+  <a href="/finding-pathways/categories/burns-and-scalds">Burns (including sunburn) and scalds</a>
+  <a href="/finding-pathways/categories/coughs-colds-and-breathing-problems">Coughs, colds and breathing problems</a>
+  <a href="/finding-pathways/categories/diarrhoea-sickness-or-vomiting">Diarrhoea, sickness or vomiting</a>
+  <a href="/finding-pathways/categories/dizziness-falls-and-faints">Dizziness, falls and faints</a>
+  <a href="/finding-pathways/categories/harmful-drinking">Harmful drinking</a>
+  <a href="/finding-pathways/categories/hiccups-pins-and-needles">Hiccups, pins and needles</a>
+  <a href="/finding-pathways/categories/high-temperature-and-heatstroke">High temperature and heatstroke</a>
+  <a href="/finding-pathways/categories/mental-health-or-sleep-problems">Mental health or sleep problems</a>
+  <a href="/finding-pathways/categories/parts-of-the-body">Parts of the body</a>
+  {% if session.demographics.sex == 'Female' %}
+  <a href="/finding-pathways/categories/periods">Periods</a>
+  <a href="/finding-pathways/categories/pregnancy-and-breastfeeding">Pregnancy and breastfeeding</a>
+  {% endif %}
+  <a href="/finding-pathways/categories/problems-with-medical-devices">Problems with medical devices</a>
+  <a href="/finding-pathways/categories/problems-with-weeing-or-pooing">Problems with weeing or pooing</a>
+  <a href="/finding-pathways/categories/sexual-health">Sexual health</a>
+  <a href="/finding-pathways/categories/skin-problems">Skin problems</a>
+  <a href="/finding-pathways/categories/stroke-palpitations-and-shaking">Stroke, palpitations and shaking</a>
+  <a href="/finding-pathways/categories/wound-problems">Wound problems</a>
+</div>
 
 <div class="content-block shunt-2 measure">
   <details>

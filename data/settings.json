@@ -1,4 +1,4 @@
-PUT pathways_truncated
+PUT pathways_full
 {
   "settings": {
     "number_of_shards": 1
@@ -13,6 +13,16 @@ PUT pathways_truncated
           "their", "then", "there", "these", "they", "this", "to", "was",
           "will", "with", "without", "where"
         ]
+      }
+    }
+  },
+  "mappings": {
+    "_doc": {
+      "properties": {
+        "categories": {
+          "type" : "keyword",
+          "index" : true
+        }
       }
     }
   }
