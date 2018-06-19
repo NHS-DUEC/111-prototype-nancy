@@ -737,7 +737,7 @@ router.get('/finding-pathways/start', function (req, res) {
 });
 */
 
-router.get('/finding-pathways/start', function (req, res) {
+var setDefaults = function(req) {
   // "Adult" is 16+
   // Set a default here if there's a lack of req.query
   // Male
@@ -749,6 +749,10 @@ router.get('/finding-pathways/start', function (req, res) {
     req.session.demographics.age = '40';
     req.session.demographics.ageCategory = 'Adult';
   }
+}
+
+router.get('/finding-pathways/start', function (req, res) {
+  setDefaults(req);
   if (req.query['query']) {
     var query = req.query['query'];
     var minShould = '';
@@ -832,6 +836,36 @@ router.get('/finding-pathways/start', function (req, res) {
   } else {
     res.render('finding-pathways/start.html');
   }
+});
+
+// Browse a-z ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+router.get('/finding-pathways/browse-a-z', function(req, res) {
+  setDefaults(req);
+  client.search({
+    //index: 'pathways_truncated',
+    index: 'pathways_full',
+    body: {
+      from: 0,
+      size: 200,
+      query: {
+        bool: {
+          must: [
+            {match: { PW_Age: req.session.demographics.ageCategory }},
+            {match: { PW_Gender: req.session.demographics.sex }}
+          ]
+        }
+      },
+      sort: 'DigitalTitles.keyword'
+    }
+  }, function (error,response,status) {
+      if (error){
+        res.send("search error: "+error);
+      } else {
+        res.render('finding-pathways/browse-a-z.html', {
+          'results': response.hits.hits
+        });
+      }
+  });
 });
 
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

@@ -25,19 +25,15 @@
   {% endif %}
 
   <!--
-  <div class="callout callout--info">
-    Age: {{ session.demographics.age }}<br>
-    Age: {{ session.demographics.ageCategory }}<br>
-    Sex: {{ session.demographics.sex }}
-  </div>
+  Age: {{ session.demographics.age }}
+  Age: {{ session.demographics.ageCategory }}
+  Sex: {{ session.demographics.sex }}
   -->
 
   {% for result in results %}
   <!--
-  <div style="border:1px solid red; padding:8px;">
-    {{ result._source.PW_Age }}
-    {{ result._source.PW_Gender }}
-  </div>
+  {{ result._source.PW_Age }}
+  {{ result._source.PW_Gender }}
   -->
   <a href="/weird-questions?pw={{ result._id }}" class="topic">
     <span class="topic-title">
