@@ -24,9 +24,21 @@
   </p>
   {% endif %}
 
-
+  <!--
+  <div class="callout callout--info">
+    Age: {{ session.demographics.age }}<br>
+    Age: {{ session.demographics.ageCategory }}<br>
+    Sex: {{ session.demographics.sex }}
+  </div>
+  -->
 
   {% for result in results %}
+  <!--
+  <div style="border:1px solid red; padding:8px;">
+    {{ result._source.PW_Age }}
+    {{ result._source.PW_Gender }}
+  </div>
+  -->
   <a href="/weird-questions?pw={{ result._id }}" class="topic">
     <span class="topic-title">
       {% if result.highlight.DigitalTitles %}

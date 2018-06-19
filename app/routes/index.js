@@ -641,6 +641,37 @@ router.get('/weird-questions', function(req, res) {
 });
 
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// Joined up journey - June 2018 +++++++++++++++++++++++++++++++++++++++++++++++
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+router.post('/gateway/demographics', function(req, res) {
+  // "Adult" is 16+
+  // Set a default here if there's a lack of req.query
+  // Male
+  // Adult (40)
+  if (!req.session.demographics) {
+    // zero out a namespaced session obj with defaults
+    req.session.demographics = {};
+    req.session.demographics.sex = 'Male';
+    req.session.demographics.age = '40';
+    req.session.demographics.ageCategory = 'Adult';
+  }
+  if (req.body['age'] !== '') {
+    var age = Number(req.body['age']);
+    var ageCategory = 'Adult';
+    if (age < 16) {
+      ageCategory = 'Child';
+    }
+    req.session.demographics.age = age;
+    req.session.demographics.ageCategory = ageCategory;
+  }
+  if (req.body['sex']) {
+    req.session.demographics.sex = req.body['sex'];
+  }
+  res.redirect('/finding-pathways/start');
+});
+
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // Finding Pathways work - May 2018 ++++++++++++++++++++++++++++++++++++++++++++
 // Elasticsearch +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -707,14 +738,19 @@ router.get('/finding-pathways/start', function (req, res) {
 */
 
 router.get('/finding-pathways/start', function (req, res) {
+  // "Adult" is 16+
+  // Set a default here if there's a lack of req.query
+  // Male
+  // Adult (40)
   if (!req.session.demographics) {
-    // zero out a namespaced session obj
+    // zero out a namespaced session obj with defaults
     req.session.demographics = {};
-    req.session.demographics.sex = req.query['sex'];
-    req.session.demographics.age = req.query['age'];
+    req.session.demographics.sex = 'Male';
+    req.session.demographics.age = '40';
+    req.session.demographics.ageCategory = 'Adult';
   }
-  if (req.query.query) {
-    var query = req.query.query;
+  if (req.query['query']) {
+    var query = req.query['query'];
     var minShould = '';
     // split the string and check for body keywords
     query
@@ -728,6 +764,10 @@ router.get('/finding-pathways/start', function (req, res) {
     if (minShould === '') {
       queryObj = {
         bool: {
+          must: [
+            {match: { PW_Age: req.session.demographics.ageCategory }},
+            {match: { PW_Gender: req.session.demographics.sex }}
+          ],
           should: [
             {match: { DigitalDescription: query }},
             {match: { DigitalTitles: query }},
@@ -739,11 +779,11 @@ router.get('/finding-pathways/start', function (req, res) {
     } else {
       queryObj = {
         bool: {
-          must: {
-            match: {
-              bodymap: minShould
-            }
-          },
+          must: [
+            {match: { bodymap: minShould }},
+            {match: { PW_Age: req.session.demographics.ageCategory }},
+            {match: { PW_Gender: req.session.demographics.sex }}
+          ],
           should: [
             {match: { DigitalDescription: query }},
             {match: { DigitalTitles: query }},
@@ -755,7 +795,7 @@ router.get('/finding-pathways/start', function (req, res) {
     }
 
     client.search({
-      index: 'pathways_truncated',
+      index: 'pathways_full',
       body: {
         from: 0,
         size: 10,
@@ -778,7 +818,8 @@ router.get('/finding-pathways/start', function (req, res) {
             res.render('finding-pathways/results.html', {
               'elasticQuery': queryObj,
               'results': response.hits.hits,
-              'query': query
+              'query': query,
+              'session': req.session
             });
           } else {
             res.render('finding-pathways/no-results.html', {
