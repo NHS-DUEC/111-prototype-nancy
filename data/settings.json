@@ -1,3 +1,5 @@
+// LOCAL
+
 PUT pathways_full
 {
   "settings": {
@@ -18,6 +20,39 @@ PUT pathways_full
   },
   "mappings": {
     "_doc": {
+      "properties": {
+        "categories": {
+          "type" : "keyword",
+          "index" : true
+        }
+      }
+    }
+  }
+}
+
+
+// BONSAI INSTANCE
+
+PUT pathways_full
+{
+  "settings": {
+    "number_of_shards": 1
+  },
+  "analysis": {
+    "analyzer": {
+      "custom_english": {
+        "type": "english",
+        "stopwords": [
+          "a", "an", "and", "are", "as", "at", "be", "but", "by", "for", "if",
+          "in", "into", "is", "it", "of", "on", "or", "such", "that", "the",
+          "their", "then", "there", "these", "they", "this", "to", "was",
+          "will", "with", "without", "where"
+        ]
+      }
+    }
+  },
+  "mappings": {
+    "doc": {
       "properties": {
         "categories": {
           "type" : "keyword",
