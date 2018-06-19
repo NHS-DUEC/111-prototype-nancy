@@ -1,0 +1,57 @@
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}
+{% endblock %}
+
+{% block content %}
+
+<form action="/finding-pathways/start" class="form content-block measure" method="get">
+
+  <h1 class="h2">Tell us about you, or the person you’re asking about</h1>
+
+  <div class="callout callout--info shunt-2">
+    <p>Call 111 if you're asking about someone under 5</p>
+  </div>
+
+  <fieldset>
+    <legend><b>Sex</b></legend>
+    <div class="form-group">
+      <label for="female" class="block-label">
+        Female
+        <input type="radio" id="female" name="sex" value="female">
+      </label>
+    </div>
+
+    <div class="form-group">
+      <label for="male" class="block-label">
+        Male
+        <input type="radio" id="male" name="sex" value="male">
+      </label>
+    </div>
+  </fieldset>
+
+  <details>
+    <summary>Why aren’t there more options?</summary>
+    <div class="callout" id="details-content-0" aria-hidden="true">
+      <p>
+        Some clinical assessments can be different depending on your sex. Not
+        everyone sees themselves as female or male, so if neither option is
+        right for you call 111.
+      </p>
+      <p>
+        We want to improve the service in the future so it works for everyone.
+      </p>
+    </div>
+  </details>
+
+  <div class="form-group">
+    <label for="age"><b>Age in years</b></label>
+    <input class="-tiny" id="age" name="age" type="tel" value="" autocomplete="off">
+  </div>
+
+  <div class="form-controls shunt-2">
+    <button class="button" type="submit">Next</button>
+  </div>
+</form>
+
+{% endblock %}

@@ -617,6 +617,30 @@ router.post('/emergency-feedback/hard-interrupt--question-1', function(req, res)
 });
 
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// Wire up 'weird questions' - June 2018 +++++++++++++++++++++++++++++++++++++++
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+router.get('/weird-questions', function(req, res) {
+  var pathway = '1346';
+  if (req.query['pw']) {
+    pathway = req.query['pw'];
+  }
+  var s = 'Male';
+  if (req.session.demographics.sex) {
+    s = req.session.demographics.sex;
+  }
+  var a = '40';
+  if (req.session.demographics.age) {
+    a = req.session.demographics.age;
+  }
+  res.render('weird-questions/index', {
+    pw: pathway,
+    sex: s,
+    age: a
+  });
+});
+
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // Finding Pathways work - May 2018 ++++++++++++++++++++++++++++++++++++++++++++
 // Elasticsearch +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -647,7 +671,7 @@ router.get('/finding-pathways/start', function (req, res) {
       index: 'pathways_truncated',
       body: {
         from: 0,
-        size: 120,
+        size: 10,
         query: queryObj,
         highlight: {
           pre_tags: ['<span class="highlighter">'],
@@ -683,6 +707,12 @@ router.get('/finding-pathways/start', function (req, res) {
 */
 
 router.get('/finding-pathways/start', function (req, res) {
+  if (!req.session.demographics) {
+    // zero out a namespaced session obj
+    req.session.demographics = {};
+    req.session.demographics.sex = req.query['sex'];
+    req.session.demographics.age = req.query['age'];
+  }
   if (req.query.query) {
     var query = req.query.query;
     var minShould = '';
@@ -728,7 +758,7 @@ router.get('/finding-pathways/start', function (req, res) {
       index: 'pathways_truncated',
       body: {
         from: 0,
-        size: 120,
+        size: 10,
         query: queryObj,
         highlight: {
           pre_tags: ['<span class="highlighter">'],
