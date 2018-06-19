@@ -21,3 +21,9 @@ PUT pathways_truncated
 curl -H 'Content-Type: application/x-ndjson' -XPOST 'localhost:9200/pathways_truncated/_doc/_bulk?pretty' --data-binary @searchdata.json
 
 curl -H 'Content-Type: application/x-ndjson' -XPOST 'BONSAI_URL/pathways_truncated/doc/_bulk?pretty' --data-binary @searchdata.json
+
+
+// full data import
+curl -H 'Content-Type: application/x-ndjson' -XPOST 'localhost:9200/pathways_full/_doc/_bulk?pretty' --data-binary @searchdata-full.json
+
+curl -H 'Content-Type: application/x-ndjson' -XPOST 'BONSAI_URL/pathways_full/doc/_bulk?pretty' --data-binary @searchdata-full.json
