@@ -1,4 +1,6 @@
-PUT pathways_truncated
+// LOCAL
+
+PUT pathways_full
 {
   "settings": {
     "number_of_shards": 1
@@ -15,9 +17,58 @@ PUT pathways_truncated
         ]
       }
     }
+  },
+  "mappings": {
+    "_doc": {
+      "properties": {
+        "categories": {
+          "type" : "keyword",
+          "index" : true
+        }
+      }
+    }
+  }
+}
+
+
+// BONSAI INSTANCE
+
+PUT pathways_full
+{
+  "settings": {
+    "number_of_shards": 1
+  },
+  "analysis": {
+    "analyzer": {
+      "custom_english": {
+        "type": "english",
+        "stopwords": [
+          "a", "an", "and", "are", "as", "at", "be", "but", "by", "for", "if",
+          "in", "into", "is", "it", "of", "on", "or", "such", "that", "the",
+          "their", "then", "there", "these", "they", "this", "to", "was",
+          "will", "with", "without", "where"
+        ]
+      }
+    }
+  },
+  "mappings": {
+    "doc": {
+      "properties": {
+        "categories": {
+          "type" : "keyword",
+          "index" : true
+        }
+      }
+    }
   }
 }
 
 curl -H 'Content-Type: application/x-ndjson' -XPOST 'localhost:9200/pathways_truncated/_doc/_bulk?pretty' --data-binary @searchdata.json
 
 curl -H 'Content-Type: application/x-ndjson' -XPOST 'BONSAI_URL/pathways_truncated/doc/_bulk?pretty' --data-binary @searchdata.json
+
+
+// full data import
+curl -H 'Content-Type: application/x-ndjson' -XPOST 'localhost:9200/pathways_full/_doc/_bulk?pretty' --data-binary @searchdata-full.json
+
+curl -H 'Content-Type: application/x-ndjson' -XPOST 'BONSAI_URL/pathways_full/doc/_bulk?pretty' --data-binary @searchdata-full.json
