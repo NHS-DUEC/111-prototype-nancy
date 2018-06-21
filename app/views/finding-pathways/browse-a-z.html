@@ -22,12 +22,12 @@
   {{ result._source.PW_Age }}
   {{ result._source.PW_Gender }}
   -->
-  <a href="/weird-questions?pw={{ result._id }}" class="topic">
+  <a href="/weird-questions?pw={{ result._source.PW_id }}" class="topic">
     <span class="topic-title">
-      {{ result._source.DigitalTitles }}
+      {{ result._source.DigitalTitles | safe }}
     </span>
     <span class="topic-description">
-      {{ result._source.DigitalDescription }}
+      {{ result._source.DigitalDescription | safe }}
     </span>
   </a>
   {% endfor %}

@@ -448,3 +448,11 @@
 {"PW_id":"PW987","PW_Age":["Adult", "Child"],"PW_Gender":["Male", "Female"],"categories":["burns-and-scalds"],"DigitalTitles":"Sunburn","DigitalDescription":"Burns caused by the sun or a tanning sunbed or lamp. Red, warm, sore, tender, or peeling skin.","CommonTerms":"heat stroke, heat exhaustion, sun stroke, sunstroke","bodymap":[]}
 {"index":{"_id":"225"}
 {"PW_id":"PW998","PW_Age":["Adult", "Child"],"PW_Gender":["Male", "Female"],"categories":["high-temperature-and-heatstroke"],"DigitalTitles":"Heatstroke ","DigitalDescription":"Overheating caused by being in hot temperatures or by exercising too much. ","CommonTerms":"heat stroke, heat exhaustion, sun stroke, sunstroke","bodymap":[]}
+{"index":{"_id":"226"}
+{"PW_id":"PW556","PW_Age":["Adult"],"PW_Gender":["Female"],"categories":["parts-of-the-body","chest-and-upper-back"],"DigitalTitles":"Chest pain<!--ALIAS-->","DigitalDescription":"Any chest or upper back pain. Chest pain with or without arm, shoulder, neck or jaw pain. Tightness in the chest.","CommonTerms":"","bodymap":["chest", "rib", "ribs", "back"]}
+{"index":{"_id":"227"}
+{"PW_id":"PW557","PW_Age":["Child"],"PW_Gender":["Female"],"categories":["parts-of-the-body","chest-and-upper-back"],"DigitalTitles":"Chest pain<!--ALIAS-->","DigitalDescription":"Any chest or upper back pain. Chest pain with or without arm, shoulder, neck or jaw pain. Tightness in the chest.","CommonTerms":"","bodymap":["chest", "rib", "ribs", "back"]}
+{"index":{"_id":"228"}
+{"PW_id":"PW559","PW_Age":["Adult"],"PW_Gender":["Male"],"categories":["parts-of-the-body","chest-and-upper-back"],"DigitalTitles":"Chest pain<!--ALIAS-->","DigitalDescription":"Any chest or upper back pain. Chest pain with or without arm, shoulder, neck or jaw pain. Tightness in the chest.","CommonTerms":"","bodymap":["chest", "rib", "ribs", "back"]}
+{"index":{"_id":"229"}
+{"PW_id":"PW560","PW_Age":["Child"],"PW_Gender":["Male"],"categories":["parts-of-the-body","chest-and-upper-back"],"DigitalTitles":"Chest pain<!--ALIAS-->","DigitalDescription":"Any chest or upper back pain. Chest pain with or without arm, shoulder, neck or jaw pain. Tightness in the chest.","CommonTerms":"","bodymap":["chest", "rib", "ribs", "back"]}
