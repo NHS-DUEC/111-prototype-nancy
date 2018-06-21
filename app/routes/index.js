@@ -1013,31 +1013,40 @@ router.get('/finding-pathways/categories/:category', function(req, res) {
 // Book a call - June 2018 +++++++++++++++++++++++++++++++++++++++++++++++++++++
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-// Simple journey - telephone required
-router.post('/999-disposition/book-call-min', function(req, res) {
-  if (req.body['tel'] === '') {
-    res.render('999-disposition/book-call-min', {
-      error: {
-        general: '<a href="#tel">We need a valid number to call</a>',
-        tel: 'Enter a valid number'
-      }
-    });
-  } else {
-    res.redirect('call-booked');
-  }
-});
-
-// PDS journey - some demographics requested
-router.get('/999-disposition/book-call-demographics', function(req, res) {
+// "lead with callback" scenario
+router.get('/999-disposition/disposition-callback-first-001', function(req, res) {
   if (!req.session.callBooking) {
     // zero out a namespaced session obj
     req.session.callBooking = {};
+    req.session.callBooking.scenario = 'callback-first';
     req.session.callBooking.name = '';
     req.session.callBooking.dob = {};
     req.session.callBooking.postcode = '';
     req.session.callBooking.tel = '';
   }
-  res.render('999-disposition/book-call-demographics');
+  res.render('999-disposition/disposition-callback-first-001.html');
+});
+
+router.post('/999-disposition/disposition-callback-first-001', function(req, res) {
+  if (req.body['revisitQuestion'] === 'yes') {
+    res.redirect('/999-disposition/question');
+  } else {
+    res.redirect('/999-disposition/disposition-callback-first-002');
+  }
+});
+
+// "lead with 999" scenario
+router.get('/999-disposition/disposition', function(req, res) {
+  if (!req.session.callBooking) {
+    // zero out a namespaced session obj
+    req.session.callBooking = {};
+    req.session.callBooking.scenario = '999-first';
+    req.session.callBooking.name = '';
+    req.session.callBooking.dob = {};
+    req.session.callBooking.postcode = '';
+    req.session.callBooking.tel = '';
+  }
+  res.render('999-disposition/disposition.html');
 });
 
 router.post('/999-disposition/book-call-demographics', function(req, res) {
@@ -1064,51 +1073,7 @@ router.post('/999-disposition/book-call-number', function(req, res) {
 });
 
 router.get('/999-disposition/call-booked', function(req, res) {
-  // zero out a namespaced session obj
+  // zero out the namespaced session obj
   req.session.callBooking = {};
   res.render('999-disposition/call-booked');
-});
-
-// "lead with callback" scenario
-router.post('/999-disposition/disposition-callback-first-001', function(req, res) {
-  if (req.body['revisitQuestion'] === 'yes') {
-    res.redirect('/999-disposition/question?from=disposition-callback-first-001');
-  } else {
-    res.redirect('/999-disposition/disposition-callback-first-002');
-  }
-});
-
-router.post('/999-disposition/disposition-callback-first-002', function(req, res) {
-  if (req.body['tel'] === '') {
-    res.render('999-disposition/disposition-callback-first-002', {
-      error: {
-        general: '<a href="#tel">We need a valid number to call</a>',
-        tel: 'Enter a valid number'
-      }
-    });
-  } else {
-    res.redirect('call-booked');
-  }
-});
-
-// handling 'back' links from multiple routes in
-router.get('/999-disposition/options', function(req, res) {
-  var backUrl = req.query['from'];
-  res.render('999-disposition/options', {
-    back: backUrl
-  });
-});
-
-router.get('/999-disposition/question', function(req, res) {
-  var backUrl = req.query['from'];
-  res.render('999-disposition/question', {
-    back: backUrl
-  });
-});
-
-router.get('/999-disposition/book-call-min', function(req, res) {
-  var backUrl = req.query['from'];
-  res.render('999-disposition/book-call-min', {
-    back: backUrl
-  });
 });
