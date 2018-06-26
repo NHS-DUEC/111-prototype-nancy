@@ -676,6 +676,8 @@ router.post('/gateway/demographics', function(req, res) {
 // Elasticsearch +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+var indexToUse = 'pathways_inc_alias';
+
 /*
 router.get('/finding-pathways/start', function (req, res) {
   if (req.query.query) {
@@ -699,7 +701,7 @@ router.get('/finding-pathways/start', function (req, res) {
     }
 
     client.search({
-      index: 'pathways_truncated',
+      index: indexToUse,
       body: {
         from: 0,
         size: 10,
@@ -799,8 +801,7 @@ router.get('/finding-pathways/start', function (req, res) {
     }
 
     client.search({
-      //index: 'pathways_truncated',
-      index: 'pathways_full',
+      index: indexToUse,
       body: {
         from: 0,
         size: 10,
@@ -848,8 +849,7 @@ router.get('/finding-pathways/browse', function(req, res) {
 router.get('/finding-pathways/browse-a-z', function(req, res) {
   setDefaults(req);
   client.search({
-    //index: 'pathways_truncated',
-    index: 'pathways_full',
+    index: indexToUse,
     body: {
       from: 0,
       size: 200,
@@ -894,8 +894,7 @@ router.get('/finding-pathways/categories/parts-of-the-body', function(req, res) 
   var hips_legs_and_feet = [];
 
   client.search({
-    //index: 'pathways_truncated',
-    index: 'pathways_full',
+    index: indexToUse,
     body: {
       from: 0,
       size: 200,
@@ -983,8 +982,7 @@ router.get('/finding-pathways/categories/:category', function(req, res) {
   // req.params: { "category": "accidental-overdose-or-swallowed-an-object" }
   setDefaults(req);
   client.search({
-    //index: 'pathways_truncated',
-    index: 'pathways_full',
+    index: indexToUse,
     body: {
       from: 0,
       size: 200,
