@@ -12,6 +12,10 @@ var utils = require('./lib/utils.js')
 var config = require('./app/config.js')
 
 var index = require('./app/routes/index');
+var gateway = require('./app/routes/gateway');
+var findingPathways = require('./app/routes/finding-pathways');
+var weirdQuestions = require('./app/routes/weird-questions');
+var emergencyDisposition = require('./app/routes/999-disposition');
 var app = express()
 
 // Grab environment variables specified in Procfile or as Heroku config vars
@@ -93,7 +97,12 @@ var env = nunjucks.configure('./app/views', {
 });
 env.addFilter('date', dateFilter);
 
+// ROUTES
 app.use('/', index);
+app.use('/gateway', gateway);
+app.use('/finding-pathways', findingPathways);
+app.use('/weird-questions', weirdQuestions);
+app.use('/999-disposition', emergencyDisposition);
 
 // auto render any view that exists
 app.get(/^\/([^.]+)$/, function (req, res) {
