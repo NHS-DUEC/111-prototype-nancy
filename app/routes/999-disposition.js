@@ -23,9 +23,9 @@ router.get('/disposition-callback-first-001', function(req, res) {
 
 router.post('/disposition-callback-first-001', function(req, res) {
   if (req.body['revisitQuestion'] === 'yes') {
-    res.redirect('/question');
+    res.redirect('question');
   } else {
-    res.redirect('/disposition-callback-first-002');
+    res.redirect('disposition-callback-first-002');
   }
 });
 
