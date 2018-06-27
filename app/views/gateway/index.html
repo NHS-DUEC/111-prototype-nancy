@@ -45,24 +45,19 @@
 {% block body_after %}
 <script type="text/javascript">
 
-  var doGeo = function() {
-    navigator.geolocation.getCurrentPosition(function(position) {
-      var pos = {
-        lat: position.coords.latitude,
-        lng: position.coords.longitude
-      };
-      updateVals(pos);
-      // do stuff with the pos object
-      mapObj.setCenter(pos);
-    }, function() {
-      // handle errors here
-    });
-  }
-
   $(function() {
     $('#geolocate').on('click', function(e) {
       e.preventDefault();
-      $('#postcode').val('SE1 6LH');
+      navigator.geolocation.getCurrentPosition(function(position) {
+        var pos = {
+          lat: position.coords.latitude,
+          lng: position.coords.longitude
+        };
+        // do stuff with the pos object
+        $.get('https://api.postcodes.io/postcodes?lon=' + pos.lng + '&lat=' + pos.lat, function(data) {
+          $('#postcode').val(data.result[0].postcode);
+        });
+      });
     });
   });
 
