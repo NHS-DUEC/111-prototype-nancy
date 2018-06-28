@@ -1,0 +1,48 @@
+{
+  "questionset" : "stomach-or-side-injury-without-a-cut-or-wound",
+  "disposition" : "/999-disposition/disposition-callback-first-001",
+  "pathways" : [
+    "PW500",
+    "PW503"
+  ],
+  "questions" : [
+    {
+      "question" : "Do you have any new trouble breathing?",
+      "help" : "For example, you're gasping or panting for breath, and can't get your words out.",
+      "answers" : [
+        "Yes - you can't get your words out",
+        "I'm not sure",
+        "No"
+      ]
+    },
+    {
+      "question" : "Have you got intense pain in your chest or back?",
+      "help" : "For example, the pain is stopping you from doing or thinking about anything else.",
+      "answers" : [
+        "Yes",
+        "I'm not sure",
+        "No"
+      ]
+    },
+    {
+      "question" : "Have you had any of these things since your injury?",
+      "answers" : [
+        "You can't control when you wee or poo",
+        "You can't move one or both legs",
+        "Both legs or around your back passage are numb or have pins and needles",
+        "The bones in your back or neck are painful",
+        "I'm not sure",
+        "No"
+      ]
+    },
+    {
+      "question" : "Have you got either of these types of pain?",
+      "answers" : [
+        "It's intense and constant and doesn't stop for a moment",
+        "It's intense and I have to stay completely still as it's so bad",
+        "I'm not sure",
+        "No"
+      ]
+    }
+  ]
+}

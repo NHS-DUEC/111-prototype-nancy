@@ -1,0 +1,46 @@
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}{% endblock %}
+
+{% block content %}
+
+<div class="content-block measure">
+  <h1 class="h2">{{ question }}</h1>
+
+  {% if help %}
+    <div class="callout callout--info">
+      <p>{{ help }}</p>
+    </div>
+  {% endif %}
+
+  <div class="form">
+
+    <div class="form-group">
+      <fieldset>
+        {% for answer in answers %}
+          <label class="block-label">
+            <input id="{{ loop.index0 }}" name="answer" value="{{ loop.index0 }}" type="radio" class="selection-button-radio">
+            <span>
+              {{ answer }}
+            </span>
+          </label>
+        {% endfor %}
+      </fieldset>
+    </div>
+
+    <div class="form-group">
+      <p><a href="{{ next }}" class="button">Next</a></p>
+      {% if count !== 0 %}
+        <p><a href="{{ prev }}">Change my previous answer</a></p>
+      {% endif %}
+    </div>
+
+  </div>
+
+</div>
+
+{% endblock %}
+
+{% block footer %}{% endblock %}

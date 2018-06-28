@@ -15,6 +15,7 @@ var index = require('./app/routes/index');
 var gateway = require('./app/routes/gateway');
 var findingPathways = require('./app/routes/finding-pathways');
 var weirdQuestions = require('./app/routes/weird-questions');
+var questions = require('./app/routes/questions');
 var emergencyDisposition = require('./app/routes/999-disposition');
 var app = express()
 
@@ -102,6 +103,7 @@ app.use('/', index);
 app.use('/gateway', gateway);
 app.use('/finding-pathways', findingPathways);
 app.use('/weird-questions', weirdQuestions);
+app.use('/questions', questions);
 app.use('/999-disposition', emergencyDisposition);
 
 // auto render any view that exists
