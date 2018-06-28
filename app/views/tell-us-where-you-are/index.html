@@ -9,8 +9,11 @@
 </div>
 
 <div class="location-controls">
-  <div>
-    <input type="text" id="searchTextField">
+  <p class="form-hint">
+    Search for a place, drag the map, or use geolocation
+  </p>
+  <div class="form-group">
+    <input type="text" id="searchTextField" placeholder="">
   </div>
   <div class="geolocation">
     <a href="#" id="geolocate">Use my current location</a>
@@ -21,9 +24,7 @@
 </div>
 
 <div class="location">
-  <div id="map">
-    <img src="https://maps.googleapis.com/maps/api/staticmap?center=51.4962735,-0.1007008&markers=color:red%7C51.496263,-0.100788&zoom=17&size=640x320&key=AIzaSyDP454skpvnlft08MDIcZG_khm-sBHmFbM" alt="">
-  </div>
+  <div id="map"></div>
 </div>
 
 <div class="content-block shunt clearfix">
@@ -33,10 +34,23 @@
   </div>
 </div>
 
-<form id="new-location" method="post">
-  <input type="text" id="latitude" value="51.4962735">
-  <input type="text" id="longitude" value="-0.1007008">
-</form>
+<style>
+  #console {
+    position: fixed;
+    right: 12px;
+    top: 12px;
+    width: 200px;
+    padding: 12px;
+    font-size: 11px;
+    font-weight: bold;
+    line-height: 1.1;
+    background-color: #fff587;
+  }
+</style>
+<div id="console">
+  lat: <span id="latitude"></span><br>
+  lng: <span id="longitude"></span>
+</div>
 
 {% endblock %}
 
@@ -44,8 +58,8 @@
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDP454skpvnlft08MDIcZG_khm-sBHmFbM&libraries=places"></script>
 <script>
   var updateVals = function(pos) {
-    $('#latitude').val(pos.lat);
-    $('#longitude').val(pos.lng);
+    $('#latitude').text(pos.lat);
+    $('#longitude').text(pos.lng);
   }
 
   var doGeo = function() {
@@ -66,14 +80,12 @@
   }
 
   $(function() {
-    var point = {
-      lat: 51.4962735,
-      lng: -0.1007008
-    };
-
     mapObj = new google.maps.Map(document.getElementById('map'), {
-      center: point,
-      zoom: 17,
+      center: {
+        lat: 54.49753506786252,
+        lng: -2.2084219462310557
+      },
+      zoom: 5,
       zoomControl: true,
       mapTypeControl: false,
       scaleControl: true,
@@ -81,15 +93,23 @@
       rotateControl: false,
       fullscreenControl: false
     });
-    marker = new google.maps.Marker({position: point, map: mapObj});
+
     google.maps.event.addListener(mapObj, 'center_changed', function() {
       // 0.1 seconds after the center of the map has changed,
       // set back the marker position.
       window.setTimeout(function() {
         var center = mapObj.getCenter();
+        if (typeof marker === 'undefined') {
+          marker = new google.maps.Marker({position: mapObj.getCenter(), map: mapObj});
+        }
         marker.setPosition(center);
         updateVals(center);
       }, 100);
+    });
+
+    google.maps.event.addListener(mapObj, 'dragend', function() {
+      // if you drag it, wipe anything in the places search
+      $('#searchTextField').val('');
     });
 
     $('#geolocate').on('click', function(e) {
@@ -99,10 +119,9 @@
 
     var input = document.getElementById('searchTextField');
     var searchBox = new google.maps.places.SearchBox(input, {
-      componentRestrictions: {country: 'gb'}
+      componentRestrictions: {'country': ['gb']}
     });
 
-    var markers = [];
     searchBox.addListener('places_changed', function() {
       var places = searchBox.getPlaces();
       if (places.length == 0) {
