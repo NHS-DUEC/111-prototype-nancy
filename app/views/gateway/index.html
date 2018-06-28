@@ -25,7 +25,12 @@
               <label for="postcode">Postcode</label>
               <input type="text" id="postcode" name="postcode" class="-small" autocomplete="off">
             </div>
-            <div class="geolocate-link"><a href="#" id="geolocate">Use my current location</a></div>
+            <div class="geolocate-link">
+              <a href="#" id="geolocate">Use my current location</a>
+              <span id="loader" class="load-container">
+                <span class="loader"></span>
+              </span>
+            </div>
           </div>
         </fieldset>
         <div class="form-group -controls">
@@ -48,6 +53,8 @@
   $(function() {
     $('#geolocate').on('click', function(e) {
       e.preventDefault();
+      $('#loader').css('visibility', 'visible');
+      $('#postcode').attr('disabled', 'true');
       navigator.geolocation.getCurrentPosition(function(position) {
         var pos = {
           lat: position.coords.latitude,
@@ -56,6 +63,8 @@
         // do stuff with the pos object
         $.get('https://api.postcodes.io/postcodes?lon=' + pos.lng + '&lat=' + pos.lat, function(data) {
           $('#postcode').val(data.result[0].postcode);
+          $('#loader').css('visibility', 'hidden');
+          $('#postcode').removeAttr('disabled');
         });
       });
     });

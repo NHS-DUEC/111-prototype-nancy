@@ -1768,6 +1768,61 @@ img {
   border-color: transparent transparent #fada8b transparent;
 }
 
+.load-container {
+  display: inline-block;
+  vertical-align: middle;
+  width: 20px;
+  height: 20px;
+  overflow: hidden;
+}
+
+.js-enabled .load-container {
+  visibility: hidden;
+}
+
+.loader,
+.loader:after {
+  display: block;
+  border-radius: 100%;
+  width: 12px;
+  height: 12px;
+}
+
+.loader {
+  position: relative;
+  border-top: 4px solid rgba(66, 85, 99, 0.2);
+  border-right: 4px solid rgba(66, 85, 99, 0.2);
+  border-bottom: 4px solid rgba(66, 85, 99, 0.2);
+  border-left: 4px solid #ffffff;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-animation: loader 1.1s infinite linear;
+  animation: loader 1.1s infinite linear;
+}
+
+@-webkit-keyframes loader {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes loader {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
 .location {
   background-color: #f0f4f5;
 }
