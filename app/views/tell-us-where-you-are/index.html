@@ -71,7 +71,10 @@
       };
       updateVals(pos);
       // do stuff with the pos object
+      var bounds = new google.maps.LatLngBounds();
+      bounds.extend(pos);
       mapObj.setCenter(pos);
+      mapObj.fitBounds(bounds);
       $('#loader').css('visibility', 'hidden');
       $('#searchTextField').val('');
     }, function() {
@@ -86,6 +89,7 @@
         lng: -2.2084219462310557
       },
       zoom: 5,
+      maxZoom: 18,
       zoomControl: true,
       mapTypeControl: false,
       scaleControl: true,
