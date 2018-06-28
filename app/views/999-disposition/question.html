@@ -6,8 +6,10 @@
 
 <div class="content-block measure">
 
-  {% if back is not defined %}
-    {% set back = "options" %}
+  {% if session.callBooking.scenario == 'callback-first' %}
+    {% set back = "/999-disposition/disposition-callback-first-001" %}
+  {% else %}
+    {% set back = "/999-disposition/options" %}
   {% endif %}
   <a href="{{ back }}" class="button -back">Back</a>
 
@@ -29,7 +31,7 @@
         <label class="block-label">
           <input id="yes" name="answer" value="yes" type="radio" class="selection-button-radio" checked="true">
           <span class="highlighter">
-            Your answer "yes" means we can’t rule out bleeding on the brain
+            Yes &mdash; this means we can’t rule out a serious condition
           </span>
         </label>
         <label class="block-label">
