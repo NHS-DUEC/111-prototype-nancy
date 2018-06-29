@@ -11,19 +11,20 @@
     <h1 class="h2">We can’t rule out a serious condition</h1>
   </div>
   <p>
-    You answered “yes” to this question:
+    You answered &ldquo;{% if session.disposition %}{{ session.disposition.answer }}{% else %}yes{% endif %}&rdquo; to this question:
   </p>
   <div class="callout callout--info">
     <p>
-      Have you got a sudden agonising headache like you've been hit on the head
-      with something hard?
+      {% if session.disposition %}
+        {{ session.disposition.question }}
+      {% else %}
+        Have you got a sudden agonising headache like you've been hit on the head
+        with something hard?
+      {% endif %}
     </p>
   </div>
   <p>
     Because of this you may need urgent medical help.
-    <!-- try without endpoint reasoning to start
-    We’re not able to rule out bleeding on the brain.
-    -->
   </p>
 
   <form class="form" method="post">

@@ -12,9 +12,19 @@ module.exports = router
 var raw = fs.readFileSync('./data/question-sets/stomach-or-side-injury-without-a-cut-or-wound.json');
 var questionSet = JSON.parse(raw);
 
+router.get('/', function(req, res) {
+  res.redirect('/questions/0');
+});
+
 router.get('/:num', function(req, res) {
 
   var count = parseInt(req.params.num);
+
+  if (!req.session.disposition) {
+    // zero out a namespaced session obj
+    req.session.disposition = {};
+  }
+
   var next = eval(count)+1;
   var prev = eval(count)-1
   if (count === questionSet.questions.length-1) {
@@ -28,4 +38,11 @@ router.get('/:num', function(req, res) {
     next: next,
     prev: prev
   });
+});
+
+router.post('/question-handler', function(req, res) {
+  var nextQuestion = req.body.next;
+  req.session.disposition.question = req.body.question;
+  req.session.disposition.answer = req.body.answer;
+  res.redirect(nextQuestion);
 });
