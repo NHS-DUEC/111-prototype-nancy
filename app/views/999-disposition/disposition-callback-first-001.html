@@ -11,9 +11,19 @@
     <h1 class="h2">We can’t rule out a serious condition</h1>
   </div>
   <p>
-    You answered &ldquo;{% if session.disposition %}{{ session.disposition.answer }}{% else %}yes{% endif %}&rdquo; to this question:
+    You answered
   </p>
   <div class="callout callout--info">
+    <p>
+      {% if session.disposition %}
+        {{ session.disposition.answer }}
+      {% else %}
+        Yes
+      {% endif %}
+    </p>
+  </div>
+  <p>to this question:</p>
+  <div class="callout callout--warning">
     <p>
       {% if session.disposition %}
         {{ session.disposition.question }}
