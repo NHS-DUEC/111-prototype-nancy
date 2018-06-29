@@ -20,9 +20,11 @@ router.get('/:num', function(req, res) {
 
   var count = parseInt(req.params.num);
 
-  if (!req.session.disposition) {
+  if (count == '0') {
     // zero out a namespaced session obj
     req.session.disposition = {};
+    req.session.disposition.questionset = questionSet.questionset;
+    req.session.disposition.revisiting = false;
   }
 
   var next = eval(count)+1;
@@ -42,6 +44,7 @@ router.get('/:num', function(req, res) {
 
 router.post('/question-handler', function(req, res) {
   var nextQuestion = req.body.next;
+  req.session.disposition.number = req.body.num;
   req.session.disposition.question = req.body.question;
   req.session.disposition.answer = req.body.answer;
   res.redirect(nextQuestion);

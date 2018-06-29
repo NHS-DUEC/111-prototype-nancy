@@ -7,10 +7,15 @@
 {% block content %}
 
 <div class="content-block measure">
+
+  {% if session.disposition.revisiting %}
+    <a href="/999-disposition/disposition-callback-first-001" class="button -back">Back</a>
+  {% endif %}
+
   <h1 class="h2">{{ question }}</h1>
 
   {% if help %}
-    <div class="callout callout--info">
+    <div class="callout {% if session.disposition.revisiting == true %}callout--warning{% else %}callout--info{% endif %}">
       <p>{{ help }}</p>
     </div>
   {% endif %}
@@ -24,6 +29,11 @@
             <input id="{{ loop.index0 }}" name="answer" value="{{ answer }}" type="radio" class="selection-button-radio">
             <span>
               {{ answer }}
+              {% if session.disposition.revisiting == true and session.disposition.answer == answer %}
+                <span class="highlighter">
+                  &mdash; this means we can’t rule out a serious condition
+                </span>
+              {% endif %}
             </span>
           </label>
         {% endfor %}
@@ -36,7 +46,7 @@
 
     <div class="form-group">
       <p><button type="submit" class="button">Next</button></p>
-      {% if count !== 0 %}
+      {% if count !== 0 and session.disposition.revisiting == false %}
         <p><a href="{{ prev }}">Change my previous answer</a></p>
       {% endif %}
     </div>
