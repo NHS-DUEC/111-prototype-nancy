@@ -8,10 +8,13 @@ module.exports = router
 // Creating question journeys from files - June 2018 +++++++++++++++++++++++++++
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-var raw = fs.readFileSync('./data/question-sets/stomach-or-side-injury-without-a-cut-or-wound.json');
-var questionSet = JSON.parse(raw);
-
 router.get('/', function(req, res) {
+  res.redirect('/questions/start');
+});
+
+router.get('/start', function(req, res) {
+  raw = fs.readFileSync('./data/question-sets/' + req.query.slug + '.json');
+  questionSet = JSON.parse(raw);
   res.redirect('/questions/0');
 });
 

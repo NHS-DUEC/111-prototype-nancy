@@ -30,7 +30,7 @@
     {% set url = domain + '/' + pw + '/' + sex | title + '/' + age +'/start?args=' + hash %}
     {% for hijack in hijacks %}
       {% if hijack.pwid == pw %}
-        {% set url = '/questions?slug=' + hijack.slug %}
+        {% set url = '/questions/start?slug=' + hijack.slug %}
       {% endif %}
     {% endfor %}
 
