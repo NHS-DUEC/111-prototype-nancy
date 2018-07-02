@@ -8,7 +8,6 @@ module.exports = router
 // Creating question journeys from files - June 2018 +++++++++++++++++++++++++++
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-
 var raw = fs.readFileSync('./data/question-sets/stomach-or-side-injury-without-a-cut-or-wound.json');
 var questionSet = JSON.parse(raw);
 
@@ -43,9 +42,14 @@ router.get('/:num', function(req, res) {
 });
 
 router.post('/question-handler', function(req, res) {
-  var nextQuestion = req.body.next;
-  req.session.disposition.number = req.body.num;
-  req.session.disposition.question = req.body.question;
-  req.session.disposition.answer = req.body.answer;
-  res.redirect(nextQuestion);
+  if (req.session.disposition.revisiting == true) {
+    res.redirect('/edge');
+  } else {
+    var nextQuestion = req.body.next;
+    req.session.disposition.number = req.body.num;
+    req.session.disposition.question = req.body.question;
+    req.session.disposition.help = req.body.help;
+    req.session.disposition.answer = req.body.answer;
+    res.redirect(nextQuestion);
+  }
 });
