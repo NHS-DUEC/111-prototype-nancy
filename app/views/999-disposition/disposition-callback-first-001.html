@@ -7,22 +7,30 @@
 
 <div class="content-block measure">
 
-  <h1 class="h2">We can’t rule out a serious condition</h1>
+  <div class="callout callout--disposition">
+    <h1 class="h2">We can’t rule out a serious condition</h1>
+  </div>
   <p>
-    You answered “yes” to this question:
+    You may need urgent medical help because you answered &ldquo;{% if session.disposition %}{{ session.disposition.answer }}{% else %}Yes{% endif %}&rdquo; to this question:
   </p>
   <div class="callout callout--info">
     <p>
-      Have you got a sudden agonising headache like you've been hit on the head
-      with something hard?
+      {% if session.disposition %}
+        {{ session.disposition.question }}
+        {% if session.disposition.help !== '' %}
+          <span class="form-hint">{{ session.disposition.help }}</span>
+        {% endif %}
+      {% else %}
+        Do you have new spots or blotches that look like blood blisters or
+        bleeding under the skin?
+        <span class="form-hint">
+          This can be a sign of meningitis or sepsis. On light skin the marks
+          won't fade if you press a glass on them. On dark skin it’s easier to
+          see on paler areas like inside the mouth, on palms or soles.
+        </span>
+      {% endif %}
     </p>
   </div>
-  <p>
-    Because of this you may need urgent medical help.
-    <!-- try without endpoint reasoning to start
-    We’re not able to rule out bleeding on the brain.
-    -->
-  </p>
 
   <form class="form" method="post">
     <legend><b>Do you want to look at this question again?</b></legend>
