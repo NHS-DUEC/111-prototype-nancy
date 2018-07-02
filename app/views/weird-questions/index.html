@@ -26,7 +26,15 @@
   </div>
 
   <div class="content-block">
-    <a href="{{ domain }}/{{ pw }}/{{ sex | title }}/{{ age }}/start?args={{ hash }}" class="button">I understand</a>
+
+    {% set url = domain + '/' + pw + '/' + sex | title + '/' + age +'/start?args=' + hash %}
+    {% for hijack in hijacks %}
+      {% if hijack.pwid == pw %}
+        {% set url = '/questions?slug=' + hijack.slug %}
+      {% endif %}
+    {% endfor %}
+
+    <a href="{{ url }}" class="button">I understand</a>
   </div>
 
 </div>

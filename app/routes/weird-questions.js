@@ -1,5 +1,6 @@
 var express = require('express')
 var router = express.Router()
+var hijacks = require('../../data/question-sets/hijacks.js')
 
 module.exports = router
 
@@ -26,6 +27,7 @@ router.get('/', function(req, res) {
   res.render('weird-questions/index', {
     pw: pathway,
     sex: req.session.demographics.sex,
-    age: req.session.demographics.age
+    age: req.session.demographics.age,
+    hijacks: hijacks
   });
 });
