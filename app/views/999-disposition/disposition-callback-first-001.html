@@ -11,7 +11,7 @@
     <h1 class="h2">We can’t rule out a serious condition</h1>
   </div>
   <p>
-    You answered &ldquo;{% if session.disposition %}{{ session.disposition.answer }}{% else %}Yes{% endif %}&rdquo; to this question:
+    You may need urgent medical help because you answered &ldquo;{% if session.disposition %}{{ session.disposition.answer }}{% else %}Yes{% endif %}&rdquo; to this question:
   </p>
   <div class="callout callout--info">
     <p>
@@ -31,9 +31,6 @@
       {% endif %}
     </p>
   </div>
-  <p>
-    Because of this you may need urgent medical help.
-  </p>
 
   <form class="form" method="post">
     <legend><b>Do you want to look at this question again?</b></legend>
