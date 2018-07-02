@@ -11,25 +11,16 @@
     <h1 class="h2">We can’t rule out a serious condition</h1>
   </div>
   <p>
-    You answered
+    You answered &ldquo;{% if session.disposition %}{{ session.disposition.answer }}{% else %}Yes{% endif %}&rdquo; to this question:
   </p>
   <div class="callout callout--info">
     <p>
       {% if session.disposition %}
-        {{ session.disposition.answer }}
-      {% else %}
-        Yes
-      {% endif %}
-    </p>
-  </div>
-  <p>to this question:</p>
-  <div class="callout callout--warning">
-    <p>
-      {% if session.disposition %}
         {{ session.disposition.question }}
       {% else %}
-        Have you got a sudden agonising headache like you've been hit on the head
-        with something hard?
+        Do you have new spots or blotches that look like blood blisters or
+        bleeding under the skin?
+        <span class="form-hint">This can be a sign of meningitis or sepsis. On light skin the marks won't fade if you press a glass on them. On dark skin it’s easier to see on paler areas like inside the mouth, on palms or soles.</span>
       {% endif %}
     </p>
   </div>
