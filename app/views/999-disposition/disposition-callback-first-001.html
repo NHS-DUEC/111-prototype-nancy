@@ -17,10 +17,17 @@
     <p>
       {% if session.disposition %}
         {{ session.disposition.question }}
+        {% if session.disposition.help !== '' %}
+          <span class="form-hint">{{ session.disposition.help }}</span>
+        {% endif %}
       {% else %}
         Do you have new spots or blotches that look like blood blisters or
         bleeding under the skin?
-        <span class="form-hint">This can be a sign of meningitis or sepsis. On light skin the marks won't fade if you press a glass on them. On dark skin it’s easier to see on paler areas like inside the mouth, on palms or soles.</span>
+        <span class="form-hint">
+          This can be a sign of meningitis or sepsis. On light skin the marks
+          won't fade if you press a glass on them. On dark skin it’s easier to
+          see on paler areas like inside the mouth, on palms or soles.
+        </span>
       {% endif %}
     </p>
   </div>
