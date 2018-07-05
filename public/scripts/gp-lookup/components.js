@@ -122,7 +122,7 @@ var BackLink = React.createClass({
       { className: "form-group -controls" },
       React.createElement(
         "a",
-        { href: "current-gp", className: "button -back" },
+        { href: "current-gp", className: "button-back" },
         "Back"
       )
     );

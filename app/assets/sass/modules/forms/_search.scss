@@ -6,9 +6,14 @@
   @extend %contain-floats;
 
   .button {
-    background-color: $nhs-blue;
+    @include button($nhs-blue, $boldweight);
     box-shadow: none;
     border: 2px solid $nhs-blue;
+
+    &:hover,
+    &:focus {
+      border-color: darken($nhs-blue, 5%);
+    }
   }
 
   @include media(mid) {

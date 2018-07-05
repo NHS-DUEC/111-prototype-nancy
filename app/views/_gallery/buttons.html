@@ -1,0 +1,34 @@
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}Buttons{% endblock %}
+
+{% block content %}
+
+<div class="measure content-block">
+
+  <p>
+    <a href="/_gallery" class="button-back">Back</a>
+  </p>
+
+  <h1>Buttons</h1>
+
+  <p>
+    <button class="button">Primary</button>
+  </p>
+
+  <p>
+    <button class="button-secondary">Secondary</button>
+  </p>
+
+  <p>
+    <button class="button-tertiary">Multiple actions (ie edit)</button>
+  </p>
+
+  <p class="search">
+    <input type="text" id="query" name="query" autocomplete="off">
+    <button type="submit" class="button">Search</button>
+  </p>
+
+</div>
+
+{% endblock %}

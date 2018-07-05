@@ -740,42 +740,28 @@ a.link-prototype:visted {
   margin-bottom: 0;
 }
 
-.button::-moz-focus-inner {
-  border: 0;
-  padding: 0;
-}
-
 .button {
-  box-sizing: border-box;
-  display: inline-block;
+  -webkit-font-smoothing: antialiased;
+  appearance: none;
   font-family: inherit;
   font-weight: 700;
   font-size: inherit;
   line-height: 48px;
+  text-decoration: none;
+  text-align: center;
+  box-sizing: border-box;
+  display: inline-block;
   width: 100%;
   padding: 0 24px;
   margin: 0 0 8px 0;
-  text-align: center;
-  color: #fff;
-  background-color: #007f3b;
   cursor: pointer;
+  background-color: #007f3b;
   border: 0;
-  box-shadow: 0 2px 0 #003317;
-  -webkit-appearance: none;
   border-radius: 0;
-}
-
-.button:link, .button:hover, .button:focus, .button:visited {
-  text-decoration: none;
+  box-shadow: 0 2px 0 #003317;
+  outline: 1px solid transparent;
+  outline-offset: -1px;
   color: #fff;
-  background-color: #006747;
-}
-
-.button:focus {
-  outline: 0;
-  -webkit-box-shadow: 0 0 0 5px #ffb81c;
-  -moz-box-shadow: 0 0 0 5px #ffb81c;
-  box-shadow: 0 0 0 5px #ffb81c;
 }
 
 @media (min-width: 500px) {
@@ -785,35 +771,170 @@ a.link-prototype:visted {
   }
 }
 
-.button.-back {
-  background-color: transparent;
-  border: transparent;
-  border-left: 0;
-  padding-left: 0;
+.button:link, .button:visited {
+  background-color: #007f3b;
+}
+
+.button:focus {
+  outline: 0;
+  -webkit-box-shadow: 0 0 0 5px #ffb81c;
+  -moz-box-shadow: 0 0 0 5px #ffb81c;
+  box-shadow: 0 0 0 5px #ffb81c;
+}
+
+.button:hover, .button:focus {
+  background-color: #00662f;
+}
+
+.button::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+.button:link, .button:hover, .button:focus, .button:visited {
+  color: #fff;
+}
+
+.button-secondary {
+  -webkit-font-smoothing: antialiased;
+  appearance: none;
+  font-family: inherit;
+  font-weight: 400;
+  font-size: inherit;
+  line-height: 48px;
+  text-decoration: none;
+  text-align: center;
+  box-sizing: border-box;
+  display: inline-block;
+  width: 100%;
+  padding: 0 24px;
+  margin: 0 0 8px 0;
+  cursor: pointer;
+  background-color: #425563;
+  border: 0;
+  border-radius: 0;
+  box-shadow: 0 2px 0 #232e35;
+  outline: 1px solid transparent;
+  outline-offset: -1px;
+  color: #fff;
+}
+
+@media (min-width: 500px) {
+  .button-secondary {
+    width: auto;
+    margin: 0 8px 0 0;
+  }
+}
+
+.button-secondary:link, .button-secondary:visited {
+  background-color: #425563;
+}
+
+.button-secondary:focus {
+  outline: 0;
+  -webkit-box-shadow: 0 0 0 5px #ffb81c;
+  -moz-box-shadow: 0 0 0 5px #ffb81c;
+  box-shadow: 0 0 0 5px #ffb81c;
+}
+
+.button-secondary:hover, .button-secondary:focus {
+  background-color: #384854;
+}
+
+.button-secondary::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+.button-secondary:link, .button-secondary:hover, .button-secondary:focus, .button-secondary:visited {
+  color: #fff;
+}
+
+.button-tertiary {
+  -webkit-font-smoothing: antialiased;
+  appearance: none;
+  font-family: inherit;
+  font-weight: 400;
+  font-size: inherit;
+  line-height: 48px;
+  text-decoration: none;
+  text-align: center;
+  box-sizing: border-box;
+  display: inline-block;
+  width: 100%;
+  padding: 0 24px;
+  margin: 0 0 8px 0;
+  cursor: pointer;
+  background-color: #f0f4f5;
+  border: 0;
+  border-radius: 0;
+  box-shadow: 0 2px 0 #c2d2d6;
+  outline: 1px solid transparent;
+  outline-offset: -1px;
+  color: #231f20;
+}
+
+@media (min-width: 500px) {
+  .button-tertiary {
+    width: auto;
+    margin: 0 8px 0 0;
+  }
+}
+
+.button-tertiary:link, .button-tertiary:visited {
+  background-color: #f0f4f5;
+}
+
+.button-tertiary:focus {
+  outline: 0;
+  -webkit-box-shadow: 0 0 0 5px #ffb81c;
+  -moz-box-shadow: 0 0 0 5px #ffb81c;
+  box-shadow: 0 0 0 5px #ffb81c;
+}
+
+.button-tertiary:hover, .button-tertiary:focus {
+  background-color: #e1e9eb;
+}
+
+.button-tertiary::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+.button-tertiary:link, .button-tertiary:hover, .button-tertiary:focus, .button-tertiary:visited {
+  color: #231f20;
+}
+
+.button-back {
   color: #425563;
   font-weight: 400;
   font-size: 16px;
   text-decoration: underline;
-  box-shadow: none;
-  width: auto;
+  display: inline-block;
+  padding: 0 12px 0 0;
 }
 
-.button.-back::before {
+.button-back:link, .button-back:visited, .button-back:active {
+  color: #425563;
+}
+
+.button-back:hover {
+  color: #231f20;
+}
+
+.button-back:focus {
+  outline: 3px solid #ffb81c;
+}
+
+.button-back::before {
   content: "";
   display: inline-block;
-  margin-right: 4px;
+  margin-right: 8px;
   width: 0;
   height: 0;
   border-top: 5px solid transparent;
   border-bottom: 5px solid transparent;
   border-right: 5px solid #425563;
-}
-
-.button.-secondary {
-  background-color: #e6eff8;
-  box-shadow: 0 2px 0 #80afdc;
-  color: #231f20;
-  font-weight: 400;
 }
 
 .button.-bordered {
@@ -1389,9 +1510,64 @@ label .form-hint {
 }
 
 .search .button {
+  -webkit-font-smoothing: antialiased;
+  appearance: none;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: inherit;
+  line-height: 48px;
+  text-decoration: none;
+  text-align: center;
+  box-sizing: border-box;
+  display: inline-block;
+  width: 100%;
+  padding: 0 24px;
+  margin: 0 0 8px 0;
+  cursor: pointer;
   background-color: #005eb8;
+  border: 0;
+  border-radius: 0;
+  box-shadow: 0 2px 0 #00376c;
+  outline: 1px solid transparent;
+  outline-offset: -1px;
+  color: #fff;
   box-shadow: none;
   border: 2px solid #005eb8;
+}
+
+@media (min-width: 500px) {
+  .search .button {
+    width: auto;
+    margin: 0 8px 0 0;
+  }
+}
+
+.search .button:link, .search .button:visited {
+  background-color: #005eb8;
+}
+
+.search .button:focus {
+  outline: 0;
+  -webkit-box-shadow: 0 0 0 5px #ffb81c;
+  -moz-box-shadow: 0 0 0 5px #ffb81c;
+  box-shadow: 0 0 0 5px #ffb81c;
+}
+
+.search .button:hover, .search .button:focus {
+  background-color: #00519f;
+}
+
+.search .button::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+.search .button:link, .search .button:hover, .search .button:focus, .search .button:visited {
+  color: #fff;
+}
+
+.search .button:hover, .search .button:focus {
+  border-color: #00519f;
 }
 
 @media (min-width: 500px) {
