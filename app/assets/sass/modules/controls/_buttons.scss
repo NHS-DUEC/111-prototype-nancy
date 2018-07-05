@@ -1,82 +1,52 @@
-// Fix unwanted button padding in Firefox
-.button::-moz-focus-inner {
-  border: 0;
-  padding: 0;
+.button {
+  @include button($green, $boldweight);
 }
 
-.button {
-  box-sizing: border-box;
-  display: inline-block;
-  font-family: inherit;
-  font-weight: $boldweight;
-  font-size: inherit;
-  line-height: $leading*6;
-  width: 100%;
-  padding: 0 $leading*3;
-  margin: 0 0 $leading 0;
-  text-align: center;
-  color: $white;
-  background-color: $green;
-  cursor: pointer;
-  border: 0;
-  box-shadow: 0 2px 0 darken($green, 15%);
-  -webkit-appearance: none;
-  border-radius: 0;
+.button-secondary {
+  @include button($grey-1, $bodyweight);
+}
 
+.button-tertiary {
+  @include button($grey-5, $bodyweight);
+}
+
+.button-back {
+  color: $grey-1;
+  font-weight: $bodyweight;
+  font-size: $smallprint;
+  text-decoration: underline;
+
+  display: inline-block;
+  padding: 0 $baseline-grid-unit*3 0 0;
 
   &:link,
-  &:hover,
-  &:focus,
-  &:visited {
-    text-decoration: none;
-    color: $white;
-    background-color: $dark-green;
+  &:visited,
+  &:active {
+    color: $grey-1;
+  }
+
+  &:hover {
+    color: $text-colour;
   }
 
   &:focus {
-    outline: 0;
-    -webkit-box-shadow: 0 0 0 5px $focus-colour;
-    -moz-box-shadow: 0 0 0 5px $focus-colour;
-    box-shadow: 0 0 0 5px $focus-colour;
+    outline: 3px solid $focus-colour;
   }
 
-  @include media(mid) {
-    width: auto;
-    margin: 0 $leading 0 0;
-  }
-
-  &.-back {
-    background-color: transparent;
-    border: transparent;
-    border-left: 0;
-    padding-left: 0;
-    color: $grey-1;
-    font-weight: $bodyweight;
-    font-size: $smallprint;
-    text-decoration: underline;
-    box-shadow: none;
-    width: auto;
-
-    &::before {
-      content: "";
-      display: inline-block;
-      margin-right: $leading/2;
-      width: 0;
-      height: 0;
-      border-top: 5px solid transparent;
-      border-bottom: 5px solid transparent;
-      border-right: 5px solid $grey-1;
-    }
-  }
-
-  &.-secondary {
-    background-color: tint($nhs-blue, 90);
-    box-shadow: 0 2px 0 tint($nhs-blue, 50);
-    color: $black;
-    font-weight: $bodyweight;
+  &::before {
+    content: "";
+    display: inline-block;
+    margin-right: $leading;
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-right: 5px solid $grey-1;
   }
 }
 
+
+////////// LEGACY? //////////
 .button {
 
   &.-bordered {
