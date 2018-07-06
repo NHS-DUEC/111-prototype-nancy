@@ -1,0 +1,64 @@
+{
+  "questionset" : "breathing-problems",
+  "disposition" : "/999-disposition/disposition-callback-first-001",
+  "pathways" : [
+    "PW556",
+    "PW557",
+    "PW559",
+    "PW560"
+  ],
+  "questions" : [
+    {
+      "question" : "Have you got rapid swelling of your lips, face, tongue, mouth or throat?",
+      "answers" : [
+        "Yes",
+        "I'm not sure",
+        "No"
+      ]
+    },
+    {
+      "question" : "Do you have any pain in your chest or upper back right now?",
+      "help" : "You may also have pain in in your arms, shoulders, neck or jaw.",
+      "answers" : [
+        "Yes",
+        "I'm not sure",
+        "No"
+      ]
+    },
+    {
+      "question" : "Has a doctor ever diagnosed you with a heart attack?",
+      "answers" : [
+        "Yes",
+        "I'm not sure",
+        "No"
+      ]
+    },
+    {
+      "question" : "Has a doctor told you that you have either of the following?",
+      "answers" : [
+        "Aortic aneurysm",
+        "Marfan's syndrome",
+        "I'm not sure",
+        "No"
+      ]
+    },
+    {
+      "question" : "How does the skin on your chest, back or tummy feel?",
+      "answers" : [
+        "Normal, warm or hot",
+        "I'm not sure",
+        "Cool, cold, damp or sweaty",
+        "It's not safe to check"
+      ]
+    },
+    {
+      "question" : "Have you got a severe ripping or tearing pain in your chest or back that came on suddenly?",
+      "help" : "This pain is intense and comes on out of the blue, it's not pain caused by coughing or a chest infection. It's not an aching, stinging or crushing pain.",
+      "answers" : [
+        "Yes - it's a sudden ripping or tearing pain",
+        "I have a different type of pain",
+        "No"
+      ]
+    }
+  ]
+}
