@@ -1,0 +1,66 @@
+{
+  "questionset" : "headache-or-migraine",
+  "disposition" : "/999-disposition/disposition-callback-first-001",
+  "pathways" : [
+    "PW752",
+    "PW753",
+    "PW755",
+    "PW756"
+  ],
+  "questions" : [
+    {
+      "question" : "Have you hurt your head in the last 7 days?",
+      "answers" : [
+        "Yes",
+        "I'm not sure",
+        "No"
+      ]
+    },
+    {
+      "question" : "Have you fainted or blacked out in the last 24 hours?",
+      "answers" : [
+        "Yes",
+        "I'm not sure or it was more than 24 hours ago",
+        "No"
+      ]
+    },
+    {
+      "question" : "Do you feel so ill that you can't think of anything else?",
+      "help" : "For example, you feel worse than you've ever felt in your life and you have a feeling that something is very wrong.",
+      "answers" : [
+        "Yes",
+        "I'm not sure I feel that ill",
+        "No"
+      ]
+    },
+    {
+      "question" : "Do you have a new rash all over your body that won't turn white or won't go away when you press a glass on it?",
+      "help" : "This rash can be a sign of meningitis. The rash may be red-blue, purple, brown, pin prick size or larger blotches or blood blisters. On darker skin, check the paler areas like palms or soles.",
+      "answers" : [
+        "Yes - the rash doesn't go away under the glass",
+        "I'm not sure I feel that ill",
+        "No"
+      ]
+    },
+    {
+      "question" : "Have you had any new symptoms of a stroke, even if they've gone away?",
+      "help" : "This rash can be a sign of meningitis. The rash may be red-blue, purple, brown, pin prick size or larger blotches or blood blisters. On darker skin, check the paler areas like palms or soles.",
+      "answers" : [
+        "Your face has suddenly fallen on one side",
+        "You suddenly can't lift your arms up or keep them up",
+        "You have problems speaking, understanding or are slurring your words",
+        "I'm not sure",
+        "No"
+      ]
+    },
+    {
+      "question" : "Have you got an agonising headache, right now, like you were suddenly hit with something hard?",
+      "help" : "This is a headache that came on in seconds like a thunder clap, if it's any other type of headache answer no.",
+      "answers" : [
+        "Yes",
+        "I'm not sure",
+        "No"
+      ]
+    }
+  ]
+}

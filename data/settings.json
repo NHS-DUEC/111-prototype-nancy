@@ -32,6 +32,6 @@ PUT pathways_full
 }
 
 // bulk import commands
-curl -H 'Content-Type: application/x-ndjson' -XPOST 'localhost:9200/pathways_full/_doc/_bulk?pretty' --data-binary @searchdata-full.json
+curl -H 'Content-Type: application/x-ndjson' -XPOST 'localhost:9200/pathways_inc_alias/_doc/_bulk?pretty' --data-binary @searchdata-inc-alias.json
 
-curl -H 'Content-Type: application/x-ndjson' -XPOST 'BONSAI_URL/pathways_full/doc/_bulk?pretty' --data-binary @searchdata-full.json
+curl -H 'Content-Type: application/x-ndjson' -XPOST 'BONSAI_URL/pathways_inc_alias/doc/_bulk?pretty' --data-binary @searchdata-inc-alias.json

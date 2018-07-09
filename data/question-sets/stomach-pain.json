@@ -1,0 +1,59 @@
+{
+  "questionset" : "stomach-pain",
+  "disposition" : "/999-disposition/disposition-callback-first-001",
+  "pathways" : [
+    "PW516",
+    "PW517",
+    "PW519",
+    "PW520"
+  ],
+  "questions" : [
+    {
+      "question" : "Do you have any of the following with the tummy pain?",
+      "answers" : [
+        "You're being sick",
+        "You've got diarrhoea",
+        "You've got diarrhoea and you're being sick",
+        "You're bleeding from your back passage or have blood in your poo",
+        "You've got groin pain or swelling",
+        "I'm not sure",
+        "No"
+      ]
+    },
+    {
+      "question" : "How bad is the pain?",
+      "answers" : [
+        "So bad that you can't think or do anything else",
+        "It's bad enough to affect daily life",
+        "You feel it, but carry on as usual"
+      ]
+    },
+    {
+      "question" : "Have you got a severe ripping or tearing pain in your chest or back that came on suddenly?",
+      "help" : "This pain is intense and comes on out of the blue, it's not pain caused by coughing or a chest infection. It's not an aching, stinging or crushing pain.",
+      "answers" : [
+        "Yes - it's a sudden ripping or tearing pain",
+        "I have a different type of pain",
+        "No"
+      ]
+    },
+    {
+      "question" : "Has a doctor told you that you have either of the following?",
+      "answers" : [
+        "Aortic aneurysm",
+        "Marfan's syndrome",
+        "I'm not sure",
+        "No"
+      ]
+    },
+    {
+      "question" : "Do you feel so ill that you can't think of anything else?",
+      "help" : "For example, you feel worse than you've ever felt in your life and you have a feeling that something is very wrong.",
+      "answers" : [
+        "Yes",
+        "I'm not sure I feel that ill",
+        "No"
+      ]
+    }
+  ]
+}
