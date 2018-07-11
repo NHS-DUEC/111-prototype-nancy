@@ -7,9 +7,9 @@
 <div class="content-block measure">
 
   {% if session.callBooking.scenario == 'callback-first' %}
-    {% set back = "/999-disposition/disposition-callback-first-001" %}
+    {% set back = "/forced-callback/disposition-callback-first-001" %}
   {% else %}
-    {% set back = "/999-disposition/options" %}
+    {% set back = "/forced-callback/options" %}
   {% endif %}
   <a href="{{ back }}" class="button-back">Back</a>
 

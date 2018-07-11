@@ -1,6 +1,6 @@
 {
   "questionset" : "stomach-pain",
-  "disposition" : "/999-disposition/disposition-callback-first-001",
+  "disposition" : "/forced-callback/disposition-callback-first-001",
   "pathways" : [
     "PW516",
     "PW517",

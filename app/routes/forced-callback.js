@@ -18,7 +18,7 @@ router.get('/disposition-callback-first-001', function(req, res) {
     req.session.callBooking.postcode = '';
     req.session.callBooking.tel = '';
   }
-  res.render('999-disposition/disposition-callback-first-001.html');
+  res.render('forced-callback/disposition-callback-first-001.html');
 });
 
 router.post('/disposition-callback-first-001', function(req, res) {
@@ -45,7 +45,7 @@ router.get('/disposition', function(req, res) {
     req.session.callBooking.postcode = '';
     req.session.callBooking.tel = '';
   }
-  res.render('999-disposition/disposition.html');
+  res.render('forced-callback/disposition.html');
 });
 
 router.post('/book-call-demographics', function(req, res) {
@@ -59,7 +59,7 @@ router.post('/book-call-demographics', function(req, res) {
 
 router.post('/book-call-number', function(req, res) {
   if (req.body['tel'] === '') {
-    res.render('999-disposition/book-call-number', {
+    res.render('forced-callback/book-call-number', {
       error: {
         general: '<a href="#tel">We need a valid number to call</a>',
         tel: 'Enter a valid number'
@@ -74,5 +74,5 @@ router.post('/book-call-number', function(req, res) {
 router.get('/call-booked', function(req, res) {
   // zero out the namespaced session obj
   req.session.callBooking = {};
-  res.render('999-disposition/call-booked');
+  res.render('forced-callback/call-booked');
 });
