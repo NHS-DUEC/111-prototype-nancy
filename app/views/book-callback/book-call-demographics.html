@@ -99,12 +99,7 @@
 
   <div class="form-group -controls">
     <button type="submit" class="button">Next</button>
-    {% if session.callBooking.scenario == 'callback-first' %}
-      {% set back = "/forced-callback/disposition-callback-first-002" %}
-    {% else %}
-      {% set back = "/forced-callback/options" %}
-    {% endif %}
-    <a href="{{ back }}" class="button-back">Back</a>
+    <a href="./book-call-number" class="button-back">Back</a>
   </div>
 </form>
 

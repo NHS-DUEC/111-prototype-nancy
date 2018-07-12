@@ -42,8 +42,8 @@ router.post('/linear', function(req, res) {
 
 router.post('/offer-callback', function(req, res) {
   if (req.body['bookCall'] === 'yes') {
-    res.send('booking process');
+    res.redirect('/book-callback/?backUrl=%2Fcallback-offered%2Foffer-callback&forwardUrl=%2Fcallback-offered%2Fcall-booked');
   } else {
-    res.send('display service options');
+    res.redirect('./linear-service-options');
   }
 });
