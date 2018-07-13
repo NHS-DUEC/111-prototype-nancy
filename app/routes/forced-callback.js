@@ -23,14 +23,10 @@ router.post('/disposition-callback-first-001', function(req, res) {
 });
 
 router.get('/call-booked', function(req, res) {
-  var forwardUrl = req.session.callBooking.forwardUrl;
-  var tel = req.session.callBooking.tel;
-  // zero out the namespaced session obj
-  req.session.callBooking = {};
   // what's the time?
   var now = moment().tz('Europe/London').format('HH:mm');
   res.render('forced-callback/call-booked.html', {
     now : now,
-    tel : tel
+    tel : req.session.callBooking.tel
   });
 });
