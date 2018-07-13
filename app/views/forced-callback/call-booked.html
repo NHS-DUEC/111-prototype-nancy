@@ -7,25 +7,31 @@
 {% block content %}
 <div class="content-block measure">
 
-  <h1>Your call was booked at {{ now }}</h1>
+  <h1>You’ll get a call within 15 minutes</h1>
 
-  <p>A nurse will call you on {{ tel }} within 15 minutes.</p>
-
-  <!--<p>
-    <a href="#">Send a confirmation to my phone</a>
-  </p>-->
-
-  <div class="callout callout--info-alert">
-    <p>If you don’t get a call within 15 minutes or your symptoms get worse call 999.</p>
-  </div>
-
-  <p class="form-hint">
-    If you call 111 before speaking to the nurse, you’ll have to answer the
-    questions again.
+  <p>
+    It was booked at {{ now }}. A nurse will call {{ session.callBooking.tel }}.
   </p>
 
-</div>
+  <details>
+    <summary>What happens if I miss the call?</summary>
+    <p>
+      The nurse will try to contact you 3 times. If they can’t speak to you they
+      may send emergency services to make sure you’re ok.
+    </p>
+  </details>
 
+  <details>
+    <summary>What if my symptoms get worse?</summary>
+    <p>If your symptoms get worse or you don’t get a call within 15 minutes call 999.</p>
+  </details>
+
+  <details>
+    <summary>Can I cancel the call?</summary>
+    <p>If you need to cancel ring 111 and tell them you booked a call online.</p>
+  </details>
+
+</div>
 {% endblock %}
 
 {% block footer %}
