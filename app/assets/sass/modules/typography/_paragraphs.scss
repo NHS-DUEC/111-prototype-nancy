@@ -16,7 +16,7 @@ body.nhs-redesign {
   p {
     margin-bottom: $baseline-grid-unit*4;
     @include media(mid) {
-      margin-bottom: $baseline-grid-unit*8;
+      margin-bottom: $baseline-grid-unit*6;
     }
   }
 

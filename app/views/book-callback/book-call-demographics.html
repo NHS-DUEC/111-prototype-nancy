@@ -1,7 +1,8 @@
 {% extends '_layouts/layout.html' %}
 
-{% block page_title %}
-{% endblock %}
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhs-redesign{% endblock %}
 
 {% block content %}
 
@@ -14,7 +15,7 @@
     </p>
   </div>
 
-  <div class="form-group">
+  <div class="form-group" id="name-group">
     <label for="name"><b>Full name</b> (optional)</label>
     <input name="name" id="name" type="text" value="{{ session.callBooking.name }}" autocomplete="off">
   </div>
@@ -37,7 +38,7 @@
 
   <div class="content-seperator content-seperator--equalvertspacing--large"></div>
 
-  <fieldset>
+  <fieldset id="dob-group">
     <legend><b>Date of birth</b> (optional)</legend>
     <div class="form-group -date">
       <div>
@@ -57,7 +58,7 @@
 
   <div class="content-seperator content-seperator--equalvertspacing--large"></div>
 
-  <div class="form-group">
+  <div class="form-group" id="postcode-group">
     <label for="postcode"><b>Home postcode</b> (optional)</label>
     <input type="text" id="postcode" name="postcode" class="postcode" value="{{ session.callBooking.postcode }}" autocomplete="off">
   </div>

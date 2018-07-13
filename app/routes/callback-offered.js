@@ -1,4 +1,5 @@
 var express = require('express')
+var moment = require('moment-timezone')
 var router = express.Router()
 
 module.exports = router
@@ -44,6 +45,21 @@ router.post('/offer-callback', function(req, res) {
   if (req.body['bookCall'] === 'yes') {
     res.redirect('/book-callback/?backUrl=%2Fcallback-offered%2Foffer-callback&forwardUrl=%2Fcallback-offered%2Fcall-booked');
   } else {
-    res.redirect('./linear-service-options');
+    res.redirect('./service-options');
   }
+});
+
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+router.get('/call-booked', function(req, res) {
+  var forwardUrl = req.session.callBooking.forwardUrl;
+  var tel = req.session.callBooking.tel;
+  // zero out the namespaced session obj
+  req.session.callBooking = {};
+  // what's the time?
+  var now = moment().tz('Europe/London').format('HH:mm');
+  res.render('callback-offered/call-booked.html', {
+    now : now,
+    tel : tel
+  });
 });

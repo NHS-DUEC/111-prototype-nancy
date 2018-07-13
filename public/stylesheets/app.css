@@ -249,7 +249,7 @@ body.nhs-redesign p, pre.nhs-redesign.user-input p {
 
 @media (min-width: 500px) {
   body.nhs-redesign p, pre.nhs-redesign.user-input p {
-    margin-bottom: 32px;
+    margin-bottom: 24px;
   }
 }
 

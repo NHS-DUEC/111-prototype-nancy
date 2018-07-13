@@ -1,7 +1,8 @@
 {% extends '_layouts/layout.html' %}
 
-{% block page_title %}
-{% endblock %}
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhs-redesign{% endblock %}
 
 {% block content %}
 <div class="content-block measure clearfix">
@@ -18,7 +19,7 @@
         {% endif %}
       </td>
       <td class="control">
-        <a href="book-call-demographics" class="button-tertiary">Change</a>
+        <a href="book-call-demographics#name-group" class="button-tertiary">Change</a>
       </td>
     </tr>
     <tr>
@@ -33,7 +34,7 @@
         {% endif %}
       </td>
       <td class="control">
-        <a href="book-call-demographics" class="button-tertiary">Change</a>
+        <a href="book-call-demographics#dob-group" class="button-tertiary">Change</a>
       </td>
     </tr>
     <tr>
@@ -46,7 +47,7 @@
         {% endif %}
       </td>
       <td class="control">
-        <a href="book-call-demographics" class="button-tertiary">Change</a>
+        <a href="book-call-demographics#postcode-group" class="button-tertiary">Change</a>
       </td>
     </tr>
     <tr>

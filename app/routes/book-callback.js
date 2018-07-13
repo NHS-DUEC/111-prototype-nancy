@@ -41,9 +41,3 @@ router.post('/book-call-demographics', function(req, res) {
   req.session.callBooking.postcode = req.body['postcode'];
   res.redirect('book-call-check-your-answers');
 });
-
-router.get('/call-booked', function(req, res) {
-  // zero out the namespaced session obj
-  req.session.callBooking = {};
-  res.render('book-callback/call-booked.html');
-});
