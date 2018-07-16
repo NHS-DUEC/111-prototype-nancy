@@ -7,10 +7,12 @@
 
 <form action="" class="form content-block measure" method="post">
 
-  <h1 class="h2">Tell us about you, or the person you’re asking about</h1>
+  <h1>Your details</h1>
 
-  <div class="callout callout--info shunt-2">
-    <p>Call 111 if you're asking about someone under 5</p>
+  <div class="callout callout--warning">
+    <p>
+      If you’re doing this on behalf of someone else, enter their details here.
+    </p>
   </div>
 
   <fieldset>
@@ -44,7 +46,7 @@
     </div>
   </details>
 
-  <fieldset id="dob-group">
+  <fieldset id="dob-group" class="shunt-2">
     <legend><b>Date of birth</b></legend>
     <div class="form-group -date">
       <div>
@@ -62,10 +64,12 @@
     </div>
   </fieldset>
 
+  <!--
   <div class="form-group">
     <label for="age"><b>Age in years</b></label>
     <input class="-tiny" id="age" name="age" type="tel" value="" autocomplete="off">
   </div>
+  -->
 
   <div class="form-controls shunt-2">
     <button class="button" type="submit">Next</button>

@@ -11,7 +11,6 @@ router.get('/', function(req, res) {
   // zero out a namespaced session obj
   req.session.callBooking = {};
   req.session.callBooking.name = '';
-  req.session.callBooking.dob = {};
   req.session.callBooking.postcode = '';
   req.session.callBooking.tel = '';
   req.session.callBooking.backUrl = req.query.backUrl;
@@ -35,9 +34,11 @@ router.post('/book-call-number', function(req, res) {
 
 router.post('/book-call-demographics', function(req, res) {
   req.session.callBooking.name = req.body['name'];
-  req.session.callBooking.dob.day = req.body['dob-day'];
-  req.session.callBooking.dob.month = req.body['dob-month'];
-  req.session.callBooking.dob.year = req.body['dob-year'];
   req.session.callBooking.postcode = req.body['postcode'];
+  if (req.body['dob-day']) {
+    req.session.demographics.dob.day = req.body['dob-day'];
+    req.session.demographics.dob.month = req.body['dob-month'];
+    req.session.demographics.dob.year = req.body['dob-year'];
+  }
   res.redirect('book-call-check-your-answers');
 });
