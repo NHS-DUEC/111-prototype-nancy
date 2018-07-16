@@ -1,0 +1,55 @@
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}
+{% endblock %}
+
+{% block body_css_classes %}nhs-redesign{% endblock %}
+
+{% block content %}
+
+<div class="content-block measure">
+  <h1>Book a nurse call</h1>
+  <p>
+    The 111 nurse will know what you’ve answered already and will tell you:
+  </p>
+  <ul>
+    <li>if you need help now and where to get it</li>
+    <li>where might be quicker than waiting in A&amp;E</li>
+    <li>if it’s safe to wait until you can get a GP appointment</li>
+  </ul>
+  <p>
+    You’ll get a call within 15 minutes.
+  </p>
+  <p>
+    If you don’t want to book a call we’ll show you places you can go instead.
+    This might mean you have to wait longer to be seen.
+  </p>
+
+  <form class="form" method="post">
+    <legend><b>Do you want to book a call?</b></legend>
+    <fieldset class="shunt">
+      <div class="form-group">
+        <label for="yes" class="block-label">
+          Yes
+          <input type="radio" id="yes" name="bookCall" value="yes">
+        </label>
+      </div>
+
+      <div class="form-group">
+        <label for="no" class="block-label">
+          No
+          <input type="radio" id="no" name="bookCall" value="no">
+        </label>
+      </div>
+    </fieldset>
+
+    <div class="form-group -controls">
+      <button type="submit" class="button">Next</button>
+    </div>
+  </form>
+
+</div>
+
+
+
+{% endblock %}

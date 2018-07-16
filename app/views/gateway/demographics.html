@@ -7,10 +7,12 @@
 
 <form action="" class="form content-block measure" method="post">
 
-  <h1 class="h2">Tell us about you, or the person you’re asking about</h1>
+  <h1>Your details</h1>
 
-  <div class="callout callout--info shunt-2">
-    <p>Call 111 if you're asking about someone under 5</p>
+  <div class="callout callout--warning">
+    <p>
+      If you’re doing this on behalf of someone else, enter their details here.
+    </p>
   </div>
 
   <fieldset>
@@ -44,10 +46,30 @@
     </div>
   </details>
 
+  <fieldset id="dob-group" class="shunt-2">
+    <legend><b>Date of birth</b></legend>
+    <div class="form-group -date">
+      <div>
+        <label for="dob-day">Day</label>
+        <input type="number" id="dob-day" name="dob-day" value="{{ session.callBooking.dob.day }}" class="day" maxlength="2" autocomplete="off">
+      </div>
+      <div>
+        <label for="dob-month">Month</label>
+        <input type="number" id="dob-month" name="dob-month" value="{{ session.callBooking.dob.month }}" class="month" maxlength="2" autocomplete="off">
+      </div>
+      <div>
+        <label for="dob-year">Year</label>
+        <input type="number" id="dob-year" name="dob-year" value="{{ session.callBooking.dob.year }}" class="year" maxlength="4" autocomplete="off">
+      </div>
+    </div>
+  </fieldset>
+
+  <!--
   <div class="form-group">
     <label for="age"><b>Age in years</b></label>
     <input class="-tiny" id="age" name="age" type="tel" value="" autocomplete="off">
   </div>
+  -->
 
   <div class="form-controls shunt-2">
     <button class="button" type="submit">Next</button>

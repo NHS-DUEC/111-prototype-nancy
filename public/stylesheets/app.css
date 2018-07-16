@@ -167,7 +167,7 @@ body.nhs-redesign, pre.nhs-redesign.user-input {
   .nhs-redesign .h1 {
     font-size: 48px;
     line-height: 1.166;
-    margin: 16px 0 56px 0;
+    margin: 16px 0 40px 0;
   }
 }
 
@@ -249,7 +249,7 @@ body.nhs-redesign p, pre.nhs-redesign.user-input p {
 
 @media (min-width: 500px) {
   body.nhs-redesign p, pre.nhs-redesign.user-input p {
-    margin-bottom: 32px;
+    margin-bottom: 24px;
   }
 }
 
@@ -1375,7 +1375,7 @@ label {
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
-  color: #768692;
+  color: #425563;
 }
 
 label .form-hint {

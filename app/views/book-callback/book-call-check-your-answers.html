@@ -1,10 +1,23 @@
 {% extends '_layouts/layout.html' %}
 
-{% block page_title %}
-{% endblock %}
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhs-redesign{% endblock %}
 
 {% block content %}
 <div class="content-block measure clearfix">
+
+  <h1>Is this the right number?</h1>
+
+  <div class="callout callout--attention">
+    <p class="lede">{{ session.callBooking.tel }}</p>
+  </div>
+
+  <p>
+    <a href="#">No, I need to change this number</a>
+  </p>
+
+  <!--
   <h1>Check your details</h1>
 
   <table class="shunt-3">
@@ -18,22 +31,22 @@
         {% endif %}
       </td>
       <td class="control">
-        <a href="book-call-demographics" class="button-tertiary">Change</a>
+        <a href="#" class="button-tertiary">Change</a>
       </td>
     </tr>
     <tr>
       <th scope="row">Date of birth</th>
       <td>
-        {% if session.callBooking.dob.day === '' %}
+        {% if session.demographics.dob.supplied === 'false' %}
           Date of birth not given
         {% else %}
-          {{ session.callBooking.dob.day }} /
-          {{ session.callBooking.dob.month }} /
-          {{ session.callBooking.dob.year }}
+          {{ session.demographics.dob.day }} /
+          {{ session.demographics.dob.month }} /
+          {{ session.demographics.dob.year }}
         {% endif %}
       </td>
       <td class="control">
-        <a href="book-call-demographics" class="button-tertiary">Change</a>
+        <a href="#" class="button-tertiary">Change</a>
       </td>
     </tr>
     <tr>
@@ -42,11 +55,11 @@
         {% if session.callBooking.postcode === '' %}
           Postcode not given
         {% else %}
-          {{ session.callBooking.postcode }}
+          {{ session.callBooking.postcode | upper }}
         {% endif %}
       </td>
       <td class="control">
-        <a href="book-call-demographics" class="button-tertiary">Change</a>
+        <a href="#" class="button-tertiary">Change</a>
       </td>
     </tr>
     <tr>
@@ -55,13 +68,14 @@
         {{ session.callBooking.tel }}
       </td>
       <td class="control">
-        <a href="book-call-number" class="button-tertiary">Change</a>
+        <a href="#" class="button-tertiary">Change</a>
       </td>
     </tr>
   </table>
+  -->
 
   <div class="form-group -controls">
-    <a href="call-booked" class="button">Book call</a>
+    <a href="{{ session.callBooking.forwardUrl }}" class="button">Yes, book call</a>
   </div>
 
 </div>

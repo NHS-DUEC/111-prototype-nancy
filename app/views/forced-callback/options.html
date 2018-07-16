@@ -1,7 +1,8 @@
 {% extends '_layouts/layout.html' %}
 
-{% block page_title %}
-{% endblock %}
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhs-redesign{% endblock %}
 
 {% block content %}
 
@@ -30,7 +31,7 @@
     for you. This will be quicker than going to A&amp;E.
   </p>
   <p>
-    <a href="book-call-demographics">Book a call</a>
+    <a href="/book-callback/?backUrl=%2Fforced-callback%2Foptions&forwardUrl=%2Fforced-callback%2Fcall-booked">Book a call</a>
   </p>
 </div>
 

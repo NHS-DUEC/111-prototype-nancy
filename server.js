@@ -16,7 +16,9 @@ var gateway = require('./app/routes/gateway');
 var findingPathways = require('./app/routes/finding-pathways');
 var weirdQuestions = require('./app/routes/weird-questions');
 var questions = require('./app/routes/questions');
-var emergencyDisposition = require('./app/routes/999-disposition');
+var forcedCallback = require('./app/routes/forced-callback');
+var callbackOffered = require('./app/routes/callback-offered');
+var bookCallback = require('./app/routes/book-callback');
 var app = express()
 
 // Grab environment variables specified in Procfile or as Heroku config vars
@@ -96,7 +98,9 @@ app.use('/gateway', gateway);
 app.use('/finding-pathways', findingPathways);
 app.use('/weird-questions', weirdQuestions);
 app.use('/questions', questions);
-app.use('/999-disposition', emergencyDisposition);
+app.use('/forced-callback', forcedCallback);
+app.use('/callback-offered', callbackOffered);
+app.use('/book-callback', bookCallback);
 
 // auto render any view that exists
 app.get(/^\/([^.]+)$/, function (req, res) {

@@ -85,6 +85,10 @@ var setDefaults = function(req) {
     req.session.demographics.sex = 'Male';
     req.session.demographics.age = '40';
     req.session.demographics.ageCategory = 'Adult';
+    req.session.demographics.dob = {};
+    req.session.demographics.dob.day = '23';
+    req.session.demographics.dob.month = '5';
+    req.session.demographics.dob.year = '1977';
   }
 }
 

@@ -1,0 +1,45 @@
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhs-redesign{% endblock %}
+
+{% block content %}
+<div class="content-block measure">
+
+  <h1>You’ll get a call within 15 minutes</h1>
+
+  <p>
+    It was booked at {{ now }}. A nurse will call {{ session.callBooking.tel }}.
+  </p>
+
+  <details>
+    <summary>What happens if I miss the call?</summary>
+    <div class="callout">
+      <p>
+        The nurse will try to contact you 3 times. If they can’t speak to you they
+        may send emergency services to make sure you’re ok.
+      </p>
+    </div>
+  </details>
+
+  <details>
+    <summary>What if my symptoms get worse?</summary>
+    <div class="callout">
+      <p>If your symptoms get worse or you don’t get a call within 15 minutes call 999.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>Can I cancel the call?</summary>
+    <div class="callout">
+      <p>If you need to cancel ring 111 and tell them you booked a call online.</p>
+    </div>
+  </details>
+
+</div>
+{% endblock %}
+
+{% block footer %}
+{% include '_includes/survey-banner.html' %}
+{% endblock %}
