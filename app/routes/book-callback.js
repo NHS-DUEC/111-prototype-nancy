@@ -7,7 +7,7 @@ module.exports = router
 // Book callback - July 2018 +++++++++++++++++++++++++++++++++++++++++++++++++++
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-/*router.get('/', function(req, res) {
+router.get('/', function(req, res) {
   // zero out a namespaced session obj
   req.session.callBooking = {};
   req.session.callBooking.name = '';
@@ -16,7 +16,7 @@ module.exports = router
   req.session.callBooking.backUrl = req.query.backUrl;
   req.session.callBooking.forwardUrl = req.query.forwardUrl;
   res.redirect('book-call-number');
-});*/
+});
 
 router.post('/', function(req, res) {
   // zero out a namespaced session obj
@@ -29,6 +29,20 @@ router.post('/', function(req, res) {
   req.session.callBooking.renderTemplate = req.body['renderTemplate'];
   if (req.body['tel'] === '') {
     res.render(req.session.callBooking.renderTemplate, {
+      error: {
+        general: '<a href="#tel">We need a valid number to call</a>',
+        tel: 'Enter a valid number'
+      }
+    });
+  } else {
+    req.session.callBooking.tel = req.body['tel'];
+    res.redirect('book-call-demographics');
+  }
+});
+
+router.post('/book-call-number', function(req, res) {
+  if (req.body['tel'] === '') {
+    res.render('book-callback/book-call-number.html', {
       error: {
         general: '<a href="#tel">We need a valid number to call</a>',
         tel: 'Enter a valid number'
