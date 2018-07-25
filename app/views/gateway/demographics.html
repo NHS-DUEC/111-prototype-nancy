@@ -9,42 +9,11 @@
 
   <h1>Your details</h1>
 
-  <div class="callout callout--warning">
+  <div class="callout callout--info">
     <p>
       If you’re doing this on behalf of someone else, enter their details here.
     </p>
   </div>
-
-  <fieldset>
-    <legend><b>Sex</b></legend>
-    <div class="form-group">
-      <label for="female" class="block-label">
-        Female
-        <input type="radio" id="female" name="sex" value="Female">
-      </label>
-    </div>
-
-    <div class="form-group">
-      <label for="male" class="block-label">
-        Male
-        <input type="radio" id="male" name="sex" value="Male">
-      </label>
-    </div>
-  </fieldset>
-
-  <details>
-    <summary>Why aren’t there more options?</summary>
-    <div class="callout" id="details-content-0" aria-hidden="true">
-      <p>
-        Some clinical assessments can be different depending on your sex. Not
-        everyone sees themselves as female or male, so if neither option is
-        right for you call 111.
-      </p>
-      <p>
-        We want to improve the service in the future so it works for everyone.
-      </p>
-    </div>
-  </details>
 
   <fieldset id="dob-group" class="shunt-2">
     <legend><b>Date of birth</b></legend>
@@ -64,16 +33,58 @@
     </div>
   </fieldset>
 
-  <!--
-  <div class="form-group">
-    <label for="age"><b>Age in years</b></label>
-    <input class="-tiny" id="age" name="age" type="tel" value="" autocomplete="off">
+  <div class="collapse">
+    <a href="javascript: return false;" class="collapse-title">I don’t know a date of birth</a>
+    <div class="collapse-content">
+      <div class="form-group">
+        <p>
+          If you don’t know a date of birth then give age or best guess.
+        </p>
+        <label for="age"><b>Age</b></label>
+        <input class="-tiny" id="age" name="age" type="tel" value="" autocomplete="off">
+      </div>
+      <div class="content-seperator content-seperator--equalvertspacing--large"></div>
+    </div>
   </div>
-  -->
+
+  <fieldset class="shunt-2">
+    <legend><b>Sex</b></legend>
+    <div class="form-group">
+      <label for="female" class="block-label">
+        Female
+        <input type="radio" id="female" name="sex" value="Female">
+      </label>
+    </div>
+
+    <div class="form-group">
+      <label for="male" class="block-label">
+        Male
+        <input type="radio" id="male" name="sex" value="Male">
+      </label>
+    </div>
+
+    <details>
+      <summary>Why aren’t there more options?</summary>
+      <div>
+        <p>
+          Some clinical assessments can be different depending on your sex. Not
+          everyone sees themselves as female or male, so if neither option is
+          right for you call 111.
+        </p>
+        <p>
+          We want to improve the service in the future so it works for everyone.
+        </p>
+      </div>
+    </details>
+  </fieldset>
 
   <div class="form-controls shunt-2">
     <button class="button" type="submit">Next</button>
   </div>
 </form>
 
+{% endblock %}
+
+{% block body_after %}
+  {% include '_partials/_partial-collapse-script.html' %}
 {% endblock %}
