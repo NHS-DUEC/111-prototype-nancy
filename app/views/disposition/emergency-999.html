@@ -1,0 +1,30 @@
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhs-redesign{% endblock %}
+
+{% block content %}
+
+<div class="content-block measure">
+
+  <a href="javascript: return false;" class="button-back">Back</a>
+
+  <h1 class="error-hint">Phone 999 now for an ambulance</h1>
+
+  <div class="callout callout--alert shunt-2">
+    <h2>The 999 operator will ask you:</h2>
+    <ul>
+      <li>where you are &mdash; the area or postcode (or what’s nearby if you don’t know)</li>
+      <li>to confirm they can call you back on the number you’re using if they need to</li>
+      <li>what’s happened &mdash; tell them that 111 online told you to call</li>
+    </ul>
+    <p>You’ll be asked more questions about your symptoms to check if you do need an ambulance.</p>
+    <p>If you don’t need an ambulance you’ll be given advice on what to do next.</p>
+  </div>
+
+</div>
+
+{% endblock %}
+
+{% block footer %}{% endblock %}
