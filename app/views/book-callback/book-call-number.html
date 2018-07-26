@@ -15,18 +15,12 @@
   {% endif %}
 
   <h1>What number should we call?</h1>
-
-  <p>You can:</p>
-  <ul>
-    <li>enter a mobile or landline number</li>
-    <li>enter a textphone number</li>
-  </ul>
   <p>
     If you need a translator you can ask for one when you start the call.
   </p>
 
   <div class="form-group {% if error.tel %}-errors{% endif %}">
-    <label for="tel"><b>Number to call</b></label>
+    <label for="tel"><b>Enter a mobile, landline or textphone number</b></label>
     {% if error.tel %}
       <p class="error-hint">{{ error.tel }}</p>
     {% endif %}

@@ -8,25 +8,7 @@ module.exports = router
 // Offer a callback as a choice - July 2018 ++++++++++++++++++++++++++++++++++++
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-// Journey #1 - comparison
-router.get('/comparison', function(req, res) {
-  res.render('callback-offered/question-replayed.html', {
-    journey: 'comparison'
-  });
-});
-
-router.post('/comparison', function(req, res) {
-  if (req.body['revisitQuestion'] === 'yes') {
-    res.redirect('question');
-  } else {
-    res.redirect('choose-service');
-  }
-});
-
-
-// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-// Journey #2 - linear y/n
+// linear y/n
 router.get('/linear', function(req, res) {
   res.render('callback-offered/question-replayed.html', {
     journey: 'linear'

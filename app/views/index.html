@@ -9,26 +9,32 @@
   <h1>111 prototypes</h1>
 
   <p>
-    <a href="/gateway">Joined up journey to questions</a>
+    <a href="/gateway">Full journey to mandated revalidation</a><br>
+    <span class="form-hint">
+      (use ‘headache or migraine’, ‘stomach pain’, or ‘breathing problems’ pathways)
+    </span>
   </p>
 
   <div class="content-seperator content-seperator--equalvertspacing--large"></div>
 
   <h2 class="h3 shunt-2">Revalidation</h2>
 
-  <p><b>"Callback offered" journey</b></p>
-  <div class="callout callout--info">
-    <ul>
-      <li><p><a href="/callback-offered/comparison">Journey #1 - comparison</a></p></li>
-      <li><p><a href="/callback-offered/linear">Journey #2 - linear</a></p></li>
-    </ul>
-  </div>
+  <p>Offering the user a phone call from a nurse in order to revalidate dispostions.</p>
 
-  <p><b>"Forced callback" journey</b></p>
   <div class="callout callout--info">
     <ul>
-      <li><p><a href="/forced-callback/disposition-callback-first-001">Journey #1 - linear</a></p></li>
-      <li><p><a href="/forced-callback/disposition">Journey #2 - decision branch</a></p></li>
+      <li>
+        <p>
+          <a href="/callback-offered/linear">Revalidation as an offer</a><br>
+          <span class="form-hint">For example some emergency care dispositions</span>
+        </p>
+      </li>
+      <li>
+        <p>
+          <a href="/forced-callback/disposition-callback-first-001">Mandated revalidation</a><br>
+          <span class="form-hint">For example green ambulance dipositions</span>
+        </p>
+      </li>
     </ul>
   </div>
 
@@ -37,8 +43,12 @@
   </div>
   <div class="collapse-content category-content">
     <p>
+      <a href="https://git.nhschoices.net/nhs111-digital/nhs111-prototype-kit/tags/v1.4">Version 1</a><br>
+      Lab research at Engine Rooms labs 18-07-2018
+    </p>
+    <p>
       <a href="https://git.nhschoices.net/nhs111-digital/nhs111-prototype-kit/tags/v1.3">Version 0</a><br>
-      Lab research at Sunderland Labs 20-07-2018
+      Lab research at Sunderland Labs 20-06-2018
     </p>
   </div>
 
@@ -208,5 +218,5 @@
 {% endblock %}
 
 {% block body_after %}
-  {% include 'finding-pathways/_partial-collapse-script.html' %}
+  {% include '_partials/_partial-collapse-script.html' %}
 {% endblock %}

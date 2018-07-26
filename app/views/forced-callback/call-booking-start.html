@@ -6,24 +6,44 @@
 
 {% block content %}
 
-<div class="content-block measure">
+<form class="content-block form measure" action="/book-callback/" method="post">
   <a href="disposition-callback-first-001" class="button-back">Back</a>
 
-  <h1>Book an urgent nurse call</h1>
+  {% if error %}
+    <div class="error-summary">
+      <span class="h3">There’s a problem with the following:</span>
+      <p>{{ error.general | safe }}</p>
+    </div>
+  {% endif %}
+
+  <h1>A nurse needs to phone you</h1>
 
   <p>
-    We think you might need urgent medical help. A nurse will talk to you about
-    what you should do next.
+    We think you might need urgent medical help. A nurse will phone you within
+    30 minutes and tell you what to do next.
   </p>
   <p>
-    You’ll get a call within 30 minutes.
+    If you need a translator you can ask for one when you start the call.
   </p>
-</div>
 
-<div class="content-block">
-  <p>
-    <a href="/book-callback/?backUrl=%2Fforced-callback%2Fcall-booking-start&forwardUrl=%2Fforced-callback%2Fcall-booked" class="button">Start</a>
-  </p>
-</div>
+  <div class="form-group {% if error.tel %}-errors{% endif %}">
+    <label for="tel"><b>Enter a mobile, landline or textphone number</b></label>
+    {% if error.tel %}
+      <p class="error-hint">{{ error.tel }}</p>
+    {% endif %}
+    <input name="tel" id="tel" type="tel" value="{{ session.callBooking.tel }}" autocomplete="off">
+  </div>
+
+  <div class="form-group">
+    <p>
+      <button type="submit" class="button">Next</button>
+    </p>
+  </div>
+
+  <input type="hidden" name="backUrl" value="/forced-callback/call-booking-start">
+  <input type="hidden" name="forwardUrl" value="/forced-callback/call-booked">
+  <input type="hidden" name="renderTemplate" value="forced-callback/call-booking-start.html">
+
+</form>
 
 {% endblock %}
