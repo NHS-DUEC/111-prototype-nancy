@@ -7,7 +7,7 @@
   position: relative;
   margin: $baseline-grid-unit*4 0;
   padding-top: $baseline-grid-unit*4;
-  border-top: 2px solid $grey-4;
+  border-top: 2px solid $grey-5;
   @include media(mid) {
     margin: $baseline-grid-unit*8 0;
     padding-left: $baseline-grid-unit*14;
@@ -26,12 +26,13 @@
       content: counter(set);
       position: absolute;
       z-index: 2;
-      top: $baseline-grid-unit;
+      top: 0;
       left: 0;
       width: $baseline-grid-unit*8;
       height: $baseline-grid-unit*8;
       border-radius: 100%;
-      background-color: $grey-4;
+      border: $baseline-grid-unit solid $grey-5;
+      background-color: $white;
       text-align: center;
     }
   }
@@ -40,12 +41,16 @@
     @include media(mid) {
       content: '';
       position: absolute;
-      top: $baseline-grid-unit;
-      left: ($baseline-grid-unit*4)-1;
+      top: $baseline-grid-unit*9;
+      left: ($baseline-grid-unit*5) - 2;
       z-index: 1;
-      border-left: solid 3px $grey-4;
-      height: calc(100% - 12px);
+      border-left: solid $baseline-grid-unit $grey-5;
+      height: 100%;
     }
+  }
+
+  &:last-child:after {
+    border: 0;
   }
 
   .collapse-title :first-child {
