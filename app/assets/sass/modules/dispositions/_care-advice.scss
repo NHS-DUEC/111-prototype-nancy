@@ -1,0 +1,17 @@
+.care-advice-output {
+
+  li {
+    margin: $baseline-grid-unit*6 0;
+  }
+
+  details > div > ul {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  details > div > ul ul {
+    margin-top: 0;
+    margin-bottom: $baseline-grid-unit*6;
+  }
+
+}
