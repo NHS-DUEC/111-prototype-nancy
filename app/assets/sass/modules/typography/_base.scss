@@ -105,11 +105,11 @@ body.nhs-redesign {
     font-size: 32px;
     font-weight: $boldweight;
     line-height: 1.125;
-    margin: $leading*2 0 $baseline-grid-unit*10 0;
+    margin: $baseline-grid-unit*14 0 0 0;
     @include media(mid) {
       font-size: 48px;
       line-height: 1.166;
-      margin: $leading*2 0 $baseline-grid-unit*10 0;
+      margin: $baseline-grid-unit*10 0 0 0;
     }
   }
 
@@ -118,11 +118,11 @@ body.nhs-redesign {
     font-size: 24px;
     font-weight: $boldweight;
     line-height: 1.333;
-    margin: $leading*2 0 $baseline-grid-unit*10 0;
+    margin: $baseline-grid-unit*10 0 0 0;
     @include media(mid) {
       font-size: 32px;
       line-height: 1.25;
-      margin: $leading*2 0 $baseline-grid-unit*14 0;
+      margin: $baseline-grid-unit*14 0 0 0;
     }
   }
 
@@ -131,11 +131,11 @@ body.nhs-redesign {
     font-size: 20px;
     font-weight: $boldweight;
     line-height: 1.4;
-    margin: $leading*2 0 $baseline-grid-unit*8 0;
+    margin: $baseline-grid-unit*8 0 0 0;
     @include media(mid) {
       font-size: 24px;
       line-height: 1.333;
-      margin: $leading*2 0 $baseline-grid-unit*10 0;
+      margin: $baseline-grid-unit*10 0 0 0;
     }
   }
 

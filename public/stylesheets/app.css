@@ -159,7 +159,7 @@ body.nhs-redesign, pre.nhs-redesign.user-input {
   font-size: 32px;
   font-weight: 700;
   line-height: 1.125;
-  margin: 16px 0 40px 0;
+  margin: 56px 0 0 0;
 }
 
 @media (min-width: 500px) {
@@ -167,7 +167,7 @@ body.nhs-redesign, pre.nhs-redesign.user-input {
   .nhs-redesign .h1 {
     font-size: 48px;
     line-height: 1.166;
-    margin: 16px 0 40px 0;
+    margin: 40px 0 0 0;
   }
 }
 
@@ -176,7 +176,7 @@ body.nhs-redesign, pre.nhs-redesign.user-input {
   font-size: 24px;
   font-weight: 700;
   line-height: 1.333;
-  margin: 16px 0 40px 0;
+  margin: 40px 0 0 0;
 }
 
 @media (min-width: 500px) {
@@ -184,7 +184,7 @@ body.nhs-redesign, pre.nhs-redesign.user-input {
   .nhs-redesign .h2 {
     font-size: 32px;
     line-height: 1.25;
-    margin: 16px 0 56px 0;
+    margin: 56px 0 0 0;
   }
 }
 
@@ -193,7 +193,7 @@ body.nhs-redesign, pre.nhs-redesign.user-input {
   font-size: 20px;
   font-weight: 700;
   line-height: 1.4;
-  margin: 16px 0 32px 0;
+  margin: 32px 0 0 0;
 }
 
 @media (min-width: 500px) {
@@ -201,7 +201,7 @@ body.nhs-redesign, pre.nhs-redesign.user-input {
   .nhs-redesign .h3 {
     font-size: 24px;
     line-height: 1.333;
-    margin: 16px 0 40px 0;
+    margin: 40px 0 0 0;
   }
 }
 
@@ -244,22 +244,22 @@ pre.user-input {
 }
 
 body.nhs-redesign p, pre.nhs-redesign.user-input p {
-  margin-bottom: 16px;
+  margin: 16px 0;
 }
 
 @media (min-width: 500px) {
   body.nhs-redesign p, pre.nhs-redesign.user-input p {
-    margin-bottom: 24px;
+    margin: 24px 0;
   }
 }
 
 body.nhs-redesign .lede, pre.nhs-redesign.user-input .lede {
-  margin-bottom: 24px;
+  margin: 28px 0;
 }
 
 @media (min-width: 500px) {
   body.nhs-redesign .lede, pre.nhs-redesign.user-input .lede {
-    margin-bottom: 20px;
+    margin: 32px 0;
   }
 }
 
@@ -305,12 +305,6 @@ li {
   text-align: center;
   width: 40px;
   line-height: 2.0em;
-}
-
-@media (min-width: 925px) {
-  .page-section * + * {
-    margin-top: 32px;
-  }
 }
 
 @media (min-width: 925px) {
@@ -436,12 +430,18 @@ li.tabular-data-row > .callout {
   line-height: 16px;
 }
 
-.nhs-redesign ul {
-  margin-bottom: 20px;
+.nhs-redesign ul, .nhs-redesign ol {
+  margin: 16px 0 0 0;
+}
+
+@media (min-width: 500px) {
+  .nhs-redesign ul, .nhs-redesign ol {
+    margin-top: 24px;
+  }
 }
 
 .nhs-redesign li {
-  margin-bottom: 8px;
+  margin: 8px 0 0 0;
 }
 
 .tel {
@@ -510,6 +510,10 @@ a.link-prototype:visted {
 .phase-banner > .phase-message {
   color: #425563;
   padding-left: 8px;
+}
+
+.nhs-redesign .phase-banner {
+  margin-bottom: 16px;
 }
 
 .prototype-warning {
@@ -670,26 +674,21 @@ a.link-prototype:visted {
 
 .nhs-redesign .callout {
   padding: 24px;
-}
-
-.nhs-redesign .callout h1, .nhs-redesign .callout .heading-xxlarge, .nhs-redesign .callout .primary, .nhs-redesign .callout h2, .nhs-redesign .callout .heading-xlarge, .nhs-redesign .callout .app-panel > .header, .nhs-redesign .callout table caption, table .nhs-redesign .callout caption, .nhs-redesign .callout .secondary, .nhs-redesign .callout h3, .nhs-redesign .callout .heading-large {
-  margin: 0;
-}
-
-.nhs-redesign .callout p {
-  margin-bottom: 0;
-  margin-top: 24px;
+  margin: 16px 0;
 }
 
 @media (min-width: 500px) {
-  .nhs-redesign .callout p {
-    margin-bottom: 0;
-    margin-top: 28px;
+  .nhs-redesign .callout {
+    margin: 24px 0;
   }
 }
 
-.nhs-redesign .callout p:first-child {
+.nhs-redesign .callout :first-child {
   margin-top: 0;
+}
+
+.nhs-redesign .callout :last-child {
+  margin-bottom: 0;
 }
 
 .card {
@@ -1574,7 +1573,7 @@ label .form-hint {
   .search input[type="text"] {
     float: left;
     width: calc(75% - 4px);
-    margin-top: 0;
+    margin: 0;
   }
   .search .button {
     float: left;
@@ -2186,7 +2185,7 @@ img {
 .topic {
   display: block;
   text-decoration: none;
-  margin-bottom: 24px;
+  margin-top: 24px;
 }
 
 .topic-title {
