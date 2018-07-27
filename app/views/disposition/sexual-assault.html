@@ -1,0 +1,115 @@
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhs-redesign{% endblock %}
+
+{% block content %}
+
+<!--
+  Sexual assault
+-->
+
+<div class="content-block">
+  <a href="javascript: return false;" class="button-back">Back</a>
+
+  <div class="callout callout--attention measure">
+    <h1>Get help now</h1>
+    <p>If you can, try to get help within 1 hour.</p>
+    <p>Call 999 if you’re still in danger.</p>
+  </div>
+
+  <div class="disposition-set">
+    <div class="disposition-unit">
+
+      <div class="collapse-title">
+        <h2>Before you get help</h2>
+        <span class="collapse-title-indicator-verbose">
+          <span class="show">Show</span>
+          <span class="hide">Hide</span>
+        </span>
+      </div>
+
+      <div class="collapse-content measure">
+        <p>If you think you might report the assault to the police:</p>
+        <ul>
+          <li>cover any cuts, but don’t wash them</li>
+          <li>don’t change or wash your clothes</li>
+        </ul>
+        <p>Call 999 to report it to the police</p>
+        <h3>If you have any wounds:</h3>
+        <ul>
+          <li>do this</li>
+          <li>and this</li>
+          <li>and this</li>
+        </ul>
+        <h3>If you need pain relief:</h3>
+        <ul>
+          <li>do this</li>
+          <li>and this</li>
+          <li>and this</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="disposition-unit">
+
+      <div class="collapse-title">
+        <h2>Where to get help</h2>
+        <span class="collapse-title-indicator-verbose">
+          <span class="show">Show</span>
+          <span class="hide">Hide</span>
+        </span>
+      </div>
+
+      <div class="collapse-content">
+        <p>
+          <a href="#">Change my location</a>
+        </p>
+        <p>
+          <a href="#">Other ways to get help</a>
+        </p>
+        <p>You can <a href="#">get a copy of your answers</a> to take with you.</p>
+      </div>
+
+    </div>
+
+    <div class="disposition-unit">
+
+      <div class="collapse-title">
+        <h2>Get more advice and support</h2>
+        <span class="collapse-title-indicator-verbose">
+          <span class="show">Show</span>
+          <span class="hide">Hide</span>
+        </span>
+      </div>
+
+      <div class="collapse-content measure">
+        <p>You can also speak to charities and support groups for advice about what to do.</p>
+        <ul>
+          <li>
+            Rape crisis<br>
+            <a href="https://rapecrisis.org.uk">rapecrisis.org.uk</a>
+          </li>
+          <li>
+            Victim support<br>
+            <a href="https://www.victimsupport.org.uk/">victimsupport.org.uk</a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+{% endblock %}
+
+{% block footer %}
+{% include '_includes/survey-banner.html' %}
+{% endblock %}
+
+{% block body_after %}
+  {% include '_partials/_partial-collapse-script.html' %}
+{% endblock %}
