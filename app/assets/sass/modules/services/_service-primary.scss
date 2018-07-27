@@ -1,0 +1,54 @@
+.location-section {
+
+  background-color: $grey-5;
+
+  @include media(large) {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 2;
+  }
+
+  .geo {
+    @include media(large) {
+      grid-column-start: 1;
+      grid-column-end: 3;
+      grid-row-start: 1;
+      grid-row-end: 3;
+    }
+  }
+
+  .map-frame {
+    box-sizing: border-box;
+    width: 100%;
+    height: 300px;
+    background-color: teal;
+    @include media(large) {
+      height: 50vh;
+      border-right: $baseline-grid-unit solid $white;
+    }
+  }
+
+  .details {
+    padding: 1px $baseline-grid-unit*4;
+    @include media(large) {
+      grid-column-start: 3;
+      grid-column-end: 4;
+      grid-row-start: 1;
+      grid-row-end: 2;
+      padding: 0 $baseline-grid-unit*4;
+    }
+  }
+
+  .map-controls {
+    font-size: $smallprint;
+    padding: $baseline-grid-unit*4;
+    @include media(large) {
+      grid-column-start: 3;
+      grid-column-end: 4;
+      grid-row-start: 2;
+      grid-row-end: 3;
+      padding: 0 $baseline-grid-unit*4;
+    }
+  }
+
+}

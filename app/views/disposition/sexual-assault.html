@@ -121,35 +121,78 @@
 
       <div class="collapse-content">
         <div class="service-primary">
-          <h3 class="body">The best place to get help near your location is:</h3>
-          <div style="border: 3px solid red; height: 100px;">
-
+          <div class="measure">
+            <h3>The best place to get help is Whitechapel Haven</h3>
+            <p>
+              The Havens are specialist centres in London for people who have
+              been raped or sexually assaulted.
+            </p>
+            <div class="callout callout--attention">
+              <p>
+                Open 24 hours but you must phone 020 3299 6900 first for advice
+                and an appointment.
+              </p>
+            </div>
           </div>
-          Accident and Emergency<br>
-          St Thomas’ Hospital<br>
-          Westminster Bridge Road<br>
-          Lambeth<br>
-          London<br>
-          SE1 7EH
 
-          Open 24 hours
+          <div class="location-section">
+            <div class="details">
+              <p>
+                Whitechapel Haven<br>
+                The Royal London Hospital<br>
+                Whitechapel Road<br>
+                London<br>
+                E1 1BB
+              </p>
+            </div>
+            <div class="geo">
+              <div id="service-location" class="map-frame"></div>
+            </div>
+            <div class="map-controls">
+              <span>2.4 miles away</span><br>
+              <a href="#">Get directions</a><br>
+              <a href="#">Change my location</a>
+            </div>
+          </div>
+        </div>
 
-          020 7188 7188
+        <!--
+        <div class="service-primary">
+          <div class="location-section">
+            <div class="geo">
+              <div id="service-location-2" class="map-frame"></div>
+              <div class="map-controls">
+                <div>
+                  <span>0.7 miles away</span>
+                  <a href="#">Get directions</a>
+                </div>
+                <div>
+                  <a href="#">Change my location</a>
+                </div>
+              </div>
+            </div>
+            <div class="details">
+              <p>
+                Accident and Emergency<br>
+                St Thomas’ Hospital<br>
+                Westminster Bridge Road<br>
+                Lambeth<br>
+                London<br>
+                SE1 7EH
+              </p>
+              <p>
+                Open 24 hours
+              </p>
+            </div>
+          </div>
+        </div>
+        -->
 
-          <a href="http://www.guysandstthomas.nhs.uk">guysandstthomas.nhs.uk</a>
-
+        <div class="measure">
           <p>
-            <a href="#">Get directions</a><br>
-            <a href="#">Change my location</a>
+            If this recommended service isn’t right for you, you can <a href="#">view more services that can help.</a>
           </p>
         </div>
-        <p>
-          <a href="#">Other ways to get help</a>
-        </p>
-        <p>
-          You can search for <a href="https://www.nhs.uk/service-search/Rape-and-sexual-assault-referral-centres/LocationSearch/364">
-          sexual assault referral centres</a> by postcode on NHS.UK
-        </p>
       </div>
 
     </div>
@@ -165,7 +208,7 @@
       </div>
 
       <div class="collapse-content measure">
-        <p>You can also speak to charities and support groups for advice about what to do.</p>
+        <p>You can speak to charities and support groups for advice about what to do:</p>
         <ul>
           <li>
             <a href="https://rapecrisis.org.uk">Rape crisis</a>
@@ -183,6 +226,10 @@
             <a href="https://www.survivorsuk.org/">Survivors UK</a> &mdash; for men
           </li>
         </ul>
+        <p>
+          You can search for <a href="https://www.nhs.uk/service-search/Rape-and-sexual-assault-referral-centres/LocationSearch/364">
+          sexual assault referral centres</a> by postcode on NHS.UK
+        </p>
       </div>
 
     </div>
@@ -198,4 +245,25 @@
 
 {% block body_after %}
   {% include '_partials/_partial-collapse-script.html' %}
+
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDP454skpvnlft08MDIcZG_khm-sBHmFbM&libraries=places"></script>
+  <script>
+    $(function() {
+      mapObj = new google.maps.Map(document.getElementById('service-location'), {
+        center: {
+          lat: 51.518359,
+          lng: -0.059963
+        },
+        zoom: 16,
+        maxZoom: 18,
+        zoomControl: true,
+        mapTypeControl: false,
+        scaleControl: true,
+        streetViewControl: false,
+        rotateControl: false,
+        fullscreenControl: false
+      });
+      marker = new google.maps.Marker({position: mapObj.getCenter(), map: mapObj});
+    });
+  </script>
 {% endblock %}

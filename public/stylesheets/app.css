@@ -1127,16 +1127,14 @@ details.extra-vert-spacing {
 
 .disposition-unit {
   position: relative;
-  margin: 16px 0;
-  padding-top: 16px;
-  border-top: 2px solid #f0f4f5;
+  margin: 16px 0 32px 0;
+  padding: 0 32px 0 40px;
 }
 
 @media (min-width: 500px) {
   .disposition-unit {
     margin: 32px 0;
-    padding-left: 56px;
-    padding-top: 0;
+    padding: 0 0 0 56px;
     border-top: 0;
   }
 }
@@ -1148,15 +1146,21 @@ details.extra-vert-spacing {
 
 .disposition-unit:before {
   counter-increment: set;
+  content: counter(set);
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 100%;
+  border: 2px solid #f0f4f5;
+  background-color: #fff;
+  text-align: center;
 }
 
 @media (min-width: 500px) {
   .disposition-unit:before {
-    content: counter(set);
-    position: absolute;
-    z-index: 2;
-    top: 0;
-    left: 0;
     width: 32px;
     height: 32px;
     border-radius: 100%;
@@ -1166,15 +1170,21 @@ details.extra-vert-spacing {
   }
 }
 
+.disposition-unit:after {
+  content: '';
+  position: absolute;
+  top: 28px;
+  left: 14px;
+  z-index: 1;
+  border-left: solid 2px #f0f4f5;
+  height: 100%;
+}
+
 @media (min-width: 500px) {
   .disposition-unit:after {
-    content: '';
-    position: absolute;
     top: 36px;
     left: 18px;
-    z-index: 1;
-    border-left: solid 4px #f0f4f5;
-    height: 100%;
+    border-left-width: 4px;
   }
 }
 
@@ -2357,6 +2367,70 @@ img {
 
 .subtle-push {
   border: 2px solid #80afdc;
+}
+
+.location-section {
+  background-color: #f0f4f5;
+}
+
+@media (min-width: 980px) {
+  .location-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 2;
+  }
+}
+
+@media (min-width: 980px) {
+  .location-section .geo {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+  }
+}
+
+.location-section .map-frame {
+  box-sizing: border-box;
+  width: 100%;
+  height: 300px;
+  background-color: teal;
+}
+
+@media (min-width: 980px) {
+  .location-section .map-frame {
+    height: 50vh;
+    border-right: 4px solid #fff;
+  }
+}
+
+.location-section .details {
+  padding: 1px 16px;
+}
+
+@media (min-width: 980px) {
+  .location-section .details {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    padding: 0 16px;
+  }
+}
+
+.location-section .map-controls {
+  font-size: 16px;
+  padding: 16px;
+}
+
+@media (min-width: 980px) {
+  .location-section .map-controls {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    padding: 0 16px;
+  }
 }
 
 body, pre.user-input {

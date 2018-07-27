@@ -5,13 +5,11 @@
 
 .disposition-unit {
   position: relative;
-  margin: $baseline-grid-unit*4 0;
-  padding-top: $baseline-grid-unit*4;
-  border-top: 2px solid $grey-5;
+  margin: $baseline-grid-unit*4 0 $baseline-grid-unit*8 0;
+  padding: 0 $baseline-grid-unit*8 0 $baseline-grid-unit*10;
   @include media(mid) {
     margin: $baseline-grid-unit*8 0;
-    padding-left: $baseline-grid-unit*14;
-    padding-top: 0;
+    padding: 0 0 0 $baseline-grid-unit*14;
     border-top: 0;
   }
 
@@ -22,12 +20,18 @@
 
   &:before {
     counter-increment: set;
+    content: counter(set);
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: $baseline-grid-unit*6;
+    height: $baseline-grid-unit*6;
+    border-radius: 100%;
+    border: $baseline-grid-unit/2 solid $grey-5;
+    background-color: $white;
+    text-align: center;
     @include media(mid) {
-      content: counter(set);
-      position: absolute;
-      z-index: 2;
-      top: 0;
-      left: 0;
       width: $baseline-grid-unit*8;
       height: $baseline-grid-unit*8;
       border-radius: 100%;
@@ -38,14 +42,17 @@
   }
 
   &:after {
+    content: '';
+    position: absolute;
+    top: $baseline-grid-unit*7;
+    left: ($baseline-grid-unit*4) - 2;
+    z-index: 1;
+    border-left: solid $baseline-grid-unit/2 $grey-5;
+    height: 100%;
     @include media(mid) {
-      content: '';
-      position: absolute;
       top: $baseline-grid-unit*9;
       left: ($baseline-grid-unit*5) - 2;
-      z-index: 1;
-      border-left: solid $baseline-grid-unit $grey-5;
-      height: 100%;
+      border-left-width: $baseline-grid-unit;
     }
   }
 
