@@ -1,4 +1,5 @@
-form {
+form,
+.form {
   @extend %contain-floats;
   display: block;
 }

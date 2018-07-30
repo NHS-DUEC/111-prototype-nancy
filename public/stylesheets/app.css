@@ -1,10 +1,12 @@
 @import url("//assets.nhs.uk/fonts/nhsuk-fonts-1.1.0.css");
-li.tabular-data-row, .prototype-warning-inner, .card, .breadcrumb, .footer-container, .-date, .postcode, .error-summary, form, .form-group, .search, #global-header, .location, .location-controls, .nhsid-container, .signage, .survey-banner > div, .header-container,
+li.tabular-data-row, .prototype-warning-inner, .card, .breadcrumb, .footer-container, .-date, .postcode, .error-summary, form,
+.form, .form-group, .search, #global-header, .location, .location-controls, .nhsid-container, .signage, .survey-banner > div, .header-container,
 .content, .grid-row, .clearfix {
   zoom: 1;
 }
 
-li.tabular-data-row:after, .prototype-warning-inner:after, .card:after, .breadcrumb:after, .footer-container:after, .-date:after, .postcode:after, .error-summary:after, form:after, .form-group:after, .search:after, #global-header:after, .location:after, .location-controls:after, .nhsid-container:after, .signage:after, .survey-banner > div:after, .header-container:after,
+li.tabular-data-row:after, .prototype-warning-inner:after, .card:after, .breadcrumb:after, .footer-container:after, .-date:after, .postcode:after, .error-summary:after, form:after,
+.form:after, .form-group:after, .search:after, #global-header:after, .location:after, .location-controls:after, .nhsid-container:after, .signage:after, .survey-banner > div:after, .header-container:after,
 .content:after, .grid-row:after, .clearfix:after {
   content: "";
   display: block;
@@ -214,6 +216,18 @@ body.nhs-redesign, pre.nhs-redesign.user-input {
   .nhs-redesign .lede {
     font-size: 24px;
     line-height: 1.5;
+  }
+}
+
+.nhs-redesign .small {
+  font-size: 14px;
+  line-height: 24px;
+}
+
+@media (min-width: 500px) {
+  .nhs-redesign .small {
+    font-size: 16px;
+    line-height: 28px;
   }
 }
 
@@ -1342,7 +1356,8 @@ fieldset legend {
   display: table;
 }
 
-form {
+form,
+.form {
   display: block;
 }
 
@@ -2394,12 +2409,11 @@ img {
   box-sizing: border-box;
   width: 100%;
   height: 300px;
-  background-color: teal;
 }
 
 @media (min-width: 980px) {
   .location-section .map-frame {
-    height: 50vh;
+    height: 400px;
     border-right: 4px solid #fff;
   }
 }
@@ -2419,12 +2433,12 @@ img {
 }
 
 .location-section .map-controls {
-  font-size: 16px;
   padding: 16px;
 }
 
 @media (min-width: 980px) {
   .location-section .map-controls {
+    vertical-align: bottom;
     grid-column-start: 3;
     grid-column-end: 4;
     grid-row-start: 2;

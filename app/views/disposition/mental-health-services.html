@@ -1,0 +1,102 @@
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhs-redesign{% endblock %}
+
+{% block content %}
+
+<!--
+  Sexual assault
+-->
+
+<div class="content-block">
+  <a href="./mental-health-offer-callback" class="button-back">Back</a>
+
+  <h1>Get help as soon as you can</h1>
+
+  <div class="content-seperator content-seperator--equalvertspacing"></div>
+
+  <div class="">
+    <div class="">
+
+      <div class="">
+        <div class="service-primary">
+          <div class="measure">
+            <h2 class="h3">The best place to get help is Newham University Hospital</h2>
+            <div class="callout callout--attention">
+              <p>
+                Go to Accident and Emergency and ask to be referred to the
+                Department of Psychological Medicines.
+              </p>
+            </div>
+          </div>
+
+          <div class="location-section">
+            <div class="details small">
+              <p>
+                Department of Psychological Medicines<br>
+                Newham University Hospital<br>
+                Glen Road<br>
+                London<br>
+                E13 8SL
+              </p>
+              <p>Open 24 hours</p>
+            </div>
+            <div class="geo">
+              <div id="service-location" class="map-frame"></div>
+            </div>
+            <div class="map-controls small">
+              <span>6.2 miles away</span><br>
+              <a href="#">Get directions</a><br>
+              <a href="#">Change my location</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="measure">
+          <p>
+            If this recommended service isn’t right for you, you can <a href="#">
+            view more services that can help.</a>
+          </p>
+          <p>
+            Or you can <a href="./mental-health-offer-callback">book a call with a nurse.</a>
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+{% endblock %}
+
+{% block footer %}
+{% include '_includes/survey-banner.html' %}
+{% endblock %}
+
+{% block body_after %}
+  {% include '_partials/_partial-collapse-script.html' %}
+
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDP454skpvnlft08MDIcZG_khm-sBHmFbM&libraries=places"></script>
+  <script>
+    $(function() {
+      mapObj = new google.maps.Map(document.getElementById('service-location'), {
+        center: {
+          lat: 51.522950,
+          lng: 0.035776
+        },
+        zoom: 16,
+        maxZoom: 18,
+        zoomControl: true,
+        mapTypeControl: false,
+        scaleControl: true,
+        streetViewControl: false,
+        rotateControl: false,
+        fullscreenControl: false
+      });
+      marker = new google.maps.Marker({position: mapObj.getCenter(), map: mapObj});
+    });
+  </script>
+{% endblock %}
