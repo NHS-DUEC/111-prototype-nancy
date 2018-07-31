@@ -20,6 +20,14 @@ body.nhs-redesign {
     }
   }
 
+  .small p,
+  p.small {
+    margin: $baseline-grid-unit*4 0;
+    @include media(mid) {
+      margin: $baseline-grid-unit*5 0;
+    }
+  }
+
   .lede {
     margin: $baseline-grid-unit*7 0;
     @include media(mid) {

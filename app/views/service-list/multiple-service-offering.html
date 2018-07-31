@@ -1,0 +1,251 @@
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhs-redesign{% endblock %}
+
+{% block content %}
+
+<div class="content-block">
+  <a href="javascript: return false;" class="button-back">Back</a>
+
+  <!--
+  <h1>Other services that can help you</h1>
+
+  <div class="content-seperator content-seperator--equalvertspacing"></div>
+-->
+  <div class="collapse-title">
+    <h2>Places you can go</h2>
+    <span class="collapse-title-indicator-verbose">
+      <span class="show">Show</span>
+      <span class="hide">Hide</span>
+    </span>
+  </div>
+
+  <div class="collapse-content">
+
+    <div class="map-multiple full-width shunt-2">
+      <div id="map"></div>
+    </div>
+
+    <div class="places full-width">
+
+      <div class="service-multiple">
+        <div class="label small">
+          <span>1</span>
+        </div>
+        <div class="details small">
+          <p>
+            Paddington Haven<br>
+            St Marys Hospital<br>
+            Praed Street<br>
+            London<br>
+            W2 1NY
+          </p>
+        </div>
+        <div class="directions small">
+          <p>
+            <span>3.5 miles away</span><br>
+            <a href="#" id="showCenter">Get directions</a>
+          </p>
+        </div>
+        <div class="features small">
+          <p>
+            The Havens are specialist centres in London for people who have
+            been raped or sexually assaulted.
+          </p>
+          <p>
+            Open 24 hours but you must phone 020 3299 6900 first for advice
+            and an appointment.
+          </p>
+        </div>
+      </div>
+
+      <div class="service-multiple">
+        <div class="label small">
+          <span>2</span>
+        </div>
+        <div class="details small">
+          <p>
+            Emergency Department<br>
+            St Thomas Hospital<br>
+            Westminster Bridge Road<br>
+            London<br>
+            SE1 7EH
+          </p>
+        </div>
+        <div class="small">
+          <p>
+            <span>0.8 miles away</span><br>
+            <a href="#">Get directions</a>
+          </p>
+        </div>
+        <div class="features small">
+          <p>Open 24 hours</p>
+        </div>
+      </div>
+
+      <div class="service-multiple">
+        <div class="label small">
+          <span>3</span>
+        </div>
+        <div class="details small">
+          <p>
+            Emergency Department<br>
+            Kings College Hospital<br>
+            Denmark Hill<br>
+            London<br>
+            SE5 9RS
+          </p>
+        </div>
+        <div class="small">
+          <p>
+            <span>2 miles away</span><br>
+            <a href="#">Get directions</a>
+          </p>
+        </div>
+        <div class="features small">
+          <p>Open 24 hours</p>
+        </div>
+      </div>
+
+      <div class="service-multiple">
+        <div class="small">
+          <p>
+            <a href="#">Change my location</a>
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="collapse-title">
+    <h2>Services you can talk to</h2>
+    <span class="collapse-title-indicator-verbose">
+      <span class="show">Show</span>
+      <span class="hide">Hide</span>
+    </span>
+  </div>
+
+  <div class="collapse-content">
+    <div class="remote-services full-width">
+
+      <div class="service-multiple">
+        <div class="details small">
+          <p>
+            A remote service
+          </p>
+        </div>
+        <div class="features small">
+          <p>
+            The Remote Service are specialist advisors in London for people who
+            have been raped or sexually assaulted.
+          </p>
+          <p>
+            Available 24 hours
+          </p>
+        </div>
+        <div class="cta small">
+          <p>
+            <a href=""><b>Book a call</b></a>
+          </p>
+        </div>
+      </div>
+
+      <div class="service-multiple">
+        <div class="details small">
+          <p>
+            A different remote service
+          </p>
+        </div>
+        <div class="features small">
+          <p>
+            The Different Remote Service are specialist advisors in London for
+            people who have been raped or sexually assaulted.
+          </p>
+          <p>
+            Available 24 hours
+          </p>
+        </div>
+        <div class="cta small">
+          <p>
+            Call <a href=""><b>0800 1234 1234</b></a>
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+{% endblock %}
+
+{% block footer %}
+{% include '_includes/survey-banner.html' %}
+{% endblock %}
+
+{% block body_after %}
+  {% include '_partials/_partial-collapse-script.html' %}
+
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDP454skpvnlft08MDIcZG_khm-sBHmFbM"></script>
+  <script>
+    $(function() {
+      mapObj = new google.maps.Map(document.getElementById('map'), {
+        center: {
+          lat: 51.49778644873909,
+          lng: -0.11666935449215998
+        },
+        zoom: 12,
+        zoomControl: true,
+        mapTypeControl: false,
+        scaleControl: true,
+        streetViewControl: false,
+        rotateControl: false,
+        fullscreenControl: false
+      });
+
+      var locations = [
+        {lat: 51.517415, lng: -0.174041},
+        {lat: 51.498244, lng: -0.119203},
+        {lat: 51.467897, lng: -0.094346}
+      ];
+      marker_1 = new google.maps.Marker({
+        position: locations[0],
+        map: mapObj,
+        label: {
+          text: '1',
+          fontWeight: 'bold',
+          color: 'white'
+        }
+      });
+      marker_2 = new google.maps.Marker({
+        position: locations[1],
+        map: mapObj,
+        label: {
+          text: '2',
+          fontWeight: 'bold',
+          color: 'white'
+        }
+      });
+      marker_3 = new google.maps.Marker({
+        position: locations[2],
+        map: mapObj,
+        label: {
+          text: '3',
+          fontWeight: 'bold',
+          color: 'white'
+        }
+      });
+
+      $('#showCenter').on('click', function(e) {
+        e.preventDefault();
+        var center = mapObj.getCenter();
+        console.log(center.lat());
+        console.log(center.lng());
+      });
+
+    });
+  </script>
+{% endblock %}

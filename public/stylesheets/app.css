@@ -221,13 +221,13 @@ body.nhs-redesign, pre.nhs-redesign.user-input {
 
 .nhs-redesign .small {
   font-size: 14px;
-  line-height: 24px;
+  line-height: 20px;
 }
 
 @media (min-width: 500px) {
   .nhs-redesign .small {
     font-size: 16px;
-    line-height: 28px;
+    line-height: 24px;
   }
 }
 
@@ -264,6 +264,18 @@ body.nhs-redesign p, pre.nhs-redesign.user-input p {
 @media (min-width: 500px) {
   body.nhs-redesign p, pre.nhs-redesign.user-input p {
     margin: 24px 0;
+  }
+}
+
+body.nhs-redesign .small p, pre.nhs-redesign.user-input .small p,
+body.nhs-redesign p.small, pre.nhs-redesign.user-input p.small {
+  margin: 16px 0;
+}
+
+@media (min-width: 500px) {
+  body.nhs-redesign .small p, pre.nhs-redesign.user-input .small p,
+  body.nhs-redesign p.small, pre.nhs-redesign.user-input p.small {
+    margin: 20px 0;
   }
 }
 
@@ -2447,6 +2459,117 @@ img {
   }
 }
 
+.map-multiple {
+  position: sticky;
+  top: 0;
+  /*width: 100vw;*/
+  height: 45vh;
+  border-top: 2px solid #d8dde0;
+  border-bottom: 2px solid #d8dde0;
+}
+
+.map-multiple > #map {
+  width: 100%;
+  height: 100%;
+}
+
+.places,
+.remote-services {
+  padding: 0 20px;
+}
+
+@media (min-width: 960px) {
+  .places,
+  .remote-services {
+    min-height: 45vh;
+    background: #f0f4f5;
+    padding-top: 24px;
+    border-bottom: 2px solid #d8dde0;
+  }
+}
+
+.service-multiple {
+  border-bottom: 2px solid #d8dde0;
+  padding: 20px 0;
+}
+
+@media (min-width: 960px) {
+  .service-multiple {
+    box-sizing: border-box;
+    display: table;
+    width: 100%;
+    max-width: 960px;
+    background-color: #fff;
+    margin: 0 auto 24px auto;
+    padding: 20px;
+    border-bottom-width: 1px;
+  }
+}
+
+@media (min-width: 960px) {
+  .service-multiple .label,
+  .service-multiple .details,
+  .service-multiple .directions,
+  .service-multiple .features {
+    display: table-cell;
+  }
+  .service-multiple .label > p,
+  .service-multiple .details > p,
+  .service-multiple .directions > p,
+  .service-multiple .features > p {
+    margin-top: 0;
+  }
+}
+
+@media (min-width: 960px) {
+  .service-multiple .label {
+    width: 36px;
+  }
+}
+
+.service-multiple .label span {
+  display: block;
+  text-align: center;
+  line-height: 20px;
+  font-weight: bold;
+  color: #fff;
+  width: 20px;
+  height: 20px;
+  background-color: #da291c;
+  border-radius: 50%;
+}
+
+@media (min-width: 960px) {
+  .service-multiple .details {
+    width: 240px;
+  }
+}
+
+@media (min-width: 960px) {
+  .service-multiple .directions {
+    width: 160px;
+  }
+}
+
+@media (min-width: 960px) {
+  .service-multiple .features {
+    width: 484px;
+  }
+}
+
+.service-multiple .cta {
+  text-align: right;
+}
+
+@media (min-width: 960px) {
+  .nhs-redesign .service-multiple > div :first-child {
+    margin-top: 0;
+  }
+  .nhs-redesign .service-multiple > div :last-child {
+    margin-bottom: 0;
+  }
+}
+
 body, pre.user-input {
   margin: 0;
   padding: 0;
@@ -2466,6 +2589,18 @@ body, pre.user-input {
   .content {
     padding-left: 0;
     padding-right: 0;
+  }
+}
+
+.full-width {
+  margin-left: -20px;
+  margin-right: -20px;
+}
+
+@media (min-width: 960px) {
+  .full-width {
+    margin-left: calc(-100vw / 2 + 960px / 2);
+    margin-right: calc(-100vw / 2 + 960px / 2);
   }
 }
 
