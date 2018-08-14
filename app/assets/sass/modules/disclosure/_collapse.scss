@@ -6,6 +6,35 @@
 
 }
 
+.collapse-title-indicator-verbose {
+  display: none;
+}
+
+.js-enabled .collapse-title {
+  cursor: pointer;
+}
+
+.js-enabled .collapse-title-indicator-verbose {
+  display: block;
+  font-size: 16px;
+  color: $link-colour;
+  .show {
+    display: inline;
+  }
+  .hide {
+    display: none;
+  }
+}
+
+.js-enabled .open .collapse-title-indicator-verbose {
+  .show {
+    display: none;
+  }
+  .hide {
+    display: inline;
+  }
+}
+
 .js-enabled .collapse-content {
   display: none;
 }

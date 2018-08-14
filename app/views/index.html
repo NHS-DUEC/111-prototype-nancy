@@ -1,6 +1,8 @@
 {% extends '_layouts/layout.html' %}
 
-{% block page_title %}Index : {{serviceName}}{% endblock %}
+{% block page_title %}Index{% endblock %}
+
+{% block body_css_classes %}nhs-redesign{% endblock %}
 
 {% block content %}
 
@@ -17,7 +19,36 @@
 
   <div class="content-seperator content-seperator--equalvertspacing--large"></div>
 
-  <h2 class="h3 shunt-2">Revalidation</h2>
+  <!--
+  <h2 class="h3">Multiple service offering</h2>
+
+  <p>If primary offering isn’t suitable, display more services from DOS.</p>
+
+  <div class="callout callout--info">
+    <ul>
+      <li><p><a href="/service-list/multiple-service-offering">Multiple service offering</a></p></li>
+    </ul>
+  </div>
+
+  <div class="content-seperator content-seperator--equalvertspacing--large"></div>
+-->
+  <h2 class="h3">“Special” dispositions</h2>
+
+  <p>Specific dispositions.</p>
+
+  <div class="callout callout--info">
+    <ul>
+      <li><p><a href="/disposition/emergency-999-high-red">Call 999 “high red”</a></p></li>
+      <li><p><a href="/disposition/emergency-999-high-green">Call 999 “high green”</a></p></li>
+      <li><p><a href="/disposition/emergency-999-standard-green">Call 999 “standard green”</a></p></li>
+      <li><p><a href="/disposition/sexual-assault">Sexual assault (dx94)</a></p></li>
+      <li><p><a href="/disposition/mental-health-offer-callback">Mental health (dx92)</a></p></li>
+    </ul>
+  </div>
+
+  <div class="content-seperator content-seperator--equalvertspacing--large"></div>
+
+  <h2 class="h3">Revalidation</h2>
 
   <p>Offering the user a phone call from a nurse in order to revalidate dispostions.</p>
 
@@ -25,7 +56,7 @@
     <ul>
       <li>
         <p>
-          <a href="/callback-offered/linear">Revalidation as an offer</a><br>
+          <a href="/callback-offered/linear">Revalidation as an offer</a><br><!-- care advice would be in this one -->
           <span class="form-hint">For example some emergency care dispositions</span>
         </p>
       </li>

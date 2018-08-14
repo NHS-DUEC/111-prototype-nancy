@@ -14,16 +14,24 @@ p.tabular-prefix {
 // NHS.UK redesign typography which can be used for testing
 body.nhs-redesign {
   p {
-    margin-bottom: $baseline-grid-unit*4;
+    margin: $baseline-grid-unit*4 0;
     @include media(mid) {
-      margin-bottom: $baseline-grid-unit*6;
+      margin: $baseline-grid-unit*6 0;
+    }
+  }
+
+  .small p,
+  p.small {
+    margin: $baseline-grid-unit*4 0;
+    @include media(mid) {
+      margin: $baseline-grid-unit*5 0;
     }
   }
 
   .lede {
-    margin-bottom: $baseline-grid-unit*6;
+    margin: $baseline-grid-unit*7 0;
     @include media(mid) {
-      margin-bottom: $baseline-grid-unit*5;
+      margin: $baseline-grid-unit*8 0;
     }
   }
 }

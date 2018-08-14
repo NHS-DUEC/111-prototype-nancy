@@ -1,0 +1,100 @@
+.map-multiple {
+  position: sticky;
+  top: 0;
+  /*width: 100vw;*/
+  height: 45vh;
+  border-top: $baseline-grid-unit/2 solid $grey-4;
+  border-bottom: $baseline-grid-unit/2 solid $grey-4;
+
+  & > #map {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.places,
+.remote-services {
+  padding: 0 $baseline-grid-unit*5;
+  @include media(960px) {
+    min-height: 45vh;
+    background: $grey-5;
+    padding-top: $baseline-grid-unit*6;
+    border-bottom: $baseline-grid-unit/2 solid $grey-4;
+  }
+}
+
+.service-multiple {
+  border-bottom: 2px solid $grey-4;
+  padding: $baseline-grid-unit*5 0;
+  @include media(960px) {
+    box-sizing: border-box;
+    display: table;
+    width: 100%;
+    max-width: 960px;
+    background-color: $white;
+    margin: 0 auto $baseline-grid-unit*6 auto;
+    padding: $baseline-grid-unit*5;
+    border-bottom-width: 1px;
+  }
+
+  .label,
+  .details,
+  .directions,
+  .features {
+    @include media(960px) {
+      display: table-cell;
+      & > p {
+        margin-top: 0;
+      }
+    }
+  }
+
+  .label {
+    @include media(960px) {
+      width: $baseline-grid-unit*9;
+    }
+
+    span {
+      display: block;
+      text-align: center;
+      line-height: $baseline-grid-unit*5;
+      font-weight: bold;
+      color: $white;
+      width: $baseline-grid-unit*5;
+      height: $baseline-grid-unit*5;
+      background-color: $red;
+      border-radius: 50%;
+    }
+  }
+
+  .details {
+    @include media(960px) {
+      width: 240px;
+    }
+  }
+  .directions {
+    @include media(960px) {
+      width: 160px;
+    }
+  }
+  .features {
+    @include media(960px) {
+      width: 484px;
+    }
+  }
+
+  .cta {
+    text-align: right;
+  }
+}
+
+.nhs-redesign .service-multiple > div {
+  @include media(960px) {
+    & :first-child {
+      margin-top: 0;
+    }
+    & :last-child {
+      margin-bottom: 0;
+    }
+  }
+}

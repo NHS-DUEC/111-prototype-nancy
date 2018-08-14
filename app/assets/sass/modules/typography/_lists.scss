@@ -46,12 +46,6 @@ li {
     }
 }
 
-@media (min-width: 925px) {
-    .page-section *+* {
-        margin-top: 32px;
-    }
-}
-
 ul.link-list {
     list-style-type: none;
     padding: 0;
@@ -180,10 +174,13 @@ li.tabular-data-row {
 
 // NHS.UK redesign typography which can be used for testing
 .nhs-redesign {
-  ul {
-    margin-bottom: $baseline-grid-unit*5;
+  ul, ol {
+    margin: $baseline-grid-unit*4 0 0 0;
+    @include media(mid) {
+      margin-top: $baseline-grid-unit*6;
+    }
   }
   li {
-    margin-bottom: $baseline-grid-unit*2;
+    margin: $baseline-grid-unit*2 0 0 0;
   }
 }

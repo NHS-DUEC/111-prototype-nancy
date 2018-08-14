@@ -31,6 +31,8 @@
 @import "modules/data/table";
 @import "modules/disclosure/details";
 @import "modules/disclosure/collapse";
+@import "modules/dispositions/care-advice";
+@import "modules/dispositions/disposition-unit";
 @import "modules/footer-global/footer";
 @import "modules/forms/date";
 @import "modules/forms/postcode";
@@ -57,6 +59,8 @@
 @import "modules/search/categories";
 @import "modules/search/results";
 @import "modules/signage/info";
+@import "modules/services/service-primary";
+@import "modules/services/service-listings";
 
 // Layout and grid
 @import "modules/layout/layout";

@@ -19,6 +19,16 @@ body {
   }
 }
 
+// evil cheat, prototypes only :)
+.full-width {
+  margin-left: -20px;
+  margin-right: -20px;
+  @include media(960px) {
+    margin-left: calc(-100vw / 2 + 960px / 2);
+    margin-right: calc(-100vw / 2 + 960px / 2);
+  }
+}
+
 
 // float a column right instead of left
 .f-right {
