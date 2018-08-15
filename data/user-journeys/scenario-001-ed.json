@@ -1,0 +1,56 @@
+{
+  "messages" : {
+    "questionReview" : "We can’t rule out a serious condition",
+    "questionReview2" : "You may need urgent medical help",
+    "answerHighlight" : "this means we can’t rule out a serious condition",
+    "callToAction" : "Get help as soon as you can"
+  },
+  "question" : {
+    "question" : "Have you breathed in anything hot or poisonous like smoke, hot gases or chemical fumes in the last 24 hours?",
+    "help" : "",
+    "answers" : [
+      "Yes",
+      "I’m not sure",
+      "No"
+    ],
+    "userAnswer" : "Yes"
+  },
+  "revalidation" : {
+    "offered" : true,
+    "type" : "offer"
+  },
+  "services" : {
+    "preamble" : "",
+    "primary" : {
+      "physical" : true,
+      "name" : "St Thomas Hospital",
+      "intro" : "",
+      "address" : "Emergency Department<br>St Thomas Hospital<br>Westminster Bridge Road<br>London<br>SE1 7EH",
+      "openingTimes" : "Open 24 hours",
+      "lat" : "51.498244",
+      "long" : "-0.119203",
+      "distance" : "0.8 miles",
+      "postscript" : ""
+    },
+    "furtherServices" : {
+      "physical" : [
+        {
+          "name" : "Kings College Hospital",
+          "intro" : "",
+          "address" : "Emergency Department<br>Kings College Hospital<br>Denmark Hill<br>London<br>SE5 9RS",
+          "openingTimes" : "Open 24 hours",
+          "lat" : "51.467897",
+          "long" : "-0.094346",
+          "distance" : "2 miles"
+        }
+      ],
+      "nonphysical" : [],
+      "mapCenter" : {
+        "lat" : "51.46870831752575",
+        "long" : "-0.0864543948358687"
+      }
+    }
+  },
+  "careAdvice" : "<div class=\"care-advice-output\"><details> <summary>Breathlessness</summary> <div> <ul> <li> Sit as upright as is comfortable. </li> <li> If an inhaler or a spacer is used for chest problems, follow the instructions about &quot;what to do if your breathing gets worse&quot;. </li> <li> Never use medicines which have been prescribed for someone else. </li> </ul> </div> </details> <details> <summary>Medication, pain and/or fever</summary> <div> <ul> <li> Paracetamol or ibuprofen can be used to relieve pain or a fever. Don’t take if you’ve been told not to, or you’ve already taken some. Read the instructions on the packet, or talk to a pharmacist. </li> </ul> </div> </details> <details> <summary>Headache</summary> <div> <ul> <li> A heated pad or covered hot water bottle on the back of your neck may help ease the pain. </li> <li> Call 999 if: <ul> <li> The person becomes very drowsy, isn’t responding normally or is having a fit. </li> <li> The person becomes severely ill with new marks under the skin which look like bruising or bleeding. </li> </ul> </li> </ul> </div> </details></div>",
+  "careAdviceFile" : "scenario-001-ed-care.html"
+}

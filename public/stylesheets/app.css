@@ -2402,6 +2402,7 @@ img {
 
 @media (min-width: 980px) {
   .location-section {
+    margin-top: 24px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 2;

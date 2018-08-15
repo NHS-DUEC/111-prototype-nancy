@@ -27,7 +27,7 @@ router.post('/offer-callback', function(req, res) {
   if (req.body['bookCall'] === 'yes') {
     res.redirect('/book-callback/?backUrl=%2Fcallback-offered%2Foffer-callback&forwardUrl=%2Fcallback-offered%2Fcall-booked');
   } else {
-    res.redirect('./service-options');
+    res.redirect('/user-journeys/primary-offering');
   }
 });
 
