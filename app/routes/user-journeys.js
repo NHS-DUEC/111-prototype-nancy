@@ -18,10 +18,10 @@ router.get('/scenario-001-ed', function(req, res) {
   res.redirect('check-question');
 });
 
-router.get('/HIDE', function(req, res) {
+router.get('/scenario-002-sexual-assault', function(req, res) {
   // zero out a namespaced session obj
   req.session.userJourney = {};
-  raw = fs.readFileSync('./data/user-journeys/HIDE-scenario-002-sexual-assault.json');
+  raw = fs.readFileSync('./data/user-journeys/scenario-002-sexual-assault.json');
   journeyModel = JSON.parse(raw);
   req.session.userJourney = journeyModel
   res.redirect('check-question');
@@ -45,7 +45,7 @@ router.post('/check-question', function(req, res) {
         res.redirect('/forced-callback/call-booking-start');
       }
     } else {
-      //res.send('DON’T revalidate!');
+      res.redirect('/user-journeys/primary-offering');
     }
   }
 });
@@ -68,6 +68,7 @@ router.get('/revisit-question', function(req, res) {
 router.get('/primary-offering', function(req, res) {
   res.render('triage-end-phase/primary-service.html', {
     callToAction : req.session.userJourney.messages.callToAction,
+    preamble : req.session.userJourney.services.preamble,
     name : req.session.userJourney.services.primary.name,
     intro : req.session.userJourney.services.primary.intro,
     postscript : req.session.userJourney.services.primary.postscript,

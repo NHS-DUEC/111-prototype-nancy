@@ -14,27 +14,23 @@
   <div class="content-seperator content-seperator--equalvertspacing"></div>
 
   <div class="disposition-set">
-    <!--
-    <div class="disposition-unit">
+    {% if preamble !== '' %}
+      <div class="disposition-unit">
 
-      <div class="collapse-title">
-        <h2>Before you get help</h2>
-        <span class="collapse-title-indicator-verbose">
-          <span class="show">Show</span>
-          <span class="hide">Hide</span>
-        </span>
+        <div class="collapse-title">
+          <h2>Before you get help</h2>
+          <span class="collapse-title-indicator-verbose">
+            <span class="show">Show</span>
+            <span class="hide">Hide</span>
+          </span>
+        </div>
+
+        <div class="collapse-content measure">
+          {{ preamble | safe }}
+        </div>
+
       </div>
-
-      <div class="collapse-content measure">
-        <p>Before you go - rewrite this bit?</p>
-        <ul>
-          <li>Don’t drive yourself, get someone to take you</li>
-          <li>Take all your medicines with you</li>
-        </ul>
-      </div>
-
-    </div>
-    -->
+    {% endif %}
 
     <div class="disposition-unit">
 
@@ -93,10 +89,7 @@
       </div>
 
       <div class="collapse-content measure">
-        <div class="care-advice-output">
-          {{ careAdvice | safe }}
-        </div>
-
+        {{ careAdvice | safe }}
       </div>
 
     </div>
