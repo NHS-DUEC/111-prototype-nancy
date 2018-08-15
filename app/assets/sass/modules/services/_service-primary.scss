@@ -3,6 +3,7 @@
   background-color: $grey-5;
 
   @include media(large) {
+    margin-top: $baseline-grid-unit*6;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 2;
