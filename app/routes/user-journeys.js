@@ -45,7 +45,12 @@ router.post('/check-question', function(req, res) {
         res.redirect('/forced-callback/call-booking-start');
       }
     } else {
-      res.redirect('/user-journeys/primary-offering');
+      var target = '/user-journeys/primary-offering';
+      // special case dispos
+      if (req.session.userJourney.dx === 'dx94') {
+        target = '/disposition/sexual-assault'
+      }
+      res.redirect(target);
     }
   }
 });
@@ -77,6 +82,7 @@ router.get('/primary-offering', function(req, res) {
     distance : req.session.userJourney.services.primary.distance,
     lat : req.session.userJourney.services.primary.lat,
     long : req.session.userJourney.services.primary.long,
+    careAdviceTitle : req.session.userJourney.careAdviceTitle,
     careAdvice : req.session.userJourney.careAdvice
   });
 });
