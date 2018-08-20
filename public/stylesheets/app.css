@@ -2488,7 +2488,7 @@ img {
   top: 0;*/
   /*width: 100vw;*/
   height: 45vh;
-  border-top: 2px solid #d8dde0;
+  border: 2px solid #d8dde0;
 }
 
 .map-multiple > #map {
@@ -2514,6 +2514,7 @@ img {
 }
 
 .service {
+  position: relative;
   display: grid;
   grid-template-columns: 20px auto;
   grid-column-gap: 24px;
@@ -2523,6 +2524,17 @@ img {
   .service {
     grid-template-columns: 20px 220px 300px auto;
     grid-template-rows: fit-content(100%);
+  }
+}
+
+.service .hook {
+  position: absolute;
+  left: -999em;
+}
+
+@media (min-width: 960px) {
+  .service .hook {
+    top: -48px;
   }
 }
 
@@ -2618,6 +2630,10 @@ img {
 
 .service .directions {
   padding-bottom: 16px;
+}
+
+.service.selected {
+  box-shadow: 0 0 0 4px #ffb81c;
 }
 
 @media (min-width: 960px) {

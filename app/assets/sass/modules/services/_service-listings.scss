@@ -3,7 +3,7 @@
   top: 0;*/
   /*width: 100vw;*/
   height: 45vh;
-  border-top: $baseline-grid-unit/2 solid $grey-4;
+  border: $baseline-grid-unit/2 solid $grey-4;
 
   & > #map {
     width: 100%;
@@ -27,12 +27,21 @@
 }
 
 .service {
+  position: relative;
   display: grid;
   grid-template-columns: 20px auto;
   grid-column-gap: $baseline-grid-unit*6;
   @include media(960px) {
     grid-template-columns: 20px 220px 300px auto;
     grid-template-rows: fit-content(100%);
+  }
+
+  .hook {
+    position: absolute;
+    left: -999em;
+    @include media(960px) {
+      top: -($baseline-grid-unit*12);
+    }
   }
 
   .label {
@@ -112,6 +121,10 @@
 
   .directions {
     padding-bottom: $baseline-grid-unit*4;
+  }
+
+  &.selected {
+    box-shadow: 0 0 0 $baseline-grid-unit $focus-colour;
   }
 }
 
