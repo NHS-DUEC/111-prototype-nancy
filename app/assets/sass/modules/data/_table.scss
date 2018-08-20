@@ -8,16 +8,13 @@ table {
   margin-bottom: $leading*4;
   }
 
-  caption {
-    @extend h2;
-
-    font-weight: normal;
-    text-align: left;
-    padding: 0 $leading/2 $leading $leading/2;
-  }
-
   tr {
     border-bottom: 1px solid $grey-4;
+  }
+
+  caption {
+    text-align: left;
+    padding: $leading $leading/8 $leading/2 $leading/8;
   }
 
   th, td {
@@ -28,8 +25,7 @@ table {
     //vertical-align: top;
 
     font-weight: $bodyweight;
-    font-size: $smallprint;
-    line-height: 1.5;
+    @extend .small;
 
     @include media(mid) {
       display: table-cell;
@@ -62,14 +58,23 @@ table {
 
   &.compact {
     margin-bottom: $leading;
-
+    caption {
+      padding: 0 $baseline-grid-unit/2 $baseline-grid-unit 0;
+      @include media(mid) {
+        padding: 0 $baseline-grid-unit $baseline-grid-unit*3 0;
+      }
+    }
     th, td {
       display: table-cell;
-      padding: leading/4;
+      padding: $baseline-grid-unit $baseline-grid-unit/2 $baseline-grid-unit 0;
+      color: $black;
 
       @include media(mid) {
-        padding: leading/2;
+        padding: $baseline-grid-unit*3 $baseline-grid-unit calc(#{$baseline-grid-unit*3} - 1px) 0;
       }
+    }
+    th {
+      font-weight: $bodyweight;
     }
   }
 

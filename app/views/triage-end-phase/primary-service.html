@@ -7,96 +7,92 @@
 {% block content %}
 
 <div class="content-block">
-  <a href="javascript: return false;" class="button-back">Back</a>
+  <a href="javascript: window.history.back();" class="button-back">Back</a>
 
-  <h1>{{ callToAction }}</h1>
+  <h1>Where to get help</h1>
 
-  <div class="content-seperator content-seperator--equalvertspacing"></div>
+  <div class="measure">
+    <h3>{{ name }}</h3>
+    {{ intro | safe }}
+  </div>
 
-  <div class="disposition-set">
-    {% if preamble !== '' %}
-      <div class="disposition-unit">
-
-        <div class="collapse-title">
-          <h2>Before you get help</h2>
-          <span class="collapse-title-indicator-verbose">
-            <span class="show">Show</span>
-            <span class="hide">Hide</span>
-          </span>
-        </div>
-
-        <div class="collapse-content measure">
-          {{ preamble | safe }}
-        </div>
-
-      </div>
-    {% endif %}
-
-    <div class="disposition-unit">
-
-      <div class="collapse-title">
-        <h2>Where to get help</h2>
-        <span class="collapse-title-indicator-verbose">
-          <span class="show">Show</span>
-          <span class="hide">Hide</span>
-        </span>
-      </div>
-
-      <div class="collapse-content">
-        <div class="service-primary">
-          <div class="measure">
-            <h3>The best place to get help is {{ name }}</h3>
-            {{ intro | safe }}
-          </div>
-
-          <div class="location-section">
-            <div class="details small">
-              <p>
-                {{ address | safe }}
-              </p>
-              {{ openingTimes | safe }}
-            </div>
-            <div class="geo">
-              <div id="service-location" class="map-frame"></div>
-            </div>
-            <div class="map-controls small">
-              <span>{{ distance }} away</span><br>
-              <a href="#">Get directions</a><br>
-              <a href="#">Change my location</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="measure">
-          <p>
-            If this recommended service isn’t right for you, you can <a href="/user-journeys/further-offering">
-            view more services that can help.</a>
-          </p>
-          {{ postscript | safe }}
-        </div>
-      </div>
-
+  <div class="location-section">
+    <div class="geo">
+      <div id="service-location" class="map-frame"></div>
     </div>
+    <div class="address small">
+      <p>
+        {{ address | safe }}
+      </p>
+    </div>
+    <div class="directions small">
+      <p>
+        <a href="#">{{ distance }} away - get directions</a><br>
+        <a href="#">Change my location</a>
+      </p>
+    </div>
+    <div class="hours small">
+      {{ openingTimes | safe }}
+      <!--
+      <table class="compact">
+        <tr>
+          <th scope="row">Monday</th>
+          <td>9am to 5pm</td>
+        </tr>
+        <tr>
+          <th scope="row">Tuesday</th>
+          <td>9am to 5pm</td>
+        </tr>
+        <tr>
+          <th scope="row">Wednesday</th>
+          <td>9am to 5pm</td>
+        </tr>
+        <tr>
+          <th scope="row">Thursday</th>
+          <td>9am to 5pm</td>
+        </tr>
+        <tr>
+          <th scope="row">Friday</th>
+          <td>9am to 5pm</td>
+        </tr>
+        <tr>
+          <th scope="row">Saturday</th>
+          <td>10am to 2pm</td>
+        </tr>
+        <tr>
+          <th scope="row">Sunday</th>
+          <td>Closed</td>
+        </tr>
+      </table>
+      -->
+    </div>
+  </div>
 
-    <div class="disposition-unit">
+  <div class="measure">
+    <div class="callout {{ callToActionLevel }}">
+      <p>{{ callToAction }}</p>
+    </div>
+    <p>
+      If this recommended service isn’t right for you, you can <a href="/user-journeys/further-offering">
+      view more services that can help.</a>
+    </p>
+    {{ postscript | safe }}
+  </div>
 
-      <div class="collapse-title">
+  <div class="content-seperator content-seperator--equalvertspacing--large"></div>
 
-        <h2>Care advice</h2>
-        <span class="collapse-title-indicator-verbose">
-          <span class="show">Show</span>
-          <span class="hide">Hide</span>
-        </span>
-      </div>
+  <div class="measure">
+    <h2>Care advice</h2>
+    {{ careAdvice | safe }}
 
-      <div class="collapse-content measure">
-        {{ careAdvice | safe }}
-      </div>
-
+    <div class="callout callout--info">
+      <p>
+        If there are any new symptoms, or the condition gets worse,
+        <a href="/book-callback/book-call-number">book a call with a nurse.</a>
+      </p>
     </div>
 
   </div>
-
 </div>
 
 {% endblock %}

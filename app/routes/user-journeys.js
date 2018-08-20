@@ -73,6 +73,7 @@ router.get('/revisit-question', function(req, res) {
 router.get('/primary-offering', function(req, res) {
   res.render('triage-end-phase/primary-service.html', {
     callToAction : req.session.userJourney.messages.callToAction,
+    callToActionLevel : req.session.userJourney.messages.callToActionLevel,
     preamble : req.session.userJourney.services.preamble,
     name : req.session.userJourney.services.primary.name,
     intro : req.session.userJourney.services.primary.intro,

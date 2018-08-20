@@ -28,7 +28,11 @@
   </div>
   <div class="form-group -controls">
     <button type="submit" class="button">Next</button>
-    <a href="{{ session.callBooking.backUrl }}" class="button-back">Back</a>
+    {% set back = "javascript:window.history.back();" %}
+    {% if session.callBooking.backUrl %}
+      {% set back = session.callBooking.backUrl %}
+    {% endif %}
+    <a href="{{ back }}" class="button-back">Back</a>
   </div>
 </form>
 
