@@ -25,7 +25,7 @@
     "primary" : {
       "physical" : true,
       "name" : "Whitechapel Haven",
-      "intro" : "<p>The Havens are specialist centres in London for people who have been raped or sexually assaulted.</p><div class=\"callout callout--attention\"><p>Open 24 hours but you must phone 020 3299 6900 first for advice and an appointment.</p></div>",
+      "important" : "<p>The Havens are specialist centres in London for people who have been raped or sexually assaulted.</p><div class=\"callout callout--attention\"><p>Open 24 hours but you must phone 020 3299 6900 first for advice and an appointment.</p></div>",
       "address" : "Whitechapel Haven<br>The Royal London Hospital<br>Whitechapel Road<br>London<br>E1 1BB",
       "openingTimes" : "<p>Open 24 hours</p>",
       "lat" : "51.518359",
@@ -37,7 +37,7 @@
       "physical" : [
         {
           "name" : "Paddington Haven",
-          "intro" : "<p>The Havens are specialist centres in London for people who have been raped or sexually assaulted.</p><p>Open 24 hours but you must phone 020 3299 6900 first for advice and an appointment.</p>",
+          "important" : "<p>Open 24 hours but you must phone 020 3299 6900 first for advice and an appointment.</p>",
           "address" : "Paddington Haven<br>St Marys Hospital<br>Praed Street<br>London<br>W2 1NY",
           "openingTimes" : "Open 24 hours",
           "lat" : "51.517415",
@@ -46,7 +46,7 @@
         },
         {
           "name" : "Emergency Department, St Thomas Hospital",
-          "intro" : "",
+          "important" : "",
           "address" : "Emergency Department<br>St Thomas Hospital<br>Westminster Bridge Road<br>London<br>SE1 7EH",
           "openingTimes" : "Open 24 hours",
           "lat" : "51.498244",
@@ -55,7 +55,7 @@
         },
         {
           "name" : "Emergency Department, Kings College Hospital",
-          "intro" : "",
+          "important" : "",
           "address" : "Emergency Department<br>Kings College Hospital<br>Denmark Hill<br>London<br>SE5 9RS",
           "openingTimes" : "Open 24 hours",
           "lat" : "51.467897",
@@ -66,13 +66,13 @@
       "nonphysical" : [
         {
           "name" : "The Remote Service",
-          "intro" : "The Remote Service are specialist advisors in London for people who have been raped or sexually assaulted.",
+          "important" : "The Remote Service are specialist advisors in London for people who have been raped or sexually assaulted.",
           "openingTimes" : "Available 24 hours",
           "action" : "<p><a href=\"javascript:return false;\"><b>Book a call</b></a></p>"
         },
         {
           "name" : "Another Remote Service",
-          "intro" : "Another Remote Service are specialist advisors in London for people who have been raped or sexually assaulted.",
+          "important" : "Another Remote Service are specialist advisors in London for people who have been raped or sexually assaulted.",
           "openingTimes" : "Available 24 hours",
           "action" : "<p><a href=\"javascript:return false;\"><b>Call 0800 1234 1234</b></a></p>"
         }

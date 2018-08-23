@@ -76,7 +76,7 @@ router.get('/primary-offering', function(req, res) {
     callToActionLevel : req.session.userJourney.messages.callToActionLevel,
     preamble : req.session.userJourney.services.preamble,
     name : req.session.userJourney.services.primary.name,
-    intro : req.session.userJourney.services.primary.intro,
+    important : req.session.userJourney.services.primary.important,
     postscript : req.session.userJourney.services.primary.postscript,
     address : req.session.userJourney.services.primary.address,
     openingTimes : req.session.userJourney.services.primary.openingTimes,
@@ -88,6 +88,7 @@ router.get('/primary-offering', function(req, res) {
   });
 });
 
+/* Unused as yet
 router.get('/further-offering', function(req, res) {
   res.render('triage-end-phase/further-services.html', {
     physical : req.session.userJourney.services.furtherServices.physical,
@@ -95,3 +96,4 @@ router.get('/further-offering', function(req, res) {
     mapCenter : req.session.userJourney.services.furtherServices.mapCenter
   });
 });
+*/

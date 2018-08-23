@@ -26,7 +26,7 @@
     "primary" : {
       "physical" : true,
       "name" : "St Thomas Hospital",
-      "intro" : "",
+      "important" : "",
       "address" : "Emergency Department<br>St Thomas Hospital<br>Westminster Bridge Road<br>London<br>SE1 7EH",
       "openingTimes" : "<p>Open 24 hours</p>",
       "lat" : "51.498244",
@@ -38,7 +38,7 @@
       "physical" : [
         {
           "name" : "Kings College Hospital",
-          "intro" : "",
+          "important" : "",
           "address" : "Emergency Department<br>Kings College Hospital<br>Denmark Hill<br>London<br>SE5 9RS",
           "openingTimes" : "Open 24 hours",
           "lat" : "51.467897",
