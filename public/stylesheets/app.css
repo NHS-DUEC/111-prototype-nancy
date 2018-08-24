@@ -1,11 +1,11 @@
 @import url("//assets.nhs.uk/fonts/nhsuk-fonts-1.1.0.css");
-li.tabular-data-row, .prototype-warning-inner, .card, .breadcrumb, .footer-container, .-date, .postcode, .error-summary, form,
+li.tabular-data-row, .prototype-warning-inner, .card, .breadcrumb, .footer-container, .-date, .postcode, .address-lookup, .error-summary, form,
 .form, .form-group, .search, #global-header, .location, .location-controls, .nhsid-container, .signage, .survey-banner > div, .header-container,
 .content, .grid-row, .clearfix {
   zoom: 1;
 }
 
-li.tabular-data-row:after, .prototype-warning-inner:after, .card:after, .breadcrumb:after, .footer-container:after, .-date:after, .postcode:after, .error-summary:after, form:after,
+li.tabular-data-row:after, .prototype-warning-inner:after, .card:after, .breadcrumb:after, .footer-container:after, .-date:after, .postcode:after, .address-lookup:after, .error-summary:after, form:after,
 .form:after, .form-group:after, .search:after, #global-header:after, .location:after, .location-controls:after, .nhsid-container:after, .signage:after, .survey-banner > div:after, .header-container:after,
 .content:after, .grid-row:after, .clearfix:after {
   content: "";
@@ -1311,6 +1311,30 @@ html {
   }
 }
 
+.address-lookup {
+  /*@include media(mid) {
+    .form-group {
+      clear: none;
+      float: left;
+      margin-right: 1em;
+    }
+
+    label {
+      width: auto;
+    }
+
+    input[type="text"],
+    input[type="number"] {
+      width: 100%;
+    }
+
+    .button {
+      margin-top: $baseline-grid-unit*2;
+      padding-top: 2px;
+    }
+  }*/
+}
+
 @media (min-width: 500px) {
   input[type='text'].postcode {
     width: 32%;
@@ -1501,7 +1525,7 @@ input[type='password']:focus {
   input[type='tel'].-small,
   input[type='email'].-small,
   input[type='password'].-small {
-    width: 8em;
+    width: 10em;
   }
 }
 
@@ -2099,6 +2123,21 @@ img {
   border-style: solid;
   border-width: 0 12px 16px 12px;
   border-color: transparent transparent #fada8b transparent;
+}
+
+.address-listing .address {
+  display: block;
+  text-decoration: none;
+  padding: 16px;
+  border: 1px solid #d8dde0;
+  border-left-width: 4px;
+  margin-bottom: 24px;
+}
+
+.address-listing .address:hover {
+  color: #fff;
+  background-color: #005eb8;
+  border-color: #005eb8;
 }
 
 .load-container {

@@ -1,4 +1,4 @@
-//require('dotenv').config();
+require('dotenv').config();
 
 var path = require('path')
 var express = require('express')
@@ -19,8 +19,11 @@ var questions = require('./app/routes/questions');
 var forcedCallback = require('./app/routes/forced-callback');
 var callbackOffered = require('./app/routes/callback-offered');
 var bookCallback = require('./app/routes/book-callback');
+var tellUsWhereYouAre = require('./app/routes/tell-us-where-you-are');
 
 var userJourneys = require('./app/routes/user-journeys');
+
+var reverseGeocoding = require('./app/routes/reverse-geocoding');
 
 var app = express()
 
@@ -104,8 +107,11 @@ app.use('/questions', questions);
 app.use('/forced-callback', forcedCallback);
 app.use('/callback-offered', callbackOffered);
 app.use('/book-callback', bookCallback);
+app.use('/tell-us-where-you-are', tellUsWhereYouAre);
 
 app.use('/user-journeys', userJourneys);
+
+app.use('/reverse-geocoding', reverseGeocoding);
 
 // auto render any view that exists
 app.get(/^\/([^.]+)$/, function (req, res) {

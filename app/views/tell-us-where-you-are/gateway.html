@@ -1,0 +1,53 @@
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhs-redesign{% endblock %}
+
+{% block content %}
+
+<div class="measure">
+
+  <div class="content-block">
+    <h1 class="heading--large">Get medical help near you</h1>
+    <ol>
+      <li>Answer questions on this site about your main symptom.</li>
+      <li>Get advice on where to go for help and when, or a call back from a nurse.</li>
+      <li>Find out what to do if you can’t see your usual doctor or dentist.</li>
+    </ol>
+
+    <div class="content-seperator content-seperator--equalvertspacing--large"></div>
+
+    <h2>Where are you now?</h2>
+    <p>Tell us where you are now to get help in that area.</p>
+
+    <form method="post" class="content-block">
+      <div class="address-lookup">
+        <div class="form-group">
+          <label for="building"><b>Building number or name</b> (optional)</label>
+          <span class="form-hint">
+            For example ‘11’ or ‘The Willows’
+          </span>
+          <input type="text" id="building" name="building" autocomplete="off">
+        </div>
+        <div class="form-group">
+          <label for="postcode"><b>Postcode</b></label>
+          <input type="text" id="postcode" name="postcode" class="-small" autocomplete="off">
+        </div>
+        <div class="form-group shunt-2">
+          <button type="submit" class="button">Find address</button>
+        </div>
+      </div>
+      <p>
+        <a href="">I don’t know the postcode</a>
+      </p>
+    </form>
+  </div>
+
+  <div class="callout callout--info">
+    <p>Always follow any medical advice you’ve already been given by your doctor. This service is not a replacement for seeing a health professional. You can read read more about this in our <a href="#">terms and conditions</a>.</p>
+  </div>
+
+</div>
+
+{% endblock %}

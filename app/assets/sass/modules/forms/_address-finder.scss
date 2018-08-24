@@ -1,0 +1,29 @@
+.address-finder {
+  @extend %contain-floats;
+
+  .button {
+    @include button($nhs-blue, $boldweight);
+    box-shadow: none;
+    border: 2px solid $nhs-blue;
+
+    &:hover,
+    &:focus {
+      border-color: darken($nhs-blue, 5%);
+    }
+  }
+
+  @include media(mid) {
+
+    input[type="text"] {
+      float: left;
+      width: calc(75% - 4px);
+      margin: 0;
+    }
+
+    .button {
+      float: left;
+      width: calc(25% - 4px);
+    }
+
+  }
+}

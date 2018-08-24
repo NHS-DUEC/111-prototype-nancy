@@ -39,7 +39,7 @@ input[type='password'] {
 
   &.-small {
     @include media(mid) {
-      width: 8em;
+      width: 10em;
     }
   }
 }
