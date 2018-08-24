@@ -7,176 +7,258 @@
 {% block content %}
 
 <div class="content-block">
-  <a href="javascript: return false;" class="button-back">Back</a>
+  <a href="javascript: window.history.back();" class="button-back">Back</a>
 
-  <h1>More services that can help</h1>
+  <div class="measure">
+    <h1>More services that can help</h1>
+    <div class="callout callout--warning">
+      <p>Get help as soon as you can.</p>
+    </div>
+  </div>
+</div>
 
-  <div class="content-seperator content-seperator--equalvertspacing"></div>
+<div class="content-block">
+  <h2>Places you can go</h2>
 
-  <div class="collapse-title">
-    <h2>Places you can go</h2>
-    <span class="collapse-title-indicator-verbose">
-      <span class="show">Show</span>
-      <span class="hide">Hide</span>
-    </span>
+  <div class="map-multiple shunt-2">
+    <div id="map"></div>
   </div>
 
-  <div class="collapse-content">
+  <div class="service-group">
+    <div class="panel service">
 
-    <div class="map-multiple full-width shunt-2">
-      <div id="map"></div>
-    </div>
+      <div id="service_1" class="hook"></div>
 
-    <div class="places full-width">
+      <div class="label small">
+        <span>1</span>
+      </div>
 
-      <div class="service-multiple">
-        <div class="label small">
-          <span>1</span>
+      <div class="address small">
+        Paddington Haven<br>
+        St Marys Hospital<br>
+        Praed Street<br>
+        London<br>
+        W2 1NY
+      </div>
+
+      <div class="hours small">
+        Open 24 hours
+      </div>
+
+      <div class="details small">
+        <div class="directions">
+          <a href="#" id="showCenter">3.5 miles away - get directions</a>
         </div>
-        <div class="details small">
-          <p>
-            Paddington Haven<br>
-            St Marys Hospital<br>
-            Praed Street<br>
-            London<br>
-            W2 1NY
-          </p>
+        <div class="contact">
+          Web: <a href="https://www.imperial.nhs.uk/our-services/emergency-care/accident-and-emergency">www.imperial.nhs.uk</a><br>
+          Tel: 020 3312 2808
         </div>
-        <div class="directions small">
+      </div>
+
+      <div class="features small measure">
+        <div class="callout callout--attention">
           <p>
-            <span>3.5 miles away</span><br>
-            <a href="#" id="showCenter">Get directions</a>
-          </p>
-        </div>
-        <div class="features small">
-          <p>
-            The Havens are specialist centres in London for people who have
-            been raped or sexually assaulted.
-          </p>
-          <p>
-            Open 24 hours but you must phone 020 3299 6900 first for advice
+            Open 24 hours but you must phone 020 3312 2808 first for advice
             and an appointment.
           </p>
         </div>
+
+        <details>
+          <summary>More information about this service</summary>
+          <div>
+            <p>
+              Sexual health services provide contraception, testing and
+              treatment for sexually transmitted infections (STIs), pregnancy
+              advice and testing and help with sexual problems. Sexual
+              assault referral centres offer confidential help and medical care.
+            </p>
+          </div>
+        </details>
+
+      </div>
+    </div>
+
+    <div class="panel service">
+      <div id="service_2" class="hook"></div>
+      <div class="label small">
+        <span>2</span>
+      </div>
+      <div class="address small">
+        Emergency Department<br>
+        St Thomas Hospital<br>
+        Westminster Bridge Road<br>
+        London<br>
+        SE1 7EH
+      </div>
+      <div class="hours small">
+        <table class="compact">
+          <caption>Opening hours</caption>
+          <tr>
+            <th scope="row">Monday</th>
+            <td>9am to 5pm</td>
+          </tr>
+          <tr>
+            <th scope="row">Tuesday</th>
+            <td>9am to 5pm</td>
+          </tr>
+          <tr>
+            <th scope="row">Wednesday</th>
+            <td>9am to 5pm</td>
+          </tr>
+          <tr>
+            <th scope="row">Thursday</th>
+            <td>9am to 5pm</td>
+          </tr>
+          <tr>
+            <th scope="row">Friday</th>
+            <td>9am to 5pm</td>
+          </tr>
+          <tr>
+            <th scope="row">Saturday</th>
+            <td>10am to 2pm</td>
+          </tr>
+          <tr>
+            <th scope="row">Sunday</th>
+            <td>Closed</td>
+          </tr>
+        </table>
+      </div>
+      <div class="details small">
+        <div class="directions">
+          <a href="#">0.8 miles away - get directions</a>
+        </div>
+        <div class="contact">
+          Web: <a href="http://www.guysandstthomas.nhs.uk">www.guysandstthomas.nhs.uk</a>
+        </div>
       </div>
 
-      <div class="service-multiple">
-        <div class="label small">
-          <span>2</span>
+      <div class="features small measure">
+        <details>
+          <summary>
+            More information about this service
+          </summary>
+          <div>
+            <p>
+              The emergency department is for critical or life-threatening injuries
+              or illnesses. Also known as accident and emergency or casualty.
+            </p>
+          </div>
+        </details>
+      </div>
+    </div>
+
+    <div class="panel service">
+      <div id="service_3" class="hook"></div>
+      <div class="label small">
+        <span>3</span>
+      </div>
+      <div class="address small">
+        Emergency Department<br>
+        Kings College Hospital<br>
+        Denmark Hill<br>
+        London<br>
+        SE5 9RS
+      </div>
+      <div class="hours small">
+        Open 24 hours
+      </div>
+      <div class="details small">
+        <div class="directions">
+          <a href="#">2 miles away - get directions</a>
         </div>
-        <div class="details small">
-          <p>
-            Emergency Department<br>
-            St Thomas Hospital<br>
-            Westminster Bridge Road<br>
-            London<br>
-            SE1 7EH
-          </p>
-        </div>
-        <div class="small">
-          <p>
-            <span>0.8 miles away</span><br>
-            <a href="#">Get directions</a>
-          </p>
-        </div>
-        <div class="features small">
-          <p>Open 24 hours</p>
+        <div class="contact">
+          Web: <a href="http://www.kch.nhs.uk/patientsvisitors/patients/emergency-patients">www.kch.nhs.uk</a>
         </div>
       </div>
 
-      <div class="service-multiple">
-        <div class="label small">
-          <span>3</span>
-        </div>
-        <div class="details small">
-          <p>
-            Emergency Department<br>
-            Kings College Hospital<br>
-            Denmark Hill<br>
-            London<br>
-            SE5 9RS
-          </p>
-        </div>
-        <div class="small">
-          <p>
-            <span>2 miles away</span><br>
-            <a href="#">Get directions</a>
-          </p>
-        </div>
-        <div class="features small">
-          <p>Open 24 hours</p>
-        </div>
+      <div class="features small measure">
+        <details>
+          <summary>
+            More information about this service
+          </summary>
+          <div>
+            <p>
+              The emergency department is for critical or life-threatening injuries
+              or illnesses. Also known as accident and emergency or casualty.
+            </p>
+          </div>
+        </details>
       </div>
-
-      <div class="service-multiple">
-        <div class="small">
-          <p>
-            <a href="#">Change my location</a>
-          </p>
-        </div>
-      </div>
-
     </div>
   </div>
 
-  <div class="collapse-title">
-    <h2>Services you can talk to</h2>
-    <span class="collapse-title-indicator-verbose">
-      <span class="show">Show</span>
-      <span class="hide">Hide</span>
-    </span>
+  <div>
+    <a href="#">Change my location</a>
   </div>
+</div>
 
-  <div class="collapse-content">
-    <div class="remote-services full-width">
+<div class="content-seperator content-seperator--equal-vert-spacing"></div>
 
-      <div class="service-multiple">
-        <div class="details small">
-          <p>
-            A remote service
-          </p>
-        </div>
-        <div class="features small">
-          <p>
-            The Remote Service are specialist advisors in London for people who
-            have been raped or sexually assaulted.
-          </p>
-          <p>
-            Available 24 hours
-          </p>
-        </div>
-        <div class="cta small">
-          <p>
-            <a href=""><b>Book a call</b></a>
-          </p>
-        </div>
+<div class="content-block">
+  <h2>Services you can talk to</h2>
+
+  <div class="service-group">
+    <div class="panel remote-service">
+      <div class="name small">
+        A remote service
       </div>
-
-      <div class="service-multiple">
-        <div class="details small">
-          <p>
-            A different remote service
-          </p>
-        </div>
-        <div class="features small">
-          <p>
-            The Different Remote Service are specialist advisors in London for
-            people who have been raped or sexually assaulted.
-          </p>
-          <p>
-            Available 24 hours
-          </p>
-        </div>
-        <div class="cta small">
-          <p>
-            Call <a href=""><b>0800 1234 1234</b></a>
-          </p>
-        </div>
+      <div class="hours small">
+        Available 24 hours
       </div>
+      <div class="details small">
+        <a href=""><b>Book a call</b></a>
+      </div>
+      <div class="features small measure">
+        <details>
+          <summary>
+            More information about this service
+          </summary>
+          <div>
+            <p>
+              This is a service with trained mental health specialists.
+            </p>
+          </div>
+        </details>
+      </div>
+    </div>
 
+    <div class="panel remote-service">
+      <div class="name small">
+        A different remote service
+      </div>
+      <div class="hours small">
+        Available 24 hours
+      </div>
+      <div class="details small">
+        Call <a href=""><b>0800 1234 1234</b></a>
+      </div>
+      <div class="features small measure">
+        <details>
+          <summary>
+            More information about this service
+          </summary>
+          <div>
+            <p>
+              Sexual health services provide contraception, testing and treatment
+              for sexually transmitted infections (STIs), pregnancy advice and
+              testing and help with sexual problems. Sexual assault referral
+              centres offer confidential help and medical care.
+            </p>
+          </div>
+        </details>
+      </div>
     </div>
   </div>
+</div>
 
+<div class="content-block">
+  <div class="measure">
+    <div class="callout callout--info">
+      <p>
+        If you get worse <a href="#">start again using your new symptoms.</a>
+      </p>
+    </div>
+  </div>
 </div>
 
 {% endblock %}
@@ -190,13 +272,17 @@
 
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDP454skpvnlft08MDIcZG_khm-sBHmFbM"></script>
   <script>
+
+    var highlightService = function() {
+      var $group = $('.panel.service');
+      var $target = $('#service_' + this.label.text);
+      $group.removeClass('selected');
+      $target.parent().addClass('selected');
+      $target[0].scrollIntoView({ behavior: 'smooth', block: 'start' });
+    };
+
     $(function() {
       mapObj = new google.maps.Map(document.getElementById('map'), {
-        center: {
-          lat: 51.49778644873909,
-          lng: -0.11666935449215998
-        },
-        zoom: 12,
         zoomControl: true,
         mapTypeControl: false,
         scaleControl: true,
@@ -210,33 +296,27 @@
         {lat: 51.498244, lng: -0.119203},
         {lat: 51.467897, lng: -0.094346}
       ];
-      marker_1 = new google.maps.Marker({
-        position: locations[0],
-        map: mapObj,
-        label: {
-          text: '1',
-          fontWeight: 'bold',
-          color: 'white'
-        }
-      });
-      marker_2 = new google.maps.Marker({
-        position: locations[1],
-        map: mapObj,
-        label: {
-          text: '2',
-          fontWeight: 'bold',
-          color: 'white'
-        }
-      });
-      marker_3 = new google.maps.Marker({
-        position: locations[2],
-        map: mapObj,
-        label: {
-          text: '3',
-          fontWeight: 'bold',
-          color: 'white'
-        }
-      });
+      var markers = [];
+
+      for (var i = 0; i < locations.length; i++) {
+        var marker = new google.maps.Marker({
+          position: locations[i],
+          map: mapObj,
+          label: {
+            text: '' + (i+1),
+            fontWeight: 'bold',
+            color: 'white'
+          }
+        });
+        marker.addListener('click', highlightService)
+        markers.push(this);
+      }
+
+      var bounds = new google.maps.LatLngBounds();
+      for (var i = 0; i < locations.length; i++) {
+        bounds.extend(locations[i]);
+      }
+      mapObj.fitBounds(bounds);
 
       $('#showCenter').on('click', function(e) {
         e.preventDefault();

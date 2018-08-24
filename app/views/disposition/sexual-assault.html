@@ -58,11 +58,7 @@
       <div class="collapse-content">
         <div class="service-primary">
           <div class="measure">
-            <h3>The best place to get help is Whitechapel Haven</h3>
-            <p>
-              The Havens are specialist centres in London for people who have
-              been raped or sexually assaulted.
-            </p>
+            <h3>Whitechapel Haven</h3>
             <div class="callout callout--attention">
               <p>
                 Open 24 hours but you must phone 020 3299 6900 first for advice
@@ -72,7 +68,10 @@
           </div>
 
           <div class="location-section">
-            <div class="details small">
+            <div class="geo">
+              <div id="service-location" class="map-frame"></div>
+            </div>
+            <div class="address small">
               <p>
                 Whitechapel Haven<br>
                 The Royal London Hospital<br>
@@ -80,16 +79,30 @@
                 London<br>
                 E1 1BB
               </p>
-              <p>Open 24 hours</p>
             </div>
-            <div class="geo">
-              <div id="service-location" class="map-frame"></div>
+            <div class="directions small">
+              <p>
+                <a href="#">2.4 miles away - get directions</a><br>
+                <a href="#">Change my location</a>
+              </p>
             </div>
-            <div class="map-controls small">
-              <span>2.4 miles away</span><br>
-              <a href="#">Get directions</a><br>
-              <a href="#">Change my location</a>
+            <div class="hours small">
+              Open 24 hours
             </div>
+          </div>
+
+          <div class="measure">
+            <details>
+              <summary>More information about this service</summary>
+              <div>
+                <p>
+                  Sexual health services provide contraception, testing and
+                  treatment for sexually transmitted infections (STIs), pregnancy
+                  advice and testing and help with sexual problems. Sexual
+                  assault referral centres offer confidential help and medical care.
+                </p>
+              </div>
+            </details>
           </div>
         </div>
 
@@ -215,7 +228,6 @@
     </div>
 
   </div>
-
 </div>
 
 {% endblock %}

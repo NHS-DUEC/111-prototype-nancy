@@ -45,7 +45,12 @@ router.post('/check-question', function(req, res) {
         res.redirect('/forced-callback/call-booking-start');
       }
     } else {
-      res.redirect('/user-journeys/primary-offering');
+      var target = '/user-journeys/primary-offering';
+      // special case dispos
+      if (req.session.userJourney.dx === 'dx94') {
+        target = '/disposition/sexual-assault'
+      }
+      res.redirect(target);
     }
   }
 });
@@ -68,19 +73,22 @@ router.get('/revisit-question', function(req, res) {
 router.get('/primary-offering', function(req, res) {
   res.render('triage-end-phase/primary-service.html', {
     callToAction : req.session.userJourney.messages.callToAction,
+    callToActionLevel : req.session.userJourney.messages.callToActionLevel,
     preamble : req.session.userJourney.services.preamble,
     name : req.session.userJourney.services.primary.name,
-    intro : req.session.userJourney.services.primary.intro,
+    important : req.session.userJourney.services.primary.important,
     postscript : req.session.userJourney.services.primary.postscript,
     address : req.session.userJourney.services.primary.address,
     openingTimes : req.session.userJourney.services.primary.openingTimes,
     distance : req.session.userJourney.services.primary.distance,
     lat : req.session.userJourney.services.primary.lat,
     long : req.session.userJourney.services.primary.long,
+    careAdviceTitle : req.session.userJourney.careAdviceTitle,
     careAdvice : req.session.userJourney.careAdvice
   });
 });
 
+/* Unused as yet
 router.get('/further-offering', function(req, res) {
   res.render('triage-end-phase/further-services.html', {
     physical : req.session.userJourney.services.furtherServices.physical,
@@ -88,3 +96,4 @@ router.get('/further-offering', function(req, res) {
     mapCenter : req.session.userJourney.services.furtherServices.mapCenter
   });
 });
+*/

@@ -1,9 +1,11 @@
 {
+  "dx" : "",
   "messages" : {
     "questionReview" : "We can’t rule out a serious condition",
     "questionReview2" : "You may need urgent medical help",
     "answerHighlight" : "this means we can’t rule out a serious condition",
-    "callToAction" : "Get help as soon as you can"
+    "callToAction" : "Get help as soon as you can.",
+    "callToActionLevel" : "callout--warning"
   },
   "question" : {
     "question" : "Have you breathed in anything hot or poisonous like smoke, hot gases or chemical fumes in the last 24 hours?",
@@ -24,9 +26,9 @@
     "primary" : {
       "physical" : true,
       "name" : "St Thomas Hospital",
-      "intro" : "",
+      "important" : "",
       "address" : "Emergency Department<br>St Thomas Hospital<br>Westminster Bridge Road<br>London<br>SE1 7EH",
-      "openingTimes" : "Open 24 hours",
+      "openingTimes" : "<p>Open 24 hours</p>",
       "lat" : "51.498244",
       "long" : "-0.119203",
       "distance" : "0.8 miles",
@@ -36,7 +38,7 @@
       "physical" : [
         {
           "name" : "Kings College Hospital",
-          "intro" : "",
+          "important" : "",
           "address" : "Emergency Department<br>Kings College Hospital<br>Denmark Hill<br>London<br>SE5 9RS",
           "openingTimes" : "Open 24 hours",
           "lat" : "51.467897",
