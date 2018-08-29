@@ -78,7 +78,24 @@ router.post('/address-search', function (req, res) {
 })
 
 router.post('/manual-address', function (req, res) {
-  res.redirect('/finding-pathways/start');
+  var address = '';
+  if (req.body['address_1'] !== '') {
+    address += req.body['address_1'] + ', '
+  }
+  if (req.body['address_2'] !== '') {
+    address += req.body['address_2'] + ', '
+  }
+  if (req.body['address_3'] !== '') {
+    address += req.body['address_3'] + ', '
+  }
+  if (req.body['address_4'] !== '') {
+    address += req.body['address_4'] + ', '
+  }
+  if (req.body['postcode'] !== '') {
+    address += req.body['postcode'] + ', '
+  }
+  address = address.slice(0, -2);
+  res.redirect('/tell-us-where-you-are/handle-address?str=' + address);
 });
 
 router.get('/handle-address', function (req, res) {

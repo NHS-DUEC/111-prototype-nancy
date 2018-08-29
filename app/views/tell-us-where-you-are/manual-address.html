@@ -8,21 +8,37 @@
 
 <div class="content-block measure">
   <a href="/tell-us-where-you-are/address-search" class="button-back">Back</a>
+
+  {% if error.summary %}
+    <div class="error-summary">
+      <div>
+        <h2>There’s a problem</h2>
+        <p>{{ error.summary | safe }}</p>
+      </div>
+    </div>
+  {% endif %}
+
   <h1 class="heading--large">Enter address</h1>
 </div>
 
 <div class="content-block measure">
   <form method="post">
     <fieldset>
-      <div class="form-group">
-        <label for="address_1"><b>Address</b></label>
+      <div class="form-group {% if error.address %}-errors{% endif %}">
+        <label for="address_1">
+          <b>Address</b>
+          {% if error.address %}<br>{{ error.address }}{% endif %}
+        </label>
         <input type="text" id="address_1" name="address_1" autocomplete="off">
         <input type="text" id="address_2" name="address_2" autocomplete="off">
         <input type="text" id="address_3" name="address_3" autocomplete="off">
         <input type="text" id="address_4" name="address_4" autocomplete="off">
       </div>
-      <div class="form-group">
-        <label for="postcode"><b>Postcode</b></label>
+      <div class="form-group {% if error.postcode %}-errors{% endif %}">
+        <label for="postcode">
+          <b>Postcode</b>
+          {% if error.postcode %}<br>{{ error.postcode }}{% endif %}
+        </label>
         <input type="text" id="postcode" name="postcode" class="-small" autocomplete="off">
       </div>
     </fieldset>
