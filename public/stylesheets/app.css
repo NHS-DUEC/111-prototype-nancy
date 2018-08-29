@@ -2202,7 +2202,7 @@ img {
 
 @media (min-width: 500px) {
   .location {
-    border-left: 4px solid #768692;
+    border: 1px solid #768692;
     width: 100%;
   }
 }
@@ -2255,7 +2255,7 @@ img {
 }
 
 .location-controls .geolocation {
-  padding: 16px 0 0 12px;
+  padding: 16px 0 0 0;
 }
 
 .gm-style {

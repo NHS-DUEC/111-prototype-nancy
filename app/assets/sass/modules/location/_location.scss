@@ -3,7 +3,7 @@
   background-color: $grey-5;
 
   @include media(mid) {
-    border-left: $baseline-grid-unit solid $grey-2;
+    border: 1px solid $grey-2;
     width: 100%;
   }
 
@@ -53,7 +53,7 @@
   }
 
   .geolocation {
-    padding: $baseline-grid-unit*4 0 0 $baseline-grid-unit*3;
+    padding: $baseline-grid-unit*4 0 0 0;
   }
 }
 

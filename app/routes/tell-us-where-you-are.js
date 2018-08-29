@@ -77,6 +77,10 @@ router.post('/address-search', function (req, res) {
   }
 })
 
+router.post('/manual-address', function (req, res) {
+  res.redirect('/finding-pathways/start');
+});
+
 router.get('/handle-address', function (req, res) {
   req.session.addressSelected = req.query.str;
   res.redirect('/finding-pathways/start');
