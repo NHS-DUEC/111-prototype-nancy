@@ -9,10 +9,15 @@ module.exports = router
 // Tell us where you are - August 2018 +++++++++++++++++++++++++++++++++++++++++
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-router.post('/gateway', function (req, res) {
+router.post('/address-search', function (req, res) {
 
   if (req.body['postcode'] === '') {
-    res.send('postcode required');
+    res.render('tell-us-where-you-are/address-search.html', {
+      error : {
+        summary : '<a href="#postcode">Please enter a postcode</a>',
+        postcode: 'Postcode is required'
+      }
+    });
   } else {
     var postcode = req.body['postcode']
     // strip spaces
@@ -27,8 +32,6 @@ router.post('/gateway', function (req, res) {
           addresses.sort(naturalSort);
           var filtered = [];
 
-          //res.send(addresses);
-
           if (building !== '') {
             for (var i=0; i<addresses.length; i++) {
               var current = addresses[i].toString().toLowerCase();
@@ -40,9 +43,8 @@ router.post('/gateway', function (req, res) {
             if (filtered.length === 0) {
               // Nothing found for this combo of building / postcode
               // So just display the postcode results?
-              //req.session.addressResults = addresses;
               res.render('tell-us-where-you-are/address-list.html', {
-                'message' : 'No exact match has been found, showing all addresses for POSTCODE',
+                'message' : 'No exact match found, showing all addresses for',
                 'addresses' : addresses,
                 'postcode' : postcode
               });
@@ -65,13 +67,17 @@ router.post('/gateway', function (req, res) {
         }
 
       } else {
-        res.send(error);
-        /*res.render('mvp_v1_4/home-address-postcode', {
-          error: {
-            general: 'Sorry, there’s been a problem looking up your address. Please try again.'
+        res.render('tell-us-where-you-are/address-search.html', {
+          error : {
+            summary : 'Sorry, there’s been a problem looking up your address. Please try again.'
           }
-        });*/
+        });
       }
     });
   }
 })
+
+router.get('/handle-address', function (req, res) {
+  req.session.addressSelected = req.query.str;
+  res.redirect('/finding-pathways/start');
+});

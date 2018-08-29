@@ -8,11 +8,21 @@
 
 <div class="measure">
 
+  {% if error.summary %}
+    <div class="error-summary">
+      <div>
+        <h2>There’s a problem</h2>
+        <p>{{ error.summary | safe }}</p>
+      </div>
+    </div>
+  {% endif %}
+
   <div class="content-block">
-    <h1 class="heading--large">Where are you now?</h1>
+    <h1 class="heading--large">Where are you?</h1>
     <p>Tell us where you are now to get help in that area.</p>
 
     <form method="post" class="content-block">
+
       <div class="address-lookup">
         <div class="form-group">
           <label for="building"><b>Building number or name</b> (optional)</label>
@@ -21,8 +31,12 @@
           </span>
           <input type="text" id="building" name="building" autocomplete="off">
         </div>
-        <div class="form-group">
-          <label for="postcode"><b>Postcode</b></label>
+
+        <div class="form-group {% if error.postcode %}-errors{% endif %}">
+          <label for="postcode">
+            <b>Postcode</b>
+            {% if error.postcode %}<br>{{ error.postcode }}{% endif %}
+          </label>
           <input type="text" id="postcode" name="postcode" class="-small" autocomplete="off">
         </div>
         <div class="form-group shunt-2">
