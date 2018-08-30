@@ -3,12 +3,15 @@
 
   margin: $leading*2 0;
   border: $baseline-grid-unit solid $error-colour;
-  padding: $leading*2 $leading*2;
+  padding: $leading*2 $leading*2 0;
   color: $error-colour;
-  width: 80%;
 
-  @include media(mid) {
-    width: 90%;
+  h2 {
+    margin-top: 0;
+  }
+
+  p {
+    margin: $baseline-grid-unit*4 0;
   }
 
   a {

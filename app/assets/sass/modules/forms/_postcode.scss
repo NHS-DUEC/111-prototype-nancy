@@ -12,6 +12,33 @@
   }
 }
 
+// New "tell us where you are" version
+.address-lookup {
+  @extend %contain-floats;
+
+  /*@include media(mid) {
+    .form-group {
+      clear: none;
+      float: left;
+      margin-right: 1em;
+    }
+
+    label {
+      width: auto;
+    }
+
+    input[type="text"],
+    input[type="number"] {
+      width: 100%;
+    }
+
+    .button {
+      margin-top: $baseline-grid-unit*2;
+      padding-top: 2px;
+    }
+  }*/
+}
+
 input[type='text'].postcode {
   @include media(mid) {
     width: 32%;

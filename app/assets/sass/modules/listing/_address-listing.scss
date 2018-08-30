@@ -1,0 +1,18 @@
+.address-listing {
+  .address {
+    display: block;
+    text-decoration: none;
+    padding: $baseline-grid-unit*4;
+    border: 1px solid $grey-4;
+    border-left-width: $baseline-grid-unit;
+    margin-bottom: $baseline-grid-unit*6;
+
+    &:hover {
+      //border-color: $link-hover-colour;
+      //outline: 3px solid $focus-colour;
+      color: $white;
+      background-color: $nhs-blue;
+      border-color: $nhs-blue;
+    }
+  }
+}
