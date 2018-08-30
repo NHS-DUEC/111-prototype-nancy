@@ -4,10 +4,6 @@
   width: $baseline-grid-unit*5;
   height: $baseline-grid-unit*5;
   overflow: hidden;
-
-  .js-enabled & {
-    visibility: hidden;
-  }
 }
 .loader,
 .loader:after {
