@@ -62,8 +62,7 @@ router.post('/address-search', function (req, res) {
             summary : 'Sorry, there’s been a problem looking up your address. Please try again.'
           }
         });
-      } else {
-        console.log(error);
+        console.log('error');
       }
     });
   }
