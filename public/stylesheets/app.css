@@ -1,12 +1,12 @@
 @import url("//assets.nhs.uk/fonts/nhsuk-fonts-1.1.0.css");
 li.tabular-data-row, .prototype-warning-inner, .card, .breadcrumb, .footer-container, .-date, .postcode, .address-lookup, .error-summary, form,
-.form, .form-group, .search, #global-header, .location, .location-controls, .nhsid-container, .signage, .survey-banner > div, .header-container,
+.form, .form-group, .search, #global-header, .location, .nhsid-container, .signage, .survey-banner > div, .header-container,
 .content, .grid-row, .clearfix {
   zoom: 1;
 }
 
 li.tabular-data-row:after, .prototype-warning-inner:after, .card:after, .breadcrumb:after, .footer-container:after, .-date:after, .postcode:after, .address-lookup:after, .error-summary:after, form:after,
-.form:after, .form-group:after, .search:after, #global-header:after, .location:after, .location-controls:after, .nhsid-container:after, .signage:after, .survey-banner > div:after, .header-container:after,
+.form:after, .form-group:after, .search:after, #global-header:after, .location:after, .nhsid-container:after, .signage:after, .survey-banner > div:after, .header-container:after,
 .content:after, .grid-row:after, .clearfix:after {
   content: "";
   display: block;
@@ -2149,10 +2149,6 @@ img {
   overflow: hidden;
 }
 
-.js-enabled .load-container {
-  visibility: hidden;
-}
-
 .loader,
 .loader:after {
   display: block;
@@ -2202,7 +2198,6 @@ img {
 
 @media (min-width: 500px) {
   .location {
-    border: 1px solid #768692;
     width: 100%;
   }
 }
@@ -2242,34 +2237,6 @@ img {
   .location #map {
     height: 400px;
   }
-}
-
-.location-controls {
-  /*
-  div {
-    width: 50%;
-    float: left;
-    box-sizing: border-box;
-  }
-
-  input[type='text'] {
-    width: 100%;
-  }
-  */
-}
-
-.location-controls .geolocation {
-  padding: 16px 0 0 0;
-}
-
-.gm-style {
-  font-size: 17px !important;
-  font-family: "Frutiger W01", sans-serif !important;
-}
-
-.gm-style #searchTextField {
-  width: 45%;
-  margin-left: 8px;
 }
 
 .modal-present {
