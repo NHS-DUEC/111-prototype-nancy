@@ -6,11 +6,6 @@
 {% block content %}
 <div class="measure">
   <a href="/tell-us-where-you-are/address-search" class="button-back">Back</a>
-  <h1>Where are you?</h1>
-</div>
-
-<div class="location">
-  <div id="map"></div>
 </div>
 
 <div class="location-controls">
@@ -21,6 +16,12 @@
     </span>
   </div>
 </div>
+
+<div class="location shunt-2">
+  <div id="map"></div>
+</div>
+
+<p>You can also drag and zoom the map to show where you are.</p>
 
 <form action="/tell-us-where-you-are/handle-location" method="post" class="content-block shunt clearfix">
   <div class="form-group -controls">
@@ -62,6 +63,7 @@
 
   var doGeo = function() {
     $('#loader').css('visibility', 'visible');
+    $('#geolocate').text('Finding your location');
     navigator.geolocation.getCurrentPosition(function(position) {
       var pos = {
         lat: position.coords.latitude,
@@ -74,7 +76,8 @@
       mapObj.setCenter(pos);
       mapObj.fitBounds(bounds);
       $('#loader').css('visibility', 'hidden');
-      $('#searchTextField').val('');
+      $('#geolocate').text('Use my current location');
+      //$('#searchTextField').val('');
     }, function() {
       // handle errors here
     });

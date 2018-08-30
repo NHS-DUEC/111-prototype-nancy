@@ -2244,14 +2244,18 @@ img {
   }
 }
 
-.location-controls div {
-  width: 50%;
-  float: left;
-  box-sizing: border-box;
-}
+.location-controls {
+  /*
+  div {
+    width: 50%;
+    float: left;
+    box-sizing: border-box;
+  }
 
-.location-controls input[type='text'] {
-  width: 100%;
+  input[type='text'] {
+    width: 100%;
+  }
+  */
 }
 
 .location-controls .geolocation {
