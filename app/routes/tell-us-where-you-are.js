@@ -19,10 +19,11 @@ router.post('/address-search', function (req, res) {
       }
     });
   } else {
-    var postcode = req.body['postcode']
+    var postcode = req.body['postcode'].toUpperCase();
     // strip spaces
     var cleaned = postcode.replace(/\s+/g, '').toLowerCase();
     var building = req.body['building'];
+    var message = '';
 
     request('https://api.getAddress.io/v2/uk/' + cleaned + '/?api-key=' + process.env.POSTCODE_API + '&format=true', function (error, response, body) {
       if (!error) {
@@ -39,30 +40,19 @@ router.post('/address-search', function (req, res) {
                 filtered.push(addresses[i]);
               }
             }
-
             if (filtered.length === 0) {
-              // Nothing found for this combo of building / postcode
-              // So just display the postcode results?
-              res.render('tell-us-where-you-are/address-list.html', {
-                'message' : 'No exact match found, showing all addresses for',
-                'addresses' : addresses,
-                'postcode' : postcode
-              });
+              message = 'No exact match found, showing all addresses for ' + postcode;
             } else {
-              res.render('tell-us-where-you-are/address-list.html', {
-                'addresses' : filtered,
-                'postcode' : postcode
-              });
+              addresses = filtered;
             }
-
-          } else {
-
-            res.render('tell-us-where-you-are/address-list.html', {
-              'addresses' : addresses,
-              'postcode' : postcode
-            });
-
           }
+
+          req.session.addressResults = addresses;
+          req.session.addressPostcode = postcode
+
+          res.render('tell-us-where-you-are/address-list.html', {
+            message : message
+          });
 
         }
 
@@ -100,5 +90,13 @@ router.post('/manual-address', function (req, res) {
 
 router.get('/handle-address', function (req, res) {
   req.session.addressSelected = req.query.str;
+  res.redirect('/finding-pathways/start');
+});
+
+router.post('/handle-location', function (req, res) {
+  var latlongLocation = {};
+  latlongLocation.lat = req.body['lat'];
+  latlongLocation.long = req.body['long'];
+  req.session.latlongLocation = latlongLocation;
   res.redirect('/finding-pathways/start');
 });

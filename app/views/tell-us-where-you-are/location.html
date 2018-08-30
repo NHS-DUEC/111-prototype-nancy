@@ -22,11 +22,13 @@
   </div>
 </div>
 
-<div class="content-block shunt clearfix">
+<form action="/tell-us-where-you-are/handle-location" method="post" class="content-block shunt clearfix">
   <div class="form-group -controls">
     <a href="/finding-pathways/start" class="button">Next</a>
   </div>
-</div>
+  <input type="hidden" name="lat" id="lat" value="" />
+  <input type="hidden" name="long" id="long" value="" />
+</form>
 
 <style>
   #console {
@@ -54,6 +56,8 @@
   var updateVals = function(pos) {
     $('#latitude').text(pos.lat);
     $('#longitude').text(pos.lng);
+    $('#lat').val(pos.lat);
+    $('#long').val(pos.lng);
   }
 
   var doGeo = function() {

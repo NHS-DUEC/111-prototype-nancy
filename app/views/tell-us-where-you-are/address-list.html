@@ -7,6 +7,7 @@
 {% block content %}
 
 <div class="content-block measure">
+  <a href="/tell-us-where-you-are/address-search" class="button-back">Back</a>
   <h1 class="heading--large">Pick address</h1>
   {% if message %}
     <div class="callout callout--info">
@@ -19,7 +20,7 @@
 
 <div class="address-listing">
 
-  {% for address in addresses %}
+  {% for address in session.addressResults %}
     {% set addressString  = '' %}
     {% for addressLine in address %}
       {% if addressLine !== '' %}
@@ -29,7 +30,7 @@
         {% set addressString  = addressString + addressLine %}
       {% endif %}
     {% endfor %}
-    {% set addressString  = addressString + ', ' + postcode | upper %}
+    {% set addressString  = addressString + ', ' + session.addressPostcode %}
     <a href="/tell-us-where-you-are/handle-address?str={{ addressString | urlencode }}" class="address">
       {{ addressString }}
     </a>
