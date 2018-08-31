@@ -9,9 +9,9 @@
 <form class="content-block measure form" method="post">
   <a href="#" class="button-back">Back</a>
   {% if session.callBooking.who === 'me' %}
-    <h1>Is this your home address? (optional)</h1>
+    <h1>Is this your home address?</h1>
   {% else %}
-    <h1>Are you at {{ session.callBooking.name.firstname }}’s home address? (optional)</h1>
+    <h1>Are you at {{ session.callBooking.name.firstname }}’s home address?</h1>
   {% endif %}
 
   <p>
