@@ -1,4 +1,5 @@
 var express = require('express')
+var moment = require('moment-timezone')
 var request = require('request')
 var naturalSort = require('javascript-natural-sort')
 var router = express.Router()
@@ -6,13 +7,79 @@ var router = express.Router()
 module.exports = router
 
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-// Tell us where you are - August 2018 +++++++++++++++++++++++++++++++++++++++++
+// Journey to questions - August 2018 ++++++++++++++++++++++++++++++++++++++++++
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+router.post('/demographics', function(req, res) {
+  // "Adult" is 16+
+  // Set a default here if there's a lack of req.query
+  // Male
+  // Adult (40)
+  if (!req.session.demographics) {
+    // zero out a namespaced session obj with defaults
+    req.session.demographics = {};
+    req.session.demographics.sex = 'Male';
+    req.session.demographics.age = '40';
+    req.session.demographics.ageCategory = 'Adult';
+    req.session.demographics.dob = {};
+    req.session.demographics.dob.day = '23';
+    req.session.demographics.dob.month = '5';
+    req.session.demographics.dob.year = '1977';
+    req.session.demographics.dob.supplied = false;
+  }
+  if (req.body['dob-day'] !== '' && req.body['dob-month'] !== '' && req.body['dob-year'] !== '') {
+    var year = req.body['dob-year']
+    var month = req.body['dob-month']
+    var day = req.body['dob-day']
+
+    var dob = moment().set({
+      'year': year,
+      'month': month,
+      'date': day
+    });
+
+    var age = moment().diff(dob, 'years')
+
+    var ageCategory = 'Adult';
+    if (age < 16) {
+      ageCategory = 'Child';
+    }
+
+    req.session.demographics.dob.year = year;
+    req.session.demographics.dob.month = month;
+    req.session.demographics.dob.day = day;
+    req.session.demographics.dob.supplied = true;
+    req.session.demographics.age = age;
+    req.session.demographics.ageCategory = ageCategory;
+
+  } else if (req.body['age'] !== '') {
+
+    var age = Number(req.body['age']);
+
+    var ageCategory = 'Adult';
+    if (age < 16) {
+      ageCategory = 'Child';
+    }
+
+    req.session.demographics.dob.year = '';
+    req.session.demographics.dob.month = '';
+    req.session.demographics.dob.day = '';
+    req.session.demographics.dob.supplied = false;
+    req.session.demographics.age = age;
+    req.session.demographics.ageCategory = ageCategory;
+  }
+  if (req.body['sex']) {
+    req.session.demographics.sex = req.body['sex'];
+  }
+  res.redirect('/start/address-search');
+});
+
+// -----------------------------------------------------------------------------
 
 router.post('/address-search', function (req, res) {
 
   if (req.body['postcode'] === '') {
-    res.render('tell-us-where-you-are/address-search.html', {
+    res.render('start/address-search.html', {
       error : {
         summary : '<a href="#postcode">Please enter a postcode</a>',
         postcode: 'Postcode is required'
@@ -50,23 +117,24 @@ router.post('/address-search', function (req, res) {
           req.session.addressResults = addresses;
           req.session.addressPostcode = postcode
 
-          res.render('tell-us-where-you-are/address-list.html', {
+          res.render('start/address-list.html', {
             message : message
           });
 
         }
 
       } else {
-        res.render('tell-us-where-you-are/address-search.html', {
+        res.render('start/address-search.html', {
           error : {
-            summary : 'Sorry, there’s been a problem looking up your address. Please try again.'
+            summary : 'There’s been a problem looking up your address. Please try again.'
           }
         });
-        console.log('error');
       }
     });
   }
-})
+});
+
+// -----------------------------------------------------------------------------
 
 router.post('/manual-address', function (req, res) {
   var address = '';
@@ -86,13 +154,17 @@ router.post('/manual-address', function (req, res) {
     address += req.body['postcode'] + ', '
   }
   address = address.slice(0, -2);
-  res.redirect('/tell-us-where-you-are/handle-address?str=' + address);
+  res.redirect('/start/handle-address?str=' + address);
 });
+
+// -----------------------------------------------------------------------------
 
 router.get('/handle-address', function (req, res) {
   req.session.addressSelected = req.query.str;
   res.redirect('/finding-pathways/start');
 });
+
+// -----------------------------------------------------------------------------
 
 router.post('/handle-location', function (req, res) {
   var latlongLocation = {};

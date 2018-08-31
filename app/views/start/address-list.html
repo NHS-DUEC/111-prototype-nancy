@@ -7,7 +7,7 @@
 {% block content %}
 
 <div class="content-block measure">
-  <a href="/tell-us-where-you-are/address-search" class="button-back">Back</a>
+  <a href="/start/address-search" class="button-back">Back</a>
   <h1 class="heading--large">Pick address</h1>
   {% if message %}
     <div class="callout callout--info">
@@ -31,7 +31,7 @@
       {% endif %}
     {% endfor %}
     {% set addressString  = addressString + ', ' + session.addressPostcode %}
-    <a href="/tell-us-where-you-are/handle-address?str={{ addressString | urlencode }}" class="address">
+    <a href="/start/handle-address?str={{ addressString | urlencode }}" class="address">
       {{ addressString }}
     </a>
   {% endfor %}
@@ -41,7 +41,7 @@
 <div class="content-seperator content-seperator--equalvertspacing--large"></div>
 
 <div class="content-block measure">
-  <p><a href="/tell-us-where-you-are/manual-address">The address I’m at isn’t listed</a></p>
+  <p><a href="/start/manual-address">The address I’m at isn’t listed</a></p>
 </div>
 
 {% endblock %}

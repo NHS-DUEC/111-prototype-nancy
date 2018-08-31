@@ -12,7 +12,7 @@ var utils = require('./lib/utils.js')
 var config = require('./app/config.js')
 
 var index = require('./app/routes/index');
-var gateway = require('./app/routes/gateway');
+var start = require('./app/routes/start');
 var findingPathways = require('./app/routes/finding-pathways');
 var weirdQuestions = require('./app/routes/weird-questions');
 var questions = require('./app/routes/questions');
@@ -100,7 +100,7 @@ env.addFilter('date', dateFilter);
 
 // ROUTES
 app.use('/', index);
-app.use('/gateway', gateway);
+app.use('/start', start);
 app.use('/finding-pathways', findingPathways);
 app.use('/weird-questions', weirdQuestions);
 app.use('/questions', questions);
