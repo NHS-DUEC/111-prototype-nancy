@@ -108,7 +108,7 @@ router.post('/address-search', function (req, res) {
               }
             }
             if (filtered.length === 0) {
-              message = 'No exact match found, showing all addresses for ' + postcode;
+              message = 'No exact match found &mdash; showing all addresses for ' + postcode;
             } else {
               addresses = filtered;
             }
