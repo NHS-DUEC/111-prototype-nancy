@@ -29,7 +29,7 @@
             </div>
             <div class="geolocate-link">
               <a href="#" id="geolocate">Use my current location</a>
-              <span id="loader" class="load-container">
+              <span id="loader" class="load-container js-hidden">
                 <span class="loader"></span>
               </span>
             </div>
@@ -55,7 +55,7 @@
   $(function() {
     $('#geolocate').on('click', function(e) {
       e.preventDefault();
-      $('#loader').css('visibility', 'visible');
+      $('#loader').removeClass('js-hidden');
       $('#postcode').attr('disabled', 'true');
       navigator.geolocation.getCurrentPosition(function(position) {
         var pos = {
@@ -65,7 +65,7 @@
         // do stuff with the pos object
         $.get('https://api.postcodes.io/postcodes?lon=' + pos.lng + '&lat=' + pos.lat, function(data) {
           $('#postcode').val(data.result[0].postcode);
-          $('#loader').css('visibility', 'hidden');
+          $('#loader').addClass('js-hidden');
           $('#postcode').removeAttr('disabled');
         });
       });
