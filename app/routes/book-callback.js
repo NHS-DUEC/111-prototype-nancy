@@ -10,19 +10,39 @@ module.exports = router
 router.get('/', function(req, res) {
   // zero out a namespaced session obj
   req.session.callBooking = {};
-  req.session.callBooking.name = '';
-  req.session.callBooking.postcode = '';
+  req.session.callBooking.who = '';
+  req.session.callBooking.name = {};
+  req.session.callBooking.name.firstname = '';
+  req.session.callBooking.name.secondname = '';
+  req.session.callBooking.homePostcode = 'SE1 6LH'; // dummy hardcoded
   req.session.callBooking.tel = '';
   req.session.callBooking.backUrl = req.query.backUrl;
   req.session.callBooking.forwardUrl = req.query.forwardUrl;
-  res.redirect('book-call-number');
+  res.redirect('/book-callback/book-call-number');
+});
+
+router.post('/book-call-number', function(req, res) {
+  if (req.body['tel'] === '') {
+    res.render('book-callback/book-call-number.html', {
+      error: {
+        general: '<a href="#tel">We need a valid number to call</a>',
+        tel: 'Enter a valid number'
+      }
+    });
+  } else {
+    req.session.callBooking.tel = req.body['tel'];
+    res.redirect('book-call-you-or-someone-else');
+  }
 });
 
 router.post('/', function(req, res) {
   // zero out a namespaced session obj
   req.session.callBooking = {};
-  req.session.callBooking.name = '';
-  req.session.callBooking.postcode = '';
+  req.session.callBooking.who = '';
+  req.session.callBooking.name = {};
+  req.session.callBooking.name.firstname = '';
+  req.session.callBooking.name.secondname = '';
+  req.session.callBooking.homePostcode = 'SE1 6LH'; // dummy hardcoded
   req.session.callBooking.tel = '';
   req.session.callBooking.backUrl = req.body['backUrl'];
   req.session.callBooking.forwardUrl = req.body['forwardUrl'];
@@ -36,31 +56,38 @@ router.post('/', function(req, res) {
     });
   } else {
     req.session.callBooking.tel = req.body['tel'];
-    res.redirect('book-call-demographics');
+    res.redirect('/book-callback/book-call-you-or-someone-else');
   }
 });
 
-router.post('/book-call-number', function(req, res) {
-  if (req.body['tel'] === '') {
-    res.render('book-callback/book-call-number.html', {
-      error: {
-        general: '<a href="#tel">We need a valid number to call</a>',
-        tel: 'Enter a valid number'
-      }
-    });
+router.post('/book-call-you-or-someone-else', function(req, res) {
+  req.session.callBooking.who = req.body['who'];
+  res.redirect('/book-callback/book-call-name');
+});
+
+router.post('/book-call-name', function(req, res) {
+  req.session.callBooking.name.firstname = req.body['firstname'];
+  req.session.callBooking.name.secondname = req.body['secondname'];
+  res.redirect('/book-callback/book-call-confirm-address');
+});
+
+router.post('/book-call-confirm-address', function(req, res) {
+  var url = '/book-callback/book-call-check-your-answers';
+  if (req.body['home-address'] === 'yes') {
+    if (typeof req.session.addressPostcode !== 'undefined') {
+      req.session.callBooking.homePostcode = req.session.addressPostcode;
+    }
   } else {
-    req.session.callBooking.tel = req.body['tel'];
-    res.redirect('book-call-demographics');
+    url = '/book-callback/book-call-get-postcode';
   }
+  res.redirect(url);
 });
 
-router.post('/book-call-demographics', function(req, res) {
-  req.session.callBooking.name = req.body['name'];
-  req.session.callBooking.postcode = req.body['postcode'];
-  if (req.body['dob-day']) {
-    req.session.demographics.dob.day = req.body['dob-day'];
-    req.session.demographics.dob.month = req.body['dob-month'];
-    req.session.demographics.dob.year = req.body['dob-year'];
+router.post('/book-call-get-postcode', function(req, res) {
+  if (req.body['postcode'] !== '') {
+    req.session.callBooking.homePostcode = req.body['postcode'];
+  } else {
+    req.session.callBooking.homePostcode = '';
   }
-  res.redirect('book-call-check-your-answers');
+  res.redirect('/book-callback/book-call-check-your-answers');
 });

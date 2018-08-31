@@ -1,0 +1,31 @@
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhs-redesign{% endblock %}
+
+{% block content %}
+
+<form method="post" class="form content-block measure">
+  <a href="#" class="button-back">Back</a>
+
+  <h1>Who is the nurse phoning about?</h1>
+
+  <fieldset class="form-group shunt">
+    <label class="block-label">
+      <input id="yes" name="who" value="me" type="radio" class="selection-button-radio">
+      Me
+    </label>
+    <label class="block-label">
+      <input id="not-sure" name="who" value="someone-else" type="radio" class="selection-button-radio">
+      Someone else
+    </label>
+  </fieldset>
+  <div class="form-group">
+    <p>
+      <button type="submit" class="button">Next</button>
+    </p>
+  </div>
+</form>
+
+{% endblock %}

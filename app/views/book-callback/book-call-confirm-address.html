@@ -1,0 +1,46 @@
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhs-redesign{% endblock %}
+
+{% block content %}
+
+<form class="content-block measure form" method="post">
+  <a href="#" class="button-back">Back</a>
+  {% if session.callBooking.who === 'me' %}
+    <h1>Is this your home address? (optional)</h1>
+  {% else %}
+    <h1>Are you at {{ session.callBooking.name.firstname }}’s home address? (optional)</h1>
+  {% endif %}
+
+  <p>
+    {% if session.addressSelected %}
+      {{ session.addressSelected | replace(", ", "<br>") | safe }}
+    {% else %}
+      Skipton House<br>
+      80 London Road<br>
+      London<br>
+      SE1 6LH
+    {% endif %}
+  </p>
+
+  <fieldset class="form-group">
+    <label class="block-label">
+      <input id="yes" name="home-address" value="yes" type="radio" class="selection-button-radio">
+      Yes
+    </label>
+    <label class="block-label">
+      <input id="not-sure" name="home-address" value="no" type="radio" class="selection-button-radio">
+      No
+    </label>
+  </fieldset>
+  <div class="form-group">
+    <p>
+      <button type="submit" class="button">Next</button>
+    </p>
+  </div>
+</form>
+
+
+{% endblock %}

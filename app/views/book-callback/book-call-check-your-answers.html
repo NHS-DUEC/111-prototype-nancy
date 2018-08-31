@@ -7,7 +7,7 @@
 {% block content %}
 <div class="content-block measure clearfix">
 
-  <h1>Is this the right number?</h1>
+  <h1>Is this the right number to call?</h1>
 
   <div class="callout callout--attention">
     <p class="lede">{{ session.callBooking.tel }}</p>
@@ -16,63 +16,6 @@
   <p>
     <a href="#">No, I need to change this number</a>
   </p>
-
-  <!--
-  <h1>Check your details</h1>
-
-  <table class="shunt-3">
-    <tr>
-      <th scope="row">Name</th>
-      <td>
-        {% if session.callBooking.name === '' %}
-          Name not given
-        {% else %}
-          {{ session.callBooking.name }}
-        {% endif %}
-      </td>
-      <td class="control">
-        <a href="#" class="button-tertiary">Change</a>
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">Date of birth</th>
-      <td>
-        {% if session.demographics.dob.supplied === 'false' %}
-          Date of birth not given
-        {% else %}
-          {{ session.demographics.dob.day }} /
-          {{ session.demographics.dob.month }} /
-          {{ session.demographics.dob.year }}
-        {% endif %}
-      </td>
-      <td class="control">
-        <a href="#" class="button-tertiary">Change</a>
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">Home postcode</th>
-      <td>
-        {% if session.callBooking.postcode === '' %}
-          Postcode not given
-        {% else %}
-          {{ session.callBooking.postcode | upper }}
-        {% endif %}
-      </td>
-      <td class="control">
-        <a href="#" class="button-tertiary">Change</a>
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">Number to call</th>
-      <td>
-        {{ session.callBooking.tel }}
-      </td>
-      <td class="control">
-        <a href="#" class="button-tertiary">Change</a>
-      </td>
-    </tr>
-  </table>
-  -->
 
   <div class="form-group -controls">
     <a href="{{ session.callBooking.forwardUrl }}" class="button">Yes, book call</a>
