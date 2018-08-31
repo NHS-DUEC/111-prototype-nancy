@@ -15,6 +15,7 @@ router.get('/', function(req, res) {
   req.session.callBooking.name.firstname = '';
   req.session.callBooking.name.secondname = '';
   req.session.callBooking.homePostcode = 'SE1 6LH'; // dummy hardcoded
+  req.session.callBooking.confirmedHome = 'null';
   req.session.callBooking.tel = '';
   req.session.callBooking.backUrl = req.query.backUrl;
   req.session.callBooking.forwardUrl = req.query.forwardUrl;
@@ -43,6 +44,7 @@ router.post('/', function(req, res) {
   req.session.callBooking.name.firstname = '';
   req.session.callBooking.name.secondname = '';
   req.session.callBooking.homePostcode = 'SE1 6LH'; // dummy hardcoded
+  req.session.callBooking.confirmedHome = false
   req.session.callBooking.tel = '';
   req.session.callBooking.backUrl = req.body['backUrl'];
   req.session.callBooking.forwardUrl = req.body['forwardUrl'];
@@ -79,10 +81,12 @@ router.post('/name', function(req, res) {
 router.post('/confirm-address', function(req, res) {
   var url = '/book-callback/check-your-answers';
   if (req.body['home-address'] === 'yes') {
+    req.session.callBooking.confirmedHome = 'true';
     if (typeof req.session.addressPostcode !== 'undefined') {
       req.session.callBooking.homePostcode = req.session.addressPostcode;
     }
   } else {
+    req.session.callBooking.confirmedHome = 'false';
     url = '/book-callback/get-postcode';
   }
   res.redirect(url);

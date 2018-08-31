@@ -115,7 +115,8 @@ router.post('/address-search', function (req, res) {
           }
 
           req.session.addressResults = addresses;
-          req.session.addressPostcode = postcode
+          req.session.addressBuilding = building;
+          req.session.addressPostcode = postcode;
 
           res.render('start/address-list.html', {
             message : message

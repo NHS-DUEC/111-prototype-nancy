@@ -7,22 +7,22 @@
 {% block content %}
 
 <form class="content-block measure form" method="post">
-  <a href="#" class="button-back">Back</a>
+  <a href="/book-callback/you-or-someone-else" class="button-back">Back</a>
 
   {% if session.callBooking.who === 'me' %}
-    <h1>What is your name?</h1>
+    <h1 class="h2">What is your name?</h1>
   {% else %}
-    <h1>What is their name?</h1>
+    <h1 class="h2">What is their name?</h1>
   {% endif %}
 
   <div class="form-group shunt" id="name-group">
-    <label for="firstname"><b>First name</b></label>
-    <input name="firstname" id="firstname" type="text" value="" autocomplete="off">
+    <label for="firstname">First name</label>
+    <input name="firstname" id="firstname" type="text" autocomplete="off" value="{{ session.callBooking.name.firstname }}">
   </div>
 
   <div class="form-group" id="name-group">
-    <label for="secondname"><b>Second name</b></label>
-    <input name="secondname" id="secondname" type="text" value="" autocomplete="off">
+    <label for="secondname">Second name</label>
+    <input name="secondname" id="secondname" type="text" autocomplete="off" value="{{ session.callBooking.name.secondname }}">
   </div>
 
   <div class="form-group -controls">
