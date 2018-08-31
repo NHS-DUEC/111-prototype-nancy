@@ -18,12 +18,12 @@ router.get('/', function(req, res) {
   req.session.callBooking.tel = '';
   req.session.callBooking.backUrl = req.query.backUrl;
   req.session.callBooking.forwardUrl = req.query.forwardUrl;
-  res.redirect('/book-callback/book-call-number');
+  res.redirect('/book-callback/number');
 });
 
-router.post('/book-call-number', function(req, res) {
+router.post('/number', function(req, res) {
   if (req.body['tel'] === '') {
-    res.render('book-callback/book-call-number.html', {
+    res.render('book-callback/number.html', {
       error: {
         general: '<a href="#tel">We need a valid number to call</a>',
         tel: 'Enter a valid number'
@@ -56,43 +56,43 @@ router.post('/', function(req, res) {
     });
   } else {
     req.session.callBooking.tel = req.body['tel'];
-    res.redirect('/book-callback/book-call-you-or-someone-else');
+    res.redirect('/book-callback/you-or-someone-else');
   }
 });
 
-router.post('/book-call-you-or-someone-else', function(req, res) {
+router.post('/you-or-someone-else', function(req, res) {
   req.session.callBooking.who = req.body['who'];
-  res.redirect('/book-callback/book-call-name');
+  res.redirect('/book-callback/name');
 });
 
-router.post('/book-call-name', function(req, res) {
+router.post('/name', function(req, res) {
   req.session.callBooking.name.firstname = req.body['firstname'];
   req.session.callBooking.name.secondname = req.body['secondname'];
-  var url = '/book-callback/book-call-confirm-address';
+  var url = '/book-callback/confirm-address';
   // If there's no address (or only a lat/long), then skip right over it
   if (typeof req.session.addressPostcode === 'undefined') {
-    url = '/book-callback/book-call-check-your-answers';
+    url = '/book-callback/check-your-answers';
   }
   res.redirect(url);
 });
 
-router.post('/book-call-confirm-address', function(req, res) {
-  var url = '/book-callback/book-call-check-your-answers';
+router.post('/confirm-address', function(req, res) {
+  var url = '/book-callback/check-your-answers';
   if (req.body['home-address'] === 'yes') {
     if (typeof req.session.addressPostcode !== 'undefined') {
       req.session.callBooking.homePostcode = req.session.addressPostcode;
     }
   } else {
-    url = '/book-callback/book-call-get-postcode';
+    url = '/book-callback/get-postcode';
   }
   res.redirect(url);
 });
 
-router.post('/book-call-get-postcode', function(req, res) {
+router.post('/get-postcode', function(req, res) {
   if (req.body['postcode'] !== '') {
     req.session.callBooking.homePostcode = req.body['postcode'];
   } else {
     req.session.callBooking.homePostcode = '';
   }
-  res.redirect('/book-callback/book-call-check-your-answers');
+  res.redirect('/book-callback/check-your-answers');
 });
