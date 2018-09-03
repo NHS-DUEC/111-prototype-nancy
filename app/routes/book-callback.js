@@ -71,10 +71,11 @@ router.post('/name', function(req, res) {
   req.session.callBooking.name.firstname = req.body['firstname'];
   req.session.callBooking.name.secondname = req.body['secondname'];
   var url = '/book-callback/confirm-address';
-  // If there's no address (or only a lat/long), then skip right over it
-  /*if (typeof req.session.addressPostcode === 'undefined') {
-    url = '/book-callback/check-your-answers';
-  }*/
+  // If there's no address (or only a lat/long)...
+  // try once more for a home postcode
+  if (typeof req.session.addressPostcode === 'undefined') {
+    url = '/book-callback/get-postcode';
+  }
   res.redirect(url);
 });
 
