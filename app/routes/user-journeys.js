@@ -83,7 +83,6 @@ router.get('/primary-offering', function(req, res) {
     distance : req.session.userJourney.services.primary.distance,
     lat : req.session.userJourney.services.primary.lat,
     long : req.session.userJourney.services.primary.long,
-    careAdviceTitle : req.session.userJourney.careAdviceTitle,
     careAdvice : req.session.userJourney.careAdvice
   });
 });
