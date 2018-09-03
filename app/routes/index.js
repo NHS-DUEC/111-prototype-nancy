@@ -8,6 +8,26 @@ router.get('/', function (req, res) {
 
 module.exports = router
 
+// Example primary service +++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+router.get('/primary-service', function(req, res) {
+  res.render('triage-end-phase/primary-service.html', {
+    callToAction : 'Get help as soon as you can.',
+    callToActionLevel : 'callout--warning',
+    preamble : '',
+    name : 'St Thomas Hospital',
+    important : '',
+    postscript : '',
+    address : 'Emergency Department<br>St Thomas Hospital<br>Westminster Bridge Road<br>London<br>SE1 7EH',
+    openingTimes : '<p>Open 24 hours</p>',
+    distance : '0.8 miles',
+    lat : '51.498244',
+    long : '-0.119203',
+    careAdviceTitle : 'req.session.userJourney.careAdviceTitle',
+    careAdvice : '<div class="care-advice-output"><details> <summary>Breathlessness</summary> <div> <ul> <li> Sit as upright as is comfortable. </li> <li> If an inhaler or a spacer is used for chest problems, follow the instructions about &quot;what to do if your breathing gets worse&quot;. </li> <li> Never use medicines which have been prescribed for someone else. </li> </ul> </div> </details> <details> <summary>Medication, pain and/or fever</summary> <div> <ul> <li> Paracetamol or ibuprofen can be used to relieve pain or a fever. Don’t take if you’ve been told not to, or you’ve already taken some. Read the instructions on the packet, or talk to a pharmacist. </li> </ul> </div> </details> <details> <summary>Headache</summary> <div> <ul> <li> A heated pad or covered hot water bottle on the back of your neck may help ease the pain. </li> <li> Call 999 if: <ul> <li> The person becomes very drowsy, isn’t responding normally or is having a fit. </li> <li> The person becomes severely ill with new marks under the skin which look like bruising or bleeding. </li> </ul> </li> </ul> </div> </details></div>'
+  });
+});
+
 // Postcode ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 router.get('/clinical-callback', function (req, res) {
   res.render('clinical-callback/clinical-callback', {

@@ -5,34 +5,36 @@
 
 {% block content %}
 <div class="measure">
-  <h1 class="h2">Where do you need help?</h1>
+  <a href="/start/address-search" class="button-back">Back</a>
 </div>
 
-<div class="location-controls">
-  <p class="form-hint">
-    Search for a place, drag the map, or use geolocation
-  </p>
-  <div class="form-group">
-    <input type="text" id="searchTextField" placeholder="">
-  </div>
-  <div class="geolocation">
-    <a href="#" id="geolocate">Use my current location</a>
-    <span id="loader" class="load-container">
+<div id="geolocate-messaging">
+  <p>
+    <span>Finding your location</span>
+    <span class="load-container">
       <span class="loader"></span>
     </span>
-  </div>
+  </p>
 </div>
 
-<div class="location">
+<div id="problems" class="callout callout--error shunt-2 measure js-hidden"></div>
+
+<div class="location shunt-2" style="position:relative;">
+  <div id="mapAnchor" style="position:absolute; top:-24px; visibility:hidden;"></div>
   <div id="map"></div>
 </div>
 
-<div class="content-block shunt clearfix">
-  <div class="form-group -controls">
-    <a href="javascript: return false;" class="button">Next</a>
-    <a href="javascript: return false;" class="button-back">Back</a>
-  </div>
+<div id="problems" class="callout callout--info shunt-2 measure">
+  <p>You can drag and zoom the map to pinpoint your location</p>
 </div>
+
+<form action="/start/handle-location" method="post" class="content-block shunt clearfix">
+  <div class="form-group -controls">
+    <button type="submit" class="button">Confirm location</button>
+  </div>
+  <input type="hidden" name="lat" id="lat" value="" />
+  <input type="hidden" name="long" id="long" value="" />
+</form>
 
 <style>
   #console {
@@ -45,6 +47,7 @@
     font-weight: bold;
     line-height: 1.1;
     background-color: #fff587;
+    opacity: 0.3;
   }
 </style>
 <div id="console">
@@ -60,11 +63,13 @@
   var updateVals = function(pos) {
     $('#latitude').text(pos.lat);
     $('#longitude').text(pos.lng);
+    $('#lat').val(pos.lat);
+    $('#long').val(pos.lng);
   }
 
   var doGeo = function() {
-    $('#loader').css('visibility', 'visible');
     navigator.geolocation.getCurrentPosition(function(position) {
+      $('#geolocate-messaging').show();
       var pos = {
         lat: position.coords.latitude,
         lng: position.coords.longitude
@@ -75,10 +80,16 @@
       bounds.extend(pos);
       mapObj.setCenter(pos);
       mapObj.fitBounds(bounds);
-      $('#loader').css('visibility', 'hidden');
-      $('#searchTextField').val('');
-    }, function() {
-      // handle errors here
+      $('#geolocate-messaging').hide();
+      document.getElementById('mapAnchor').scrollIntoView({
+        behavior: "smooth"
+      });
+    }, function(PositionError) {
+      console.log(PositionError.message);
+      console.log(PositionError.code);
+      $('#geolocate-messaging').hide();
+      errorMessage = '<p>Sorry there’s been a problem finding your location. <a href="#" id="manualGeo">Try again</a> or zoom and drag the map to show where you are.</p>'
+      $('#problems').html(errorMessage).removeClass('js-hidden')
     });
   }
 
@@ -98,6 +109,11 @@
       fullscreenControl: false
     });
 
+    marker = new google.maps.Marker({
+      position: mapObj.getCenter(),
+      map: mapObj
+    });
+
     google.maps.event.addListener(mapObj, 'center_changed', function() {
       // 0.1 seconds after the center of the map has changed,
       // set back the marker position.
@@ -111,41 +127,13 @@
       }, 100);
     });
 
-    google.maps.event.addListener(mapObj, 'dragend', function() {
-      // if you drag it, wipe anything in the places search
-      $('#searchTextField').val('');
-    });
-
-    $('#geolocate').on('click', function(e) {
+    $('#problems').on('click', '#manualGeo', function(e) {
       e.preventDefault();
       doGeo();
     });
 
-    var input = document.getElementById('searchTextField');
-    var searchBox = new google.maps.places.SearchBox(input, {
-      componentRestrictions: {'country': ['gb']}
-    });
+    doGeo();
 
-    searchBox.addListener('places_changed', function() {
-      var places = searchBox.getPlaces();
-      if (places.length == 0) {
-        return;
-      }
-      var bounds = new google.maps.LatLngBounds();
-      places.forEach(function(place) {
-        if (!place.geometry) {
-          console.log("Returned place contains no geometry");
-          return;
-        }
-        if (place.geometry.viewport) {
-          // Only geocodes have viewport.
-          bounds.union(place.geometry.viewport);
-        } else {
-          bounds.extend(place.geometry.location);
-        }
-      });
-      mapObj.fitBounds(bounds);
-    });
   });
 
 </script>

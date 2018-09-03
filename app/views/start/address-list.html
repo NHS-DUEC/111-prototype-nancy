@@ -7,16 +7,19 @@
 {% block content %}
 
 <div class="content-block measure">
-  <a href="/tell-us-where-you-are/address-search" class="button-back">Back</a>
-  <h1 class="heading--large">Pick address</h1>
+  <!--<a href="/start/address-search" class="button-back">Back</a>-->
+
+  {% if session.addressResults.length === 1 %}
+    <h1 class="h2">Confirm address</h1>
+  {% else %}
+    <h1 class="h2">Pick address</h1>
+  {% endif %}
   {% if message %}
     <div class="callout callout--info">
-      <p>{{ message }} {{ postcode }}</p>
+      <p>{{ message | safe }}</p>
     </div>
   {% endif %}
 </div>
-
-<div class="content-seperator content-seperator--equalvertspacing--large"></div>
 
 <div class="address-listing">
 
@@ -31,7 +34,7 @@
       {% endif %}
     {% endfor %}
     {% set addressString  = addressString + ', ' + session.addressPostcode %}
-    <a href="/tell-us-where-you-are/handle-address?str={{ addressString | urlencode }}" class="address">
+    <a href="/start/handle-address?str={{ addressString | urlencode }}" class="address">
       {{ addressString }}
     </a>
   {% endfor %}
@@ -41,7 +44,7 @@
 <div class="content-seperator content-seperator--equalvertspacing--large"></div>
 
 <div class="content-block measure">
-  <p><a href="/tell-us-where-you-are/manual-address">The address I’m at isn’t listed</a></p>
+  <p><a href="/start/manual-address">The address I’m at isn’t listed</a></p>
 </div>
 
 {% endblock %}

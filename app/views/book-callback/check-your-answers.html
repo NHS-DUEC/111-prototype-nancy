@@ -1,0 +1,27 @@
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhs-redesign{% endblock %}
+
+{% block content %}
+<div class="content-block measure clearfix">
+  <!--<a href="#" class="button-back">Back</a>-->
+
+  <h1>Is this the right number to call?</h1>
+
+  <div class="callout callout--attention">
+    <p class="lede">{{ session.callBooking.tel }}</p>
+  </div>
+
+  <p>
+    <a href="#">No, I need to change this number</a>
+  </p>
+
+  <div class="form-group -controls">
+    <a href="{{ session.callBooking.forwardUrl }}" class="button">Yes, book call</a>
+  </div>
+
+</div>
+
+{% endblock %}

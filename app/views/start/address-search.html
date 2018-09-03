@@ -18,7 +18,7 @@
   {% endif %}
 
   <div class="content-block">
-    <h1 class="heading--large">Where are you?</h1>
+    <h1>Where are you?</h1>
     <p>Tell us where you are now to get help in that area.</p>
 
     <form method="post" class="content-block">
@@ -26,7 +26,7 @@
       <div class="address-lookup">
         <div class="form-group">
           <label for="building"><b>Number or name of building (optional)</b></label>
-          <input type="text" id="building" name="building" autocomplete="off">
+          <input type="text" id="building" name="building" autocomplete="off" value="{{ session.addressBuilding }}">
         </div>
 
         <div class="form-group {% if error.postcode %}-errors{% endif %}">
@@ -34,14 +34,14 @@
             <b>Postcode</b>
             {% if error.postcode %}<br>{{ error.postcode }}{% endif %}
           </label>
-          <input type="text" id="postcode" name="postcode" class="-small" autocomplete="off">
+          <input type="text" id="postcode" name="postcode" class="-small" autocomplete="off" value="{{ session.addressPostcode }}">
         </div>
         <div class="form-group shunt-2">
           <button type="submit" class="button">Find address</button>
         </div>
       </div>
       <p>
-        <a href="/tell-us-where-you-are/location">I don’t know the address</a>
+        <a href="/start/location">I don’t know the address</a>
       </p>
     </form>
   </div>

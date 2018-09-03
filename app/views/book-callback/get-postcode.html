@@ -1,0 +1,31 @@
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhs-redesign{% endblock %}
+
+{% block content %}
+
+<form class="content-block measure form" method="post">
+  <!--<a href="/book-callback/confirm-address" class="button-back">Back</a>-->
+
+  <h1 class="h2">
+    {% if session.callBooking.who === 'me' %}
+      <label for="postcode">What is your home postcode? (optional)</label>
+    {% else %}
+      <label for="postcode">What is {{ session.callBooking.name.firstname }}’s home postcode? (optional)</label>
+    {% endif %}
+  </h1>
+
+  <div class="form-group shunt-2">
+    <input name="postcode" id="postcode" class="postcode" type="text" value="" autocomplete="off">
+  </div>
+  <div class="form-group">
+    <p>
+      <button type="submit" class="button">Next</button>
+    </p>
+  </div>
+</form>
+
+
+{% endblock %}

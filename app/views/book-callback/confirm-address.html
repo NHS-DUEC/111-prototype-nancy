@@ -1,0 +1,53 @@
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhs-redesign{% endblock %}
+
+{% block content %}
+
+<form class="content-block measure form" method="post">
+  <!--<a href="/book-callback/name" class="button-back">Back</a>-->
+
+  {% if session.callBooking.who === 'me' %}
+    <h1 class="h2">Is this your home address?</h1>
+  {% else %}
+    <h1 class="h2">Is this {{ session.callBooking.name.firstname }}’s home address?</h1>
+  {% endif %}
+
+  <div class="callout callout--info">
+    <p>
+      {% if session.addressSelected %}
+        {{ session.addressSelected | replace(", ", "<br>") | safe }}
+      {% else %}
+        Skipton House<br>
+        80 London Road<br>
+        London<br>
+        SE1 6LH
+      {% endif %}
+    </p>
+  </div>
+
+  <fieldset class="form-group">
+    <label class="block-label">
+      <input id="yes" name="home-address" value="yes" type="radio" class="selection-button-radio"
+        {% if session.callBooking.confirmedHome === 'true' %}checked="checked"{% endif%}
+      >
+      Yes
+    </label>
+    <label class="block-label">
+      <input id="not-sure" name="home-address" value="no" type="radio" class="selection-button-radio"
+        {% if session.callBooking.confirmedHome === 'false' %}checked="checked"{% endif%}
+      >
+      No
+    </label>
+  </fieldset>
+  <div class="form-group">
+    <p>
+      <button type="submit" class="button">Next</button>
+    </p>
+  </div>
+</form>
+
+
+{% endblock %}
