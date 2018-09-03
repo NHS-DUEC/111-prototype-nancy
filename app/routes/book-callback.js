@@ -32,7 +32,7 @@ router.post('/number', function(req, res) {
     });
   } else {
     req.session.callBooking.tel = req.body['tel'];
-    res.redirect('book-call-you-or-someone-else');
+    res.redirect('/book-callback/you-or-someone-else');
   }
 });
 
