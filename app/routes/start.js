@@ -81,7 +81,7 @@ router.post('/address-search', function (req, res) {
   if (req.body['postcode'] === '') {
     res.render('start/address-search.html', {
       error : {
-        summary : '<a href="#postcode">Please enter a postcode</a>',
+        summary : '<a href="#postcode">A postcode is required to look up addresses</a>',
         postcode: 'Postcode is required'
       }
     });
@@ -89,8 +89,12 @@ router.post('/address-search', function (req, res) {
     var postcode = req.body['postcode'].toUpperCase();
     // strip spaces
     var cleaned = postcode.replace(/\s+/g, '').toLowerCase();
-    var building = req.body['building'];
     var message = '';
+
+    var building = '';
+    if (typeof req.body['building'] !== 'undefined') {
+      building = req.body['building'];
+    }
 
     request('https://api.getAddress.io/v2/uk/' + cleaned + '/?api-key=' + process.env.POSTCODE_API + '&format=true', function (error, response, body) {
       if (!error) {
