@@ -1764,6 +1764,15 @@ label .form-hint {
   }
 }
 
+@media (min-width: 500px) {
+  .search.-postcode input[type="text"] {
+    width: inherit;
+  }
+  .search.-postcode .button {
+    width: auto;
+  }
+}
+
 textarea {
   -webkit-appearance: none;
   -moz-appearance: none;

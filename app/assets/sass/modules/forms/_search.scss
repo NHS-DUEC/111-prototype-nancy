@@ -30,4 +30,18 @@
     }
 
   }
+
+  &.-postcode {
+
+    @include media(mid) {
+
+      input[type="text"] {
+        width: inherit;
+      }
+
+      .button {
+        width: auto;
+      }
+    }
+  }
 }

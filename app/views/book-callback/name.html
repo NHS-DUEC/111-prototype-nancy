@@ -15,13 +15,13 @@
     <h1 class="h2">What is their name?</h1>
   {% endif %}
 
-  <div class="form-group shunt" id="name-group">
+  <div class="form-group shunt">
     <label for="firstname">First name</label>
     <input name="firstname" id="firstname" type="text" autocomplete="off" value="{{ session.callBooking.name.firstname }}">
   </div>
 
-  <div class="form-group" id="name-group">
-    <label for="secondname">Second name</label>
+  <div class="form-group">
+    <label for="secondname">Last name</label>
     <input name="secondname" id="secondname" type="text" autocomplete="off" value="{{ session.callBooking.name.secondname }}">
   </div>
 

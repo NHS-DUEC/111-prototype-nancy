@@ -24,24 +24,30 @@
     <form method="post" class="content-block">
 
       <div class="address-lookup">
+        <!--
         <div class="form-group">
           <label for="building"><b>Number or name of building (optional)</b></label>
           <input type="text" id="building" name="building" autocomplete="off" value="{{ session.addressBuilding }}">
         </div>
-
+        -->
         <div class="form-group {% if error.postcode %}-errors{% endif %}">
           <label for="postcode">
             <b>Postcode</b>
             {% if error.postcode %}<br>{{ error.postcode }}{% endif %}
           </label>
-          <input type="text" id="postcode" name="postcode" class="-small" autocomplete="off" value="{{ session.addressPostcode }}">
+          <div class="search -postcode shunt">
+            <input type="text" id="postcode" name="postcode" class="-small" autocomplete="off" value="{{ session.addressPostcode }}">
+            <button type="submit" class="button">Look up address</button>
+          </div>
         </div>
+        <!--
         <div class="form-group shunt-2">
           <button type="submit" class="button">Find address</button>
         </div>
+        -->
       </div>
       <p>
-        <a href="/start/location">I don’t know the address</a>
+        <a href="/start/location">I don’t know the postcode</a>
       </p>
     </form>
   </div>
