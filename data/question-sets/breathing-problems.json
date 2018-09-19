@@ -1,6 +1,6 @@
 {
   "questionset" : "breathing-problems",
-  "disposition" : "/forced-callback/disposition-callback-first-001",
+  "disposition" : "/user-journeys/check-question",
   "pathways" : [
     "PW556",
     "PW557",

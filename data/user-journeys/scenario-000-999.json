@@ -1,0 +1,23 @@
+{
+  "dx" : "",
+  "messages" : {
+    "questionReview2" : "You may need urgent medical help",
+    "answerHighlight" : "this means we can’t rule out a serious condition",
+    "callToAction" : "Get help as soon as you can.",
+    "callToActionLevel" : "callout--warning"
+  },
+  "question" : {
+    "question" : "Have you got an agonising headache, right now, like you were suddenly hit with something hard?",
+    "help" : "This is a headache that came on in seconds like a thunder clap, if it's any other type of headache answer no.",
+    "answers" : [
+      "Yes",
+      "I’m not sure",
+      "No"
+    ],
+    "userAnswer" : "Yes"
+  },
+  "revalidation" : {
+    "offered" : true,
+    "type" : "mandatory"
+  }
+}

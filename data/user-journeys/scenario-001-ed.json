@@ -7,14 +7,14 @@
     "callToActionLevel" : "callout--warning"
   },
   "question" : {
-    "question" : "Have you breathed in anything hot or poisonous like smoke, hot gases or chemical fumes in the last 24 hours?",
-    "help" : "",
+    "question" : "Have you got a severe ripping or tearing pain in your chest or back that came on suddenly?",
+    "help" : "This pain is intense and comes on out of the blue, it's not pain caused by coughing or a chest infection. It's not an aching, stinging or crushing pain.",
     "answers" : [
-      "Yes",
-      "I’m not sure",
+      "Yes - it's a sudden ripping or tearing pain",
+      "I have a different type of pain",
       "No"
     ],
-    "userAnswer" : "Yes"
+    "userAnswer" : "Yes - it's a sudden ripping or tearing pain"
   },
   "revalidation" : {
     "offered" : true,
