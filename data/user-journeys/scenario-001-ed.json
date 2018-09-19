@@ -1,7 +1,6 @@
 {
   "dx" : "",
   "messages" : {
-    "questionReview2" : "You may need urgent medical help",
     "answerHighlight" : "this means we can’t rule out a serious condition",
     "callToAction" : "Get help as soon as you can.",
     "callToActionLevel" : "callout--warning"
