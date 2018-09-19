@@ -9,13 +9,22 @@ module.exports = router
 // Creating journeys from files - August 2018 ++++++++++++++++++++++++++++++++++
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+router.get('/scenario-000-999', function(req, res) {
+  // zero out a namespaced session obj
+  req.session.userJourney = {};
+  raw = fs.readFileSync('./data/user-journeys/scenario-000-999.json');
+  journeyModel = JSON.parse(raw);
+  req.session.userJourney = journeyModel
+  res.redirect('/start');
+});
+
 router.get('/scenario-001-ed', function(req, res) {
   // zero out a namespaced session obj
   req.session.userJourney = {};
   raw = fs.readFileSync('./data/user-journeys/scenario-001-ed.json');
   journeyModel = JSON.parse(raw);
   req.session.userJourney = journeyModel
-  res.redirect('check-question');
+  res.redirect('/start');
 });
 
 router.get('/scenario-002-sexual-assault', function(req, res) {

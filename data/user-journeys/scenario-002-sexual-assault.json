@@ -1,10 +1,5 @@
 {
   "dx" : "dx94",
-  "messages" : {
-    "questionReview2" : "You may need urgent medical help",
-    "answerHighlight" : "this means we can’t rule out a serious condition",
-    "callToAction" : "Get help as soon as you can"
-  },
   "question" : {
     "question" : "To make sure you get the support you need, we need to ask if you’ve been sexually assaulted?",
     "help" : "",

@@ -1,0 +1,17 @@
+{
+  "dx" : "",
+  "question" : {
+    "question" : "Have you got an agonising headache, right now, like you were suddenly hit with something hard?",
+    "help" : "This is a headache that came on in seconds like a thunder clap, if it's any other type of headache answer no.",
+    "answers" : [
+      "Yes",
+      "I’m not sure",
+      "No"
+    ],
+    "userAnswer" : "Yes"
+  },
+  "revalidation" : {
+    "offered" : true,
+    "type" : "mandatory"
+  }
+}
