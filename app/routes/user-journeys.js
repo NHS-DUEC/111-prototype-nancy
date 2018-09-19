@@ -15,7 +15,7 @@ router.get('/scenario-001-ed', function(req, res) {
   raw = fs.readFileSync('./data/user-journeys/scenario-001-ed.json');
   journeyModel = JSON.parse(raw);
   req.session.userJourney = journeyModel
-  res.redirect('check-question');
+  res.redirect('/start');
 });
 
 router.get('/scenario-002-sexual-assault', function(req, res) {

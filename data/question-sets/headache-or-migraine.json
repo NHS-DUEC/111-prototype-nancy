@@ -1,6 +1,6 @@
 {
   "questionset" : "headache-or-migraine",
-  "disposition" : "/forced-callback/disposition-callback-first-001",
+  "disposition" : "/user-journeys/check-question",
   "pathways" : [
     "PW752",
     "PW753",
