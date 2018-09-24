@@ -26,7 +26,6 @@ router.get('/call-booked', function(req, res) {
   // what's the time?
   var now = moment().tz('Europe/London').format('h.mma');
   res.render('forced-callback/call-booked.html', {
-    now : now,
-    tel : req.session.callBooking.tel
+    now : now
   });
 });

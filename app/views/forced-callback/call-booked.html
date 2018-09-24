@@ -1,3 +1,8 @@
+{% set tel = "07979 654 789" %}
+{% if session.callBooking.tel %}
+  {% set tel = session.callBooking.tel %}
+{% endif %}
+
 {% extends '_layouts/layout.html' %}
 
 {% block page_title %}{% endblock %}
@@ -10,7 +15,7 @@
   <h1>You’ll get a call within 30 minutes</h1>
 
   <p>
-    It was booked at {{ now }}. A nurse will call {{ session.callBooking.tel }}.
+    It was booked at {{ now }}. A nurse will call {{ tel }}.
   </p>
 
   <details>
