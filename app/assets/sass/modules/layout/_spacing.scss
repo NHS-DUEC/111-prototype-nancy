@@ -34,3 +34,14 @@
 .content-seperator--grey3 {
     background-color: $grey-3;
 }
+
+.or-seperator {
+  margin: $baseline-grid-unit*10 0 0 0;
+  border-top: $baseline-grid-unit solid $grey-5;
+  span {
+    position: relative;
+    top: -$baseline-grid-unit*4;
+    background-color: $white;
+    padding-right: $baseline-grid-unit*2;
+  }
+}

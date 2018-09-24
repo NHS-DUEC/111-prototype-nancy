@@ -1,0 +1,99 @@
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhs-redesign{% endblock %}
+
+{% block content %}
+
+<div class="content-block">
+
+  <div class="measure">
+    <h1>Where are you?</h1>
+    <p>To find help in the right area we need to know where you are.</p>
+  </div>
+
+  <form id="place-finder" class="form measure" method="post">
+    <div class="form-group -location">
+      <div class="location-link">
+        <p>
+          <a href="/start/location" class="action-link">
+            <span>Use my location</span>
+            <svg class="nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M0 0h24v24H0z" fill="none"></path>
+              <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+            </svg>
+          </a>
+        </p>
+      </div>
+
+      <div class="or-seperator">
+        <span>Or</span>
+      </div>
+
+      <div class="location-label">
+        <label for="autocomplete">
+          Tell us where you are:
+        </label>
+      </div>
+      <div class="location-input">
+        <input id="autocomplete" name="autocomplete" type="text" placeholder=""></input>
+      </div>
+      <div class="location-button">
+        <button class="button" type="submit">Next</button>
+      </div>
+    </div>
+    <input type="hidden" name="postcode" id="postcode">
+    <input type="hidden" name="addressComponents" id="addressComponents">
+    <input type="hidden" name="addressFormatted" id="addressFormatted">
+  </form>
+
+</div>
+
+<style>
+  #chosen {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #ff0000;
+    opacity: 0.3;
+  }
+</style>
+<div id="chosen"></div>
+
+{% endblock %}
+
+{% block body_after %}
+
+<script>
+  var autocomplete, place;
+  function initAutocomplete() {
+    autocomplete = new google.maps.places.Autocomplete(document.getElementById('autocomplete'), {
+      componentRestrictions: {country: 'gb'}
+    });
+    autocomplete.addListener('place_changed', function() {
+      place = autocomplete.getPlace();
+      console.log(place)
+      $('#addressComponents').val(JSON.stringify(place.address_components));
+      $('#addressFormatted').val(place.formatted_address);
+      for (var i=0; i<place.address_components.length; i++) {
+        if (place.address_components[i].types.includes('postal_code')) {
+          $('#postcode').val(place.address_components[i].long_name);
+        }
+      }
+      $('#chosen').html(place.formatted_address)
+    })
+  }
+
+  /*function submitAddress(event) {
+    event.preventDefault();
+    //$('#place-finder').submit();
+  }
+
+  $('#place-finder').on('submit', function(e) {
+    submitAddress(e);
+  })*/
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDP454skpvnlft08MDIcZG_khm-sBHmFbM&libraries=places&callback=initAutocomplete" async defer></script>
+
+{% endblock %}

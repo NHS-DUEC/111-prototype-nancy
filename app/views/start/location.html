@@ -4,9 +4,11 @@
 {% endblock %}
 
 {% block content %}
+<!--
 <div class="measure">
   <a href="/start/address-search" class="button-back">Back</a>
 </div>
+-->
 
 <div id="geolocate-messaging">
   <p>
@@ -24,9 +26,11 @@
   <div id="map"></div>
 </div>
 
+<!--
 <div id="problems" class="callout callout--info shunt-2 measure">
   <p>You can drag and zoom the map to pinpoint your location more exactly</p>
 </div>
+-->
 
 <form action="/start/handle-location" method="post" class="content-block shunt clearfix">
   <div class="form-group -controls">
@@ -80,6 +84,12 @@
       bounds.extend(pos);
       mapObj.setCenter(pos);
       mapObj.fitBounds(bounds);
+
+      marker = new google.maps.Marker({
+        position: mapObj.getCenter(),
+        map: mapObj
+      });
+
       $('#geolocate-messaging').hide();
       document.getElementById('mapAnchor').scrollIntoView({
         behavior: "smooth"
@@ -109,11 +119,7 @@
       fullscreenControl: false
     });
 
-    marker = new google.maps.Marker({
-      position: mapObj.getCenter(),
-      map: mapObj
-    });
-
+    /*
     google.maps.event.addListener(mapObj, 'center_changed', function() {
       // 0.1 seconds after the center of the map has changed,
       // set back the marker position.
@@ -126,6 +132,7 @@
         updateVals(center);
       }, 100);
     });
+    */
 
     $('#problems').on('click', '#manualGeo', function(e) {
       e.preventDefault();
