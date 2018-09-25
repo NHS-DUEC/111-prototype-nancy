@@ -75,16 +75,27 @@ router.post('/demographics', function(req, res) {
 });
 
 // -----------------------------------------------------------------------------
-// ADDRESS SEARCH UNUSED
-/*router.post('/address-search', function (req, res) {
+
+router.post('/tell-us-where-you-are', function (req, res) {
+  req.session.addressComponents = req.body['addressComponents'];
+  req.session.addressSelected = req.body['addressFormatted'];
+  req.session.postcode = req.body['postcode'];
+
+  res.redirect('/finding-pathways/start');
+});
+
+// -----------------------------------------------------------------------------
+
+router.post('/address-search', function (req, res) {
 
   if (req.body['postcode'] === '') {
-    res.render('start/address-search.html', {
+    /*res.render('start/address-search.html', {
       error : {
         summary : '<a href="#postcode">A postcode is required to look up addresses</a>',
         postcode: 'Postcode is required'
       }
-    });
+    });*/
+    res.send('No postcode provided');
   } else {
     var postcode = req.body['postcode'].toUpperCase();
     // strip spaces
@@ -129,14 +140,28 @@ router.post('/demographics', function(req, res) {
         }
 
       } else {
-        res.render('start/address-search.html', {
-          error : {
-            summary : 'There’s been a problem looking up your address. Please try again.'
-          }
-        });
+        res.send('Problem with address lookup');
       }
     });
   }
+});
+
+// -----------------------------------------------------------------------------
+
+router.post('/reverse-geolocate', function (req, res) {
+  var latitude = req.body['lat'];
+  var longitude = req.body['long'];
+  // + '&location_type=ROOFTOP&result_type=street_address'
+  request('https://maps.googleapis.com/maps/api/geocode/json?latlng=' + latitude + ',' + longitude + '&key=' + process.env.GOOGLEMAPS_SERVER_API + '&result_type=premise|establishment|street_address|postal_code', function (error, response, body) {
+    if (!error) {
+      if (response.statusCode == 200) {
+        var parsed = JSON.parse(body);
+        res.render('start/reverse-geocode-list.html', {
+          results : parsed.results
+        });
+      }
+    }
+  });
 });
 
 // -----------------------------------------------------------------------------
@@ -166,16 +191,6 @@ router.post('/manual-address', function (req, res) {
 
 router.get('/handle-address', function (req, res) {
   req.session.addressSelected = req.query.str;
-  res.redirect('/finding-pathways/start');
-});
-*/
-// -----------------------------------------------------------------------------
-
-router.post('/tell-us-where-you-are', function (req, res) {
-  req.session.addressComponents = req.body['addressComponents'];
-  req.session.addressSelected = req.body['addressFormatted'];
-  req.session.postcode = req.body['postcode'];
-
   res.redirect('/finding-pathways/start');
 });
 

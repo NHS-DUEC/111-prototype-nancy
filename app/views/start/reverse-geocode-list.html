@@ -25,19 +25,9 @@
 
 <div class="address-listing">
 
-  {% for address in session.addressResults %}
-    {% set addressString  = '' %}
-    {% for addressLine in address %}
-      {% if addressLine !== '' %}
-        {% if loop.first == false %}
-          {% set addressString  = addressString + ', ' %}
-        {% endif %}
-        {% set addressString  = addressString + addressLine %}
-      {% endif %}
-    {% endfor %}
-    {% set addressString  = addressString + ', ' + session.addressPostcode %}
-    <a href="/start/handle-address?str={{ addressString | urlencode }}" class="address">
-      {{ addressString }}
+  {% for result in results %}
+    <a href="/start/handle-address?str={{ result.formatted_address | urlencode }}" class="address">
+      {{ result.formatted_address | replace(", UK", "") }}
     </a>
   {% endfor %}
 
