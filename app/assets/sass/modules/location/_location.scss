@@ -1,3 +1,53 @@
+.form-group.-location {
+  @include media(mid) {
+    display: grid;
+    grid-template-rows: auto 80px auto;
+    grid-template-columns: 3fr 1fr;
+
+    .or-seperator {
+      display: none;
+    }
+
+    .location-link {
+      grid-column-start: 2;
+      grid-column-end: 3;
+      grid-row-start: 2;
+      grid-row-end: 3;
+      .action-link {
+        font-size: $smallprint;
+        font-weight: $bodyweight;
+        padding-left: $baseline-grid-unit*2;
+        .nhsuk-icon__arrow-right-circle {
+          display: none;
+        }
+      }
+    }
+    .location-label {
+      grid-row-start: 1;
+      grid-row-end: 2;
+      label {
+        font-weight: $boldweight;
+      }
+    }
+    .location-input {
+      grid-column-start: 1;
+      grid-column-end: 2;
+      grid-row-start: 2;
+      grid-row-end: 3;
+      input[type="text"] {
+        width: 100%;
+      }
+    }
+    .location-button {
+      grid-column-start: 1;
+      grid-column-end: 2;
+      grid-row-start: 3;
+      grid-row-end: 4;
+      width: auto;
+    }
+  }
+}
+
 .location {
   @extend %contain-floats;
   background-color: $grey-5;

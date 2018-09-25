@@ -1,0 +1,13 @@
+.action-link {
+  position: relative;
+  font-weight: $boldweight;
+  padding-left: $baseline-grid-unit*12;
+  .nhsuk-icon__arrow-right-circle {
+    position: absolute;
+    left: 0;
+    top: -$baseline-grid-unit*2;
+    fill: $green;
+    width: $baseline-grid-unit*10;
+    height: $baseline-grid-unit*10;
+  }
+}

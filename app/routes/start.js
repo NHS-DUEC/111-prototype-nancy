@@ -71,12 +71,12 @@ router.post('/demographics', function(req, res) {
   if (req.body['sex']) {
     req.session.demographics.sex = req.body['sex'];
   }
-  res.redirect('/start/address-search');
+  res.redirect('/start/tell-us-where-you-are');
 });
 
 // -----------------------------------------------------------------------------
-
-router.post('/address-search', function (req, res) {
+// ADDRESS SEARCH UNUSED
+/*router.post('/address-search', function (req, res) {
 
   if (req.body['postcode'] === '') {
     res.render('start/address-search.html', {
@@ -168,6 +168,16 @@ router.get('/handle-address', function (req, res) {
   req.session.addressSelected = req.query.str;
   res.redirect('/finding-pathways/start');
 });
+*/
+// -----------------------------------------------------------------------------
+
+router.post('/tell-us-where-you-are', function (req, res) {
+  req.session.addressComponents = req.body['addressComponents'];
+  req.session.addressSelected = req.body['addressFormatted'];
+  req.session.postcode = req.body['postcode'];
+
+  res.redirect('/finding-pathways/start');
+});
 
 // -----------------------------------------------------------------------------
 
@@ -175,6 +185,17 @@ router.post('/handle-location', function (req, res) {
   var latlongLocation = {};
   latlongLocation.lat = req.body['lat'];
   latlongLocation.long = req.body['long'];
-  req.session.latlongLocation = latlongLocation;
-  res.redirect('/finding-pathways/start');
+
+  // get postcode
+  request('https://api.postcodes.io/postcodes?lon=' + latlongLocation.long + '&lat=' + latlongLocation.lat + '&limit=1', function (error, response, body) {
+    if (!error) {
+      if (response.statusCode == 200) {
+        var parsed = JSON.parse(body);
+        req.session.latlongLocation = latlongLocation;
+        req.session.postcode = parsed.result[0].postcode;
+        res.redirect('/finding-pathways/start');
+      }
+    }
+  });
+
 });
