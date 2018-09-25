@@ -1,3 +1,19 @@
+{% set question = "Have you got an agonising headache, right now, like you were suddenly hit with something hard?" %}
+{% if session.userJourney.question.question %}
+  {% set question = session.userJourney.question.question %}
+{% endif %}
+
+{% set help = "This is a headache that came on in seconds like a thunder clap, if it's any other type of headache answer no." %}
+{% if session.userJourney.question.help %}
+  {% set question = session.userJourney.question.help %}
+{% endif %}
+
+{% set answer = "Yes" %}
+{% if session.userJourney.question.userAnswer %}
+  {% set answer = session.userJourney.question.userAnswer %}
+{% endif %}
+
+
 {% extends '_layouts/layout.html' %}
 
 {% block page_title %}
@@ -13,13 +29,13 @@
   <h1 class="h2">Have you answered this question correctly?</h1>
 
   <div class="callout callout--attention">
-    <p>{{ session.userJourney.question.question }}</p>
-    {% if session.userJourney.question.help !== '' %}
-    <p class="small">{{ session.userJourney.question.help }}</p>
+    <p>{{ question }}</p>
+    {% if help !== '' %}
+    <p class="small">{{ help }}</p>
     {% endif %}
   </div>
 
-  <p>You said “{{ session.userJourney.question.userAnswer }}” which means you may need urgent help.</p>
+  <p>You said “{{ answer }}” which means you may need urgent help.</p>
 
   <form class="form" method="post">
     <legend><b>Do you want to look at it again?</b></legend>

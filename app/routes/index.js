@@ -15,15 +15,15 @@ router.get('/primary-service', function(req, res) {
     callToAction : 'Get help as soon as you can.',
     callToActionLevel : 'callout--warning',
     preamble : '',
-    name : 'St Thomas Hospital',
+    name : 'Leeds General Infirmary',
     important : '',
     postscript : '',
-    address : 'Emergency Department<br>St Thomas Hospital<br>Westminster Bridge Road<br>London<br>SE1 7EH',
+    address : 'Emergency Department<br>Great George Street<br>Leeds<br>West Yorkshire<br>LS1 3EX',
     openingTimes : '<p>Open 24 hours</p>',
-    distance : '0.8 miles',
-    lat : '51.498244',
-    long : '-0.119203',
-    careAdviceTitle : 'req.session.userJourney.careAdviceTitle',
+    distance : '0.1 miles',
+    lat : '53.801732',
+    long : '-1.551858',
+    moreServicesLink : '/service-list/multiple-service-offering-leeds',
     careAdvice : '<div class="care-advice-output"><details> <summary>Breathlessness</summary> <div> <ul> <li> Sit as upright as is comfortable. </li> <li> If an inhaler or a spacer is used for chest problems, follow the instructions about &quot;what to do if your breathing gets worse&quot;. </li> <li> Never use medicines which have been prescribed for someone else. </li> </ul> </div> </details> <details> <summary>Medication, pain and/or fever</summary> <div> <ul> <li> Paracetamol or ibuprofen can be used to relieve pain or a fever. Don’t take if you’ve been told not to, or you’ve already taken some. Read the instructions on the packet, or talk to a pharmacist. </li> </ul> </div> </details> <details> <summary>Headache</summary> <div> <ul> <li> A heated pad or covered hot water bottle on the back of your neck may help ease the pain. </li> <li> Call 999 if: <ul> <li> The person becomes very drowsy, isn’t responding normally or is having a fit. </li> <li> The person becomes severely ill with new marks under the skin which look like bruising or bleeding. </li> </ul> </li> </ul> </div> </details></div>'
   });
 });

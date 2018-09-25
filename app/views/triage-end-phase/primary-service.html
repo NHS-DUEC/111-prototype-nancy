@@ -1,3 +1,8 @@
+{% set moreservices = "/service-list/multiple-service-offering" %}
+{% if moreServicesLink %}
+  {% set moreservices = moreServicesLink %}
+{% endif %}
+
 {% extends '_layouts/layout.html' %}
 
 {% block page_title %}{% endblock %}
@@ -7,8 +12,6 @@
 {% block content %}
 
 <div class="content-block">
-  <a href="javascript: window.history.back();" class="button-back">Back</a>
-
   <h1>Where to get help</h1>
 
   <div class="measure">
@@ -88,7 +91,7 @@
       <p>{{ callToAction }}</p>
     </div>
     <p>
-      If this recommended service isn’t right for you, you can <a href="/service-list/multiple-service-offering">
+      If this recommended service isn’t right for you, you can <a href="{{ moreservices }}">
       view more services that can help.</a>
     </p>
     {{ postscript | safe }}
