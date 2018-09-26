@@ -32,6 +32,15 @@
 
 {% block body_after %}
 <script>
+
+  if ("geolocation" in navigator) {
+    /* geolocation is available */
+    alert("Geolocation works");
+  } else {
+    /* geolocation IS NOT available */
+    alert("Fucking hell Gail there's always one");
+  }
+
   var doGeo = function() {
     $('#location-link-container').hide();
     $('#geolocate-messaging').show();
