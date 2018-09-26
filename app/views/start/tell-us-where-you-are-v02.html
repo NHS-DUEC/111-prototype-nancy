@@ -1,0 +1,58 @@
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhs-redesign{% endblock %}
+
+{% block content %}
+
+<div class="content-block measure">
+  <h1>Where are you?</h1>
+  <p>To find help in the right area we need to know where you are.</p>
+  <div id="location-link-container">
+    <p>
+      <a href="/start/location" class="button" id="location-link">Use my location</a>
+    </p>
+  </div>
+  <div id="geolocate-messaging">
+    <p>
+      <span id="load-message">Finding your location</span>
+      <span class="load-container">
+        <span class="loader"></span>
+      </span>
+    </p>
+  </div>
+</div>
+
+<form id="location-container" method="post" action="/start/reverse-geolocate">
+  <input type="hidden" name="lat" id="lat" value="">
+  <input type="hidden" name="long" id="long" value="">
+</form>
+
+{% endblock %}
+
+{% block body_after %}
+<script>
+  var doGeo = function() {
+    $('#location-link-container').hide();
+    $('#geolocate-messaging').show();
+    navigator.geolocation.getCurrentPosition(function(position) {
+      $('#load-message').text('Searching for address');
+      $("#lat").val(position.coords.latitude);
+      $("#long").val(position.coords.longitude);
+      $('#location-container').submit();
+    }, function(PositionError) {
+      console.log(PositionError.message);
+      console.log(PositionError.code);
+      $('#geolocate-messaging').hide();
+      $('#location-link-container').show();
+    });
+  }
+
+  $('#geolocate-messaging').hide();
+  $('#location-link').on('click', function(e) {
+    e.preventDefault();
+    doGeo();
+  })
+</script>
+{% endblock %}

@@ -7,8 +7,6 @@
 {% block content %}
 
 <div class="content-block measure">
-  <!--<a href="/start/address-list" class="button-back">Back</a>-->
-
   {% if error.summary %}
     <div class="error-summary">
       <div>
@@ -18,34 +16,43 @@
     </div>
   {% endif %}
 
-  <h1>Enter address</h1>
+  <h1>Where are you?</h1>
+
+  <p>Please give as much detail as you can.</p>
 
   <form method="post" class="shunt">
     <fieldset>
-      <div class="form-group {% if error.address %}-errors{% endif %}">
+      <div class="form-group">
         <label for="address_1">
           Address
-          {% if error.address %}<br>{{ error.address }}{% endif %}
         </label>
-        <input type="text" id="address_1" name="address_1" autocomplete="off">
-        <input type="text" id="address_2" name="address_2" autocomplete="off">
-        <input type="text" id="address_3" name="address_3" autocomplete="off">
-        <input type="text" id="address_4" name="address_4" autocomplete="off">
+        {% if session.addressResults | length === 1 %}
+          {% for line in session.addressResults[0] %}
+            {% if line !== "" %}
+              <input type="text" id="address_{{ loop.index0 }}" name="address_{{ loop.index0 }}" autocomplete="off" value="{{ line }}">
+            {% endif %}
+            {% if loop.last %}
+              <input type="text" id="address_{{ loop.length }}" name="address_{{ loop.length }}" autocomplete="off" value="">
+            {% endif %}
+          {% endfor %}
+        {% else %}
+          <input type="text" id="address_0" name="address_0" autocomplete="off" value="">
+          <input type="text" id="address_1" name="address_1" autocomplete="off" value="">
+          <input type="text" id="address_2" name="address_2" autocomplete="off" value="">
+          <input type="text" id="address_3" name="address_3" autocomplete="off" value="">
+          <input type="text" id="address_4" name="address_4" autocomplete="off" value="">
+        {% endif %}
       </div>
-      <div class="form-group {% if error.postcode %}-errors{% endif %}">
+      <div class="form-group">
         <label for="postcode">
           Postcode
-          {% if error.postcode %}<br>{{ error.postcode }}{% endif %}
         </label>
-        <input type="text" id="postcode" name="postcode" class="-small" autocomplete="off">
+        <input type="text" id="postcode" name="postcode" class="-small" autocomplete="off" value="{{ session.addressPostcode }}">
       </div>
     </fieldset>
     <div class="form-group shunt-2">
       <button type="submit" class="button">Next</button>
     </div>
-    <p>
-      <a href="/start/location">I don’t know the full address</a>
-    </p>
   </form>
 </div>
 

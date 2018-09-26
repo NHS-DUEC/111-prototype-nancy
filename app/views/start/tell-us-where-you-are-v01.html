@@ -1,0 +1,78 @@
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhs-redesign{% endblock %}
+
+{% block content %}
+
+<div class="content-block measure">
+  <h1>Where are you?</h1>
+  <p>To find help in the right area we need to know where you are.</p>
+
+  <div id="error-container" class="error-summary">
+    We can’t find your location. You may need to reload this page or check your browser permissions.<br>
+    <a href="#" id="retry-locate">Try again</a> or tell us the postcode where you are.</p>
+  </div>
+
+  <form id="postcode-container" method="post" action="/start/address-search">
+    <div class="form-group">
+      <label for="postcode"><b>Postcode</b></label>
+      <input type="text" name="postcode" id="postcode" value="" class="-small">
+    </div>
+    <div class="form-group">
+      <button type="submit" class="button">Next</button>
+    </div>
+  </form>
+
+  <div id="location-link-container">
+    <p>
+      <a href="/start/location" class="button" id="location-link">Use my location</a>
+    </p>
+  </div>
+  <div id="geolocate-messaging">
+    <p>
+      <span id="load-message">Finding your location</span>
+      <span class="load-container">
+        <span class="loader"></span>
+      </span>
+    </p>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block body_after %}
+<script>
+
+  var doGeo = function() {
+    $('#location-link-container').hide();
+    $('#geolocate-messaging').show();
+    navigator.geolocation.getCurrentPosition(function(position) {
+      $('#load-message').text('Finding postcode');
+      $.get('https://api.postcodes.io/postcodes?lon=' + position.coords.longitude + '&lat=' + position.coords.latitude, function( data ) {
+        $("#postcode").val(data.result[0].postcode);
+        $('#postcode-container').submit();
+      });
+    }, function(PositionError) {
+      console.log(PositionError.message);
+      console.log(PositionError.code);
+      $('#geolocate-messaging, #location-link-container').hide();
+      $('#postcode-container, #error-container').show();
+    }, {
+      enableHighAccuracy: true
+    });
+  }
+
+  if ("geolocation" in navigator) {
+    $('#location-link, #retry-locate').on('click', function(e) {
+      e.preventDefault();
+      doGeo();
+    })
+    $('#postcode-container, #error-container, #geolocate-messaging').hide();
+  } else {
+    $('#geolocate-messaging, #location-link').hide();
+  }
+
+</script>
+{% endblock %}

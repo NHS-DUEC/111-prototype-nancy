@@ -1,0 +1,42 @@
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhs-redesign{% endblock %}
+
+{% block content %}
+
+<div class="content-block measure">
+  <!--<a href="/start/address-search" class="button-back">Back</a>-->
+  <!--
+  {% if session.addressResults.length === 1 %}
+    <h1 class="h2">Confirm address</h1>
+  {% else %}
+    <h1 class="h2">Pick address</h1>
+  {% endif %}
+  {% if message %}
+    <div class="callout callout--info">
+      <p>{{ message | safe }}</p>
+    </div>
+  {% endif %}
+  -->
+  <h1>Where are you?</h1>
+</div>
+
+<div class="address-listing">
+
+  {% for result in results %}
+    <a href="/start/handle-address?str={{ result.formatted_address | urlencode }}" class="address">
+      {{ result.formatted_address | replace(", UK", "") }}
+    </a>
+  {% endfor %}
+
+</div>
+
+<div class="content-seperator content-seperator--equalvertspacing--large"></div>
+
+<div class="content-block measure">
+  <p><a href="/start/manual-address">I’m not at any of these places</a></p>
+</div>
+
+{% endblock %}
