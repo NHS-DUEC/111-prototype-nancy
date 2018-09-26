@@ -9,6 +9,22 @@
 <div class="content-block measure">
   <h1>Where are you?</h1>
   <p>To find help in the right area we need to know where you are.</p>
+
+  <div id="error-container" class="error-summary">
+    We can’t find your location. You may need to reload this page or check your browser permissions.<br>
+    <a href="#" id="retry-locate">Try again</a> or tell us the postcode where you are.</p>
+  </div>
+
+  <form id="postcode-container" method="post" action="/start/address-search">
+    <div class="form-group">
+      <label for="postcode"><b>Postcode</b></label>
+      <input type="text" name="postcode" id="postcode" value="" class="-small">
+    </div>
+    <div class="form-group">
+      <button type="submit" class="button">Next</button>
+    </div>
+  </form>
+
   <div id="location-link-container">
     <p>
       <a href="/start/location" class="button" id="location-link">Use my location</a>
@@ -23,10 +39,6 @@
     </p>
   </div>
 </div>
-
-<form id="postcode-container" method="post" action="/start/address-search">
-  <input type="hidden" name="postcode" id="postcode" value="">
-</form>
 
 {% endblock %}
 
@@ -43,18 +55,24 @@
         $('#postcode-container').submit();
       });
     }, function(PositionError) {
-      alert("Hi Gail, this might be where it's breaking. Can you screengrab this? " + PositionError.message);
       console.log(PositionError.message);
       console.log(PositionError.code);
-      $('#geolocate-messaging').hide();
-      $('#location-link-container').show();
+      $('#geolocate-messaging, #location-link-container').hide();
+      $('#postcode-container, #error-container').show();
+    }, {
+      enableHighAccuracy: true
     });
   }
 
-  $('#geolocate-messaging').hide();
-  $('#location-link').on('click', function(e) {
-    e.preventDefault();
-    doGeo();
-  })
+  if ("geolocation" in navigator) {
+    $('#location-link, #retry-locate').on('click', function(e) {
+      e.preventDefault();
+      doGeo();
+    })
+    $('#postcode-container, #error-container, #geolocate-messaging').hide();
+  } else {
+    $('#geolocate-messaging, #location-link').hide();
+  }
+
 </script>
 {% endblock %}
