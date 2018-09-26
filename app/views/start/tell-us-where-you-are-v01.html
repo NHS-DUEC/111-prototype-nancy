@@ -33,14 +33,6 @@
 {% block body_after %}
 <script>
 
-  if ("geolocation" in navigator) {
-    /* geolocation is available */
-    alert("Geolocation works");
-  } else {
-    /* geolocation IS NOT available */
-    alert("Fucking hell Gail there's always one");
-  }
-
   var doGeo = function() {
     $('#location-link-container').hide();
     $('#geolocate-messaging').show();
@@ -51,6 +43,7 @@
         $('#postcode-container').submit();
       });
     }, function(PositionError) {
+      alert("Hi Gail, this might be where it's breaking. Can you screengrab this? " + PositionError.message);
       console.log(PositionError.message);
       console.log(PositionError.code);
       $('#geolocate-messaging').hide();
