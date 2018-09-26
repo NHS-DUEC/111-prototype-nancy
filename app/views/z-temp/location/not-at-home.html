@@ -1,0 +1,28 @@
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhs-redesign{% endblock %}
+
+{% block content %}
+
+<div class="content-block measure">
+  <form method="post" action="/location/away-postcode">
+    <div class="form-group">
+      <h1 class="h2">
+        <label for="postcode">What is the postcode of your location?</label>
+      </h1>
+      <div class="shunt">
+        <input type="text" name="postcode" id="postcode" value="" class="-small">
+      </div>
+    </div>
+    <p>
+      <a href="geo-attempt">I don’t know the postcode</a>
+    </p>
+    <div class="form-group">
+      <button type="submit" class="button">Next</button>
+    </div>
+  </form>
+</div>
+
+{% endblock %}
