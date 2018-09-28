@@ -7,11 +7,22 @@
 {% block content %}
 
 <div class="content-block measure">
+  {% if error %}
+    <div class="error-summary">
+      <h2 class="error-heading">There’s a problem</h2>
+      <p>
+        Tell us if you are at home or somewhere else
+      </p>
+    </div>
+  {% endif %}
   <h1>Where are you?</h1>
   <p>We need to know where you are so we can find services to help.</p>
 
-  <form id="postcode-container" method="post" action="/location/start">
-    <fieldset>
+  <form id="postcode-container" method="post">
+    <fieldset class="form-group {% if error %}-errors{% endif %}">
+      {% if error %}
+        <p class="error-hint">Choose one option</p>
+      {% endif %}
       <label class="block-label">
         <input id="location" name="location" value="home" type="radio" class="selection-button-radio">
         <span>I’m at home</span>

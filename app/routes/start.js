@@ -71,147 +71,70 @@ router.post('/demographics', function(req, res) {
   if (req.body['sex']) {
     req.session.demographics.sex = req.body['sex'];
   }
-  //res.redirect('/start/tell-us-where-you-are-v01');
-  res.redirect('/z-temp/location');
+  res.redirect('/start/where-are-you');
 });
 
 // -----------------------------------------------------------------------------
 
-router.post('/tell-us-where-you-are', function (req, res) {
-  req.session.addressComponents = req.body['addressComponents'];
-  req.session.addressSelected = req.body['addressFormatted'];
-  req.session.postcode = req.body['postcode'];
-
-  res.redirect('/finding-pathways/start');
-});
-
-// -----------------------------------------------------------------------------
-
-router.post('/address-search', function (req, res) {
-
-  if (req.body['postcode'] === '') {
-    /*res.render('start/address-search.html', {
-      error : {
-        summary : '<a href="#postcode">A postcode is required to look up addresses</a>',
-        postcode: 'Postcode is required'
-      }
-    });*/
-    res.send('No postcode provided');
+router.post('/where-are-you', function(req, res) {
+  if (req.body['location'] === 'home') {
+    res.redirect('/start/at-home');
+  } else if (req.body['location'] === 'away') {
+    res.redirect('/start/not-at-home');
   } else {
-    var postcode = req.body['postcode'].toUpperCase();
-    // strip spaces
-    var cleaned = postcode.replace(/\s+/g, '').toLowerCase();
-    var message = '';
-
-    var building = '';
-    if (typeof req.body['building'] !== 'undefined') {
-      building = req.body['building'];
-    }
-
-    request('https://api.getAddress.io/v2/uk/' + cleaned + '/?api-key=' + process.env.POSTCODE_API + '&format=true', function (error, response, body) {
-      if (!error) {
-        if (response.statusCode == 200) {
-          var parsed = JSON.parse(body);
-          var addresses = parsed['Addresses'];
-          addresses.sort(naturalSort);
-          var filtered = [];
-
-          if (building !== '') {
-            for (var i=0; i<addresses.length; i++) {
-              var current = addresses[i].toString().toLowerCase();
-              if (current.indexOf(building.toLowerCase()) !== -1) {
-                filtered.push(addresses[i]);
-              }
-            }
-            if (filtered.length === 0) {
-              message = 'No exact match found &mdash; showing all addresses for ' + postcode;
-            } else {
-              addresses = filtered;
-            }
-          }
-
-          req.session.addressResults = addresses;
-          req.session.addressBuilding = building;
-          req.session.addressPostcode = postcode;
-
-          res.render('start/address-list.html', {
-            message : message
-          });
-
-        }
-
-      } else {
-        res.send('Problem with address lookup');
-      }
+    res.render('start/where-are-you.html', {
+      error : true
     });
   }
 });
 
 // -----------------------------------------------------------------------------
 
-router.post('/reverse-geolocate', function (req, res) {
-  var latitude = req.body['lat'];
-  var longitude = req.body['long'];
-  // + '&location_type=ROOFTOP&result_type=street_address'
-  request('https://maps.googleapis.com/maps/api/geocode/json?latlng=' + latitude + ',' + longitude + '&key=' + process.env.GOOGLEMAPS_SERVER_API + '&result_type=premise|establishment|street_address|postal_code', function (error, response, body) {
-    if (!error) {
-      if (response.statusCode == 200) {
-        var parsed = JSON.parse(body);
-        res.render('start/reverse-geocode-list.html', {
-          results : parsed.results
-        });
-      }
-    }
-  });
-});
-
-// -----------------------------------------------------------------------------
-
-router.post('/manual-address', function (req, res) {
-  var address = '';
-  if (req.body['address_1'] !== '') {
-    address += req.body['address_1'] + ', '
-  }
-  if (req.body['address_2'] !== '') {
-    address += req.body['address_2'] + ', '
-  }
-  if (req.body['address_3'] !== '') {
-    address += req.body['address_3'] + ', '
-  }
-  if (req.body['address_4'] !== '') {
-    address += req.body['address_4'] + ', '
-  }
+router.post('/at-home', function(req, res) {
   if (req.body['postcode'] !== '') {
-    address += req.body['postcode'] + ', '
+    req.session.postcode = req.body['postcode'];
+    res.redirect('/finding-pathways/start');
+  } else {
+    res.render('start/at-home.html', {
+      error : true
+    });
   }
-  address = address.slice(0, -2);
-  res.redirect('/start/handle-address?str=' + address);
 });
 
 // -----------------------------------------------------------------------------
 
-router.get('/handle-address', function (req, res) {
-  req.session.addressSelected = req.query.str;
-  res.redirect('/finding-pathways/start');
-});
-
-// -----------------------------------------------------------------------------
-
-router.post('/handle-location', function (req, res) {
-  var latlongLocation = {};
-  latlongLocation.lat = req.body['lat'];
-  latlongLocation.long = req.body['long'];
-
-  // get postcode
-  request('https://api.postcodes.io/postcodes?lon=' + latlongLocation.long + '&lat=' + latlongLocation.lat + '&limit=1', function (error, response, body) {
-    if (!error) {
-      if (response.statusCode == 200) {
-        var parsed = JSON.parse(body);
-        req.session.latlongLocation = latlongLocation;
-        req.session.postcode = parsed.result[0].postcode;
-        res.redirect('/finding-pathways/start');
-      }
+router.post('/not-at-home', function(req, res) {
+  if (req.body['knows-postcode'] === 'true') {
+    res.redirect('/start/postcode-away');
+  } else if (req.body['knows-postcode'] === 'false') {
+    if (req.body['geo-capable'] === 'true') {
+      res.redirect('/start/geo-attempt');
+    } else {
+      res.redirect('/start/location-dead-end')
     }
-  });
+  } else {
+    res.render('start/not-at-home.html', {
+      error : true
+    });
+  }
+});
 
+// -----------------------------------------------------------------------------
+
+router.post('/postcode-away', function(req, res) {
+  if (req.body['postcode'] !== '') {
+    req.session.postcode = req.body['postcode'];
+    res.redirect('/finding-pathways/start');
+  } else {
+    res.render('start/postcode-away.html', {
+      error : true
+    });
+  }
+});
+
+// -----------------------------------------------------------------------------
+
+router.post('/geo-attempt', function(req, res) {
+  req.session.postcode = req.body['postcode'];
+  res.redirect('/finding-pathways/start');
 });

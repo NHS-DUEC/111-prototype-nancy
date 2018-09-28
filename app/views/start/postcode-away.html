@@ -7,11 +7,22 @@
 {% block content %}
 
 <div class="content-block measure">
-  <form method="post" action="/location/home-postcode">
-    <div class="form-group">
+  <form method="post">
+    {% if error %}
+      <div class="error-summary">
+        <h2 class="error-heading">There’s a problem</h2>
+        <p>
+          <a href="#postcode">Enter a postcode</a>
+        </p>
+      </div>
+    {% endif %}
+    <div class="form-group {% if error %}-errors{% endif %}">
       <h1 class="h2">
-        <label for="postcode">What is your home postcode?</label>
+        <label for="postcode">What’s the postcode of where you are now?</label>
       </h1>
+      {% if error %}
+        <p class="error-hint">Enter a postcode</p>
+      {% endif %}
       <div class="shunt">
         <input type="text" name="postcode" id="postcode" value="" class="-small">
       </div>
