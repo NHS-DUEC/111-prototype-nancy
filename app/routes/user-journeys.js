@@ -67,12 +67,7 @@ router.post('/check-question', function(req, res) {
 // Revisit the question
 router.get('/revisit-question', function(req, res) {
   res.render('triage-end-phase/rerender-question.html', {
-    backUrl : '/user-journeys/check-question',
-    question : req.session.userJourney.question.question,
-    help : req.session.userJourney.question.help,
-    answers : req.session.userJourney.question.answers,
-    userAnswer : req.session.userJourney.question.userAnswer,
-    answerHighlight : req.session.userJourney.messages.answerHighlight
+    backUrl : '/user-journeys/check-question'
   });
 });
 
