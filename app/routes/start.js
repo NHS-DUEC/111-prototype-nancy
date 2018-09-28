@@ -78,8 +78,10 @@ router.post('/demographics', function(req, res) {
 
 router.post('/where-are-you', function(req, res) {
   if (req.body['location'] === 'home') {
+    req.session.userlocation = 'home';
     res.redirect('/start/at-home');
   } else if (req.body['location'] === 'away') {
+    req.session.userlocation = 'away';
     res.redirect('/start/not-at-home');
   } else {
     res.render('start/where-are-you.html', {
@@ -93,6 +95,7 @@ router.post('/where-are-you', function(req, res) {
 router.post('/at-home', function(req, res) {
   if (req.body['postcode'] !== '') {
     req.session.postcode = req.body['postcode'];
+    req.session.postcodesource = 'user';
     res.redirect('/finding-pathways/start');
   } else {
     res.render('start/at-home.html', {
@@ -124,6 +127,7 @@ router.post('/not-at-home', function(req, res) {
 router.post('/postcode-away', function(req, res) {
   if (req.body['postcode'] !== '') {
     req.session.postcode = req.body['postcode'];
+    req.session.postcodesource = 'user';
     res.redirect('/finding-pathways/start');
   } else {
     res.render('start/postcode-away.html', {
@@ -136,5 +140,6 @@ router.post('/postcode-away', function(req, res) {
 
 router.post('/geo-attempt', function(req, res) {
   req.session.postcode = req.body['postcode'];
+  req.session.postcodesource = 'geolocation';
   res.redirect('/finding-pathways/start');
 });
