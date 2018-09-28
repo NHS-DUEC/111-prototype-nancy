@@ -1,0 +1,30 @@
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhs-redesign{% endblock %}
+
+{% block content %}
+
+<div class="content-block measure">
+  <h1>Where are you?</h1>
+  <p>We need to know where you are so we can find services to help.</p>
+
+  <form id="postcode-container" method="post" action="/location/start">
+    <fieldset>
+      <label class="block-label">
+        <input id="location" name="location" value="home" type="radio" class="selection-button-radio">
+        <span>I’m at home</span>
+      </label>
+      <label class="block-label">
+        <input id="location" name="location" value="away" type="radio" class="selection-button-radio">
+        <span>I’m somewhere else</span>
+      </label>
+    </fieldset>
+    <div class="form-group">
+      <button type="submit" class="button">Next</button>
+    </div>
+  </form>
+</div>
+
+{% endblock %}

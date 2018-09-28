@@ -71,7 +71,8 @@ router.post('/demographics', function(req, res) {
   if (req.body['sex']) {
     req.session.demographics.sex = req.body['sex'];
   }
-  res.redirect('/start/tell-us-where-you-are-v01');
+  //res.redirect('/start/tell-us-where-you-are-v01');
+  res.redirect('/z-temp/location');
 });
 
 // -----------------------------------------------------------------------------

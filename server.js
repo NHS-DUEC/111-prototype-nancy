@@ -22,7 +22,7 @@ var bookCallback = require('./app/routes/book-callback');
 
 var userJourneys = require('./app/routes/user-journeys');
 
-var reverseGeocoding = require('./app/routes/reverse-geocoding');
+var location = require('./app/routes/location');
 
 var app = express()
 
@@ -109,7 +109,7 @@ app.use('/book-callback', bookCallback);
 
 app.use('/user-journeys', userJourneys);
 
-app.use('/reverse-geocoding', reverseGeocoding);
+app.use('/location', location);
 
 // auto render any view that exists
 app.get(/^\/([^.]+)$/, function (req, res) {
