@@ -1,3 +1,14 @@
+{% set title = 'your' %}
+{% set help = 'you’re' %}
+{% set help_2 = 'your' %}
+{% set outlink = 'I’m not' %}
+{% if session.callBooking.who === 'someone-else' %}
+  {% set title = session.callBooking.name.firstname + '’s' %}
+  {% set help = session.callBooking.name.firstname + ' is' %}
+  {% set help_2 = 'their' %}
+  {% set outlink = session.callBooking.name.firstname + ' isn’t' %}
+{% endif %}
+
 {% extends '_layouts/layout.html' %}
 
 {% block page_title %}{% endblock %}
@@ -7,8 +18,8 @@
 {% block content %}
 
 <div class="content-block measure">
-  <h1>What is your address?</h1>
-  <p>You’ve told us you’re at home, letting us know your address helps the nurse find your records.</p>
+  <h1>What is {{ title }} address?</h1>
+  <p>You’ve told us {{ help }} at home, giving us {{ help_2 }} address helps the nurse find {{ help_2 }} records.</p>
 </div>
 
 <div class="address-listing">
@@ -35,7 +46,7 @@
 
 <div class="content-block measure">
   <p>
-    <a href="#">I’m not at any of these places</a>
+    <a href="#">{{ outlink }} at any of these places</a>
   </p>
 </div>
 
