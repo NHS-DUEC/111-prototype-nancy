@@ -1,7 +1,5 @@
 var express = require('express')
 var moment = require('moment-timezone')
-var request = require('request')
-var naturalSort = require('javascript-natural-sort')
 var router = express.Router()
 
 module.exports = router

@@ -22,8 +22,6 @@ var bookCallback = require('./app/routes/book-callback');
 
 var userJourneys = require('./app/routes/user-journeys');
 
-var location = require('./app/routes/location');
-
 var app = express()
 
 // Grab environment variables specified in Procfile or as Heroku config vars
@@ -108,8 +106,6 @@ app.use('/callback-offered', callbackOffered);
 app.use('/book-callback', bookCallback);
 
 app.use('/user-journeys', userJourneys);
-
-app.use('/location', location);
 
 // auto render any view that exists
 app.get(/^\/([^.]+)$/, function (req, res) {
