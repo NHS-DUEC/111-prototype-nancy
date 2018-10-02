@@ -15,8 +15,10 @@
       </p>
     </div>
   {% endif %}
-  <h1>Where are you?</h1>
-  <p>We need to know where you are so we can find services to help.</p>
+  <h1>Are you at home?</h1>
+  <div class="callout callout--info">
+    <p>We need to know where you are so we can find services to help.</p>
+  </div>
 
   <form id="postcode-container" method="post">
     <fieldset class="form-group {% if error %}-errors{% endif %}">
@@ -25,11 +27,11 @@
       {% endif %}
       <label class="block-label">
         <input id="location" name="location" value="home" type="radio" class="selection-button-radio">
-        <span>I’m at home</span>
+        <span>Yes</span>
       </label>
       <label class="block-label">
         <input id="location" name="location" value="away" type="radio" class="selection-button-radio">
-        <span>I’m somewhere else</span>
+        <span>No</span>
       </label>
     </fieldset>
     <div class="form-group">
