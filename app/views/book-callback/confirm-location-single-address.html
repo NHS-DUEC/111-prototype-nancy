@@ -1,14 +1,3 @@
-{% set title = 'your' %}
-{% set help = 'you’re' %}
-{% set help_2 = 'your' %}
-{% set outlink = 'I’m not' %}
-{% if session.callBooking.who === 'someone-else' %}
-  {% set title = session.callBooking.name.firstname + '’s' %}
-  {% set help = session.callBooking.name.firstname + ' is' %}
-  {% set help_2 = 'their' %}
-  {% set outlink = session.callBooking.name.firstname + ' isn’t' %}
-{% endif %}
-
 {% extends '_layouts/layout.html' %}
 
 {% block page_title %}{% endblock %}
@@ -18,11 +7,9 @@
 {% block content %}
 
 <div class="content-block measure">
-  <h1>Is this {{ title }} address?</h1>
+  <h1>Are you here?</h1>
 
-  <div class="callout callout--info">
-    <p>You’ve told us {{ help }} at home, giving us {{ help_2 }} address helps the nurse find {{ help_2 }} records.</p>
-  </div>
+  <p>We’re checking in case we need to send help.</p>
 
   <p>
     {% for addressLine in session.addressResults[0] %}

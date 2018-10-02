@@ -46,7 +46,8 @@ router.post('/', function(req, res) {
     });
   } else {
     req.session.callBooking.tel = req.body['tel'];
-    res.redirect('/book-callback/you-or-someone-else');
+    //res.redirect('/book-callback/you-or-someone-else');
+    res.redirect('/book-callback/name');
   }
 });
 
@@ -62,17 +63,18 @@ router.post('/number', function(req, res) {
     });
   } else {
     req.session.callBooking.tel = req.body['tel'];
-    res.redirect('/book-callback/you-or-someone-else');
+    //res.redirect('/book-callback/you-or-someone-else');
+    res.redirect('/book-callback/name');
   }
 });
 
 // -----------------------------------------------------------------------------
-
+/*
 router.post('/you-or-someone-else', function(req, res) {
   req.session.callBooking.who = req.body['who'];
   res.redirect('/book-callback/name');
 });
-
+*/
 // -----------------------------------------------------------------------------
 
 router.post('/name', function(req, res) {
@@ -139,7 +141,7 @@ router.get('/confirm-location-address', function(req, res) {
         addresses.sort(naturalSort);
         req.session.addressResults = addresses;
         if (addresses.length === 1) {
-          res.render('book-callback/confirm-single-location-address.html');
+          res.render('book-callback/confirm-location-single-address.html');
         } else {
           res.render('book-callback/confirm-location-address.html');
         }
@@ -148,6 +150,15 @@ router.get('/confirm-location-address', function(req, res) {
       res.send("IT BROKE");
     }
   });
+});
+
+// confirm (or not) a single address address result (for a non-home location)
+router.post('/confirm-home-location-address', function(req, res) {
+  if (req.body['correct-address'] === 'true') {
+    // try to get home postcode
+  } else {
+    res.send('address FAIL');
+  }
 });
 
 // -----------------------------------------------------------------------------

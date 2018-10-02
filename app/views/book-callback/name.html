@@ -9,10 +9,10 @@
 <form class="content-block measure form" method="post">
   <!--<a href="/book-callback/you-or-someone-else" class="button-back">Back</a>-->
 
-  {% if session.callBooking.who === 'me' %}
-    <h1 class="h2">What is your name?</h1>
-  {% else %}
+  {% if session.callBooking.who === 'someone-else' %}
     <h1 class="h2">What is their name?</h1>
+  {% else %}
+    <h1 class="h2">What is your name?</h1>
   {% endif %}
 
   <div class="form-group shunt">
