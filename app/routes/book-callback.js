@@ -106,7 +106,7 @@ router.get('/confirm-home-address', function(req, res) {
         addresses.sort(naturalSort);
         req.session.addressResults = addresses;
         if (addresses.length === 1) {
-          res.render('book-callback/confirm-single-home-address.html');
+          res.render('book-callback/confirm-home-single-address.html');
         } else {
           res.render('book-callback/confirm-home-address.html');
         }
@@ -115,6 +115,15 @@ router.get('/confirm-home-address', function(req, res) {
       res.send("IT BROKE");
     }
   });
+});
+
+// confirm (or not) a single address address result
+router.post('/confirm-home-single-address', function(req, res) {
+  if (req.body['correct-address'] === 'true') {
+    res.redirect('/book-callback/confirm-number?selected=0');
+  } else {
+    res.send('address FAIL');
+  }
 });
 
 // -----------------------------------------------------------------------------
