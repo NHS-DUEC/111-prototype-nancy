@@ -16,8 +16,8 @@ router.get('/', function(req, res) {
   req.session.callBooking.name = {};
   req.session.callBooking.name.firstname = '';
   req.session.callBooking.name.secondname = '';
-  req.session.callBooking.homePostcode = 'SE1 6LH'; // dummy hardcoded
-  req.session.callBooking.confirmedHome = 'null';
+  //req.session.callBooking.homePostcode = 'SE1 6LH'; // dummy hardcoded
+  //req.session.callBooking.confirmedHome = 'null';
   req.session.callBooking.tel = '';
   req.session.callBooking.backUrl = req.query.backUrl;
   req.session.callBooking.forwardUrl = req.query.forwardUrl;
@@ -31,8 +31,8 @@ router.post('/', function(req, res) {
   req.session.callBooking.name = {};
   req.session.callBooking.name.firstname = '';
   req.session.callBooking.name.secondname = '';
-  req.session.callBooking.homePostcode = 'SE1 6LH'; // dummy hardcoded
-  req.session.callBooking.confirmedHome = false
+  //req.session.callBooking.homePostcode = 'SE1 6LH'; // dummy hardcoded
+  //req.session.callBooking.confirmedHome = false
   req.session.callBooking.tel = '';
   req.session.callBooking.backUrl = req.body['backUrl'];
   req.session.callBooking.forwardUrl = req.body['forwardUrl'];
@@ -153,19 +153,36 @@ router.get('/confirm-location-address', function(req, res) {
 });
 
 // confirm (or not) a single address address result (for a non-home location)
-router.post('/confirm-home-location-address', function(req, res) {
+router.post('/confirm-location-single-address', function(req, res) {
   if (req.body['correct-address'] === 'true') {
     // try to get home postcode
+    res.redirect('/book-callback/home-postcode?selected=0');
   } else {
     res.send('address FAIL');
   }
 });
 
 // -----------------------------------------------------------------------------
+// Try for home postcode
+
+router.get('/home-postcode', function(req, res) {
+  if (req.query['selected']) {
+    req.session.userAddressIndex = req.query['selected']
+  }
+  res.render('book-callback/home-postcode.html');
+});
+
+router.post('/home-postcode', function(req, res) {
+  req.session.pdsPostcode = req.body['postcode']
+  res.redirect('/book-callback/confirm-number');
+});
+
+// -----------------------------------------------------------------------------
 // Confirm phone number
 
 router.get('/confirm-number', function(req, res) {
-  var selectedAddress = req.session.addressResults[req.query['selected']];
-  req.session.userAddress = selectedAddress;
+  if (req.query['selected']) {
+    req.session.userAddressIndex = req.query['selected']
+  }
   res.render('book-callback/confirm-number.html');
 });

@@ -24,7 +24,7 @@
       {% endif %}
     {% endfor %}
     {% set addressString  = addressString + ', ' + session.postcode %}
-    <a href="#" class="address">
+    <a href="/book-callback/home-postcode?selected={{ loop.index0 }}" class="address">
       {{ addressString }}
     </a>
   {% endfor %}
