@@ -84,7 +84,7 @@ router.post('/name', function(req, res) {
 
   // Do we have a DOB?
   if (req.session.demographics.dob.supplied === true) {
-    res.redirect('/book-callback/route_address');
+    res.redirect('/book-callback/route-address');
   } else {
     // route through a DOB ask
     res.redirect('/book-callback/date-of-birth');

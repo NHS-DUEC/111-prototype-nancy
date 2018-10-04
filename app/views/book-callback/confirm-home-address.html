@@ -19,7 +19,7 @@
 
 <div class="content-block measure">
   <h1>What is {{ title }} address?</h1>
-  <p>You’ve told us {{ help }} at home, giving us the address helps the nurse find {{ help_2 }} records.</p>
+  <p>You’ve told us {{ help }} at home in {{ session.postcode | upper }}, giving us the address helps the nurse find {{ help_2 }} records.</p>
 </div>
 
 <div class="address-listing">
@@ -34,7 +34,7 @@
         {% set addressString  = addressString + addressLine %}
       {% endif %}
     {% endfor %}
-    {% set addressString  = addressString + ', ' + session.postcode %}
+    {% set addressString  = addressString + ', ' + session.postcode | upper %}
     <a href="/book-callback/confirm-number?selected={{ loop.index0 }}" class="address">
       {{ addressString }}
     </a>
