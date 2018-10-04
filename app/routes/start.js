@@ -33,6 +33,7 @@ router.post('/date-of-birth', function(req, res) {
     req.session.demographics.dob.supplied = true;
     req.session.demographics.age = age;
     req.session.demographics.ageCategory = ageCategory;
+    res.redirect('/start/sex');
   } else if (req.body['age'] !== '') {
     var age = Number(req.body['age']);
     var ageCategory = 'Adult';
@@ -42,15 +43,23 @@ router.post('/date-of-birth', function(req, res) {
     req.session.demographics.dob.supplied = false;
     req.session.demographics.age = age;
     req.session.demographics.ageCategory = ageCategory;
+    res.redirect('/start/sex');
+  } else {
+    res.render('start/date-of-birth.html', {
+      error : true
+    });
   }
-  res.redirect('/start/sex');
 });
 
 router.post('/sex', function(req, res) {
   if (req.body['sex']) {
     req.session.demographics.sex = req.body['sex'];
+    res.redirect('/start/where-are-you');
+  } else {
+    res.render('start/sex.html', {
+      error : true
+    });
   }
-  res.redirect('/start/where-are-you');
 });
 
 // -----------------------------------------------------------------------------

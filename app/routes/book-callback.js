@@ -1,6 +1,7 @@
 var express = require('express')
 var request = require('request')
 var naturalSort = require('javascript-natural-sort')
+var moment = require('moment-timezone')
 var router = express.Router()
 
 module.exports = router
@@ -81,6 +82,42 @@ router.post('/name', function(req, res) {
   req.session.callBooking.name.firstname = req.body['firstname'];
   req.session.callBooking.name.secondname = req.body['secondname'];
 
+  // Do we have a DOB?
+  if (req.session.demographics.dob.supplied === true) {
+    res.redirect('/book-callback/route_address');
+  } else {
+    // route through a DOB ask
+    res.redirect('/book-callback/date-of-birth');
+  }
+});
+
+// -----------------------------------------------------------------------------
+// Catch DOB if it wasn't given at the start
+router.get('/date-of-birth', function(req, res) {
+  res.render('book-callback/date-of-birth.html');
+});
+
+router.post('/date-of-birth', function(req, res) {
+  if (req.body['dob-day'] !== '' && req.body['dob-month'] !== '' && req.body['dob-year'] !== '') {
+    var year = req.body['dob-year']
+    var month = req.body['dob-month']
+    var day = req.body['dob-day']
+    var dob = moment().set({
+      'year': year,
+      'month': month,
+      'date': day
+    });
+    req.session.demographics.dob.year = year;
+    req.session.demographics.dob.month = month;
+    req.session.demographics.dob.day = day;
+    req.session.demographics.dob.supplied = true;
+  }
+  res.redirect('/book-callback/route-address');
+});
+
+// -----------------------------------------------------------------------------
+// Handle address scenarios
+router.get('/route-address', function(req, res) {
   // 1: at home and have given a postcode
   if (req.session.postcodesource === 'user' && req.session.userlocation === 'home') {
     res.redirect('/book-callback/confirm-home-address');
@@ -94,6 +131,7 @@ router.post('/name', function(req, res) {
     res.redirect('/book-callback/attempt-address-confirmation');
   }
 });
+
 
 // -----------------------------------------------------------------------------
 // 1: at home and have given a postcode
