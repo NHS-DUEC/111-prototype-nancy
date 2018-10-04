@@ -4,15 +4,12 @@ var router = express.Router()
 
 module.exports = router
 
-// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-// Journey to questions - August 2018 ++++++++++++++++++++++++++++++++++++++++++
-// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
 router.post('/date-of-birth', function(req, res) {
   if (!req.session.demographics) {
     req.session.demographics = {};
     req.session.demographics.dob = {};
   }
+  var url = '/start/sex';
   if (req.body['dob-day'] !== '' && req.body['dob-month'] !== '' && req.body['dob-year'] !== '') {
     var year = req.body['dob-year']
     var month = req.body['dob-month']
@@ -33,7 +30,7 @@ router.post('/date-of-birth', function(req, res) {
     req.session.demographics.dob.supplied = true;
     req.session.demographics.age = age;
     req.session.demographics.ageCategory = ageCategory;
-    res.redirect('/start/sex');
+    res.redirect(url);
   } else if (req.body['age'] !== '') {
     var age = Number(req.body['age']);
     var ageCategory = 'Adult';
@@ -43,7 +40,7 @@ router.post('/date-of-birth', function(req, res) {
     req.session.demographics.dob.supplied = false;
     req.session.demographics.age = age;
     req.session.demographics.ageCategory = ageCategory;
-    res.redirect('/start/sex');
+    res.redirect(url);
   } else {
     res.render('start/date-of-birth.html', {
       error : true
