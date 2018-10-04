@@ -1,0 +1,43 @@
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block content %}
+<form action="" class="form content-block measure" method="post">
+  <fieldset>
+    <legend><h1>What is your sex?</h1></legend>
+    <div class="form-group">
+      <label for="female" class="block-label">
+        Female
+        <input type="radio" id="female" name="sex" value="Female">
+      </label>
+    </div>
+    <div class="form-group">
+      <label for="male" class="block-label">
+        Male
+        <input type="radio" id="male" name="sex" value="Male">
+      </label>
+    </div>
+    <details>
+      <summary>Why aren’t there more options?</summary>
+      <div>
+        <p>
+          Some clinical assessments can be different depending on your sex. Not
+          everyone sees themselves as female or male, so if neither option is
+          right for you call 111.
+        </p>
+        <p>
+          We want to improve the service in the future so it works for everyone.
+        </p>
+      </div>
+    </details>
+  </fieldset>
+  <div class="form-controls shunt-2">
+    <button class="button" type="submit">Next</button>
+  </div>
+</form>
+{% endblock %}
+
+{% block body_after %}
+  {% include '_partials/_partial-collapse-script.html' %}
+{% endblock %}
