@@ -150,9 +150,11 @@ router.get('/confirm-home-address', function(req, res) {
         } else {
           res.render('book-callback/confirm-home-address.html');
         }
+      } else {
+        res.render('book-callback/address-not-found.html');
       }
     } else {
-      res.send("IT BROKE");
+      res.send("REQUEST NPM BROKE");
     }
   });
 });

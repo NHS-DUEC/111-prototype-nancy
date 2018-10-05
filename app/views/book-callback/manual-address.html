@@ -16,16 +16,14 @@
     </div>
   {% endif %}
 
-  <h1>Where are you?</h1>
-
-  <p>Please give as much detail as you can.</p>
-
   <form method="post" class="shunt">
+    <h1>
+      <label for="address_1">
+        Address
+      </label>
+    </h1>
     <fieldset>
       <div class="form-group">
-        <label for="address_1">
-          Address
-        </label>
         {% if session.addressResults | length === 1 %}
           {% for line in session.addressResults[0] %}
             {% if line !== "" %}
