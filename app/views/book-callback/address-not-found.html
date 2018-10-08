@@ -1,0 +1,28 @@
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhs-redesign{% endblock %}
+
+{% block content %}
+
+<div class="content-block measure">
+  <h1>No address found</h1>
+  <p>
+    You told us you’re in {{ session.postcode | upper }}.<br>
+    We can't find any addresses for that postcode.
+  </p>
+  <ul>
+    <li>
+      <a href="/book-callback/change-postcode">Change my postcode and search again</a>
+    </li>
+    <li>
+      <a href="/book-callback/manual-address">I’ll type in a full address</a>
+    </li>
+    <li>
+      <a href="/book-callback/call-999-no-address">I don’t know the address</a>
+    </li>
+  </ul>
+</div>
+
+{% endblock %}

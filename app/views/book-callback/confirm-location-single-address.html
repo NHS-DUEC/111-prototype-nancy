@@ -1,0 +1,43 @@
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhs-redesign{% endblock %}
+
+{% block content %}
+
+<div class="content-block measure">
+  <h1>Are you here?</h1>
+
+  <p>We’re checking in case we need to send help.</p>
+
+  <p>
+    {% for addressLine in session.addressResults[0] %}
+      {% if addressLine !== '' %}
+        {{ addressLine }}<br>
+      {% endif %}
+    {% endfor %}
+    {{ session.postcode }}
+  </p>
+
+  <form method="post" class="form" action="/book-callback/confirm-location-single-address">
+    <fieldset class="form-group">
+      <label class="block-label">
+        <input id="correct-address" name="correct-address" value="true" type="radio" class="selection-button-radio">
+        Yes
+      </label>
+      <label class="block-label">
+        <input id="correct-address" name="correct-address" value="false" type="radio" class="selection-button-radio">
+        No
+      </label>
+    </fieldset>
+    <div class="form-group">
+      <p>
+        <button type="submit" class="button">Next</button>
+      </p>
+    </div>
+  </form>
+
+</div>
+
+{% endblock %}

@@ -1,19 +1,17 @@
 .error-summary {
   @extend %contain-floats;
 
-  margin: $leading*2 0;
+  margin: $baseline-grid-unit*4 0;
   border: $baseline-grid-unit solid $error-colour;
-  padding: $leading*2 $leading*2 0;
+  padding: 0 $baseline-grid-unit*4;
+
   color: $error-colour;
+  font-weight: $boldweight;
 
-  h2 {
-    margin-top: 0;
+  .error-heading {
+    margin-top: $baseline-grid-unit*4;
+    color: $text-colour;
   }
-
-  p {
-    margin: $baseline-grid-unit*4 0;
-  }
-
   a {
     color: $error-colour;
   }
@@ -22,16 +20,13 @@
 .error-hint {
   display: block;
   color: $error-colour;
+  font-weight: $boldweight;
 }
 
 .form-group.-errors {
 
   border-left: $baseline-grid-unit solid $error-colour;
   padding-left: $baseline-grid-unit*4;
-
-  label {
-    color: $error-colour;
-  }
 
   input,
   textarea {

@@ -1,3 +1,24 @@
+{% set question = "Have you got an agonising headache, right now, like you were suddenly hit with something hard?" %}
+{% if session.userJourney.question.question %}
+  {% set question = session.userJourney.question.question %}
+{% endif %}
+
+{% set help = "" %}
+{% if session.userJourney.question.help %}
+  {% set help = session.userJourney.question.help %}
+{% endif %}
+
+{% set answers = ["Yes", "I don’t know", "No"] %}
+{% if session.userJourney.question.answers %}
+  {% set answers = session.userJourney.question.answers %}
+{% endif %}
+
+{% set userAnswer = "Yes" %}
+{% if session.userJourney.question.userAnswer %}
+  {% set userAnswer = session.userJourney.question.userAnswer %}
+{% endif %}
+
+
 {% extends '_layouts/layout.html' %}
 
 {% block page_title %}{% endblock %}
@@ -29,7 +50,7 @@
               {{ answer }}
               {% if userAnswer == answer %}
                 <span class="highlighter">
-                  &mdash; {{ answerHighlight }}
+                  &mdash; this means we can’t rule out a serious condition
                 </span>
               {% endif %}
             </span>

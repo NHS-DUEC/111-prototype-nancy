@@ -1,0 +1,76 @@
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}{% endblock %}
+
+{% block content %}
+
+<div class="content-block measure">
+
+  <div id="error-container" class="error-summary js-hidden">
+    <h2 class="error-heading">There’s a problem</h2>
+    <p>
+      We can’t find your location. Try reloading this page or checking your browser settings.
+    </p>
+    <p>
+      If you can’t provide a location or a postcode call 111.
+    </p>
+  </div>
+
+  <h1>Can we use your location?</h1>
+
+  <div id="location-link-container" class="shunt-2">
+    <p>
+      <a href="#" class="button" id="location-link">Yes, use my location</a>
+    </p>
+  </div>
+
+  <div id="geolocate-messaging">
+    <p>
+      <span id="load-message">Finding your location</span>
+      <span class="load-container">
+        <span class="loader"></span>
+      </span>
+    </p>
+  </div>
+
+</div>
+
+<form id="postcode-container" method="post">
+  <input type="hidden" name="postcode" id="postcode">
+</form>
+
+{% endblock %}
+
+{% block body_after %}
+<script>
+
+  var doGeo = function() {
+    $('#location-link-container').hide();
+    $('#geolocate-messaging').show();
+    navigator.geolocation.getCurrentPosition(function(position) {
+      $('#load-message').text('Finding postcode');
+      $.get('https://api.postcodes.io/postcodes?lon=' + position.coords.longitude + '&lat=' + position.coords.latitude, function( data ) {
+        $("#postcode").val(data.result[0].postcode);
+        $('#postcode-container').submit();
+      });
+    }, function(PositionError) {
+      console.log(PositionError.message);
+      console.log(PositionError.code);
+      $('#geolocate-messaging').hide();
+      $('#location-link-container, #error-container').show();
+    }, {
+      enableHighAccuracy: true
+    });
+  }
+
+  $('#location-link').on('click', function(e) {
+    e.preventDefault();
+    doGeo();
+  });
+
+  $('#error-container, #geolocate-messaging').hide();
+
+</script>
+{% endblock %}

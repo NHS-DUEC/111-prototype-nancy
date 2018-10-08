@@ -10,55 +10,72 @@
 
   <h1>111 prototypes</h1>
 
-  <div class="callout callout--attention">
-    <ul>
-      <!--<li><a href="/start/tell-us-where-you-are-v01">Location: tell us where you are</a></li>-->
-      <li><a href="/start">Location: tell us where you are</a></li>
-      <li><a href="/triage-end-phase/check-answer">Check your answer</a></li>
-      <li><a href="/z-temp/ed/offer-callback">ED: call offer to service listing</a></li>
-      <li><a href="/z-temp/mh/offer-callback">Mental health: call offer to service listing</a></li>
-    </ul>
-  </div>
+  <div class="content-seperator content-seperator--equalvertspacing--large"></div>
 
-  <h2 class="h3">User journeys</h2>
-
-  <p>Full or partial journeys through the service.</p>
+  <h2 class="h3">Full journeys</h2>
 
   <div class="callout callout--info">
     <p>
-      <a href="/user-journeys/scenario-000-999">Full journey: mandatory 999 revalidation</a><br>
+      <a href="/user-journeys/scenario-000-999">Full journey: choose “headache or migraine”</a><br>
       <span class="form-hint">
-        (you need to use ‘headache or migraine’ pathway)
+        (leads to 999 revalidation)
       </span>
     </p>
     <p>
-      <a href="/user-journeys/scenario-001-ed">Full journey: optional revalidation</a><br>
+      <a href="/user-journeys/scenario-001-ed">Full journey: choose “breathing problems”</a><br>
       <span class="form-hint">
-        (use ‘breathing problems’ pathway - resulting in an ED disposition)
+        (leads to an ED optional revalidation)
       </span>
     </p>
-    <p>
-      <a href="/user-journeys/scenario-002-sexual-assault">Partial journey: sexual assault</a><br>
-      <span class="form-hint">
-        (specific to dx94)
-      </span>
-    </p>
-    <!--
-    <p>
-      <a href="/disposition/mental-health-offer-callback">Partial journey: mental health</a><br>
-      <span class="form-hint">
-        (specific to dx92)
-      </span>
-    </p>
-    -->
   </div>
 
   <div class="content-seperator content-seperator--equalvertspacing--large"></div>
 
-  <h2 class="h3">Service offerings</h2>
+  <h2 class="h3">Service start phase</h2>
+
+  <p>Module zero, demographics and location</p>
 
   <div class="callout callout--info">
     <ul>
+      <li><p><a href="/start">Start page</a></p></li>
+      <li><p><a href="/start/emergency-check">Module zero</a></p></li>
+      <li><p><a href="/start/date-of-birth">Demographics</a></p></li>
+      <li><p><a href="/start/where-are-you">Location</a></p></li>
+    </ul>
+  </div>
+
+  <div class="content-seperator content-seperator--equalvertspacing--large"></div>
+
+  <h2 class="h3">Triage end phases</h2>
+
+  <p>Partial journeys</p>
+
+  <div class="callout callout--info">
+    <ul>
+      <li>
+        <p>
+          <a href="/user-journeys/scenario-002-sexual-assault">Partial journey: sexual assault</a><br>
+          <span class="form-hint">
+            (specific to dx94)
+          </span>
+        </p>
+      </li>
+      <li>
+        <p>
+          <a href="/disposition/mental-health-offer-callback">Partial journey: mental health</a><br>
+          <span class="form-hint">
+            (specific to dx92)
+          </span>
+        </p>
+      </li>
+    </ul>
+  </div>
+
+  <p>Service offering</p>
+
+  <div class="callout callout--info">
+    <ul>
+      <li><p><a href="/forced-callback/call-booked">Revalidation call confirmation</a></p></li>
       <li><p><a href="/primary-service">A primary service offering</a></p></li>
       <li><p><a href="/triage-end-phase/primary-service-non-physical">A “non physical” primary service offering</a></p></li>
       <li><p><a href="/service-list/multiple-service-offering">“More services” page</a></p></li>
@@ -67,32 +84,17 @@
 
   <div class="content-seperator content-seperator--equalvertspacing--large"></div>
 
-  <h2 class="h3">Revalidation confirmation pages</h2>
+  <h2 class="h3">999 dispositions</h2>
 
   <div class="callout callout--info">
     <ul>
-      <li><p><a href="/forced-callback/call-booked">Revalidation call confirmation</a></p></li>
+      <li><p><a href="/disposition/emergency-999-high-red">Call 999 (cat 2 ambulance)</a></p></li>
+      <li><p><a href="/disposition/emergency-999-high-green">Call 999 (cat 3 ambulance)</a></p></li>
+      <li><p><a href="/disposition/emergency-999-standard-green">Call 999 (cat 4 ambulance)</a></p></li>
     </ul>
   </div>
 
   <div class="content-seperator content-seperator--equalvertspacing--large"></div>
-
-  <h2 class="h3">“Special” dispositions</h2>
-
-  <p>Specific dispositions.</p>
-
-  <div class="callout callout--info">
-    <ul>
-      <li><p><a href="/disposition/emergency-999-high-red">Call 999 “high red”</a></p></li>
-      <li><p><a href="/disposition/emergency-999-high-green">Call 999 “high green”</a></p></li>
-      <li><p><a href="/disposition/emergency-999-standard-green">Call 999 “standard green”</a></p></li>
-      <li><p><a href="/disposition/sexual-assault">Sexual assault (dx94)</a></p></li>
-      <li><p><a href="/disposition/mental-health-offer-callback">Mental health (dx92)</a></p></li>
-    </ul>
-  </div>
-
-  <div class="content-seperator content-seperator--equalvertspacing--large"></div>
-
 
   <h2 class="h3">Finding the right pathway</h2>
   <p>How people select the right pathway (or not) for their symptom.</p>

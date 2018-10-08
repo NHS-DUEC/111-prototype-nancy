@@ -1,0 +1,36 @@
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}{% endblock %}
+
+{% block content %}
+
+<div class="content-block measure">
+  <form method="post">
+    {% if error %}
+      <div class="error-summary">
+        <h2 class="error-heading">There’s a problem</h2>
+        <p>
+          <a href="#postcode">Enter a postcode</a>
+        </p>
+      </div>
+    {% endif %}
+    <div class="form-group {% if error %}-errors{% endif %}">
+      <h1>
+        <label for="postcode">What’s the postcode?</label>
+      </h1>
+      {% if error %}
+        <p class="error-hint">Enter a postcode</p>
+      {% endif %}
+      <div class="shunt">
+        <input type="text" name="postcode" id="postcode" value="" class="-small">
+      </div>
+    </div>
+    <div class="form-group">
+      <button type="submit" class="button">Next</button>
+    </div>
+  </form>
+</div>
+
+{% endblock %}

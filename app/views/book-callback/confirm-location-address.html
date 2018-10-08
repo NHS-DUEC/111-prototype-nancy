@@ -7,13 +7,8 @@
 {% block content %}
 
 <div class="content-block measure">
-  <h1>
-    {% if session.addressResults.length === 1 %}
-      Where are you?
-    {% else %}
-      Where are you?
-    {% endif %}
-  </h1>
+  <h1>What is the address of your location?</h1>
+  <p>You’ve told us you’re not at home, letting us know the address where you are lets us send help if needed.</p>
 </div>
 
 <div class="address-listing">
@@ -28,8 +23,8 @@
         {% set addressString  = addressString + addressLine %}
       {% endif %}
     {% endfor %}
-    {% set addressString  = addressString + ', ' + session.addressPostcode %}
-    <a href="/start/handle-address?str={{ addressString | urlencode }}" class="address">
+    {% set addressString  = addressString + ', ' + session.postcode %}
+    <a href="/book-callback/home-postcode?selected={{ loop.index0 }}" class="address">
       {{ addressString }}
     </a>
   {% endfor %}
@@ -40,13 +35,7 @@
 
 <div class="content-block measure">
   <p>
-    <a href="/start/manual-address">
-      {% if session.addressResults.length === 1 %}
-        I’m not at this address
-      {% else %}
-        I’m not at any of these places
-      {% endif %}
-    </a>
+    <a href="#">I’m not at any of these places</a>
   </p>
 </div>
 

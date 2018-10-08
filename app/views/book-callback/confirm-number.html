@@ -6,9 +6,17 @@
 
 {% block content %}
 <div class="content-block measure clearfix">
-  <!--<a href="#" class="button-back">Back</a>-->
 
   <h1>Is this the right number to call?</h1>
+
+  {% if session.callBooking.who === 'someone-else' %}
+  <div class="callout callout--info">
+    <p>
+      As you’re doing this for someone else, the nurse will call your number.
+      They’ll ask to speak to {{ session.callBooking.name.firstname }} if they need to.
+    </p>
+  </div>
+  {% endif %}
 
   <div class="callout callout--attention">
     <p class="lede">{{ session.callBooking.tel }}</p>
