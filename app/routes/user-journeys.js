@@ -71,8 +71,6 @@ router.get('/revisit-question', function(req, res) {
   });
 });
 
-// Part 2: offer or force revalidation +++++++++++++++++++++++++++++++++++++++++
-
 // Part 3: offer services ++++++++++++++++++++++++++++++++++++++++++++++++++++++
 router.get('/primary-offering', function(req, res) {
   res.render('triage-end-phase/primary-service.html', {
