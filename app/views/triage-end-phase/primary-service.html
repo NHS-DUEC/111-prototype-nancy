@@ -12,11 +12,13 @@
 {% block content %}
 
 <div class="content-block">
+  <a href="#" class="button-back">Back</a>
   <h1>Where to get help</h1>
+  <p>{{ callToAction }}</p>
 
   <div class="measure">
     <h3>{{ name }}</h3>
-    {{ important | safe }}
+    {{ important_service_info | safe }}
   </div>
 
   <div class="location-section">
@@ -30,44 +32,18 @@
     </div>
     <div class="directions small">
       <p>
-        <a href="#">{{ distance }} away - get directions</a><br>
+        <a href="#">{{ distance }} away &mdash; get directions</a><br>
         <a href="#">Change my location</a>
       </p>
     </div>
     <div class="hours small">
-      {{ openingTimes | safe }}
-      <!--
-      <table class="compact">
-        <tr>
-          <th scope="row">Monday</th>
-          <td>9am to 5pm</td>
-        </tr>
-        <tr>
-          <th scope="row">Tuesday</th>
-          <td>9am to 5pm</td>
-        </tr>
-        <tr>
-          <th scope="row">Wednesday</th>
-          <td>9am to 5pm</td>
-        </tr>
-        <tr>
-          <th scope="row">Thursday</th>
-          <td>9am to 5pm</td>
-        </tr>
-        <tr>
-          <th scope="row">Friday</th>
-          <td>9am to 5pm</td>
-        </tr>
-        <tr>
-          <th scope="row">Saturday</th>
-          <td>10am to 2pm</td>
-        </tr>
-        <tr>
-          <th scope="row">Sunday</th>
-          <td>Closed</td>
-        </tr>
-      </table>
-      -->
+      <p>
+        {{ openingTimes | safe }}
+      </p>
+      <p class="contact">
+        Web: <a href="http://www.localcaredirect.org/centre/st-georges-centre-urgent-care/">www.localcaredirect.org</a><br>
+        Tel: 0330 311 5106
+      </p>
     </div>
   </div>
 
@@ -87,14 +63,10 @@
   </div>
 
   <div class="measure">
-    <div class="callout {{ callToActionLevel }}">
-      <p>{{ callToAction }}</p>
-    </div>
     <p>
-      If this recommended service isn’t right for you, you can <a href="{{ moreservices }}">
-      view more services that can help.</a>
+      <a href="multiple-services">See more services that can help,</a> if the
+      recommended one isn’t right for you.
     </p>
-    {{ postscript | safe }}
   </div>
 
   <div class="content-seperator content-seperator--equalvertspacing--large"></div>
