@@ -71,8 +71,6 @@ router.get('/revisit-question', function(req, res) {
   });
 });
 
-// Part 2: offer or force revalidation +++++++++++++++++++++++++++++++++++++++++
-
 // Part 3: offer services ++++++++++++++++++++++++++++++++++++++++++++++++++++++
 router.get('/primary-offering', function(req, res) {
   res.render('triage-end-phase/primary-service.html', {
@@ -91,12 +89,6 @@ router.get('/primary-offering', function(req, res) {
   });
 });
 
-/* Unused as yet
-router.get('/further-offering', function(req, res) {
-  res.render('triage-end-phase/further-services.html', {
-    physical : req.session.userJourney.services.furtherServices.physical,
-    nonphysical : req.session.userJourney.services.furtherServices.nonphysical,
-    mapCenter : req.session.userJourney.services.furtherServices.mapCenter
-  });
+router.get('/multiple-services', function(req, res) {
+  res.render('triage-end-phase/multiple-services.html');
 });
-*/
