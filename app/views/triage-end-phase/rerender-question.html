@@ -1,3 +1,5 @@
+{% set use_question_feedback = true %}
+
 {% set question = "Have you got an agonising headache, right now, like you were suddenly hit with something hard?" %}
 {% if session.userJourney.question.question %}
   {% set question = session.userJourney.question.question %}

@@ -16,12 +16,12 @@ textarea {
   font-weight: $bodyweight;
   line-height: $leading*2;
 
-  background-image: -webkit-linear-gradient(top, $grey-5 0, rgba(255,255,255,0) 1px);
+  /*background-image: -webkit-linear-gradient(top, $grey-5 0, rgba(255,255,255,0) 1px);
   background-image: -moz-linear-gradient(top, $grey-5 0, rgba(255,255,255,0) 1px);
   background-image: -o-linear-gradient(top, $grey-5 0, rgba(255,255,255,0) 1px);
   background-image: linear-gradient(to bottom, $grey-5 0, rgba(255,255,255,0) 1px);
   background-repeat: repeat-y;
-  background-size: 100% $leading*2;
+  background-size: 100% $leading*2;*/
 
   /*@include media(mid) {
     width: 75%;
@@ -33,8 +33,4 @@ textarea {
     -moz-box-shadow: 0 0 0 5px $focus-colour;
     box-shadow: 0 0 0 5px $focus-colour;
   }
-}
-
-.feedback {
-  height: 150px;
 }

@@ -1,0 +1,39 @@
+<section class="content">
+
+  <div class="content-seperator content-seperator--equalvertspacing--large"></div>
+
+  <details class="measure feedback">
+    <summary>
+      {% if use_question_feedback %}
+        Help us improve this question
+      {% else %}
+        Help us improve this page
+      {% endif %}
+    </summary>
+    <div>
+      <form>
+        {% if use_question_feedback %}
+          <p>
+            Does it make sense? Do you understand all the words?
+          </p>
+          <p>
+            We use feedback to make the service better but can’t reply to any
+            comments. Don’t include any medical or personal information like your
+            name or email.
+          </p>
+        {% else %}
+          <p>
+            We use feedback to make these pages better. We don’t check feedback
+            every day and cannot reply or pass comments on to other NHS services.
+          </p>
+          <p>
+            Do not include any medical or personal information like your name,
+            email or phone number.
+          </p>
+        {% endif %}
+        <textarea cols="20"></textarea>
+        <button class="button">Send feedback</button>
+      </form>
+    </div>
+  </details>
+</section>
