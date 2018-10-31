@@ -1257,6 +1257,14 @@ details.extra-vert-spacing {
   margin-top: 0;
 }
 
+.feedback {
+  margin-bottom: 48px;
+}
+
+.feedback textarea {
+  height: 150px;
+}
+
 html {
   background-color: #005eb8;
 }
@@ -1808,12 +1816,12 @@ textarea {
   font-size: inherit;
   font-weight: 400;
   line-height: 16px;
-  background-image: -webkit-linear-gradient(top, #f0f4f5 0, rgba(255, 255, 255, 0) 1px);
-  background-image: -moz-linear-gradient(top, #f0f4f5 0, rgba(255, 255, 255, 0) 1px);
-  background-image: -o-linear-gradient(top, #f0f4f5 0, rgba(255, 255, 255, 0) 1px);
-  background-image: linear-gradient(to bottom, #f0f4f5 0, rgba(255, 255, 255, 0) 1px);
+  /*background-image: -webkit-linear-gradient(top, $grey-5 0, rgba(255,255,255,0) 1px);
+  background-image: -moz-linear-gradient(top, $grey-5 0, rgba(255,255,255,0) 1px);
+  background-image: -o-linear-gradient(top, $grey-5 0, rgba(255,255,255,0) 1px);
+  background-image: linear-gradient(to bottom, $grey-5 0, rgba(255,255,255,0) 1px);
   background-repeat: repeat-y;
-  background-size: 100% 16px;
+  background-size: 100% $leading*2;*/
   /*@include media(mid) {
     width: 75%;
   }*/
@@ -1824,10 +1832,6 @@ textarea:focus {
   -webkit-box-shadow: 0 0 0 5px #ffb81c;
   -moz-box-shadow: 0 0 0 5px #ffb81c;
   box-shadow: 0 0 0 5px #ffb81c;
-}
-
-.feedback {
-  height: 150px;
 }
 
 .gp-local-header {
