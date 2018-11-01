@@ -57,10 +57,7 @@ router.post('/', function(req, res) {
 router.post('/number', function(req, res) {
   if (req.body['tel'] === '') {
     res.render('book-callback/number.html', {
-      error: {
-        general: '<a href="#tel">We need a valid number to call</a>',
-        tel: 'Enter a valid number'
-      }
+      error: true
     });
   } else {
     req.session.callBooking.tel = req.body['tel'];
