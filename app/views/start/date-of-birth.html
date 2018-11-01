@@ -10,8 +10,8 @@
     <div class="error-summary">
       <h2 class="error-heading">There’s a problem</h2>
       <p>
-        Provide a date of birth. If you can’t give a date of birth then give an
-        age or best guess.
+        Provide a date of birth. If you don’t know a date of birth then give an
+        age or guess an age.
       </p>
     </div>
   {% endif %}
@@ -40,7 +40,7 @@
     <div {% if not error %}class="collapse-content"{% endif %}>
       <div class="form-group {% if error %}-errors{% endif %}">
         <p>
-          If you can’t give a date of birth then give an age or your best guess.
+          If you don’t know a date of birth then give an age or guess an age.
         </p>
         <label for="age"><b>Age</b></label>
         <input class="-tiny" id="age" name="age" type="tel" value="{% if session.demographics.dob.supplied == false %}{{ session.demographics.age }}{% endif %}" autocomplete="off">
