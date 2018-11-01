@@ -11,8 +11,10 @@
 
   {% if error %}
     <div class="error-summary">
-      <span class="h3">There’s a problem with the following:</span>
-      <p>{{ error.general | safe }}</p>
+      <h2 class="error-heading">There’s a problem</h2>
+      <p>
+        <a href="#tel">Enter a phone number</a>
+      </p>
     </div>
   {% endif %}
 
@@ -27,10 +29,9 @@
   </p>
 
   <div class="form-group {% if error.tel %}-errors{% endif %}">
-    <label for="tel"><b>Enter a mobile, landline or textphone number</b></label>
-    {% if error.tel %}
-      <p class="error-hint">{{ error.tel }}</p>
-    {% endif %}
+    <label for="tel"{% if error %}class="error-hint"{% endif %}>
+      <b>Enter a mobile, landline or textphone number</b>
+    </label>
     <input name="tel" id="tel" type="tel" value="{{ session.callBooking.tel }}" autocomplete="off">
   </div>
 
