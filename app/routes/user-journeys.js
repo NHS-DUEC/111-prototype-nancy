@@ -42,25 +42,31 @@ router.get('/check-question', function(req, res) {
   res.render('triage-end-phase/check-answer.html');
 });
 router.post('/check-question', function(req, res) {
-  if (req.body['revisitQuestion'] === 'yes') {
-    // rerender question
-    res.redirect('/user-journeys/revisit-question');
-  } else {
-    // go to revalidation?
-    if (req.session.userJourney.revalidation.offered === true) {
-      if (req.session.userJourney.revalidation.type !== 'mandatory') {
-        res.redirect('/callback-offered/offer-callback');
-      } else {
-        res.redirect('/forced-callback/call-booking-start');
-      }
+  if (req.body['revisitQuestion']) {
+    if (req.body['revisitQuestion'] === 'yes') {
+      // rerender question
+      res.redirect('/user-journeys/revisit-question');
     } else {
-      var target = '/user-journeys/primary-offering';
-      // special case dispos
-      if (req.session.userJourney.dx === 'dx94') {
-        target = '/disposition/sexual-assault'
+      // go to revalidation?
+      if (req.session.userJourney.revalidation.offered === true) {
+        if (req.session.userJourney.revalidation.type !== 'mandatory') {
+          res.redirect('/callback-offered/offer-callback');
+        } else {
+          res.redirect('/forced-callback/call-booking-start');
+        }
+      } else {
+        var target = '/user-journeys/primary-offering';
+        // special case dispos
+        if (req.session.userJourney.dx === 'dx94') {
+          target = '/disposition/sexual-assault'
+        }
+        res.redirect(target);
       }
-      res.redirect(target);
     }
+  } else {
+    res.render('triage-end-phase/check-answer.html', {
+      error : true
+    });
   }
 });
 

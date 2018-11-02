@@ -23,9 +23,10 @@
       <p>Check the postcode and try again</p>
       {% if error %}
         <p class="error-hint">Enter a postcode</p>
+        <p class="form-hint">For example, LS2 7UE</p>
       {% endif %}
       <div class="shunt">
-        <input type="text" name="postcode" id="postcode" value="{{ postcode }}" class="-small">
+        <input type="text" name="postcode" id="postcode" value="{{ session.postcode }}" class="-small">
       </div>
     </div>
     <div class="form-group">
