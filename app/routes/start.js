@@ -4,6 +4,22 @@ var router = express.Router()
 
 module.exports = router
 
+// -----------------------------------------------------------------------------
+
+router.post('/proxy', function(req, res) {
+  if (req.body['proxy'] === 'true') {
+    res.redirect('/start/proxy-message');
+  } else if (req.body['proxy'] === 'false') {
+    res.redirect('/start/emergency-check');
+  } else {
+    res.render('start/proxy.html', {
+      error : true
+    });
+  }
+});
+
+// -----------------------------------------------------------------------------
+
 router.post('/date-of-birth', function(req, res) {
   if (!req.session.demographics) {
     req.session.demographics = {};
