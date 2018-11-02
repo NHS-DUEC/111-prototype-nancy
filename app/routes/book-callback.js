@@ -67,24 +67,41 @@ router.post('/number', function(req, res) {
 });
 
 // -----------------------------------------------------------------------------
-/*
-router.post('/you-or-someone-else', function(req, res) {
-  req.session.callBooking.who = req.body['who'];
-  res.redirect('/book-callback/name');
-});
-*/
-// -----------------------------------------------------------------------------
 
 router.post('/name', function(req, res) {
-  req.session.callBooking.name.firstname = req.body['firstname'];
-  req.session.callBooking.name.secondname = req.body['secondname'];
+  var error_present = false;
+  var error_firstname = false;
+  var error_lastname = false;
 
-  // Do we have a DOB?
-  if (req.session.demographics.dob.supplied === true) {
-    res.redirect('/book-callback/route-address');
+  if (req.body['firstname'] === '') {
+    error_firstname = true;
+    error_present = true;
   } else {
-    // route through a DOB ask
-    res.redirect('/book-callback/date-of-birth');
+    req.session.callBooking.name.firstname = req.body['firstname'];
+  }
+
+  if (req.body['secondname'] === '') {
+    error_lastname = true;
+    error_present = true;
+  } else {
+    req.session.callBooking.name.secondname = req.body['secondname'];
+  }
+
+  if (error_present === true) {
+    res.render('book-callback/name.html', {
+      error: {
+        firstname: error_firstname,
+        lastname: error_lastname
+      }
+    });
+  } else {
+    // Do we have a DOB?
+    if (req.session.demographics.dob.supplied === true) {
+      res.redirect('/book-callback/route-address');
+    } else {
+      // route through a DOB ask
+      res.redirect('/book-callback/date-of-birth');
+    }
   }
 });
 

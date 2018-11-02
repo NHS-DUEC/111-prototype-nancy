@@ -26,6 +26,15 @@
 
 <div class="content-block measure">
 
+  {% if error %}
+    <div class="error-summary">
+      <h2 class="error-heading">There’s a problem</h2>
+      <p>
+        Tell us if you want to look at this question again
+      </p>
+    </div>
+  {% endif %}
+
   <h1>Check your answer</h1>
 
   <p>
@@ -44,21 +53,19 @@
   </p>
 
   <form class="form" method="post">
-    <legend><b>Do you want to look at this question again?</b></legend>
-    <fieldset class="shunt">
-      <div class="form-group">
-        <label for="yes" class="block-label">
-          Yes
-          <input type="radio" id="yes" name="revisitQuestion" value="yes">
-        </label>
-      </div>
-
-      <div class="form-group">
-        <label for="no" class="block-label">
-          No
-          <input type="radio" id="no" name="revisitQuestion" value="no">
-        </label>
-      </div>
+    <p><b>Do you want to look at this question again?</b></p>
+    <fieldset class="shunt form-group {% if error %}-errors{% endif %}">
+      {% if error %}
+        <p class="error-hint">Choose one option</p>
+      {% endif %}
+      <label for="yes" class="block-label">
+        Yes
+        <input type="radio" id="yes" name="revisitQuestion" value="yes">
+      </label>
+      <label for="no" class="block-label">
+        No
+        <input type="radio" id="no" name="revisitQuestion" value="no">
+      </label>
     </fieldset>
 
     <div class="form-group -controls">
