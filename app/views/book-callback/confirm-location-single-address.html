@@ -7,6 +7,14 @@
 {% block content %}
 
 <div class="content-block measure">
+  {% if error %}
+    <div class="error-summary">
+      <h2 class="error-heading">There’s a problem</h2>
+      <p>
+        Tell us if this where you are or not.
+      </p>
+    </div>
+  {% endif %}
   <h1>Are you here?</h1>
 
   <p>We’re checking in case we need to send help.</p>
@@ -21,7 +29,10 @@
   </p>
 
   <form method="post" class="form" action="/book-callback/confirm-location-single-address">
-    <fieldset class="form-group">
+    <fieldset class="form-group {% if error %}-errors{% endif %}">
+      {% if error %}
+        <p class="error-hint">Choose one option</p>
+      {% endif %}
       <label class="block-label">
         <input id="correct-address" name="correct-address" value="true" type="radio" class="selection-button-radio">
         Yes

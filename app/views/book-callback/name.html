@@ -22,7 +22,7 @@
   <div class="form-group shunt {% if error.firstname == true %}-errors{% endif %}">
     <label for="firstname">First name</label>
     {% if error.firstname %}
-      <p class="error-hint">Enter a first name</p>
+      <p class="error-hint">Enter your first name</p>
     {% endif %}
     <input name="firstname" id="firstname" type="text" autocomplete="off" value="{{ session.callBooking.name.firstname }}">
   </div>
@@ -30,7 +30,7 @@
   <div class="form-group {% if error.lastname == true %}-errors{% endif %}">
     <label for="secondname">Last name</label>
     {% if error.lastname %}
-      <p class="error-hint">Enter a last name</p>
+      <p class="error-hint">Enter your last name</p>
     {% endif %}
     <input name="secondname" id="secondname" type="text" autocomplete="off" value="{{ session.callBooking.name.secondname }}">
   </div>
