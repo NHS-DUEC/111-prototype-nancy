@@ -73,28 +73,22 @@ router.post('/name', function(req, res) {
   var error_firstname = false;
   var error_lastname = false;
 
-  if (req.body['firstname'] === '') {
-    error_firstname = true;
-    error_present = true;
-  } else {
-    req.session.callBooking.name.firstname = req.body['firstname'];
+  if (req.body['firstname'] !== '' || req.body['secondname'] !== '') {
+    // If there's value in either field then do the error check
+    if (req.body['firstname'] === '') {
+      error_firstname = true;
+      error_present = true;
+    }
+    if (req.body['secondname'] === '') {
+      error_lastname = true;
+      error_present = true;
+    }
   }
 
-  if (req.body['secondname'] === '') {
-    error_lastname = true;
-    error_present = true;
-  } else {
-    req.session.callBooking.name.secondname = req.body['secondname'];
-  }
+  req.session.callBooking.name.firstname = req.body['firstname'];
+  req.session.callBooking.name.secondname = req.body['secondname'];
 
-  if (error_present === true) {
-    res.render('book-callback/name.html', {
-      error: {
-        firstname: error_firstname,
-        lastname: error_lastname
-      }
-    });
-  } else {
+  if (error_present !== true) {
     // Do we have a DOB?
     if (req.session.demographics.dob.supplied === true) {
       res.redirect('/book-callback/route-address');
@@ -102,6 +96,13 @@ router.post('/name', function(req, res) {
       // route through a DOB ask
       res.redirect('/book-callback/date-of-birth');
     }
+  } else {
+    res.render('book-callback/name.html', {
+      error: {
+        firstname: error_firstname,
+        lastname: error_lastname
+      }
+    });
   }
 });
 
@@ -112,21 +113,36 @@ router.get('/date-of-birth', function(req, res) {
 });
 
 router.post('/date-of-birth', function(req, res) {
-  if (req.body['dob-day'] !== '' && req.body['dob-month'] !== '' && req.body['dob-year'] !== '') {
-    var year = req.body['dob-year']
-    var month = req.body['dob-month']
-    var day = req.body['dob-day']
-    var dob = moment().set({
-      'year': year,
-      'month': month,
-      'date': day
-    });
-    req.session.demographics.dob.year = year;
-    req.session.demographics.dob.month = month;
-    req.session.demographics.dob.day = day;
-    req.session.demographics.dob.supplied = true;
+  var error_present = false;
+
+  var day = req.body['dob-day'];
+  var month = req.body['dob-month'];
+  var year = req.body['dob-year'];
+
+  req.session.demographics.dob.year = year;
+  req.session.demographics.dob.month = month;
+  req.session.demographics.dob.day = day;
+
+  if (day !== '' || month !== '' || year !== '') {
+    // If there's value in any field then do the error check
+    if (day === '') {
+      error_present = true;
+    }
+    if (month === '') {
+      error_present = true;
+    }
+    if (year === '') {
+      error_present = true;
+    }
   }
-  res.redirect('/book-callback/route-address');
+
+  if (error_present === true) {
+    res.render('book-callback/date-of-birth.html', {
+      error: true
+    });
+  } else {
+    res.redirect('/book-callback/route-address');
+  }
 });
 
 // -----------------------------------------------------------------------------
@@ -145,7 +161,6 @@ router.get('/route-address', function(req, res) {
     res.redirect('/book-callback/attempt-address-confirmation');
   }
 });
-
 
 // -----------------------------------------------------------------------------
 // 1: at home and have given a postcode
@@ -177,8 +192,12 @@ router.get('/confirm-home-address', function(req, res) {
 router.post('/confirm-home-single-address', function(req, res) {
   if (req.body['correct-address'] === 'true') {
     res.redirect('/book-callback/confirm-number?selected=0');
-  } else {
+  } else if (req.body['correct-address'] === 'false') {
     res.send('address FAIL');
+  } else {
+    res.render('book-callback/confirm-home-single-address', {
+      error : true
+    });
   }
 });
 
@@ -211,10 +230,45 @@ router.post('/confirm-location-single-address', function(req, res) {
   if (req.body['correct-address'] === 'true') {
     // try to get home postcode
     res.redirect('/book-callback/home-postcode?selected=0');
-  } else {
+  } else if (req.body['correct-address'] === 'false') {
     res.send('address FAIL');
+  } else {
+    res.render('book-callback/confirm-location-single-address.html', {
+      error : true
+    });
   }
 });
+
+// -----------------------------------------------------------------------------
+// "Address not found" scenarios:
+
+// 1: Change postcode
+router.post('/change-postcode', function(req, res) {
+  if (req.body['postcode'] !== '') {
+    req.session.postcode = req.body['postcode'];
+    res.redirect('/book-callback/route-address');
+  } else {
+    res.render('book-callback/change-postcode.html', {
+      error : true
+    });
+  }
+});
+
+// 2: Manual address entry
+router.post('/manual-address', function(req, res) {
+  if (req.body['address_0'] !== '' && req.body['postcode'] !== '') {
+    if (req.session.userlocation === 'home') {
+      res.redirect('/book-callback/confirm-number');
+    } else {
+      res.redirect('/book-callback/home-postcode');
+    }
+  } else {
+    res.render('book-callback/manual-address.html', {
+      error : true
+    });
+  }
+});
+
 
 // -----------------------------------------------------------------------------
 // Try for home postcode
@@ -227,7 +281,7 @@ router.get('/home-postcode', function(req, res) {
 });
 
 router.post('/home-postcode', function(req, res) {
-  req.session.pdsPostcode = req.body['postcode']
+  req.session.pdsPostcode = req.body['postcode'];
   res.redirect('/book-callback/confirm-number');
 });
 
@@ -239,4 +293,22 @@ router.get('/confirm-number', function(req, res) {
     req.session.userAddressIndex = req.query['selected']
   }
   res.render('book-callback/confirm-number.html');
+});
+
+// -----------------------------------------------------------------------------
+// CHANGE phone number
+
+router.get('/change-number', function(req, res) {
+  res.render('book-callback/number.html');
+});
+
+router.post('/change-number', function(req, res) {
+  if (req.body['tel'] !== '') {
+    req.session.callBooking.tel = req.body['tel'];
+    res.redirect(req.session.callBooking.forwardUrl);
+  } else {
+    res.render('book-callback/number.html', {
+      error: true
+    });
+  }
 });

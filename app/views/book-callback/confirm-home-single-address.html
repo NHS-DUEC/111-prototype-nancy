@@ -1,14 +1,3 @@
-{% set title = 'your' %}
-{% set help = 'you’re' %}
-{% set help_2 = 'your' %}
-{% set outlink = 'I’m not' %}
-{% if session.callBooking.who === 'someone-else' %}
-  {% set title = session.callBooking.name.firstname + '’s' %}
-  {% set help = session.callBooking.name.firstname + ' is' %}
-  {% set help_2 = 'their' %}
-  {% set outlink = session.callBooking.name.firstname + ' isn’t' %}
-{% endif %}
-
 {% extends '_layouts/layout.html' %}
 
 {% block page_title %}{% endblock %}
@@ -18,7 +7,15 @@
 {% block content %}
 
 <div class="content-block measure">
-  <h1>Is this {{ title }} address?</h1>
+  {% if error %}
+    <div class="error-summary">
+      <h2 class="error-heading">There’s a problem</h2>
+      <p>
+        Tell us if this is your address or not.
+      </p>
+    </div>
+  {% endif %}
+  <h1>Is this your address?</h1>
 
   <div class="callout callout--info">
     <p>You’ve told us {{ help }} at home in {{ session.postcode | upper }}, giving us {{ help_2 }} address helps the nurse find {{ help_2 }} records.</p>
@@ -34,7 +31,10 @@
   </p>
 
   <form method="post" class="form" action="/book-callback/confirm-home-single-address">
-    <fieldset class="form-group">
+    <fieldset class="form-group {% if error %}-errors{% endif %}">
+      {% if error %}
+        <p class="error-hint">Choose one option</p>
+      {% endif %}
       <label class="block-label">
         <input id="correct-address" name="correct-address" value="true" type="radio" class="selection-button-radio">
         Yes
