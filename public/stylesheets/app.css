@@ -92,7 +92,7 @@ h1, .heading-xxlarge, .primary,
 
 h2, .heading-xlarge, .app-panel > .header, .secondary,
 .h2,
-.multiple-service-listing .service-details.--remote .tel-cta {
+.service-details.--remote .tel-cta.--appointment {
   margin: 16px 0;
   font-size: 28px;
   font-weight: 700;
@@ -102,7 +102,7 @@ h2, .heading-xlarge, .app-panel > .header, .secondary,
 @media (min-width: 500px) {
   h2, .heading-xlarge, .app-panel > .header, .secondary,
   .h2,
-  .multiple-service-listing .service-details.--remote .tel-cta {
+  .service-details.--remote .tel-cta.--appointment {
     font-size: 32px;
     line-height: 48px;
   }
@@ -111,14 +111,15 @@ h2, .heading-xlarge, .app-panel > .header, .secondary,
 @media (min-width: 980px) {
   h2, .heading-xlarge, .app-panel > .header, .secondary,
   .h2,
-  .multiple-service-listing .service-details.--remote .tel-cta {
+  .service-details.--remote .tel-cta.--appointment {
     font-size: 36px;
     line-height: 48px;
   }
 }
 
 h3, .heading-large,
-.h3 {
+.h3,
+.multiple-service-listing .service-details.--remote .tel-cta {
   margin: 16px 0;
   font-size: 24px;
   font-weight: 700;
@@ -185,8 +186,8 @@ body.nhs-redesign, pre.nhs-redesign.user-input {
 
 .nhs-redesign h2, .nhs-redesign .heading-xlarge, .nhs-redesign .app-panel > .header, .nhs-redesign .secondary,
 .nhs-redesign .h2,
-.nhs-redesign .multiple-service-listing .service-details.--remote .tel-cta, .multiple-service-listing .service-details.--remote
-.nhs-redesign .tel-cta {
+.nhs-redesign .service-details.--remote .tel-cta.--appointment, .service-details.--remote
+.nhs-redesign .tel-cta.--appointment {
   font-size: 24px;
   font-weight: 700;
   line-height: 1.333;
@@ -196,8 +197,8 @@ body.nhs-redesign, pre.nhs-redesign.user-input {
 @media (min-width: 500px) {
   .nhs-redesign h2, .nhs-redesign .heading-xlarge, .nhs-redesign .app-panel > .header, .nhs-redesign .secondary,
   .nhs-redesign .h2,
-  .nhs-redesign .multiple-service-listing .service-details.--remote .tel-cta, .multiple-service-listing .service-details.--remote
-  .nhs-redesign .tel-cta {
+  .nhs-redesign .service-details.--remote .tel-cta.--appointment, .service-details.--remote
+  .nhs-redesign .tel-cta.--appointment {
     font-size: 32px;
     line-height: 1.25;
     margin: 56px 0 0 0;
@@ -205,7 +206,9 @@ body.nhs-redesign, pre.nhs-redesign.user-input {
 }
 
 .nhs-redesign h3, .nhs-redesign .heading-large,
-.nhs-redesign .h3 {
+.nhs-redesign .h3,
+.nhs-redesign .multiple-service-listing .service-details.--remote .tel-cta, .multiple-service-listing .service-details.--remote
+.nhs-redesign .tel-cta {
   font-size: 20px;
   font-weight: 700;
   line-height: 1.4;
@@ -214,7 +217,9 @@ body.nhs-redesign, pre.nhs-redesign.user-input {
 
 @media (min-width: 500px) {
   .nhs-redesign h3, .nhs-redesign .heading-large,
-  .nhs-redesign .h3 {
+  .nhs-redesign .h3,
+  .nhs-redesign .multiple-service-listing .service-details.--remote .tel-cta, .multiple-service-listing .service-details.--remote
+  .nhs-redesign .tel-cta {
     font-size: 24px;
     line-height: 1.333;
     margin: 40px 0 0 0;
@@ -959,6 +964,61 @@ a.link-prototype:visted {
   color: #231f20;
 }
 
+.button-multiple-calls {
+  -webkit-font-smoothing: antialiased;
+  appearance: none;
+  font-family: inherit;
+  font-weight: 400;
+  font-size: inherit;
+  line-height: 48px;
+  text-decoration: none;
+  text-align: center;
+  box-sizing: border-box;
+  display: inline-block;
+  width: 100%;
+  padding: 0 24px;
+  margin: 0 0 8px 0;
+  cursor: pointer;
+  background-color: #005eb8;
+  border: 0;
+  border-radius: 0;
+  box-shadow: 0 2px 0 #00376c;
+  outline: 1px solid transparent;
+  outline-offset: -1px;
+  color: #fff;
+}
+
+@media (min-width: 500px) {
+  .button-multiple-calls {
+    width: auto;
+    margin: 0 8px 0 0;
+  }
+}
+
+.button-multiple-calls:link, .button-multiple-calls:visited {
+  background-color: #005eb8;
+}
+
+.button-multiple-calls:focus {
+  outline: 0;
+  -webkit-box-shadow: 0 0 0 5px #ffb81c;
+  -moz-box-shadow: 0 0 0 5px #ffb81c;
+  box-shadow: 0 0 0 5px #ffb81c;
+}
+
+.button-multiple-calls:hover, .button-multiple-calls:focus {
+  background-color: #00519f;
+}
+
+.button-multiple-calls::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+.button-multiple-calls:link, .button-multiple-calls:hover, .button-multiple-calls:focus, .button-multiple-calls:visited {
+  color: #fff;
+}
+
 .button-back {
   color: #425563;
   font-weight: 400;
@@ -1117,6 +1177,19 @@ table.compact th, table.compact td {
 
 table.compact th {
   font-weight: 400;
+}
+
+@media (min-width: 500px) {
+  table.opening-hours {
+    width: auto;
+  }
+}
+
+@media (min-width: 500px) {
+  table.opening-hours th, table.opening-hours td {
+    display: table-cell;
+    padding: 12px 12px;
+  }
 }
 
 details {
@@ -2511,14 +2584,16 @@ img {
 
 .service-details {
   margin-top: 12px;
+  padding: 2px 0;
   border: 0;
-  border-left: 4px solid #d8dde0;
   background-color: #f0f4f5;
 }
 
 @media (min-width: 980px) {
   .service-details {
     margin-top: 24px;
+    padding: 0;
+    border-left: 4px solid #d8dde0;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
   }
@@ -2599,21 +2674,15 @@ img {
 }
 
 .service-appointment-flag {
-  margin-top: 4px;
   border-left: 4px solid #005eb8;
-  background: #f0f4f5;
   padding: 12px;
-  margin-top: 12px;
+  margin-top: 8px;
 }
 
 @media (min-width: 980px) {
   .service-appointment-flag {
-    margin-top: 24px;
+    margin-top: 16px;
   }
-}
-
-.service-appointment-flag + .service-details {
-  margin-top: 4px;
 }
 
 .service-listing {
@@ -2639,11 +2708,15 @@ img {
 
 .multiple-service-listing .service-details {
   margin-top: 4px;
-  border-left: 4px solid #d8dde0;
+  margin-bottom: 48px;
 }
 
 .multiple-service-listing .service-details .map-frame {
   height: auto;
+}
+
+.multiple-service-listing .service-details.--remote .tel-cta {
+  padding-top: 24px;
 }
 
 .multiple-service-listing .service-appointment-flag {

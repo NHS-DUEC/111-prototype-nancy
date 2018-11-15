@@ -5,7 +5,7 @@ table {
   margin-bottom: $leading*2;
 
   @include media(mid) {
-  margin-bottom: $leading*4;
+    margin-bottom: $leading*4;
   }
 
   tr {
@@ -75,6 +75,20 @@ table {
     }
     th {
       font-weight: $bodyweight;
+    }
+  }
+
+  &.opening-hours {
+    
+    @include media(mid) {
+      width: auto;
+    }
+
+    th, td {
+      @include media(mid) {
+        display: table-cell;
+        padding: $baseline-grid-unit*3 $baseline-grid-unit*3;
+      }
     }
   }
 

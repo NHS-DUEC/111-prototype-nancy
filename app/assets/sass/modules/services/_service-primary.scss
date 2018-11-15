@@ -1,12 +1,14 @@
 .service-details {
 
   margin-top: $baseline-grid-unit*3;
+  padding: $baseline-grid-unit/2 0;
   border: 0;
-  border-left: $baseline-grid-unit solid $grey-4;
   background-color: $grey-5;
 
   @include media(large) {
     margin-top: $baseline-grid-unit*6;
+    padding: 0;
+    border-left: $baseline-grid-unit solid $grey-4;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
   }
@@ -75,21 +77,19 @@
     .tel-cta {
       @extend .h1;
       margin-top: 0 !important;
+
+      &.--appointment {
+        @extend .h2;
+      }
     }
   }
 }
 
 .service-appointment-flag {
-  margin-top: $baseline-grid-unit;
   border-left: $baseline-grid-unit solid $nhs-blue;
-  background: $grey-5;
   padding: $baseline-grid-unit*3;
-  margin-top: $baseline-grid-unit*3;
+  margin-top: $baseline-grid-unit*2;
   @include media(large) {
-    margin-top: $baseline-grid-unit*6;
+    margin-top: $baseline-grid-unit*4;
   }
-}
-
-.service-appointment-flag + .service-details {
-  margin-top: $baseline-grid-unit;
 }

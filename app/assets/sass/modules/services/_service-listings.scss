@@ -21,7 +21,10 @@
   .service-details {
 
     margin-top: $baseline-grid-unit;
-    border-left: $baseline-grid-unit solid $grey-4;
+    margin-bottom: $baseline-grid-unit*12;
+
+    //border-left-color: $white;
+    //background-color: $white;
 
     .map-frame {
       height: auto;
@@ -30,7 +33,8 @@
     // modifiers for a "remote" service
     &.--remote {
       .tel-cta {
-        @extend .h2;
+        @extend .h3;
+        padding-top: $baseline-grid-unit*6;
       }
     }
   }
