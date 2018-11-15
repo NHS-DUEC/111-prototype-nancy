@@ -2706,6 +2706,10 @@ img {
   margin-top: 0;
 }
 
+.js-enabled .multiple-service-listing .collapse-title-indicator-verbose {
+  text-decoration: underline;
+}
+
 .multiple-service-listing .service-details {
   margin-top: 4px;
   margin-bottom: 48px;

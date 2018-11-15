@@ -18,6 +18,11 @@
 }
 
 .multiple-service-listing {
+
+  .js-enabled & .collapse-title-indicator-verbose {
+    text-decoration: underline;
+  }
+
   .service-details {
 
     margin-top: $baseline-grid-unit;
