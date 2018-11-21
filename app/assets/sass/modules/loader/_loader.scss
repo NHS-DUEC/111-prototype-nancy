@@ -14,10 +14,10 @@
 }
 .loader {
   position: relative;
-  border-top: $baseline-grid-unit solid rgba(66, 85, 99, 0.2);
-  border-right: $baseline-grid-unit solid rgba(66, 85, 99, 0.2);
-  border-bottom: $baseline-grid-unit solid rgba(66, 85, 99, 0.2);
-  border-left: $baseline-grid-unit solid #ffffff;
+  border-top: $baseline-grid-unit solid $nhs-blue;
+  border-right: $baseline-grid-unit solid $nhs-blue;
+  border-bottom: $baseline-grid-unit solid $nhs-blue;
+  border-left: $baseline-grid-unit solid rgba(255, 255, 255, 0);
   -webkit-transform: translateZ(0);
   -ms-transform: translateZ(0);
   transform: translateZ(0);

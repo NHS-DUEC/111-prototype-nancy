@@ -2274,10 +2274,10 @@ img {
 
 .loader {
   position: relative;
-  border-top: 4px solid rgba(66, 85, 99, 0.2);
-  border-right: 4px solid rgba(66, 85, 99, 0.2);
-  border-bottom: 4px solid rgba(66, 85, 99, 0.2);
-  border-left: 4px solid #ffffff;
+  border-top: 4px solid #005eb8;
+  border-right: 4px solid #005eb8;
+  border-bottom: 4px solid #005eb8;
+  border-left: 4px solid rgba(255, 255, 255, 0);
   -webkit-transform: translateZ(0);
   -ms-transform: translateZ(0);
   transform: translateZ(0);
@@ -2482,6 +2482,21 @@ img {
   padding-top: 8px;
   font-size: 16px;
   line-height: 1.5;
+}
+
+.overlay {
+  display: grid;
+  position: absolute;
+  z-index: 999;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.overlay-message {
+  margin: auto;
 }
 
 .collapse-title:focus {
