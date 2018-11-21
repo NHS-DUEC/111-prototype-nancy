@@ -19,6 +19,7 @@ var questions = require('./app/routes/questions');
 var forcedCallback = require('./app/routes/forced-callback');
 var callbackOffered = require('./app/routes/callback-offered');
 var bookCallback = require('./app/routes/book-callback');
+var serviceDisplay = require('./app/routes/service-display');
 
 var userJourneys = require('./app/routes/user-journeys');
 
@@ -104,6 +105,7 @@ app.use('/questions', questions);
 app.use('/forced-callback', forcedCallback);
 app.use('/callback-offered', callbackOffered);
 app.use('/book-callback', bookCallback);
+app.use('/service-display', serviceDisplay);
 
 app.use('/user-journeys', userJourneys);
 
