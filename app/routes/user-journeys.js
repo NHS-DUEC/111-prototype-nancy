@@ -79,22 +79,5 @@ router.get('/revisit-question', function(req, res) {
 
 // Part 3: offer services ++++++++++++++++++++++++++++++++++++++++++++++++++++++
 router.get('/primary-offering', function(req, res) {
-  res.render('triage-end-phase/primary-service.html', {
-    callToAction : req.session.userJourney.messages.callToAction,
-    callToActionLevel : req.session.userJourney.messages.callToActionLevel,
-    preamble : req.session.userJourney.services.preamble,
-    name : req.session.userJourney.services.primary.name,
-    important : req.session.userJourney.services.primary.important,
-    postscript : req.session.userJourney.services.primary.postscript,
-    address : req.session.userJourney.services.primary.address,
-    openingTimes : req.session.userJourney.services.primary.openingTimes,
-    distance : req.session.userJourney.services.primary.distance,
-    lat : req.session.userJourney.services.primary.lat,
-    long : req.session.userJourney.services.primary.long,
-    careAdvice : req.session.userJourney.careAdvice
-  });
-});
-
-router.get('/multiple-services', function(req, res) {
-  res.render('triage-end-phase/multiple-services.html');
+  res.render('service-display/ed-recommended-service.html');
 });
