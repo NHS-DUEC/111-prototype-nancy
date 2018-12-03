@@ -1,70 +1,50 @@
-.service-panel {
+.service-listing {
   display: block;
-  box-sizing: border-box;
-  margin: 0 auto $baseline-grid-unit*6 auto;
-  padding: $baseline-grid-unit*5;
-  border: 1px solid $grey-4;
-
-  grid-gap: $baseline-grid-unit*2;
-  grid-template-columns: auto;
-  grid-template-rows: $baseline-grid-unit*8 auto auto auto auto;
+  position: relative;
+  margin-top: $baseline-grid-unit*3;
+  padding: $baseline-grid-unit*3;
+  border: 0;
+  border-left: $baseline-grid-unit solid $grey-4;
+  background: $grey-5;
+  text-decoration: none;
 
   @include media(large) {
-    display: grid;
+    margin-top: $baseline-grid-unit*6;
   }
 
-  &.place {
-    grid-gap: $baseline-grid-unit*2;
-    grid-template-columns: auto 35%;
-    grid-template-rows: $baseline-grid-unit*8 auto auto auto auto;
+  & > ul {
+    margin-top: 0;
+  }
+}
+
+.multiple-service-listing {
+
+  .js-enabled & .collapse-title-indicator-verbose {
+    text-decoration: underline;
   }
 
-  .service-label-header {
-    @extend h3;
-    margin-top: 0 !important;
-    grid-column: 1 / 2;
-    grid-row: 2 / 3;
+  .service-details {
+
+    margin-top: $baseline-grid-unit;
+    margin-bottom: $baseline-grid-unit*12;
+
+    //border-left-color: $white;
+    //background-color: $white;
+
+    .map-frame {
+      height: auto;
+    }
+
+    // modifiers for a "remote" service
+    &.--remote {
+      .tel-cta {
+        @extend .h3;
+        padding-top: $baseline-grid-unit*6;
+      }
+    }
   }
 
-  .service-advice {
-    grid-column: 1 / 2;
-    grid-row: 1 / 2;
-  }
-
-  .service-address {
-    grid-column: 1 / 2;
-    grid-row: 3 / 4;
-  }
-
-  .service-hours {
-    grid-column: 1 / 2;
-    grid-row: 4 / 5;
-  }
-
-  .service-further-info {
-    grid-column: 1 / 2;
-    grid-row: 5 / 6;
-  }
-
-  .service-map {
-    grid-column: 2 / 3;
-    grid-row: 2 / 5;
-  }
-
-  .service-distance {
-    grid-column: 2 / 3;
-    grid-row: 5 / 6;
-  }
-
-  .service-access {
-    grid-column: 1 / 2;
-    grid-row: 3 / 4;
-  }
-
-  .service-tel,
-  .service-link {
-    @extend h3;
-    margin-top: 0 !important;
-    display: block;
+  .service-appointment-flag {
+    margin-top: $baseline-grid-unit;
   }
 }
