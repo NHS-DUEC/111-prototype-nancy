@@ -1,0 +1,28 @@
+.header-transactional {
+  background-color: $nhs-blue;
+}
+
+.nhs-111-logo {
+  @extend %contain-floats;
+
+  .nhs-logo {
+    float: left;
+    display: block;
+    width: 80px;
+    height: 32px;
+    margin: $baseline-grid-unit*4 $baseline-grid-unit*4 $baseline-grid-unit*4 0;
+  }
+
+  .transaction-name {
+    float: left;
+    display: block;
+    color: $white;
+    font-size: $body;
+    line-height: 32px;
+    margin: $baseline-grid-unit*4 0;
+
+    span {
+      letter-spacing: -2px;
+    }
+  }
+}

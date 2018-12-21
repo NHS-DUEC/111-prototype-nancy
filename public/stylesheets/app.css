@@ -1,12 +1,12 @@
 @import url("//assets.nhs.uk/fonts/nhsuk-fonts-1.1.0.css");
 li.tabular-data-row, .prototype-warning-inner, .card, .breadcrumb, .footer-container, .-date, .postcode, .address-lookup, .error-summary, form,
-.form, .form-group, .search, #global-header, .location, .nhsid-container, .signage, .survey-banner > div, .header-container,
+.form, .form-group, .search, #global-header, .nhs-111-logo, .location, .nhsid-container, .signage, .survey-banner > div, .header-container,
 .content, .grid-row, .clearfix {
   zoom: 1;
 }
 
 li.tabular-data-row:after, .prototype-warning-inner:after, .card:after, .breadcrumb:after, .footer-container:after, .-date:after, .postcode:after, .address-lookup:after, .error-summary:after, form:after,
-.form:after, .form-group:after, .search:after, #global-header:after, .location:after, .nhsid-container:after, .signage:after, .survey-banner > div:after, .header-container:after,
+.form:after, .form-group:after, .search:after, #global-header:after, .nhs-111-logo:after, .location:after, .nhsid-container:after, .signage:after, .survey-banner > div:after, .header-container:after,
 .content:after, .grid-row:after, .clearfix:after {
   content: "";
   display: block;
@@ -1391,6 +1391,50 @@ html {
   line-height: 24px;
 }
 
+html {
+  background-color: #005eb8;
+}
+
+.footer-transactional {
+  background-color: #005eb8;
+}
+
+.footer-transactional .supplemental-links {
+  padding: 8px 0 20px 0;
+}
+
+.footer-transactional .copyright-section {
+  padding: 16px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.footer-transactional .link, .footer-transactional .copyright {
+  margin-bottom: 6px;
+}
+
+@media (min-width: 980px) {
+  .footer-transactional .link, .footer-transactional .copyright {
+    display: inline-block;
+    margin-right: 32px;
+    margin-bottom: 0;
+  }
+}
+
+.footer-transactional .beta-logo {
+  display: inline-block;
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 1;
+  color: #005eb8;
+  background-color: #fff;
+  padding: 4px;
+  margin-right: 8px;
+}
+
+.footer-transactional .copyright {
+  color: rgba(255, 255, 255, 0.75);
+}
+
 .-date > .error-hint {
   width: 100%;
 }
@@ -2161,6 +2205,31 @@ textarea:focus {
     display: inline;
     line-height: 32px;
   }
+}
+
+.header-transactional {
+  background-color: #005eb8;
+}
+
+.nhs-111-logo .nhs-logo {
+  float: left;
+  display: block;
+  width: 80px;
+  height: 32px;
+  margin: 16px 16px 16px 0;
+}
+
+.nhs-111-logo .transaction-name {
+  float: left;
+  display: block;
+  color: #fff;
+  font-size: 19px;
+  line-height: 32px;
+  margin: 16px 0;
+}
+
+.nhs-111-logo .transaction-name span {
+  letter-spacing: -2px;
 }
 
 .header-panel {
