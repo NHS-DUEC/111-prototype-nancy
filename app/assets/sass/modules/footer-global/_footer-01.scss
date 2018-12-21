@@ -7,11 +7,11 @@ html {
 
   .supplemental-links {
     padding: $baseline-grid-unit*2 0 $baseline-grid-unit*5 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   }
 
   .copyright-section {
     padding: $baseline-grid-unit*4 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
   }
 
   .link, .copyright {
@@ -21,17 +21,6 @@ html {
       margin-right: $baseline-grid-unit*8;
       margin-bottom: 0;
     }
-  }
-
-  .beta-logo {
-    display: inline-block;
-    font-weight: $boldweight;
-    text-transform: uppercase;
-    line-height: 1;
-    color: $nhs-blue;
-    background-color: $white;
-    padding: $baseline-grid-unit;
-    margin-right: $baseline-grid-unit*2;
   }
 
   .copyright {

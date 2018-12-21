@@ -554,7 +554,7 @@ a.link-prototype:visted {
 
 .phase-banner > .phase-message {
   color: #425563;
-  padding-left: 8px;
+  /*padding-left: $leading;*/
 }
 
 .nhs-redesign .phase-banner {
@@ -1401,11 +1401,11 @@ html {
 
 .footer-transactional .supplemental-links {
   padding: 8px 0 20px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .footer-transactional .copyright-section {
   padding: 16px 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .footer-transactional .link, .footer-transactional .copyright {
@@ -1418,17 +1418,6 @@ html {
     margin-right: 32px;
     margin-bottom: 0;
   }
-}
-
-.footer-transactional .beta-logo {
-  display: inline-block;
-  font-weight: 700;
-  text-transform: uppercase;
-  line-height: 1;
-  color: #005eb8;
-  background-color: #fff;
-  padding: 4px;
-  margin-right: 8px;
 }
 
 .footer-transactional .copyright {
