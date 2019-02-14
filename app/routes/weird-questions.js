@@ -11,7 +11,7 @@ module.exports = router
 router.get('/', function(req, res) {
 
   if (req.query['pw'] == "EMERGENCYPRESCRIPTION") {
-    return res.redirect("/emergency-prescription/")
+    return res.redirect("/emergency-prescriptions/")
   }
 
   // "Adult" is 16+
