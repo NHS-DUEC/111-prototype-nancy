@@ -20,8 +20,8 @@ var forcedCallback = require('./app/routes/forced-callback');
 var callbackOffered = require('./app/routes/callback-offered');
 var bookCallback = require('./app/routes/book-callback');
 var serviceDisplay = require('./app/routes/service-display');
-
 var userJourneys = require('./app/routes/user-journeys');
+var emergencyPrescriptions = require('./app/routes/emergency-prescriptions');
 
 var app = express()
 
@@ -95,6 +95,9 @@ var env = nunjucks.configure('./app/views', {
     noCache: true
 });
 env.addFilter('date', dateFilter);
+env.addFilter('json', (value) => {
+  return JSON.stringify(value);
+});
 
 // ROUTES
 app.use('/', index);
@@ -106,6 +109,7 @@ app.use('/forced-callback', forcedCallback);
 app.use('/callback-offered', callbackOffered);
 app.use('/book-callback', bookCallback);
 app.use('/service-display', serviceDisplay);
+app.use('/emergency-prescriptions', emergencyPrescriptions);
 
 app.use('/user-journeys', userJourneys);
 

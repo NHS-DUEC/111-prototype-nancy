@@ -456,3 +456,5 @@
 {"PW_id":"PW559","PW_Age":["Adult"],"PW_Gender":["Male"],"categories":["parts-of-the-body","chest-and-upper-back"],"DigitalTitles":"Chest pain<!--ALIAS-->","DigitalDescription":"Any chest or upper back pain. Chest pain with or without arm, shoulder, neck or jaw pain. Tightness in the chest.","CommonTerms":"","bodymap":["chest", "rib", "ribs", "back"]}
 {"index":{"_id":"229"}
 {"PW_id":"PW560","PW_Age":["Child"],"PW_Gender":["Male"],"categories":["parts-of-the-body","chest-and-upper-back"],"DigitalTitles":"Chest pain<!--ALIAS-->","DigitalDescription":"Any chest or upper back pain. Chest pain with or without arm, shoulder, neck or jaw pain. Tightness in the chest.","CommonTerms":"","bodymap":["chest", "rib", "ribs", "back"]}
+{"index":{"_id":"230"}
+{"PW_id":"EMERGENCYPRESCRIPTION","PW_Age":["Child","Adult"],"PW_Gender":["Male", "Female"],"categories":["prescriptions"],"DigitalTitles":"Emergency Prescription","DigitalDescription":"Needing an emergency prescription.","CommonTerms":"meds, mediciation, emergency prescription, pharmacy","bodymap":[]}
