@@ -29,7 +29,7 @@ On OSX this is simple enough through [Homebrew](https://brew.sh).
 
 Add the data in `/data/searchdata.json` to an ES database (see
 [elasticsearch](https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html)
-docs for more help). Kibana as a UI is handy for this.
+docs for more help). Kibana as a UI is handy for this. Ensure to use pathways_inc_alias file and POST to http://localhost:9200/pathways_inc_alias/_doc/_bulk?pretty
 
 Once your search is up and running, the prototype can run locally with the
 following commands (use two Terminal tabs):
