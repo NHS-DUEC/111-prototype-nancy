@@ -10,7 +10,7 @@ easy way of doing it):
 `brew install node`
 
 Clone this repo:
-`git clone https://git.nhschoices.net/nhs111-digital/nhs111-prototype-kit`
+`git clone https://gitlab.com/111-online/nhs111-prototype-kit`
 
 Install dependencies:
 `npm install`
