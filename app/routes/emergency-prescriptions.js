@@ -8,7 +8,7 @@ module.exports = router
 // Emergency Prescriptions - Feb 2019 ++++++++++++++++++++++++++++++++++++++++++
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-router.get('/', function(req,res) {
+router.get('/', function(req,res,next) {
   if (!req.session.demographics) {
     // zero out a namespaced session obj with defaults
     req.session.demographics = {};
@@ -16,6 +16,7 @@ router.get('/', function(req,res) {
     req.session.demographics.age = '40';
     req.session.demographics.ageCategory = 'Adult';
   }
+  next()
 })
 
 // -----------------------------------------------------------------------------
