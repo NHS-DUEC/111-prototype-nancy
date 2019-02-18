@@ -181,7 +181,7 @@ router.post('/phone', function(req, res) {
   if (!req.session.emergencyprescriptions) req.session.emergencyprescriptions = {}
   req.session.emergencyprescriptions.phone = req.body.phone
 
-  res.redirect('/emergency-prescriptions/token')
+  res.redirect('/emergency-prescriptions/confirmation')
 })
 
 // -----------------------------------------------------------------------------
