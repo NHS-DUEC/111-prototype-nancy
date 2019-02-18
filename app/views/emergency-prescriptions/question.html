@@ -18,7 +18,7 @@
       <fieldset>
         {% for answer in answers %}
           <label class="block-label">
-            <input id="{{ loop.index0 }}" name="answer" value="{{ loop.index0 }}" type="radio" class="selection-button-radio">
+            <input required id="{{ loop.index0 }}" name="answer" value="{{ loop.index0 }}" type="radio" class="selection-button-radio">
             <span>
               {{ answer.text }}
             </span>
