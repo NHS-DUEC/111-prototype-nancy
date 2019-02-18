@@ -10,19 +10,24 @@
 
   <div class="content-block">
     <h1 class="heading--large">What do you need?</h1>
-    <form action="/emergency-prescriptions/select-medicines" method="POST">
+    <br>
+    <form action="/emergency-prescriptions/select-medicines" method="POST" class="search">
         <input type="text" id="medicine" name="medicine">
         <button type="submit" class="button">Add</button>
     </form>
-    {% if session.emergencyprescriptions.medicines %}
+
+    {% if session.emergencyprescriptions.medicines  %}
       <ul>
         {% for medicine in session.emergencyprescriptions.medicines %}
-          <li>{{ medicine }}</li>
+          <li>{{ medicine }} <a href="/emergency-prescriptions/select-medicines/remove/{{medicine}}">Remove</a></li>
         {% endfor %}
       </ul>
-      <div class="shunt-2">
-        <a href="/emergency-prescriptions/why-need" class="button">Next</a>
-      </div>
+
+      {% if session.emergencyprescriptions.medicines.length > 0  %}
+        <div class="shunt-2">
+          <a href="/emergency-prescriptions/why-need" class="button">Next</a>
+        </div>
+      {% endif %}
     {% endif %}
   </div>
 

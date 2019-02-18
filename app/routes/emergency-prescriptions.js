@@ -101,7 +101,20 @@ router.post('/select-medicines/', function(req,res) {
   if (!req.session.emergencyprescriptions) req.session.emergencyprescriptions = {}
   if (!req.session.emergencyprescriptions.medicines) req.session.emergencyprescriptions.medicines = []
   if (req.session.emergencyprescriptions.medicines.indexOf(req.body.medicine) == -1) {
-    req.session.emergencyprescriptions.medicines.push(req.body.medicine)
+    req.session.emergencyprescriptions.medicines.push(req.body.medicine.toLowerCase())
+  }
+
+  res.redirect('/emergency-prescriptions/select-medicines')
+})
+
+router.get('/select-medicines/remove/:medicine', function(req,res) {
+  if (!req.session.emergencyprescriptions) req.session.emergencyprescriptions = {}
+  if (!req.session.emergencyprescriptions.medicines) req.session.emergencyprescriptions.medicines = []
+  var medicineIndex = req.session.emergencyprescriptions.medicines.indexOf(req.params.medicine) 
+  var medicines = req.session.emergencyprescriptions.medicines
+
+  if (medicineIndex >= 0) {
+    req.session.emergencyprescriptions.medicines = medicines.slice(0,medicineIndex).concat(medicines.slice(medicineIndex+1))
   }
 
   res.redirect('/emergency-prescriptions/select-medicines')
