@@ -100,7 +100,7 @@ router.get('/run-out/', function(req,res) {
 router.post('/select-medicines/', function(req,res) {
   if (!req.session.emergencyprescriptions) req.session.emergencyprescriptions = {}
   if (!req.session.emergencyprescriptions.medicines) req.session.emergencyprescriptions.medicines = []
-  if (req.session.emergencyprescriptions.medicines.indexOf(req.body.medicine) == -1) {
+  if (req.body.medicine && req.session.emergencyprescriptions.medicines.indexOf(req.body.medicine) == -1) {
     req.session.emergencyprescriptions.medicines.push(req.body.medicine.toLowerCase())
   }
 
