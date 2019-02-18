@@ -16,6 +16,7 @@ router.get('/', function(req,res,next) {
     req.session.demographics.age = '40';
     req.session.demographics.ageCategory = 'Adult';
   }
+  req.session.emergencyprescriptions = {}
   next()
 })
 
@@ -129,6 +130,8 @@ router.get('/why-need/:reason', function(req,res) {
 })
 
 router.get('/why-need/', function(req,res) {
+  if (req.session.emergencyprescriptions.phone) return res.redirect('/emergency-prescriptions/confirmation')
+
   res.render('emergency-prescriptions/question', {
     question: "Why do you need an emergency prescription?",
     answers: [
@@ -156,6 +159,13 @@ router.get('/why-need/', function(req,res) {
   })
 })
 
+// -----------------------------------------------------------------------------
+
+router.get('/details', function(req,res,next) {
+  if (!req.session.emergencyprescriptions) req.session.emergencyprescriptions = {}
+  if (req.session.emergencyprescriptions.phone) return res.redirect('/emergency-prescriptions/confirmation')
+  else next()
+})
 
 // -----------------------------------------------------------------------------
 

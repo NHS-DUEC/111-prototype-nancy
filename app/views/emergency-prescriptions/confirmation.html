@@ -11,6 +11,7 @@
   <div class="content-block">
     <h1 class="heading--large">Confirmation</h1>
     <h2>Medicines required</h2>
+    <a href="/emergency-prescriptions/select-medicines">Change</a>
     {% if session.emergencyprescriptions.medicines %}
       <ul>
         {% for medicine in session.emergencyprescriptions.medicines %}
@@ -19,6 +20,7 @@
       </ul>
     {% endif %}
     <h2>Selected pharmacy</h2>
+    <a href="/emergency-prescriptions/recommended-service">Change</a>
     <p>St George's Pharmacy<br>46 St George's Road<br>Elephant and Castle<br>London<br>SE1 6ET<br>Open until 6:30pm</p>
 
     <div class="shunt-2">
