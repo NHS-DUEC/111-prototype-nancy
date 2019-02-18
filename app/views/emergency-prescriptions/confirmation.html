@@ -1,0 +1,31 @@
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhs-redesign{% endblock %}
+
+{% block content %}
+
+<div class="measure">
+
+  <div class="content-block">
+    <h1 class="heading--large">Confirmation</h1>
+    <h2>Medicines required</h2>
+    {% if session.emergencyprescriptions.medicines %}
+      <ul>
+        {% for medicine in session.emergencyprescriptions.medicines %}
+          <li>{{ medicine }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+    <h2>Selected pharmacy</h2>
+    <p>St George's Pharmacy<br>46 St George's Road<br>Elephant and Castle<br>London<br>SE1 6ET<br>Open until 6:30pm</p>
+
+    <div class="shunt-2">
+      <a href="/emergency-prescriptions/details" class="button">Confirm</a>
+    </div>
+  </div>
+
+</div>
+
+{% endblock %}

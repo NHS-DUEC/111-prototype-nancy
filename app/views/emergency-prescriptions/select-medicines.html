@@ -1,0 +1,31 @@
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhs-redesign{% endblock %}
+
+{% block content %}
+
+<div class="measure">
+
+  <div class="content-block">
+    <h1 class="heading--large">What do you need?</h1>
+    <form action="/emergency-prescriptions/select-medicines" method="POST">
+        <input type="text" id="medicine" name="medicine">
+        <button type="submit" class="button">Add</button>
+    </form>
+    {% if session.emergencyprescriptions.medicines %}
+      <ul>
+        {% for medicine in session.emergencyprescriptions.medicines %}
+          <li>{{ medicine }}</li>
+        {% endfor %}
+      </ul>
+      <div class="shunt-2">
+        <a href="/emergency-prescriptions/why-need" class="button">Next</a>
+      </div>
+    {% endif %}
+  </div>
+
+</div>
+
+{% endblock %}
