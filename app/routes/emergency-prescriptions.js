@@ -40,39 +40,39 @@ router.get('/feel-unwell', function(req,res) {
 
 // -----------------------------------------------------------------------------
 
-router.get('/next-dose/:dose', function(req,res) {
+router.get('/next-due/:dose', function(req,res) {
   if (!req.session.emergencyprescriptions) req.session.emergencyprescriptions = {}
   req.session.emergencyprescriptions.dose = req.params.dose
   res.redirect('/emergency-prescriptions/recommended-service')
 })
 
-router.get('/next-dose/', function(req,res) {
+router.get('/next-due/', function(req,res) {
   res.render('emergency-prescriptions/question', {
-    question: "When is your next dose due?",
+    question: "When is it next due?",
     answers: [
       {
-        text: "I've already missed a dose",
-        route: "/emergency-prescriptions/next-dose/missed"
+        text: "It's already late",
+        route: "/emergency-prescriptions/next-due/missed"
       },
       {
         text: "In less than 2 hours",
-        route: "/emergency-prescriptions/next-dose/2-hours"
+        route: "/emergency-prescriptions/next-due/2-hours"
       },
       {
-        text: "Between 2 and 6 hours",
-        route: "/emergency-prescriptions/next-dose/2-6-hours"
+        text: "In 2 to 6 hours",
+        route: "/emergency-prescriptions/next-due/2-6-hours"
       },
       {
-        text: "Between 6 and 12 hours",
-        route: "/emergency-prescriptions/next-dose/6-12-hours"
+        text: "In 6 to 12 hours",
+        route: "/emergency-prescriptions/next-due/6-12-hours"
       },
       {
         text: "More than 12 hours",
-        route: "/emergency-prescriptions/next-dose/12-plus-hours"
+        route: "/emergency-prescriptions/next-due/12-plus-hours"
       },
       {
         text: "I don't know",
-        route: "/emergency-prescriptions/next-dose/dont-know"
+        route: "/emergency-prescriptions/next-due/dont-know"
       }
     ]
   })
@@ -82,7 +82,7 @@ router.get('/next-dose/', function(req,res) {
 
 router.get('/run-out/', function(req,res) {
   res.render('emergency-prescriptions/question', {
-    question: "What medicine have you run out of?",
+    question: "What have you run out of?",
     answers: [
       {
         text: "My regular prescription",
