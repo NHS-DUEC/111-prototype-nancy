@@ -32,7 +32,7 @@ router.get('/feel-unwell', function(req,res) {
       },
       {
         text: "No",
-        route: "/emergency-prescriptions/next-dose"
+        route: "/emergency-prescriptions/why-need"
       }
     ]
   })
@@ -43,7 +43,7 @@ router.get('/feel-unwell', function(req,res) {
 router.get('/next-dose/:dose', function(req,res) {
   if (!req.session.emergencyprescriptions) req.session.emergencyprescriptions = {}
   req.session.emergencyprescriptions.dose = req.params.dose
-  res.redirect('/emergency-prescriptions/run-out')
+  res.redirect('/emergency-prescriptions/recommended-service')
 })
 
 router.get('/next-dose/', function(req,res) {
@@ -130,7 +130,7 @@ router.get('/select-medicines/remove/:medicine', function(req,res) {
 router.get('/why-need/:reason', function(req,res) {
   if (!req.session.emergencyprescriptions) req.session.emergencyprescriptions = {}
   req.session.emergencyprescriptions.reason = req.params.reason
-  res.redirect('/emergency-prescriptions/recommended-service')
+  res.redirect('/emergency-prescriptions/run-out')
 })
 
 router.get('/why-need/', function(req,res) {
@@ -175,7 +175,8 @@ router.get('/details', function(req,res,next) {
 
 router.post('/name', function(req, res) {
   if (!req.session.emergencyprescriptions) req.session.emergencyprescriptions = {}
-  req.session.emergencyprescriptions.fullname = req.body.fullname
+  req.session.emergencyprescriptions.firstname = req.body.firstname
+  req.session.emergencyprescriptions.lastname = req.body.lastname
 
   res.redirect('/emergency-prescriptions/email')
 })

@@ -10,8 +10,10 @@
 
   <div class="content-block">
     <form action="/emergency-prescriptions/name" method="POST">
-        <h1 class="heading--large">Full name</h1>
-        <input type="text" id="fullname" name="fullname" required>
+        <label class="heading--large" for="firstname">First name</label>
+        <input type="text" id="firstname" name="firstname" required>
+        <label class="heading--large" for="lastname">Last name</label>
+        <input type="text" id="lastname" name="lastname" required>
         <div class="shunt-2">
           <button type="submit" class="button">Next</button>
         </div>
