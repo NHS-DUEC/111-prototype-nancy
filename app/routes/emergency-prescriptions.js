@@ -101,9 +101,13 @@ router.get('/run-out/', function(req,res) {
 router.post('/select-medicines/', function(req,res) {
   if (!req.session.emergencyprescriptions) req.session.emergencyprescriptions = {}
   if (!req.session.emergencyprescriptions.medicines) req.session.emergencyprescriptions.medicines = []
-  if (req.body.medicine && req.session.emergencyprescriptions.medicines.indexOf(req.body.medicine) == -1) {
-    req.session.emergencyprescriptions.medicines.push(req.body.medicine.toLowerCase())
-  }
+  var medicines = req.body.medicine.split(",")
+  medicines.forEach(medicine => {
+    medicine = medicine.toLowerCase()
+    if (medicine.trim() !== "" && req.session.emergencyprescriptions.medicines.indexOf(medicine) == -1) {
+      req.session.emergencyprescriptions.medicines.push(medicine)
+    }
+  })
 
   res.redirect('/emergency-prescriptions/select-medicines')
 })
