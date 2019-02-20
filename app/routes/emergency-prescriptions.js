@@ -40,39 +40,37 @@ router.get('/feel-unwell', function(req,res) {
 
 // -----------------------------------------------------------------------------
 
-router.get('/next-due/:dose', function(req,res) {
+router.get('/why-need/:reason', function(req,res) {
   if (!req.session.emergencyprescriptions) req.session.emergencyprescriptions = {}
-  req.session.emergencyprescriptions.dose = req.params.dose
-  res.redirect('/emergency-prescriptions/recommended-service')
+  req.session.emergencyprescriptions.reason = req.params.reason
+  res.redirect('/emergency-prescriptions/run-out')
 })
 
-router.get('/next-due/', function(req,res) {
+router.get('/why-need/', function(req,res) {
+  if (req.session.emergencyprescriptions.phone) return res.redirect('/emergency-prescriptions/confirmation')
+
   res.render('emergency-prescriptions/question', {
-    question: "When is it next due?",
+    question: "Why do you need an emergency prescription?",
     answers: [
       {
-        text: "It's already late",
-        route: "/emergency-prescriptions/next-due/missed"
+        text: "I've not ordered my prescription",
+        route: "/emergency-prescriptions/why-need/not-ordered"
       },
       {
-        text: "In less than 2 hours",
-        route: "/emergency-prescriptions/next-due/2-hours"
+        text: "My prescription is not ready",
+        route: "/emergency-prescriptions/why-need/not-ready"
       },
       {
-        text: "In 2 to 6 hours",
-        route: "/emergency-prescriptions/next-due/2-6-hours"
+        text: "I'm away from home and don't have any",
+        route: "/emergency-prescriptions/why-need/away"
       },
       {
-        text: "In 6 to 12 hours",
-        route: "/emergency-prescriptions/next-due/6-12-hours"
+        text: "I've lost my prescription or medicine",
+        route: "/emergency-prescriptions/why-need/lost"
       },
       {
-        text: "More than 12 hours",
-        route: "/emergency-prescriptions/next-due/12-plus-hours"
-      },
-      {
-        text: "I don't know",
-        route: "/emergency-prescriptions/next-due/dont-know"
+        text: "Any other reason",
+        route: "/emergency-prescriptions/why-need/other-reason"
       }
     ]
   })
@@ -127,37 +125,39 @@ router.get('/select-medicines/remove/:medicine', function(req,res) {
 
 // -----------------------------------------------------------------------------
 
-router.get('/why-need/:reason', function(req,res) {
+router.get('/next-due/:dose', function(req,res) {
   if (!req.session.emergencyprescriptions) req.session.emergencyprescriptions = {}
-  req.session.emergencyprescriptions.reason = req.params.reason
-  res.redirect('/emergency-prescriptions/run-out')
+  req.session.emergencyprescriptions.dose = req.params.dose
+  res.redirect('/emergency-prescriptions/recommended-service')
 })
 
-router.get('/why-need/', function(req,res) {
-  if (req.session.emergencyprescriptions.phone) return res.redirect('/emergency-prescriptions/confirmation')
-
+router.get('/next-due/', function(req,res) {
   res.render('emergency-prescriptions/question', {
-    question: "Why do you need an emergency prescription?",
+    question: "When is it next due?",
     answers: [
       {
-        text: "I've not ordered my prescription",
-        route: "/emergency-prescriptions/why-need/not-ordered"
+        text: "It's already late",
+        route: "/emergency-prescriptions/next-due/missed"
       },
       {
-        text: "My prescription is not ready",
-        route: "/emergency-prescriptions/why-need/not-ready"
+        text: "In less than 2 hours",
+        route: "/emergency-prescriptions/next-due/2-hours"
       },
       {
-        text: "I'm away from home and don't have any",
-        route: "/emergency-prescriptions/why-need/away"
+        text: "In 2 to 6 hours",
+        route: "/emergency-prescriptions/next-due/2-6-hours"
       },
       {
-        text: "I've lost my prescription or medicine",
-        route: "/emergency-prescriptions/why-need/lost"
+        text: "In 6 to 12 hours",
+        route: "/emergency-prescriptions/next-due/6-12-hours"
       },
       {
-        text: "Any other reason",
-        route: "/emergency-prescriptions/why-need/other-reason"
+        text: "More than 12 hours",
+        route: "/emergency-prescriptions/next-due/12-plus-hours"
+      },
+      {
+        text: "I don't know",
+        route: "/emergency-prescriptions/next-due/dont-know"
       }
     ]
   })
