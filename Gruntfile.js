@@ -1,12 +1,15 @@
 module.exports = function (grunt) {
 
   require('load-grunt-tasks')(grunt);
+  const sass = require('node-sass');
+
 
   grunt.initConfig({
     // Builds Sass
     sass: {
       dev: {
         options: {
+          implementation: sass,
           includePaths: [],
           outputStyle: 'expanded'
         },

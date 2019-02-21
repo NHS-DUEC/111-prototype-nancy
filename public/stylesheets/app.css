@@ -165,8 +165,8 @@ body.nhs-redesign, pre.nhs-redesign.user-input {
 
 .nhs-redesign h1, .nhs-redesign .heading-xxlarge, .nhs-redesign .primary,
 .nhs-redesign .h1,
-.nhs-redesign .service-details.--remote .tel-cta, .service-details.--remote
-.nhs-redesign .tel-cta {
+.nhs-redesign .service-details.--remote .tel-cta,
+.service-details.--remote .nhs-redesign .tel-cta {
   font-size: 32px;
   font-weight: 700;
   line-height: 1.125;
@@ -176,8 +176,8 @@ body.nhs-redesign, pre.nhs-redesign.user-input {
 @media (min-width: 500px) {
   .nhs-redesign h1, .nhs-redesign .heading-xxlarge, .nhs-redesign .primary,
   .nhs-redesign .h1,
-  .nhs-redesign .service-details.--remote .tel-cta, .service-details.--remote
-  .nhs-redesign .tel-cta {
+  .nhs-redesign .service-details.--remote .tel-cta,
+  .service-details.--remote .nhs-redesign .tel-cta {
     font-size: 48px;
     line-height: 1.166;
     margin: 40px 0 0 0;
@@ -186,8 +186,8 @@ body.nhs-redesign, pre.nhs-redesign.user-input {
 
 .nhs-redesign h2, .nhs-redesign .heading-xlarge, .nhs-redesign .app-panel > .header, .nhs-redesign .secondary,
 .nhs-redesign .h2,
-.nhs-redesign .service-details.--remote .tel-cta.--appointment, .service-details.--remote
-.nhs-redesign .tel-cta.--appointment {
+.nhs-redesign .service-details.--remote .tel-cta.--appointment,
+.service-details.--remote .nhs-redesign .tel-cta.--appointment {
   font-size: 24px;
   font-weight: 700;
   line-height: 1.333;
@@ -197,8 +197,8 @@ body.nhs-redesign, pre.nhs-redesign.user-input {
 @media (min-width: 500px) {
   .nhs-redesign h2, .nhs-redesign .heading-xlarge, .nhs-redesign .app-panel > .header, .nhs-redesign .secondary,
   .nhs-redesign .h2,
-  .nhs-redesign .service-details.--remote .tel-cta.--appointment, .service-details.--remote
-  .nhs-redesign .tel-cta.--appointment {
+  .nhs-redesign .service-details.--remote .tel-cta.--appointment,
+  .service-details.--remote .nhs-redesign .tel-cta.--appointment {
     font-size: 32px;
     line-height: 1.25;
     margin: 56px 0 0 0;
@@ -207,8 +207,8 @@ body.nhs-redesign, pre.nhs-redesign.user-input {
 
 .nhs-redesign h3, .nhs-redesign .heading-large,
 .nhs-redesign .h3,
-.nhs-redesign .multiple-service-listing .service-details.--remote .tel-cta, .multiple-service-listing .service-details.--remote
-.nhs-redesign .tel-cta {
+.nhs-redesign .multiple-service-listing .service-details.--remote .tel-cta,
+.multiple-service-listing .service-details.--remote .nhs-redesign .tel-cta {
   font-size: 20px;
   font-weight: 700;
   line-height: 1.4;
@@ -218,8 +218,8 @@ body.nhs-redesign, pre.nhs-redesign.user-input {
 @media (min-width: 500px) {
   .nhs-redesign h3, .nhs-redesign .heading-large,
   .nhs-redesign .h3,
-  .nhs-redesign .multiple-service-listing .service-details.--remote .tel-cta, .multiple-service-listing .service-details.--remote
-  .nhs-redesign .tel-cta {
+  .nhs-redesign .multiple-service-listing .service-details.--remote .tel-cta,
+  .multiple-service-listing .service-details.--remote .nhs-redesign .tel-cta {
     font-size: 24px;
     line-height: 1.333;
     margin: 40px 0 0 0;
@@ -252,9 +252,14 @@ body.nhs-redesign, pre.nhs-redesign.user-input {
 
 /* remove undelines for a tags used as anchors */
 h1 a, .heading-xxlarge a, .primary a,
-h2 a, .heading-xlarge a, .app-panel > .header a, .secondary a,
-h3 a, .heading-large a,
-h4 a, .heading-body a,
+h2 a,
+.heading-xlarge a,
+.app-panel > .header a,
+.secondary a,
+h3 a,
+.heading-large a,
+h4 a,
+.heading-body a,
 h5 a,
 h6 a {
   text-decoration: none;
@@ -287,13 +292,15 @@ body.nhs-redesign p, pre.nhs-redesign.user-input p {
 }
 
 body.nhs-redesign .small p, pre.nhs-redesign.user-input .small p, body.nhs-redesign table th p, table body.nhs-redesign th p, pre.nhs-redesign.user-input table th p, table pre.nhs-redesign.user-input th p, body.nhs-redesign table td p, table body.nhs-redesign td p, pre.nhs-redesign.user-input table td p, table pre.nhs-redesign.user-input td p,
-body.nhs-redesign p.small, pre.nhs-redesign.user-input p.small {
+body.nhs-redesign p.small,
+pre.nhs-redesign.user-input p.small {
   margin: 16px 0;
 }
 
 @media (min-width: 500px) {
   body.nhs-redesign .small p, pre.nhs-redesign.user-input .small p, body.nhs-redesign table th p, table body.nhs-redesign th p, pre.nhs-redesign.user-input table th p, table pre.nhs-redesign.user-input th p, body.nhs-redesign table td p, table body.nhs-redesign td p, pre.nhs-redesign.user-input table td p, table pre.nhs-redesign.user-input td p,
-  body.nhs-redesign p.small, pre.nhs-redesign.user-input p.small {
+  body.nhs-redesign p.small,
+  pre.nhs-redesign.user-input p.small {
     margin: 20px 0;
   }
 }
