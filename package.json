@@ -2,7 +2,7 @@
   "name": "111-prototypes",
   "version": "1.0.0",
   "engines": {
-    "node": "8.9.1",
+    "node": "10.15.1",
     "npm": "5.8.0"
   },
   "description": "111 online prototypes",
