@@ -10,6 +10,14 @@
 
   <div class="content-block">
     <h1 class="heading--large">Confirmation</h1>
+    <h2>Personal details</h2>
+    <a href="/emergency-prescriptions/name">Change</a>
+    <p>
+      Name: {{ session.emergencyprescriptions.firstname }} {{ session.emergencyprescriptions.lastname }}<br>
+      Phone number: {{ session.emergencyprescriptions.phone }}<br>
+      Email address: {{ session.emergencyprescriptions.email }}<br>
+    </p>
+
     <h2>Medicines required</h2>
     <a href="/emergency-prescriptions/select-medicines">Change</a>
     {% if session.emergencyprescriptions.medicines %}
