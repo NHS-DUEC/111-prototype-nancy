@@ -40,46 +40,40 @@ router.get('/feel-unwell', function(req,res) {
 
 // -----------------------------------------------------------------------------
 
-var whyneedQuestion = {
-  question: "Why do you need an emergency prescription?",
-  answers: [
-    {
-      text: "I've not ordered my prescription",
-      route: "/emergency-prescriptions/why-need/not-ordered"
-    },
-    {
-      text: "My prescription is not ready",
-      route: "/emergency-prescriptions/why-need/not-ready"
-    },
-    {
-      text: "I'm away from home and don't have any",
-      route: "/emergency-prescriptions/why-need/away"
-    },
-    {
-      text: "I've lost my prescription or medicine",
-      route: "/emergency-prescriptions/why-need/lost"
-    },
-    {
-      text: "Any other reason",
-      route: "/emergency-prescriptions/why-need/other-reason"
-    }
-  ]
-}
-
 router.get('/why-need/:reason', function(req,res) {
   if (!req.session.emergencyprescriptions) req.session.emergencyprescriptions = {}
-  var answer = whyneedQuestion.answers.filter((val) => {
-    return val.route.split('/').indexOf(req.params.reason) > -1
-  })
-
-  if (answer) req.session.emergencyprescriptions.reason = answer[0].text
+  req.session.emergencyprescriptions.reason = req.params.reason
   res.redirect('/emergency-prescriptions/run-out')
 })
 
 router.get('/why-need/', function(req,res) {
   if (req.session.emergencyprescriptions.phone) return res.redirect('/emergency-prescriptions/confirmation')
 
-  res.render('emergency-prescriptions/question', whyneedQuestion)
+  res.render('emergency-prescriptions/question', {
+    question: "Why do you need an emergency prescription?",
+    answers: [
+      {
+        text: "I've not ordered my prescription",
+        route: "/emergency-prescriptions/why-need/not-ordered"
+      },
+      {
+        text: "My prescription is not ready",
+        route: "/emergency-prescriptions/why-need/not-ready"
+      },
+      {
+        text: "I'm away from home and don't have what I need",
+        route: "/emergency-prescriptions/why-need/away"
+      },
+      {
+        text: "I've lost my prescription or medicine",
+        route: "/emergency-prescriptions/why-need/lost"
+      },
+      {
+        text: "Any other reason",
+        route: "/emergency-prescriptions/why-need/other-reason"
+      }
+    ]
+  })
 })
 
 // -----------------------------------------------------------------------------
@@ -119,7 +113,7 @@ router.post('/select-medicines/', function(req,res) {
 router.get('/select-medicines/remove/:medicine', function(req,res) {
   if (!req.session.emergencyprescriptions) req.session.emergencyprescriptions = {}
   if (!req.session.emergencyprescriptions.medicines) req.session.emergencyprescriptions.medicines = []
-  var medicineIndex = req.session.emergencyprescriptions.medicines.indexOf(req.params.medicine) 
+  var medicineIndex = req.session.emergencyprescriptions.medicines.indexOf(req.params.medicine)
   var medicines = req.session.emergencyprescriptions.medicines
 
   if (medicineIndex >= 0) {
@@ -131,48 +125,42 @@ router.get('/select-medicines/remove/:medicine', function(req,res) {
 
 // -----------------------------------------------------------------------------
 
-var nextDueQuestion = {
-  question: "When is it next due?",
-  answers: [
-    {
-      text: "It's already late",
-      route: "/emergency-prescriptions/next-due/missed"
-    },
-    {
-      text: "In less than 2 hours",
-      route: "/emergency-prescriptions/next-due/2-hours"
-    },
-    {
-      text: "In 2 to 6 hours",
-      route: "/emergency-prescriptions/next-due/2-6-hours"
-    },
-    {
-      text: "In 6 to 12 hours",
-      route: "/emergency-prescriptions/next-due/6-12-hours"
-    },
-    {
-      text: "More than 12 hours",
-      route: "/emergency-prescriptions/next-due/12-plus-hours"
-    },
-    {
-      text: "I don't know",
-      route: "/emergency-prescriptions/next-due/dont-know"
-    }
-  ]
-}
-
-router.get('/next-due/:due', function(req,res) {
+router.get('/next-due/:dose', function(req,res) {
   if (!req.session.emergencyprescriptions) req.session.emergencyprescriptions = {}
-  var answer = nextDueQuestion.answers.filter((val) => {
-    return val.route.split('/').indexOf(req.params.due) > -1
-  })
-
-  if (answer) req.session.emergencyprescriptions.due = answer[0].text
+  req.session.emergencyprescriptions.dose = req.params.dose
   res.redirect('/emergency-prescriptions/recommended-service')
 })
 
 router.get('/next-due/', function(req,res) {
-  res.render('emergency-prescriptions/question', nextDueQuestion)
+  res.render('emergency-prescriptions/question', {
+    question: "When is it next due?",
+    answers: [
+      {
+        text: "It's already late",
+        route: "/emergency-prescriptions/next-due/missed"
+      },
+      {
+        text: "In less than 2 hours",
+        route: "/emergency-prescriptions/next-due/2-hours"
+      },
+      {
+        text: "In 2 to 6 hours",
+        route: "/emergency-prescriptions/next-due/2-6-hours"
+      },
+      {
+        text: "In 6 to 12 hours",
+        route: "/emergency-prescriptions/next-due/6-12-hours"
+      },
+      {
+        text: "More than 12 hours",
+        route: "/emergency-prescriptions/next-due/12-plus-hours"
+      },
+      {
+        text: "I don't know",
+        route: "/emergency-prescriptions/next-due/dont-know"
+      }
+    ]
+  })
 })
 
 // -----------------------------------------------------------------------------
@@ -219,4 +207,3 @@ router.post('/question-handler', function(req, res) {
 });
 
 // -----------------------------------------------------------------------------
-
