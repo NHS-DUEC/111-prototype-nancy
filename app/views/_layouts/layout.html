@@ -21,7 +21,10 @@
 
 
     <main id="content" role="main" class="content">
-      {% include '_includes/phase-banner.html' %}
+
+      {% if not suppress_phase_banner %}
+        {% include '_includes/phase-banner.html' %}
+      {% endif %}
       {% block content %}{% endblock %}
     </main>
 

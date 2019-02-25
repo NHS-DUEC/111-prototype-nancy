@@ -1,0 +1,50 @@
+{% extends '_layouts/layout.html' %}
+{% set suppress_feedback = true %}
+{% set suppress_phase_banner = true %}
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhs-redesign{% endblock %}
+
+{% block content %}
+
+<div class="measure">
+
+  <div class="content-block">
+    <h1>Email to pharmacist</h1>
+    <p>
+      <strong>To:</strong> pharmacist1@nhs.net<br>
+      <strong>From:</strong> 111online@nhs.net<br>
+    </p>
+    <p>
+      Dear pharmacist,<br>
+      A user of the 111 online service has requested an emergency prescription. We have given them a token to give to you to match up to this email.</p>
+    
+      <strong>Token: </strong>AB 76 54 GE<br>
+      <strong>Name:</strong> {{ session.emergencyprescriptions.firstname }} {{ session.emergencyprescriptions.lastname }}<br>
+      <strong>NHS Number:</strong> 943 476 5919<br>
+      {% if session.demographics.dob.supplied == true %}
+        <strong>Date of birth: </strong> {{ session.demographics.dob.day }}/{{ session.demographics.dob.month }}/{{ session.demographics.dob.day }}<br>
+      {% else %}
+        <strong>Date of birth: </strong> Not given<br>
+        <strong>Age: </strong> {{ session.demographics.age }}<br>
+      {% endif %}
+      <strong>Phone number: </strong> {{ session.emergencyprescriptions.phone }}<br>
+      <strong>Email address: </strong> {{ session.emergencyprescriptions.email }}<br>
+      <strong>Medicines required: </strong>
+      {% if session.emergencyprescriptions.medicines %}
+        <ul style="margin-top: 0; margin-left: 25px;">
+          {% for medicine in session.emergencyprescriptions.medicines %}
+            <li>{{ medicine }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+      <strong>Do you also feel unwell? </strong> No<br>
+      <strong>Why do you need an emergency prescription? </strong> {{ session.emergencyprescriptions.reason }}<br>
+      <strong>What have you run out of? </strong> My regular prescription<br>
+      <strong>When is it next due? </strong> {{ session.emergencyprescriptions.due }}<br>
+    </p>
+  </div>
+
+</div>
+
+{% endblock %}
