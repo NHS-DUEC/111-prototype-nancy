@@ -22,24 +22,6 @@ router.get('/', function(req,res,next) {
 
 // -----------------------------------------------------------------------------
 
-router.get('/feel-unwell', function(req,res) {
-  res.render('emergency-prescriptions/question', {
-    question: "Do you also feel unwell?",
-    answers: [
-      {
-        text: "Yes",
-        route: "/finding-pathways/start"
-      },
-      {
-        text: "No",
-        route: "/emergency-prescriptions/why-need"
-      }
-    ]
-  })
-})
-
-// -----------------------------------------------------------------------------
-
 var whyneedQuestion = {
   question: "Why do you need an emergency prescription?",
   answers: [
@@ -52,7 +34,7 @@ var whyneedQuestion = {
       route: "/emergency-prescriptions/why-need/not-ready"
     },
     {
-      text: "I'm away from home and don't have any",
+      text: "I'm away from home and don't have what I need",
       route: "/emergency-prescriptions/why-need/away"
     },
     {
