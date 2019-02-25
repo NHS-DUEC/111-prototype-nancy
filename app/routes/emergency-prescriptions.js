@@ -96,7 +96,7 @@ router.get('/run-out/', function(req,res) {
       },
       {
         text: "Something I've had before and stopped taking",
-        route: "/run-out/"
+        route: "/emergency-prescriptions/run-out"
       }
     ]
   })
