@@ -19,7 +19,7 @@
     {% endif %}
     <br>
     <form action="/emergency-prescriptions/select-medicines" method="POST" class="search">
-        <input type="text" id="medicine" name="medicine" autocomplete="false">
+        <input type="text" id="medicine" name="medicine" autocomplete="off" class="js-typeahead">
         <button type="submit" class="button">Add</button>
     </form>
 
@@ -32,5 +32,42 @@
   </div>
 
 </div>
+{% endblock %}
 
+{% block body_after %}
+<script src="/scripts/typeahead.min.js"></script>
+<script src="/scripts/fuzzysearch.min.js"></script>
+<script src="/scripts/emergency-prescriptions-medicine.js"></script>
+<script>
+
+var states = new Bloodhound({
+  datumTokenizer: Bloodhound.tokenizers.whitespace,
+  queryTokenizer: Bloodhound.tokenizers.whitespace,
+  // `states` is an array of state names defined in "The Basics"
+  local: states
+});
+
+// var medicines = new Bloodhound({
+//   datumTokenizer: Bloodhound.tokenizers.whitespace,
+//   queryTokenizer: Bloodhound.tokenizers.whitespace,
+//   local: source
+// });
+
+var medicines = new FuzzySearch({
+  source: source
+})
+
+$('.js-typeahead').typeahead({
+  hint: true,
+  highlight: false,
+  minLength: 2
+},
+{
+  name: 'medicines',
+  source: medicines,
+  templates: {
+    suggestion: function(result){return "<div>"+medicines.highlight(result)+"</div>"}
+  }
+})
+</script>
 {% endblock %}
