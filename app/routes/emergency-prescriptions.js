@@ -131,11 +131,32 @@ router.get('/select-medicines/remove/:medicine', function(req,res) {
   res.redirect('/emergency-prescriptions/select-medicines')
 })
 
+
+router.get('/select-medicines/', function(req,res) {
+  if (req.query.medicines) {
+    var medicines = req.query.medicines.split(',')
+    medicines = medicines.map((val) => val.toLowerCase().trim()).filter((val) => val != "")
+    if (!req.session.emergencyprescriptions) req.session.emergencyprescriptions = {}
+    req.session.emergencyprescriptions.medicines = medicines
+    res.redirect('/emergency-prescriptions/next-due')
+  }
+  else {
+    var env = process.env.emergencyprescriptions_dotnet_environment
+    if (env) {
+      var medicines = req.session.emergencyprescriptions.medicines
+      if (medicines) res.redirect(env + '/prescription/lookup?medicines' + medicines.join(','))
+      else res.redirect(env + '/prescription/lookup')
+    }
+    else res.render('emergency-prescriptions/select-medicines')
+  }
+})
+
+
 // -----------------------------------------------------------------------------
 
-router.get('/next-due/:dose', function(req,res) {
+router.get('/next-due/:due', function(req,res) {
   if (!req.session.emergencyprescriptions) req.session.emergencyprescriptions = {}
-  req.session.emergencyprescriptions.dose = req.params.dose
+  req.session.emergencyprescriptions.due = req.params.due
   res.redirect('/emergency-prescriptions/recommended-service')
 })
 
