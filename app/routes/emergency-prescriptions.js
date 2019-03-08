@@ -144,7 +144,7 @@ router.get('/select-medicines/', function(req,res) {
     var env = process.env.emergencyprescriptions_dotnet_environment
     if (env) {
       var medicines = req.session.emergencyprescriptions.medicines
-      if (medicines) res.redirect(env + '/prescription/lookup?medicines' + medicines.join(','))
+      if (medicines) res.redirect(env + '/prescription/lookup?medicines=' + medicines.join(','))
       else res.redirect(env + '/prescription/lookup')
     }
     else res.render('emergency-prescriptions/select-medicines')
