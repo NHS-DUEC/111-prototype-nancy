@@ -21,6 +21,8 @@ var callbackOffered = require('./app/routes/callback-offered');
 var bookCallback = require('./app/routes/book-callback');
 var serviceDisplay = require('./app/routes/service-display');
 
+var emergencyPrescriptionWizard = require('./app/routes/emergency-prescription-wizard');
+
 var userJourneys = require('./app/routes/user-journeys');
 
 var app = express()
@@ -106,6 +108,8 @@ app.use('/forced-callback', forcedCallback);
 app.use('/callback-offered', callbackOffered);
 app.use('/book-callback', bookCallback);
 app.use('/service-display', serviceDisplay);
+
+app.use('/emergency-prescription-wizard', emergencyPrescriptionWizard);
 
 app.use('/user-journeys', userJourneys);
 

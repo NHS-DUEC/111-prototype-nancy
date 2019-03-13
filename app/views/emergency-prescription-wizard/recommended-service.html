@@ -1,0 +1,113 @@
+{% set suppress_feedback = true %}
+
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhs-redesign{% endblock %}
+
+{% block content %}
+
+<div class="content-block">
+  <div class="measure">
+    <!-- Only display 'Back' if validation is present? -->
+    <a href="#" class="button-back">Back</a>
+    <h1>Where to get help</h1>
+  </div>
+
+  <div class="service-details">
+    <div class="unit address">
+      <p>
+        St George’s Pharmacy<br>
+        46 St Georges Road<br>
+        Elephant and Castle<br>
+        London<br>
+        SE1 6ET
+      </p>
+    </div>
+    <div class="unit hours">
+      <p>
+        Open until 6.30pm
+      </p>
+    </div>
+    <div class="geo">
+      <div id="service-location" class="map-frame"></div>
+    </div>
+    <div class="unit directions">
+      <p>
+        0.5 miles away<br>
+        <a href="#" target="_blank">
+          Get directions <span class="small">(opens a new tab or window)</span>
+        </a>
+      </p>
+      <p>
+        <a href="/service-display/change-location">Change my location</a>
+      </p>
+    </div>
+  </div>
+
+  <!-- boilerplate service type text and 'before you go' -->
+  <div class="measure">
+    <p>
+      A pharmacist can give you medicine you’re regularly prescribed without you
+      needing to see your GP.
+    </p>
+  </div>
+
+  <div class="content-seperator content-seperator--equalvertspacing--large"></div>
+
+  <div class="measure">
+    <h2>Other services that can help</h2>
+    <p>
+      If you do not want to use the recommended service, see
+      <a href="/service-display/ed-multiple-services">other things you can do.</a>
+    </p>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block footer %}
+{% include '_includes/survey-banner.html' %}
+{% endblock %}
+
+{% block body_after %}
+  {% include '_partials/_partial-collapse-script.html' %}
+
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDP454skpvnlft08MDIcZG_khm-sBHmFbM"></script>
+  <script>
+    var serviceLat = 51.4956682;
+    var serviceLng = -0.1018427;
+    var userLat = 51.4963291;
+    var userLng = -0.100777;
+    $(function() {
+      mapObj = new google.maps.Map(document.getElementById('service-location'), {
+        center: {
+          lat: serviceLat,
+          lng: serviceLng
+        },
+        zoom: 16,
+        maxZoom: 18,
+        zoomControl: true,
+        mapTypeControl: false,
+        scaleControl: true,
+        streetViewControl: false,
+        rotateControl: false,
+        fullscreenControl: false
+      });
+      var bounds = new google.maps.LatLngBounds();
+      var service = new google.maps.Marker({
+        position: new google.maps.LatLng(serviceLat, serviceLng),
+        map: mapObj
+      });
+      bounds.extend(service.position);
+      var user = new google.maps.Marker({
+        position: new google.maps.LatLng(userLat, userLng),
+        map: mapObj,
+        icon: '/images/icon-maps-user-location.png'
+      });
+      bounds.extend(user.position);
+      mapObj.fitBounds(bounds);
+    });
+  </script>
+{% endblock %}
