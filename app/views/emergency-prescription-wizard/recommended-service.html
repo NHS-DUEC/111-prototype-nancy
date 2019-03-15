@@ -10,9 +10,22 @@
 
 <div class="content-block">
   <div class="measure">
-    <!-- Only display 'Back' if validation is present? -->
     <a href="#" class="button-back">Back</a>
     <h1>Where to get help</h1>
+
+    <div class="callout callout--attention">
+      <p>
+        Hi I’m a NUMSAS banner. To get NHS prescription prices give us some details. Ugh.
+      </p>
+      Complete? {{ session.numsas.complete }}
+      <p>
+        <a href="numsas-start">NUMSAS loop</a>
+      </p>
+      <details class="small">
+        <summary>What does this mean?</summary>
+        <p>A bit more detail here about referral and why you might have to pay private</p>
+      </details>
+    </div>
   </div>
 
   <div class="service-details">

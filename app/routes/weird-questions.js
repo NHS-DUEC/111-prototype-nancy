@@ -9,6 +9,11 @@ module.exports = router
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 router.get('/', function(req, res) {
+
+  if (req.query['pw'] == "EMERGENCYPRESCRIPTION") {
+    return res.redirect("/emergency-prescription-wizard");
+  }
+
   // "Adult" is 16+
   // Set a default here
   // Male

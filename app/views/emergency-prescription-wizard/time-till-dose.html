@@ -1,0 +1,57 @@
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}{% endblock %}
+
+{% block content %}
+
+<div class="content-block measure">
+  {% if error %}
+    <div class="error-summary">
+      <h2 class="error-heading">There’s a problem</h2>
+      <p>
+        Tell us when your next dose is due
+      </p>
+    </div>
+  {% endif %}
+
+  <h1 class="h2">When is your next dose due?</h1>
+
+  <form method="post">
+    <fieldset class="form-group shunt {% if error %}-errors{% endif %}">
+      {% if error %}
+        <p class="error-hint">Choose one option</p>
+      {% endif %}
+      <label class="block-label">
+        <input name="next-dose-due" value="late" type="radio" class="selection-button-radio">
+        <span>It’s already late</span>
+      </label>
+      <label class="block-label">
+        <input name="next-dose-due" value="lt-2" type="radio" class="selection-button-radio">
+        <span>In less than 2 hours</span>
+      </label>
+      <label class="block-label">
+        <input name="next-dose-due" value="bt-2-6" type="radio" class="selection-button-radio">
+        <span>In 2 to 6 hours</span>
+      </label>
+      <label class="block-label">
+        <input name="next-dose-due" value="bt-6-12" type="radio" class="selection-button-radio">
+        <span>In 6 to 12 hours</span>
+      </label>
+      <label class="block-label">
+        <input name="next-dose-due" value="gt-12" type="radio" class="selection-button-radio">
+        <span>More than 12 hours</span>
+      </label>
+      <label class="block-label">
+        <input name="next-dose-due" value="unknown" type="radio" class="selection-button-radio">
+        <span>I dont’t know</span>
+      </label>
+    </fieldset>
+    <div class="form-group">
+      <button type="submit" class="button">Next</button>
+    </div>
+  </form>
+</div>
+
+{% endblock %}
