@@ -18,6 +18,10 @@
 
   <h1 class="h2">When is your next dose due?</h1>
 
+  <p>
+    Just tell us when the next dose of the first medicine is due.
+  </p>
+
   <form method="post">
     <fieldset class="form-group shunt {% if error %}-errors{% endif %}">
       {% if error %}
@@ -45,7 +49,7 @@
       </label>
       <label class="block-label">
         <input name="next-dose-due" value="unknown" type="radio" class="selection-button-radio">
-        <span>I dont’t know</span>
+        <span>I don’t know</span>
       </label>
     </fieldset>
     <div class="form-group">

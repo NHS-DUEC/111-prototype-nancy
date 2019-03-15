@@ -10,22 +10,37 @@
 
 <div class="content-block">
   <div class="measure">
-    <a href="#" class="button-back">Back</a>
-    <h1>Where to get help</h1>
+    <h1>Recommended service</h1>
 
+    {% if session.numsas.complete == false %}
     <div class="callout callout--attention">
       <p>
-        Hi I’m a NUMSAS banner. To get NHS prescription prices give us some details. Ugh.
+        Tell us who you are to make sure you only pay NHS prescription charges.
       </p>
-      Complete? {{ session.numsas.complete }}
+      <!-- {{ session.numsas.complete }} -->
       <p>
-        <a href="numsas-start">NUMSAS loop</a>
+        <a href="numsas-start" class="action-link">
+          <span>Enter my details</span>
+          <svg class="nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+          </svg>
+        </a>
       </p>
-      <details class="small">
-        <summary>What does this mean?</summary>
-        <p>A bit more detail here about referral and why you might have to pay private</p>
+      <details>
+        <summary>Why should I give my details?</summary>
+        <p>
+          If you give some details, this service won’t charge more than standard
+          NHS prices for any medicine you’re given. You won’t pay if you’re
+          exempt from prescription charges.
+        </p>
       </details>
     </div>
+    {% else %}
+    <div class="callout callout--attention">
+      <p>Call ahead message</p>
+    </div>
+    {% endif %}
   </div>
 
   <div class="service-details">
@@ -36,6 +51,9 @@
         Elephant and Castle<br>
         London<br>
         SE1 6ET
+      </p>
+      <p>
+        <a href="tel:02079287815">020 7928 7815</a>
       </p>
     </div>
     <div class="unit hours">
