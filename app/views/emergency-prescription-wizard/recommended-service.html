@@ -12,7 +12,7 @@
   <div class="measure">
     <h1>Recommended service</h1>
 
-    {% if session.numsas.complete == false %}
+    {% if not session.numsas.complete %}
     <div class="callout callout--attention">
       <p>
         Tell us who you are to make sure you only pay NHS prescription charges.
