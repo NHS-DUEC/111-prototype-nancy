@@ -210,3 +210,22 @@ router.post('/numsas-phone', function(req, res) {
     });
   }
 });
+
+// -----------------------------------------------------------------------------
+
+router.get('/numsas-submit', function(req, res) {
+  if (req.query.flush) {
+    // suppress the object from display
+    // zero out a namespaced session obj
+    req.session.numsas = {};
+    req.session.numsas.name = {};
+    req.session.numsas.name.firstname = '';
+    req.session.numsas.name.secondname = '';
+    req.session.numsas.postcode = '';
+    req.session.numsas.tel = '';
+    req.session.numsas.complete = false;
+    res.redirect('recommended-service');
+  } else {
+    res.redirect('recommended-service');
+  }
+});
