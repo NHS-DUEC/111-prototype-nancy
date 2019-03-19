@@ -10,41 +10,42 @@
 
 <div class="content-block">
   <div class="measure">
-    <h1>Recommended service</h1>
-
-    {% if not session.numsas.complete %}
-    <div class="callout callout--attention">
-      <p>
-        Tell us who you are to make sure you only pay NHS prescription charges.
-      </p>
-      <!-- {{ session.numsas.complete }} -->
-      <p>
-        <a href="numsas-start" class="action-link">
-          <span>Enter my details</span>
-          <svg class="nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M0 0h24v24H0z" fill="none"></path>
-            <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
-          </svg>
-        </a>
-      </p>
-      <details>
-        <summary>Why should I give my details?</summary>
-        <p>
-          If you give some details, this service won’t charge more than standard
-          NHS prices for any medicine you’re given. You won’t pay if you’re
-          exempt from prescription charges.
-        </p>
-      </details>
-    </div>
-    {% else %}
-    <div class="callout callout--warning">
-      <p>
-        <a href="tel:+442079287815">Call the pharmacy</a> and tell them you have a 111 online
-        referral
-      </p>
-    </div>
-    {% endif %}
+    <h1>Where to get help</h1>
   </div>
+
+  {% if not session.numsas.complete %}
+  <div class="callout callout--attention measure">
+    <p>
+      Tell us who you are to make sure you only pay NHS prescription charges.
+    </p>
+    <p>
+      <a href="numsas-start" class="action-link">
+        <span>Enter my details</span>
+        <svg class="nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M0 0h24v24H0z" fill="none"></path>
+          <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+        </svg>
+      </a>
+    </p>
+    <details>
+      <summary>Why should I give my details?</summary>
+      <p>
+        If we send your details to the pharmacy they won’t charge more than
+        standard NHS prices for any medicine you’re given. You won’t pay if
+        you’re exempt from prescription charges.
+      </p>
+    </details>
+  </div>
+  {% endif %}
+
+  {% if session.numsas.complete == true %}
+  <div class="callout callout--warning measure">
+    <p>
+      <a href="tel:+442079287815">Call the pharmacy</a> and tell them you have a 111 online
+      referral
+    </p>
+  </div>
+  {% endif %}
 
   <div class="service-details">
     <div class="unit address">
@@ -64,6 +65,7 @@
         Open until 6.30pm
       </p>
     </div>
+
     <div class="geo">
       <div id="service-location" class="map-frame"></div>
     </div>
