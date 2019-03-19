@@ -1,25 +1,39 @@
-.service-details {
-
+.service-details-container {
   margin-top: $baseline-grid-unit*3;
-  padding: $baseline-grid-unit/2 0;
-  border: 0;
-  background-color: $grey-5;
 
   @include media(large) {
     margin-top: $baseline-grid-unit*6;
-    padding: 0;
-    border-left: $baseline-grid-unit solid $grey-4;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3);
+  }
+
+  .details-1 {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
+  }
+
+  .subroutine {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 2;
   }
 
   .geo {
-    @include media(large) {
-      grid-column-start: 2;
-      grid-column-end: 4;
-      grid-row-start: 1;
-      grid-row-end: 4;
-    }
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 4;
+  }
+
+  .details-2 {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 3;
+    grid-row-end: 4;
   }
 
   .map-frame {
@@ -36,35 +50,24 @@
       border-bottom: 0;
     }
   }
+}
 
+.service-details {
+  padding: $baseline-grid-unit/2 0;
+  border: 0;
+  background-color: $grey-5;
+  @include media(large) {
+    padding: 1px 0;
+    border-left: $baseline-grid-unit solid $grey-4;
+  }
   .unit {
     padding: 0 $baseline-grid-unit*4;
-    @include media(large) {
-      grid-column-start: 1;
-      grid-column-end: 2;
-    }
   }
-
   .address {
-    @include media(large) {
-      grid-row-start: 1;
-      grid-row-end: 2;
-    }
   }
-
   .hours {
-    @include media(large) {
-      grid-row-start: 2;
-      grid-row-end: 3;
-    }
   }
-
   .directions {
-    @include media(large) {
-      grid-row-start: 3;
-      grid-row-end: 4;
-      align-self: end;
-    }
   }
 
   // modifiers for a "remote" service
@@ -82,14 +85,5 @@
         @extend .h2;
       }
     }
-  }
-}
-
-.service-appointment-flag {
-  border-left: $baseline-grid-unit solid $nhs-blue;
-  padding: $baseline-grid-unit*3;
-  margin-top: $baseline-grid-unit*2;
-  @include media(large) {
-    margin-top: $baseline-grid-unit*4;
   }
 }

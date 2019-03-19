@@ -2597,33 +2597,48 @@ img {
   border: 2px solid #80afdc;
 }
 
-.service-details {
+.service-details-container {
   margin-top: 12px;
-  padding: 2px 0;
-  border: 0;
-  background-color: #f0f4f5;
 }
 
 @media (min-width: 980px) {
-  .service-details {
+  .service-details-container {
     margin-top: 24px;
-    padding: 0;
-    border-left: 4px solid #d8dde0;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3);
   }
 }
 
-@media (min-width: 980px) {
-  .service-details .geo {
-    grid-column-start: 2;
-    grid-column-end: 4;
-    grid-row-start: 1;
-    grid-row-end: 4;
-  }
+.service-details-container .details-1 {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 3;
 }
 
-.service-details .map-frame {
+.service-details-container .subroutine {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+
+.service-details-container .geo {
+  grid-column-start: 2;
+  grid-column-end: 4;
+  grid-row-start: 2;
+  grid-row-end: 4;
+}
+
+.service-details-container .details-2 {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 3;
+  grid-row-end: 4;
+}
+
+.service-details-container .map-frame {
   box-sizing: border-box;
   width: 100%;
   height: 300px;
@@ -2632,7 +2647,7 @@ img {
 }
 
 @media (min-width: 980px) {
-  .service-details .map-frame {
+  .service-details-container .map-frame {
     height: 100%;
     min-height: 400px;
     border-left: 4px solid #fff;
@@ -2641,37 +2656,21 @@ img {
   }
 }
 
+.service-details {
+  padding: 2px 0;
+  border: 0;
+  background-color: #f0f4f5;
+}
+
+@media (min-width: 980px) {
+  .service-details {
+    padding: 1px 0;
+    border-left: 4px solid #d8dde0;
+  }
+}
+
 .service-details .unit {
   padding: 0 16px;
-}
-
-@media (min-width: 980px) {
-  .service-details .unit {
-    grid-column-start: 1;
-    grid-column-end: 2;
-  }
-}
-
-@media (min-width: 980px) {
-  .service-details .address {
-    grid-row-start: 1;
-    grid-row-end: 2;
-  }
-}
-
-@media (min-width: 980px) {
-  .service-details .hours {
-    grid-row-start: 2;
-    grid-row-end: 3;
-  }
-}
-
-@media (min-width: 980px) {
-  .service-details .directions {
-    grid-row-start: 3;
-    grid-row-end: 4;
-    align-self: end;
-  }
 }
 
 .service-details.--remote {
@@ -2686,18 +2685,6 @@ img {
 
 .service-details.--remote .tel-cta {
   margin-top: 0 !important;
-}
-
-.service-appointment-flag {
-  border-left: 4px solid #005eb8;
-  padding: 12px;
-  margin-top: 8px;
-}
-
-@media (min-width: 980px) {
-  .service-appointment-flag {
-    margin-top: 16px;
-  }
 }
 
 .service-listing {
@@ -2725,21 +2712,20 @@ img {
   text-decoration: underline;
 }
 
-.multiple-service-listing .service-details {
+.multiple-service-listing .service-details-container {
   margin-top: 4px;
-  margin-bottom: 48px;
 }
 
-.multiple-service-listing .service-details .map-frame {
+.multiple-service-listing .service-details-container .map-frame {
   height: auto;
+}
+
+.multiple-service-listing .service-details.--remote {
+  margin-top: 4px;
 }
 
 .multiple-service-listing .service-details.--remote .tel-cta {
   padding-top: 24px;
-}
-
-.multiple-service-listing .service-appointment-flag {
-  margin-top: 4px;
 }
 
 body, pre.user-input {
