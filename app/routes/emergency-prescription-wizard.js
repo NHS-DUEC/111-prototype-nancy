@@ -203,7 +203,7 @@ router.post('/numsas-phone', function(req, res) {
   if (req.body['tel'] !== '') {
     req.session.numsas.tel = req.body['tel'];
     req.session.numsas.complete = true;
-    res.redirect('recommended-service');
+    res.redirect('numsas-confirmation');
   } else {
     res.render('emergency-prescription-wizard/numsas-phone.html', {
       error: true
