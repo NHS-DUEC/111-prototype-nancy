@@ -207,7 +207,7 @@ router.get('/numsas-route-postcode', function(req, res) {
 router.post('/numsas-postcode', function(req, res) {
   if (req.body['postcode'] !== '') {
     req.session.numsas.postcode = req.body['postcode'];
-    res.redirect('numsas-submit');
+    res.redirect('numsas-confirmation');
   } else {
     res.render('emergency-prescription-wizard/numsas-postcode.html', {
       error: true
