@@ -16,10 +16,10 @@
     </div>
   {% endif %}
 
-  <h1 class="h2">When is your next dose due?</h1>
+  <h1 class="h2">When are you next due to take your medicine?</h1>
 
   <p>
-    We only want to know about the first medicine you’re due to take.
+    Just tell us when the next dose of the first medicine is due.
   </p>
 
   <form method="post">
@@ -27,6 +27,10 @@
       {% if error %}
         <p class="error-hint">Choose one option</p>
       {% endif %}
+      <label class="block-label">
+        <input name="next-dose-due" value="lt-2" type="radio" class="selection-button-radio">
+        <span>It’s an inhaler and I need it now</span>
+      </label>
       <label class="block-label">
         <input name="next-dose-due" value="late" type="radio" class="selection-button-radio">
         <span>It’s already late</span>

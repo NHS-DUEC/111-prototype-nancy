@@ -86,10 +86,28 @@ router.get('/numsas-start', function(req, res) {
   req.session.numsas.postcode = '';
   req.session.numsas.tel = '';
   req.session.numsas.complete = false;
-  res.redirect('numsas-name');
+  res.redirect('numsas-phone');
 });
 
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// phone
+// name
+// dob
+// postcode
+
+router.post('/numsas-phone', function(req, res) {
+  if (req.body['tel'] !== '') {
+    req.session.numsas.tel = req.body['tel'];
+    req.session.numsas.complete = true;
+    res.redirect('numsas-name');
+  } else {
+    res.render('emergency-prescription-wizard/numsas-phone.html', {
+      error: true
+    });
+  }
+});
+
+// -----------------------------------------------------------------------------
 
 router.post('/numsas-name', function(req, res) {
   var error_present = false;
@@ -174,7 +192,7 @@ router.post('/numsas-dob', function(req, res) {
 router.get('/numsas-route-postcode', function(req, res) {
   // 1: at home and have given a postcode
   if (req.session.postcodesource === 'user' && req.session.userlocation === 'home') {
-    res.redirect('numsas-phone');
+    res.redirect('numsas-submit');
   }
   // 2: somewhere else and have given a postcode
   else if (req.session.postcodesource === 'user' && req.session.userlocation === 'away') {
@@ -189,23 +207,9 @@ router.get('/numsas-route-postcode', function(req, res) {
 router.post('/numsas-postcode', function(req, res) {
   if (req.body['postcode'] !== '') {
     req.session.numsas.postcode = req.body['postcode'];
-    res.redirect('numsas-phone');
+    res.redirect('numsas-submit');
   } else {
     res.render('emergency-prescription-wizard/numsas-postcode.html', {
-      error: true
-    });
-  }
-});
-
-// -----------------------------------------------------------------------------
-
-router.post('/numsas-phone', function(req, res) {
-  if (req.body['tel'] !== '') {
-    req.session.numsas.tel = req.body['tel'];
-    req.session.numsas.complete = true;
-    res.redirect('numsas-confirmation');
-  } else {
-    res.render('emergency-prescription-wizard/numsas-phone.html', {
       error: true
     });
   }
