@@ -11,81 +11,46 @@
 <div class="content-block">
   <div class="measure">
     <h1>Where to get help</h1>
-    {% if session.numsas.complete == true %}
-    <div class="callout callout--attention measure">
+  </div>
+
+  <div class="service-details --remote shunt-2">
+    <div class="unit">
       <p>
-        <a href="tel:+44792240042">Call the pharmacy</a> and tell them you have a 111 online
-        referral
+        St George’s Pharmacy<br>
+        46 St Georges Road<br>
+        Elephant and Castle<br>
+        London<br>
+        SE1 6ET
+      </p>
+      <p>
+        0.5 miles away
       </p>
     </div>
-    {% endif %}
+
+    <div class="unit">
+      <div class="form-hint measure">
+        <p>
+          This service needs some more details from you.
+        </p>
+      </div>
+      <p>
+        <a href="numsas-start" class="action-link">
+          <span>Get referred to this service</span>
+          <svg class="nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+          </svg>
+        </a>
+      </p>
+    </div>
+
+    <div class="unit">
+      <p>
+        Open until 6.30pm
+      </p>
+    </div>
   </div>
 
-  <div class="service-details-container">
-
-    <div class="details-1 service-details">
-      <div class="unit address">
-        <p>
-          St George’s Pharmacy<br>
-          46 St Georges Road<br>
-          Elephant and Castle<br>
-          London<br>
-          SE1 6ET
-        </p>
-      </div>
-
-      {% if session.numsas.complete == true %}
-      <div class="unit address">
-        <p>
-          <a href="tel:+44792240042">020 7928 7815</a>
-        </p>
-      </div>
-      {% endif %}
-
-      <div class="unit hours">
-        <p>
-          Open until 6.30pm
-        </p>
-      </div>
-
-      {% if not session.numsas.complete == true %}
-      <div class="unit">
-        <p>
-          <a href="numsas-start" class="action-link">
-            <span>Get referred here</span>
-            <svg class="nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M0 0h24v24H0z" fill="none"></path>
-              <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
-            </svg>
-          </a>
-        </p>
-      </div>
-      {% endif %}
-
-    </div>
-
-    <div class="geo">
-      <div id="service-location" class="map-frame"></div>
-    </div>
-
-    <div class="details-2 service-details">
-      <div class="unit directions">
-        <p>
-          0.5 miles away
-          {% if session.numsas.complete == true %}
-          <br>
-          <a href="#" target="_blank">
-            Get directions <span class="small">(opens a new tab or window)</span>
-          </a>
-          {% endif %}
-        </p>
-      </div>
-    </div>
-
-  </div>
-
-
-  {% if not session.numsas.complete == true %}
   <div class="content-seperator content-seperator--equalvertspacing--large"></div>
 
   <div class="measure">
@@ -95,7 +60,6 @@
       <a href="/service-display/ed-multiple-services">other things you can do.</a>
     </p>
   </div>
-  {% endif %}
 
 </div>
 
