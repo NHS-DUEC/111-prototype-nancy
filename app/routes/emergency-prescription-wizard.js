@@ -86,7 +86,7 @@ router.get('/numsas-start', function(req, res) {
   req.session.numsas.postcode = '';
   req.session.numsas.tel = '';
   req.session.numsas.complete = false;
-  res.redirect('numsas-phone');
+  res.redirect('numsas-introduction');
 });
 
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -207,7 +207,8 @@ router.get('/numsas-route-postcode', function(req, res) {
 router.post('/numsas-postcode', function(req, res) {
   if (req.body['postcode'] !== '') {
     req.session.numsas.postcode = req.body['postcode'];
-    res.redirect('numsas-confirmation');
+    res.redirect('numsas-submit');
+    //res.redirect('numsas-confirmation');
   } else {
     res.render('emergency-prescription-wizard/numsas-postcode.html', {
       error: true
