@@ -33,7 +33,8 @@ router.post('/regular-avenues', function (req, res) {
 
 router.post('/controlled-meds', function (req, res) {
   if (req.body['controlled-meds'] === 'true') {
-    res.redirect('controlled-meds-required');
+    //res.redirect('controlled-meds-required');
+    res.redirect('time-till-dose')
   } else if (req.body['controlled-meds'] === 'false') {
     res.redirect('time-till-dose')
   } else if (req.body['controlled-meds'] === 'unknown') {
@@ -47,7 +48,7 @@ router.post('/controlled-meds', function (req, res) {
 
 router.post('/controlled-meds-reiterate', function (req, res) {
   if (req.body['controlled-meds'] === 'true') {
-    res.redirect('controlled-meds-required');
+    res.redirect('time-till-dose')
   } else if (req.body['controlled-meds'] === 'false') {
     res.redirect('time-till-dose')
   } else if (req.body['controlled-meds'] === 'unknown') {
