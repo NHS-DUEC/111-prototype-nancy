@@ -10,11 +10,18 @@
 
 <div class="content-block">
   <div class="measure">
-    <h1>Where to get help</h1>
+    <h1>
+      {% if session.numsas.complete == true %}
+        Call the pharmacy before you go
+      {% else %}
+        Where to get help
+      {% endif %}
+    </h1>
     {% if session.numsas.complete == true %}
     <div class="callout callout--attention measure">
       <p>
-        <a href="tel:+44792240042">Call the pharmacy</a> and tell them you have a 111 online
+        Call the pharmacy on <a href="tel:+44792240042">020 7928 7815</a> and tell
+        them you have a 111 online
         referral
       </p>
     </div>
