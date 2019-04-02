@@ -66,46 +66,4 @@
 {% endblock %}
 
 {% block footer %}
-{% include '_includes/survey-banner.html' %}
-{% endblock %}
-
-{% block body_after %}
-  {% include '_partials/_partial-collapse-script.html' %}
-
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDP454skpvnlft08MDIcZG_khm-sBHmFbM"></script>
-  <script>
-    var serviceLat = 51.4956682;
-    var serviceLng = -0.1018427;
-    var userLat = 51.4963291;
-    var userLng = -0.100777;
-    $(function() {
-      mapObj = new google.maps.Map(document.getElementById('service-location'), {
-        center: {
-          lat: serviceLat,
-          lng: serviceLng
-        },
-        zoom: 16,
-        maxZoom: 18,
-        zoomControl: true,
-        mapTypeControl: false,
-        scaleControl: true,
-        streetViewControl: false,
-        rotateControl: false,
-        fullscreenControl: false
-      });
-      var bounds = new google.maps.LatLngBounds();
-      var service = new google.maps.Marker({
-        position: new google.maps.LatLng(serviceLat, serviceLng),
-        map: mapObj
-      });
-      bounds.extend(service.position);
-      var user = new google.maps.Marker({
-        position: new google.maps.LatLng(userLat, userLng),
-        map: mapObj,
-        icon: '/images/icon-maps-user-location.png'
-      });
-      bounds.extend(user.position);
-      mapObj.fitBounds(bounds);
-    });
-  </script>
 {% endblock %}
