@@ -41,7 +41,7 @@
       </div>
       <p>
         <a href="numsas-start" class="action-link">
-          <span>Get referred to this service</span>
+          <span>Refer me to this service</span>
           <svg class="nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
             <path d="M0 0h24v24H0z" fill="none"></path>
             <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
@@ -66,46 +66,4 @@
 {% endblock %}
 
 {% block footer %}
-{% include '_includes/survey-banner.html' %}
-{% endblock %}
-
-{% block body_after %}
-  {% include '_partials/_partial-collapse-script.html' %}
-
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDP454skpvnlft08MDIcZG_khm-sBHmFbM"></script>
-  <script>
-    var serviceLat = 51.4956682;
-    var serviceLng = -0.1018427;
-    var userLat = 51.4963291;
-    var userLng = -0.100777;
-    $(function() {
-      mapObj = new google.maps.Map(document.getElementById('service-location'), {
-        center: {
-          lat: serviceLat,
-          lng: serviceLng
-        },
-        zoom: 16,
-        maxZoom: 18,
-        zoomControl: true,
-        mapTypeControl: false,
-        scaleControl: true,
-        streetViewControl: false,
-        rotateControl: false,
-        fullscreenControl: false
-      });
-      var bounds = new google.maps.LatLngBounds();
-      var service = new google.maps.Marker({
-        position: new google.maps.LatLng(serviceLat, serviceLng),
-        map: mapObj
-      });
-      bounds.extend(service.position);
-      var user = new google.maps.Marker({
-        position: new google.maps.LatLng(userLat, userLng),
-        map: mapObj,
-        icon: '/images/icon-maps-user-location.png'
-      });
-      bounds.extend(user.position);
-      mapObj.fitBounds(bounds);
-    });
-  </script>
 {% endblock %}
