@@ -1,0 +1,50 @@
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhs-redesign{% endblock %}
+
+{% block content %}
+<div class="measure">
+
+  <div class="content-block">
+      <p>
+        <h1>Why we're asking for your details </h1>
+      <p>
+        Sending your details helps the pharmacist find your records in
+        advance.
+        </p>
+        <p>
+          If they’re expecting you, standard NHS charges will apply.
+          You won’t pay at all if you’re exempt from prescription charges.
+        </p>
+        <p>
+          We’ll ask for your phone number, name and home postcode.
+        </p>
+        <h2>Contacting them before you go</h2>
+        <p>
+        If you give the pharmacy a call they’ll tell you:
+      </p>
+      <ul>
+        <li>if they have your medicine in stock</li>
+        <li>when to collect it</li>
+        <li>what to do if they can’t help</li>
+      </ul>
+      <p>
+        If you don’t contact or visit the pharmacy they will have to call you to
+        make sure you’re ok.
+      </p>
+
+  </div>
+
+  <div class="content-block">
+    <a href="numsas-submit" class="button">Send my details</a>
+    <p>
+      <a href="numsas-submit?flush=true">
+        Cancel and go back
+      </a>
+    </p>
+  </div>
+
+</div>
+{% endblock %}
