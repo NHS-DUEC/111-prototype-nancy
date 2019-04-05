@@ -21,40 +21,9 @@ router.post('/regular-avenues', function (req, res) {
   if (req.body['regular-avenues-open'] === 'true') {
     res.redirect('regular-avenues-open');
   } else if (req.body['regular-avenues-open'] === 'false') {
-    res.redirect('controlled-meds')
+    res.redirect('time-till-dose')
   } else {
     res.render('emergency-prescription-wizard/regular-avenues.html', {
-      error : true
-    });
-  }
-});
-
-// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-router.post('/controlled-meds', function (req, res) {
-  if (req.body['controlled-meds'] === 'true') {
-    //res.redirect('controlled-meds-required');
-    res.redirect('time-till-dose')
-  } else if (req.body['controlled-meds'] === 'false') {
-    res.redirect('time-till-dose')
-  } else if (req.body['controlled-meds'] === 'unknown') {
-    res.redirect('controlled-meds-unsure')
-  } else {
-    res.render('emergency-prescription-wizard/controlled-meds.html', {
-      error : true
-    });
-  }
-});
-
-router.post('/controlled-meds-reiterate', function (req, res) {
-  if (req.body['controlled-meds'] === 'true') {
-    res.redirect('time-till-dose')
-  } else if (req.body['controlled-meds'] === 'false') {
-    res.redirect('time-till-dose')
-  } else if (req.body['controlled-meds'] === 'unknown') {
-    res.redirect('time-till-dose')
-  } else {
-    res.render('emergency-prescription-wizard/controlled-meds-reiterate.html', {
       error : true
     });
   }
