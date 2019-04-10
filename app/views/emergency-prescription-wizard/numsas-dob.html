@@ -1,0 +1,41 @@
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhs-redesign{% endblock %}
+
+{% block content %}
+
+<form class="form content-block measure" method="post">
+  {% if error %}
+    <div class="error-summary">
+      <h2 class="error-heading">There’s a problem</h2>
+      <p>
+        <a href="#dob-day">Please enter a valid date</a>
+      </p>
+    </div>
+  {% endif %}
+  <fieldset id="dob-group">
+    <legend><h1 class="h2">What’s your date of birth?</h1></legend>
+    <div class="form-group -date {% if error %}-errors{% endif %}">
+      <div>
+        <label for="dob-day">Day</label>
+        <input type="number" id="dob-day" name="dob-day" value="{{ session.demographics.dob.day }}" class="day" maxlength="2" autocomplete="off">
+      </div>
+      <div>
+        <label for="dob-month">Month</label>
+        <input type="number" id="dob-month" name="dob-month" value="{{ session.demographics.dob.month }}" class="month" maxlength="2" autocomplete="off">
+      </div>
+      <div>
+        <label for="dob-year">Year</label>
+        <input type="number" id="dob-year" name="dob-year" value="{{ session.demographics.dob.year }}" class="year" maxlength="4" autocomplete="off">
+      </div>
+    </div>
+  </fieldset>
+
+  <div class="form-controls shunt-2">
+    <button class="button" type="submit">Next</button>
+  </div>
+</form>
+
+{% endblock %}

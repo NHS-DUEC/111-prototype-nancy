@@ -23,28 +23,23 @@
     text-decoration: underline;
   }
 
-  .service-details {
-
+  .service-details-container {
     margin-top: $baseline-grid-unit;
-    margin-bottom: $baseline-grid-unit*12;
-
-    //border-left-color: $white;
-    //background-color: $white;
 
     .map-frame {
       height: auto;
     }
+  }
+
+  .service-details {
 
     // modifiers for a "remote" service
     &.--remote {
+      margin-top: $baseline-grid-unit;
       .tel-cta {
         @extend .h3;
         padding-top: $baseline-grid-unit*6;
       }
     }
-  }
-
-  .service-appointment-flag {
-    margin-top: $baseline-grid-unit;
   }
 }

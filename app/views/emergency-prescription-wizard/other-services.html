@@ -1,0 +1,67 @@
+{% set suppress_feedback = true %}
+
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhs-redesign{% endblock %}
+
+{% block content %}
+
+<div class="content-block">
+  <div class="measure">
+    <a href="javascript:window.history.back();" class="button-back">Back</a>
+    <h1>Other ways to get help</h1>
+  </div>
+
+  <div class="multiple-service-listing">
+
+    <div class="collapse-title">
+      <div class="service-listing">
+        <b>GP OOH Service</b><br>
+        <span class="collapse-title-indicator-verbose">
+          <span class="show">More information</span>
+          <span class="hide">Hide</span>
+        </span>
+      </div>
+    </div>
+    <div class="collapse-content">
+      <div class="service-details --remote">
+        <div class="unit">
+          <div class="form-hint measure">
+            <p>
+              This service needs some more details from you. To use it, fill in the
+              form and they’ll be in touch.
+            </p>
+          </div>
+          <p>
+            <a href="#" class="action-link">
+              <span>Use this service</span>
+              <svg class="nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M0 0h24v24H0z" fill="none"></path>
+                <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+              </svg>
+            </a>
+          </p>
+        </div>
+        <div class="unit">
+          <p>
+            Open until 11pm
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+{% endblock %}
+
+{% block footer %}
+  {% include '_includes/survey-banner.html' %}
+{% endblock %}
+
+{% block body_after %}
+  {% include '_partials/_partial-collapse-script.html' %}
+{% endblock %}
