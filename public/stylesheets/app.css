@@ -494,6 +494,11 @@ li.tabular-data-row > .callout {
   white-space: nowrap;
 }
 
+.reference-number {
+  font-family: monospace;
+  font-size: 28px;
+}
+
 a:link {
   color: #005eb8;
 }
