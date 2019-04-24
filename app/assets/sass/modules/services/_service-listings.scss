@@ -25,6 +25,11 @@
 
   .service-details-container {
     margin-top: $baseline-grid-unit;
+    margin-bottom: $baseline-grid-unit * 6;
+
+    @include media(large) {
+      margin-bottom: $baseline-grid-unit * 12;
+    }
 
     .map-frame {
       height: auto;
