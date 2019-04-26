@@ -8,10 +8,6 @@
 
 {% block content %}
 
-<style type="text/css">
-
-</style>
-
 <div class="content-block">
   <div class="measure">
     <!-- Only display 'Back' if validation is present? -->
@@ -19,45 +15,74 @@
     <h1>Where to get help</h1>
     <!-- timing info -->
     <div class="callout callout--warning">
-      Get help now
+      {% raw %}
+        {{ timing_info }}
+      {% endraw %}
     </div>
   </div>
 
-  <div class="service-details --remote">
-    <div class="unit">
-      <p>
-        GP OOH Service - Leeds, West Yorkshire (St Georges) WYUC
-      </p>
+  <div class="subroutine measure">
+    <div class="callout callout--attention">
+      {% raw %}
+        {{ service_pertinent_messaging }}
+      {% endraw %}
     </div>
-    <div class="unit">
-      <p>
-        Open until 11pm
-      </p>
-    </div>
-    <div class="unit">
-      <div class="form-hint measure">
+  </div>
+
+  <div class="service-details-container">
+
+    <div class="details-1 service-details">
+      <div class="unit address">
         <p>
-          This service needs some more details from you. To use it, fill in the
-          form and they’ll be in touch.
+          {% raw %}{{ service_name }}{% endraw %}
+          <br>
+          {% raw %}{{ service_address_line_1 }}{% endraw %}<br>
+          {% raw %}{{ service_address_line_2 }}{% endraw %}<br>
+          {% raw %}{{ service_address_line_3 }}{% endraw %}<br>
+          {% raw %}{{ service_address_line_4 }}{% endraw %}<br>
+          {% raw %}{{ service_postcode }}{% endraw %}
+        </p>
+        <p>
+          <a href="#">{% raw %}{{ service_telephone }}{% endraw %}</a>
         </p>
       </div>
-      <p>
-        <a href="#" class="action-link">
-          <span>Use this service</span>
-          <svg class="nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M0 0h24v24H0z" fill="none"></path>
-            <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
-          </svg>
-        </a>
-      </p>
+      <div class="unit hours">
+        <p>
+          {% raw %}
+            {{ opening_times_message }}
+          {% endraw %}
+        </p>
+      </div>
     </div>
+
+    <div class="subroutine"></div>
+
+    <div class="geo">
+      <div id="service-location" class="map-frame"></div>
+    </div>
+
+    <div class="details-2 service-details">
+      <div class="unit directions">
+        <p>
+          {% raw %}
+            {{ distance }}
+          {% endraw %}
+          <br>
+          <a href="#" target="_blank">
+            Get directions <span class="small">(opens a new tab or window)</span>
+          </a>
+        </p>
+      </div>
+    </div>
+
   </div>
 
   <!-- boilerplate service type text and 'before you go' -->
   <div class="measure">
     <p>
-      GP services available outside normal working hours and over weekends and
-      public holidays.
+      {% raw %}
+        {{ service_type_boilerplate_text }}
+      {% endraw %}
     </p>
   </div>
 
@@ -155,4 +180,41 @@
 
 {% block body_after %}
   {% include '_partials/_partial-collapse-script.html' %}
+
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDP454skpvnlft08MDIcZG_khm-sBHmFbM"></script>
+  <script>
+    var serviceLat = 53.801732;
+    var serviceLng = -1.551858;
+    var userLat = 53.804741;
+    var userLng = -1.564623;
+    $(function() {
+      mapObj = new google.maps.Map(document.getElementById('service-location'), {
+        center: {
+          lat: serviceLat,
+          lng: serviceLng
+        },
+        zoom: 16,
+        maxZoom: 18,
+        zoomControl: true,
+        mapTypeControl: false,
+        scaleControl: true,
+        streetViewControl: false,
+        rotateControl: false,
+        fullscreenControl: false
+      });
+      var bounds = new google.maps.LatLngBounds();
+      var service = new google.maps.Marker({
+        position: new google.maps.LatLng(serviceLat, serviceLng),
+        map: mapObj
+      });
+      bounds.extend(service.position);
+      var user = new google.maps.Marker({
+        position: new google.maps.LatLng(userLat, userLng),
+        map: mapObj,
+        icon: '/images/icon-maps-user-location.png'
+      });
+      bounds.extend(user.position);
+      mapObj.fitBounds(bounds);
+    });
+  </script>
 {% endblock %}

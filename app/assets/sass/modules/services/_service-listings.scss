@@ -37,13 +37,10 @@
   }
 
   .service-details {
-
-    // modifiers for a "remote" service
-    &.--remote {
-      margin-top: $baseline-grid-unit;
-      .tel-cta {
-        @extend .h3;
-        padding-top: $baseline-grid-unit*6;
+    .unit > .tel-cta:first-child {
+      margin-top: $baseline-grid-unit*4 !important;
+      @include media(large) {
+        margin-top: $baseline-grid-unit*6 !important;
       }
     }
   }
