@@ -60,7 +60,7 @@ body, pre.user-input,
 }
 
 h1, .heading-xxlarge, .primary, h2, .heading-xlarge, .app-panel > .header, .secondary, h3, .heading-large, h4, .heading-body, h5, h6,
-.h1, .h2, .service-details.--remote .tel-cta, .h3, .multiple-service-listing .service-details.--remote .tel-cta, .h4, .h5, .h6,
+.h1, .h2, .service-details.--remote .tel-cta, .h3, .h4, .h5, .h6,
 b, strong {
   font-weight: 600;
 }
@@ -119,8 +119,7 @@ h2, .heading-xlarge, .app-panel > .header, .secondary,
 }
 
 h3, .heading-large,
-.h3,
-.multiple-service-listing .service-details.--remote .tel-cta {
+.h3 {
   margin: 16px 0;
   font-size: 24px;
   line-height: 32px;
@@ -200,9 +199,7 @@ body.nhs-redesign, pre.nhs-redesign.user-input {
 }
 
 .nhs-redesign h3, .nhs-redesign .heading-large,
-.nhs-redesign .h3,
-.nhs-redesign .multiple-service-listing .service-details.--remote .tel-cta, .multiple-service-listing .service-details.--remote
-.nhs-redesign .tel-cta {
+.nhs-redesign .h3 {
   font-size: 20px;
   line-height: 1.4;
   margin: 32px 0 0 0;
@@ -210,9 +207,7 @@ body.nhs-redesign, pre.nhs-redesign.user-input {
 
 @media (min-width: 500px) {
   .nhs-redesign h3, .nhs-redesign .heading-large,
-  .nhs-redesign .h3,
-  .nhs-redesign .multiple-service-listing .service-details.--remote .tel-cta, .multiple-service-listing .service-details.--remote
-  .nhs-redesign .tel-cta {
+  .nhs-redesign .h3 {
     font-size: 24px;
     line-height: 1.333;
     margin: 40px 0 0 0;
@@ -2740,12 +2735,14 @@ img {
   height: auto;
 }
 
-.multiple-service-listing .service-details.--remote {
-  margin-top: 4px;
+.multiple-service-listing .service-details .unit > .tel-cta:first-child {
+  margin-top: 16px !important;
 }
 
-.multiple-service-listing .service-details.--remote .tel-cta {
-  padding-top: 24px;
+@media (min-width: 980px) {
+  .multiple-service-listing .service-details .unit > .tel-cta:first-child {
+    margin-top: 24px !important;
+  }
 }
 
 body, pre.user-input {
