@@ -2623,11 +2623,15 @@ img {
   grid-row-end: 3;
 }
 
-.service-details-container .subroutine {
+.service-details-container .flag {
   grid-column-start: 1;
   grid-column-end: 4;
   grid-row-start: 1;
   grid-row-end: 2;
+}
+
+.service-details-container .flag.callout {
+  margin: 0 0 4px 0;
 }
 
 .service-details-container .geo {
@@ -2693,6 +2697,17 @@ img {
   margin-top: 0 !important;
 }
 
+.service-pertinent {
+  margin: 4px 0;
+}
+
+.flag-contact-first {
+  color: #fff;
+  background-color: #005eb8;
+  padding: 2px 4px;
+  border-radius: 2px;
+}
+
 .service-listing {
   display: block;
   position: relative;
@@ -2720,6 +2735,13 @@ img {
 
 .multiple-service-listing .service-details-container {
   margin-top: 4px;
+  margin-bottom: 24px;
+}
+
+@media (min-width: 980px) {
+  .multiple-service-listing .service-details-container {
+    margin-bottom: 48px;
+  }
 }
 
 .multiple-service-listing .service-details-container .map-frame {

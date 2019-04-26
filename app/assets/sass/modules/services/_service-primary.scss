@@ -15,11 +15,15 @@
     grid-row-end: 3;
   }
 
-  .subroutine {
+  .flag {
     grid-column-start: 1;
     grid-column-end: 4;
     grid-row-start: 1;
     grid-row-end: 2;
+
+    &.callout {
+      margin: 0 0 $baseline-grid-unit 0;
+    }
   }
 
   .geo {
@@ -86,4 +90,15 @@
       }
     }
   }
+}
+
+.service-pertinent {
+  margin: $baseline-grid-unit 0;
+}
+
+.flag-contact-first {
+  color: $white;
+  background-color: $blue;
+  padding: $baseline-grid-unit/2 $baseline-grid-unit;
+  border-radius: 2px;
 }
