@@ -19,36 +19,46 @@
     <h1>Where to get help</h1>
     <!-- timing info -->
     <div class="callout callout--warning">
-      Get help now
+      {% raw %}
+        {{ timing_info }}
+      {% endraw %}
     </div>
   </div>
 
   <div class="service-details --remote">
     <div class="unit">
       <p>
-        GP OOH Service - Leeds, West Yorkshire (St Georges) WYUC
+        {% raw %}{{ service_name }}{% endraw %}
+      </p>
+    </div>
+    <div class="unit">
+      <p class="tel-cta">
+        <a href="#">Call {% raw %}{{ service_telephone }}{% endraw %}</a>
       </p>
     </div>
     <div class="unit">
       <p>
-        Open until 11pm
+        {% raw %}
+          {{ opening_times_message }}
+        {% endraw %}
       </p>
     </div>
     <div class="unit">
-      <div class="form-hint measure">
-        <p>
-          This service needs some more details from you. To use it, fill in the
-          form and they’ll be in touch.
-        </p>
-      </div>
       <p>
-        <a href="#" class="action-link">
-          <span>Use this service</span>
-          <svg class="nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M0 0h24v24H0z" fill="none"></path>
-            <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
-          </svg>
-        </a>
+        {% raw %}{{ service_name }}{% endraw %}
+        <br>
+        {% raw %}{{ service_address_line_1 }}{% endraw %}<br>
+        {% raw %}{{ service_address_line_2 }}{% endraw %}<br>
+        {% raw %}{{ service_address_line_3 }}{% endraw %}<br>
+        {% raw %}{{ service_address_line_4 }}{% endraw %}<br>
+        {% raw %}{{ service_postcode }}{% endraw %}
+      </p>
+    </div>
+    <div class="unit directions">
+      <p>
+        {% raw %}
+          {{ distance }}
+        {% endraw %}
       </p>
     </div>
   </div>
@@ -56,8 +66,9 @@
   <!-- boilerplate service type text and 'before you go' -->
   <div class="measure">
     <p>
-      GP services available outside normal working hours and over weekends and
-      public holidays.
+      {% raw %}
+        {{ service_type_boilerplate_text }}
+      {% endraw %}
     </p>
   </div>
 

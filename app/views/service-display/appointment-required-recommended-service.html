@@ -23,46 +23,41 @@
     </div>
   </div>
 
-  <div class="service-details-container">
-
-    <div class="details-1 service-details">
-      <div class="unit address">
+  <div class="service-details --remote">
+    <div class="unit">
+      <p>
+        Minor injuries unit, St Georges Centre
+      </p>
+    </div>
+    <div class="unit">
+      <div class="form-hint measure">
         <p>
-          Minor injuries unit<br>
-          St Georges Centre<br>
-          St Georges Road<br>
-          Middleton<br>
-          LS10 4UZ
+          You must call to book an appointment
         </p>
       </div>
-      <div class="unit hours">
-        <p>
-          Open now &mdash; closes at 6pm
-        </p>
-      </div>
+      <p class="tel-cta">
+        <a href="#">Call 01482 301701</a>
+      </p>
     </div>
-
-    <div class="subroutine measure">
-      <div class="callout callout--attention">
-        You must call <b>0330 3115106</b> to make an appointment
-      </div>
+    <div class="unit">
+      <p>
+        Open now &mdash; closes at 6pm
+      </p>
     </div>
-
-    <div class="geo">
-      <div id="service-location" class="map-frame"></div>
+    <div class="unit">
+      <p>
+        Minor injuries unit<br>
+        St Georges Centre<br>
+        St Georges Road<br>
+        Middleton<br>
+        LS10 4UZ
+      </p>
     </div>
-
-    <div class="details-2 service-details">
-      <div class="unit directions">
-        <p>
-          6.8 miles away<br>
-          <a href="#" target="_blank">
-            Get directions <span class="small">(opens a new tab or window)</span>
-          </a>
-        </p>
-      </div>
+    <div class="unit">
+      <p>
+        6.8 miles away
+      </p>
     </div>
-
   </div>
 
   <!-- boilerplate service type text and 'before you go' -->
@@ -168,41 +163,4 @@
 
 {% block body_after %}
   {% include '_partials/_partial-collapse-script.html' %}
-
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDP454skpvnlft08MDIcZG_khm-sBHmFbM"></script>
-  <script>
-    var serviceLat = 53.747799;
-    var serviceLng = -1.532347;
-    var userLat = 53.804741;
-    var userLng = -1.564623;
-    $(function() {
-      mapObj = new google.maps.Map(document.getElementById('service-location'), {
-        center: {
-          lat: serviceLat,
-          lng: serviceLng
-        },
-        zoom: 16,
-        maxZoom: 18,
-        zoomControl: true,
-        mapTypeControl: false,
-        scaleControl: true,
-        streetViewControl: false,
-        rotateControl: false,
-        fullscreenControl: false
-      });
-      var bounds = new google.maps.LatLngBounds();
-      var service = new google.maps.Marker({
-        position: new google.maps.LatLng(serviceLat, serviceLng),
-        map: mapObj
-      });
-      bounds.extend(service.position);
-      var user = new google.maps.Marker({
-        position: new google.maps.LatLng(userLat, userLng),
-        map: mapObj,
-        icon: '/images/icon-maps-user-location.png'
-      });
-      bounds.extend(user.position);
-      mapObj.fitBounds(bounds);
-    });
-  </script>
 {% endblock %}

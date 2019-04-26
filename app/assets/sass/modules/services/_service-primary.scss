@@ -82,12 +82,8 @@
     }
 
     .tel-cta {
-      @extend .h1;
+      @extend .h2;
       margin-top: 0 !important;
-
-      &.--appointment {
-        @extend .h2;
-      }
     }
   }
 }
