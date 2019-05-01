@@ -20,6 +20,8 @@ Start local development (Sass and Nodemon watching):
 
 ---
 
+### Elasticsearch
+
 If you want to run the search prototypes locally then you need to set up
 [elasticsearch](https://www.elastic.co/products/elasticsearch).
 
@@ -35,3 +37,21 @@ Once your search is up and running, the prototype can run locally with the
 following commands (use two Terminal tabs):
 `elasticsearch`
 `grunt`
+
+---
+
+### Automated screengrabbing / visual regression
+
+In `/backstop_data/backstop_tests` are some automated screengrab journeys. They
+use [backstopjs](https://github.com/garris/BackstopJS).
+
+At the moment this is pretty lo-fi, just using a local install of backstopjs and
+running it manually:
+
+`npm install -g backstopjs`
+
+ From within the root folder (and with `localhost` running) you should be able
+ to run (for example):
+
+ `backstop test --config/backstop_data/backstop_tests/emergency-prescriptions`
+ 
