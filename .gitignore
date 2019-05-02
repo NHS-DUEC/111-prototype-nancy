@@ -45,3 +45,9 @@ jspm_packages
 
 # sass temp files
 .sass-cache
+
+# backstopJS saved graphics files etc
+backstop.json
+backstop_data/bitmaps_reference
+backstop_data/bitmaps_test
+backstop_data/html_report
