@@ -101,6 +101,12 @@ module.exports =  {
       "selectors": ["document"]
     },
     {
+      "label": "Emergency prescription - other services open",
+      "url": "http://localhost:3000/service-display/ed-multiple-services",
+      "onReadyScript": "puppet/expand-collapsed.js",
+      "selectors": ["document"]
+    },
+    {
       "label": "Emergency prescription - begin referral",
       "url": "http://localhost:3000/emergency-prescription-wizard/numsas-introduction",
       "selectors": ["document"]
