@@ -1,22 +1,22 @@
 {% set suppress_feedback = true %}
 
-{% set timing_info = "Get help within 4 hours" %}
-{% set service_name = "Urgent treatment centre" %}
+{% set timing_info = "Get help within a week" %}
+{% set service_name = "Ivy House dental practice" %}
 {% set service_pertinent_messaging = "" %}
-{% set service_address_line_1 = "Finchley Memorial Hospital" %}
-{% set service_address_line_2 = "Granville Road" %}
-{% set service_address_line_3 = "London" %}
+{% set service_address_line_1 = "51 Kentish Town Road" %}
+{% set service_address_line_2 = "London" %}
+{% set service_address_line_3 = "" %}
 {% set service_address_line_4 = "" %}
-{% set service_postcode = "N12 0JE" %}
-{% set service_telephone = "020 8349 7654" %}
-{% set service_email = "" %}
-{% set opening_times_message = "Open until 8pm" %}
-{% set distance = "1.6 miles away" %}
-{% set service_type_boilerplate_text = "Urgent treatment centres (also called minor injury units) are staffed by GPs. They’re open for at least 12 hours every day. They can diagnose and deal with many of the most common problems people go to A&E for." %}
-{% set serviceLat = "51.605681" %}
-{% set serviceLng = "-0.176361" %}
-{% set userLat = "51.595285" %}
-{% set userLng = "-0.198677" %}
+{% set service_postcode = "NW1 8NX" %}
+{% set service_telephone = "020 7654 0987" %}
+{% set service_email = "ivyhouse@dental.co.uk" %}
+{% set opening_times_message = "Open until 5pm" %}
+{% set distance = "0.6 miles away" %}
+{% set service_type_boilerplate_text = "" %}
+{% set serviceLat = "51.542239" %}
+{% set serviceLng = "-0.142140" %}
+{% set userLat = "51.543840" %}
+{% set userLng = "-0.152697" %}
 
 {% extends '_layouts/layout.html' %}
 
@@ -109,7 +109,7 @@
   <!-- boilerplate service type text and 'before you go' -->
   <div class="measure">
     <p>
-      {{ service_type_boilerplate_text }}
+      {{ service_type_boilerplate_text | safe }}
     </p>
   </div>
 

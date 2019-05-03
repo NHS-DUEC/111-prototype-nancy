@@ -9,6 +9,7 @@
 {% set service_address_line_4 = "" %}
 {% set service_postcode = "" %}
 {% set service_telephone = "" %}
+{% set service_email = "" %}
 {% set opening_times_message = "" %}
 {% set distance = "" %}
 {% set service_type_boilerplate_text = "" %}
@@ -70,6 +71,11 @@
         {% if service_telephone %}
           <p>
             <a href="#">{{ service_telephone }}</a>
+          </p>
+        {% endif %}
+        {% if service_email %}
+          <p>
+            <a href="#">{{ service_email }}</a>
           </p>
         {% endif %}
       </div>

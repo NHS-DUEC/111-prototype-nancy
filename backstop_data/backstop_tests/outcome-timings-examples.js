@@ -16,13 +16,38 @@ module.exports =  {
   "onReadyScript": "puppet/onReady.js",
   "scenarios": [
     {
-      "label": "Get help now",
+      "label": "01 Get help now",
       "url": "http://localhost:3000/service-display/timings-examples/01-get-help-now",
       "selectors": ["document"]
     },
     {
-      "label": "Get help within 4 hours",
+      "label": "02 Get help within 4 hours",
       "url": "http://localhost:3000/service-display/timings-examples/02-get-help-within-4-hours",
+      "selectors": ["document"]
+    },
+    {
+      "label": "03 Get help today",
+      "url": "http://localhost:3000/service-display/timings-examples/03-get-help-today",
+      "selectors": ["document"]
+    },
+    {
+      "label": "04 Get help as soon as you can today",
+      "url": "http://localhost:3000/service-display/timings-examples/04-get-help-as-soon-as-you-can-today",
+      "selectors": ["document"]
+    },
+    {
+      "label": "05 Get help today or tomorrow",
+      "url": "http://localhost:3000/service-display/timings-examples/05-get-help-today-or-tomorrow",
+      "selectors": ["document"]
+    },
+    {
+      "label": "06 Get help within a week",
+      "url": "http://localhost:3000/service-display/timings-examples/06-get-help-within-a-week",
+      "selectors": ["document"]
+    },
+    {
+      "label": "07 Get an appointment within 3 days",
+      "url": "http://localhost:3000/service-display/timings-examples/07-get-an-appointment-within-3-days",
       "selectors": ["document"]
     }
   ],

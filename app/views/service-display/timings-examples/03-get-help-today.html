@@ -1,18 +1,18 @@
 {% set suppress_feedback = true %}
 
-{% set timing_info = "Get help within 4 hours" %}
+{% set timing_info = "Get help today" %}
 {% set service_name = "Urgent treatment centre" %}
 {% set service_pertinent_messaging = "" %}
-{% set service_address_line_1 = "Finchley Memorial Hospital" %}
-{% set service_address_line_2 = "Granville Road" %}
+{% set service_address_line_1 = "Cricklewood Walk in Centre" %}
+{% set service_address_line_2 = "2 Cricklewood Lane" %}
 {% set service_address_line_3 = "London" %}
 {% set service_address_line_4 = "" %}
-{% set service_postcode = "N12 0JE" %}
-{% set service_telephone = "020 8349 7654" %}
+{% set service_postcode = "NW2 1DZ" %}
+{% set service_telephone = "020 8948 7077" %}
 {% set service_email = "" %}
 {% set opening_times_message = "Open until 8pm" %}
-{% set distance = "1.6 miles away" %}
-{% set service_type_boilerplate_text = "Urgent treatment centres (also called minor injury units) are staffed by GPs. They’re open for at least 12 hours every day. They can diagnose and deal with many of the most common problems people go to A&E for." %}
+{% set distance = "3.2 miles away" %}
+{% set service_type_boilerplate_text = "Walk-in centres (sometimes called ‘urgent care centres’) are staffed by nurses who can deal with a range of problems like rashes, minor injuries, emergency contraception, infections, sprains, cuts and bruises, and wound dressing.</p><p>They’re usually open 365 days a year, but hours will vary. You can just walk in without an appointment." %}
 {% set serviceLat = "51.605681" %}
 {% set serviceLng = "-0.176361" %}
 {% set userLat = "51.595285" %}
@@ -109,7 +109,7 @@
   <!-- boilerplate service type text and 'before you go' -->
   <div class="measure">
     <p>
-      {{ service_type_boilerplate_text }}
+      {{ service_type_boilerplate_text | safe }}
     </p>
   </div>
 

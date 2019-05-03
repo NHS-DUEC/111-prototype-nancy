@@ -9,6 +9,7 @@
 {% set service_address_line_4 = "" %}
 {% set service_postcode = "E1 1BB" %}
 {% set service_telephone = "" %}
+{% set service_email = "" %}
 {% set opening_times_message = "Open 24 hours" %}
 {% set distance = "0.6 miles away" %}
 {% set service_type_boilerplate_text = "The emergency department is also known as casualty or accident and emergency (A&E). It helps if you take all your current medicines with you." %}
@@ -70,6 +71,11 @@
         {% if service_telephone %}
           <p>
             <a href="#">{{ service_telephone }}</a>
+          </p>
+        {% endif %}
+        {% if service_email %}
+          <p>
+            <a href="#">{{ service_email }}</a>
           </p>
         {% endif %}
       </div>
