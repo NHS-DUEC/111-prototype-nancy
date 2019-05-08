@@ -5922,3 +5922,7 @@ body, pre.user-input {
 [class^="nhsuk-"] .button {
   border-radius: 0;
 }
+
+[class^="nhsuk-"] .callout {
+  padding: 24px 24px 4px 24px;
+}

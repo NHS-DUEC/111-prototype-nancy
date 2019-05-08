@@ -87,4 +87,8 @@
     @extend .nhsuk-button;
     border-radius: 0;
   }
+
+  .callout {
+    padding: $baseline-grid-unit*6 $baseline-grid-unit*6 $baseline-grid-unit $baseline-grid-unit*6;
+  }
 }
