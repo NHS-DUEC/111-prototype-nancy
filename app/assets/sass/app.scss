@@ -67,3 +67,17 @@
 @import "modules/layout/layout";
 @import "modules/layout/grid";
 @import "modules/layout/spacing";
+
+/**
+  The [class^="nhsuk-"] selector is used so that for the new NHS.UK Frontend styles
+  we can bring them in on a component by component basis. Some pages will also use it
+  such as .nhsuk-core to namespace the entire page. Our components that use the NHS.UK styles
+  are imported here so they have access to the correct mixins.
+*/
+
+[class^="nhsuk-"] {
+  /* nhsuk-frontend components */
+  @import "node_modules/nhsuk-frontend/packages/core/all";
+  /* nhsuk-frontend components */
+  @import "node_modules/nhsuk-frontend/packages/components/action-link/action-link";
+}
