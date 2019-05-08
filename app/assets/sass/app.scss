@@ -80,4 +80,11 @@
   @import "node_modules/nhsuk-frontend/packages/core/all";
   /* nhsuk-frontend components */
   @import "node_modules/nhsuk-frontend/packages/components/action-link/action-link";
+  @import "node_modules/nhsuk-frontend/packages/components/button/button";
+
+  /* MAT'S ANNOYING OVERRIDES */
+  .button {
+    @extend .nhsuk-button;
+    border-radius: 0;
+  }
 }
