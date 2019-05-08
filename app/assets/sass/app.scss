@@ -88,6 +88,13 @@
     border-radius: 0;
   }
 
+  .footer-container {
+    a {
+      @include nhsuk-link-style-inverted;
+      color: $white;
+    }
+  }
+
   .callout {
     padding: $baseline-grid-unit*6 $baseline-grid-unit*6 $baseline-grid-unit $baseline-grid-unit*6;
   }

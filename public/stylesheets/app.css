@@ -5923,6 +5923,31 @@ body, pre.user-input {
   border-radius: 0;
 }
 
+[class^="nhsuk-"] .footer-container a {
+  color: #005eb8;
+  color: #fff;
+}
+
+[class^="nhsuk-"] .footer-container a:focus {
+  background-color: #003d78;
+  box-shadow: 0 0 0 4px #003d78;
+  color: #ffffff;
+  outline: 4px solid transparent;
+  outline-offset: 4px;
+}
+
+[class^="nhsuk-"] .footer-container a:hover {
+  background-color: #005eb8;
+  box-shadow: 0 0 0 4px #005eb8;
+  color: #ffffff;
+}
+
+[class^="nhsuk-"] .footer-container a:active {
+  background-color: #002f5c;
+  box-shadow: 0 0 0 4px #003d78;
+  color: #ffffff;
+}
+
 [class^="nhsuk-"] .callout {
   padding: 24px 24px 4px 24px;
 }
