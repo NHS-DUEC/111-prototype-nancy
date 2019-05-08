@@ -2676,6 +2676,10 @@ img {
   padding: 0 16px;
 }
 
+.service-details .unit:first-of-type {
+  padding-top: 24px;
+}
+
 .service-details.--remote {
   padding: 1px 0;
 }
