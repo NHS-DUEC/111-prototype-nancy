@@ -1,0 +1,247 @@
+{% set suppress_feedback = true %}
+
+{% set timing_info = "Get help now" %}
+{% set service_name = "A&E (accident and emergency)" %}
+{% set service_pertinent_messaging = "" %}
+{% set service_address_line_1 = "The Royal London Hospital" %}
+{% set service_address_line_2 = "Whitechapel Rd" %}
+{% set service_address_line_3 = "Whitechapel" %}
+{% set service_address_line_4 = "" %}
+{% set service_postcode = "E1 1BB" %}
+{% set service_telephone = "" %}
+{% set service_email = "" %}
+{% set opening_times_message = "Open 24 hours" %}
+{% set distance = "0.6 miles away" %}
+{% set service_type_boilerplate_text = "The emergency department is also known as casualty or accident and emergency (A&E). It helps if you take all your current medicines with you." %}
+{% set serviceLat = "51.518292" %}
+{% set serviceLng = "-0.058597" %}
+{% set userLat = "51.516044" %}
+{% set userLng = "-0.070170" %}
+
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhs-redesign{% endblock %}
+
+{% block content %}
+
+<div class="content-block">
+  <div class="measure">
+    <!-- Only display 'Back' if validation is present? -->
+    <a href="#" class="button-back">Back</a>
+    <h1>Where to get help</h1>
+    <!-- timing info -->
+    <div class="callout callout--warning">
+      {{ timing_info }}
+    </div>
+  </div>
+
+  {% if service_pertinent_messaging !== "" %}
+  <div class="subroutine measure">
+    <div class="callout callout--attention">
+      {{ service_pertinent_messaging }}
+    </div>
+  </div>
+  {% endif %}
+
+  <div class="service-details-container">
+
+    <div class="details-1 service-details">
+      <div class="unit address">
+        <p>
+          {{ service_name }}
+          <br>
+          {{ service_address_line_1 }}
+          <br>
+          {% if service_address_line_2 !== "" %}
+            {{ service_address_line_2 }}
+            <br>
+          {% endif %}
+          {% if service_address_line_3 !== "" %}
+            {{ service_address_line_3 }}
+            <br>
+          {% endif %}
+          {% if service_address_line_4 !== "" %}
+            {{ service_address_line_4 }}
+            <br>
+          {% endif %}
+          {{ service_postcode }}
+        </p>
+        {% if service_telephone %}
+          <p>
+            <a href="#">{{ service_telephone }}</a>
+          </p>
+        {% endif %}
+        {% if service_email %}
+          <p>
+            <a href="#">{{ service_email }}</a>
+          </p>
+        {% endif %}
+      </div>
+      <div class="unit hours">
+        <p>
+          {{ opening_times_message }}
+        </p>
+      </div>
+    </div>
+
+    <div class="subroutine"></div>
+
+    <div class="geo">
+      <div id="service-location" class="map-frame"></div>
+    </div>
+
+    <div class="details-2 service-details">
+      <div class="unit directions">
+        <p>
+          {{ distance }}
+          <br>
+          <a href="#" target="_blank">
+            Get directions <span class="small">(opens a new tab or window)</span>
+          </a>
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- boilerplate service type text and 'before you go' -->
+  <div class="measure">
+    <p>
+      {{ service_type_boilerplate_text }}
+    </p>
+  </div>
+
+  <div class="content-seperator content-seperator--equalvertspacing--large"></div>
+
+  <div class="measure">
+    <h2>Other services that can help</h2>
+    <p>
+      If you do not want to use the recommended service, see
+      <a href="/service-display/ed-multiple-services">other things you can do.</a>
+    </p>
+  </div>
+
+  <div class="content-seperator content-seperator--equalvertspacing--large"></div>
+
+  <div class="measure">
+    <h2>Care advice</h2>
+
+    <div class="care-advice-output">
+      <details>
+        <summary>Breathlessness</summary>
+        <div>
+          <ul>
+            <li>
+              Sit as upright as is comfortable.
+            </li>
+            <li>
+              If an inhaler or a spacer is used for chest problems, follow the
+              instructions about &quot;what to do if your breathing gets worse&quot;.
+            </li>
+            <li>
+              Never use medicines which have been prescribed for someone else.
+            </li>
+          </ul>
+        </div>
+      </details>
+
+      <details>
+        <summary>Medication, pain and/or fever</summary>
+        <div>
+          <ul>
+            <li>
+                Paracetamol or ibuprofen can be used to relieve pain or a fever.
+                Don’t take if you’ve been told not to, or you’ve already taken some.
+                Read the instructions on the packet, or talk to a pharmacist.
+            </li>
+          </ul>
+        </div>
+      </details>
+
+      <details>
+        <summary>Headache</summary>
+        <div>
+          <ul>
+            <li>
+              A heated pad or covered hot water bottle on the back of your neck may
+              help ease the pain.
+            </li>
+            <li>
+              Call 999 if:
+              <ul>
+                <li>
+                  The person becomes very drowsy, isn’t responding normally or is
+                  having a fit.
+                </li>
+                <li>
+                  The person becomes severely ill with new marks under the skin which
+                  look like bruising or bleeding.
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </details>
+    </div>
+
+  </div>
+
+  <div class="content-seperator content-seperator--equalvertspacing--large"></div>
+
+  <div class="measure">
+    <div class="callout callout--info">
+      <p>
+        If your symptoms get worse, call 111
+      </p>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block footer %}
+{% include '_includes/survey-banner.html' %}
+{% endblock %}
+
+{% block body_after %}
+  {% include '_partials/_partial-collapse-script.html' %}
+
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDP454skpvnlft08MDIcZG_khm-sBHmFbM"></script>
+  <script>
+    var serviceLat = {{ serviceLat }};
+    var serviceLng = {{ serviceLng }};
+    var userLat = {{ userLat }};
+    var userLng = {{ userLng }};
+    $(function() {
+      mapObj = new google.maps.Map(document.getElementById('service-location'), {
+        center: {
+          lat: serviceLat,
+          lng: serviceLng
+        },
+        zoom: 16,
+        maxZoom: 18,
+        zoomControl: true,
+        mapTypeControl: false,
+        scaleControl: true,
+        streetViewControl: false,
+        rotateControl: false,
+        fullscreenControl: false
+      });
+      var bounds = new google.maps.LatLngBounds();
+      var service = new google.maps.Marker({
+        position: new google.maps.LatLng(serviceLat, serviceLng),
+        map: mapObj
+      });
+      bounds.extend(service.position);
+      var user = new google.maps.Marker({
+        position: new google.maps.LatLng(userLat, userLng),
+        map: mapObj,
+        icon: '/images/icon-maps-user-location.png'
+      });
+      bounds.extend(user.position);
+      mapObj.fitBounds(bounds);
+    });
+  </script>
+{% endblock %}
