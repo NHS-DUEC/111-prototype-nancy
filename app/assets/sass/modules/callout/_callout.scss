@@ -93,7 +93,8 @@
 }
 
 // NHS.UK redesign typography which can be used for testing
-.nhs-redesign {
+.nhs-redesign,
+.nhsuk-frontend {
   .callout {
     padding: $baseline-grid-unit*6;
     margin: $baseline-grid-unit*4 0;
