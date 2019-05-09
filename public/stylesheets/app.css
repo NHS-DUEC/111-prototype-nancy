@@ -2602,11 +2602,12 @@ img {
 
 .service-details-container {
   margin-top: 12px;
+  margin-bottom: 16px;
 }
 
 @media (min-width: 980px) {
   .service-details-container {
-    margin-top: 24px;
+    margin: 24px 0;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3);
@@ -2686,11 +2687,13 @@ img {
 
 .service-details.--remote {
   padding: 1px 0;
+  margin-bottom: 16px;
 }
 
 @media (min-width: 980px) {
   .service-details.--remote {
     display: block;
+    margin-bottom: 24px;
   }
 }
 
@@ -2750,13 +2753,7 @@ img {
 }
 
 .multiple-service-listing .service-details .unit > .tel-cta:first-child {
-  margin-top: 16px !important;
-}
-
-@media (min-width: 980px) {
-  .multiple-service-listing .service-details .unit > .tel-cta:first-child {
-    margin-top: 24px !important;
-  }
+  margin-top: 0 !important;
 }
 
 body, pre.user-input {
@@ -5950,4 +5947,16 @@ body, pre.user-input {
   background-color: #002f5c;
   box-shadow: 0 0 0 4px #003d78;
   color: #ffffff;
+}
+
+[class^="nhsuk-"] .small, [class^="nhsuk-"] table th, table [class^="nhsuk-"] th, [class^="nhsuk-"] table td, table [class^="nhsuk-"] td {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+@media (min-width: 500px) {
+  [class^="nhsuk-"] .small, [class^="nhsuk-"] table th, table [class^="nhsuk-"] th, [class^="nhsuk-"] table td, table [class^="nhsuk-"] td {
+    font-size: 16px;
+    line-height: 24px;
+  }
 }

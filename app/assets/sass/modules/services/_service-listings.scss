@@ -38,10 +38,7 @@
 
   .service-details {
     .unit > .tel-cta:first-child {
-      margin-top: $baseline-grid-unit*4 !important;
-      @include media(large) {
-        margin-top: $baseline-grid-unit*6 !important;
-      }
+      margin-top: 0 !important;
     }
   }
 }

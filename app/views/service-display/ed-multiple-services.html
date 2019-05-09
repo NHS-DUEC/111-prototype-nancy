@@ -4,7 +4,7 @@
 
 {% block page_title %}{% endblock %}
 
-{% block body_css_classes %}nhs-redesign{% endblock %}
+{% block body_css_classes %}nhsuk-frontend{% endblock %}
 
 {% block content %}
 
@@ -26,8 +26,8 @@
     <div class="collapse-title">
       <div class="service-listing">
         <b>Emergency department, Dewsbury District Hospital</b><br>
-        <div class="service-pertinent small">
-          <span>11 miles away</span>
+        <div class="service-pertinent">
+          <span class="small">11 miles away</span>
         </div>
         <span class="collapse-title-indicator-verbose">
           <span class="show">More information</span>
@@ -88,8 +88,8 @@
     <div class="collapse-title">
       <div class="service-listing">
         <b>Minor injuries unit, St Georges Centre</b>
-        <div class="service-pertinent small">
-          <span>6.8 miles away</span>
+        <div class="service-pertinent">
+          <span class="small">6.8 miles away</span>
         </div>
         <span class="collapse-title-indicator-verbose">
           <span class="show">More information</span>
@@ -100,9 +100,9 @@
     <div class="collapse-content">
       <div class="service-details-container service-details --remote">
         <div class="unit">
-          <div class="form-hint measure">
+          <div class="measure">
             <p>
-              You must call to book an appointment
+              <span class="form-hint small">You must call to book an appointment</span>
             </p>
           </div>
           <p class="tel-cta">
@@ -132,8 +132,8 @@
     <div class="collapse-title">
       <div class="service-listing">
         <b>Mental Health Adult (Mental Health Response) - Goole and West Wolds, East Riding</b>
-        <div class="service-pertinent small">
-          <span>Telephone service</span>
+        <div class="service-pertinent">
+          <span class="small">Telephone service</span>
         </div>
         <span class="collapse-title-indicator-verbose">
           <span class="show">More information</span>
@@ -161,8 +161,8 @@
     <div class="collapse-title">
       <div class="service-listing">
         <b>GP OOH Service - Leeds, West Yorkshire (St Georges) WYUC</b>
-        <div class="service-pertinent small">
-          <span>Telephone service</span>
+        <div class="service-pertinent">
+          <span class="small">Telephone service</span>
         </div>
         <span class="collapse-title-indicator-verbose">
           <span class="show">More information</span>
@@ -178,21 +178,21 @@
           </p>
         </div>
         <div class="unit">
-          <div class="form-hint measure">
+          <div class="measure">
             <p>
-              <span class="flag-contact-first">This service needs some details from you</span>
-            </p>
-            <p>
-              To use it, fill in the form and they’ll be in touch.
+              <span class="form-hint small">
+                This service needs some details from you.<br>
+                To use it, fill in the form and they’ll be in touch.
+              </span>
             </p>
           </div>
           <p>
-            <a href="#" class="action-link">
-              <span>Use this service</span>
-              <svg class="nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+            <a class="nhsuk-action-link__link" href="#">
+              <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M0 0h24v24H0z" fill="none"></path>
                 <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
               </svg>
+              <span class="nhsuk-action-link__text">Use this service</span>
             </a>
           </p>
         </div>
@@ -205,8 +205,8 @@
     <div class="collapse-title">
       <div class="service-listing">
         <b>St George’s Pharmacy</b>
-        <div class="service-pertinent small">
-          <span>0.5 miles away</span>
+        <div class="service-pertinent">
+          <span class="small">0.5 miles away</span>
         </div>
         <span class="collapse-title-indicator-verbose">
           <span class="show">More information</span>
@@ -231,15 +231,15 @@
         </div>
         <div class="unit">
           <div class="measure">
-            <span class="flag-contact-first small">This service needs some details from you</span>
+            <span class="form-hint small">This service needs some details from you</span>
           </div>
           <p>
-            <a href="numsas-start" class="action-link">
-              <span>Refer me to this service</span>
-              <svg class="nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+            <a class="nhsuk-action-link__link" href="#">
+              <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M0 0h24v24H0z" fill="none"></path>
                 <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
               </svg>
+              <span class="nhsuk-action-link__text">Refer me to this service</span>
             </a>
           </p>
         </div>

@@ -1,8 +1,9 @@
 .service-details-container {
   margin-top: $baseline-grid-unit*3;
+  margin-bottom: $baseline-grid-unit*4;
 
   @include media(large) {
-    margin-top: $baseline-grid-unit*6;
+    margin: $baseline-grid-unit*6 0;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3);
@@ -81,8 +82,10 @@
   // modifiers for a "remote" service
   &.--remote {
     padding: 1px 0;
+    margin-bottom: $baseline-grid-unit*4;
     @include media(large) {
       display: block;
+      margin-bottom: $baseline-grid-unit*6;
     }
 
     .tel-cta {

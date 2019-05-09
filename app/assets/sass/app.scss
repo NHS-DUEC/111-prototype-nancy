@@ -94,4 +94,13 @@
       color: $white;
     }
   }
+
+  .small {
+    font-size: 14px;
+    line-height: $baseline-grid-unit*5;
+    @include media(mid) {
+      font-size: 16px;
+      line-height: $baseline-grid-unit*6;
+    }
+  }
 }
