@@ -37,13 +37,18 @@ html {
     color: $black;
   }
 
- .link-list li {
-    clear: both;
-    font-size: $smallprint;
-    max-width: 30em;
+  .link-list {
+    list-style: none;
+    padding-left: 0;
 
-    > p {
-      line-height: $leading*3;
+    li {
+      clear: both;
+      font-size: $smallprint;
+      max-width: 30em;
+
+      > p {
+        line-height: $leading*3;
+      }
     }
   }
 
