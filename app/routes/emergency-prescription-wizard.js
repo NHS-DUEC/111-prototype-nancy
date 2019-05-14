@@ -47,7 +47,7 @@ router.post('/time-till-dose', function (req, res) {
 // NUMSAS referral feature - March 2019 ++++++++++++++++++++++++++++++++++++++++
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-router.get('/numsas-start', function(req, res) {
+router.get('/service/numsas/numsas-start', function(req, res) {
   // zero out a namespaced session obj
   req.session.numsas = {};
   req.session.numsas.name = {};
@@ -65,13 +65,13 @@ router.get('/numsas-start', function(req, res) {
 // dob
 // postcode
 
-router.post('/numsas-phone', function(req, res) {
+router.post('/service/numsas/numsas-phone', function(req, res) {
   if (req.body['tel'] !== '') {
     req.session.numsas.tel = req.body['tel'];
     req.session.numsas.complete = true;
     res.redirect('numsas-name');
   } else {
-    res.render('emergency-prescription-wizard/numsas-phone.html', {
+    res.render('emergency-prescription-wizard/service/numsas/numsas-phone.html', {
       error: true
     });
   }
@@ -79,7 +79,7 @@ router.post('/numsas-phone', function(req, res) {
 
 // -----------------------------------------------------------------------------
 
-router.post('/numsas-name', function(req, res) {
+router.post('/service/numsas/numsas-name', function(req, res) {
   var error_present = false;
   var error_firstname = false;
   var error_lastname = false;
@@ -112,7 +112,7 @@ router.post('/numsas-name', function(req, res) {
       res.redirect('numsas-dob');
     }
   } else {
-    res.render('emergency-prescription-wizard/numsas-name.html', {
+    res.render('emergency-prescription-wizard/service/numsas/numsas-name.html', {
       error: {
         firstname: error_firstname,
         lastname: error_lastname
@@ -123,7 +123,7 @@ router.post('/numsas-name', function(req, res) {
 
 // -----------------------------------------------------------------------------
 // Catch DOB if it wasn't given at the start
-router.post('/numsas-dob', function(req, res) {
+router.post('/service/numsas/numsas-dob', function(req, res) {
   var error_present = false;
 
   var day = req.body['dob-day'];
@@ -148,7 +148,7 @@ router.post('/numsas-dob', function(req, res) {
   }
 
   if (error_present === true) {
-    res.render('emergency-prescription-wizard/numsas-dob.html', {
+    res.render('emergency-prescription-wizard/service/numsas/numsas-dob.html', {
       error: true
     });
   } else {
@@ -159,7 +159,7 @@ router.post('/numsas-dob', function(req, res) {
 
 // -----------------------------------------------------------------------------
 // Handle postcode scenarios
-router.get('/numsas-route-postcode', function(req, res) {
+router.get('/service/numsas/numsas-route-postcode', function(req, res) {
   // 1: at home and have given a postcode
   if (req.session.postcodesource === 'user' && req.session.userlocation === 'home') {
     res.redirect('numsas-submit');
@@ -174,13 +174,13 @@ router.get('/numsas-route-postcode', function(req, res) {
   }
 });
 
-router.post('/numsas-postcode', function(req, res) {
+router.post('/service/numsas/numsas-postcode', function(req, res) {
   if (req.body['postcode'] !== '') {
     req.session.numsas.postcode = req.body['postcode'];
     res.redirect('numsas-submit');
     //res.redirect('numsas-confirmation');
   } else {
-    res.render('emergency-prescription-wizard/numsas-postcode.html', {
+    res.render('emergency-prescription-wizard/service/numsas/numsas-postcode.html', {
       error: true
     });
   }
@@ -188,7 +188,7 @@ router.post('/numsas-postcode', function(req, res) {
 
 // -----------------------------------------------------------------------------
 
-router.get('/numsas-submit', function(req, res) {
+router.get('/service/numsas/numsas-submit', function(req, res) {
   if (req.query.flush) {
     // suppress the object from display
     // zero out a namespaced session obj
@@ -199,8 +199,8 @@ router.get('/numsas-submit', function(req, res) {
     req.session.numsas.postcode = '';
     req.session.numsas.tel = '';
     req.session.numsas.complete = false;
-    res.redirect('recommended-service');
+    res.redirect('numsas-service-view-stage-2');
   } else {
-    res.redirect('recommended-service');
+    res.redirect('numsas-service-view-stage-2');
   }
 });
