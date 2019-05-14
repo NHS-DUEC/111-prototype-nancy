@@ -1,0 +1,45 @@
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhsuk-frontend{% endblock %}
+
+{% block content %}
+
+<form class="content-block form measure" action="" method="post">
+
+  {% if error %}
+    <div class="error-summary">
+      <h2 class="error-heading">There’s a problem</h2>
+      <p>
+        <a href="#tel">Enter a phone number</a>
+      </p>
+    </div>
+  {% endif %}
+
+  <h1>A pharmacist (or something) needs to phone you</h1>
+
+  <p>
+    They'll help do stuff. Mainly: find out what you need by looking you up.
+    Finding a place that can help you and sending you there.
+  </p>
+  <p>
+    If you need a translator you can ask for one when you start the call.
+  </p>
+
+  <div class="form-group {% if error.tel %}-errors{% endif %}">
+    <label for="tel"{% if error %}class="error-hint"{% endif %}>
+      <b>Enter a mobile, landline or textphone number</b>
+    </label>
+    <input name="tel" id="tel" type="tel" value="" autocomplete="off">
+  </div>
+
+  <div class="form-group">
+    <p>
+      <button type="submit" class="button">Next</button>
+    </p>
+  </div>
+
+</form>
+
+{% endblock %}
