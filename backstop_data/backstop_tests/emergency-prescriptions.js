@@ -92,7 +92,7 @@ module.exports =  {
     },
     {
       "label": "Emergency prescription - recommended service",
-      "url": "http://localhost:3000/emergency-prescription-wizard/recommended-service-alt",
+      "url": "http://localhost:3000/emergency-prescription-wizard/service/numsas/numsas-service-view-stage-1",
       "selectors": ["document"]
     },
     {
@@ -108,27 +108,27 @@ module.exports =  {
     },
     {
       "label": "Emergency prescription - begin referral",
-      "url": "http://localhost:3000/emergency-prescription-wizard/numsas-introduction",
+      "url": "http://localhost:3000/emergency-prescription-wizard/service/numsas/numsas-introduction",
       "selectors": ["document"]
     },
     {
       "label": "Emergency prescription - phone",
-      "url": "http://localhost:3000/emergency-prescription-wizard/numsas-phone",
+      "url": "http://localhost:3000/emergency-prescription-wizard/service/numsas/numsas-phone",
       "selectors": ["document"]
     },
     {
       "label": "Emergency prescription - name",
-      "url": "http://localhost:3000/emergency-prescription-wizard/numsas-name",
+      "url": "http://localhost:3000/emergency-prescription-wizard/service/numsas/numsas-name",
       "selectors": ["document"]
     },
     {
       "label": "Emergency prescription - home postcode",
-      "url": "http://localhost:3000/emergency-prescription-wizard/numsas-postcode",
+      "url": "http://localhost:3000/emergency-prescription-wizard/service/numsas/numsas-postcode",
       "selectors": ["document"]
     },
     {
       "label": "Emergency prescription - outcome",
-      "url": "http://localhost:3000/emergency-prescription-wizard/recommended-service",
+      "url": "http://localhost:3000/emergency-prescription-wizard/service/numsas/numsas-service-view-stage-2",
       "selectors": ["document"]
     }
   ],

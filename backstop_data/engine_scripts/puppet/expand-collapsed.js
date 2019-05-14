@@ -10,6 +10,6 @@ module.exports = async (page, scenario, vp) => {
         element.click();
     });
 
-  console.log( 'Done?' );
+  console.log( 'Done' );
 
 };
