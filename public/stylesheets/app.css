@@ -5924,6 +5924,12 @@ body, pre.user-input {
   border-radius: 0;
 }
 
+@media (min-width: 500px) {
+  [class^="nhsuk-"] .button {
+    width: auto;
+  }
+}
+
 [class^="nhsuk-"] .footer-container a {
   color: #005eb8;
   color: #fff;
