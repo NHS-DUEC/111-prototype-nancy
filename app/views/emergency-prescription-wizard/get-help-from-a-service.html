@@ -34,8 +34,6 @@
   </div>
   <div class="shunt-2">
 
-    <p>Type = {{ session.emergency_prescription_journey_type }}</p>
-
     {% if session.emergency_prescription_journey_type === 'goto' %}
       {% set url = 'service/goto/goto-service-view' %}
     {% elif session.emergency_prescription_journey_type === 'cas' %}
