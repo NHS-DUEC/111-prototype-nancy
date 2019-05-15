@@ -60,8 +60,8 @@ body, pre.user-input,
   line-height: 32px;
 }
 
-h1, .heading-xxlarge, .primary, h2, .heading-xlarge, .app-panel > .header, .secondary, h3, .heading-large, h4, .heading-body, h5, h6,
-.h1, .h2, .service-details.--remote .tel-cta, .h3, .h4, .h5, .h6,
+h1, .heading-xxlarge, .primary, h2, .heading-xlarge, .app-panel > .header, .secondary, .service-details.--remote .tel-cta, h3, .heading-large, h4, .heading-body, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6,
 b, strong {
   font-weight: 600;
 }
@@ -93,27 +93,24 @@ h1, .heading-xxlarge, .primary,
   }
 }
 
-h2, .heading-xlarge, .app-panel > .header, .secondary,
-.h2,
-.service-details.--remote .tel-cta {
+h2, .heading-xlarge, .app-panel > .header, .secondary, .service-details.--remote .tel-cta,
+.h2 {
   margin: 16px 0;
   font-size: 28px;
   line-height: 40px;
 }
 
 @media (min-width: 500px) {
-  h2, .heading-xlarge, .app-panel > .header, .secondary,
-  .h2,
-  .service-details.--remote .tel-cta {
+  h2, .heading-xlarge, .app-panel > .header, .secondary, .service-details.--remote .tel-cta,
+  .h2 {
     font-size: 32px;
     line-height: 48px;
   }
 }
 
 @media (min-width: 980px) {
-  h2, .heading-xlarge, .app-panel > .header, .secondary,
-  .h2,
-  .service-details.--remote .tel-cta {
+  h2, .heading-xlarge, .app-panel > .header, .secondary, .service-details.--remote .tel-cta,
+  .h2 {
     font-size: 36px;
     line-height: 48px;
   }
@@ -179,20 +176,16 @@ body.nhs-redesign, pre.nhs-redesign.user-input {
   }
 }
 
-.nhs-redesign h2, .nhs-redesign .heading-xlarge, .nhs-redesign .app-panel > .header, .nhs-redesign .secondary,
-.nhs-redesign .h2,
-.nhs-redesign .service-details.--remote .tel-cta, .service-details.--remote
-.nhs-redesign .tel-cta {
+.nhs-redesign h2, .nhs-redesign .heading-xlarge, .nhs-redesign .app-panel > .header, .nhs-redesign .secondary, .nhs-redesign .service-details.--remote .tel-cta, .service-details.--remote .nhs-redesign .tel-cta,
+.nhs-redesign .h2 {
   font-size: 24px;
   line-height: 1.333;
   margin: 40px 0 0 0;
 }
 
 @media (min-width: 500px) {
-  .nhs-redesign h2, .nhs-redesign .heading-xlarge, .nhs-redesign .app-panel > .header, .nhs-redesign .secondary,
-  .nhs-redesign .h2,
-  .nhs-redesign .service-details.--remote .tel-cta, .service-details.--remote
-  .nhs-redesign .tel-cta {
+  .nhs-redesign h2, .nhs-redesign .heading-xlarge, .nhs-redesign .app-panel > .header, .nhs-redesign .secondary, .nhs-redesign .service-details.--remote .tel-cta, .service-details.--remote .nhs-redesign .tel-cta,
+  .nhs-redesign .h2 {
     font-size: 32px;
     line-height: 1.25;
     margin: 56px 0 0 0;
@@ -241,7 +234,7 @@ body.nhs-redesign, pre.nhs-redesign.user-input {
 
 /* remove undelines for a tags used as anchors */
 h1 a, .heading-xxlarge a, .primary a,
-h2 a, .heading-xlarge a, .app-panel > .header a, .secondary a,
+h2 a, .heading-xlarge a, .app-panel > .header a, .secondary a, .service-details.--remote .tel-cta a,
 h3 a, .heading-large a,
 h4 a, .heading-body a,
 h5 a,
@@ -3905,7 +3898,7 @@ body, pre.user-input {
   }
 }
 
-[class^="nhsuk-"] h2, [class^="nhsuk-"] .heading-xlarge, [class^="nhsuk-"] .app-panel > .header, [class^="nhsuk-"] .secondary, [class^="nhsuk-"] .nhsuk-heading-l {
+[class^="nhsuk-"] h2, [class^="nhsuk-"] .heading-xlarge, [class^="nhsuk-"] .app-panel > .header, [class^="nhsuk-"] .secondary, [class^="nhsuk-"] .service-details.--remote .tel-cta, .service-details.--remote [class^="nhsuk-"] .tel-cta, [class^="nhsuk-"] .nhsuk-heading-l {
   font-size: 24px;
   font-size: 1.5rem;
   line-height: 1.3333333333;
@@ -3916,7 +3909,7 @@ body, pre.user-input {
 }
 
 @media (min-width: 40.0625em) {
-  [class^="nhsuk-"] h2, [class^="nhsuk-"] .heading-xlarge, [class^="nhsuk-"] .app-panel > .header, [class^="nhsuk-"] .secondary, [class^="nhsuk-"] .nhsuk-heading-l {
+  [class^="nhsuk-"] h2, [class^="nhsuk-"] .heading-xlarge, [class^="nhsuk-"] .app-panel > .header, [class^="nhsuk-"] .secondary, [class^="nhsuk-"] .service-details.--remote .tel-cta, .service-details.--remote [class^="nhsuk-"] .tel-cta, [class^="nhsuk-"] .nhsuk-heading-l {
     font-size: 32px;
     font-size: 2rem;
     line-height: 1.25;
@@ -3924,14 +3917,14 @@ body, pre.user-input {
 }
 
 @media print {
-  [class^="nhsuk-"] h2, [class^="nhsuk-"] .heading-xlarge, [class^="nhsuk-"] .app-panel > .header, [class^="nhsuk-"] .secondary, [class^="nhsuk-"] .nhsuk-heading-l {
+  [class^="nhsuk-"] h2, [class^="nhsuk-"] .heading-xlarge, [class^="nhsuk-"] .app-panel > .header, [class^="nhsuk-"] .secondary, [class^="nhsuk-"] .service-details.--remote .tel-cta, .service-details.--remote [class^="nhsuk-"] .tel-cta, [class^="nhsuk-"] .nhsuk-heading-l {
     font-size: 24pt;
     line-height: 1.05;
   }
 }
 
 @media (min-width: 40.0625em) {
-  [class^="nhsuk-"] h2, [class^="nhsuk-"] .heading-xlarge, [class^="nhsuk-"] .app-panel > .header, [class^="nhsuk-"] .secondary, [class^="nhsuk-"] .nhsuk-heading-l {
+  [class^="nhsuk-"] h2, [class^="nhsuk-"] .heading-xlarge, [class^="nhsuk-"] .app-panel > .header, [class^="nhsuk-"] .secondary, [class^="nhsuk-"] .service-details.--remote .tel-cta, .service-details.--remote [class^="nhsuk-"] .tel-cta, [class^="nhsuk-"] .nhsuk-heading-l {
     margin-bottom: 24px;
   }
 }
@@ -4238,22 +4231,22 @@ body, pre.user-input {
   font-style: normal;
 }
 
-[class^="nhsuk-"] .nhsuk-body-l + h2, [class^="nhsuk-"] .nhsuk-body-l + .heading-xlarge, [class^="nhsuk-"] .app-panel > .nhsuk-body-l + .header, [class^="nhsuk-"] .nhsuk-body-l + .secondary, [class^="nhsuk-"] .nhsuk-body-l + .nhsuk-heading-l {
+[class^="nhsuk-"] .nhsuk-body-l + h2, [class^="nhsuk-"] .nhsuk-body-l + .heading-xlarge, [class^="nhsuk-"] .app-panel > .nhsuk-body-l + .header, [class^="nhsuk-"] .nhsuk-body-l + .secondary, [class^="nhsuk-"] .service-details.--remote .nhsuk-body-l + .tel-cta, .service-details.--remote [class^="nhsuk-"] .nhsuk-body-l + .tel-cta, [class^="nhsuk-"] .nhsuk-body-l + .nhsuk-heading-l {
   padding-top: 4px;
 }
 
 @media (min-width: 40.0625em) {
-  [class^="nhsuk-"] .nhsuk-body-l + h2, [class^="nhsuk-"] .nhsuk-body-l + .heading-xlarge, [class^="nhsuk-"] .app-panel > .nhsuk-body-l + .header, [class^="nhsuk-"] .nhsuk-body-l + .secondary, [class^="nhsuk-"] .nhsuk-body-l + .nhsuk-heading-l {
+  [class^="nhsuk-"] .nhsuk-body-l + h2, [class^="nhsuk-"] .nhsuk-body-l + .heading-xlarge, [class^="nhsuk-"] .app-panel > .nhsuk-body-l + .header, [class^="nhsuk-"] .nhsuk-body-l + .secondary, [class^="nhsuk-"] .service-details.--remote .nhsuk-body-l + .tel-cta, .service-details.--remote [class^="nhsuk-"] .nhsuk-body-l + .tel-cta, [class^="nhsuk-"] .nhsuk-body-l + .nhsuk-heading-l {
     padding-top: 8px;
   }
 }
 
-[class^="nhsuk-"] p + h2, [class^="nhsuk-"] .nhsuk-body-m + h2, [class^="nhsuk-"] address + h2, [class^="nhsuk-"] p + .heading-xlarge, [class^="nhsuk-"] .nhsuk-body-m + .heading-xlarge, [class^="nhsuk-"] address + .heading-xlarge, [class^="nhsuk-"] .app-panel > p + .header, [class^="nhsuk-"] .app-panel > .nhsuk-body-m + .header, [class^="nhsuk-"] .app-panel > address + .header, [class^="nhsuk-"] p + .secondary, [class^="nhsuk-"] .nhsuk-body-m + .secondary, [class^="nhsuk-"] address + .secondary, [class^="nhsuk-"] p + .nhsuk-heading-l, [class^="nhsuk-"] .nhsuk-body-m + .nhsuk-heading-l, [class^="nhsuk-"] address + .nhsuk-heading-l, [class^="nhsuk-"] .nhsuk-body-s + h2, [class^="nhsuk-"] .nhsuk-body-s + .heading-xlarge, [class^="nhsuk-"] .app-panel > .nhsuk-body-s + .header, [class^="nhsuk-"] .nhsuk-body-s + .secondary, [class^="nhsuk-"] .nhsuk-body-s + .nhsuk-heading-l, [class^="nhsuk-"] .nhsuk-list + h2, [class^="nhsuk-"] ul + h2, [class^="nhsuk-"] ol + h2, [class^="nhsuk-"] .nhsuk-list + .heading-xlarge, [class^="nhsuk-"] ul + .heading-xlarge, [class^="nhsuk-"] ol + .heading-xlarge, [class^="nhsuk-"] .app-panel > .nhsuk-list + .header, [class^="nhsuk-"] .app-panel > ul + .header, [class^="nhsuk-"] .app-panel > ol + .header, [class^="nhsuk-"] .nhsuk-list + .secondary, [class^="nhsuk-"] ul + .secondary, [class^="nhsuk-"] ol + .secondary, [class^="nhsuk-"] .nhsuk-list + .nhsuk-heading-l, [class^="nhsuk-"] ul + .nhsuk-heading-l, [class^="nhsuk-"] ol + .nhsuk-heading-l {
+[class^="nhsuk-"] p + h2, [class^="nhsuk-"] .nhsuk-body-m + h2, [class^="nhsuk-"] address + h2, [class^="nhsuk-"] p + .heading-xlarge, [class^="nhsuk-"] .nhsuk-body-m + .heading-xlarge, [class^="nhsuk-"] address + .heading-xlarge, [class^="nhsuk-"] .app-panel > p + .header, [class^="nhsuk-"] .app-panel > .nhsuk-body-m + .header, [class^="nhsuk-"] .app-panel > address + .header, [class^="nhsuk-"] p + .secondary, [class^="nhsuk-"] .nhsuk-body-m + .secondary, [class^="nhsuk-"] address + .secondary, [class^="nhsuk-"] .service-details.--remote p + .tel-cta, [class^="nhsuk-"] .service-details.--remote .nhsuk-body-m + .tel-cta, [class^="nhsuk-"] .service-details.--remote address + .tel-cta, .service-details.--remote [class^="nhsuk-"] p + .tel-cta, .service-details.--remote [class^="nhsuk-"] .nhsuk-body-m + .tel-cta, .service-details.--remote [class^="nhsuk-"] address + .tel-cta, [class^="nhsuk-"] p + .nhsuk-heading-l, [class^="nhsuk-"] .nhsuk-body-m + .nhsuk-heading-l, [class^="nhsuk-"] address + .nhsuk-heading-l, [class^="nhsuk-"] .nhsuk-body-s + h2, [class^="nhsuk-"] .nhsuk-body-s + .heading-xlarge, [class^="nhsuk-"] .app-panel > .nhsuk-body-s + .header, [class^="nhsuk-"] .nhsuk-body-s + .secondary, [class^="nhsuk-"] .service-details.--remote .nhsuk-body-s + .tel-cta, .service-details.--remote [class^="nhsuk-"] .nhsuk-body-s + .tel-cta, [class^="nhsuk-"] .nhsuk-body-s + .nhsuk-heading-l, [class^="nhsuk-"] .nhsuk-list + h2, [class^="nhsuk-"] ul + h2, [class^="nhsuk-"] ol + h2, [class^="nhsuk-"] .nhsuk-list + .heading-xlarge, [class^="nhsuk-"] ul + .heading-xlarge, [class^="nhsuk-"] ol + .heading-xlarge, [class^="nhsuk-"] .app-panel > .nhsuk-list + .header, [class^="nhsuk-"] .app-panel > ul + .header, [class^="nhsuk-"] .app-panel > ol + .header, [class^="nhsuk-"] .nhsuk-list + .secondary, [class^="nhsuk-"] ul + .secondary, [class^="nhsuk-"] ol + .secondary, [class^="nhsuk-"] .service-details.--remote .nhsuk-list + .tel-cta, [class^="nhsuk-"] .service-details.--remote ul + .tel-cta, [class^="nhsuk-"] .service-details.--remote ol + .tel-cta, .service-details.--remote [class^="nhsuk-"] .nhsuk-list + .tel-cta, .service-details.--remote [class^="nhsuk-"] ul + .tel-cta, .service-details.--remote [class^="nhsuk-"] ol + .tel-cta, [class^="nhsuk-"] .nhsuk-list + .nhsuk-heading-l, [class^="nhsuk-"] ul + .nhsuk-heading-l, [class^="nhsuk-"] ol + .nhsuk-heading-l {
   padding-top: 16px;
 }
 
 @media (min-width: 40.0625em) {
-  [class^="nhsuk-"] p + h2, [class^="nhsuk-"] .nhsuk-body-m + h2, [class^="nhsuk-"] address + h2, [class^="nhsuk-"] p + .heading-xlarge, [class^="nhsuk-"] .nhsuk-body-m + .heading-xlarge, [class^="nhsuk-"] address + .heading-xlarge, [class^="nhsuk-"] .app-panel > p + .header, [class^="nhsuk-"] .app-panel > .nhsuk-body-m + .header, [class^="nhsuk-"] .app-panel > address + .header, [class^="nhsuk-"] p + .secondary, [class^="nhsuk-"] .nhsuk-body-m + .secondary, [class^="nhsuk-"] address + .secondary, [class^="nhsuk-"] p + .nhsuk-heading-l, [class^="nhsuk-"] .nhsuk-body-m + .nhsuk-heading-l, [class^="nhsuk-"] address + .nhsuk-heading-l, [class^="nhsuk-"] .nhsuk-body-s + h2, [class^="nhsuk-"] .nhsuk-body-s + .heading-xlarge, [class^="nhsuk-"] .app-panel > .nhsuk-body-s + .header, [class^="nhsuk-"] .nhsuk-body-s + .secondary, [class^="nhsuk-"] .nhsuk-body-s + .nhsuk-heading-l, [class^="nhsuk-"] .nhsuk-list + h2, [class^="nhsuk-"] ul + h2, [class^="nhsuk-"] ol + h2, [class^="nhsuk-"] .nhsuk-list + .heading-xlarge, [class^="nhsuk-"] ul + .heading-xlarge, [class^="nhsuk-"] ol + .heading-xlarge, [class^="nhsuk-"] .app-panel > .nhsuk-list + .header, [class^="nhsuk-"] .app-panel > ul + .header, [class^="nhsuk-"] .app-panel > ol + .header, [class^="nhsuk-"] .nhsuk-list + .secondary, [class^="nhsuk-"] ul + .secondary, [class^="nhsuk-"] ol + .secondary, [class^="nhsuk-"] .nhsuk-list + .nhsuk-heading-l, [class^="nhsuk-"] ul + .nhsuk-heading-l, [class^="nhsuk-"] ol + .nhsuk-heading-l {
+  [class^="nhsuk-"] p + h2, [class^="nhsuk-"] .nhsuk-body-m + h2, [class^="nhsuk-"] address + h2, [class^="nhsuk-"] p + .heading-xlarge, [class^="nhsuk-"] .nhsuk-body-m + .heading-xlarge, [class^="nhsuk-"] address + .heading-xlarge, [class^="nhsuk-"] .app-panel > p + .header, [class^="nhsuk-"] .app-panel > .nhsuk-body-m + .header, [class^="nhsuk-"] .app-panel > address + .header, [class^="nhsuk-"] p + .secondary, [class^="nhsuk-"] .nhsuk-body-m + .secondary, [class^="nhsuk-"] address + .secondary, [class^="nhsuk-"] .service-details.--remote p + .tel-cta, [class^="nhsuk-"] .service-details.--remote .nhsuk-body-m + .tel-cta, [class^="nhsuk-"] .service-details.--remote address + .tel-cta, .service-details.--remote [class^="nhsuk-"] p + .tel-cta, .service-details.--remote [class^="nhsuk-"] .nhsuk-body-m + .tel-cta, .service-details.--remote [class^="nhsuk-"] address + .tel-cta, [class^="nhsuk-"] p + .nhsuk-heading-l, [class^="nhsuk-"] .nhsuk-body-m + .nhsuk-heading-l, [class^="nhsuk-"] address + .nhsuk-heading-l, [class^="nhsuk-"] .nhsuk-body-s + h2, [class^="nhsuk-"] .nhsuk-body-s + .heading-xlarge, [class^="nhsuk-"] .app-panel > .nhsuk-body-s + .header, [class^="nhsuk-"] .nhsuk-body-s + .secondary, [class^="nhsuk-"] .service-details.--remote .nhsuk-body-s + .tel-cta, .service-details.--remote [class^="nhsuk-"] .nhsuk-body-s + .tel-cta, [class^="nhsuk-"] .nhsuk-body-s + .nhsuk-heading-l, [class^="nhsuk-"] .nhsuk-list + h2, [class^="nhsuk-"] ul + h2, [class^="nhsuk-"] ol + h2, [class^="nhsuk-"] .nhsuk-list + .heading-xlarge, [class^="nhsuk-"] ul + .heading-xlarge, [class^="nhsuk-"] ol + .heading-xlarge, [class^="nhsuk-"] .app-panel > .nhsuk-list + .header, [class^="nhsuk-"] .app-panel > ul + .header, [class^="nhsuk-"] .app-panel > ol + .header, [class^="nhsuk-"] .nhsuk-list + .secondary, [class^="nhsuk-"] ul + .secondary, [class^="nhsuk-"] ol + .secondary, [class^="nhsuk-"] .service-details.--remote .nhsuk-list + .tel-cta, [class^="nhsuk-"] .service-details.--remote ul + .tel-cta, [class^="nhsuk-"] .service-details.--remote ol + .tel-cta, .service-details.--remote [class^="nhsuk-"] .nhsuk-list + .tel-cta, .service-details.--remote [class^="nhsuk-"] ul + .tel-cta, .service-details.--remote [class^="nhsuk-"] ol + .tel-cta, [class^="nhsuk-"] .nhsuk-list + .nhsuk-heading-l, [class^="nhsuk-"] ul + .nhsuk-heading-l, [class^="nhsuk-"] ol + .nhsuk-heading-l {
     padding-top: 24px;
   }
 }
