@@ -5915,6 +5915,7 @@ body, pre.user-input {
 
 [class^="nhsuk-"] .button {
   border-radius: 0;
+  width: 100%;
 }
 
 @media (min-width: 500px) {

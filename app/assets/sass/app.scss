@@ -86,6 +86,7 @@
   .button {
     @extend .nhsuk-button;
     border-radius: 0;
+    width: 100%;
     @include media(mid) {
       width: auto;
     }
