@@ -76,20 +76,7 @@ router.get('/service/numsas/numsas-start', function(req, res) {
   req.session.pharmacy.name.secondname = '';
   req.session.pharmacy.postcode = '';
   req.session.pharmacy.tel = '';
-  res.redirect('numsas-introduction');
-});
-
-// phone
-router.post('/service/numsas/numsas-phone', function(req, res) {
-  if (req.body['tel'] !== '') {
-    req.session.pharmacy.tel = req.body['tel'];
-    req.session.pharmacy.complete = true;
-    res.redirect('/emergency-prescription-wizard/service/user-info/name');
-  } else {
-    res.render('emergency-prescription-wizard/service/numsas/numsas-phone.html', {
-      error: true
-    });
-  }
+  res.render('emergency-prescription-wizard/service/numsas/numsas-introduction.html');
 });
 
 // 2. CAS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -105,25 +92,25 @@ router.get('/service/cas/cas-start', function(req, res) {
   res.render('emergency-prescription-wizard/service/cas/cas-start.html');
 });
 
-router.post('/service/cas/cas-start', function(req, res) {
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// Pharmacy data gathering - May 2019 ++++++++++++++++++++++++++++++++++++++++++
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// phone
+// name
+// dob
+// postcode
+
+router.post('/service/user-info/phone', function(req, res) {
   if (req.body['tel'] !== '') {
     req.session.pharmacy.tel = req.body['tel'];
     req.session.pharmacy.complete = true;
     res.redirect('/emergency-prescription-wizard/service/user-info/name');
   } else {
-    res.render('emergency-prescription-wizard/service/cas/cas-start.html', {
+    res.render('emergency-prescription-wizard/service/user-info/phone.html', {
       error: true
     });
   }
 });
-
-// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-// Pharmacy data gathering - May 2019 ++++++++++++++++++++++++++++++++++++++++++
-// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-// name
-// dob
-// postcode
-// -----------------------------------------------------------------------------
 
 router.post('/service/user-info/name', function(req, res) {
   var error_present = false;
