@@ -16,7 +16,7 @@ module.exports =  {
   "onReadyScript": "puppet/onReady.js",
   "scenarios": [
     {
-      "label": "Start page",
+      "label": "111 start page",
       "url": "http://localhost:3000/start",
       "selectors": ["document"]
     },
@@ -31,7 +31,7 @@ module.exports =  {
       "selectors": ["document"]
     },
     {
-      "label": "Date of birth",
+      "label": "Date of birth or age",
       "url": "http://localhost:3000/start/date-of-birth",
       "selectors": ["document"]
     },
@@ -91,7 +91,7 @@ module.exports =  {
       "selectors": ["document"]
     },
     {
-      "label": "Emergency prescription - recommended service",
+      "label": "Emergency prescription - NUMSAS service",
       "url": "http://localhost:3000/emergency-prescription-wizard/service/numsas/numsas-service-view-stage-1",
       "selectors": ["document"]
     },
@@ -107,28 +107,43 @@ module.exports =  {
       "selectors": ["document"]
     },
     {
-      "label": "Emergency prescription - begin referral",
+      "label": "Emergency prescription - begin NUMSAS referral",
       "url": "http://localhost:3000/emergency-prescription-wizard/service/numsas/numsas-introduction",
       "selectors": ["document"]
     },
     {
       "label": "Emergency prescription - phone",
-      "url": "http://localhost:3000/emergency-prescription-wizard/service/numsas/numsas-phone",
+      "url": "http://localhost:3000/emergency-prescription-wizard/service/user-info/phone",
       "selectors": ["document"]
     },
     {
       "label": "Emergency prescription - name",
-      "url": "http://localhost:3000/emergency-prescription-wizard/service/numsas/numsas-name",
+      "url": "http://localhost:3000/emergency-prescription-wizard/service/user-info/name",
       "selectors": ["document"]
     },
     {
       "label": "Emergency prescription - home postcode",
-      "url": "http://localhost:3000/emergency-prescription-wizard/service/numsas/numsas-postcode",
+      "url": "http://localhost:3000/emergency-prescription-wizard/service/user-info/postcode",
       "selectors": ["document"]
     },
     {
-      "label": "Emergency prescription - outcome",
+      "label": "Emergency prescription - NUMSAS outcome",
       "url": "http://localhost:3000/emergency-prescription-wizard/service/numsas/numsas-service-view-stage-2",
+      "selectors": ["document"]
+    },
+    {
+      "label": "Emergency prescription - GOTO outcome",
+      "url": "http://localhost:3000/emergency-prescription-wizard/service/goto/goto-service-view",
+      "selectors": ["document"]
+    },
+    {
+      "label": "Emergency prescription - CAS service",
+      "url": "http://localhost:3000/emergency-prescription-wizard/service/cas/cas-start",
+      "selectors": ["document"]
+    },
+    {
+      "label": "Emergency prescription - CAS outcome",
+      "url": "http://localhost:3000/emergency-prescription-wizard/service/cas/cas-complete",
       "selectors": ["document"]
     }
   ],
