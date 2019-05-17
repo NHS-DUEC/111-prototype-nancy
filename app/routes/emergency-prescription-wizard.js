@@ -1,4 +1,5 @@
 var express = require('express')
+var moment = require('moment-timezone')
 var router = express.Router()
 
 module.exports = router
@@ -238,4 +239,12 @@ router.get('/service/user-info/submit', function(req, res) {
   } else if (req.session.emergency_prescription_journey_type === 'cas') {
     res.redirect('/emergency-prescription-wizard/service/cas/cas-complete');
   }
+});
+
+router.get('/service/cas/cas-complete', function(req, res) {
+  // what's the time?
+  var now = moment().tz('Europe/London').format('h.mma');
+  res.render('emergency-prescription-wizard/service/cas/cas-complete.html', {
+    now : now
+  });
 });
