@@ -16,51 +16,6 @@ module.exports =  {
   "onReadyScript": "puppet/onReady.js",
   "scenarios": [
     {
-      "label": "111 start page",
-      "url": "http://localhost:3000/start",
-      "selectors": ["document"]
-    },
-    {
-      "label": "Proxy user question",
-      "url": "http://localhost:3000/start/proxy",
-      "selectors": ["document"]
-    },
-    {
-      "label": "Module zero",
-      "url": "http://localhost:3000/start/emergency-check",
-      "selectors": ["document"]
-    },
-    {
-      "label": "Date of birth or age",
-      "url": "http://localhost:3000/start/date-of-birth",
-      "selectors": ["document"]
-    },
-    {
-      "label": "Sex",
-      "url": "http://localhost:3000/start/sex",
-      "selectors": ["document"]
-    },
-    {
-      "label": "Location - start",
-      "url": "http://localhost:3000/start/where-are-you",
-      "selectors": ["document"]
-    },
-    {
-      "label": "Location - not at home",
-      "url": "http://localhost:3000/start/not-at-home",
-      "selectors": ["document"]
-    },
-    {
-      "label": "Location - geolocate",
-      "url": "http://localhost:3000/start/geo-attempt",
-      "selectors": ["document"]
-    },
-    {
-      "label": "Finding pathways - start",
-      "url": "http://localhost:3000/finding-pathways/start",
-      "selectors": ["document"]
-    },
-    {
       "label": "Finding pathways - results (meds)",
       "url": "http://localhost:3000/finding-pathways/start?query=meds",
       "selectors": ["document"]
