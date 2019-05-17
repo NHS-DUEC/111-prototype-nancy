@@ -1,0 +1,55 @@
+{% set suppress_feedback = true %}
+
+{% set tel = "07979 654 789" %}
+{% if session.callBooking.tel %}
+  {% set tel = session.callBooking.tel %}
+{% endif %}
+
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhsuk-frontend{% endblock %}
+
+{% block content %}
+<div class="content-block measure">
+
+  <h1>You’ll get a call within 2 hours</h1>
+
+  <p>
+    It was booked at {{ now }}. A nurse will call {{ tel }}.
+  </p>
+
+  <details>
+    <summary>What if I don’t get a call in 2 hours?</summary>
+    <div>
+      <p>
+        You can try calling a local pharmacy. Pharmacists can decide to give you
+        a limited supply of your medicine once they have checked your details.
+        If they can’t help they’ll tell you what to do next.
+      </p>
+    </div>
+  </details>
+
+  <details>
+    <summary>What if I miss the call?</summary>
+    <div>
+      <p>
+        A nurse will try and call you up to 3 times.
+      </p>
+    </div>
+  </details>
+
+  <details>
+    <summary>Can I cancel the call?</summary>
+    <div>
+      <p>If you need to cancel ring 111 and tell them you booked a call online.</p>
+    </div>
+  </details>
+
+</div>
+{% endblock %}
+
+{% block footer %}
+{% include '_includes/survey-banner.html' %}
+{% endblock %}

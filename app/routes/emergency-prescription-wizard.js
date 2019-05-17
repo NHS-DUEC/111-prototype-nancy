@@ -1,7 +1,27 @@
 var express = require('express')
+var moment = require('moment-timezone')
 var router = express.Router()
 
 module.exports = router
+
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// Prescriptions "goto" and CAS examples - May 2019 ++++++++++++++++++++++++++++
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+router.get('/numsas-journey', function (req, res) {
+  req.session.emergency_prescription_journey_type = 'numsas';
+  res.redirect('/start');
+});
+
+router.get('/goto-journey', function (req, res) {
+  req.session.emergency_prescription_journey_type = 'goto';
+  res.redirect('/start');
+});
+
+router.get('/cas-journey', function (req, res) {
+  req.session.emergency_prescription_journey_type = 'cas';
+  res.redirect('/start');
+});
 
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // Prescriptions MVP - March 2019 ++++++++++++++++++++++++++++++++++++++++++++++
@@ -44,42 +64,56 @@ router.post('/time-till-dose', function (req, res) {
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-// NUMSAS referral feature - March 2019 ++++++++++++++++++++++++++++++++++++++++
+// NUMSAS or CAS referral feature - May 2019 +++++++++++++++++++++++++++++++++++
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-router.get('/numsas-start', function(req, res) {
+// 1. NUMSAS +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+router.get('/service/numsas/numsas-start', function(req, res) {
   // zero out a namespaced session obj
-  req.session.numsas = {};
-  req.session.numsas.name = {};
-  req.session.numsas.name.firstname = '';
-  req.session.numsas.name.secondname = '';
-  req.session.numsas.postcode = '';
-  req.session.numsas.tel = '';
-  req.session.numsas.complete = false;
-  res.redirect('numsas-introduction');
+  req.session.pharmacy = {};
+  req.session.pharmacy.name = {};
+  req.session.pharmacy.name.firstname = '';
+  req.session.pharmacy.name.secondname = '';
+  req.session.pharmacy.postcode = '';
+  req.session.pharmacy.tel = '';
+  res.render('emergency-prescription-wizard/service/numsas/numsas-introduction.html');
 });
 
+// 2. CAS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+router.get('/service/cas/cas-start', function(req, res) {
+  // zero out a namespaced session obj
+  req.session.pharmacy = {};
+  req.session.pharmacy.name = {};
+  req.session.pharmacy.name.firstname = '';
+  req.session.pharmacy.name.secondname = '';
+  req.session.pharmacy.postcode = '';
+  req.session.pharmacy.tel = '';
+  res.render('emergency-prescription-wizard/service/cas/cas-start.html');
+});
+
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// Pharmacy data gathering - May 2019 ++++++++++++++++++++++++++++++++++++++++++
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // phone
 // name
 // dob
 // postcode
 
-router.post('/numsas-phone', function(req, res) {
+router.post('/service/user-info/phone', function(req, res) {
   if (req.body['tel'] !== '') {
-    req.session.numsas.tel = req.body['tel'];
-    req.session.numsas.complete = true;
-    res.redirect('numsas-name');
+    req.session.pharmacy.tel = req.body['tel'];
+    req.session.pharmacy.complete = true;
+    res.redirect('/emergency-prescription-wizard/service/user-info/name');
   } else {
-    res.render('emergency-prescription-wizard/numsas-phone.html', {
+    res.render('emergency-prescription-wizard/service/user-info/phone.html', {
       error: true
     });
   }
 });
 
-// -----------------------------------------------------------------------------
-
-router.post('/numsas-name', function(req, res) {
+router.post('/service/user-info/name', function(req, res) {
   var error_present = false;
   var error_firstname = false;
   var error_lastname = false;
@@ -100,19 +134,19 @@ router.post('/numsas-name', function(req, res) {
     error_lastname = true;
   }
 
-  req.session.numsas.name.firstname = req.body['firstname'];
-  req.session.numsas.name.secondname = req.body['secondname'];
+  req.session.pharmacy.name.firstname = req.body['firstname'];
+  req.session.pharmacy.name.secondname = req.body['secondname'];
 
   if (error_present !== true) {
     // Do we have a DOB?
     if (req.session.demographics.dob.supplied === true) {
-      res.redirect('numsas-route-postcode');
+      res.redirect('/emergency-prescription-wizard/service/user-info/route-postcode');
     } else {
       // route through a DOB ask
-      res.redirect('numsas-dob');
+      res.redirect('/emergency-prescription-wizard/service/user-info/dob');
     }
   } else {
-    res.render('emergency-prescription-wizard/numsas-name.html', {
+    res.render('emergency-prescription-wizard/service/user-info/name.html', {
       error: {
         firstname: error_firstname,
         lastname: error_lastname
@@ -123,7 +157,7 @@ router.post('/numsas-name', function(req, res) {
 
 // -----------------------------------------------------------------------------
 // Catch DOB if it wasn't given at the start
-router.post('/numsas-dob', function(req, res) {
+router.post('/service/user-info/dob', function(req, res) {
   var error_present = false;
 
   var day = req.body['dob-day'];
@@ -148,39 +182,39 @@ router.post('/numsas-dob', function(req, res) {
   }
 
   if (error_present === true) {
-    res.render('emergency-prescription-wizard/numsas-dob.html', {
+    res.render('emergency-prescription-wizard/service/user-info/dob.html', {
       error: true
     });
   } else {
     req.session.demographics.dob.supplied = true;
-    res.redirect('numsas-route-postcode');
+    res.redirect('/emergency-prescription-wizard/service/user-info/route-postcode');
   }
 });
 
 // -----------------------------------------------------------------------------
 // Handle postcode scenarios
-router.get('/numsas-route-postcode', function(req, res) {
+router.get('/service/user-info/route-postcode', function(req, res) {
   // 1: at home and have given a postcode
   if (req.session.postcodesource === 'user' && req.session.userlocation === 'home') {
-    res.redirect('numsas-submit');
+    res.redirect('/emergency-prescription-wizard/service/user-info/submit');
   }
   // 2: somewhere else and have given a postcode
   else if (req.session.postcodesource === 'user' && req.session.userlocation === 'away') {
-    res.redirect('numsas-postcode');
+    res.redirect('/emergency-prescription-wizard/service/user-info/postcode');
   }
   // 3: somewhere else and have given a geolocation - ie we're not 100%
   else {
-    res.redirect('numsas-postcode');
+    res.redirect('/emergency-prescription-wizard/service/user-info/postcode');
   }
 });
 
-router.post('/numsas-postcode', function(req, res) {
+router.post('/service/user-info/postcode', function(req, res) {
   if (req.body['postcode'] !== '') {
-    req.session.numsas.postcode = req.body['postcode'];
-    res.redirect('numsas-submit');
+    req.session.pharmacy.postcode = req.body['postcode'];
+    res.redirect('/emergency-prescription-wizard/service/user-info/submit');
     //res.redirect('numsas-confirmation');
   } else {
-    res.render('emergency-prescription-wizard/numsas-postcode.html', {
+    res.render('emergency-prescription-wizard/service/user-info/postcode.html', {
       error: true
     });
   }
@@ -188,19 +222,29 @@ router.post('/numsas-postcode', function(req, res) {
 
 // -----------------------------------------------------------------------------
 
-router.get('/numsas-submit', function(req, res) {
+router.get('/service/user-info/submit', function(req, res) {
   if (req.query.flush) {
     // suppress the object from display
     // zero out a namespaced session obj
-    req.session.numsas = {};
-    req.session.numsas.name = {};
-    req.session.numsas.name.firstname = '';
-    req.session.numsas.name.secondname = '';
-    req.session.numsas.postcode = '';
-    req.session.numsas.tel = '';
-    req.session.numsas.complete = false;
-    res.redirect('recommended-service');
-  } else {
-    res.redirect('recommended-service');
+    req.session.pharmacy = {};
+    req.session.pharmacy.name = {};
+    req.session.pharmacy.name.firstname = '';
+    req.session.pharmacy.name.secondname = '';
+    req.session.pharmacy.postcode = '';
+    req.session.pharmacy.tel = '';
+    req.session.pharmacy.complete = false;
   }
+  if (req.session.emergency_prescription_journey_type === 'numsas') {
+    res.redirect('/emergency-prescription-wizard/service/numsas/numsas-service-view-stage-2');
+  } else if (req.session.emergency_prescription_journey_type === 'cas') {
+    res.redirect('/emergency-prescription-wizard/service/cas/cas-complete');
+  }
+});
+
+router.get('/service/cas/cas-complete', function(req, res) {
+  // what's the time?
+  var now = moment().tz('Europe/London').format('h.mma');
+  res.render('emergency-prescription-wizard/service/cas/cas-complete.html', {
+    now : now
+  });
 });

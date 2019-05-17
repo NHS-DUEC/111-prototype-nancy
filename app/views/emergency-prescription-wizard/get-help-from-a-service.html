@@ -33,7 +33,16 @@
     </p>
   </div>
   <div class="shunt-2">
-    <a href="recommended-service-alt" class="button">Show me services that can help</a>
+
+    {% if session.emergency_prescription_journey_type === 'goto' %}
+      {% set url = 'service/goto/goto-service-view' %}
+    {% elif session.emergency_prescription_journey_type === 'cas' %}
+      {% set url = 'service/cas/cas-start' %}
+    {% else %}
+      {% set url = 'service/numsas/numsas-service-view-stage-1' %}
+    {% endif %}
+
+    <a href="{{ url }}" class="button">Show me services that can help</a>
   </div>
 
 </div>
