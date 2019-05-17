@@ -5960,3 +5960,34 @@ body, pre.user-input {
     line-height: 24px;
   }
 }
+
+[class^="nhsuk-"] details > summary {
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+@media (min-width: 40.0625em) {
+  [class^="nhsuk-"] details > summary {
+    font-size: 19px;
+    font-size: 1.1875rem;
+    line-height: 1.4736842105;
+  }
+}
+
+@media print {
+  [class^="nhsuk-"] details > summary {
+    font-size: 14pt;
+    line-height: 1.15;
+  }
+}
+
+[class^="nhsuk-"] details > div {
+  padding-top: 16px;
+}
+
+@media (min-width: 500px) {
+  [class^="nhsuk-"] details > div {
+    line-height: 24px;
+  }
+}

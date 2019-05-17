@@ -107,4 +107,16 @@
       line-height: $baseline-grid-unit*6;
     }
   }
+
+  details {
+    & > summary {
+      @include nhsuk-typography-responsive(19);
+    }
+    & > div {
+      padding-top: $baseline-grid-unit*4;
+      @include media(mid) {
+        line-height: $baseline-grid-unit*6;
+      }
+    }
+  }
 }
