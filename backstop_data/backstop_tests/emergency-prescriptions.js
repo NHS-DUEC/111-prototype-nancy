@@ -15,11 +15,13 @@ module.exports =  {
   "onBeforeScript": "puppet/onBefore.js",
   "onReadyScript": "puppet/onReady.js",
   "scenarios": [
+    // Finding
     {
       "label": "Finding pathways - results (meds)",
       "url": "http://localhost:3000/finding-pathways/start?query=meds",
       "selectors": ["document"]
     },
+    // Pathway
     {
       "label": "Emergency prescription - start",
       "url": "http://localhost:3000/emergency-prescription-wizard/start",
@@ -45,6 +47,7 @@ module.exports =  {
       "url": "http://localhost:3000/emergency-prescription-wizard/get-help-from-a-service",
       "selectors": ["document"]
     },
+    // NUMSAS journey
     {
       "label": "Emergency prescription - NUMSAS service",
       "url": "http://localhost:3000/emergency-prescription-wizard/service/numsas/numsas-service-view-stage-1",
@@ -86,11 +89,13 @@ module.exports =  {
       "url": "http://localhost:3000/emergency-prescription-wizard/service/numsas/numsas-service-view-stage-2",
       "selectors": ["document"]
     },
+    // GOTO journey
     {
       "label": "Emergency prescription - GOTO outcome",
       "url": "http://localhost:3000/emergency-prescription-wizard/service/goto/goto-service-view",
       "selectors": ["document"]
     },
+    // CAS journey
     {
       "label": "Emergency prescription - CAS service",
       "url": "http://localhost:3000/emergency-prescription-wizard/service/cas/cas-start",
