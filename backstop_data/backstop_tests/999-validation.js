@@ -31,13 +31,23 @@ module.exports =  {
       "selectors": ["document"]
     },
     {
-      "label": "999 - pick address",
-      "url": "http://localhost:3000/book-callback/confirm-home-address",
+      "label": "999 - pick address (at home)",
+      "url": "http://localhost:3000/book-callback/confirm-home-address?backstopTest=RG7%206DG",
       "selectors": ["document"]
     },
     {
-      "label": "999 - confirm location address (not at home)",
-      "url": "http://localhost:3000/book-callback/confirm-location-address",
+      "label": "999 - confirm address (at home)",
+      "url": "http://localhost:3000/book-callback/confirm-home-address?backstopTest=SE1%206LH",
+      "selectors": ["document"]
+    },
+    {
+      "label": "999 - pick address (not at home)",
+      "url": "http://localhost:3000/book-callback/confirm-location-address?backstopTest=RG7%206DG",
+      "selectors": ["document"]
+    },
+    {
+      "label": "999 - confirm single address (not at home)",
+      "url": "http://localhost:3000/book-callback/confirm-location-address?backstopTest=SE1%206LH",
       "selectors": ["document"]
     },
     {
@@ -47,7 +57,7 @@ module.exports =  {
     },
     {
       "label": "999 - address not found",
-      "url": "http://localhost:3000/book-callback/address-not-found",
+      "url": "http://localhost:3000/book-callback/confirm-home-address?backstopTest=RG7%206FG",
       "selectors": ["document"]
     },
     {
@@ -72,7 +82,7 @@ module.exports =  {
     },
     {
       "label": "999 - confirm number to call",
-      "url": "http://localhost:3000/book-callback/confirm-number",
+      "url": "http://localhost:3000/book-callback/confirm-number?backstopTest=01234%20567%20890",
       "selectors": ["document"]
     },
     {
