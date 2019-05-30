@@ -101,6 +101,11 @@ module.exports =  {
       "label": "Finding pathways - all pathways list",
       "url": "http://localhost:3000/finding-pathways/browse-a-z",
       "selectors": ["document"]
+    },
+    {
+      "label": "Weird questions",
+      "url": "http://localhost:3000/weird-questions",
+      "selectors": ["document"]
     }
   ],
   "paths": {
