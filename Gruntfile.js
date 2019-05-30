@@ -54,7 +54,7 @@ module.exports = function (grunt) {
         script: 'server.js',
         options: {
           ext: 'js, json',
-          ignore: ['node_modules/**', 'app/assets/**', 'public/**'],
+          ignore: ['node_modules/**', 'app/assets/**', 'public/**', 'backstop_data/**'],
           args: grunt.option.flags()
         }
       }
