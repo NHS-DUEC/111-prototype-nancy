@@ -1,7 +1,8 @@
 {% extends '_layouts/layout.html' %}
 
-{% block page_title %}
-{% endblock %}
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhs-redesign{% endblock %}
 
 {% block content %}
 
@@ -15,9 +16,9 @@
     </div>
   {% endif %}
   <fieldset id="dob-group">
-    <legend><h1>What is your date of birth?</h1></legend>
+    <legend><h1 class="h2">What is your date of birth?</h1></legend>
     <div class="callout callout--info">
-      <p>Letting us know your date of birth helps the nurse find your records.</p>
+      <p>Letting us know your date of birth helps us find your records.</p>
     </div>
     <div class="form-group -date {% if error %}-errors{% endif %}">
       <div>
