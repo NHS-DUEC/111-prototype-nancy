@@ -36,6 +36,11 @@ module.exports =  {
       "selectors": ["document"]
     },
     {
+      "label": "ED validation - call booking DOB (if not given before)",
+      "url": "http://localhost:3000/book-callback/date-of-birth",
+      "selectors": ["document"]
+    },
+    {
       "label": "ED validation - pick address (at home)",
       "url": "http://localhost:3000/book-callback/confirm-home-address?backstopTest=RG7%206DG",
       "selectors": ["document"]

@@ -80,6 +80,11 @@ module.exports =  {
       "selectors": ["document"]
     },
     {
+      "label": "Emergency prescription - DOB (if not given before)",
+      "url": "http://localhost:3000/emergency-prescription-wizard/service/user-info/dob",
+      "selectors": ["document"]
+    },
+    {
       "label": "Emergency prescription - home postcode",
       "url": "http://localhost:3000/emergency-prescription-wizard/service/user-info/postcode",
       "selectors": ["document"]
