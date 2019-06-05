@@ -15,9 +15,14 @@
       </p>
     </div>
   {% endif %}
+  
   <h1>Are you here?</h1>
-
-  <p>We’re checking in case we need to send help.</p>
+  <div class="callout callout--info">
+    <p>
+      You’ve told us you’re not at home, letting us know your address lets us
+      send help if needed.
+    </p>
+  </div>
 
   <p>
     {% for addressLine in session.addressResults[0] %}
