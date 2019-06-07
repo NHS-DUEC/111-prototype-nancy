@@ -16,6 +16,11 @@
 @import "modules/typography/formatting";
 @import "modules/typography/links";
 
+// Layout and grid
+@import "modules/layout/layout";
+@import "modules/layout/grid";
+@import "modules/layout/spacing";
+
 // Modules
 @import "modules/banner/phase-banner";
 @import "modules/banner/prototype";
@@ -26,6 +31,7 @@
 @import "modules/controls/action-link";
 @import "modules/controls/breadcrumbs";
 @import "modules/controls/buttons";
+@import "modules/data/check-details";
 @import "modules/data/table";
 @import "modules/disclosure/details";
 @import "modules/disclosure/collapse";
@@ -62,11 +68,6 @@
 @import "modules/signage/info";
 @import "modules/services/service-primary";
 @import "modules/services/service-listings";
-
-// Layout and grid
-@import "modules/layout/layout";
-@import "modules/layout/grid";
-@import "modules/layout/spacing";
 
 /**
   The [class^="nhsuk-"] selector is used so that for the new NHS.UK Frontend styles
@@ -118,5 +119,9 @@
         line-height: $baseline-grid-unit*6;
       }
     }
+  }
+
+  .check-details {
+    @include nhsuk-typography-responsive(19);
   }
 }
