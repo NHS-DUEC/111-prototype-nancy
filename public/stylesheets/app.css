@@ -1358,6 +1358,12 @@ body, pre.user-input {
   }
 }
 
+@media (min-width: 500px) {
+  .check-details .-mvp .-value {
+    width: 70%;
+  }
+}
+
 table {
   width: 100%;
   border-collapse: collapse;
