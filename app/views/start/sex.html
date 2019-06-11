@@ -2,6 +2,8 @@
 
 {% block page_title %}{% endblock %}
 
+{% block body_css_classes %}nhsuk-frontend{% endblock %}
+
 {% block content %}
 <form action="" class="form content-block measure" method="post">
   {% if error %}
@@ -13,7 +15,9 @@
     </div>
   {% endif %}
   <fieldset>
-    <legend><h1>What is your sex?</h1></legend>
+    <legend>
+      <h1 class="nhsuk-heading-l">What is your sex?</h1>
+    </legend>
     <div class="form-group {% if error %}-errors{% endif %}">
       {% if error %}
         <p class="error-hint">Choose one option</p>
@@ -45,7 +49,7 @@
       </div>
     </details>
   </fieldset>
-  <div class="form-controls shunt-2">
+  <div class="form-controls">
     <button class="button" type="submit">Next</button>
   </div>
 </form>

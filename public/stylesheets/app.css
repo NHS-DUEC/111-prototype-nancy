@@ -6088,3 +6088,13 @@ img {
     line-height: 1.15;
   }
 }
+
+[class^="nhsuk-"] .collapse-content {
+  margin-top: 16px;
+}
+
+@media (min-width: 500px) {
+  [class^="nhsuk-"] .collapse-content {
+    margin-top: 24px;
+  }
+}
