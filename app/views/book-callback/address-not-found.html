@@ -2,12 +2,12 @@
 
 {% block page_title %}{% endblock %}
 
-{% block body_css_classes %}nhs-redesign{% endblock %}
+{% block body_css_classes %}nhsuk-frontend{% endblock %}
 
 {% block content %}
 
 <div class="content-block measure">
-  <h1>No address found</h1>
+  <h1 class="nhsuk-heading-l">No address found</h1>
   <p>
     You told us you’re in {{ session.postcode | upper }}.<br>
     We can't find any addresses for that postcode.
@@ -24,5 +24,4 @@
     </li>
   </ul>
 </div>
-
 {% endblock %}
