@@ -7,17 +7,6 @@
 {% block content %}
 
 <div class="content-block measure">
-  {% if error %}
-    <div class="error-summary">
-      <div>
-        <h2 class="error-heading">There’s a problem</h2>
-        <p>
-          <a href="#address_0">Enter a full address.</a>
-        </p>
-      </div>
-    </div>
-  {% endif %}
-
   <form method="post" class="shunt">
     <fieldset>
       <legend>
@@ -67,5 +56,4 @@
     </div>
   </form>
 </div>
-
 {% endblock %}
