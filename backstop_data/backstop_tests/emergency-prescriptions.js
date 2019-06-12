@@ -94,6 +94,11 @@ module.exports =  {
       "url": "http://localhost:3000/emergency-prescription-wizard/service/numsas/numsas-service-view-stage-2",
       "selectors": ["document"]
     },
+    {
+      "label": "Emergency prescription - NUMSAS outcome MVP",
+      "url": "http://localhost:3000/emergency-prescription-wizard/service/numsas/numsas-service-view-stage-2-mvp",
+      "selectors": ["document"]
+    },
     // GOTO journey
     {
       "label": "Emergency prescription - GOTO outcome",
