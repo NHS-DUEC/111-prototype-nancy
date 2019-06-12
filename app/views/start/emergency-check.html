@@ -1,14 +1,16 @@
 {% extends '_layouts/layout.html' %}
 
-{% block page_title %}
-{% endblock %}
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhsuk-frontend{% endblock %}
 
 {% block content %}
 
 <div class="content-block measure">
 
-  <h1 class="error-hint">Check it’s not an emergency</h1>
-  <div class="callout callout--alert shunt-2">
+  <h1 class="nhsuk-heading-xl error-hint">Check it’s not an emergency</h1>
+
+  <div class="callout callout--alert">
     <h2>Call 999 now if you have:</h2>
     <ul>
       <li>
@@ -38,9 +40,8 @@
   </div>
 
   <div>
-    <p>
-      <a href="/start/date-of-birth" class="button">I have none of these</a>
-    </p>
+    <a href="/start/date-of-birth" class="button">I have none of these</a>
   </div>
 
+</div>
 {% endblock %}

@@ -478,6 +478,7 @@ li.tabular-data-row > .callout {
 .reference-number {
   font-family: monospace;
   font-size: 28px;
+  margin-bottom: 16px;
 }
 
 a:link {
@@ -6085,5 +6086,15 @@ img {
   [class^="nhsuk-"] .check-details {
     font-size: 14pt;
     line-height: 1.15;
+  }
+}
+
+[class^="nhsuk-"] .collapse-content {
+  margin-top: 16px;
+}
+
+@media (min-width: 500px) {
+  [class^="nhsuk-"] .collapse-content {
+    margin-top: 24px;
   }
 }

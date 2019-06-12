@@ -1,0 +1,120 @@
+{% set suppress_feedback = true %}
+
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhsuk-frontend{% endblock %}
+
+{% block content %}
+
+<div class="content-block">
+  <div class="measure">
+    <h1>
+      Call the pharmacy before you go
+    </h1>
+    <div class="callout callout--attention measure">
+      <p>
+        Call the pharmacy on <a href="tel:+44792240042">020 7928 7815</a> and
+        give them this reference number:
+      </p>
+      <div class="reference-number">111-ONLINE-B1T0F</div>
+      <p>
+        You might be asked to show some identification when you get there.
+      </p>
+    </div>
+  </div>
+
+  <div class="service-details-container">
+
+    <div class="details-1 service-details">
+      <div class="unit address">
+        <p>
+          St George’s Pharmacy<br>
+          46 St Georges Road<br>
+          Elephant and Castle<br>
+          London<br>
+          SE1 6ET
+        </p>
+      </div>
+
+      <div class="unit address">
+        <p>
+          <a href="#">020 7928 7815</a>
+        </p>
+      </div>
+
+      <div class="unit hours">
+        <p>
+          Open until 6.30pm
+        </p>
+      </div>
+
+    </div>
+
+    <div class="geo">
+      <div id="service-location" class="map-frame"></div>
+    </div>
+
+    <div class="details-2 service-details">
+      <div class="unit directions">
+        <p>
+          0.5 miles away
+          <br>
+          <a href="#" target="_blank">
+            Get directions <span class="small">(opens a new tab or window)</span>
+          </a>
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+{% endblock %}
+
+{% block footer %}
+{% include '_includes/survey-banner.html' %}
+{% endblock %}
+
+{% block body_after %}
+  {% include '_partials/_partial-collapse-script.html' %}
+
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDP454skpvnlft08MDIcZG_khm-sBHmFbM"></script>
+  <script>
+    var serviceLat = 51.4956682;
+    var serviceLng = -0.1018427;
+    var userLat = 51.4963291;
+    var userLng = -0.100777;
+    $(function() {
+      mapObj = new google.maps.Map(document.getElementById('service-location'), {
+        center: {
+          lat: serviceLat,
+          lng: serviceLng
+        },
+        zoom: 16,
+        maxZoom: 18,
+        zoomControl: true,
+        mapTypeControl: false,
+        scaleControl: true,
+        streetViewControl: false,
+        rotateControl: false,
+        fullscreenControl: false
+      });
+      var bounds = new google.maps.LatLngBounds();
+      var service = new google.maps.Marker({
+        position: new google.maps.LatLng(serviceLat, serviceLng),
+        map: mapObj
+      });
+      bounds.extend(service.position);
+      var user = new google.maps.Marker({
+        position: new google.maps.LatLng(userLat, userLng),
+        map: mapObj,
+        icon: '/images/icon-maps-user-location.png'
+      });
+      bounds.extend(user.position);
+      mapObj.fitBounds(bounds);
+    });
+  </script>
+{% endblock %}
