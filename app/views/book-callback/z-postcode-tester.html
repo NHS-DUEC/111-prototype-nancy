@@ -1,0 +1,49 @@
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhsuk-frontend{% endblock %}
+
+{% block content %}
+
+<div class="content-block measure">
+  <div class="form-group">
+    <h1 class="nhsuk-heading-l">
+      <label for="postcode">Postcode tester</label>
+    </h1>
+    <div class="shunt">
+      <input type="text" name="postcode" id="postcode" value="" class="-small">
+    </div>
+  </div>
+  <p>
+    <a id="clicker" class="button" href="/book-callback/confirm-home-address">Go</a>
+  </p>
+</div>
+
+{% endblock %}
+
+{% block body_after %}
+
+<script type="text/javascript">
+  $(function() {
+
+    var $input = $('#postcode');
+    var $clicker = $('#clicker');
+    var queryString = $clicker.attr('href') + '?backstopTest=';
+
+    $clicker.on('click', function(e) {
+      e.preventDefault();
+      var val = $input.val();
+      if (val === '') {
+        alert('Put in a postcode fool');
+        return false;
+      } else {
+        queryString += $input.val();
+        window.location.href = queryString;
+      }
+    });
+
+  });
+</script>
+
+{% endblock %}
