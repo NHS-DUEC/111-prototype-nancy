@@ -12,8 +12,8 @@
   {% if session.callBooking.who === 'someone-else' %}
   <div class="callout callout--info">
     <p>
-      As you’re doing this for someone else, the nurse will call your number.
-      They’ll ask to speak to {{ session.callBooking.name.firstname }} if they need to.
+      We’ll call your number. {{ session.callBooking.name.firstname }} might
+      have to answer some questions during the call.
     </p>
   </div>
   {% endif %}
