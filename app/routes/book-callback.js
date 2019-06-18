@@ -13,7 +13,6 @@ module.exports = router
 router.get('/', function(req, res) {
   // zero out a namespaced session obj
   req.session.callBooking = {};
-  req.session.callBooking.who = '';
   req.session.callBooking.name = {};
   req.session.callBooking.name.firstname = '';
   req.session.callBooking.name.secondname = '';
@@ -28,7 +27,6 @@ router.get('/', function(req, res) {
 router.post('/', function(req, res) {
   // zero out a namespaced session obj
   req.session.callBooking = {};
-  req.session.callBooking.who = '';
   req.session.callBooking.name = {};
   req.session.callBooking.name.firstname = '';
   req.session.callBooking.name.secondname = '';
