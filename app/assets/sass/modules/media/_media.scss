@@ -1,0 +1,16 @@
+.media {
+
+  // -inline classes used to pop things in amongst answers
+  &.-inline {
+    position: relative;
+    top: -$baseline-grid-unit*2;
+    padding-left: 50px;
+    margin: 0 0 $baseline-grid-unit*3 0;
+
+    .nhsuk-image {
+      max-width: 400px;
+      margin: $baseline-grid-unit*3 0;
+    }
+  }
+
+}

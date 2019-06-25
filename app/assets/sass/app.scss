@@ -59,6 +59,7 @@
 @import "modules/listing/address-listing";
 @import "modules/loader/loader";
 @import "modules/location/location";
+@import "modules/media/media";
 @import "modules/modal/modal";
 @import "modules/navigation/a-z";
 @import "modules/nhsid/nhsid";
@@ -82,6 +83,7 @@
   /* nhsuk-frontend components */
   @import "node_modules/nhsuk-frontend/packages/components/action-link/action-link";
   @import "node_modules/nhsuk-frontend/packages/components/button/button";
+  @import "node_modules/nhsuk-frontend/packages/components/images/images";
 
   /* MAT'S ANNOYING OVERRIDES */
   .button {
@@ -130,5 +132,9 @@
     @include media(mid) {
       margin-top: $baseline-grid-unit*6;
     }
+  }
+
+  .nhsuk-image {
+    background-color: $grey-5;
   }
 }
