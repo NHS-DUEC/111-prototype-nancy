@@ -2686,6 +2686,17 @@ img {
   }
 }
 
+.media.-inline {
+  position: relative;
+  top: -8px;
+  padding-left: 50px;
+  margin: 0 0 12px 0;
+}
+
+.media.-inline .nhsuk-image {
+  margin: 12px 0;
+}
+
 .modal-present {
   position: relative;
 }
@@ -3299,6 +3310,15 @@ img {
  */
   /**
  * Button disabled states
+ */
+  /* ==========================================================================
+   COMPONENTS / #IMAGES
+   ========================================================================== */
+  /**
+ * 1. Overrides default browser margin values.
+ * 2. Makes the image width two thirds of its container for desktop.
+ * 3. Avoid image printing full width of a page.
+ * 4. Removes top margin from subsequent nhsuk-image.
  */
   /* MAT'S ANNOYING OVERRIDES */
 }
@@ -5989,6 +6009,81 @@ img {
   top: 0;
 }
 
+[class^="nhsuk-"] .nhsuk-image {
+  background-color: #ffffff;
+  border-bottom: 1px solid #d8dde0;
+  margin-bottom: 32px;
+  margin-top: 32px;
+  margin-left: 0;
+  /* [1] */
+  margin-right: 0;
+  /* [1] */
+}
+
+@media (min-width: 40.0625em) {
+  [class^="nhsuk-"] .nhsuk-image {
+    margin-bottom: 40px;
+  }
+}
+
+@media (min-width: 40.0625em) {
+  [class^="nhsuk-"] .nhsuk-image {
+    margin-top: 40px;
+  }
+}
+
+@media (min-width: 48.0625em) {
+  [class^="nhsuk-"] .nhsuk-image {
+    width: 66.66667%;
+    /* [2] */
+  }
+}
+
+@media print {
+  [class^="nhsuk-"] .nhsuk-image {
+    width: 50%;
+    /* [3] */
+  }
+}
+
+[class^="nhsuk-"] .nhsuk-image + .nhsuk-image {
+  margin-top: 0;
+  /* [4] */
+}
+
+@media (min-width: 40.0625em) {
+  [class^="nhsuk-"] .nhsuk-image + .nhsuk-image {
+    margin-top: 0;
+  }
+}
+
+[class^="nhsuk-"] .nhsuk-image__img {
+  display: block;
+  width: 100%;
+}
+
+[class^="nhsuk-"] .nhsuk-image__caption {
+  font-size: 14px;
+  font-size: 0.875rem;
+  line-height: 1.7142857143;
+  padding: 16px;
+}
+
+@media (min-width: 40.0625em) {
+  [class^="nhsuk-"] .nhsuk-image__caption {
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+}
+
+@media print {
+  [class^="nhsuk-"] .nhsuk-image__caption {
+    font-size: 14pt;
+    line-height: 1.2;
+  }
+}
+
 [class^="nhsuk-"] .button {
   border-radius: 0;
   width: 100%;
@@ -6097,4 +6192,12 @@ img {
   [class^="nhsuk-"] .collapse-content {
     margin-top: 24px;
   }
+}
+
+[class^="nhsuk-"] .nhsuk-image {
+  background-color: #f0f4f5;
+}
+
+[class^="nhsuk-"] .callout .nhsuk-image {
+  background-color: #fff;
 }
