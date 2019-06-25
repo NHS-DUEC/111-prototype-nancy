@@ -2694,7 +2694,6 @@ img {
 }
 
 .media.-inline .nhsuk-image {
-  max-width: 400px;
   margin: 12px 0;
 }
 
@@ -6197,4 +6196,8 @@ img {
 
 [class^="nhsuk-"] .nhsuk-image {
   background-color: #f0f4f5;
+}
+
+[class^="nhsuk-"] .callout .nhsuk-image {
+  background-color: #fff;
 }

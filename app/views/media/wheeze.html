@@ -1,0 +1,82 @@
+{% set use_question_feedback = true %}
+
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhsuk-frontend{% endblock %}
+
+{% block content %}
+
+<div class="content-block measure">
+
+  <h1 class="nhsuk-heading-l">
+    Are you short of breath or can hear a whistling or wheezing noise from your
+    chest?
+  </h1>
+
+
+  <div class="callout callout--info">
+    <p>
+      We’re looking for breathing problems not caused by a cold or blocked nose.
+      Short of breath means you may be panting or gasping for breath or can hear
+      noises coming from your chest.
+    </p>
+    <details class="media">
+      <summary class="small">Listen to the sound of an expiratory wheeze. mmmmmm.</summary>
+      <div class="shunt">
+        <audio controls>
+          <source src="/media-files/expiratory-wheeze.mp3" type="audio/mp3">
+          <source src="/media-files/expiratory-wheeze.ogg" type="audio/ogg">
+          <p>Your browser doesn't support HTML5 audio. Here is a <a href="viper.mp3">link to the audio</a> instead.</p>
+        </audio>
+      </div>
+    </details>
+  </div>
+
+  <form action="question-handler" method="post" class="form">
+
+    <div class="form-group">
+      <fieldset>
+        <label class="block-label">
+          <input name="answer" value="" type="radio" class="selection-button-radio">
+          <span>
+            Yes
+          </span>
+        </label>
+        <label class="block-label">
+          <input name="answer" value="" type="radio" class="selection-button-radio">
+          <span>
+            I don’t know
+          </span>
+        </label>
+        <label class="block-label">
+          <input name="answer" value="" type="radio" class="selection-button-radio">
+          <span>
+            No
+          </span>
+        </label>
+      </fieldset>
+    </div>
+
+    <div class="form-group">
+      <p><button type="submit" class="button">Next</button></p>
+      <p><a href="#">Change my previous answer</a></p>
+    </div>
+
+  </form>
+
+</div>
+
+{% endblock %}
+
+{% block body_after %}
+<script type="text/javascript">
+$(function() {
+  $('.nhsuk-image__img').on('click', function(e) {
+    var $el = $(this).parents('.media.-inline').prev();
+    $el.trigger('click');
+  });
+});
+</script>
+{% endblock %}
