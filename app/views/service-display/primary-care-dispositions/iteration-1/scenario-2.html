@@ -8,28 +8,25 @@
 
 {% block content %}
 
-<div class="content-block">
+<div class="content-block measure">
 
   <p>
-    You can find out <a href="#">how to register with a GP on NHS.UK</a>
+    <a href="javascript:window.history.back();" class="button-back">Back</a>
   </p>
 
-  <p>
-    If you can’t get an appointment today, <a href="#">find more ways to get help</a>
-  </p>
+  <div class="callout callout--attention">
+    <p>
+      You can find out <a href="#">how to register with a GP on NHS.UK</a>
+    </p>
+  </div>
+
+  {% include 'service-display/_components/care-advice.html' %}
 
   <div class="content-seperator content-seperator--equalvertspacing--large"></div>
 
-  <div class="measure">
-    {% include 'service-display/_components/care-advice.html' %}
-  </div>
 
-  <div class="content-seperator content-seperator--equalvertspacing--large"></div>
-
-  <div class="measure">
-    {% set acuity = "high" %}
-    {% include 'service-display/_components/worsening-symptoms.html' %}
-  </div>
+  {% set acuity = "low" %}
+  {% include 'service-display/_components/worsening-symptoms.html' %}
 
 </div>
 
