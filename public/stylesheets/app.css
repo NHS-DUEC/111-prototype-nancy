@@ -3321,6 +3321,12 @@ img {
  * 4. Removes top margin from subsequent nhsuk-image.
  */
   /* MAT'S ANNOYING OVERRIDES */
+  /*.collapse-content {
+    margin-top: $baseline-grid-unit*4;
+    @include media(mid) {
+      margin-top: $baseline-grid-unit*6;
+    }
+  }*/
 }
 
 [class^="nhsuk-"] html {
@@ -6181,16 +6187,6 @@ img {
   [class^="nhsuk-"] .check-details {
     font-size: 14pt;
     line-height: 1.15;
-  }
-}
-
-[class^="nhsuk-"] .collapse-content {
-  margin-top: 16px;
-}
-
-@media (min-width: 500px) {
-  [class^="nhsuk-"] .collapse-content {
-    margin-top: 24px;
   }
 }
 
