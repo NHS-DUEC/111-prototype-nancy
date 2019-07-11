@@ -2901,21 +2901,21 @@ img {
   .service-details-container {
     margin: 24px 0;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(3);
   }
 }
 
 .service-details-container .details-1 {
   grid-column-start: 1;
-  grid-column-end: 2;
+  grid-column-end: 3;
   grid-row-start: 2;
   grid-row-end: 3;
 }
 
 .service-details-container .flag {
   grid-column-start: 1;
-  grid-column-end: 4;
+  grid-column-end: 3;
   grid-row-start: 1;
   grid-row-end: 2;
 }
@@ -2925,15 +2925,15 @@ img {
 }
 
 .service-details-container .geo {
-  grid-column-start: 2;
-  grid-column-end: 4;
+  grid-column-start: 3;
+  grid-column-end: 6;
   grid-row-start: 2;
   grid-row-end: 4;
 }
 
 .service-details-container .details-2 {
   grid-column-start: 1;
-  grid-column-end: 2;
+  grid-column-end: 3;
   grid-row-start: 3;
   grid-row-end: 4;
 }
