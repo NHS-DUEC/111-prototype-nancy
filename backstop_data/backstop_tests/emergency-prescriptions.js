@@ -55,12 +55,12 @@ module.exports =  {
     },
     {
       "label": "Emergency prescription - other services",
-      "url": "http://localhost:3000/service-display/ed-multiple-services",
+      "url": "http://localhost:3000/service-display/other-services",
       "selectors": ["document"]
     },
     {
       "label": "Emergency prescription - other services open",
-      "url": "http://localhost:3000/service-display/ed-multiple-services",
+      "url": "http://localhost:3000/service-display/other-services",
       "onReadyScript": "puppet/expand-collapsed.js",
       "selectors": ["document"]
     },
