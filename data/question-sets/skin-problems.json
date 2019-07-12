@@ -1,0 +1,92 @@
+{
+  "questionset" : "skin-problems",
+  "disposition" : "/service-display/primary-care-dispositions/iteration-2/primary-care-dx05-2-hours",
+  "pathways" : [
+    "PW1771",
+    "PW1772"
+  ],
+  "questions" : [
+    {
+      "question" : "What is the main problem?",
+      "help" : "You can only pick one answer.",
+      "answers" : [
+        "I have a rash, spots, red or flaky skin or blisters",
+        "I have an itch",
+        "My skin is yellow",
+        "I have lumps on my skin",
+        "I bruise easily and for no reason",
+        "Something else"
+      ]
+    },
+    {
+      "question" : "Is the rash made up of blisters?",
+      "help" : "Blisters are small pockets of clear fluid under a layer of skin.",
+      "answers" : [
+        "Yes",
+        "I'm not sure",
+        "No"
+      ]
+    },
+    {
+      "question" : "Are you so ill that you've stopped doing all of your usual daily activities?",
+      "help" : "We are checking to see if you feel so ill that you can't do anything you usually would, such as watch tv, use your phone, read or get out of bed.",
+      "answers" : [
+        "Yes - I've stopped doing everything I usually do",
+        "I feel ill but can do some of my usual activities",
+        "No - I feel well enough to do most of my usual daily activities"
+      ]
+    },
+    {
+      "question" : "Do you know how the problem was caused?",
+      "answers" : [
+        "It was the result of a sexual assault",
+        "It was a deliberate serious assault or a child has been hurt on purpose by an adult",
+        "It was a deliberate assault which caused scrapes, bruises or scratches",
+        "I'm not sure or it was something else",
+        "No"
+      ]
+    },
+    {
+      "question" : "Have you got more than 3 blisters or ulcers in your mouth or throat?",
+      "answers" : [
+        "Yes",
+        "I'm not sure",
+        "No"
+      ]
+    },
+    {
+      "question" : "Is your skin peeling off in large pieces like you have very bad sunburn?",
+      "answers" : [
+        "Yes",
+        "I'm not sure",
+        "No"
+      ]
+    },
+    {
+      "question" : "Is there a large area of skin that looks like it's been burned all over?",
+      "help" : "For example, your whole leg, arm, head, face, or most of your chest or tummy.",
+      "answers" : [
+        "Yes",
+        "I'm not sure",
+        "No"
+      ]
+    },
+    {
+      "question" : "Do you have new blisters around your eye?",
+      "answers" : [
+        "Yes",
+        "I'm not sure",
+        "No"
+      ]
+    },
+    {
+      "question" : "Has a doctor told you that getting an infection might be very serious?",
+      "help" : "This means you have a condition that weakens your immune system. For example having chemotherapy, had an organ transplant, have HIV/AIDS or had your spleen removed.",
+      "answers" : [
+        "Yes",
+        "I'm not sure",
+        "No"
+      ]
+    }
+  ]
+}
