@@ -54,6 +54,14 @@ var hijacks = [
   {
     "pwid": "PW756",
     "slug": "headache-or-migraine"
+  },
+  {
+    "pwid": "PW1771",
+    "slug": "skin-problems"
+  },
+  {
+    "pwid": "PW1772",
+    "slug": "skin-problems"
   }
 ];
 

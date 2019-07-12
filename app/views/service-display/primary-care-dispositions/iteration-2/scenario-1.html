@@ -1,0 +1,87 @@
+{% set suppress_feedback = true %}
+
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhsuk-frontend{% endblock %}
+
+{% block content %}
+
+<div class="content-block measure">
+
+  <p>
+    <a href="javascript:window.history.back();" class="button-back">Back</a>
+  </p>
+
+  <div class="callout callout--attention">
+    <h2>More ways to get help</h2>
+    <p>
+      If you don’t have a GP, see <a href="/service-display/other-services">other things you can
+      do.</a>
+    </p>
+  </div>
+
+  <details>
+    <summary>How to register with a GP</summary>
+    <div>
+      <p>
+        Find out <a href="https://www.nhs.uk/using-the-nhs/nhs-services/gps/how-to-register-with-a-gp-practice/">
+        how to register with a GP</a> if you don’t already have one.
+      </p>
+    </div>
+  </details>
+
+  <div class="content-seperator content-seperator--equalvertspacing--large"></div>
+
+  {% set acuity = "high" %}
+  {% include 'service-display/_components/worsening-symptoms.html' %}
+
+</div>
+
+{% endblock %}
+
+{% block footer %}
+{% include '_includes/survey-banner.html' %}
+{% endblock %}
+
+{% block body_after %}
+  {% include '_partials/_partial-collapse-script.html' %}
+
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDP454skpvnlft08MDIcZG_khm-sBHmFbM"></script>
+  <script>
+    var serviceLat = 53.801732;
+    var serviceLng = -1.551858;
+    var userLat = 53.804741;
+    var userLng = -1.564623;
+    $(function() {
+      mapObj = new google.maps.Map(document.getElementById('service-location'), {
+        center: {
+          lat: serviceLat,
+          lng: serviceLng
+        },
+        zoom: 16,
+        maxZoom: 18,
+        zoomControl: true,
+        mapTypeControl: false,
+        scaleControl: true,
+        streetViewControl: false,
+        rotateControl: false,
+        fullscreenControl: false
+      });
+      var bounds = new google.maps.LatLngBounds();
+      var service = new google.maps.Marker({
+        position: new google.maps.LatLng(serviceLat, serviceLng),
+        map: mapObj
+      });
+      bounds.extend(service.position);
+      var user = new google.maps.Marker({
+        position: new google.maps.LatLng(userLat, userLng),
+        map: mapObj,
+        icon: '/images/icon-maps-user-location.png'
+      });
+      bounds.extend(user.position);
+      mapObj.fitBounds(bounds);
+    });
+  </script>
+{% endblock %}

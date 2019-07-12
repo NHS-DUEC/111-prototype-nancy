@@ -127,12 +127,12 @@
     @include nhsuk-typography-responsive(19);
   }
 
-  .collapse-content {
+  /*.collapse-content {
     margin-top: $baseline-grid-unit*4;
     @include media(mid) {
       margin-top: $baseline-grid-unit*6;
     }
-  }
+  }*/
 
   .nhsuk-image {
     background-color: $grey-5;
