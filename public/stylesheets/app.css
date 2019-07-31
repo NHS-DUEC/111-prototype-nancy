@@ -1530,12 +1530,12 @@ details.extra-vert-spacing {
   margin: 24px 0;
 }
 
-.care-advice-output details > div > ul {
+.care-advice-output div > ul {
   list-style: none;
   padding-left: 0;
 }
 
-.care-advice-output details > div > ul ul {
+.care-advice-output div > ul ul {
   margin-top: 0;
   margin-bottom: 24px;
 }
