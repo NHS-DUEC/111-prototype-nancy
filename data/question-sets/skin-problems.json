@@ -1,6 +1,6 @@
 {
   "questionset" : "skin-problems",
-  "disposition" : "/service-display/primary-care-dispositions/iteration-2/primary-care-dx05-2-hours",
+  "disposition" : "/primary-care-dispositions/iteration-2/primary-care-dx05-2-hours",
   "pathways" : [
     "PW1771",
     "PW1772"
