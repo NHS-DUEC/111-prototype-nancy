@@ -1,0 +1,80 @@
+{% set suppress_feedback = true %}
+
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhsuk-frontend{% endblock %}
+
+{% block content %}
+
+<div class="content-block">
+  <div class="measure">
+    <h1>Where to get help</h1>
+  </div>
+
+  <div class="service-details --remote shunt-2">
+    <div class="unit">
+      <p>
+        St George’s Pharmacy<br>
+        46 St Georges Road<br>
+        Elephant and Castle<br>
+        London<br>
+        SE1 6ET
+      </p>
+    </div>
+
+    <div class="unit">
+      <p>
+        Open until 6.30pm
+      </p>
+    </div>
+
+    <div class="unit">
+      <p>
+        0.5 miles away
+      </p>
+    </div>
+
+    <div class="unit">
+      <div class="form-hint measure">
+        <p>
+          This service needs some more details from you.
+        </p>
+      </div>
+      <p>
+        <a class="nhsuk-action-link__link" href="numsas-start">
+          <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+          </svg>
+          <span class="nhsuk-action-link__text">Refer me to this service</span>
+        </a>
+      </p>
+    </div>
+  </div>
+
+  <!-- boilerplate service type text and 'before you go' -->
+  <div class="measure">
+    <p>Pharmacists:</p>
+    <ul>
+      <li>are trained to deal with a wide range of minor health problems</li>
+      <li>can see you more quickly than a GP or clinic</li>
+      <li>have a room where you can talk in private</li>
+    </ul>
+  </div>
+
+  <div class="content-seperator content-seperator--equalvertspacing--large"></div>
+
+  <div class="measure">
+    {% set other_services_url = "/service-display/other-services" %}
+    {% set other_services_message = "services" %}
+    {% include 'service-display/_components/other-services.html' %}
+  </div>
+
+</div>
+
+{% endblock %}
+
+{% block footer %}
+{% endblock %}
