@@ -35,6 +35,10 @@
     background-color: $grey-3;
 }
 
+.content-seperator--white {
+    background-color: $white;
+}
+
 .or-seperator {
   margin: $baseline-grid-unit*10 0 0 0;
   border-top: $baseline-grid-unit solid $grey-5;

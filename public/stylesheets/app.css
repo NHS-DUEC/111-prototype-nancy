@@ -730,6 +730,10 @@ body, pre.user-input {
   background-color: #aeb7bd;
 }
 
+.content-seperator--white {
+  background-color: #fff;
+}
+
 .or-seperator {
   margin: 40px 0 0 0;
   border-top: 4px solid #f0f4f5;
