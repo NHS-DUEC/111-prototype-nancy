@@ -18,7 +18,7 @@
     {% endif %}
     <div class="form-group {% if error %}-errors{% endif %}">
       <h1 class="nhsuk-heading-l">
-        <label for="postcode">What’s your postcode?</label>
+        <label for="postcode">What’s {% if session.proxy == true %}their{% else %}your{% endif %} postcode?</label>
       </h1>
       {% if error %}
         <p class="error-hint">Enter a postcode</p>

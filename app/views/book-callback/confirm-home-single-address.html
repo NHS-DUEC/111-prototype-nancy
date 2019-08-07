@@ -11,12 +11,12 @@
     <div class="error-summary">
       <h2 class="error-heading">There’s a problem</h2>
       <p>
-        Tell us if this is your address or not.
+        Tell us if this is {% if session.proxy == true %}their{% else %}your{% endif %} address or not.
       </p>
     </div>
   {% endif %}
 
-  <h1 class="nhsuk-heading-l">Is this your address?</h1>
+  <h1 class="nhsuk-heading-l">Is this {% if session.proxy == true %}their{% else %}your{% endif %} address?</h1>
   <div class="callout callout--info">
     <p>
       If we know the address we can send help if we need to.

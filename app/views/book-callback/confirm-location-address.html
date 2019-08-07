@@ -7,7 +7,7 @@
 {% block content %}
 
 <div class="content-block measure">
-  <h1 class="nhsuk-heading-l">Where are you right now?</h1>
+  <h1 class="nhsuk-heading-l">Where are {% if session.proxy == true %}they{% else %}you{% endif %} right now?</h1>
   <div class="callout callout--info">
     <p>
       If we know the address we can send help if we need to.
@@ -39,7 +39,7 @@
 
 <div class="content-block measure">
   <p>
-    <a href="/book-callback/address-not-found">I’m not at any of these places</a>
+    <a href="/book-callback/address-not-found">{% if session.proxy == true %}They’re{% else %}I’m{% endif %} not at any of these places</a>
   </p>
 </div>
 

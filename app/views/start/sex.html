@@ -16,7 +16,7 @@
   {% endif %}
   <fieldset>
     <legend>
-      <h1 class="nhsuk-heading-l">What is your sex?</h1>
+      <h1 class="nhsuk-heading-l">What is {% if session.proxy == true %}their{% else %}your{% endif %} sex?</h1>
     </legend>
     <div class="form-group {% if error %}-errors{% endif %}">
       {% if error %}
