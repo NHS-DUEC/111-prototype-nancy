@@ -16,9 +16,9 @@
     </div>
   {% endif %}
   <fieldset id="dob-group">
-    <legend><h1 class="h2">What is your date of birth?</h1></legend>
+    <legend><h1 class="h2">What is {% if session.proxy == true %}their{% else %}your{% endif %} date of birth?</h1></legend>
     <div class="callout callout--info">
-      <p>Your date of birth helps us find your NHS number.</p>
+      <p>{% if session.proxy == true %}Their{% else %}Your{% endif %} date of birth helps us find {% if session.proxy == true %}their{% else %}your{% endif %} NHS number.</p>
     </div>
     <div class="form-group -date {% if error %}-errors{% endif %}">
       <div>

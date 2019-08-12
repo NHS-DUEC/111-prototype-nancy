@@ -11,13 +11,13 @@
     <div class="error-summary">
       <h2 class="error-heading">There’s a problem</h2>
       <p>
-        Tell us if you’re at home or not
+        Tell us if {% if session.proxy == true %}they’re{% else %}you’re{% endif %} at home or not
       </p>
     </div>
   {% endif %}
-  <h1 class="nhsuk-heading-l">Are you at home?</h1>
+  <h1 class="nhsuk-heading-l">Are {% if session.proxy == true %}they{% else %}you{% endif %} at home?</h1>
   <div class="callout callout--info">
-    <p>We need to know where you are so we can find services to help.</p>
+    <p>We need to know where {% if session.proxy == true %}they{% else %}you{% endif %} are so we can find services to help.</p>
   </div>
 
   <form id="postcode-container" method="post">

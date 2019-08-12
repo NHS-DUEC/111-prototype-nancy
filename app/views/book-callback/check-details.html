@@ -7,7 +7,7 @@
 {% block content %}
 <div class="content-block measure clearfix">
 
-  <h1>Check your details</h1>
+  <h1>Check {% if session.proxy == true %}their{% else %}your{% endif %} details</h1>
 
   <!-- ##################################################################### -->
   <!-- single user, at home -->
@@ -176,7 +176,7 @@
   <!-- proxy user, at home -->
   <div class="callout callout--info">
     <p>
-      We’ll call your number. Sarah might have to answer some questions during the call. 
+      We’ll call your number. Sarah might have to answer some questions during the call.
     </p>
   </div>
   <dl class="check-details">

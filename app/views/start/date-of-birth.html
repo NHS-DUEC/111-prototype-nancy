@@ -18,7 +18,7 @@
   {% endif %}
   <fieldset id="dob-group">
     <legend>
-      <h1 class="nhsuk-heading-l">What is your date of birth?</h1>
+      <h1 class="nhsuk-heading-l">What is {% if session.proxy == true %}their{% else %}your{% endif %} date of birth?</h1>
     </legend>
     <div class="form-group -date {% if error %}-errors{% endif %}">
       <div>
