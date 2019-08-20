@@ -40,6 +40,25 @@ following commands (use two Terminal tabs):
 
 ---
 
+### GP lookup widget
+
+The GP Lookup app, used to perform the ‘Find your GP’ lookup functionality (via CORS):
+`https://gitlab.com/demotive/gp-lookup`
+
+#### Downloading and running `gp-lookup`:
+
+Make sure you’ve got a suitable version of Ruby, and Bundler (have fun). Clone the directory then:
+
+`bundle install`
+
+Once that’s done, start the app with an environment variable like this:
+
+`ALLOWED_ORIGINS=http://localhost:3000 bundle exec rackup`
+
+This app should now be running happily. You can use it standalone at [http://localhost:9292](http://localhost:9292).
+
+---
+
 ### Automated screenshots / visual regression
 
 In `/backstop_data/backstop_tests` are some automated screengrab journeys. They
@@ -57,5 +76,4 @@ Then with `localhost` running you should be able to run (for example):
 `backstop test --config/backstop_data/backstop_tests/emergency-prescriptions`
 
 (`backstop.json`, `backstop_data/bitmaps_reference`, `backstop_data/bitmaps_test`,
-`backstop_data/html_report` are all ignored in favour of doing it lo-fi and locally)
- 
+`backstop_data/html_report` are all git ignored in favour of doing it lo-fi and locally)
