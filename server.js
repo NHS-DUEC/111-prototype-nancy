@@ -22,6 +22,7 @@ var bookCallback = require('./app/routes/book-callback');
 var serviceDisplay = require('./app/routes/service-display');
 
 var emergencyPrescriptionWizard = require('./app/routes/emergency-prescription-wizard');
+var gpLookup = require('./app/routes/gp-lookup');
 
 var userJourneys = require('./app/routes/user-journeys');
 
@@ -70,6 +71,7 @@ app.use(function (req, res, next) {
   res.locals.cookieText = config.cookieText
   res.locals.session = req.session
   res.locals.jsNow = new Date();
+  res.locals.gpLookupURL = gpLookupURL;
   next()
 })
 
@@ -110,6 +112,7 @@ app.use('/book-callback', bookCallback);
 app.use('/service-display', serviceDisplay);
 
 app.use('/emergency-prescription-wizard', emergencyPrescriptionWizard);
+app.use('/gp-lookup', gpLookup);
 
 app.use('/user-journeys', userJourneys);
 

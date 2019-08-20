@@ -17,8 +17,7 @@ var Application = React.createClass({
       null,
       React.createElement(SearchForm, { searchText: this.state.searchText,
         handleSearchTextChange: this.handleSearchTextChange }),
-      this.resultsList(),
-      React.createElement(BackLink, null)
+      this.resultsList()
     );
   },
 
@@ -58,11 +57,11 @@ var Application = React.createClass({
     });
 
     if (searchText.length > 0) {
-      search(searchText, maxResults).then(function (practices) {
+      search(searchText, maxResults).then((function (practices) {
         this.setState({
           results: practices
         });
-      }.bind(this));
+      }).bind(this));
     } else {
       this.setState({
         results: null
@@ -78,52 +77,31 @@ var SearchForm = React.createClass({
 
     return React.createElement(
       "form",
-      { name: "gp-search", id: "gp-search", method: "get", className: "gp-finder-search" },
+      { name: "", id: "", action: "", method: "get", className: "gp-finder-search" },
       React.createElement(
         "div",
-        { className: "block-container" },
+        { className: "nhsuk-frontend" },
         React.createElement(
           "h1",
-          null,
+          { className: "nhsuk-heading-l" },
           React.createElement(
             "label",
             { htmlFor: "search" },
-            "Find your current GP practice"
-          )
-        ),
-        React.createElement(
-          "div",
-          { className: "clearfix" },
-          React.createElement("input", { type: "text", name: "search", id: "search", className: "form-control", autoComplete: "off",
-            value: this.props.searchText,
-            onChange: this.onChange }),
-          React.createElement(
-            "span",
-            { className: "button" },
-            "Search"
+            "Find your GP practice"
           )
         )
-      )
-    );
-  },
-
-  onChange: function onChange(event) {
-    this.props.handleSearchTextChange(event.target.value);
-  }
-});
-
-var BackLink = React.createClass({
-  displayName: "BackLink",
-
-  render: function render() {
-
-    return React.createElement(
-      "div",
-      { className: "form-group -controls" },
+      ),
       React.createElement(
-        "a",
-        { href: "current-gp", className: "button-back" },
-        "Back"
+        "div",
+        { className: "search" },
+        React.createElement("input", { type: "text", name: "search", id: "search",
+          value: this.props.searchText,
+          onChange: this.onChange }),
+        React.createElement(
+          "button",
+          { type: "submit", className: "button" },
+          "Search"
+        )
       )
     );
   },
@@ -138,14 +116,10 @@ var ResultsList = React.createClass({
 
   render: function render() {
     return React.createElement(
-      "div",
-      { className: "block-container" },
-      React.createElement(
-        "form",
-        { name: "gp-results", id: "gp-results", method: "post" },
-        this.results(),
-        this.footer()
-      )
+      "form",
+      { name: "gp-results", id: "gp-results", method: "post", className: "content-block shunt-2" },
+      this.results(),
+      this.footer()
     );
   },
 
@@ -174,7 +148,7 @@ var PracticeResult = React.createClass({
   displayName: "PracticeResult",
 
   render: function render() {
-    var practitioners = this.props.practice.practitioners.map(function (practitioner, index) {
+    var practitioners = this.props.practice.practitioners.map((function (practitioner, index) {
       var key = this.props.practice.code + "-practitioner-" + index;
       return React.createElement(
         "p",
@@ -183,10 +157,10 @@ var PracticeResult = React.createClass({
         " Dr. ",
         React.createElement("span", { dangerouslySetInnerHTML: this.highlightText(practitioner.value, practitioner.matches) })
       );
-    }.bind(this)),
+    }).bind(this)),
         href = "/practice/" + this.props.practice.code,
         id = "result-" + this.props.index,
-        className = this.props.index % 20 === 0 ? "result start-of-page" : "result";
+        className = this.props.index % 20 === 0 ? "nhsuk-frontend result start-of-page" : "nhsuk-frontend result";
 
     if (this.props.practice.score.distance) {
       var distance = React.createElement(
@@ -198,9 +172,9 @@ var PracticeResult = React.createClass({
     }
 
     return React.createElement(
-      "div",
-      { className: className, id: id, tabIndex: "0" },
-      React.createElement("h2", { className: "result-title", dangerouslySetInnerHTML: this.highlightText(this.props.practice.name.value, this.props.practice.name.matches) }),
+      "a",
+      { href: href, className: className, id: id },
+      React.createElement("h2", { className: "nhsuk-heading-m", dangerouslySetInnerHTML: this.highlightText(this.props.practice.name.value, this.props.practice.name.matches) }),
       React.createElement("p", { className: "address", dangerouslySetInnerHTML: this.highlightText(this.props.practice.address.value, this.props.practice.address.matches) }),
       distance,
       practitioners
@@ -290,7 +264,7 @@ var EndOfPage = React.createClass({
         React.createElement(
           "li",
           null,
-          "doctor\u2019s name"
+          "doctor’s name"
         )
       ),
       React.createElement(
@@ -348,7 +322,7 @@ var EndOfResults = React.createClass({
         React.createElement(
           "li",
           null,
-          "doctor\u2019s name"
+          "doctor’s name"
         )
       ),
       React.createElement(
@@ -407,11 +381,11 @@ var NoResults = React.createClass({
         React.createElement(
           "li",
           null,
-          "doctor\u2019s name"
+          "doctor’s name"
         )
       )
     );
   }
 });
 
-ReactDOM.render(React.createElement(Application, null), document.getElementById('content'));
+ReactDOM.render(React.createElement(Application, null), document.getElementById('gp-lookup-widget'));
