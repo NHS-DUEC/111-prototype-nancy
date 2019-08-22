@@ -117,7 +117,7 @@ var ResultsList = React.createClass({
   render: function render() {
     return React.createElement(
       "form",
-      { name: "gp-results", id: "gp-results", method: "post", className: "content-block shunt-2" },
+      { name: "gp-results", id: "gp-results", method: "post", className: "content-block shunt" },
       this.results(),
       this.footer()
     );

@@ -28,20 +28,6 @@
     }
 
     .gp-finder-results {
-      a.start-of-page:not(:first-child) {
-        position: relative;
-        margin-top: $baseline-grid-unit * 8;
-        &:before {
-          content: "";
-          display: block;
-          background: #ddd;
-          position: absolute;
-          top: -17px;
-          width: 100%;
-          height: 2px;
-          left: 0;
-        }
-      }
       p {
         margin: $baseline-grid-unit * 1.5 0;
         font-size: 16px;
@@ -84,15 +70,37 @@
         font-weight: 400;
         background-color: $focus-colour;
       }
+      // this adds a small bar above an appended result set (ie show me more results)
+      a.start-of-page:not(:first-child) {
+        position: relative;
+        margin-top: $baseline-grid-unit * 8;
+        &:before {
+          content: "";
+          display: block;
+          background: #ddd;
+          position: absolute;
+          top: -17px;
+          width: 100%;
+          height: 2px;
+          left: 0;
+        }
+      }
     }
 
     .result {
       display: block;
       text-decoration: none;
-      padding: $baseline-grid-unit * 4;
+      padding: $baseline-grid-unit * 3 $baseline-grid-unit * 3 0 $baseline-grid-unit * 3;
       border: 1px solid $grey-4;
       border-left-width: $baseline-grid-unit;
       margin-bottom: $baseline-grid-unit * 6;
+      .nhsuk-heading-m {
+        text-decoration: underline;
+        margin-bottom: $baseline-grid-unit * 3;
+        strong {
+          text-decoration: underline;
+        }
+      }
       &:hover {
         color: $white;
         background-color: $blue;
