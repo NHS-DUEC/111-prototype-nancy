@@ -1,0 +1,47 @@
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhsuk-frontend{% endblock %}
+
+{% block content %}
+
+<div class="content-block measure">
+  {% if error %}
+    <div class="error-summary">
+      <h2 class="error-heading">There’s a problem</h2>
+      <p>
+        Tell us if {% if session.proxy == true %}they’re{% else %}you’re{% endif %} registered with a GP or not
+      </p>
+    </div>
+  {% endif %}
+  <h1 class="nhsuk-heading-l">Are {% if session.proxy == true %}they{% else %}you{% endif %} registered with a GP?</h1>
+  <!--<div class="callout callout--info">
+    <p></p>
+  </div>-->
+
+  <form id="registered-with-gp" method="post">
+    <fieldset class="form-group {% if error %}-errors{% endif %}">
+      {% if error %}
+        <p class="error-hint">Choose one option</p>
+      {% endif %}
+      <label class="block-label">
+        <input id="gp-registered" name="gp-registered" value="yes" type="radio" class="selection-button-radio">
+        <span>Yes</span>
+      </label>
+      <label class="block-label">
+        <input id="gp-registered" name="gp-registered" value="no" type="radio" class="selection-button-radio">
+        <span>No</span>
+      </label>
+      <label class="block-label">
+        <input id="gp-registered" name="gp-registered" value="unknown" type="radio" class="selection-button-radio">
+        <span>I don’t know</span>
+      </label>
+    </fieldset>
+    <div class="form-group">
+      <button type="submit" class="button">Next</button>
+    </div>
+  </form>
+</div>
+
+{% endblock %}
