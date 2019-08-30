@@ -21,11 +21,9 @@
 
 
     <main id="content" role="main" class="content">
-      <div class="shunt"><!-- temporary shunt -->
-      {#
-      {% include '_includes/phase-banner.html' %}
-      #}
-      {% block content %}{% endblock %}
+      <div>
+        {% include '_includes/phase-banner.html' %}
+        {% block content %}{% endblock %}
       </div>
     </main>
 
