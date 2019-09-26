@@ -746,25 +746,6 @@ body, pre.user-input {
   padding-right: 8px;
 }
 
-.phase-banner {
-  padding: 5.3333333333px 0;
-  display: block;
-  margin: 0;
-  font-size: 16px;
-  font-weight: 300;
-  border-bottom: 1px solid #e6eff8;
-  margin-bottom: 32px;
-}
-
-.phase-banner > .phase-message {
-  color: #425563;
-  padding-left: 8px;
-}
-
-.nhs-redesign .phase-banner {
-  margin-bottom: 16px;
-}
-
 .prototype-warning {
   background-color: #768692;
   color: #d9e1e2;
@@ -2404,10 +2385,9 @@ textarea:focus {
 
 #global-header {
   border-bottom: 3px solid #005eb8;
+  padding: 24px 0;
   padding-top: 32px;
-  padding: 24px;
-  padding-left: 0px;
-  padding-right: 0px;
+  margin-bottom: 32px;
 }
 
 @media (min-width: 500px) {
