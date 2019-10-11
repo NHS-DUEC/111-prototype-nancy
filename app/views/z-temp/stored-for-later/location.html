@@ -98,7 +98,7 @@
       console.log(PositionError.message);
       console.log(PositionError.code);
       $('#geolocate-messaging').hide();
-      errorMessage = '<p>Sorry there’s been a problem finding your location. <a href="#" id="manualGeo">Try again</a> or zoom and drag the map to show where you are.</p>'
+      errorMessage = '<p>Sorry there’s been a problem finding your location. <a href="javascript: return false;" id="manualGeo">Try again</a> or zoom and drag the map to show where you are.</p>'
       $('#problems').html(errorMessage).removeClass('js-hidden')
     });
   }

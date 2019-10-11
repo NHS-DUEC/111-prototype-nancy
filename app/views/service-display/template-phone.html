@@ -15,7 +15,7 @@
 <div class="content-block">
   <div class="measure">
     <!-- Only display 'Back' if validation is present? -->
-    <a href="#" class="button-back">Back</a>
+    <a href="javascript: return false;" class="button-back">Back</a>
     <h1>Where to get help</h1>
     <!-- timing info -->
     <div class="callout callout--warning">
@@ -33,7 +33,7 @@
     </div>
     <div class="unit">
       <p class="tel-cta">
-        <a href="#">Call {% raw %}{{ service_telephone }}{% endraw %}</a>
+        <a href="javascript: return false;">Call {% raw %}{{ service_telephone }}{% endraw %}</a>
       </p>
     </div>
     <div class="unit">
@@ -71,6 +71,8 @@
       {% endraw %}
     </p>
   </div>
+
+  {% include 'service-display/_components/change-location.html' %}
 
   <div class="content-seperator content-seperator--equalvertspacing--large"></div>
 
