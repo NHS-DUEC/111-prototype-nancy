@@ -29,7 +29,7 @@
 <div class="content-block">
   <div class="measure">
     <!-- Only display 'Back' if validation is present? -->
-    <a href="#" class="button-back">Back</a>
+    <a href="javascript: return false;" class="button-back">Back</a>
     <h1>Where to get help</h1>
     <!-- timing info -->
     <div class="callout callout--warning">
@@ -70,12 +70,12 @@
         </p>
         {% if service_telephone %}
           <p>
-            <a href="#">{{ service_telephone }}</a>
+            <a href="javascript: return false;">{{ service_telephone }}</a>
           </p>
         {% endif %}
         {% if service_email %}
           <p>
-            <a href="#">{{ service_email }}</a>
+            <a href="javascript: return false;">{{ service_email }}</a>
           </p>
         {% endif %}
       </div>
@@ -97,7 +97,7 @@
         <p>
           {{ distance }}
           <br>
-          <a href="#" target="_blank">
+          <a href="javascript: return false;" target="_blank">
             Get directions <span class="small">(opens a new tab or window)</span>
           </a>
         </p>
