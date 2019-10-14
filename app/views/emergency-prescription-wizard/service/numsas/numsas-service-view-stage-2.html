@@ -41,10 +41,9 @@
         </p>
       </div>
 
-      <div class="unit hours">
-        <p>
-          Open until 6.30pm
-        </p>
+      <div class="unit">
+        {% set opening = "Open until 6.30pm"%}
+        {% include 'service-display/_components/opening-hours.html' %}
       </div>
 
     </div>

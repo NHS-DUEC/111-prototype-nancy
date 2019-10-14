@@ -220,13 +220,13 @@ body.nhs-redesign, pre.nhs-redesign.user-input {
   }
 }
 
-.nhs-redesign .small, .nhs-redesign table th, table .nhs-redesign th, .nhs-redesign table td, table .nhs-redesign td {
+.nhs-redesign .small, .nhs-redesign [class^="nhsuk-"] .opening-times details summary, [class^="nhsuk-"] .opening-times details .nhs-redesign summary, .nhs-redesign [class^="nhsuk-"] .opening-times table, [class^="nhsuk-"] .opening-times .nhs-redesign table, .nhs-redesign table th, table .nhs-redesign th, .nhs-redesign table td, table .nhs-redesign td {
   font-size: 14px;
   line-height: 20px;
 }
 
 @media (min-width: 500px) {
-  .nhs-redesign .small, .nhs-redesign table th, table .nhs-redesign th, .nhs-redesign table td, table .nhs-redesign td {
+  .nhs-redesign .small, .nhs-redesign [class^="nhsuk-"] .opening-times details summary, [class^="nhsuk-"] .opening-times details .nhs-redesign summary, .nhs-redesign [class^="nhsuk-"] .opening-times table, [class^="nhsuk-"] .opening-times .nhs-redesign table, .nhs-redesign table th, table .nhs-redesign th, .nhs-redesign table td, table .nhs-redesign td {
     font-size: 16px;
     line-height: 24px;
   }
@@ -268,13 +268,13 @@ body.nhs-redesign p, pre.nhs-redesign.user-input p {
   }
 }
 
-body.nhs-redesign .small p, pre.nhs-redesign.user-input .small p, body.nhs-redesign table th p, table body.nhs-redesign th p, pre.nhs-redesign.user-input table th p, table pre.nhs-redesign.user-input th p, body.nhs-redesign table td p, table body.nhs-redesign td p, pre.nhs-redesign.user-input table td p, table pre.nhs-redesign.user-input td p,
+body.nhs-redesign .small p, pre.nhs-redesign.user-input .small p, body.nhs-redesign [class^="nhsuk-"] .opening-times details summary p, [class^="nhsuk-"] .opening-times details body.nhs-redesign summary p, pre.nhs-redesign.user-input [class^="nhsuk-"] .opening-times details summary p, [class^="nhsuk-"] .opening-times details pre.nhs-redesign.user-input summary p, body.nhs-redesign [class^="nhsuk-"] .opening-times table p, [class^="nhsuk-"] .opening-times body.nhs-redesign table p, pre.nhs-redesign.user-input [class^="nhsuk-"] .opening-times table p, [class^="nhsuk-"] .opening-times pre.nhs-redesign.user-input table p, body.nhs-redesign table th p, table body.nhs-redesign th p, pre.nhs-redesign.user-input table th p, table pre.nhs-redesign.user-input th p, body.nhs-redesign table td p, table body.nhs-redesign td p, pre.nhs-redesign.user-input table td p, table pre.nhs-redesign.user-input td p,
 body.nhs-redesign p.small, pre.nhs-redesign.user-input p.small {
   margin: 16px 0;
 }
 
 @media (min-width: 500px) {
-  body.nhs-redesign .small p, pre.nhs-redesign.user-input .small p, body.nhs-redesign table th p, table body.nhs-redesign th p, pre.nhs-redesign.user-input table th p, table pre.nhs-redesign.user-input th p, body.nhs-redesign table td p, table body.nhs-redesign td p, pre.nhs-redesign.user-input table td p, table pre.nhs-redesign.user-input td p,
+  body.nhs-redesign .small p, pre.nhs-redesign.user-input .small p, body.nhs-redesign [class^="nhsuk-"] .opening-times details summary p, [class^="nhsuk-"] .opening-times details body.nhs-redesign summary p, pre.nhs-redesign.user-input [class^="nhsuk-"] .opening-times details summary p, [class^="nhsuk-"] .opening-times details pre.nhs-redesign.user-input summary p, body.nhs-redesign [class^="nhsuk-"] .opening-times table p, [class^="nhsuk-"] .opening-times body.nhs-redesign table p, pre.nhs-redesign.user-input [class^="nhsuk-"] .opening-times table p, [class^="nhsuk-"] .opening-times pre.nhs-redesign.user-input table p, body.nhs-redesign table th p, table body.nhs-redesign th p, pre.nhs-redesign.user-input table th p, table pre.nhs-redesign.user-input th p, body.nhs-redesign table td p, table body.nhs-redesign td p, pre.nhs-redesign.user-input table td p, table pre.nhs-redesign.user-input td p,
   body.nhs-redesign p.small, pre.nhs-redesign.user-input p.small {
     margin: 20px 0;
   }
@@ -1348,6 +1348,26 @@ body, pre.user-input {
   .check-details .-mvp .-value {
     width: 70%;
   }
+}
+
+[class^="nhsuk-"] .opening-times {
+  margin-bottom: 24px;
+}
+
+[class^="nhsuk-"] .opening-times details {
+  margin-top: 8px;
+}
+
+[class^="nhsuk-"] .opening-times table {
+  max-width: 30em;
+  margin: 8px 0 0 0;
+  border-top: none;
+}
+
+[class^="nhsuk-"] .opening-times th, [class^="nhsuk-"] .opening-times td {
+  display: table-cell;
+  font-weight: 400;
+  padding: 8px 16px 8px 0;
 }
 
 table {
@@ -6106,13 +6126,13 @@ img {
   color: #ffffff;
 }
 
-[class^="nhsuk-"] .small, [class^="nhsuk-"] table th, table [class^="nhsuk-"] th, [class^="nhsuk-"] table td, table [class^="nhsuk-"] td {
+[class^="nhsuk-"] .small, [class^="nhsuk-"] .opening-times details summary, [class^="nhsuk-"] .opening-times table, [class^="nhsuk-"] table th, table [class^="nhsuk-"] th, [class^="nhsuk-"] table td, table [class^="nhsuk-"] td {
   font-size: 14px;
   line-height: 20px;
 }
 
 @media (min-width: 500px) {
-  [class^="nhsuk-"] .small, [class^="nhsuk-"] table th, table [class^="nhsuk-"] th, [class^="nhsuk-"] table td, table [class^="nhsuk-"] td {
+  [class^="nhsuk-"] .small, [class^="nhsuk-"] .opening-times details summary, [class^="nhsuk-"] .opening-times table, [class^="nhsuk-"] table th, table [class^="nhsuk-"] th, [class^="nhsuk-"] table td, table [class^="nhsuk-"] td {
     font-size: 16px;
     line-height: 24px;
   }

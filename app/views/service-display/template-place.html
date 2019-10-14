@@ -46,16 +46,12 @@
           <a href="javascript: return false;">{% raw %}{{ service_telephone }}{% endraw %}</a>
         </p>
       </div>
-      <div class="unit hours">
-        <p>
-          {% raw %}
-            {{ opening_times_message }}
-          {% endraw %}
-        </p>
+      <div class="unit">
+        {% raw %}
+          {{ opening_hours }}
+        {% endraw %}
       </div>
     </div>
-
-    <div class="subroutine"></div>
 
     <div class="geo">
       <div id="service-location" class="map-frame"></div>

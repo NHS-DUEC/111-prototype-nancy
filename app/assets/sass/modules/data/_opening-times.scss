@@ -1,0 +1,22 @@
+[class^="nhsuk-"] { // ugh, sorry
+  .opening-times {
+    margin-bottom: $baseline-grid-unit*6;
+    details {
+      margin-top: $baseline-grid-unit*2;
+      summary {
+        @extend .small;
+      }
+    }
+    table {
+      max-width: 30em;
+      margin: $baseline-grid-unit*2 0 0 0;
+      border-top: none;
+      @extend .small;
+    }
+    th, td {
+      display: table-cell;
+      font-weight: $bodyweight;
+      padding: $baseline-grid-unit*2 $baseline-grid-unit*4 $baseline-grid-unit*2 0;
+    }
+  }
+}

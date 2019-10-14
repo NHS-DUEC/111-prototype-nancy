@@ -35,9 +35,9 @@
       </p>
     </div>
     <div class="unit">
-      <p>
-        Open 24 hours
-      </p>
+      {% set opening = "Open 24 hours"%}
+      {% set suppress_full = true %}
+      {% include 'service-display/_components/opening-hours.html' %}
     </div>
   </div>
 
