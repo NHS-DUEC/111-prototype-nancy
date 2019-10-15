@@ -57,9 +57,9 @@
             </p>
           </div>
           <div class="unit">
-            <p>
-              Open 24 hours
-            </p>
+            {% set opening = "Open 24 hours"%}
+            {% set suppress_full = true %}
+            {% include 'service-display/_components/opening-hours.html' %}
           </div>
         </div>
         <div class="subroutine measure"></div>
@@ -127,9 +127,9 @@
           </p>
         </div>
         <div class="unit">
-          <p>
-            Open until 6pm
-          </p>
+          {% set opening = "Open until 11pm" %}
+          {% set suppress_full = false %}
+          {% include 'service-display/_components/opening-hours.html' %}
         </div>
         <div class="unit">
           <p>
@@ -139,6 +139,14 @@
             Middleton<br>
             Leeds<br>
             LS10 4UZ
+          </p>
+        </div>
+        <div class="unit">
+          <p>
+            6.8 miles away<br>
+            <a href="javascript: return false;" target="_blank">
+              Get directions <span class="small">(opens a new tab or window)</span>
+            </a>
           </p>
         </div>
       </div>
@@ -172,9 +180,9 @@
           </p>
         </div>
         <div class="unit">
-          <p>
-            Open 24 hours
-          </p>
+          {% set opening = "Open 24 hours" %}
+          {% set suppress_full = true %}
+          {% include 'service-display/_components/opening-hours.html' %}
         </div>
       </div>
     </div>
@@ -204,9 +212,9 @@
           <div class="content-seperator content-seperator--white content-seperator--equalvertspacing"></div>
         </div>
         <div class="unit">
-          <p>
-            Open until 11pm
-          </p>
+          {% set opening = "Open until 11pm" %}
+          {% set suppress_full = true %}
+          {% include 'service-display/_components/opening-hours.html' %}
         </div>
         <div class="unit">
           <div class="measure">
@@ -254,9 +262,9 @@
           <div class="content-seperator content-seperator--white content-seperator--equalvertspacing"></div>
         </div>
         <div class="unit">
-          <p>
-            Open until 11pm
-          </p>
+          {% set opening = "Open until 11pm" %}
+          {% set suppress_full = true %}
+          {% include 'service-display/_components/opening-hours.html' %}
         </div>
         <div class="unit">
           <div class="measure">
@@ -298,12 +306,11 @@
     <div class="collapse-content">
       <div class="service-details-container service-details --remote">
         <div class="unit">
-          <p class="small measure">Pharmacists:</p>
-          <ul class="small measure">
-            <li>are trained to deal with a wide range of minor health problems</li>
-            <li>can see you more quickly than a GP or clinic</li>
-            <li>have a room where you can talk in private</li>
-          </ul>
+          <p class="small measure">
+            A pharmacist can help with a wide range of minor health problems. You can
+            have a consultation in a private room. Pharmacists can provide emergency
+            prescriptions.
+          </p>
           <div class="content-seperator content-seperator--white content-seperator--equalvertspacing"></div>
         </div>
         <div class="unit">
@@ -315,9 +322,9 @@
           </p>
         </div>
         <div class="unit">
-          <p>
-            Open until 6.30pm
-          </p>
+          {% set opening = "Open until 6.30pm" %}
+          {% set suppress_full = false %}
+          {% include 'service-display/_components/opening-hours.html' %}
         </div>
         <div class="unit">
           <div class="measure">
