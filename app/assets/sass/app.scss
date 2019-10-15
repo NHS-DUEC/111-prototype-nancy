@@ -140,4 +140,11 @@
   .callout .nhsuk-image {
     background-color: $white;
   }
+
+  .opening-times {
+    .single,
+    .multi {
+      @include nhsuk-typography-responsive(19);
+    }
+  }
 }

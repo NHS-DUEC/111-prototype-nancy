@@ -7,6 +7,12 @@
         @extend .small;
       }
     }
+    .multi {
+      @extend %contain-floats;
+      & > div {
+        float: left;
+      }
+    }
     table {
       max-width: 30em;
       margin: $baseline-grid-unit*2 0 0 0;
