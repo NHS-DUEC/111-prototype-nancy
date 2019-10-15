@@ -1361,13 +1361,28 @@ body, pre.user-input {
 [class^="nhsuk-"] .opening-times table {
   max-width: 30em;
   margin: 8px 0 0 0;
-  border-top: none;
+  border-collapse: separate;
+  border-top: 0;
 }
 
 [class^="nhsuk-"] .opening-times th, [class^="nhsuk-"] .opening-times td {
   display: table-cell;
+  border: 0;
+  vertical-align: top;
   font-weight: 400;
   padding: 8px 16px 8px 0;
+}
+
+[class^="nhsuk-"] .opening-times th, [class^="nhsuk-"] .opening-times th + td {
+  border-top: 1px solid #d8dde0;
+}
+
+[class^="nhsuk-"] .opening-times tr:first-of-type th, [class^="nhsuk-"] .opening-times tr:first-of-type td {
+  border: 0;
+}
+
+[class^="nhsuk-"] .opening-times tr td:first-child {
+  padding-top: 0;
 }
 
 table {

@@ -10,13 +10,27 @@
     table {
       max-width: 30em;
       margin: $baseline-grid-unit*2 0 0 0;
-      border-top: none;
+      border-collapse: separate;
+      border-top: 0;
       @extend .small;
     }
     th, td {
       display: table-cell;
+      border: 0;
+      vertical-align: top;
       font-weight: $bodyweight;
       padding: $baseline-grid-unit*2 $baseline-grid-unit*4 $baseline-grid-unit*2 0;
+    }
+    th, th + td {
+      border-top: 1px solid $grey-4;
+    }
+    tr:first-of-type {
+      th, td {
+        border: 0;
+      }
+    }
+    tr td:first-child {
+      padding-top: 0;
     }
   }
 }
