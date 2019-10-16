@@ -1,0 +1,80 @@
+<div class="opening-times">
+  <div class="single">
+    {{ opening }}
+  </div>
+  <!--
+  <div class="single">
+    Open today 8am to 6pm
+  </div>
+  <div class="single">
+    Open 24 hours
+  </div>
+  <div class="multi">
+    <div>Open today&nbsp;</div>
+    <div>
+      8am to 12pm<br>
+      2pm to 6pm
+    </div>
+  </div>
+  <div class="multi">
+    <div>Open tomorrow&nbsp;</div>
+    <div>
+      8am to 12pm<br>
+      2pm to 6pm
+    </div>
+  </div>
+  <div class="multi">
+    <div>Open Wednesday&nbsp;</div>
+    <div>
+      8am to 12pm<br>
+      2pm to 6pm
+    </div>
+  </div>
+  -->
+  {% if not suppress_full or suppress_full != true %}
+  <details class="measure">
+    <summary>Full opening times</summary>
+    <table>
+      <thead class="visuallyhidden">
+        <tr>
+          <th>Day of the week</th>
+          <th>Opening hours</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>Monday</th>
+          <td>9am to 11.59pm</td>
+        </tr>
+        <tr>
+          <th>Tuesday</th>
+          <td>12am to 11.59pm</td>
+        </tr>
+        <tr>
+          <th rowspan="2">Wednesday</th>
+          <td>12am to midday</td>
+        </tr>
+        <tr>
+          <td>2pm to 6pm</td>
+        </tr>
+        <tr>
+          <th>Thursday</th>
+          <td>9am to 6pm</td>
+        </tr>
+        <tr>
+          <th>Friday</th>
+          <td>9am to 6pm</td>
+        </tr>
+        <tr>
+          <th>Saturday</th>
+          <td>9am to 1.15pm</td>
+        </tr>
+        <tr>
+          <th>Sunday</th>
+          <td>Closed</td>
+        </tr>
+      </tbody>
+    </table>
+  </details>
+  {% endif %}
+</div>

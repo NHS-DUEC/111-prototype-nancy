@@ -31,6 +31,7 @@
 @import "modules/controls/breadcrumbs";
 @import "modules/controls/buttons";
 @import "modules/data/check-details";
+@import "modules/data/opening-times";
 @import "modules/data/table";
 @import "modules/disclosure/details";
 @import "modules/disclosure/collapse";
@@ -138,5 +139,12 @@
   }
   .callout .nhsuk-image {
     background-color: $white;
+  }
+
+  .opening-times {
+    .single,
+    .multi {
+      @include nhsuk-typography-responsive(19);
+    }
   }
 }

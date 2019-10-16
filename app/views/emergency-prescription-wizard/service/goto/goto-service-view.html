@@ -75,14 +75,11 @@
           </p>
         {% endif %}
       </div>
-      <div class="unit hours">
-        <p>
-          {{ opening_times_message }}
-        </p>
+      <div class="unit">
+        {% set opening = opening_times_message %}
+        {% include 'service-display/_components/opening-hours.html' %}
       </div>
     </div>
-
-    <div class="subroutine"></div>
 
     <div class="geo">
       <div id="service-location" class="map-frame"></div>

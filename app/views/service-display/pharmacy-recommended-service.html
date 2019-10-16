@@ -20,7 +20,6 @@
   </div>
 
   <div class="service-details-container">
-
     <div class="details-1 service-details">
       <div class="unit address">
         <p>
@@ -31,14 +30,12 @@
           SE1 6ET
         </p>
       </div>
-      <div class="unit hours">
-        <p>
-          Open until 5.30pm
-        </p>
+      <div class="unit">
+        {% set opening = "Open until 5.30pm"%}
+        {% set suppress_full = true %}
+        {% include 'service-display/_components/opening-hours.html' %}
       </div>
     </div>
-
-    <div class="subroutine"></div>
 
     <div class="geo">
       <div id="service-location" class="map-frame"></div>
