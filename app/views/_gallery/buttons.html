@@ -43,6 +43,33 @@
     <button type="submit" class="button">Search</button>
   </p>
 
+  <style media="screen">
+    .button.loading {
+      min-height: 48px;
+      position: relative;
+      cursor: not-allowed;
+      color: rgba(255, 255, 255, 0);
+      opacity: 0.5;
+    }
+    .loader {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-top: -8px;
+      margin-left: -8px;
+      border-top-color: #fff;
+      border-right-color: #fff;
+      border-bottom-color: #fff;
+    }
+  </style>
+
+  <p>
+    <button type="button" class="button loading" disabled="disabled">
+      Next
+      <span class="loader"></span>
+    </button>
+  </p>
+
 </div>
 
 {% endblock %}
