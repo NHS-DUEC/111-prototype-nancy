@@ -11,11 +11,11 @@
 <div class="content-block">
   <div class="measure">
     <!-- Only display 'Back' if validation is present? -->
-    <a href="javascript: return false;" class="button-back">Back</a>
+    <!--<a href="javascript: return false;" class="button-back">Back</a>-->
     <h1>Where to get help</h1>
     <!-- timing info -->
     <div class="callout callout--warning">
-      Get help today
+      Get help now
     </div>
   </div>
 
@@ -68,8 +68,8 @@
   <div class="content-seperator content-seperator--equalvertspacing--large"></div>
 
   <div class="measure">
-    {% set other_services_url = "/service-display/other-services" %}
-    {% set other_services_message = "services" %}
+    {% set other_services_url = "javascript: return false;" %}
+    {% set other_services_message = "trumped" %}
     {% include 'service-display/_components/other-services.html' %}
   </div>
 
@@ -79,8 +79,10 @@
     {% include 'service-display/_components/care-advice.html' %}
   </div>
 
-  {% set acuity = "high" %}
-  {% include 'service-display/_components/worsening-symptoms.html' %}
+  <div class="measure">
+    {% set acuity = "high" %}
+    {% include 'service-display/_components/worsening-symptoms.html' %}
+  </div>
 
 </div>
 
