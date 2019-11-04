@@ -5,7 +5,9 @@
   show as ‘unknown’ on your display.
 </p>
 <script type="text/javascript">
-  var now = new Date().toLocaleTimeString('en-US', { hour: 'numeric', hour12: true, minute: 'numeric' });
-  now.replace(':', '.');
-  document.getElementById('timestamp').textContent = now.toLowerCase();
+  var now = new Date()
+    .toLocaleTimeString('en-US', { hour: 'numeric', hour12: true, minute: 'numeric' })
+    .toLowerCase()
+    .replace(/:/g, '.');
+  document.getElementById('timestamp').textContent = now;
 </script>
