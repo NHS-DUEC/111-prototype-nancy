@@ -1,7 +1,29 @@
 <details>
-  <summary>Things to look out for and self-care</summary>
+  {% if show_worsening === true %}
+    <summary>What to do if it gets worse and self-care</summary>
+  {% else %}
+    <summary>Things to look out for and self-care</summary>
+  {% endif %}
 
   <div class="care-advice-output">
+
+    {% if show_worsening === true %}
+      <h3>Breathlessness, worsening</h3>
+      <div>
+        <ul>
+          <li>
+            Sit as upright as is comfortable.
+          </li>
+          <li>
+            If an inhaler or a spacer is used for chest problems, follow the
+            instructions about &quot;what to do if your breathing gets worse&quot;.
+          </li>
+          <li>
+            Never use medicines which have been prescribed for someone else.
+          </li>
+        </ul>
+      </div>
+    {% endif %}
 
     <h3>Breathlessness</h3>
     <div>

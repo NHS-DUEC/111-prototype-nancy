@@ -1,0 +1,23 @@
+<div class="content-block measure">
+
+  {% include 'callback-confirmation-examples/_components/confirmation.html' %}
+
+  {% if timeframe === "12 hours" or timeframe === "24 hours" %}
+    {% include 'callback-confirmation-examples/_components/why-does-it-take-so-long.html' %}
+  {% endif %}
+
+  {% include 'callback-confirmation-examples/_components/what-if-i-dont-get-a-call.html' %}
+
+  {% include 'callback-confirmation-examples/_components/what-if-i-miss-the-call.html' %}
+
+  {% include 'callback-confirmation-examples/_components/what-if-the-symptoms-get-worse.html' %}
+
+  {% include 'callback-confirmation-examples/_components/can-i-cancel.html' %}
+
+  <div class="content-seperator content-seperator--equalvertspacing--large"></div>
+
+  {% if show_care_advice === true %}
+    {% include 'service-display/_components/care-advice.html' %}
+  {% endif %}
+
+</div>
