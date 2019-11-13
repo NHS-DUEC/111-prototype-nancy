@@ -1,0 +1,104 @@
+{% set suppress_feedback = true %}
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhsuk-frontend{% endblock %}
+
+{% block content %}
+
+<div class="measure">
+
+  <div class="content-block">
+    <h1 class="nhsuk-heading-xl">Thanks for agreeing to take our survey</h1>
+
+    <p>
+      Before you start, there are a few things you need to know:
+    </p>
+
+    <details>
+      <summary>If you need medical help call 111</summary>
+      <div>
+        <p>
+          We don’t monitor the survey every day and won’t see comments you leave
+          about your symptoms or any requests for medical help.
+        </p>
+      </div>
+    </details>
+
+    <details>
+      <summary>You’re anonymous unless you choose not to be</summary>
+      <div>
+        <p>
+          The survey works by remembering the answers you gave to our questions and
+          asking you about what happened next. Everything you say is confidential.
+        </p>
+        <p>
+          If you agree to do a follow up survey we’ll ask for your email. We’ll then
+          be able to link your answers to your email address.
+        </p>
+      </div>
+    </details>
+
+    <details>
+      <summary>
+        Your data is the NHS’s responsibility
+      </summary>
+      <div>
+        <p>
+          Our survey is hosted by a company called Qualtrics, but we look after
+          your data. Our <a href="javascript:return false;">privacy statement</a>
+          explains how. If you’ve given us your email, we can delete all your
+          survey responses if you ask us to.
+        </p>
+      </div>
+    </details>
+
+    <div class="shunt-2">
+      <a href="javascript:return false;" class="button">Start survey</a>
+    </div>
+
+  </div>
+
+<!--
+  <div class="content-block">
+    <h1 class="nhsuk-heading-l">Thanks for agreeing to take our survey</h1>
+
+    <p>
+      Before you start, there are a few things you need to know:
+    </p>
+
+    <h2 class="nhsuk-heading-s">If you need medical help call 111</h2>
+    <p>
+      We don’t monitor the survey every day and won’t see comments you leave
+      about your symptoms or any requests for medical help.
+    </p>
+
+    <h2 class="nhsuk-heading-s">You’re anonymous unless you choose not to be</h2>
+    <p>
+      The survey works by remembering the answers you gave to our questions and
+      asking you about what happened next. Everything you say is confidential.
+    </p>
+    <p>
+      If you agree to do a follow up survey we’ll ask for your email. We’ll then
+      be able to link your answers to your email address.
+    </p>
+
+    <h2 class="nhsuk-heading-s">
+      Our survey is hosted by a company called Qualtrics, but your data is the
+      NHS’s responsibility
+    </h2>
+    <p>
+      Our privacy policy explains how we look after your data and this applies
+      to the survey too. If you’ve given us your email, we can delete all your
+      survey responses if you ask us to.
+    </p>
+
+    <div class="shunt-2">
+      <a href="javascript:return false;" class="button">Start survey</a>
+    </div>
+-->
+  </div>
+</div>
+
+{% endblock %}
