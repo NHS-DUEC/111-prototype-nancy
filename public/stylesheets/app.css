@@ -1505,6 +1505,10 @@ details summary {
   color: #005eb8;
 }
 
+details summary span {
+  text-decoration: underline;
+}
+
 details summary:focus {
   outline: 0;
   -webkit-box-shadow: 0 0 0 5px #ffb81c;
