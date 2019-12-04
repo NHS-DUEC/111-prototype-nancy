@@ -1,0 +1,64 @@
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhsuk-frontend{% endblock %}
+
+{% block content %}
+<!--
+<p>
+  <a href="javascript:window.history.back();" class="button-back">Back</a>
+</p>
+-->
+
+<h1>Tell us your GP</h1>
+
+<div id="gp-lookup-widget">
+  <div class="gp-finder-results">
+    <a href="#" class="nhsuk-frontend result start-of-page" id="result-0">
+      <h2 class="nhsuk-heading-m"">Palacci (Castelnau)</h2>
+      <p class="address">22 Castelnau, Barnes, London, SW13 9RU</p>
+    </a>
+    <a href="#" class="nhsuk-frontend result" id="result-1">
+      <h2 class="nhsuk-heading-m"">Botting (Glebe)</h2>
+      <p class="address">Glebe Road Surgery, 1 Glebe Road, Barnes, London, SW13 0DR</p>
+    </a>
+    <a href="#" class="nhsuk-frontend result" id="result-2">
+      <h2 class="nhsuk-heading-m"">Flood (Essex House)</h2>
+      <p class="address">Essex House, Station Road, Barnes, London, SW13 0LW</p>
+    </a>
+    <a href="#" class="nhsuk-frontend result" id="result-3">
+      <h2 class="nhsuk-heading-m"">Glebe Street Surgery</h2>
+      <p class="address">1 Glebe Street, Chiswick, London, W4 2BD</p>
+    </a>
+    <a href="#" class="nhsuk-frontend result" id="result-4">
+      <h2 class="nhsuk-heading-m"">Hammersmith Surgery</h2>
+      <p class="address">Hammersmith Surgery, 1 Hammersmith Bridge Road, Hammersmith, London, W6 9DU</p>
+    </a>
+    <a href="#" class="nhsuk-frontend result" id="result-5">
+      <h2 class="nhsuk-heading-m"">Grove Park Surgery</h2>
+      <p class="address">Grove Park Surgery, 95 Burlington Lane, Chiswick, London, W4 3ET</p>
+    </a>
+    <a href="#" class="nhsuk-frontend result" id="result-6">
+      <h2 class="nhsuk-heading-m"">Park Medical Centre</h2>
+      <p class="address">Park Medical Centre, Inver Court,Invermead Cl, Hammersmith, London, W6 0QG</p>
+    </a>
+    <a href="#" class="nhsuk-frontend result" id="result-7">
+      <h2 class="nhsuk-heading-m"">Holly Road Medical Centre</h2>
+      <p class="address">Holly Road Medical Centre, 2A Holly Road, Chiswick, London, W4 1NU</p>
+    </a>
+    <a href="#" class="nhsuk-frontend result" id="result-8">
+      <h2 class="nhsuk-heading-m"">West4 Gps</h2>
+      <p class="address">The Chiswick Health Ctr, Fishers Lane, Chiswick, London, W4 1RX</p>
+    </a>
+    <a href="#" class="nhsuk-frontend result" id="result-9">
+      <h2 class="nhsuk-heading-m"">Chiswick Family Drs Practice</h2>
+      <p class="address">Chiswick Health Centre, Fishers Lane, Chiswick, London, W4 1RX</p>
+    </a>
+  </div>
+  <div class="gp-finder-foot">
+    <p>
+      <a href="/gp-lookup/gp-lookup">My GP surgery isn’t listed</a>
+    </p>
+  </div>
+{% endblock %}
