@@ -52,7 +52,9 @@ li.tabular-data-row:after, .prototype-warning-inner:after, .survey-banner > div:
 }
 
 body, pre.user-input,
-.body {
+.body,
+.heading-prefix,
+p.tabular-prefix {
   color: #231f20;
   font-family: "Frutiger W01", Helvetica, Arial, Sans-serif;
   font-weight: 400;
@@ -148,13 +150,13 @@ body.nhs-redesign, pre.nhs-redesign.user-input {
   }
 }
 
-.nhs-redesign .body {
+.nhs-redesign .body, .nhs-redesign .heading-prefix, .nhs-redesign p.tabular-prefix {
   font-size: 17px;
   line-height: 28px;
 }
 
 @media (min-width: 500px) {
-  .nhs-redesign .body {
+  .nhs-redesign .body, .nhs-redesign .heading-prefix, .nhs-redesign p.tabular-prefix {
     font-size: 19px;
     line-height: 32px;
   }
@@ -244,9 +246,8 @@ h6 a {
 
 .heading-prefix, p.tabular-prefix {
   display: block;
-  font-size: 20px;
-  line-height: 1;
-  color: #918f90;
+  font-weight: 300;
+  color: #768692;
   margin-bottom: 0px;
 }
 

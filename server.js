@@ -20,6 +20,7 @@ var forcedCallback = require('./app/routes/forced-callback');
 var callbackOffered = require('./app/routes/callback-offered');
 var bookCallback = require('./app/routes/book-callback');
 var serviceDisplay = require('./app/routes/service-display');
+var primaryCareDispositions = require('./app/routes/primary-care-dispositions');
 
 var emergencyPrescriptionWizard = require('./app/routes/emergency-prescription-wizard');
 var gpLookup = require('./app/routes/gp-lookup');
@@ -110,6 +111,7 @@ app.use('/forced-callback', forcedCallback);
 app.use('/callback-offered', callbackOffered);
 app.use('/book-callback', bookCallback);
 app.use('/service-display', serviceDisplay);
+app.use('/primary-care-dispositions', primaryCareDispositions);
 
 app.use('/emergency-prescription-wizard', emergencyPrescriptionWizard);
 app.use('/gp-lookup', gpLookup);

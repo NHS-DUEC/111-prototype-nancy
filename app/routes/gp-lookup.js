@@ -41,7 +41,7 @@ router.post('/gp-lookup', function(req, res) {
   req.session.usersGP.name = req.body['practice-name'];
   req.session.usersGP.address = req.body['practice-address'];
   if (req.session.disposition) {
-    res.send("it's a journey");
+    res.redirect('/primary-care-dispositions/iteration-4-gpoc/handover-appt-type');
   } else {
     res.send("posted" + req.body['practice-name']);
   }

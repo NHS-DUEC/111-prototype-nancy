@@ -1,0 +1,39 @@
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhsuk-frontend{% endblock %}
+
+{% block content %}
+
+<div class="measure">
+
+  <div class="content-block">
+
+    <h1 class="nhsuk-heading-l">
+      <span class="heading-prefix">{{ session.usersGP.name }}</span>
+      Book an online consultation
+    </h1>
+
+    <p>Your GP uses LOGO</p>
+
+    <h2 class="nhsuk-heading-m">Sharing your details</h2>
+    <p>
+      If you book an online consultation (video, phone, email) we’ll share some
+      details with your GP. We’ll share your:
+    </p>
+    <ul>
+      <li>date of birth</li>
+      <li>postcode</li>
+      <li>sex</li>
+      <li>111 online question responses</li>
+    </ul>
+
+    <div class="shunt-2">
+      <a href="/gp-lookup" class="button">Book a consultation</a>
+    </div>
+  </div>
+
+</div>
+
+{% endblock %}
