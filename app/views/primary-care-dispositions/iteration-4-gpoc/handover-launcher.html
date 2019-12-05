@@ -15,12 +15,31 @@
       Book an online consultation
     </h1>
 
-    <p>Your GP uses LOGO</p>
+    <div class="callout callout--info">
+      <p>
+        Your GP uses
+        <img src=/images/{{ session.gpoc.brand }}-logo.png style="display: inline; max-width: 30%; vertical-align: middle" />
+      </p>
+    </div>
+
+    <details>
+      <summary>
+        <span>What does this mean?</span>
+      </summary>
+      <div>
+        <p>EXPLAIN THE MARKET LOL</p>
+        <p>
+          <a href="javascript: return false;">
+            Find out more about {{ session.gpoc.brand | capitalize }} (opens in a new tab or window)
+          </a>
+        </p>
+      </div>
+    </details>
 
     <h2 class="nhsuk-heading-m">Sharing your details</h2>
     <p>
-      If you book an online consultation (video, phone, email) we’ll share some
-      details with your GP. We’ll share your:
+      If you book an online consultation we’ll share some details with your GP.
+      We’ll share your:
     </p>
     <ul>
       <li>date of birth</li>
@@ -30,7 +49,7 @@
     </ul>
 
     <div class="shunt-2">
-      <a href="/gp-lookup" class="button">Book a consultation</a>
+      <a href="/gp-lookup" class="button">Book using {{ session.gpoc.brand | capitalize }}</a>
     </div>
   </div>
 
