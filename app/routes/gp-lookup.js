@@ -15,7 +15,7 @@ router.get('/', function(req, res) {
 
 router.post('/', function(req, res) {
   if (req.body['gp-registered'] === 'yes') {
-    if (req.session.disposition) {
+    if (req.session.gpoc) {
       // you're in the GPOC journey demo pal:
       res.redirect('/gp-lookup/gp-pre-lookup-listing');
     } else {
@@ -41,7 +41,7 @@ router.post('/gp-lookup', function(req, res) {
   req.session.usersGP.name = req.body['practice-name'];
   req.session.usersGP.address = req.body['practice-address'];
   if (req.session.disposition) {
-    res.redirect('/primary-care-dispositions/iteration-4-gpoc/handover-appt-type');
+    res.redirect('/primary-care-dispositions/iteration-4-gpoc/handover-start');
   } else {
     res.send("posted" + req.body['practice-name']);
   }

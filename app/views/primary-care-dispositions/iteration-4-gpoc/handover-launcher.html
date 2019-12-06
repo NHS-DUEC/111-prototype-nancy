@@ -17,8 +17,8 @@
 
     <div class="callout callout--info">
       <p>
-        Your GP uses
-        <img src=/images/{{ session.gpoc.brand }}-logo.png style="display: inline; max-width: 30%; vertical-align: middle" />
+        Your GP uses&nbsp;
+        <img src=/images/{{ session.gpoc.brand }}-logo.png style="display: inline; max-width: 25%; vertical-align: middle" />
       </p>
     </div>
 
@@ -27,6 +27,7 @@
         <span>What does this mean?</span>
       </summary>
       <div>
+        <p>Your GP uses online consultation software called {{ session.gpoc.brand | capitalize }}.</p>
         <p>EXPLAIN THE MARKET LOL</p>
         <p>
           <a href="javascript: return false;">
@@ -38,7 +39,9 @@
 
     <h2 class="nhsuk-heading-m">Sharing your details</h2>
     <p>
-      If you book an online consultation we’ll share some details with your GP.
+      If you book an online consultation we’ll share some details with {{ session.gpoc.brand | capitalize }} and {{ session.usersGP.name }}.
+    </p>
+    <p>
       We’ll share your:
     </p>
     <ul>
@@ -49,7 +52,7 @@
     </ul>
 
     <div class="shunt-2">
-      <a href="/gp-lookup" class="button">Book using {{ session.gpoc.brand | capitalize }}</a>
+      <a href="/gpoc/launch" class="button">Book using {{ session.gpoc.brand | capitalize }}</a>
     </div>
   </div>
 
