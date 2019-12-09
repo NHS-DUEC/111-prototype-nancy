@@ -1,0 +1,34 @@
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhsuk-frontend{% endblock %}
+
+{% block content %}
+
+<div class="measure">
+
+  <div class="content-block">
+    <h1 class="heading--large">
+      <span class="heading-prefix">{{ session.usersGP.name }}</span>
+      Using GP online services
+    </h1>
+    <p>
+      Your GP allows you to book:
+    </p>
+    <ul>
+      <li>an online consultation (by video, phone or email)</li>
+      <li>appointments to visit the surgery online</li>
+    </ul>
+    <p>
+      If you’ve not already signed up to online services, you might have to prove
+      who you are before you can begin.
+    </p>
+    <div class="shunt-2">
+      <a href="handover-appt-type" class="button">Start</a>
+    </div>
+  </div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,78 @@
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhsuk-frontend{% endblock %}
+
+{% block content %}
+<!--
+<p>
+  <a href="javascript:window.history.back();" class="button-back">Back</a>
+</p>
+-->
+
+<h1>Tell us your GP</h1>
+
+<p>
+  Showing GP surgeries near {{ session.postcode | upper }}
+</p>
+
+<div id="gp-lookup-widget">
+  <form id="gp-results" method="post" action="gp-lookup">
+    <div class="gp-finder-results">
+      <a href="/primary-care-dispositions/iteration-4-gpoc/handover-appt-type" class="nhsuk-frontend result start-of-page" id="result-0">
+        <h2 class="nhsuk-heading-m"">Palacci (Castelnau)</h2>
+        <p class="address">22 Castelnau, Barnes, London, SW13 9RU</p>
+      </a>
+      <a href="/primary-care-dispositions/iteration-4-gpoc/handover-appt-type" class="nhsuk-frontend result" id="result-1">
+        <h2 class="nhsuk-heading-m"">Botting (Glebe)</h2>
+        <p class="address">Glebe Road Surgery, 1 Glebe Road, Barnes, London, SW13 0DR</p>
+      </a>
+      <a href="/primary-care-dispositions/iteration-4-gpoc/handover-appt-type" class="nhsuk-frontend result" id="result-2">
+        <h2 class="nhsuk-heading-m"">Flood (Essex House)</h2>
+        <p class="address">Essex House, Station Road, Barnes, London, SW13 0LW</p>
+      </a>
+      <a href="/primary-care-dispositions/iteration-4-gpoc/handover-appt-type" class="nhsuk-frontend result" id="result-3">
+        <h2 class="nhsuk-heading-m"">Glebe Street Surgery</h2>
+        <p class="address">1 Glebe Street, Chiswick, London, W4 2BD</p>
+      </a>
+      <a href="/primary-care-dispositions/iteration-4-gpoc/handover-appt-type" class="nhsuk-frontend result" id="result-4">
+        <h2 class="nhsuk-heading-m"">Hammersmith Surgery</h2>
+        <p class="address">Hammersmith Surgery, 1 Hammersmith Bridge Road, Hammersmith, London, W6 9DU</p>
+      </a>
+    </div>
+  </form>
+  <div class="gp-finder-foot">
+    <p>
+      <a href="/gp-lookup/gp-lookup">My GP surgery isn’t listed</a>
+    </p>
+  </div>
+{% endblock %}
+
+{% block body_after %}
+<script>
+  var submitPractice = function($el) {
+    var els = ''
+    els += '<input type="hidden" name="practice-name" value="' + $el.find('h2').text() + '" />'
+    els += '<input type="hidden" name="practice-address" value="' + $el.find('.address').text() + '" />'
+    $el.append(els);
+    $('#gp-results').submit();
+  }
+
+  $(function() {
+    $('#gp-lookup-widget').on('click', '.result', function(e) {
+      e.preventDefault();
+      submitPractice($(this));
+    });
+    $('#gp-lookup-widget').on('click', '.button', function(e) {
+      e.preventDefault();
+      return false;
+    });
+    $('html').on('keyup', '.result', function(key) {
+      if (key.keyCode === 13) {
+        submitPractice($(key.target));
+      }
+    });
+  });
+</script>
+{% endblock %}

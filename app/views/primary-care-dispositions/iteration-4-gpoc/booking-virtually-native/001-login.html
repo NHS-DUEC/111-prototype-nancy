@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+{% include "primary-care-dispositions/iteration-4-gpoc/booking-virtually-native/components/html-head.html" %}
+    <body>
+    <main class="authMain bg-grad-variation">
+        <div class="authContainer">
+            <!-- Header -->
+            <div class="row justify-content-center p-5 mt-4">
+                <div class="col-md-6 justify-content-center">
+                    <a href="/">
+                        <img class="mx-auto d-block" height="50" src="https://nhs111.virtually.healthcare/images/Virtually-logo-white.svg" alt="virtually-logo-white">
+                    </a>
+                </div>
+            </div>
+                        <!--Main Form -->
+            <div class="row justify-content-center p-3">
+                <div id="formContent" class="col-md-7 col-lg-6 col-xl-5 p-5 mx-1">
+
+                    <!-- Heading -->
+                    <div class="col-md-12 justify-content-center p-3">
+                        <h2 class="text-center">Log In</h2>
+                    </div>
+                                        <!-- Login Form -->
+                    <form class="p-3" method="post" action="002-questionnaire">
+                    <input type="hidden" name="_token" value="txeWzoI49id8LWUatK35MwiXL0MH32rky1CSRKaf">
+                        <input class="p-3" type="email" id="email" name="email" aria-describedby="emailHelp" placeholder="Email address"><br /><br />
+                        <input class="p-3" type="password" id="password" name="password" placeholder="Password"><br /><br />
+                        <div class="col-md-12 text-center">
+                            <button type="submit" class="login-button">Log In</button>
+                        </div>
+                    </form>
+
+                    <!--- Fogotten Password -->
+                    <div id="formFooter" class="col-md-12 text-center">
+                        <a class="text-center" href="javascript: return false;">I've forgotten my password</a>
+                    </div>
+
+                </div>
+            </div>
+            <!-- Footer -->
+            <div class="row justify-content-center p-5">
+                <div class="col-md-6">
+                    <div class="btn-group col-md-12 justify-content-center">
+                        <p style="color:white;" class="my-auto p-3">Don't have an account?</p> <a class="my-auto" href="javascript: return false;"><button class="btn register-button">Register</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+</main>
+    </body>
+</html>

@@ -1,0 +1,34 @@
+{% set suppress_feedback = true %}
+
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}GPOC prototypes{% endblock %}
+
+{% block body_css_classes %}nhs-redesign{% endblock %}
+
+{% block content %}
+
+<div class="content-block measure">
+
+  <h1>GPOC prototypes</h1>
+
+  <h3>“Handover” journey</h3>
+  <ul>
+    <li>
+      <a href="/primary-care-dispositions/gpoc-init?type=handover&brand=virtually">Virtually</a>
+    </li>
+    <li>
+      <a href="/primary-care-dispositions/gpoc-init?type=handover&brand=econsult">eConsult</a>
+    </li>
+  </ul>
+
+  <h3>“NHS style” journey</h3>
+  <ul>
+    <li>
+      <a href="#">Virtually</a>
+    </li>
+  </ul>
+
+</div>
+
+{% endblock %}

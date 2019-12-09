@@ -1,0 +1,53 @@
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhsuk-frontend{% endblock %}
+
+{% block content %}
+
+<div class="content-block measure">
+  {% if error %}
+    <div class="error-summary">
+      <h2 class="error-heading">There’s a problem</h2>
+      <p>
+        Choose an appointment type
+      </p>
+    </div>
+  {% endif %}
+  <h1 class="nhsuk-heading-l">
+    <span class="heading-prefix">{{ session.usersGP.name }}</span>
+    Choose an appointment type
+  </h1>
+
+  <form action="/primary-care-dispositions/handover-launcher" method="post">
+    <fieldset class="form-group {% if error %}-errors{% endif %}">
+      {% if error %}
+        <p class="error-hint">Choose one option</p>
+      {% endif %}
+      <label class="block-label">
+        <input id="appt-type" name="appt-type" value="online-consultation" type="radio" class="selection-button-radio">
+        <span>Online consultation</span>
+        <span class="form-hint">
+          speak to your surgery by video, phone, email
+        </span>
+      </label>
+      <label class="block-label">
+        <input id="appt-type" name="appt-type" value="physical-appointment" type="radio" class="selection-button-radio">
+        <span>Physical appointment</span>
+        <span class="form-hint">
+          make an online booking to visit your surgery
+        </span>
+      </label>
+      <label class="block-label">
+        <input id="appt-type" name="appt-type" value="no" type="radio" class="selection-button-radio">
+        <span>I don’t want to book online</span>
+      </label>
+    </fieldset>
+    <div class="form-group">
+      <button type="submit" class="button">Next</button>
+    </div>
+  </form>
+</div>
+
+{% endblock %}

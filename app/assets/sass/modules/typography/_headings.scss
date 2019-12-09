@@ -25,9 +25,9 @@ h6 a {
 }
 
 .heading-prefix {
+  @extend .body;
   display: block;
-  font-size: 20px;
-  line-height: 1;
-  color: tint($black, 50);
+  font-weight: 300;
+  color: $grey-2;
   margin-bottom: 0px;
 }
