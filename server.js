@@ -37,6 +37,7 @@ var appEnvironment = process.env.NODE_ENV || 'development'
 var useAuth = process.env.USE_AUTH || config.useAuth
 var useHttps = process.env.USE_HTTPS || config.useHttps
 var gpLookupURL = process.env.GP_LOOKUP_URL
+var gpocNHSUKurl = process.env.GPOC_NHSUK_URL
 var mapsKey = process.env.GOOGLE_MAPS_API_KEY
 
 appEnvironment = appEnvironment.toLowerCase()
