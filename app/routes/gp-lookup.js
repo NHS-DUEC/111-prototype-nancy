@@ -40,8 +40,16 @@ router.post('/gp-lookup', function(req, res) {
   // add what's been sent across to the session
   req.session.usersGP.name = req.body['practice-name'];
   req.session.usersGP.address = req.body['practice-address'];
-  if (req.session.disposition) {
-    res.redirect('/primary-care-dispositions/iteration-4-gpoc/handover-start');
+  if (req.session.gpoc) {
+    // you're in the GPOC journey demo pal:
+    if (req.session.gpoc.type === 'handover') {
+      res.redirect('/primary-care-dispositions/iteration-4-gpoc/handover-start');
+    } else {
+      //var session = querystring.stringify(res.session);
+      //console.log(session);
+      var gp = encodeURIComponent(req.body['practice-name']);
+      res.redirect(process.env.GPOC_NHSUK_URL + '/booking-virtually/start?gp=' + gp);
+    }
   } else {
     res.send("posted" + req.body['practice-name']);
   }
