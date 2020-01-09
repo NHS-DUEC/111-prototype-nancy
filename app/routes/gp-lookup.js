@@ -15,12 +15,13 @@ router.get('/', function(req, res) {
 
 router.post('/', function(req, res) {
   if (req.body['gp-registered'] === 'yes') {
-    if (req.session.gpoc) {
+    /*if (req.session.gpoc) {
       // you're in the GPOC journey demo pal:
       res.redirect('/gp-lookup/gp-pre-lookup-listing');
     } else {
       res.redirect('/gp-lookup/gp-lookup');
-    }
+    }*/
+    res.redirect('/gp-lookup/gp-lookup');
   } else if (req.body['gp-registered'] === 'no') {
     res.send("No");
   } else if (req.body['gp-registered'] === 'unknown') {
