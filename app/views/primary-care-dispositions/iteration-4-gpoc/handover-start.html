@@ -13,6 +13,7 @@
       <span class="heading-prefix">{{ session.usersGP.name }}</span>
       Using GP online services
     </h1>
+      {% if session.gpoc.brand === 'virtually' %}
     <p>
       Your GP allows you to book:
     </p>
@@ -20,9 +21,17 @@
       <li>an online consultation (by video, phone or email)</li>
       <li>appointments to visit the surgery online</li>
     </ul>
+      {% else %}
+      <p>
+        Your GP allows you to: 
+      </p>
+      <ul>
+        <li>get help from the GP by email or phone</li>
+        <li>book an appointment to visit the surgery online</li>
+        {% endif %}
     <p>
-      If you’ve not already signed up to online services, you might have to prove
-      who you are before you can begin.
+      If you’ve not already signed up to online services, you might have to register
+      before you can begin.
     </p>
     <div class="shunt-2">
       <a href="handover-appt-type" class="button">Start</a>
