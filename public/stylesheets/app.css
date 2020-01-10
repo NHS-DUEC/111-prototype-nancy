@@ -6125,6 +6125,36 @@ img {
   }
 }
 
+[class^="nhsuk-"] .shunt {
+  margin-top: 16px;
+}
+
+@media (min-width: 40.0625em) {
+  [class^="nhsuk-"] .shunt {
+    margin-top: 24px;
+  }
+}
+
+[class^="nhsuk-"] .shunt-2 {
+  margin-top: 32px;
+}
+
+@media (min-width: 40.0625em) {
+  [class^="nhsuk-"] .shunt-2 {
+    margin-top: 40px;
+  }
+}
+
+[class^="nhsuk-"] .shunt-3 {
+  margin-top: 48px;
+}
+
+@media (min-width: 40.0625em) {
+  [class^="nhsuk-"] .shunt-3 {
+    margin-top: 56px;
+  }
+}
+
 [class^="nhsuk-"] .footer-container a {
   color: #005eb8;
   color: #fff;

@@ -95,6 +95,16 @@
     }
   }
 
+  .shunt {
+    @include nhsuk-responsive-margin(4, 'top')
+  }
+  .shunt-2 {
+    @include nhsuk-responsive-margin(6, 'top')
+  }
+  .shunt-3 {
+    @include nhsuk-responsive-margin(8, 'top')
+  }
+
   .footer-container {
     a {
       @include nhsuk-link-style-inverted;
