@@ -17,9 +17,12 @@
   {% endif %}
   <h1 class="nhsuk-heading-l">
     <span class="heading-prefix">{{ session.usersGP.name }}</span>
+    {% if session.gpoc.brand === 'virtually' %}
     Choose how to contact your GP
   </h1>
-
+    {% else %}
+    Choose how to get help from your GP
+  </h1>
   <form action="/primary-care-dispositions/handover-launcher" method="post">
     <fieldset class="form-group {% if error %}-errors{% endif %}">
       {% if error %}
@@ -33,9 +36,9 @@
             speak to your surgery by video, phone, email
           </span>
         {% else %}
-          <span>Email consultation</span>
+          <span>By email or phone</span>
           <span class="form-hint">
-            get a written response from your GP by email
+            your GP will contact you
           </span>
         {% endif %}
       </label>
@@ -43,7 +46,7 @@
         <input id="appt-type" name="appt-type" value="physical-appointment" type="radio" class="selection-button-radio">
         <span>Visit your GP surgery</span>
         <span class="form-hint">
-          book an appointment
+          book an appointment online
         </span>
       </label>
       <label class="block-label">
