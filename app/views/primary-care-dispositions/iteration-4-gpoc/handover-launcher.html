@@ -67,7 +67,7 @@
 
     <div class="shunt-2">
       {% if session.gpoc.type === 'nhsuk' %}
-        <a href="https://nhs111-gpoc.herokuapp.com/booking-virtually/start" class="button">
+        <a href="https://nhs111-gpoc.herokuapp.com/booking-virtually/start?gp={{ session.usersGP.name }}" class="button">
           Book using {{ session.gpoc.brand | capitalize }}
         </a>
       {% else %}
