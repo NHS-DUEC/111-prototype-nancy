@@ -66,13 +66,19 @@
     </ul>
 
     <div class="shunt-2">
-      <a href="/gpoc/launch" class="button">
-        {% if session.gpoc.brand === 'econsult' %}
-          Use econsult
-        {% else %}
+      {% if session.gpoc.type === 'nhsuk' %}
+        <a href="https://nhs111-gpoc.herokuapp.com/booking-virtually/start?gp={{ session.usersGP.name }}" class="button">
           Book using {{ session.gpoc.brand | capitalize }}
-        {% endif %}
-      </a>
+        </a>
+      {% else %}
+        <a href="/gpoc/launch" class="button">
+          {% if session.gpoc.brand === 'econsult' %}
+            Use econsult
+          {% else %}
+            Book using {{ session.gpoc.brand | capitalize }}
+          {% endif %}
+        </a>
+      {% endif %}
     </div>
   </div>
 
