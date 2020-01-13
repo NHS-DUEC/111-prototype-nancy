@@ -51,7 +51,7 @@ router.post('/gp-lookup', function(req, res) {
       //var session = querystring.stringify(res.session);
       //console.log(session);
       var gp = encodeURIComponent(req.body['practice-name']);
-      res.redirect(process.env.GPOC_NHSUK_URL + '/booking-virtually/start?gp=' + gp);
+      res.redirect('https://nhs111-gpoc.herokuapp.com/booking-virtually/start?gp=' + gp);
     }
   } else {
     res.send("posted" + req.body['practice-name']);
