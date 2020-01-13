@@ -12,14 +12,18 @@
 
     <h1 class="nhsuk-heading-l">
       <span class="heading-prefix">{{ session.usersGP.name }}</span>
-      Book an online consultation
+      {% if session.gpoc.brand === 'econsult' %}
+        Contact your GP online
+      {% else %}
+        Book an online consultation
+      {% endif %}
     </h1>
 
     <div class="callout callout--info">
       <p>
         Your GP uses&nbsp;
         <img src=/images/{{ session.gpoc.brand }}-logo.png style="display: inline; max-width: 25%; vertical-align: middle" />
-        &nbsp;for online consultations
+        {% if session.gpoc.brand === 'virtually' %}&nbsp;for online consultations{% endif %}
       </p>
     </div>
 
@@ -29,7 +33,7 @@
         {% if session.gpoc.brand === 'econsult' %}
         <p>
           The type of online consultation you have depends on your GP. Your
-          surgery’s website uses a tool called eConsult. This usually gives the
+          surgery’s website uses a tool called econsult. This usually gives the
           GP enough extra information so they can help you by email or phone.
         </p>
         {% elif session.gpoc.brand === 'virtually' %}
@@ -44,7 +48,12 @@
 
     <h2 class="nhsuk-heading-m shunt-2">Sharing your details</h2>
     <p>
-      If you book an online consultation we’ll share some details with {{ session.gpoc.brand | capitalize }} and {{ session.usersGP.name }}.
+      {% if session.gpoc.brand === 'econsult' %}
+        If you use your GP’s econsult tool, we’ll pass on some information about you.
+      {% elif session.gpoc.brand === 'virtually' %}
+        If you book an online consultation we’ll share some details with
+        {{ session.gpoc.brand | capitalize }} and {{ session.usersGP.name }}.
+      {% endif %}
     </p>
     <p>
       We’ll share your:
@@ -57,7 +66,13 @@
     </ul>
 
     <div class="shunt-2">
-      <a href="/gpoc/launch" class="button">Book using {{ session.gpoc.brand | capitalize }}</a>
+      <a href="/gpoc/launch" class="button">
+        {% if session.gpoc.brand === 'econsult' %}
+          Use econsult
+        {% else %}
+          Book using {{ session.gpoc.brand | capitalize }}
+        {% endif %}
+      </a>
     </div>
   </div>
 
