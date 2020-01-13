@@ -17,46 +17,45 @@
   {% endif %}
   <h1 class="nhsuk-heading-l">
     <span class="heading-prefix">{{ session.usersGP.name }}</span>
-    {% if session.gpoc.brand === 'virtually' %}
+  {% if session.gpoc.brand === 'virtually' %}
     Choose how to contact your GP
-  </h1>
-    {% else %}
+  {% else %}
     Choose how to get help from your GP
+  {% endif %}
   </h1>
-  <form action="/primary-care-dispositions/handover-launcher" method="post">
+    <form action="/primary-care-dispositions/handover-launcher" method="post">
     <fieldset class="form-group {% if error %}-errors{% endif %}">
-      {% if error %}
+  {% if error %}
         <p class="error-hint">Choose one option</p>
-      {% endif %}
+  {% endif %}
+    <label class="block-label">
+      <input id="appt-type" name="appt-type" value="online-consultation" type="radio"
+    class="selection-button-radio">
+  {% if session.gpoc.brand === 'virtually' %}
+    <span>Online consultation</span>
+      <span class="form-hint">speak to your surgery by video, phone, email
+      </span>
+  {% else %}
+      <span>By email or phone</span>
+      <span class="form-hint"> your GP will contact you
+      </span>
+  {% endif %}
+    </label>
       <label class="block-label">
-        <input id="appt-type" name="appt-type" value="online-consultation" type="radio" class="selection-button-radio">
-        {% if session.gpoc.brand === 'virtually' %}
-          <span>Online consultation</span>
-          <span class="form-hint">
-            speak to your surgery by video, phone, email
-          </span>
-        {% else %}
-          <span>By email or phone</span>
-          <span class="form-hint">
-            your GP will contact you
-          </span>
-        {% endif %}
-      </label>
-      <label class="block-label">
-        <input id="appt-type" name="appt-type" value="physical-appointment" type="radio" class="selection-button-radio">
-        <span>Visit your GP surgery</span>
-        <span class="form-hint">
-          book an appointment online
-        </span>
-      </label>
-      <label class="block-label">
-        <input id="appt-type" name="appt-type" value="no" type="radio" class="selection-button-radio">
-        <span>I don’t want to book online</span>
-      </label>
+        <input id="appt-type" name="appt-type" value="physical-appointment"
+        type="radio" class="selection-button-radio">
+    <span>Visit your GP surgery</span>
+      <span class="form-hint">book an appointment online
+      </span>
+    </label>
+    <label class="block-label">
+      <input id="appt-type" name="appt-type" value="no" type="radio" class="selection-button-radio">
+      <span>I don’t want to book online</span>
+    </label>
     </fieldset>
-    <div class="form-group">
+  <div class="form-group">
       <button type="submit" class="button">Next</button>
-    </div>
+  </div>
   </form>
 </div>
 
