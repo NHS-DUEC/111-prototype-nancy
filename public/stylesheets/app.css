@@ -3336,6 +3336,13 @@ img {
  * Button disabled states
  */
   /* ==========================================================================
+   COMPONENTS / #EMERGENCY-ALERT
+   ========================================================================== */
+  /**
+ * 1. Use inverted link colours due to the yellow
+ *    ($color_nhsuk-yellow) background.
+ */
+  /* ==========================================================================
    COMPONENTS / #IMAGES
    ========================================================================== */
   /**
@@ -6039,6 +6046,116 @@ img {
   top: 0;
 }
 
+[class^="nhsuk-"] .nhsuk-global-alert {
+  background-color: #ffeb3b;
+  padding-bottom: 24px;
+  padding-top: 24px;
+}
+
+@media print {
+  [class^="nhsuk-"] .nhsuk-global-alert {
+    display: none;
+  }
+}
+
+[class^="nhsuk-"] .nhsuk-global-alert a {
+  color: #005eb8;
+  /* [1] */
+}
+
+[class^="nhsuk-"] .nhsuk-global-alert a:focus {
+  background-color: #003d78;
+  box-shadow: 0 0 0 4px #003d78;
+  color: #ffffff;
+  outline: 4px solid transparent;
+  outline-offset: 4px;
+}
+
+[class^="nhsuk-"] .nhsuk-global-alert a:hover {
+  background-color: #005eb8;
+  box-shadow: 0 0 0 4px #005eb8;
+  color: #ffffff;
+}
+
+[class^="nhsuk-"] .nhsuk-global-alert a:active {
+  background-color: #002f5c;
+  box-shadow: 0 0 0 4px #003d78;
+  color: #ffffff;
+}
+
+[class^="nhsuk-"] .nhsuk-global-alert__heading {
+  font-size: 20px;
+  font-size: 1.25rem;
+  line-height: 1.4;
+  margin: 0;
+}
+
+@media (min-width: 40.0625em) {
+  [class^="nhsuk-"] .nhsuk-global-alert__heading {
+    font-size: 24px;
+    font-size: 1.5rem;
+    line-height: 1.3333333333;
+  }
+}
+
+@media print {
+  [class^="nhsuk-"] .nhsuk-global-alert__heading {
+    font-size: 18pt;
+    line-height: 1.15;
+  }
+}
+
+[class^="nhsuk-"] .nhsuk-global-alert__content {
+  position: relative;
+}
+
+[class^="nhsuk-"] .nhsuk-global-alert__content > *:first-child {
+  margin-top: 0;
+}
+
+[class^="nhsuk-"] .nhsuk-global-alert__content > *:last-child {
+  margin-bottom: 0;
+}
+
+[class^="nhsuk-"] .nhsuk-global-alert__message {
+  margin-top: 8px;
+  margin-bottom: 0;
+}
+
+@media (min-width: 40.0625em) {
+  [class^="nhsuk-"] .nhsuk-global-alert__message {
+    margin-top: 8px;
+  }
+}
+
+[class^="nhsuk-"] .nhsuk-global-alert__updated {
+  margin-top: 8px;
+  font-size: 12px;
+  font-size: 0.75rem;
+  line-height: 1.6666666667;
+}
+
+@media (min-width: 40.0625em) {
+  [class^="nhsuk-"] .nhsuk-global-alert__updated {
+    margin-top: 8px;
+  }
+}
+
+@media (min-width: 40.0625em) {
+  [class^="nhsuk-"] .nhsuk-global-alert__updated {
+    font-size: 14px;
+    font-size: 0.875rem;
+    line-height: 1.7142857143;
+  }
+}
+
+@media print {
+  [class^="nhsuk-"] .nhsuk-global-alert__updated {
+    font-size: 12pt;
+    line-height: 1.2;
+  }
+}
+
 [class^="nhsuk-"] .nhsuk-image {
   background-color: #ffffff;
   border-bottom: 1px solid #d8dde0;
@@ -6122,6 +6239,16 @@ img {
 @media (min-width: 500px) {
   [class^="nhsuk-"] .button {
     width: auto;
+  }
+}
+
+[class^="nhsuk-"] .nhsuk-global-alert {
+  margin-bottom: 48px;
+}
+
+@media (min-width: 40.0625em) {
+  [class^="nhsuk-"] .nhsuk-global-alert {
+    margin-bottom: 56px;
   }
 }
 

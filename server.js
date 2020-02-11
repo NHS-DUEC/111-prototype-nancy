@@ -28,6 +28,8 @@ var gpLookup = require('./app/routes/gp-lookup');
 
 var userJourneys = require('./app/routes/user-journeys');
 
+var coronavirus = require('./app/routes/coronavirus');
+
 var app = express()
 
 // Grab environment variables specified in Procfile or as Heroku config vars
@@ -120,6 +122,8 @@ app.use('/emergency-prescription-wizard', emergencyPrescriptionWizard);
 app.use('/gp-lookup', gpLookup);
 
 app.use('/user-journeys', userJourneys);
+
+app.use('/coronavirus', coronavirus);
 
 // auto render any view that exists
 app.get(/^\/([^.]+)$/, function (req, res) {
