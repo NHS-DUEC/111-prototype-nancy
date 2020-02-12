@@ -1,0 +1,50 @@
+{% set use_question_feedback = true %}
+
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhsuk-frontend{% endblock %}
+
+{% block content %}
+
+<div class="content-block measure">
+
+  <form action="" method="post" class="form">
+
+    <h1 class="nhsuk-heading-l">Do you have any of the following:</h1>
+
+    <div class="form-group">
+      <fieldset>
+        <label class="block-label">
+          <input id="" name="answer" value="" type="checkbox" class="selection-button-radio">
+          <span>
+            High temperature (feeling hot to touch on the tummy or back)
+          </span>
+        </label>
+        <label class="block-label">
+          <input id="" name="answer" value="" type="checkbox" class="selection-button-radio">
+          <span>
+            Cough
+          </span>
+        </label>
+        <label class="block-label">
+          <input id="" name="answer" value="" type="checkbox" class="selection-button-radio">
+          <span>
+            Difficulty breathing
+          </span>
+        </label>
+      </fieldset>
+    </div>
+
+    <div class="form-group">
+      <p><button type="submit" class="button">Next</button></p>
+    </div>
+
+  </form>
+
+</div>
+
+{% endblock %}
+
+{% set suppress_feedback = true %}

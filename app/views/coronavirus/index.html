@@ -1,0 +1,80 @@
+{% set suppress_feedback = true %}
+
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}GPOC prototypes{% endblock %}
+
+{% block body_css_classes %}nhsuk-frontend{% endblock %}
+
+{% block content %}
+
+<div class="content-block measure">
+
+  <h1 class="nhsuk-heading-l">NHS 111 coronavirus prototypes</h1>
+
+  <!--
+  <h2 class="nhsuk-heading-m">Phase 1: MVP</h2>
+  <ul>
+    <li>
+      <a href="/coronavirus/index-mvp">Phase 1: MVP</a>
+    </li>
+  </ul>
+  -->
+
+  <h2 class="nhsuk-heading-m">Phase 2: interaction logic</h2>
+
+  <!--
+  <ul>
+    <li>
+      <a href="/coronavirus/index-phase-1">Phase 2: journey (fixed outcome)</a>
+    </li>
+  </ul>
+
+  <ul>
+    <li>
+      <a href="/coronavirus/phase-1/start">Start</a>
+    </li>
+  </ul>
+  -->
+
+  <ul>
+    <li>
+      <a href="/coronavirus/phase-1/question-country">Question 1</a>
+    </li>
+    <li>
+      <a href="/coronavirus/phase-1/question-specific-place">Question 2</a>
+    </li>
+      <li>
+        <a href="/coronavirus/phase-1/question-country-2">Question 3</a>
+      </li>
+    <li>
+      <a href="/coronavirus/phase-1/question-contact">Question 4</a>
+    </li>
+    <li>
+      <a href="/coronavirus/phase-1/question-symptom">Question 5</a>
+    </li>
+  </ul>
+
+  <!--
+  <ul>
+    <li>
+      <a href="/coronavirus/phase-1/outcome-isolate-111">Outcome: isolate and call 111</a>
+    </li>
+    <li>
+      <a href="/coronavirus/phase-1/outcome-isolate-PHE">Outcome: isolate and [PHE offering]</a>
+    </li>
+    <li>
+      <a href="/coronavirus/phase-1/outcome-info-travel">Outcome: info (has travelled)</a>
+    </li>
+    <li>
+      <a href="/coronavirus/phase-1/outcome-info-unlikely">Outcome: info ("no" to everything)</a>
+    </li>
+    <li>
+      <a href="/coronavirus/phase-1/outcome-just-info">Outcome: just info (diverts at start)</a>
+    </li>
+  </ul>
+  -->
+
+</div>
+
+{% endblock %}

@@ -83,6 +83,7 @@
   /* nhsuk-frontend components */
   @import "node_modules/nhsuk-frontend/packages/components/action-link/action-link";
   @import "node_modules/nhsuk-frontend/packages/components/button/button";
+  @import "node_modules/nhsuk-frontend/packages/components/emergency-alert/emergency-alert";
   @import "node_modules/nhsuk-frontend/packages/components/images/images";
 
   /* MAT'S ANNOYING OVERRIDES */
@@ -93,6 +94,10 @@
     @include media(mid) {
       width: auto;
     }
+  }
+
+  .nhsuk-global-alert {
+    @include nhsuk-responsive-margin(8, 'bottom')
   }
 
   .shunt {
