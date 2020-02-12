@@ -10,26 +10,28 @@
 
 <div class="content-block measure">
 
-  <h1 class="nhsuk-heading-xl">Have you got symptoms?</h1>
-
-  <div class="callout callout--info">
-    <p>help section</p>
-  </div>
-
   <form action="" method="post" class="form">
+
+    <h1 class="nhsuk-heading-l">Do you have any of the following:</h1>
 
     <div class="form-group">
       <fieldset>
         <label class="block-label">
-          <input id="" name="answer" value="1" type="radio" class="selection-button-radio">
+          <input id="" name="answer" value="" type="checkbox" class="selection-button-radio">
           <span>
-            Yes
+            High temperature (feeling hot to touch on the tummy or back)
           </span>
         </label>
         <label class="block-label">
-          <input id="" name="answer" value="0" type="radio" class="selection-button-radio">
+          <input id="" name="answer" value="" type="checkbox" class="selection-button-radio">
           <span>
-            No
+            Cough
+          </span>
+        </label>
+        <label class="block-label">
+          <input id="" name="answer" value="" type="checkbox" class="selection-button-radio">
+          <span>
+            Difficulty breathing
           </span>
         </label>
       </fieldset>
@@ -45,4 +47,4 @@
 
 {% endblock %}
 
-{% block footer %}{% endblock %}
+{% set suppress_feedback = true %}
