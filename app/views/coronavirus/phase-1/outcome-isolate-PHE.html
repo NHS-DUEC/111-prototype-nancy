@@ -8,22 +8,34 @@
 
 {% block content %}
 
-<div class="content-block">
+<div class="content-block measure">
 
-  <div class="callout callout--attention measure">
-    <h1 class="nhsuk-heading-l">ISOLATE PHE</h1>
-    <p>
-      PHE offering here...
-    </p>
-    <p>
-      <a href="javascript: return false;">a link ooh hoo</a>
-    </p>
+  <h1 class="nhsuk-heading-l">
+    Stay indoors and avoid close contact with other people
+  </h1>
+
+  <div class="disposition-set">
+
+    <div class="disposition-unit">
+      <h2 class="nhsuk-heading-l">Isolate</h2>
+      <p>You do that by:</p>
+      <ul>
+        <li>thing</li>
+        <li>thing</li>
+        <li>thing</li>
+        <li>thing</li>
+      </ul>
+    </div>
+
+    <div class="disposition-unit">
+      <h2 class="nhsuk-heading-l">Get in touch</h2>
+      <p>This is the offer from PHE</p>
+      <p>WTF is it?</p>
+    </div>
+
   </div>
-
-  <p>Let's work this all out. Are we having a survey...?</p>
-
-  <p>Links to info and worsening.</p>
-
 </div>
 
 {% endblock %}
+
+{% set suppress_feedback = true %}
