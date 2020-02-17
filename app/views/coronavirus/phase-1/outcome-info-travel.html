@@ -1,0 +1,47 @@
+{% set suppress_feedback = true %}
+
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhsuk-frontend{% endblock %}
+
+{% block content %}
+
+<div class="content-block measure">
+
+  <h1 class="nhsuk-heading-l">
+    You don’t need to speak to anybody right now
+  </h1>
+
+  <p>As you:</p>
+  <ul>
+    <li>have <strong>not</strong> been in a high risk area</li>
+    <li>have <strong>not</strong> been in contact with a confirmed case</li>
+    <li>are <strong>not</strong> showing any symptoms</li>
+  </ul>
+
+  <div class="callout callout--attention">
+    <h2 class="nhsuk-heading-m">
+      Call 111 if you start to develop symptoms of:
+    </h2>
+    <ul>
+      <li>shortness of breath</li>
+      <li>high temperature (feeling hot to touch on the chest or tummy)</li>
+      <li>a cough</li>
+    </ul>
+    <p>
+      Make sure you select the option to speak to someone. Tell them you
+      are calling about possible coronavirus (COVID-19) symptoms.
+    </p>
+  </div>
+
+  <p>
+    You can <a href="javascript: return false;">read advice and find answers to common questions about coronavirus (COVID-19) on NHS.UK</a>
+  </p>
+
+</div>
+
+{% endblock %}
+
+{% set suppress_feedback = true %}
