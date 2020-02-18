@@ -30,6 +30,7 @@
     {% if not suppress_feedback %}
       {% include '_includes/feedback.html' %}
     {% endif %}
+    {% block custom_feedback %}{% endblock %}
 
     {% block footer %}{% endblock %}
 
