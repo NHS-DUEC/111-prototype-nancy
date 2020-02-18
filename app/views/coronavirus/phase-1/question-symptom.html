@@ -48,3 +48,7 @@
 {% endblock %}
 
 {% set suppress_feedback = true %}
+{% block custom_feedback %}
+  {% set feedback_title = 'Help us improve this question' %}
+  {% include 'coronavirus/_components/feedback.html' %}
+{% endblock %}

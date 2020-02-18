@@ -11,7 +11,7 @@
 <div class="content-block measure">
 
   <h1 class="nhsuk-heading-l">
-    Have you travelled from Japan, Malaysia, Singapore, South Korea, Taiwan or 
+    Have you travelled from Japan, Malaysia, Singapore, South Korea, Taiwan or
     Thailand in the last 14 days?
   </h1>
 
@@ -45,3 +45,7 @@
 {% endblock %}
 
 {% set suppress_feedback = true %}
+{% block custom_feedback %}
+  {% set feedback_title = 'Help us improve this question' %}
+  {% include 'coronavirus/_components/feedback.html' %}
+{% endblock %}
