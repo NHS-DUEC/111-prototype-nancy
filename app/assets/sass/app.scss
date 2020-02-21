@@ -163,7 +163,9 @@
     }
   }
 
-  a {
-    color: $error-colour;
+  .error-summary {
+    a {
+      color: $error-colour;
+    }
   }
 }

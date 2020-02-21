@@ -1,0 +1,36 @@
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhsuk-frontend{% endblock %}
+
+{% block content %}
+
+<div class="measure">
+
+  <div class="content-block">
+    <h1 class="nhsuk-heading-l">Get coronavirus (COVID-19) advice</h1>
+    <p>Find out what to do if:</p>
+    <ul>
+      <li>you think you have symptoms</li>
+      <li>you might have been exposed to the virus when travelling</li>
+    </ul>
+    <p>
+      We’ll ask you a few questions and tell you what to do next.
+    </p>
+    <p>
+      <button class="button">
+        Start now
+      </button>
+    </p>
+  </div>
+
+</div>
+
+{% endblock %}
+
+{% set suppress_feedback = true %}
+{% block custom_feedback %}
+  {% set feedback_title = 'Help us improve this page' %}
+  {% include 'coronavirus/_components/feedback.html' %}
+{% endblock %}

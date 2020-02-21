@@ -6405,6 +6405,6 @@ img {
   }
 }
 
-[class^="nhsuk-"] a {
+[class^="nhsuk-"] .error-summary a {
   color: #da291c;
 }
