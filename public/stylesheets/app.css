@@ -6404,3 +6404,7 @@ img {
     line-height: 1.15;
   }
 }
+
+[class^="nhsuk-"] a {
+  color: #da291c;
+}

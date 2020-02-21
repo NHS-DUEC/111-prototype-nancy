@@ -16,7 +16,7 @@
     </div>
   {% endif %}
 
-  <h1 class="nhsuk-heading-l">What’s {% if session.proxy == true %}their{% else %}your{% endif %} phone number?</h1>
+  <h1 class="nhsuk-heading-l">What is {% if session.proxy == true %}their{% else %}your{% endif %} phone number?</h1>
 
   <div class="form-group {% if error %}-errors{% endif %}">
     <label for="tel {% if error %}error-hint{% endif %}">Enter a mobile, landline or textphone number</label>
