@@ -2203,9 +2203,9 @@ textarea {
   -moz-appearance: none;
   appearance: none;
   border-radius: 0;
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
+  box-sizing: border-box !important;
+  -moz-box-sizing: border-box !important;
+  -webkit-box-sizing: border-box !important;
   display: block;
   width: 100%;
   margin: 8px 0 16px 0;
