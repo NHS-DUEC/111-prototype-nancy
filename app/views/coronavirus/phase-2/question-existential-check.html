@@ -1,0 +1,74 @@
+{% set use_question_feedback = true %}
+
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhsuk-frontend{% endblock %}
+
+{% block content %}
+
+<div class="content-block measure">
+
+  <h1 class="nhsuk-heading-l">
+    Have you got any of the following?
+  </h1>
+
+  <div class="callout callout--info">
+    <p>Check all that apply</p>
+  </div>
+
+  <form action="" method="post" class="form">
+  <div class="form-group">
+    <fieldset>
+      <label class="block-label">
+        <input id="" name="answer" value="" type="checkbox" class="selection-button-checkbox">
+        <span>
+          A high temperature that you can’t bring down with paracetamol or ibuprofen
+        </span>
+      </label>
+      <label class="block-label">
+        <input id="" name="answer" value="" type="checkbox" class="selection-button-checkbox">
+        <span>
+          A cough that is so bad it’s affecting your quality of life
+        </span>
+      </label>
+      <label class="block-label">
+        <input id="" name="answer" value="" type="checkbox" class="selection-button-checkbox">
+        <span>
+          So short of breath you can’t speak in full sentences
+        </span>
+      </label>
+      <label class="block-label">
+        <input id="" name="answer" value="" type="checkbox" class="selection-button-checkbox">
+        <span>
+          Confusion - since your symptoms started
+        </span>
+      </label>
+
+      <div>or</div>
+
+      <label class="block-label">
+        <input id="" name="answer" value="" type="checkbox" class="selection-button-checkbox">
+        <span>
+          None of the above
+        </span>
+      </label>
+    </fieldset>
+  </div>
+
+    <div class="form-group">
+      <p><button type="submit" class="button">Next</button></p>
+    </div>
+
+  </form>
+
+</div>
+
+{% endblock %}
+
+{% set suppress_feedback = true %}
+{% block custom_feedback %}
+  {% set feedback_title = 'Help us improve this question' %}
+  {% include 'coronavirus/_components/feedback.html' %}
+{% endblock %}
