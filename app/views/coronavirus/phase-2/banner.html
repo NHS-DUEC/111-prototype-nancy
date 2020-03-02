@@ -1,0 +1,57 @@
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhsuk-frontend{% endblock %}
+
+{% block banner %}
+{% set banner_text = '
+  <p>
+    Worried about the coronavirus (COVID-19) outbreak?
+  </p>
+  <p>
+    <b>Do not go to a GP, pharmacy or a hospital.</b><br>
+    <a href="/coronavirus/phase-1/start">
+      Get information and advice
+    </a>
+  </p>
+' %}
+{% include 'coronavirus/_components/banner.html' %}
+{% endblock %}
+
+{% block content %}
+
+<div class="measure">
+
+  <div class="content-block">
+    <h1 class="nhsuk-heading-xl">Get medical help near you</h1>
+    <ol>
+      <li>Answer questions about your main symptom.</li>
+      <li>Find out when and where to get help.</li>
+      <li>Get a call back from a nurse, if you need one.</li>
+    </ol>
+    <div class="callout callout--info">
+      <p>
+        If you think you know what might be wrong, you can find advice on
+        <a href="javascript: return false;">health problems</a>
+        on <a href="javascript: return false;">NHS.UK.</a>
+      </p>
+        <p>
+        If you’ve run out of your prescribed medicines, find out how
+        to get an <a href="javascript: return false;">emergency prescription.</a>
+      </p>
+      <p>
+
+    </div>
+    <div class="shunt-2">
+      <a href="/start/emergency-check" class="button">Start</a>
+    </div>
+    <p>
+      Always follow any medical advice you’ve already been given by your
+      doctor. See our <a href="javascript: return false;">terms.</a>
+    </p>
+  </div>
+
+</div>
+
+{% endblock %}
