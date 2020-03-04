@@ -1,0 +1,37 @@
+{% set suppress_feedback = true %}
+
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhsuk-frontend{% endblock %}
+
+{% block content %}
+
+<div class="content-block measure">
+  <div class="callout callout--error">
+    <h1 class="nhsuk-heading-l">
+      There’s been a problem
+    </h1>
+    <p>
+      Your details were not sent.
+    </p>
+    <p id="pe-container">
+      Use the “back” button in your browser to go back to the previous page and try again.
+    </p>
+  </div>
+</div>
+
+<script type="text/javascript">
+  var el = document.getElementById('pe-container');
+  var a = document.createElement('a');
+  var linkText = document.createTextNode("Go back and try again");
+  a.appendChild(linkText);
+  a.setAttribute('href', 'javascript:window.history.back();');
+  el.textContent = '';
+  el.appendChild(a);
+</script>
+
+{% endblock %}
+
+{% set suppress_feedback = true %}
