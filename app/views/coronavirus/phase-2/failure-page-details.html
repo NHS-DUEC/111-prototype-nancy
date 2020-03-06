@@ -1,0 +1,40 @@
+{% set suppress_feedback = true %}
+
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhsuk-frontend{% endblock %}
+
+{% block content %}
+
+<div class="content-block measure">
+  <h1 class="nhsuk-heading-xl">
+    There’s been a problem
+  </h1>
+  <p>
+    Sending your information failed. Try again later.
+  </p>
+  <p>
+    If you’re not sure what to do next, call 111.
+  </p>
+
+  <div class="callout callout--attention">
+    <p>
+      To protect yourself and others, <b>do not go</b> to a GP, pharmacy or hospital
+    </p>
+  </div>
+
+  <div class="content-seperator content-seperator--equalvertspacing--large"></div>
+
+  <h3 class="nhsuk-heading-s">Advice in other parts of the UK</h3>
+  <ul>
+    <li><strong>Scotland:</strong> call your GP surgery or 111 (NHS 24) if it’s closed</li>
+    <li><strong>Wales:</strong> call 111</li>
+    <li><strong>Northern Ireland:</strong> call 111</li>
+  </ul>
+</div>
+
+{% endblock %}
+
+{% set suppress_feedback = true %}
