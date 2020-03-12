@@ -1,0 +1,60 @@
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhsuk-frontend{% endblock %}
+
+{% block content %}
+
+<div class="measure">
+
+  <div class="content-block">
+    <h1 class="nhsuk-heading-l">About coronavirus (COVID-19)</h1>
+
+    <div class="callout callout--info">
+      <p>
+        111 online is currently updating our assessment to take new
+        government advice on the delay phase into account.
+      </p>
+    </div>
+
+    <p>
+      In the meantime, you can read advice on NHS.UK such as:
+    </p>
+    <ul>
+      <li>how it spreads</li>
+      <li>how to avoid infection</li>
+      <li>what to do if you have symptoms like a cough or high temperature</li>
+    </ul>
+    <p>
+      <a data-event-trigger="click" data-event-value="Novel Coronavirus" href="https://www.nhs.uk/conditions/coronavirus-covid-19/">
+        Get information about coronavirus (COVID-19)
+      </a> or<br>
+      <a data-event-trigger="click" data-event-value="Novel Coronavirus common questions" href="https://www.nhs.uk/conditions/coronavirus-covid-19/common-questions/">
+        read answers to common questions about it.
+      </a>
+    </p>
+
+    <div class="callout callout--attention">
+      <p>To protect other people, <b>do not go</b> to a GP, pharmacy or hospital</p>
+    </div>
+
+    <div class="content-seperator content-seperator--equalvertspacing--large"></div>
+
+    <h3 class="nhsuk-heading-s">Advice in other parts of the UK</h3>
+    <ul>
+      <li><strong>Scotland:</strong> call your GP surgery or 111 (NHS 24) if it’s closed</li>
+      <li><strong>Wales:</strong> call 111</li>
+      <li><strong>Northern Ireland:</strong> call 0300 200 7885</li>
+    </ul>
+  </div>
+
+</div>
+
+{% endblock %}
+
+{% set suppress_feedback = true %}
+{% block custom_feedback %}
+  {% set feedback_title = 'Help us improve this page' %}
+  {% include 'coronavirus/_components/feedback.html' %}
+{% endblock %}
