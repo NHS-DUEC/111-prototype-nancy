@@ -1,0 +1,48 @@
+{% set suppress_feedback = true %}
+
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhsuk-frontend{% endblock %}
+
+{% block content %}
+
+<div class="content-block measure">
+
+  <h1 class="nhsuk-heading-xl">
+    You don’t need to speak to anybody right now as you:
+  </h1>
+
+  <ul>
+    <li>
+      <b>don’t</b> have a cough
+    </li>
+    <li>
+      <b>don’t</b> have a high temperature
+    </li>
+    <li>
+      <b>are well enough</b> to go about your daily activities
+    </li>
+  </ul>
+
+  <p>
+    It’s unlikely that you are experiencing symptoms of coronavirus (COVID-19)
+  </p>
+
+  <div class="callout callout--warning">
+    <p>
+      You can go <a href="javascript: return false;">back to the 111 online home page</a>
+      and use the service to check any other symptoms you might have.
+    </p>
+  </div>
+
+  <p>
+    Or you can <a href="javascript: return false;">read general information about coronavirus on NHS.UK</a>
+  </p>
+
+</div>
+
+{% endblock %}
+
+{% set suppress_feedback = true %}

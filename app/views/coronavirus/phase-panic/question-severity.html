@@ -1,0 +1,57 @@
+{% set use_question_feedback = true %}
+
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhsuk-frontend{% endblock %}
+
+{% block content %}
+
+<div class="content-block measure">
+
+  <h1 class="nhsuk-heading-xl">
+    Are you so ill that you've stopped doing all of your usual daily activities?
+  </h1>
+
+  <div class="callout callout--info">
+    <p>
+      We are checking to see if you feel so ill that you can't do anything you
+      usually would, such as watch TV, use your phone, read or get out of bed.
+    </p>
+  </div>
+
+  <form action="" method="post" class="form">
+    <div class="form-group">
+      <fieldset>
+        <label class="block-label">
+          <input id="" name="answer" value="1" type="radio" class="selection-button-radio">
+          <span>
+            Yes - I’ve stopped doing everything I usually do
+          </span>
+        </label>
+        <label class="block-label">
+          <input id="" name="answer" value="0" type="radio" class="selection-button-radio">
+          <span>
+            No - I feel well enough to do some of my usual daily activities
+          </span>
+        </label>
+      </fieldset>
+    </div>
+  </div>
+
+    <div class="form-group">
+      <p><button type="submit" class="button">Next</button></p>
+    </div>
+
+  </form>
+
+</div>
+
+{% endblock %}
+
+{% set suppress_feedback = true %}
+{% block custom_feedback %}
+  {% set feedback_title = 'Help us improve this question' %}
+  {% include 'coronavirus/_components/feedback.html' %}
+{% endblock %}

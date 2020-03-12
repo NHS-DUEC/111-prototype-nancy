@@ -1,0 +1,51 @@
+{% set suppress_feedback = true %}
+
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhsuk-frontend{% endblock %}
+
+{% block content %}
+
+<div class="content-block measure">
+
+  <h1 class="nhsuk-heading-xl">Call 111 and speak to a nurse</h1>
+
+  <div class="callout callout--warning">
+    <p>
+      The phone will be very busy but you need to wait to speak to someone.
+    </p>
+  </div>
+
+  <p>
+    111 online is updating its clinical assessment, so you must wait to speak to
+    a nurse who will ask you more questions about your symptoms.
+  </p>
+  <p>
+    Tell 111 that you are calling about coronavirus symptoms.
+  </p>
+
+
+  <div class="callout callout--info">
+    <p>
+      You need to stay away from other people until you have spoken to 111.
+    </p>
+    <p>
+      <a href="https://www.nhs.uk/conditions/coronavirus-covid-19/self-isolation-advice/">Read
+      more stay at home advice on NHS.UK.</a>
+    </p>
+  </div>
+
+  <div class="callout callout--attention">
+    <p>
+      To protect others, <b>do not go</b> to your GP, pharmacy or hospital
+    </p>
+  </div>
+
+
+</div>
+
+{% endblock %}
+
+{% set suppress_feedback = true %}
