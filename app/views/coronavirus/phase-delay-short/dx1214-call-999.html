@@ -1,0 +1,31 @@
+{% set suppress_feedback = true %}
+
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhsuk-frontend{% endblock %}
+
+{% block content %}
+
+<!--
+  Priority CAT 3
+-->
+
+<div class="content-block measure">
+
+  <h1 class="nhsuk-heading-xl error-hint">Phone 999 now for an ambulance</h1>
+
+  <p>The 999 operator will ask:</p>
+  <ul>
+    <li>where you are &mdash; the area or postcode (or what’s nearby if you don’t know)</li>
+    <li>what phone number they can call you back on if you get cut off</li>
+    <li>what’s happened</li>
+    <li>more about your symptoms &mdash; if you don’t need an ambulance you’ll get advice on what to do instead</li>
+  </ul>
+
+</div>
+
+{% endblock %}
+
+{% set suppress_feedback = true %}
