@@ -1,0 +1,102 @@
+{% set suppress_feedback = true %}
+
+{% set tel = "07979 654 789" %}
+{% if session.callBooking.tel %}
+  {% set tel = session.callBooking.tel %}
+{% endif %}
+
+{% extends '_layouts/layout.html' %}
+
+{% block body_css_classes %}nhs-redesign{% endblock %}
+
+{% block content %}
+<div class="content-block measure">
+
+  <h1>You’ll get a call within 1 hour</h1>
+
+  <p>
+    It was booked at <span id="timestamp">{{ now }}</span>.
+  </p>
+  <script type="text/javascript">
+    var now = new Date()
+      .toLocaleTimeString('en-US', { hour: 'numeric', hour12: true, minute: 'numeric' })
+      .toLowerCase()
+      .replace(/:/g, '.');
+    document.getElementById('timestamp').textContent = now;
+  </script>
+
+  <p>
+    The Coronavirus Callback Service will call {{ tel }}. The number may show as ‘unknown’ on your display.
+  </p>
+
+  <div class="callout callout--info">
+    <p>
+      Make sure you keep yourself separate from others in your household (self-isolate)
+      until you have been contacted by the testing service.
+      <a href="https://www.nhs.uk/conditions/coronavirus-covid-19/self-isolation-advice/">
+        Read more details about self-isolation.
+      </a>
+    </p>
+  </div>
+
+  <div class="callout callout--attention">
+    <p>To protect other people, <b>do not go</b> to a GP, pharmacy or hospital</p>
+  </div>
+
+  <details>
+    <summary><span>Why does it take so long?</span></summary>
+    <div>
+      <p>
+        The Coronavirus Callback Service is very busy at the moment. You are in
+        a queue and you will be called as soon as possible.
+      </p>
+    </div>
+  </details>
+
+  <details>
+    <summary><span>What if I don’t get a call back within XX hours?</span></summary>
+    <div>
+      <p>
+        You should get a call back within this time. If you don’t, you should UM.
+      </p>
+    </div>
+  </details>
+
+  <details>
+    <summary><span>What if miss the call?</span></summary>
+    <div>
+      <p>
+        The Coronavirus Callback Service will try to call up to 3 times. They
+        will leave a message to say they have tried to call you, but you won’t
+        be able to return their call. If you miss all of the calls, you need to
+        start again using the online service.
+      </p>
+    </div>
+  </details>
+
+  <details>
+    <summary><span>What if I feel worse while I am waiting?</span></summary>
+    <div>
+      <p>
+        Call 111 and tell them you booked a call back online, but you feel worse
+        while you are waiting. Tell them you have coronavirus symptoms.
+      </p>
+    </div>
+  </details>
+
+<!--
+  <details>
+    <summary><span></span></summary>
+    <div>
+      <p>
+
+      </p>
+    </div>
+  </details>
+-->
+
+
+
+
+</div>
+{% endblock %}

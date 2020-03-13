@@ -1,0 +1,81 @@
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhsuk-frontend{% endblock %}
+
+{% block content %}
+
+<div class="measure">
+
+  <div class="content-block">
+
+    <h1 class="nhsuk-heading-l">About coronavirus (COVID-19)</h1>
+    <p>
+      Read general advice such as:
+    </p>
+    <ul>
+      <li>how to avoid catching or spreading the virus</li>
+      <li>tips for staying at home</li>
+    </ul>
+    <p>
+      <a href="#">
+        Get information about coronavirus (COVID-19).
+      </a>
+    </p>
+
+    <div class="content-seperator content-seperator--equalvertspacing--large"></div>
+
+    <h2 class="nhsuk-heading-l">
+      Find out what to do if you think you have symptoms
+    </h2>
+
+    <p>
+      We’ll ask you a few questions and tell you what to do next.
+    </p>
+
+    <div class="callout callout--attention nhsuk-u-margin-bottom-6">
+      <p>
+        To protect others, <b>do not go</b> to a GP, pharmacy or hospital
+      </p>
+    </div>
+
+    <p>
+      <a class="nhsuk-action-link__link" href="javascript: return false;">
+        <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M0 0h24v24H0z" fill="none"></path>
+          <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+        </svg>
+        <span class="nhsuk-action-link__text">Start now</span>
+      </a>
+    </p>
+
+    <div class="content-seperator content-seperator--equalvertspacing--large"></div>
+
+    <h3 class="nhsuk-heading-s">Advice in other parts of the UK</h3>
+    <!-- NOTE updated links -->
+    <ul>
+      <li>
+        <a href="https://www.nhsinform.scot/illnesses-and-conditions/infections-and-poisoning/coronavirus-covid-19">
+          Check your symptoms in Scotland
+        </a>
+      </li>
+      <li>
+        <a href="https://www.nhsdirect.wales.nhs.uk/SelfAssessments/symptomcheckers/?ScName=CoronaVirusCOVID19&SCTId=175">
+          Check your symptoms in Wales
+        </a>
+      </li>
+      <li>Northern Ireland: call 111</li>
+    </ul>
+
+  </div>
+
+</div>
+
+{% endblock %}
+
+{% set suppress_feedback = true %}
+{% block custom_feedback %}
+  {% set feedback_title = 'Help us improve this page' %}
+  {% include 'coronavirus/_components/feedback.html' %}
+{% endblock %}

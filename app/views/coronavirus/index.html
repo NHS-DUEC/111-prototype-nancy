@@ -2,7 +2,7 @@
 
 {% extends '_layouts/layout.html' %}
 
-{% block page_title %}GPOC prototypes{% endblock %}
+{% block page_title %}COVID-19 prototypes{% endblock %}
 
 {% block body_css_classes %}nhsuk-frontend{% endblock %}
 
@@ -19,101 +19,190 @@
 
   <h1 class="nhsuk-heading-l">NHS 111 coronavirus prototypes</h1>
 
+  <details>
+    <summary>
+      <span>Depracated</span>
+    </summary>
+    <div>
+
+      <ul>
+        <li>
+          <a href="/coronavirus/phase-2/banner">Banner</a>
+        </li>
+      </ul>
+
+      <ul>
+        <li>
+          <a href="/coronavirus/phase-2/start">Start</a>
+        </li>
+        <li>
+          <a href="/coronavirus/phase-2/start-nhsuk">Start (NHS.UK)</a>
+        </li>
+      </ul>
+
+      <ul>
+        <li>
+          <a href="/coronavirus/phase-2/question-dated">
+            Question with a specific date
+          </a>
+        </li>
+        <li>
+          <a href="/coronavirus/phase-2/question-contact">
+            Question: close contact
+          </a>
+        </li>
+        <li>
+          <strike><a href="/coronavirus/phase-1/question-country">Question 1</a> <b>superseded</b></strike>
+        </li>
+        <li>
+          <strike><a href="/coronavirus/phase-1/question-specific-place">Question 2</a> <b>superseded</b></strike>
+        </li>
+        <li>
+          <strike><a href="/coronavirus/phase-1/question-country-2">Question 3</a> <b>superseded</b></strike>
+        </li>
+        <li>
+          <strike><a href="/coronavirus/phase-1/question-symptom">Question 5</a> <b>superseded</b></strike>
+        </li>
+      </ul>
+
+
+      <ul>
+        <li>
+          <strike>
+            <a href="/coronavirus/phase-2/dxcv192-isolate-111-symptoms">DxCV192: isolate with symptoms</a>
+          </strike>
+        </li>
+        <li>
+          <a href="/coronavirus/phase-2/dxcv193-isolate-no-symptoms">DxCV193: isolate and asymptomatic</a>
+        </li>
+        <li>
+          <a href="/coronavirus/phase-2/dxcv194-info-symptoms">DxCV194: information only (with other symptoms)</a>
+        </li>
+        <li>
+          <a href="/coronavirus/phase-2/dxcv196-info-travel">DxCV196: information only (has travelled)</a>
+        </li>
+        <li>
+          <a href="/coronavirus/phase-2/dxcv195-info-only">DxCV195: information only</a>
+        </li>
+      </ul>
+
+      <h2 class="nhsuk-heading-m">
+        Build stage:<br>
+        Mild: testing,<br>
+        Severe: call 111
+      </h2>
+      <p>Interstitial and Dx split</p>
+      <ul>
+        <li>
+          <a href="/coronavirus/phase-2/interstitial">Question: Have you got...</a>
+        </li>
+        <li>
+          <a href="/coronavirus/phase-2/question-existential-check-redux">Are you so ill...</a>
+        </li>
+        <li>
+          <a href="/coronavirus/phase-2/outcome-mild">Outcome: mild</a>
+        </li>
+        <li>
+          <a href="/coronavirus/phase-2/outcome-severe">Outcome: severe</a>
+        </li>
+        <li>
+          <a href="/coronavirus/phase-2/confirmation-mild">Confirmation: mild</a>
+        </li>
+      </ul>
+
+      <h2 class="nhsuk-heading-m">
+        Build stage:<br>
+        Pathways with DoS
+      </h2>
+      <p>
+        <b>
+          <a href="/coronavirus/phase-3/holding-page">Delay phase holding page</a>
+        </b>
+      </p>
+      <ul>
+        <li>
+          <a href="/coronavirus/phase-3/covid-gateway-question">Gateway question</a>
+        </li>
+        <li>
+          <a href="/coronavirus/phase-3/covid-gateway-statement">Gateway statement</a>
+        </li>
+        <li>
+          <a href="/coronavirus/phase-3/outcome-isolate-with-symptoms">Outcome: stay at home</a>
+        </li>
+        <li>
+          <a href="/coronavirus/phase-3/dx-book-a-callback">Book a callback</a>
+        </li>
+        <li>
+          <a href="/coronavirus/phase-3/dx-callback-confirmed">Callback confirmation</a>
+        </li>
+      </ul>
+
+    </div>
+  </details>
+
+  <h2 class="nhsuk-heading-m">
+    Build stage:<br>
+    <b>Delay phase immediate term [LIVE]</b>
+  </h2>
   <ul>
     <li>
-      <a href="/coronavirus/phase-2/banner">Banner</a>
-    </li>
-  </ul>
-
-  <ul>
-    <li>
-      <a href="/coronavirus/phase-2/start">Start</a>
+      <a href="/coronavirus/phase-delay/start">Start page</a>
     </li>
     <li>
-      <a href="/coronavirus/phase-2/start-nhsuk">Start (NHS.UK)</a>
-    </li>
-  </ul>
-
-  <ul>
-    <li>
-      <a href="/coronavirus/phase-2/question-dated">
-        Question with a specific date
-      </a>
+      <a href="/coronavirus/phase-delay/question-symptoms">Symptom question</a>
     </li>
     <li>
-      <a href="/coronavirus/phase-2/question-contact">
-        Question: close contact
-      </a>
+      <a href="/coronavirus/phase-delay/question-severity">Severity question</a>
     </li>
     <li>
-      <strike><a href="/coronavirus/phase-1/question-country">Question 1</a> <b>superseded</b></strike>
+      <a href="/coronavirus/phase-delay/dxcv195-info-only">DxCV195: information only, link to NHS.UK and 111OL</a>
     </li>
     <li>
-      <strike><a href="/coronavirus/phase-1/question-specific-place">Question 2</a> <b>superseded</b></strike>
+      <a href="/coronavirus/phase-delay/dxcv193-stay-home-self-care">DxCV193: stay home, self care</a>
     </li>
     <li>
-      <strike><a href="/coronavirus/phase-1/question-country-2">Question 3</a> <b>superseded</b></strike>
-    </li>
-    <li>
-      <strike><a href="/coronavirus/phase-1/question-symptom">Question 5</a> <b>superseded</b></strike>
-    </li>
-  </ul>
-
-
-  <ul>
-    <li>
-      <strike>
-        <a href="/coronavirus/phase-2/dxcv192-isolate-111-symptoms">DxCV192: isolate with symptoms</a>
-      </strike>
-    </li>
-    <li>
-      <a href="/coronavirus/phase-2/dxcv193-isolate-no-symptoms">DxCV193: isolate and asymptomatic</a>
-    </li>
-    <li>
-      <a href="/coronavirus/phase-2/dxcv194-info-symptoms">DxCV194: information only (with other symptoms)</a>
-    </li>
-    <li>
-      <a href="/coronavirus/phase-2/dxcv196-info-travel">DxCV196: information only (has travelled)</a>
-    </li>
-    <li>
-      <a href="/coronavirus/phase-2/dxcv195-info-only">DxCV195: information only</a>
+      <a href="/coronavirus/phase-delay/dxcv192-stay-home-111">DxCV192: stay home, call 111</a>
     </li>
   </ul>
 
   <h2 class="nhsuk-heading-m">
     Build stage:<br>
-    Mild: testing,<br>
-    Severe: call 111
+    <b>Delay phase short term</b>
   </h2>
-  <p>Interstitial and Dx split</p>
   <ul>
     <li>
-      <a href="/coronavirus/phase-2/interstitial">Question: Have you got...</a>
+      <a href="/coronavirus/phase-delay-short/start">Start page</a>
     </li>
     <li>
-      <a href="/coronavirus/phase-2/question-existential-check-redux">Are you so ill...</a>
+      <a href="/coronavirus/phase-delay-short/question-symptom-1">Symptom question 1</a>
     </li>
     <li>
-      <a href="/coronavirus/phase-2/outcome-mild">Outcome: mild</a>
+      <a href="/coronavirus/phase-delay-short/question-symptom-2">Symptom question 2</a>
     </li>
     <li>
-      <a href="/coronavirus/phase-2/outcome-severe">Outcome: severe</a>
+      <a href="/coronavirus/phase-delay-short/interstitial-isolate">Stay at home interstitial</a>
     </li>
     <li>
-      <a href="/coronavirus/phase-2/confirmation-mild">Confirmation: mild</a>
+      <a href="/coronavirus/phase-delay-short/dx-call-999">Call 999 outcome (both dx codes)</a>
+    </li>
+    <li>
+      <a href="/coronavirus/phase-delay-short/dx-stay-home-111">Call 111 outcome (immediate term)</a>
+    </li>
+    <li>
+      <a href="/coronavirus/phase-delay-short/dx-stay-home">Stay home outcome</a>
     </li>
   </ul>
 
   <h2 class="nhsuk-heading-m">
     Build stage:<br>
-    Pathways with DoS
+    <b>Delay phase medium term</b>
   </h2>
   <ul>
     <li>
-      <a href="/coronavirus/phase-3/dx-book-a-callback">Book a callback</a>
+      <a href="/coronavirus/phase-delay-medium/dx-book-a-callback">Book a call</a>
     </li>
     <li>
-      <a href="/coronavirus/phase-3/dx-callback-confirmed">Callback confirmation</a>
+      <a href="/coronavirus/phase-delay-medium/dx-callback-confirmed">Call confirmed</a>
     </li>
   </ul>
 
