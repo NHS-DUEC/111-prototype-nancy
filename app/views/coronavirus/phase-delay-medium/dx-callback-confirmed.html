@@ -7,12 +7,12 @@
 
 {% extends '_layouts/layout.html' %}
 
-{% block body_css_classes %}nhs-redesign{% endblock %}
+{% block body_css_classes %}nhsuk-frontend{% endblock %}
 
 {% block content %}
 <div class="content-block measure">
 
-  <h1>You’ll get a call within 1 hour</h1>
+  <h1>You’ll get a call within 2 hours</h1>
 
   <p>
     It was booked at <span id="timestamp">{{ now }}</span>.
@@ -26,38 +26,36 @@
   </script>
 
   <p>
-    The Coronavirus Callback Service will call {{ tel }}. The number may show as ‘unknown’ on your display.
+    The coronavirus response service will call {{ tel }}. The number may show as
+    ‘unknown’ on your display.
   </p>
 
   <div class="callout callout--info">
     <p>
-      Make sure you keep yourself separate from others in your household (self-isolate)
-      until you have been contacted by the testing service.
+      You need to stay away from other people.
       <a href="https://www.nhs.uk/conditions/coronavirus-covid-19/self-isolation-advice/">
-        Read more details about self-isolation.
+        Read more stay at home advice on NHS.UK.
       </a>
     </p>
-  </div>
-
-  <div class="callout callout--attention">
-    <p>To protect other people, <b>do not go</b> to a GP, pharmacy or hospital</p>
   </div>
 
   <details>
     <summary><span>Why does it take so long?</span></summary>
     <div>
       <p>
-        The Coronavirus Callback Service is very busy at the moment. You are in
-        a queue and you will be called as soon as possible.
+        The Coronavirus Callback Service is very busy at the moment. The most
+        seriously ill people are called back first.You are in a queue and you
+        will be called as soon as possible.
       </p>
     </div>
   </details>
 
   <details>
-    <summary><span>What if I don’t get a call back within XX hours?</span></summary>
+    <summary><span>What if I don’t get a call back within 2 hours?</span></summary>
     <div>
       <p>
-        You should get a call back within this time. If you don’t, you should UM.
+        You should get a call back within this time. If you don’t, WE DON’T KNOW
+        WHAT HAPPENS HERE.
       </p>
     </div>
   </details>
@@ -78,25 +76,34 @@
     <summary><span>What if I feel worse while I am waiting?</span></summary>
     <div>
       <p>
+        FOR 2 HOURS SHOULD THIS BE 999?
         Call 111 and tell them you booked a call back online, but you feel worse
         while you are waiting. Tell them you have coronavirus symptoms.
       </p>
     </div>
   </details>
 
-<!--
-  <details>
-    <summary><span></span></summary>
-    <div>
-      <p>
+  <div class="content-seperator content-seperator--equalvertspacing--large"></div>
 
-      </p>
-    </div>
-  </details>
--->
-
-
-
+  <h2 class="nhsuk-heading-l">
+    Get sick pay if you are unable to work
+  </h2>
+  <p>
+    If you need to take more than 7 days off work you can get an isolation note.
+    This is proof for your employer that you've been told to stay at home by 111.
+  </p>
+  <p>
+    Do not go to your GP for a fit note instead.
+  </p>
+  <p>
+    <a class="nhsuk-action-link__link" href="https://111.nhs.uk/isolation-note">
+      <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M0 0h24v24H0z" fill="none"></path>
+        <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+      </svg>
+      <span class="nhsuk-action-link__text">Get an isolation note</span>
+    </a>
+  </p>
 
 </div>
 {% endblock %}
