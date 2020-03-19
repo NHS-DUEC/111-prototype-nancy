@@ -12,7 +12,7 @@
 {% block content %}
 <div class="content-block measure">
 
-  <h1>You’ll get a call within 2 hours</h1>
+  <h1>You should get a call within [NUM] hours</h1>
 
   <p>
     It was booked at <span id="timestamp">{{ now }}</span>.
@@ -26,7 +26,7 @@
   </script>
 
   <p>
-    The coronavirus response service will call {{ tel }}. The number may show as
+    The [SERVICE NAME TBC] will call {{ tel }}. The number may show as
     ‘unknown’ on your display.
   </p>
 
@@ -43,7 +43,7 @@
     <summary><span>Why does it take so long?</span></summary>
     <div>
       <p>
-        The coronavirus response service is very busy at the moment. The most
+        The [SERVICE NAME TBC] is very busy at the moment. The most
         seriously ill people are called back first.You are in a queue and you
         will be called as soon as possible.
       </p>
@@ -51,11 +51,20 @@
   </details>
 
   <details>
-    <summary><span>What if I don’t get a call back within 2 hours?</span></summary>
+    <summary><span>What if I don’t get a call back within [NUM] hours?</span></summary>
     <div>
+      <!-- 2 HOURS -->
       <p>
-        You should get a call back within this time. If you don’t, WE DON’T KNOW
-        WHAT HAPPENS HERE.
+        If you don’t hear back in 2 hours, use the service again to book another call.
+      </p>
+      <!-- 4 HOURS -->
+      <p>
+        If you don’t hear back within 4-6 hours, use the service again to to book another call.
+      </p>
+      <!-- 4 HOURS -->
+      <p>
+        You should get a call back within a day. If you don’t, use the service
+        again to book another call.
       </p>
     </div>
   </details>
@@ -64,7 +73,7 @@
     <summary><span>What if miss the call?</span></summary>
     <div>
       <p>
-        The coronavirus response service will try to call up to 3 times. They
+        The [SERVICE NAME TBC] will try to call up to 3 times. They
         will leave a message to say they have tried to call you, but you won’t
         be able to return their call. If you miss all of the calls, you need to
         start again using the online service.
@@ -75,10 +84,19 @@
   <details>
     <summary><span>What if I feel worse while I am waiting?</span></summary>
     <div>
+      <!-- 2 HOURS -->
       <p>
-        FOR 2 HOURS SHOULD THIS BE 999?
-        Call 111 and tell them you booked a call back online, but you feel worse
-        while you are waiting. Tell them you have coronavirus symptoms.
+        If you don’t get a call within 2 hours and you start to feel worse,
+        call 999 and tell them you have coronavirus symptoms.
+      </p>
+      <!-- 4 HOURS -->
+      <p>
+        TBC
+      </p>
+      <!-- 12 HOURS -->
+      <p>
+        If you start to feel worse, use the service again to tell us about your
+        new symptoms.
       </p>
     </div>
   </details>
@@ -89,15 +107,8 @@
     Get an isolation note to give to your employer
   </h2>
   <p>
-    An isolation note can help you get sick pay if you are unable to work because
-    of coronavirus.
-  </p>
-  <p>
-    You don’t need one unless you are going to be off for more than 7 days.
-  </p>
-  <p>
-    Give the isolation note to your employer as proof you’ve been told to stay
-    at home.
+    You can send an isolation note to your employer as proof you need to stay
+    off work because of coronavirus.
   </p>
   <p>
     You do not need to get a note from a GP.
