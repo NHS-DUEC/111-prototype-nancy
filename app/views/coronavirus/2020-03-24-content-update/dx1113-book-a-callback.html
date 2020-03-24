@@ -1,0 +1,51 @@
+{% set suppress_feedback = true %}
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}
+{% endblock %}
+
+{% block body_css_classes %}nhsuk-frontend{% endblock %}
+
+{% block content %}
+
+<div class="content-block measure">
+  <h1 class="nhsuk-heading-xl">Book a call with a 111 nurse</h1>
+  <p>
+    A nurse from the COVID clinical response service needs to speak to you.
+  </p>
+  <p>
+    When you book a call the nurse will:
+  </p>
+  <ul>
+    <li>know the answers you have already given</li>
+    <li>ask you some more questions about your symptoms and current health</li>
+  </ul>
+  <p>
+    It’s important that you speak to the nurse. You should get a call within [NUM]
+    hours. The 111 service is very busy, so it could take longer than usual.
+  </p>
+
+  <div class="callout callout--info">
+    <p>
+      You need to stay away from other people.
+    </p>
+    <p>
+      <a href="https://www.nhs.uk/conditions/coronavirus-covid-19/self-isolation-advice/">
+        Read more self-isolation advice on NHS.UK
+      </a>
+    </p>
+  </div>
+
+  <div class="callout callout--attention">
+    <p>To protect other people, <b>do not go</b> to a GP, pharmacy or hospital</p>
+  </div>
+
+  <div class="form-group -controls">
+    <a href="#" class="button">Book a nurse call</a>
+  </div>
+
+</div>
+
+
+
+{% endblock %}
