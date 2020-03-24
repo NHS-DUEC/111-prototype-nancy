@@ -1,0 +1,50 @@
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhsuk-frontend{% endblock %}
+
+{% block content %}
+
+<div class="measure">
+
+  <div class="content-block">
+
+    <h1 class="nhsuk-heading-xl">
+      Get NHS text messages while you are isolating
+    </h1>
+    <p>
+      The NHS would like to send you a text message each day while you are
+      staying at home (self-isolating) with coronavirus symptoms.
+    </p>
+    <p>
+      The texts will ask you how you are feeling, and offer advice for looking
+      after yourself.
+    </p>
+
+    <div class="callout callout--info">
+      <p>
+        Sharing your details also means we know where in the country people have
+        symptoms.
+      </p>
+      <p>
+        You will be helping us to deal with the outbreak, and use NHS services,
+        more effectively.
+      </p>
+    </div>
+    
+    <p>
+      You can opt out at any time.
+    </p>
+    <div class="nhsuk-u-margin-top-8">
+      <a class="button" href="javascript: return false;">
+        Start now
+      </a>
+    </div>
+
+  </div>
+</div>
+
+{% endblock %}
+
+{% set suppress_feedback = true %}
