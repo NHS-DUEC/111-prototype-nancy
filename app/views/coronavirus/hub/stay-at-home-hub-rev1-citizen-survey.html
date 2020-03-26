@@ -1,0 +1,193 @@
+{% set suppress_feedback = true %}
+
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhsuk-frontend{% endblock %}
+
+{% block content %}
+
+<div class="content-block measure">
+
+  <nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+      <ol class="nhsuk-breadcrumb__list">
+        <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/level-one">111.NHS.UK</a></li>
+        <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/level-one/level-two">COVID-19</a></li>
+      </ol>
+      <p class="nhsuk-breadcrumb__back"><a class="nhsuk-breadcrumb__backlink" href="/level-one/level-two">COVID-19</a></p>
+  </nav>
+
+  <h1 class="nhsuk-heading-xl">
+    What to do during the isolation period
+  </h1>
+
+  <h2 class="nhsuk-heading-l">
+    How long to isolate
+  </h2>
+
+  <h3 class="nhsuk-heading-m">
+    If you have symptoms
+  </h3>
+  <p>
+    If you have symptoms of coronavirus, you'll need to self-isolate for 7 days.
+  </p>
+  <p>
+    After 7 days:
+  </p>
+  <ul>
+    <li>
+      if you do not have a high temperature, you do not need to self-isolate
+    </li>
+    <li>
+      if you still have a high temperature, keep self-isolating until your
+      temperature returns to normal
+    </li>
+  </ul>
+  <p>
+    You do not need to self-isolate if you just have a cough after 7 days. A
+    cough can last for several weeks after the infection has gone.
+  </p>
+
+  <h3 class="nhsuk-heading-m">
+    If you live with someone who has symptoms
+  </h3>
+  <p>
+    If you live with someone who has symptoms, you'll need to self-isolate for
+    14 days from the day their symptoms started. This is because it can take 14
+    days for symptoms to appear.
+  </p>
+  <p>
+    If more than 1 person at home has symptoms, self-isolate for 14 days from
+    the day the first person started having symptoms.
+  </p>
+  <p>
+    If you get symptoms, self-isolate for 7 days from when your symptoms start,
+    even if it means you're self-isolating for longer than 14 days.
+  </p>
+  <p>
+    If you do not get symptoms, you can stop self-isolating after 14 days.
+  </p>
+  <p>
+    <a href="https://www.nhs.uk/conditions/coronavirus-covid-19/self-isolation-advice/">
+      Read more self-isolation advice on NHS.UK.
+    </a>
+  </p>
+
+  <h3 class="nhsuk-heading-s">
+    Vulnerable people
+  </h3>
+  <p>
+    If you live with someone who is 70 or over, has a long-term condition, is
+    pregnant or has a weakened immune system, try to arrange for them to stay
+    with friends or family for 14 days.
+  </p>
+  <p>
+    If you have to stay at home together, try to keep away from each other as
+    much as possible.
+  </p>
+
+  <h2 class="nhsuk-heading-l">
+    How to look after your symptoms at home
+  </h2>
+
+  <ul>
+    <li>
+      rest and drink plenty of fluids
+    </li>
+    <li>
+      take paracetamol
+    </li>
+    <li>
+      cover your mouth with a tissue when coughing or sneezing
+    </li>
+    <li>
+      put used tissues in a bin
+    </li>
+    <li>
+      wash your hands regularly with soap and warm water for at least 20 seconds
+    </li>
+  </ul>
+  <p>
+    If you feel you can’t cope with your symptoms at home, or your condition gets
+    worse, use the 111 online service again.
+  </p>
+
+
+  <h2 class="nhsuk-heading-l">
+    What to do next
+  </h2>
+
+  <div class="disposition-set">
+
+    <div class="disposition-unit">
+      <h2 class="nhsuk-heading-m">
+        Get an isolation note to give to your employer
+      </h2>
+      <p>
+        You can send an isolation note to your employer as proof you need to stay
+        off work because of coronavirus.
+      </p>
+      <p>
+        You do not need to get a note from a GP.
+      </p>
+      <p>
+        <a class="nhsuk-action-link__link" href="https://111.nhs.uk/isolation-note">
+          <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+          </svg>
+          <span class="nhsuk-action-link__text">Get an isolation note</span>
+        </a>
+      </p>
+    </div>
+
+    <div class="disposition-unit">
+      <h2 class="nhsuk-heading-m">
+        Get NHS text messages while you are isolating
+      </h2>
+      <p>
+        Share your mobile number to receive advice on how to look after yourself
+        at home.
+      </p>
+      <p>
+        <a class="nhsuk-action-link__link" href="http://nhs111-gpoc.herokuapp.com/">
+          <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+          </svg>
+          <span class="nhsuk-action-link__text">Sign up</span>
+        </a>
+      </p>
+    </div>
+
+    <div class="disposition-unit">
+      <h2 class="nhsuk-heading-m">
+        Take part in the coronavirus symptom survey
+      </h2>
+      <p>
+        Help the NHS understand more about the virus and how it affects people.
+      </p>
+      <p>
+        <a class="nhsuk-action-link__link" href="http://nhs111-gpoc.herokuapp.com/">
+          <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+          </svg>
+          <span class="nhsuk-action-link__text">Take part</span>
+        </a>
+      </p>
+    </div>
+
+  </div>
+
+  <div class="content-seperator content-seperator--equalvertspacing--large"></div>
+
+  <p class="small">
+    <a href="#">Bookmark this page</a>
+  </p>
+</div>
+
+{% endblock %}
+
+{% set suppress_feedback = true %}
