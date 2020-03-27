@@ -1,0 +1,34 @@
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhsuk-frontend{% endblock %}
+
+{% block content %}
+<form class="content-block measure form" method="post">
+
+  {% if error %}
+    <div class="error-summary">
+      <h2 class="error-heading">There’s a problem</h2>
+      <p>
+        <a href="#tel">Enter your age</a>
+      </p>
+    </div>
+  {% endif %}
+
+  <h1 class="nhsuk-heading-l">How old are you?</h1>
+  <p>
+    Knowing your age helps us send you the right information.
+  </p>
+
+  <div class="form-group {% if error %}-errors{% endif %}">
+    <input class="-tiny" id="age" name="age" type="tel" value="{% if session.demographics.dob.supplied == false %}{{ session.demographics.age }}{% endif %}" autocomplete="off">
+  </div>
+  <div class="form-group -controls">
+    <button type="submit" class="button">Next</button>
+  </div>
+</form>
+
+{% endblock %}
+
+{% set suppress_feedback = true %}
