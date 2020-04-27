@@ -735,6 +735,10 @@ body, pre.user-input {
   background-color: #fff;
 }
 
+.content-seperator--dark-blue {
+  background-color: #003087;
+}
+
 .or-seperator {
   margin: 40px 0 0 0;
   border-top: 4px solid #f0f4f5;

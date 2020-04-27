@@ -39,6 +39,10 @@
     background-color: $white;
 }
 
+.content-seperator--dark-blue {
+    background-color: $dark-blue;
+}
+
 .or-seperator {
   margin: $baseline-grid-unit*10 0 0 0;
   border-top: $baseline-grid-unit solid $grey-5;
