@@ -1,0 +1,96 @@
+{% set suppress_feedback = true %}
+
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhsuk-frontend{% endblock %}
+
+{% block content %}
+
+<div class="content-block">
+
+  <div class="callout callout--attention measure">
+    <h1 class="nhsuk-heading-l">
+      Book a non-urgent GP appointment
+    </h1>
+  </div>
+
+  <div class="callout callout--warning measure">
+    <h2 class="nhsuk-heading-xs">
+      Coronavirus (COVID-19) advice
+    </h2>
+    <p>
+      Phone if you want to make a GP appointment. Do not just go there.
+    </p>
+  </div>
+
+  <ul>
+    <li>
+      <a href="scenario-2b">I’m away from home</a>
+    </li>
+    <li>
+      <a href="scenario-2a">I don’t have a GP</a>
+    </li>
+  </ul>
+
+  <!--
+
+  <details class="nhsuk-u-margin-top-7">
+    <summary>Book a call with a pharmacist today instead</summary>
+    <div class="callout callout--info measure">
+      <p>
+        Pharmacists are trained to deal with common health problems.
+      </p>
+      <p>
+        <a href="#">I’ll book a call instead</a>
+      </p>
+    </div>
+  </details>
+
+  <div class="callout callout--info measure">
+    <h2 class="nhsuk-heading-xs">
+      Book a call with a pharmacist today instead
+    </h2>
+    <p>
+      Pharmacists are trained to deal with common health problems.
+    </p>
+    <p>
+      <a href="#">I’ll book a call instead</a>
+    </p>
+  </div>
+
+  -->
+
+  <div class="content-seperator content-seperator--equalvertspacing--large"></div>
+
+  <div class="measure">
+    <h2 class="nhsuk-heading-s">
+      Book a call with a pharmacist today instead
+    </h2>
+    <p>
+      Pharmacists are trained to deal with common health problems.
+    </p>
+    <p>
+      <a href="#">I’ll book a call instead</a>
+    </p>
+  </div>
+
+  <div class="content-seperator content-seperator--equalvertspacing--large"></div>
+
+  <div class="measure">
+    {% include 'service-display/_components/care-advice.html' %}
+  </div>
+
+  <div class="measure">
+    {% set acuity = "low" %}
+    {% include 'service-display/_components/worsening-symptoms.html' %}
+  </div>
+
+</div>
+
+{% endblock %}
+
+{% block footer %}
+{% include '_includes/survey-banner.html' %}
+{% endblock %}
