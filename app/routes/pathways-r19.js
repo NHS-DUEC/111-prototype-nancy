@@ -24,5 +24,10 @@ router.get('/covid-start', function (req, res) {
 // grouped pathways are rendered under /start - see finding-pathways.js
 // so catch the post here:
 router.post('/choose-pathway', function (req, res) {
-  res.redirect('/weird-questions');
+  if (req.body['answer'] === '8') {
+    req.session.userJourney.route = ''
+    res.redirect('/pathways-r19/guided-covid-negate-explainer');
+  } else {
+    res.redirect('/pathways-r19/weird-questions-covid');
+  }
 });
