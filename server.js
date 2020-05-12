@@ -29,6 +29,7 @@ var gpLookup = require('./app/routes/gp-lookup');
 var userJourneys = require('./app/routes/user-journeys');
 
 var coronavirus = require('./app/routes/coronavirus');
+var pathwaysR19 = require('./app/routes/pathways-r19');
 
 var app = express()
 
@@ -124,6 +125,7 @@ app.use('/gp-lookup', gpLookup);
 app.use('/user-journeys', userJourneys);
 
 app.use('/coronavirus', coronavirus);
+app.use('/pathways-r19', pathwaysR19);
 
 // auto render any view that exists
 app.get(/^\/([^.]+)$/, function (req, res) {

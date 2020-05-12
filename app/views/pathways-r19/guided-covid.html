@@ -1,0 +1,127 @@
+{% set use_question_feedback = true %}
+
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhsuk-frontend{% endblock %}
+
+{% block content %}
+
+<div class="content-block measure">
+
+  <div class="nhsuk-back-link">
+    <a class="nhsuk-back-link__link" href="#">
+      <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+      </svg>
+      Go back to find a topic</a>
+  </div>
+
+  <h2 class="nhsuk-heading-xl">
+    <span class="nhsuk-caption-l">
+      Coronavirus (COVID-19) symptoms
+    </span>
+    Choose the 1 thing that’s bothering you most:
+  </h2>
+
+
+  <form action="/pathways-r19/choose-pathway" method="post" class="form">
+    <div class="form-group">
+      <fieldset>
+        <label class="block-label">
+          <input id="" name="answer" value="0" type="radio" class="selection-button-radio">
+          <span>
+            <b>Cold and flu symptoms</b><br>
+            <span class="small">
+              Aching muscles or headache. Fever (high temperature), coughing, A blocked or runny nose. Sneezing, sore throat or pain in the face.
+            </span>
+          </span>
+        </label>
+        <label class="block-label">
+          <input id="" name="answer" value="1" type="radio" class="selection-button-radio">
+          <span>
+            <b>Breathlessness</b><br>
+            <span class="small">
+              Wheezing, panting or feeling out of breath. Difficult or noisy breathing.
+            </span>
+          </span>
+        </label>
+        <label class="block-label">
+          <input id="" name="answer" value="2" type="radio" class="selection-button-radio">
+          <span>
+            <b>High temperature (fever)</b><br>
+            <span class="small">
+              Chills and shivering, or hot to touch. A high temperature, with no other symptoms.
+            </span>
+          </span>
+        </label>
+        <label class="block-label">
+          <input id="" name="answer" value="3" type="radio" class="selection-button-radio">
+          <span>
+            <b>Chest pain</b><br>
+            <span class="small">
+              Any chest or upper back pain. Chest pain with or without arm, shoulder, neck or jaw pain. Tightness in the chest.
+            </span>
+          </span>
+        </label>
+        <label class="block-label">
+          <input id="" name="answer" value="4" type="radio" class="selection-button-radio">
+          <span>
+            <b>Cough</b><br>
+            <span class="small">
+              Hacking, tickly or dry cough, without other cold symptoms. Coughing up phlegm or mucus.
+            </span>
+          </span>
+        </label>
+        <label class="block-label">
+          <input id="" name="answer" value="5" type="radio" class="selection-button-radio">
+          <span>
+            <b>Sore throat</b><br>
+            <span class="small">
+              Hacking, tickly or dry cough, without other cold symptoms. Coughing up phlegm or mucus.
+            </span>
+          </span>
+        </label>
+        <label class="block-label">
+          <input id="" name="answer" value="6" type="radio" class="selection-button-radio">
+          <span>
+            <b>Tiredness</b><br>
+            <span class="small">
+              Feeling tired or exhausted (fatigue) most of the time, or tiring easily.
+            </span>
+          </span>
+        </label>
+        <label class="block-label">
+          <input id="" name="answer" value="7" type="radio" class="selection-button-radio">
+          <span>
+            <b>Headache</b><br>
+            <span class="small">
+              Throbbing or intense pain or a tight band around the head. Visual problems like flashing lights with a headache.
+            </span>
+          </span>
+        </label>
+        <label class="block-label">
+          <input id="" name="answer" value="8" type="radio" class="selection-button-radio">
+          <span>
+            <b>None of these</b>
+          </span>
+        </label>
+      </fieldset>
+    </div>
+
+    <div class="form-group">
+      <p><button type="submit" class="button">Next</button></p>
+    </div>
+
+  </form>
+
+</div>
+
+{% endblock %}
+
+{% set suppress_feedback = true %}
+{% block custom_feedback %}
+  {% set feedback_title = 'Help us improve this question' %}
+  {% include 'coronavirus/_components/feedback.html' %}
+{% endblock %}
