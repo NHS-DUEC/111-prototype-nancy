@@ -21,6 +21,16 @@ router.get('/covid-start', function (req, res) {
   res.render('pathways-r19/covid-start.html');
 });
 
+// handle COVD start page (ie check for session)
+router.get('/handle-covid-start', function (req, res) {
+  if (req.session.demographics) {
+    res.redirect('/finding-pathways/start');
+  } else {
+    res.redirect('/start/emergency-check');
+  }
+});
+
+// linked from a search result
 router.get('/handle-search-links', function (req, res) {
   if (!req.session.userJourney) {
     req.session.userJourney = {}
