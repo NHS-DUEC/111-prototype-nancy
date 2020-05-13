@@ -13,67 +13,6 @@ module.exports = router
 
 var indexToUse = 'pathways_inc_alias';
 
-/*
-router.get('/start', function (req, res) {
-  if (req.query.query) {
-    var query = req.query.query;
-    var queryString = '';
-    // split the string and check for body keywords
-    query
-      .split(' ')
-      .forEach(function (val, index, array) {
-        if (bodymap.indexOf(val) !== -1) {
-          val += "^5"
-        }
-        queryString += val + ' ';
-      });
-
-    queryObj = {
-      "query_string" : {
-        "fields" : ["bodymap", "DigitalDescription", "DigitalTitles", "CommonTerms"],
-        "query" : queryString
-      }
-    }
-
-    client.search({
-      index: indexToUse,
-      body: {
-        from: 0,
-        size: 10,
-        query: queryObj,
-        highlight: {
-          pre_tags: ['<span class="highlighter">'],
-          post_tags: ['</span>'],
-          number_of_fragments: 0,
-          fields: {
-            DigitalTitles: {},
-            DigitalDescription: {}
-          }
-        }
-      }
-    }, function (error,response,status) {
-        if (error){
-          res.send("search error: "+error);
-        } else {
-          if (response.hits.hits.length >= 1) {
-            res.render('finding-pathways/results.html', {
-              'elasticQuery': queryObj,
-              'results': response.hits.hits,
-              'query': query
-            });
-          } else {
-            res.render('finding-pathways/no-results.html', {
-              'query': query
-            });
-          }
-        }
-    });
-  } else {
-    res.render('finding-pathways/start.html');
-  }
-});
-*/
-
 var setDefaults = function(req) {
   // "Adult" is 16+
   // Set a default here if there's a lack of req.query
@@ -93,7 +32,15 @@ var setDefaults = function(req) {
 }
 
 router.get('/start', function (req, res) {
+
+  // catch a linked group here - for example COVID-19
+  var template = 'finding-pathways/start.html';
+  if (req.session.userJourney.route === 'linked') {
+    template = req.session.userJourney.linkedTemplate
+  }
+
   setDefaults(req);
+  // if there's a query then display results template
   if (req.query['query']) {
     var query = req.query['query'];
     var minShould = '';
@@ -174,7 +121,8 @@ router.get('/start', function (req, res) {
         }
     });
   } else {
-    res.render('finding-pathways/start.html');
+    // there's no query so render the search page
+    res.render(template);
   }
 });
 

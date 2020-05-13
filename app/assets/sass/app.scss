@@ -170,4 +170,16 @@
       color: $error-colour;
     }
   }
+
+  .search {
+    .button {
+      @include button($nhs-blue, $boldweight);
+      box-shadow: none;
+      border: 2px solid $nhs-blue;
+      &:hover,
+      &:focus {
+        border-color: darken($nhs-blue, 5%);
+      }
+    }
+  }
 }
