@@ -6724,3 +6724,64 @@ img {
 [class^="nhsuk-"] .error-summary a {
   color: #da291c;
 }
+
+[class^="nhsuk-"] .search .button {
+  -webkit-font-smoothing: antialiased;
+  appearance: none;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: inherit;
+  line-height: 48px;
+  text-decoration: none;
+  text-align: center;
+  box-sizing: border-box;
+  display: inline-block;
+  width: 100%;
+  padding: 0 24px;
+  margin: 0 0 8px 0;
+  cursor: pointer;
+  background-color: #005eb8;
+  border: 0;
+  border-radius: 0;
+  box-shadow: 0 2px 0 #00376c;
+  outline: 1px solid transparent;
+  outline-offset: -1px;
+  color: #fff;
+  box-shadow: none;
+  border: 2px solid #005eb8;
+}
+
+@media (min-width: 500px) {
+  [class^="nhsuk-"] .search .button {
+    width: auto;
+    margin: 0 8px 0 0;
+  }
+}
+
+[class^="nhsuk-"] .search .button:link, [class^="nhsuk-"] .search .button:visited {
+  background-color: #005eb8;
+}
+
+[class^="nhsuk-"] .search .button:focus {
+  outline: 0;
+  -webkit-box-shadow: 0 0 0 5px #ffb81c;
+  -moz-box-shadow: 0 0 0 5px #ffb81c;
+  box-shadow: 0 0 0 5px #ffb81c;
+}
+
+[class^="nhsuk-"] .search .button:hover, [class^="nhsuk-"] .search .button:focus {
+  background-color: #00519f;
+}
+
+[class^="nhsuk-"] .search .button::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+[class^="nhsuk-"] .search .button:link, [class^="nhsuk-"] .search .button:hover, [class^="nhsuk-"] .search .button:focus, [class^="nhsuk-"] .search .button:visited {
+  color: #fff;
+}
+
+[class^="nhsuk-"] .search .button:hover, [class^="nhsuk-"] .search .button:focus {
+  border-color: #00519f;
+}
