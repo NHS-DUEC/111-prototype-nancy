@@ -1,0 +1,90 @@
+{% set suppress_feedback = true %}
+
+{% set tel = "07979 654 789" %}
+{% if session.callBooking.tel %}
+  {% set tel = session.callBooking.tel %}
+{% endif %}
+
+{% extends '_layouts/layout.html' %}
+
+{% block body_css_classes %}nhsuk-frontend{% endblock %}
+
+{% block content %}
+<div class="content-block measure">
+
+  <h1>You should get a call within 24 hours</h1>
+
+  <p>
+    The COVID clinical response service will call {{ tel }}. The number may show as
+    ‘unknown’ on your display.
+  </p>
+
+  <div class="callout callout--info">
+    <p>
+      You need to stay away from other people.
+    </p>
+    <p>
+      <a href="https://www.nhs.uk/conditions/coronavirus-covid-19/self-isolation-advice/">
+        Read more self-isolation advice on NHS.UK
+      </a>
+    </p>
+  </div>
+
+  <details>
+    <summary><span>Why does it take so long?</span></summary>
+    <div>
+      <p>
+        The COVID clinical response team calls the most seriously ill people first.
+        As your symptoms suggest you don’t need to speak to someone now, they will
+        call to check you haven’t got worse.
+      </p>
+    </div>
+  </details>
+
+  <details>
+    <summary><span>What if I don’t get a call back?</span></summary>
+    <div>
+      <p>
+        You should get a call back within 24 hours. If you don’t,
+        use the service again to book another call.
+      </p>
+    </div>
+  </details>
+
+  <details>
+    <summary><span>What if miss the call?</span></summary>
+    <div>
+      <p>
+        The COVID clinical response service will try to call up to 3 times. They
+        will leave a message to say they have tried to call you, but you won’t
+        be able to return their call. If you miss all of the calls, you need to
+        start again using the online service.
+      </p>
+    </div>
+  </details>
+
+  <details>
+    <summary><span>What if I feel worse while I am waiting?</span></summary>
+    <div>
+      <p>
+        If you start to feel worse, use the service again for your new symptoms.
+      </p>
+    </div>
+  </details>
+
+  <div class="content-seperator content-seperator--equalvertspacing--large"></div>
+
+  <h3 class="nhsuk-heading-m">
+    Advice about coronavirus on NHS.UK
+  </h3>
+  <p>
+    NHS.UK has the latest advice and general information about coronavirus.
+  </p>
+  <p>
+    <a href="https://www.nhs.uk/something">
+      Go to NHS.UK for more coronavirus information and services
+    </a>
+  </p>
+
+</div>
+{% endblock %}
