@@ -8,16 +8,10 @@
 
 {% block content %}
 
-<style type="text/css">
-
-</style>
-
 <div class="content-block">
   <div class="measure">
-    <!-- Only display 'Back' if validation is present? -->
     <a href="javascript: return false;" class="button-back">Back</a>
     <h1>Where to get help</h1>
-    <!-- timing info -->
     <div class="callout callout--warning">
       Get help now
     </div>
@@ -47,6 +41,8 @@
       This is a service with trained mental health specialists.
     </p>
   </div>
+
+  {% include 'service-display/_components/why-this-one.html' %}
 
   {% include 'service-display/_components/change-location.html' %}
 
