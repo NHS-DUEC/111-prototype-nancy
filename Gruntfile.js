@@ -9,6 +9,7 @@ module.exports = function (grunt) {
     sass: {
       dev: {
         options: {
+          implementation: 'sass',
           includePaths: [],
           outputStyle: 'expanded'
         },
