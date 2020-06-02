@@ -25,16 +25,17 @@
     <div class="details-1 service-details">
       <div class="unit address">
         <p>
+          <b>Pharmacy</b><br>
           St George’s Pharmacy<br>
           46 St George’s Rd<br>
-          Elephant and Castle<br>
+          Elephant & Castle<br>
           London<br>
           SE1 6ET
         </p>
       </div>
       <div class="unit">
         {% set opening = "Open until 5.30pm"%}
-        {% set suppress_full = true %}
+        {% set suppress_full = false %}
         {% include 'service-display/_components/opening-hours.html' %}
       </div>
     </div>
@@ -64,6 +65,8 @@
       prescriptions.
     </p>
   </div>
+
+  {% include 'service-display/_components/why-this-one.html' %}
 
   {% include 'service-display/_components/change-location.html' %}
 
