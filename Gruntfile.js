@@ -1,3 +1,5 @@
+const sass = require('node-sass');
+
 module.exports = function (grunt) {
 
   require('load-grunt-tasks')(grunt);
@@ -7,6 +9,7 @@ module.exports = function (grunt) {
     sass: {
       dev: {
         options: {
+          implementation: sass,
           includePaths: [],
           outputStyle: 'expanded'
         },
