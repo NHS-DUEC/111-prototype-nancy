@@ -35,8 +35,10 @@ router.get('/start', function (req, res) {
 
   // catch a linked group here - for example COVID-19
   var template = 'finding-pathways/start.html';
-  if (req.session.userJourney.route === 'linked') {
-    template = req.session.userJourney.linkedTemplate
+  if (typeof req.session.userJourney !== 'undefined') {
+    if (req.session.userJourney.route === 'linked') {
+      template = req.session.userJourney.linkedTemplate
+    }
   }
 
   setDefaults(req);
