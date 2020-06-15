@@ -1,3 +1,5 @@
+{% set suppress_feedback = true %}
+
 {% extends '_layouts/layout.html' %}
 
 {% block page_title %}{% endblock %}
@@ -49,9 +51,16 @@
         If you can’t book a call you can use the online service again later or
         call 111. You will have to provide all your answers again.
       </p>
+      <p>
+        Help us improve our service. <a href="#">Tell us why you’re unable to book a call.</a>
+      </p>
     </div>
   </details>
 
 </div>
 
+{% endblock %}
+
+{% block footer %}
+{% include 'callback-confirmation-examples/_components/micro-survey-callbacks.html' %}
 {% endblock %}
