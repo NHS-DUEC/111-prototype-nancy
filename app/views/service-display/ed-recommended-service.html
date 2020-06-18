@@ -1,4 +1,4 @@
-{% set suppress_feedback = true %}
+{% set suppress_feedback = false %}
 
 {% extends '_layouts/layout.html' %}
 
@@ -18,9 +18,9 @@
       Get help now
     </div>
 
-    {#--
     {% include 'pathways-r19/_components/its-unlikely.html' %}
 
+    {#--
     <div class="callout callout--warning measure">
       <p>
         It’s possible you have COVID-19 but you also need help for your other symptoms.
@@ -109,9 +109,11 @@
 
 {% endblock %}
 
+{#
 {% block footer %}
 {% include 'service-display/_components/micro-survey.html' %}
 {% endblock %}
+#}
 
 {% block body_after %}
   {% include '_partials/_partial-collapse-script.html' %}
