@@ -1,0 +1,192 @@
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhsuk-core{% endblock %}
+
+{% block content %}
+
+<div class="content-block">
+  <a href="javascript: return false;" class="button-back">Back</a>
+
+  <h1>Get help as soon as you can</h1>
+
+  <div class="content-seperator content-seperator--equalvertspacing"></div>
+
+  <div class="disposition-set">
+    <div class="disposition-unit">
+
+      <div class="collapse-title">
+        <h2>Before you get help</h2>
+        <span class="collapse-title-indicator-verbose">
+          <span class="show">Show</span>
+          <span class="hide">Hide</span>
+        </span>
+      </div>
+
+      <div class="collapse-content measure">
+        <p>If you think you might report the assault to the police:</p>
+        <ul>
+          <li>cover any cuts, but don’t wash them</li>
+          <li>don’t change or wash your clothes</li>
+        </ul>
+        <div class="callout callout--attention">
+          <p>
+            Call 999 to report it to the police. GOV.UK has information on what
+            happens when you <a href="https://www.gov.uk/report-rape-sexual-assault">
+            report a rape or sexual assault.</a>
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="disposition-unit">
+
+      <div class="collapse-title">
+        <h2>Where to get help</h2>
+        <span class="collapse-title-indicator-verbose">
+          <span class="show">Show</span>
+          <span class="hide">Hide</span>
+        </span>
+      </div>
+
+      <div class="collapse-content">
+
+        <div class="callout callout--attention">
+          <p>
+            Open 24 hours but you must phone 020 3299 6900 first for advice
+            and an appointment.
+          </p>
+        </div>
+
+        <div class="service-details-container">
+          <div class="details-1 service-details">
+            <div class="unit address">
+              <p>
+                <b>Whitechapel Haven</b><br>
+                The Royal London Hospital<br>
+                Whitechapel Road<br>
+                London<br>
+                E1 1BB
+              </p>
+            </div>
+            <div class="unit">
+              {% set opening = "Open 24 hours"%}
+              {% set suppress_full = true %}
+              {% include 'service-display/_components/opening-hours.html' %}
+            </div>
+          </div>
+
+          <div class="geo">
+            <div id="service-location" class="map-frame"></div>
+          </div>
+
+          <div class="details-2 service-details">
+            <div class="unit directions">
+              <p>
+                2.4 miles away<br>
+                <a href="javascript: return false;" target="_blank">
+                  Get directions <span class="small">(opens a new tab or window)</span>
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- boilerplate service type text and 'before you go' -->
+        <div class="measure">
+          <p>
+            Sexual health services provide contraception, testing and
+            treatment for sexually transmitted infections (STIs), pregnancy
+            advice and testing and help with sexual problems. Sexual
+            assault referral centres offer confidential help and medical care.
+          </p>
+        </div>
+
+        {% include 'service-display/_components/why-this-one.html' %}
+
+        {% include 'service-display/_components/change-location.html' %}
+
+        <div class="content-seperator content-seperator--equalvertspacing--large"></div>
+
+        <div class="measure">
+          {% set other_services_url = "/service-display/other-services" %}
+          {% set other_services_message = "services" %}
+          {% include 'service-display/_components/other-services.html' %}
+        </div>
+      </div>
+
+    </div>
+
+    <div class="disposition-unit">
+
+      <div class="collapse-title">
+        <h2>Get more advice and support</h2>
+        <span class="collapse-title-indicator-verbose">
+          <span class="show">Show</span>
+          <span class="hide">Hide</span>
+        </span>
+      </div>
+
+      <div class="collapse-content measure">
+        <p>You can speak to charities and support groups for advice about what to do:</p>
+        <ul>
+          <li>
+            <a href="https://rapecrisis.org.uk">Rape crisis</a>
+          </li>
+          <li>
+            <a href="https://www.victimsupport.org.uk/">Victim support</a>
+          </li>
+          <li>
+            <a href="http://thesurvivorstrust.org/">Survivor’s Trust</a>
+          </li>
+          <li>
+            <a href="https://www.galop.org.uk/">Galop</a> &mdash; for LGBT communities
+          </li>
+          <li>
+            <a href="https://www.survivorsuk.org/">Survivors UK</a> &mdash; for men
+          </li>
+        </ul>
+
+        <div class="content-seperator content-seperator--equalvertspacing--large"></div>
+
+        {% include 'service-display/_components/care-advice.html' %}
+
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+{% endblock %}
+
+{% block footer %}
+{% include '_includes/survey-banner.html' %}
+{% endblock %}
+
+{% block body_after %}
+  {% include '_partials/_partial-collapse-script.html' %}
+
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDP454skpvnlft08MDIcZG_khm-sBHmFbM"></script>
+  <script>
+    $(function() {
+      mapObj = new google.maps.Map(document.getElementById('service-location'), {
+        center: {
+          lat: 51.518359,
+          lng: -0.059963
+        },
+        zoom: 16,
+        maxZoom: 18,
+        zoomControl: true,
+        mapTypeControl: false,
+        scaleControl: true,
+        streetViewControl: false,
+        rotateControl: false,
+        fullscreenControl: false
+      });
+      marker = new google.maps.Marker({position: mapObj.getCenter(), map: mapObj});
+    });
+  </script>
+{% endblock %}

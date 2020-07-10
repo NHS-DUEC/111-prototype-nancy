@@ -1,0 +1,173 @@
+{% set suppress_feedback = true %}
+
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhsuk-frontend{% endblock %}
+
+{% block content %}
+
+<div class="content-block">
+  <div class="measure">
+    <!-- Only display 'Back' if validation is present? -->
+    <a href="javascript: return false;" class="button-back">Back</a>
+    <h1>Where to get help</h1>
+    <!-- timing info -->
+    <div class="callout callout--warning">
+      Get help now
+    </div>
+
+    <div class="measure">
+      <div class="callout callout--attention">
+        <p>
+          What you've told us suggests this is an emergency. A&E is there to
+          help in an emergency. Ask to be referred to a local psychiatry
+          service or crisis resolution and home treatment team (CHRT) when you
+          get there.
+        </p>
+      </div>
+    </div>
+
+    {#--
+    {% include 'pathways-r19/_components/its-unlikely.html' %}
+
+    <div class="callout callout--warning measure">
+      <p>
+        It’s possible you have COVID-19 but you also need help for your other symptoms.
+      </p>
+      <p>
+        You <b>must</b> tell whoever you speak to that you might have coronavirus
+        and follow their instructions.
+      </p>
+      <p>
+        This might mean getting tested first, or being seen in a different way than
+        usual.
+      </p>
+    </div>
+    --#}
+
+  </div>
+
+  <div class="service-details-container">
+
+    <div class="details-1 service-details">
+      <div class="unit address">
+        <p>
+          <b>A&E (accident and emergency)</b><br>
+          Newham University Hospital<br>
+          Glen Road<br>
+          London<br>
+          E13 8SL
+        </p>
+      </div>
+      <div class="unit">
+        {% set opening = "Open 24 hours"%}
+        {% set suppress_full = true %}
+        {% include 'service-display/_components/opening-hours.html' %}
+      </div>
+    </div>
+
+    <div class="geo">
+      <div id="service-location" class="map-frame"></div>
+    </div>
+
+    <div class="details-2 service-details">
+      <div class="unit directions">
+        <p>
+          0.5 miles away<br>
+          <a href="javascript: return false;" target="_blank">
+            Get directions <span class="small">(opens a new tab or window)</span>
+          </a>
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- boilerplate service type text and 'before you go' -->
+  <div class="measure">
+    <p>
+      A&E is for critical or life-threatening injuries or illnesses. Also known
+      as the emergency department or casualty.
+    </p>
+  </div>
+
+  {% include 'service-display/_components/why-this-one.html' %}
+
+  {% include 'service-display/_components/change-location.html' %}
+
+  <div class="content-seperator content-seperator--equalvertspacing--large"></div>
+
+  <div class="measure">
+    {% set other_services_url = "/service-display/other-services" %}
+    {% set other_services_message = "services" %}
+    {% include 'service-display/_components/other-services.html' %}
+
+    {% include 'mental-health-dx-outcomes/_components/nhsuk-panel.html' %}
+  </div>
+
+  <div class="content-seperator content-seperator--equalvertspacing--large"></div>
+
+  <div class="measure">
+    {% include 'service-display/_components/care-advice.html' %}
+  </div>
+
+  <div class="measure">
+    <details>
+      <summary><span>What to do if you start to feel worse</span></summary>
+      <div>
+        <p>
+          If you think you might harm yourself or others, call 999.
+        </p>
+      </div>
+    </details>
+  </div>
+
+</div>
+
+{% endblock %}
+
+{% block footer %}
+{% endblock %}
+
+{% block body_after %}
+  {% include '_partials/_partial-collapse-script.html' %}
+
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDP454skpvnlft08MDIcZG_khm-sBHmFbM"></script>
+  <script>
+    var serviceLat = 51.522623;
+    var serviceLng = 0.034988;
+    var userLat = 51.536701;
+    var userLng = 0.045345;
+    $(function() {
+      mapObj = new google.maps.Map(document.getElementById('service-location'), {
+        center: {
+          lat: serviceLat,
+          lng: serviceLng
+        },
+        zoom: 16,
+        maxZoom: 18,
+        zoomControl: true,
+        mapTypeControl: false,
+        scaleControl: true,
+        streetViewControl: false,
+        rotateControl: false,
+        fullscreenControl: false
+      });
+      var bounds = new google.maps.LatLngBounds();
+      var service = new google.maps.Marker({
+        position: new google.maps.LatLng(serviceLat, serviceLng),
+        map: mapObj
+      });
+      bounds.extend(service.position);
+      var user = new google.maps.Marker({
+        position: new google.maps.LatLng(userLat, userLng),
+        map: mapObj,
+        icon: '/images/icon-maps-user-location.png'
+      });
+      bounds.extend(user.position);
+      mapObj.fitBounds(bounds);
+    });
+  </script>
+{% endblock %}
