@@ -1,0 +1,81 @@
+{% set suppress_feedback = true %}
+
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhsuk-frontend{% endblock %}
+
+{% block content %}
+
+<div class="content-block">
+  <div class="measure">
+    <a href="javascript: return false;" class="button-back">Back</a>
+    <h1>Where to get help</h1>
+    <div class="callout callout--warning">
+      Get help now
+    </div>
+  </div>
+
+  <div class="service-details --remote">
+    <div class="unit">
+      <p>
+        <b>Mental health service</b><br>
+        Community Mental Health Team for Older Adults - Medway
+      </p>
+    </div>
+    <div class="unit">
+      <p class="tel-cta">
+        <a href="javascript: return false;">Call 01482 301701</a>
+      </p>
+    </div>
+    <div class="unit">
+      {% set opening = "Open 24 hours"%}
+      {% set suppress_full = true %}
+      {% include 'service-display/_components/opening-hours.html' %}
+    </div>
+  </div>
+
+  <!-- boilerplate service type text and 'before you go' -->
+  <div class="measure">
+    <p>
+      This is a service with trained mental health specialists. They’ll tell you
+      if you need immediate help, or how to get longer term mental health support
+      near you.
+    </p>
+  </div>
+
+  {% include 'service-display/_components/why-this-one.html' %}
+
+  {% include 'service-display/_components/change-location.html' %}
+
+  <div class="content-seperator content-seperator--equalvertspacing--large"></div>
+
+  <div class="measure">
+    {% set other_services_url = "/service-display/other-services" %}
+    {% set other_services_message = "services" %}
+    {% include 'service-display/_components/other-services.html' %}
+
+    {% include 'mental-health-dx-outcomes/_components/nhsuk-panel.html' %}
+  </div>
+
+  <div class="content-seperator content-seperator--equalvertspacing--large"></div>
+
+  <div class="measure">
+    {% include 'service-display/_components/care-advice.html' %}
+  </div>
+
+  {% set acuity = "high" %}
+  {% include 'service-display/_components/worsening-symptoms.html' %}
+
+</div>
+
+{% endblock %}
+
+{% block footer %}
+{% include '_includes/survey-banner.html' %}
+{% endblock %}
+
+{% block body_after %}
+  {% include '_partials/_partial-collapse-script.html' %}
+{% endblock %}

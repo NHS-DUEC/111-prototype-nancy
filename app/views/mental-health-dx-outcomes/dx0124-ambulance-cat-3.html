@@ -1,0 +1,47 @@
+{% set suppress_feedback = true %}
+
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhsuk-core{% endblock %}
+
+{% block content %}
+
+<div class="content-block measure">
+
+  <h1 class="nhsuk-heading-xl error-hint">Call 999 for an ambulance</h1>
+
+  <p>Your answers suggest this is an emergency.</p>
+  <p>
+    You should call 999 and speak to the operator, who will ask you more questions.
+  </p>
+  <p>Deaf people can contact 999 by text relay on 18000.</p>
+
+  <div class="content-seperator content-seperator--equalvertspacing--large"></div>
+
+  <h2 class="nhsuk-heading-m">If you don’t think 999 is right for you</h2>
+
+  <p>
+    If you don’t think your life is in danger and you want to speak to someone
+    about your problems instead, NHS urgent mental health helplines are open 24
+    hours a day.
+  </p>
+  <p>
+    <a href="#">Find your local urgent mental health helpline</a>
+  </p>
+
+  <p class="nhsuk-u-margin-bottom-4">
+    Or you can text <a href="https://www.giveusashout.org/">SHOUT</a> on 85258
+    if you don’t want to speak on the phone.
+  </p>
+
+  {% include 'mental-health-dx-outcomes/_components/nhsuk-panel.html' %}
+
+</div>
+
+{% endblock %}
+
+{% block footer %}
+{% include '_includes/survey-banner.html' %}
+{% endblock %}
