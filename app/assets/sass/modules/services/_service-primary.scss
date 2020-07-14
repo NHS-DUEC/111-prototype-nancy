@@ -67,14 +67,6 @@
   }
   .unit {
     padding: 0 $baseline-grid-unit*4;
-
-    &:first-of-type {
-      padding-top: $baseline-grid-unit*6;
-    }
-  }
-  .address {
-  }
-  .directions {
   }
 
   // modifiers for a "remote" service
@@ -91,6 +83,12 @@
       margin-top: 0 !important;
     }
   }
+}
+.details-1.service-details .unit:first-of-type {
+  padding-top: $baseline-grid-unit*6;
+}
+.details-2.service-details .unit:first-of-type {
+  padding-bottom: $baseline-grid-unit*6;
 }
 
 .service-pertinent {
