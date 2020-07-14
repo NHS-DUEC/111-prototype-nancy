@@ -1,0 +1,88 @@
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhsuk-frontend{% endblock %}
+
+{% block content %}
+
+<div class="content-block measure">
+  <a href="javascript: return false;" class="button-back">Back</a>
+  <h1 class="nhsuk-heading-l">Book a slot</h1>
+  <div class="callout callout--warning">
+    <p>The slots shown are within the time you need to get help, based on what you’ve told us.</p>
+  </div>
+
+  <form id="postcode-container" method="post">
+    {% if error %}
+      <p class="error-hint">Choose one option</p>
+    {% endif %}
+    <fieldset class="form-group {% if error %}-errors{% endif %}">
+      <h2 class="nhsuk-heading-m">Today</h2>
+      <label class="block-label">
+        <input name="slot" value="" type="radio" class="selection-button-radio">
+        <span>1pm to 2pm</span>
+      </label>
+      <label class="block-label">
+        <input name="slot" value="" type="radio" class="selection-button-radio">
+        <span>2pm to 3pm</span>
+      </label>
+      <label class="block-label">
+        <input name="slot" value="" type="radio" class="selection-button-radio">
+        <span>4pm to 5pm</span>
+      </label>
+      <label class="block-label">
+        <input name="slot" value="" type="radio" class="selection-button-radio">
+        <span>6pm to 7pm</span>
+      </label>
+      <label class="block-label">
+        <input name="slot" value="" type="radio" class="selection-button-radio">
+        <span>7pm to 8pm</span>
+      </label>
+      <label class="block-label">
+        <input name="slot" value="" type="radio" class="selection-button-radio">
+        <span>8pm to 9pm</span>
+      </label>
+      <p>
+        &hellip;
+      </p>
+      <!--<label class="block-label">
+        <input name="slot" value="" type="radio" class="selection-button-radio">
+        <span>9pm to 10pm</span>
+      </label>-->
+      <label class="block-label">
+        <input name="slot" value="" type="radio" class="selection-button-radio">
+        <span>10pm to 11pm</span>
+      </label>
+      <label class="block-label">
+        <input name="slot" value="" type="radio" class="selection-button-radio">
+        <span>11pm to midnight</span>
+      </label>
+    </fieldset>
+    <fieldset class="form-group {% if error %}-errors{% endif %}">
+      <h2 class="nhsuk-heading-m">Tomorrow</h2>
+      <label class="block-label">
+        <input name="slot" value="" type="radio" class="selection-button-radio">
+        <span>midnight to 1am</span>
+      </label>
+      <label class="block-label">
+        <input name="slot" value="" type="radio" class="selection-button-radio">
+        <span>1am to 2am</span>
+      </label>
+      <label class="block-label">
+        <input name="slot" value="" type="radio" class="selection-button-radio">
+        <span>2am to 3am</span>
+      </label>
+    </fieldset>
+    <details>
+      <summary>
+        I can’t get there in time OMG
+      </summary>
+    </details>
+    <div class="form-group">
+      <button type="submit" class="button">Next</button>
+    </div>
+  </form>
+</div>
+
+{% endblock %}

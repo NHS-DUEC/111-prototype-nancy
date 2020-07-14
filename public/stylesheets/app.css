@@ -2524,6 +2524,12 @@ textarea:focus {
   font-weight: 300;
 }
 
+.highlight-flag {
+  background-color: #fff;
+  padding: 6px 12px 24px 16px;
+  margin-bottom: 12px;
+}
+
 img {
   display: block;
   width: 100%;
@@ -2930,6 +2936,32 @@ img {
   border: 2px solid #80afdc;
 }
 
+.service-booking-container {
+  margin-top: 12px;
+  margin-bottom: 16px;
+  margin: 24px 0;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.service-booking-container .qr-code {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+.service-booking-container .qr-code.service-details {
+  border-left-color: #fada8b;
+  padding: 12px;
+  background-color: #fdf2d5;
+}
+
+.service-booking-container .booking-details {
+  grid-column-start: 3;
+  grid-column-end: 6;
+  padding: 2px 12px;
+  background-color: #fdf2d5;
+}
+
 .service-details-container {
   margin-top: 12px;
   margin-bottom: 16px;
@@ -3011,10 +3043,6 @@ img {
   padding: 0 16px;
 }
 
-.service-details .unit:first-of-type {
-  padding-top: 24px;
-}
-
 .service-details.--remote {
   padding: 1px 0;
   margin-bottom: 16px;
@@ -3029,6 +3057,14 @@ img {
 
 .service-details.--remote .tel-cta {
   margin-top: 0 !important;
+}
+
+.details-1.service-details .unit:first-of-type {
+  padding-top: 24px;
+}
+
+.details-2.service-details .unit:first-of-type {
+  padding-bottom: 24px;
 }
 
 .service-pertinent {

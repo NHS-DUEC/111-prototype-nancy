@@ -1,0 +1,25 @@
+.service-booking-container {
+  margin-top: $baseline-grid-unit*3;
+  margin-bottom: $baseline-grid-unit*4;
+  margin: $baseline-grid-unit*6 0;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+
+  .qr-code {
+    grid-column-start: 1;
+    grid-column-end: 3;
+
+    &.service-details {
+      border-left-color: $yellow-50;
+      padding: $baseline-grid-unit*3;
+      background-color: $yellow-10;
+    }
+  }
+
+  .booking-details {
+    grid-column-start: 3;
+    grid-column-end: 6;
+    padding: 2px $baseline-grid-unit*3;
+    background-color: $yellow-10;
+  }
+}
