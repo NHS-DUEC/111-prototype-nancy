@@ -1,0 +1,28 @@
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhsuk-frontend{% endblock %}
+
+{% block content %}
+<form class="content-block measure form" method="post">
+
+  <div class="error-summary">
+    <h2 class="error-heading">There’s a problem</h2>
+    <p>
+      <a href="#email">Enter a valid email</a>
+    </p>
+  </div>
+
+  <h1 class="nhsuk-heading-l">What is their email?</h1>
+
+  <div class="form-group -errors">
+    <input name="email" id="email" type="email" value="{{ session.callBooking.email }}" autocomplete="off">
+  </div>
+  <div class="form-group -controls">
+    <button type="submit" class="button">Next</button>
+  </div>
+</form>
+
+
+{% endblock %}

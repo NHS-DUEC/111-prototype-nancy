@@ -1,0 +1,53 @@
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}
+{% endblock %}
+
+{% block body_css_classes %}nhsuk-frontend{% endblock %}
+
+{% block content %}
+
+<div class="content-block measure">
+  <h1>Get a callback from a nurse</h1>
+  <p>Based on what you've told us, we think you might need urgent medical help.</p>
+  <p>
+    How the nurse can help:
+  </p>
+  <ul>
+    <li>they’ll ask you more questions and tell you what to do next</li>
+    <li>they can book an appointment for you if you need one</li>
+  </ul>
+  <p>
+    Once you book a call, you should hear back within 1 hour.
+  </p>
+  <div class="callout callout--info">
+    <p>
+      If you can’t book a call we’ll show you places you can go instead. This could mean you might have to wait longer to be seen.
+    </p>
+  </div>
+
+  <div class="form">
+    <legend><b>Are you going to book a call?</b></legend>
+    <fieldset class="shunt">
+      <div class="form-group">
+        <label for="yes" class="block-label">
+          Yes
+          <input type="radio" id="yes" name="bookCall" value="yes">
+        </label>
+      </div>
+
+      <div class="form-group">
+        <label for="no" class="block-label">
+          No
+          <input type="radio" id="no" name="bookCall" value="no">
+        </label>
+      </div>
+    </fieldset>
+
+    <div class="form-group -controls">
+      <a href="dx92-mental-health-service-display-place" class="button">Next</a>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

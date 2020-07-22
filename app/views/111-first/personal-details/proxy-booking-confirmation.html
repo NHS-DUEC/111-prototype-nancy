@@ -1,0 +1,38 @@
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhsuk-frontend{% endblock %}
+
+{% block content %}
+
+<form class="form content-block measure" method="post">
+  {% if error %}
+    <div class="error-summary">
+      <h2 class="error-heading">There’s a problem</h2>
+      <p>
+        Tell us who to send the booking confirmation to
+      </p>
+    </div>
+  {% endif %}
+
+  <h1 class="nhsuk-heading-l">Who should we send the confirmation to?</h1>
+  <fieldset class="form-group {% if error %}-errors{% endif %}">
+    {% if error %}
+      <p class="error-hint">Choose one option</p>
+    {% endif %}
+    <label class="block-label">
+      <input id="proxy" name="proxy" value="false" type="radio" class="selection-button-radio">
+      <span>Me</span>
+    </label>
+    <label class="block-label">
+      <input id="proxy" name="proxy" value="true" type="radio" class="selection-button-radio">
+      <span>[First name] [Last name]</span>
+    </label>
+  </fieldset>
+  <div class="form-group">
+    <button type="submit" class="button">Next</button>
+  </div>
+</form>
+
+{% endblock %}

@@ -10,18 +10,34 @@
 
 <div class="content-block">
   <div class="measure">
-    <!-- Only display 'Back' if validation is present? -->
-    <a href="javascript: return false;" class="button-back">Back</a>
-    <h1>Where to get help</h1>
-    <!-- timing info -->
-    <div class="callout callout--warning">
-      Get help now
+    <h1>Your confirmation</h1>
+    <div class="callout callout--attention">
+      <p>
+        [Name] needs help now.<br>
+        Show this to the A&E department when they get there.
+      </p>
     </div>
 
-    {% include 'pathways-r19/_components/its-unlikely.html' %}
-
+    <div class="service-booking-container">
+      <div class="qr-code service-details">
+        <img src="/images/qr-code-example.png">
+      </div>
+      <div class="booking-details">
+        <br>
+        <p>[NAME] has been triaged by 111 online today and needs to get help urgently. </p>
+        <dl class="check-details">
+          <div class="-row">
+            <dt class="-key">
+              Reference number
+            </dt>
+            <dd class="-value">
+              ######
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </div>
   </div>
-
   <div class="service-details-container">
 
     <div class="details-1 service-details">
@@ -47,37 +63,32 @@
 
     <div class="details-2 service-details">
       <div class="unit">
-        <b class="form-hint">Send your details to A&E so they know you're coming</b>
-        <a class="nhsuk-action-link__link" href="#">
-          <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M0 0h24v24H0z" fill="none"></path>
-            <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
-          </svg>
-          <span class="nhsuk-action-link__text">Share your details</span>
+        <a href="javascript: return false;" target="_blank">
+          Get directions <span class="small">(opens a new tab or window)</span>
         </a>
       </div>
     </div>
 
   </div>
-
-  <!-- boilerplate service type text and 'before you go' -->
-  <div class="measure">
-    <p>
-      A&E is for critical or life-threatening injuries or illnesses. Also known
-      as the emergency department or casualty.
-    </p>
-  </div>
-
-  {% include 'service-display/_components/why-this-one.html' %}
-
-  {% include 'service-display/_components/change-location.html' %}
-
+  <p>
+    We’ve sent a confirmation to [text/email]
+  </p>
   <div class="content-seperator content-seperator--equalvertspacing--large"></div>
 
   <div class="measure">
-    {% set other_services_url = "/service-display/other-services" %}
-    {% set other_services_message = "services" %}
-    {% include 'service-display/_components/other-services.html' %}
+    <h2>What happens when they get there</h2>
+    <p>
+      They’ll be asked some questions when they get there and told where to wait.
+    </p>
+    <p>
+      They might be asked to wear a face covering, so they should take one with them.
+    </p>
+    <div class="callout callout--info">
+      <p>
+        Sometimes, people arrive at A&E needing urgent help for life threatening
+        conditions. This could mean they’re seen first.
+      </p>
+    </div>
   </div>
 
   <div class="content-seperator content-seperator--equalvertspacing--large"></div>

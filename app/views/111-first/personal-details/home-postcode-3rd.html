@@ -1,0 +1,31 @@
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhsuk-frontend{% endblock %}
+
+{% block content %}
+
+<div class="content-block measure">
+  <form method="post">
+    <div class="form-group">
+      <h1 class="nhsuk-heading-l">
+        {% if session.proxy == true %}
+          <label for="postcode">What is their home postcode?</label>
+        {% else %}
+          <label for="postcode">What is their home postcode?</label>
+        {% endif %}
+      </h1>
+      <p class="form-hint">For example, LS2 7UE</p>
+      <div class="shunt">
+        <input type="text" name="postcode" id="postcode" value="" class="-small">
+      </div>
+      <p><a href="javascript:return false;">I don’t know the postcode</a></p>
+    </div>
+    <div class="form-group">
+      <button type="submit" class="button">Next</button>
+    </div>
+  </form>
+</div>
+
+{% endblock %}
