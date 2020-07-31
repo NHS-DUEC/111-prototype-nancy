@@ -11,12 +11,12 @@
     <div class="error-summary">
       <h2 class="error-heading">There’s a problem</h2>
       <p>
-        Tell us who to send the booking confirmation to
+        Tell us if it’s you who needs help or someone else
       </p>
     </div>
   {% endif %}
 
-  <h1 class="nhsuk-heading-l">Who should we send the confirmation to?</h1>
+  <h1 class="nhsuk-heading-l">Who needs help?</h1>
   <fieldset class="form-group {% if error %}-errors{% endif %}">
     {% if error %}
       <p class="error-hint">Choose one option</p>
@@ -27,7 +27,7 @@
     </label>
     <label class="block-label">
       <input id="proxy" name="proxy" value="true" type="radio" class="selection-button-radio">
-      <span>[First name] [Last name]</span>
+      <span>Someone else</span>
     </label>
   </fieldset>
   <div class="form-group">

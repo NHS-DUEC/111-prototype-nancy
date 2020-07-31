@@ -6,18 +6,19 @@
 
 {% block content %}
 <form class="content-block measure form" method="post">
-
+{% if error %}
   <div class="error-summary">
     <h2 class="error-heading">There’s a problem</h2>
     <p>
-      <a href="#email">Enter a valid email</a>
+      Enter a valid email
     </p>
   </div>
+  {% endif %}
 
-  <h1 class="nhsuk-heading-l">What is their email?</h1>
+  <h1 class="nhsuk-heading-l">What is your email?</h1>
 
-  <div class="form-group -errors">
-    <input name="email" id="email" type="email" value="{{ session.callBooking.email }}" autocomplete="off">
+  <div class="form-group {% if error %}-errors{% endif %}">
+    <input name="email" id="email" type="email" value="{{ session.email }}" autocomplete="off">
   </div>
   <div class="form-group -controls">
     <button type="submit" class="button">Next</button>

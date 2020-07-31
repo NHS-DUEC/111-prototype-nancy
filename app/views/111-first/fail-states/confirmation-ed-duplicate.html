@@ -10,10 +10,10 @@
 
 <div class="content-block">
   <div class="measure">
-    <h1 class="nhsuk-heading-l">Your slot at [hospital or UTC name] is confirmed</h1>
+    <h1>Your details have already been sent</h1>
     <div class="callout callout--attention">
       <p>
-        You must go at the time stated or you’ll have to wait for longer.
+        You must arrive at the time stated or you'll have to wait for longer.
       </p>
     </div>
 
@@ -28,9 +28,10 @@
               Time slot
             </dt>
             <dd class="-value">
-              2pm to 3pm
+              1pm to 2pm
             </dd>
-          </div>
+            </dl>
+            <dl class="check-details">
           <div class="-row">
             <dt class="-key">
               Reference number
@@ -43,17 +44,16 @@
       </div>
     </div>
   </div>
-
   <div class="service-details-container">
 
     <div class="details-1 service-details">
       <div class="unit address">
         <p>
           <b>A&E (accident and emergency)</b><br>
-          City hospital, Birmingham<br>
-          Dudley Road<br>
-          Birmingham<br>
-          B18 7QH
+          Leeds Teaching Hospitals NHS Trust<br>
+          Great George Street<br>
+          Leeds<br>
+          LS1 3EX
         </p>
       </div>
       <div class="unit">
@@ -64,39 +64,60 @@
     </div>
 
     <div class="geo">
-      <div class="map-frame">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9718.158976286779!2d-1.9412695557458626!3d52.487468669492515!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4870bce188d998bd%3A0x9e6eee3678148c92!2sBirmingham%20City%20Hospital!5e0!3m2!1sen!2suk!4v1596112618807!5m2!1sen!2suk" width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-      </div>
+      <div id="service-location" class="map-frame"></div>
     </div>
 
     <div class="details-2 service-details">
-      <div class="unit directions">
-        <br>
-        <p>
-          <a href="javascript: return false;" target="_blank">
-            Get directions <span class="small">(opens a new tab or window)</span>
-          </a>
-        </p>
+      <div class="unit">
+        <a href="javascript: return false;" target="_blank">
+          Get directions <span class="small">(opens a new tab or window)</span>
+        </a>
       </div>
     </div>
 
+  </div>
+  <p>
+    We’ve sent a confirmation to [text/email]
+  </p>
+  <div class="content-seperator content-seperator--equalvertspacing--large"></div>
+
+  <div class="measure">
+    <h2>What happens when you get there</h2>
+    <p>
+      You’ll be asked some questions when you get there and told where to wait.
+    </p>
+    <p>
+      Take a face covering with you, in case you have to wear one.
+    </p>
+    <div class="callout callout--info">
+      <p>
+        Sometimes, people arrive at A&E needing urgent help for life threatening
+        conditions. This could mean they’re seen first and you have to wait a bit longer.
+      </p>
+    </div>
   </div>
 
   <div class="content-seperator content-seperator--equalvertspacing--large"></div>
 
   <div class="measure">
-    <h2>When you get there</h2>
-    <p>
-      Take a face covering with you in case you have to wear one. You’ll be
-      checked in by a nurse and told where to wait.
-    </p>
+    {% include 'service-display/_components/care-advice.html' %}
+  </div>
+
+  <div class="measure">
+    {% set acuity = "high" %}
+    {% include 'service-display/_components/worsening-symptoms.html' %}
   </div>
 
 </div>
 
 {% endblock %}
 
+{% block footer %}
+{% include 'service-display/_components/micro-survey.html' %}
+{% endblock %}
+
 {% block body_after %}
+  {% include '_partials/_partial-collapse-script.html' %}
 
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDP454skpvnlft08MDIcZG_khm-sBHmFbM"></script>
   <script>

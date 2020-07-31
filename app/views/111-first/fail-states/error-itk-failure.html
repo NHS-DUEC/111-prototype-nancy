@@ -1,0 +1,32 @@
+{% set suppress_feedback = true %}
+
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhs-redesign{% endblock %}
+
+{% block content %}
+
+<div class="measure">
+
+  <div class="content-block">
+    <div class="callout callout--attention">
+      <h1 class="h2">
+        Sorry, there’s a problem with the service
+      </h1>
+      <p>
+        We couldn’t send your details.
+      </p>
+      <p>
+        We’ve found another recommended service you can use.
+      </p>
+    </div>
+  </div>
+
+  <div class="content-block">
+    <a href="/service-display/ed-recommended-service" class="button">Show the recommended service</a>
+  </div>
+
+</div>
+{% endblock %}

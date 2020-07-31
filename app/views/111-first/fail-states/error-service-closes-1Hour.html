@@ -1,0 +1,80 @@
+{% set suppress_feedback = true %}
+
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhsuk-frontend{% endblock %}
+
+{% block content %}
+
+<div class="measure">
+
+  <div class="content-block">
+    <div class="callout callout--warning">
+      Go to A&E now
+    </div>
+    <div class="callout callout--attention">
+      <h2 class="h2">
+        Sorry, this service has now closed
+      </h2>
+      <p>
+        We couldn’t send your details on to them.
+      </p>
+      <p>
+        <a class="nhsuk-action-link__link" href="#">
+          <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+          </svg>
+          <span class="nhsuk-action-link__text">Find accident and emergency services</span>
+        </a>
+      </p>
+    </div>
+  </div>
+
+  </div>
+
+</div>
+
+{% endblock %}
+{% block body_after %}
+  {% include '_partials/_partial-collapse-script.html' %}
+
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDP454skpvnlft08MDIcZG_khm-sBHmFbM"></script>
+  <script>
+    var serviceLat = 53.801732;
+    var serviceLng = -1.551858;
+    var userLat = 53.804741;
+    var userLng = -1.564623;
+    $(function() {
+      mapObj = new google.maps.Map(document.getElementById('service-location'), {
+        center: {
+          lat: serviceLat,
+          lng: serviceLng
+        },
+        zoom: 16,
+        maxZoom: 18,
+        zoomControl: true,
+        mapTypeControl: false,
+        scaleControl: true,
+        streetViewControl: false,
+        rotateControl: false,
+        fullscreenControl: false
+      });
+      var bounds = new google.maps.LatLngBounds();
+      var service = new google.maps.Marker({
+        position: new google.maps.LatLng(serviceLat, serviceLng),
+        map: mapObj
+      });
+      bounds.extend(service.position);
+      var user = new google.maps.Marker({
+        position: new google.maps.LatLng(userLat, userLng),
+        map: mapObj,
+        icon: '/images/icon-maps-user-location.png'
+      });
+      bounds.extend(user.position);
+      mapObj.fitBounds(bounds);
+    });
+  </script>
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhsuk-frontend{% endblock %}
+
+{% block content %}
+
+<form class="content-block measure form" method="post">
+
+  {% if error %}
+    <div class="error-summary">
+      <h2 class="error-heading">There’s a problem</h2>
+      <p>
+        <a href="#firstname">Enter {% if session.proxy == true %}their{% else %}your{% endif %} name</a>
+      </p>
+    </div>
+  {% endif %}
+
+  <h1 class="nhsuk-heading-l">What is {% if session.proxy == true %}their{% else %}your{% endif %} name?</h1>
+
+  <div class="form-group shunt {% if error.firstname == true %}-errors{% endif %}">
+    <label for="firstname">First name</label>
+    {% if error.firstname %}
+      <p class="error-hint">Enter {% if session.proxy == true %}their{% else %}your{% endif %} first name</p>
+    {% endif %}
+    <input name="firstname" id="firstname" type="text" autocomplete="off" value="{{ session.callBooking.name.firstname }}">
+  </div>
+
+  <div class="form-group {% if error.lastname == true %}-errors{% endif %}">
+    <label for="secondname">Last name</label>
+    {% if error.lastname %}
+      <p class="error-hint">Enter {% if session.proxy == true %}their{% else %}your{% endif %} last name</p>
+    {% endif %}
+    <input name="secondname" id="secondname" type="text" autocomplete="off" value="{{ session.callBooking.name.secondname }}">
+  </div>
+
+  <div class="form-group -controls">
+    <button type="submit" class="button">Next</button>
+  </div>
+</form>
+
+
+{% endblock %}

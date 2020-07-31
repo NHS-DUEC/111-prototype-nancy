@@ -11,18 +11,14 @@
     <div class="error-summary">
       <h2 class="error-heading">There’s a problem</h2>
       <p>
-        <a href="#tel">Enter a phone number</a>
+        Enter a mobile number
       </p>
     </div>
   {% endif %}
 
-  <h1 class="nhsuk-heading-l">What is your phone number?</h1>
-  <div class="callout callout--info">
-    <p>We need this in case we have to contact you for any reason</p>
-  </div>
-  <div class="form-hint">
-    <p>Enter a mobile or landline number</p>
-  </div>
+  <h1 class="nhsuk-heading-l">What phone number can we use?</h1>
+  <p class="small measure">Tell us your number if you want to be contacted on their behalf.</p>
+
   <div class="form-group {% if error %}-errors{% endif %}">
     <input name="tel" id="tel" type="tel" value="{{ session.number }}" autocomplete="off">
   </div>

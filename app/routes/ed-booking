@@ -1,0 +1,148 @@
+var express = require('express')
+var router = express.Router()
+
+module.exports = router
+
+router.post('/personal-details/proxy', function(req, res) {
+  req.session.proxy = req.body['proxy']
+  if (req.body['proxy'] === "false") {
+    res.redirect('name');
+  }
+  else {
+    res.redirect('3rd/name-3rd');
+  }
+});
+//Name//
+router.post('/personal-details/name', function(req, res){
+  req.session.firstname = req.body['firstname']
+  req.session.lastname = req.body['secondname']
+  res.redirect('date-of-birth');
+});
+
+router.post('/personal-details/3rd/name-3rd', function(req, res){
+  req.session.firstname = req.body['firstname']
+  req.session.lastname = req.body['secondname']
+  res.redirect('date-of-birth-3rd');
+});
+
+//DOB//
+router.post('/personal-details/date-of-birth', function(req,res){
+  req.session.day = req.body['dob-day']
+  req.session.month = req.body['dob-month']
+  req.session.year = req.body['dob-year']
+  res.redirect('phone-number');
+});
+
+router.post('/personal-details/3rd/date-of-birth-3rd', function(req,res){
+  req.session.day = req.body['dob-day']
+  req.session.month = req.body['dob-month']
+  req.session.year = req.body['dob-year']
+  res.redirect('phone-number-3rd');
+});
+
+//phone number//
+router.post('/personal-details/phone-number', function(req,res){
+  req.session.number = req.body['tel']
+  res.redirect('is-home-postcode');
+});
+
+router.post('/personal-details/3rd/phone-number-3rd', function(req,res){
+  req.session.number = req.body['tel']
+  res.redirect('is-home-postcode-3rd');
+});
+
+//home postcode//
+router.post('/personal-details/is-home-postcode', function(req,res){
+  req.session.location = req.body['location']
+  if (req.body['location'] === "home"){
+    res.redirect('contact-methods');
+  }
+  else{
+    res.redirect('postcode-home');
+  }
+});
+
+router.post('/personal-details/3rd/is-home-postcode-3rd', function(req,res){
+  req.session.location = req.body['location']
+  if (req.body['location'] === "home"){
+    res.redirect('proxy-who-send-details');
+  }
+  else{
+    res.redirect('postcode-home-3rd');
+  }
+});
+
+//3rd person only - who to send details to//
+router.post('/personal-details/3rd/proxy-who-send-details', function(req,res){
+  req.session.proxy = req.body['proxy']
+  if(req.body['proxy'] === "me"){
+    res.redirect('/111-first/personal-details/contact-methods');
+  }
+    else{
+      res.redirect('contact-methods-3rd');
+    }
+});
+
+//postcode home//
+router.post('/personal-details/postcode-home', function(req,res){
+  res.redirect('contact-methods');
+});
+
+router.post('/personal-details/3rd/postcode-home-3rd', function(req,res){
+  res.redirect('proxy-who-send-details');
+});
+
+//contact methods//
+router.post('/personal-details/contact-methods', function(req,res){
+  req.session.email = req.body['email']
+  req.session.tel = req.body['tel']
+  req.session.none = req.body['none']
+
+  if(req.body['email'] === "email"){
+    res.redirect('email');
+  }
+  else if (req.body['tel'] === "smsMessage"){
+    res.redirect('mobile-number');
+  }
+  else{
+    res.redirect('check-details-note');
+  }
+});
+
+router.post('/personal-details/3rd/contact-methods-3rd', function(req,res){
+  req.session.email = req.body['email']
+  req.session.tel = req.body['tel']
+  req.session.none = req.body['none']
+
+  if(req.body['email'] === "email"){
+    res.redirect('email-3rd');
+  }
+  else if (req.body['tel'] === "smsMessage"){
+    res.redirect('mobile-number-3rd');
+  }
+  else{
+    res.redirect('check-details-note-3rd');
+  }
+});
+
+//mobile number collection//
+router.post('/personal-details/mobile-number', function(req,res){
+  req.session.mobileNumber = req.body['tel']
+  res.redirect('check-details-sms');
+});
+
+router.post('/personal-details/3rd/mobile-number-3rd', function(req,res){
+  req.session.mobileNumber = req.body['tel']
+  res.redirect('check-details-3rd-sms');
+});
+
+//Email collection//
+router.post('/personal-details/email', function(req,res){
+  req.session.email = req.body['email']
+  res.redirect('check-details');
+});
+
+router.post('/personal-details/3rd/email', function(req,res){
+  req.session.email = req.body['email']
+  res.redirect('check-details-3rd');
+});

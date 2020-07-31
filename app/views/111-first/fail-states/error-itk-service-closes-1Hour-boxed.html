@@ -1,0 +1,40 @@
+{% set suppress_feedback = true %}
+
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhs-redesign{% endblock %}
+
+{% block content %}
+
+<div class="measure">
+
+  <div class="content-block">
+    <div class="callout callout--attention">
+      <h1 class="h2">
+        Sorry, this service has now closed
+      </h1>
+      <p>
+        We couldn’t send your details on to them.
+      </p>
+      <p>
+        Go to A&E now.
+      </p>
+      <p>  <b>A&E (accident and emergency)</b><br>
+        Leeds Teaching Hospitals NHS Trust<br>
+        Great George Street<br>
+        Leeds<br>
+        LS1 3EX
+      </p>
+      <p>
+    <a href="#">Get directions (opens in a new tab or window)</a></p>
+    </div>
+  </div>
+
+  <div class="content-block">
+    <a href="/service-display/ed-recommended-service" class="button">Show the recommended service</a>
+  </div>
+
+</div>
+{% endblock %}
