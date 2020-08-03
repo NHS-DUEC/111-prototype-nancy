@@ -38,6 +38,7 @@ router.post('/personal-details/proxy', function(req, res) {
 router.post('/personal-details/name', function(req, res){
   req.session.firstname = req.body['firstname']
   req.session.lastname = req.body['secondname']
+  req.session.proxyDetails = "x"
   res.redirect('date-of-birth');
 });
 
@@ -96,8 +97,8 @@ router.post('/personal-details/3rd/is-home-postcode-3rd', function(req,res){
 
 //3rd person only - who to send details to//
 router.post('/personal-details/3rd/proxy-who-send-details', function(req,res){
-  req.session.proxy = req.body['proxy']
-  if(req.body['proxy'] === "me"){
+  req.session.proxyDetails = req.body['proxyDetails']
+  if(req.body['proxyDetails'] === "me"){
     res.redirect('/111-first/personal-details/contact-methods');
   }
     else{
@@ -122,8 +123,17 @@ router.post('/personal-details/contact-methods', function(req,res){
   req.session.tel = req.body['tel']
   req.session.none = req.body['none']
 
-  if(req.body['emailAdd'] === "email"){
+  if (req.body['emailAdd'] === "email" && req.body['tel'].startsWith("smsMessage") && req.session.number.startsWith("07") === true){
     res.redirect('email');
+  }
+  else if (req.body['emailAdd'] === "email" && req.body['tel'].startsWith("smsMessage") && req.session.number.startsWith("07") === false){
+    res.redirect('email-both');
+  }
+  else if(req.body['emailAdd'] === "email"){
+    res.redirect('email');
+  }
+  else if (req.body['tel'].startsWith("smsMessage") && req.session.number.startsWith("07") === true){
+    res.redirect('check-details');
   }
   else if (req.body['tel'] === "smsMessage"){
     res.redirect('mobile-number');
@@ -138,8 +148,17 @@ router.post('/personal-details/3rd/contact-methods-3rd', function(req,res){
   req.session.tel = req.body['tel']
   req.session.none = req.body['none']
 
-  if(req.body['emailAdd'] === "email"){
+  if (req.body['emailAdd'] === "email" && req.body['tel'].startsWith("smsMessage") && req.session.number.startsWith("07") === true){
     res.redirect('email-3rd');
+  }
+  else if (req.body['emailAdd'] === "email" && req.body['tel'].startsWith("smsMessage") && req.session.number.startsWith("07") === false){
+    res.redirect('email-3rd-both');
+  }
+  else if(req.body['emailAdd'] === "email"){
+    res.redirect('email-3rd');
+  }
+  else if (req.body['tel'].startsWith("smsMessage") && req.session.number.startsWith("07") === true){
+    res.redirect('check-details-3rd');
   }
   else if (req.body['tel'] === "smsMessage"){
     res.redirect('mobile-number-3rd');
@@ -152,7 +171,12 @@ router.post('/personal-details/3rd/contact-methods-3rd', function(req,res){
 //mobile number collection//
 router.post('/personal-details/mobile-number', function(req,res){
   req.session.mobileNumber = req.body['tel']
-  res.redirect('check-details');
+  if( req.session.proxyDetails.includes("me")){
+    res.redirect('/111-first/personal-details/3rd/check-details-3rd');
+  }
+  else{
+    res.redirect('check-details');
+  }
 });
 
 router.post('/personal-details/3rd/mobile-number-3rd', function(req,res){
@@ -163,7 +187,22 @@ router.post('/personal-details/3rd/mobile-number-3rd', function(req,res){
 //Email collection//
 router.post('/personal-details/email', function(req,res){
   req.session.email = req.body['email']
-  res.redirect('check-details');
+  if( req.session.proxyDetails.includes("me")){
+    res.redirect('/111-first/personal-details/3rd/check-details-3rd');
+    }
+    else{
+      res.redirect('check-details');
+    }
+});
+
+router.post('/personal-details/email-both', function(req,res){
+  req.session.email = req.body['email']
+  res.redirect('mobile-number');
+});
+
+router.post('/personal-details/3rd/email-3rd-both', function(req,res){
+  req.session.email = req.body['email']
+  res.redirect('mobile-number-3rd');
 });
 
 router.post('/personal-details/3rd/email-3rd', function(req,res){

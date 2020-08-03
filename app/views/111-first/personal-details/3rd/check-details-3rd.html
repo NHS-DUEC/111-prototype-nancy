@@ -114,9 +114,10 @@
     </div>
     {% endif %}
 
+    {% if session.number %}
     <div class="-row">
       <dt class="-key">
-        Mobile number
+        Phone number
       </dt>
       <dd class="-value">
         {{session.number}}
@@ -127,6 +128,23 @@
         </a>
       </dd>
     </div>
+    {% endif %}
+
+    {% if session.mobileNumber %}
+    <div class="-row">
+      <dt class="-key">
+        Mobile number
+      </dt>
+      <dd class="-value">
+        {{session.mobileNumber}}
+      </dd>
+      <dd class="-actions">
+        <a href="javascript: return false;">
+          Change<span class="visuallyhidden"> number to call</span>
+        </a>
+      </dd>
+    </div>
+    {% endif %}
   </dl>
 
   <p class="nhsuk-u-font-size-16">

@@ -79,8 +79,14 @@
 
   </div>
   <p>
-    {% if session.tel and session.email %}
+    {% if session.mobileNumber and session.email %}
+    We’ve sent a confirmation to {{session.mobileNumber}} and {{session.email}}
+
+    {% elif session.tel and session.email %}
     We’ve sent a confirmation to {{session.number}} and {{session.email}}
+
+    {% elif session.mobileNumber %}
+    We’ve sent a confirmation to {{session.mobileNumber}}
 
     {% elif session.tel %}
     We’ve sent a confirmation to {{session.number}}
