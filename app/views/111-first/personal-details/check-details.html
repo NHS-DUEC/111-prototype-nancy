@@ -22,7 +22,7 @@
         Time slot
       </dt>
       <dd class="-value">
-        2pm to 3pm
+        {{session.timeslot}}
       </dd>
       <dd class="-actions">
         <a href="javascript: return false;">
@@ -41,7 +41,7 @@
         Name
       </dt>
       <dd class="-value">
-        Sarah Philips
+        {{session.firstname}} {{session.lastname}}
       </dd>
       <dd class="-actions">
         <a href="javascript: return false;">
@@ -54,7 +54,7 @@
         Date of birth
       </dt>
       <dd class="-value">
-        5 January 1978
+        {{session.day}} {{session.month}} {{session.year}}
       </dd>
       <dd class="-actions">
         <a href="javascript: return false;">
@@ -82,7 +82,11 @@
         Home postcode
       </dt>
       <dd class="-value">
-        RG7 4DG
+        {% if session.postcode %}
+        {{session.postcode}}
+        {% else %}
+        SE5 8NE
+        {% endif %}
       </dd>
       <dd class="-actions">
         <a href="javascript: return false;">
@@ -90,12 +94,14 @@
         </a>
       </dd>
     </div>
+
+    {% if session.email %}
     <div class="-row">
       <dt class="-key">
         Email address
       </dt>
       <dd class="-value">
-        sara11@place.org.uk
+        {{session.email}}
       </dd>
       <dd class="-actions">
         <a href="javascript: return false;">
@@ -103,12 +109,14 @@
         </a>
       </dd>
     </div>
+    {% endif %}
+
     <div class="-row">
       <dt class="-key">
         Mobile number
       </dt>
       <dd class="-value">
-        07945 123 321
+        {{session.number}}
       </dd>
       <dd class="-actions">
         <a href="javascript: return false;">
