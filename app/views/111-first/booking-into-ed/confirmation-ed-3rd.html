@@ -13,7 +13,7 @@
     <h1>Your confirmation</h1>
     <div class="callout callout--attention">
       <p>
-        [Name] must go at the time stated or they'll have to wait for longer
+        {{session.firstname}} must arrive at the time stated or they'll have to wait for longer
       </p>
     </div>
 
@@ -28,7 +28,7 @@
               Time slot
             </dt>
             <dd class="-value">
-              1pm to 2pm
+              {{session.timeslot}}
             </dd>
             </dl>
             <dl class="check-details">
@@ -77,7 +77,16 @@
 
   </div>
   <p>
-    We’ve sent a confirmation to [text/email]
+    {% if session.tel and session.email %}
+    We’ve sent a confirmation to {{session.number}} and {{session.email}}
+
+    {% elif session.tel %}
+    We’ve sent a confirmation to {{session.number}}
+
+    {% elif session.email %}
+    We’ve sent a confirmation to {{session.email}}
+
+    {% endif %}
   </p>
   <div class="content-seperator content-seperator--equalvertspacing--large"></div>
 

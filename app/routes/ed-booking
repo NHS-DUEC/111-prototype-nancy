@@ -144,7 +144,7 @@ router.post('/personal-details/3rd/contact-methods-3rd', function(req,res){
     res.redirect('mobile-number-3rd');
   }
   else{
-    res.redirect('/111-first/personal-details/check-details');
+    res.redirect('check-details-3rd');
   }
 });
 
@@ -156,7 +156,7 @@ router.post('/personal-details/mobile-number', function(req,res){
 
 router.post('/personal-details/3rd/mobile-number-3rd', function(req,res){
   req.session.mobileNumber = req.body['tel']
-  res.redirect('/111-first/personal-details/check-details');
+  res.redirect('check-details-3rd');
 });
 
 //Email collection//
@@ -167,5 +167,5 @@ router.post('/personal-details/email', function(req,res){
 
 router.post('/personal-details/3rd/email-3rd', function(req,res){
   req.session.email = req.body['email']
-  res.redirect('/111-first/personal-details/check-details');
+  res.redirect('check-details-3rd');
 });
