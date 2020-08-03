@@ -112,6 +112,7 @@ router.post('/personal-details/postcode-home', function(req,res){
 });
 
 router.post('/personal-details/3rd/postcode-home-3rd', function(req,res){
+  req.session.postcode = req.body['postcode']
   res.redirect('proxy-who-send-details');
 });
 
