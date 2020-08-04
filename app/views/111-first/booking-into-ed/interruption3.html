@@ -1,0 +1,42 @@
+{% set domain = 'https://staging.111.service.nhs.uk' %}
+{% set hash = 'E34F21A2ECD98C0D37F2E80456553D67A87EE77D07261DDAD3A9AA23F646E9FED3D718836B5078A1EEBBB991A2E3E75E96AEDEB355502BF184F82E663736D586124B39C7DA0E0DC063369D33A8D732D51D58AFD4F71675956427550D2BF8C0F7248956CBDE5BA3DA2B353AA292642E4CA96C1F7D4E268BBB3464EE3EE2C67C903376D72104F544DC611BC58AC391D9CF6C31BFA80A497A9C43A5680D789DA310A3C2FB01F72EEA95E6C66C157B2A9C5DBF04FD1F2139A0C1CF7E74B1AF68D1D82EEE2BB8B7278F2F' %}
+
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}
+{% endblock %}
+
+{% block body_css_classes %}nhsuk-frontend{% endblock %}
+
+{% block content %}
+
+<div class="measure">
+
+  <div class="content-block">
+    <h1 class="nhsuk-heading-xl">
+      A&E is now offering booking
+    </h1>
+    <div class="callout callout--attention">
+      <p>
+        We think you need to go to A&E (accident and emergency).
+      </p>
+      <p>
+        A&E is now offering booking so that people can be seen in pre-agreed
+        slots.
+      </p>
+      <p>
+        This makes social distancing easier as waiting areas will be less crowded.
+      </p>
+    </div>
+  </div>
+
+  <div class="content-block">
+
+    <a href="ed-recommended-service-now-2hour" class="button">I understand</a>
+  </div>
+
+</div>
+
+{% endblock %}
+
+{% block footer %}{% endblock %}
