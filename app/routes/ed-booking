@@ -123,16 +123,16 @@ router.post('/personal-details/contact-methods', function(req,res){
   req.session.tel = req.body['tel']
   req.session.none = req.body['none']
 
-  if (req.body['emailAdd'] === "email" && req.body['tel'].startsWith("smsMessage") && req.session.number.startsWith("07") === true){
+  if (req.body['emailAdd'] === "email" && req.body['tel'] === "smsMessage" && req.session.number.startsWith("07") === true){
     res.redirect('email');
   }
-  else if (req.body['emailAdd'] === "email" && req.body['tel'].startsWith("smsMessage") && req.session.number.startsWith("07") === false){
+  else if (req.body['emailAdd'] === "email" && req.body['tel'] === "smsMessage" && req.session.number.startsWith("07") === false){
     res.redirect('email-both');
   }
   else if(req.body['emailAdd'] === "email"){
     res.redirect('email');
   }
-  else if (req.body['tel'].startsWith("smsMessage") && req.session.number.startsWith("07") === true){
+  else if (req.body['tel'] === "smsMessage" && req.session.number.startsWith("07") === true){
     res.redirect('check-details');
   }
   else if (req.body['tel'] === "smsMessage"){
