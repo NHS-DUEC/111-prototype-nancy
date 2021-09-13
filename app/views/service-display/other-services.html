@@ -1,4 +1,4 @@
-{% set suppress_feedback = true %}
+{% set suppress_feedback = false %}
 
 {% extends '_layouts/layout.html' %}
 
@@ -367,9 +367,11 @@
 
 {% endblock %}
 
+{#
 {% block footer %}
   {% include '_includes/survey-banner.html' %}
 {% endblock %}
+#}
 
 {% block body_after %}
   {% include '_partials/_partial-collapse-script.html' %}
