@@ -1,0 +1,24 @@
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}Worsening symptoms{% endblock %}
+
+{% block content %}
+
+<div class="measure content-block">
+
+  <p>
+    <a href="/_gallery" class="button-back">Back</a>
+  </p>
+
+  <div>Low acuity (repeat triage online)</div>
+
+  {% include 'service-display/_components/worsening-symptoms.html' %}
+
+  <div>High acuity (call 111)</div>
+
+  {% set acuity = "high" %}
+  {% include 'service-display/_components/worsening-symptoms.html' %}
+
+</div>
+
+{% endblock %}

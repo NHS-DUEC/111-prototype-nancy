@@ -1,0 +1,64 @@
+{% set suppress_feedback = true %}
+
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhs-redesign{% endblock %}
+
+{% block content %}
+
+<div class="measure">
+
+  <div class="content-block">
+
+    <div class="callout callout--attention">
+      <h1 class="h2">
+        Your call has already been booked
+      </h1>
+    </div>
+
+    <p>
+      It was booked at 8.41am. A nurse will call 07961 123 123.
+    </p>
+
+    <details>
+      <summary><span>What if I don’t get a call in 30 minutes?</span></summary>
+      <div>
+        <p>
+          It’s safe to wait a bit longer, but if you’re worried call 999 and
+          they’ll tell you what to do next.
+        </p>
+        <p>
+          If we can’t speak to you in that time, emergency services might be sent
+          to make sure you’re ok.
+        </p>
+      </div>
+    </details>
+
+    <details>
+      <summary><span>What if I miss the call?</span></summary>
+      <div>
+        <p>
+          A nurse will try and call you up to 3 times.
+        </p>
+      </div>
+    </details>
+
+    <details>
+      <summary><span>What if my symptoms get worse while I’m waiting?</span></summary>
+      <div>
+        <p>Call 111.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary><span>Can I cancel the call?</span></summary>
+      <div>
+        <p>If you need to cancel ring 111 and tell them you booked a call online.</p>
+      </div>
+    </details>
+  </div>
+
+</div>
+{% endblock %}

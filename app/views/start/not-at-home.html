@@ -2,7 +2,7 @@
 
 {% block page_title %}{% endblock %}
 
-{% block body_css_classes %}{% endblock %}
+{% block body_css_classes %}nhsuk-frontend{% endblock %}
 
 {% block content %}
 
@@ -16,7 +16,7 @@
     </div>
   {% endif %}
 
-  <h1 class="h2">Do you know the postcode of where you are now?</h1>
+  <h1 class="nhsuk-heading-l">Do you know the postcode of where {% if session.proxy == true %}they{% else %}you{% endif %} are now?</h1>
 
   <form id="postcode-container" method="post">
     <fieldset class="form-group shunt {% if error %}-errors{% endif %}">

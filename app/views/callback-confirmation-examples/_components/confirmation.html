@@ -1,0 +1,13 @@
+<h1>You’ll get a call within {{ timeframe }}</h1>
+
+<p>
+  It was booked at <span id="timestamp"></span>. A nurse will call {{ tel }}. The number might
+  show as ‘unknown’ on your display.
+</p>
+<script type="text/javascript">
+  var now = new Date()
+    .toLocaleTimeString('en-US', { hour: 'numeric', hour12: true, minute: 'numeric' })
+    .toLowerCase()
+    .replace(/:/g, '.');
+  document.getElementById('timestamp').textContent = now;
+</script>

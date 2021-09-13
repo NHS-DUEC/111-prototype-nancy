@@ -1,0 +1,37 @@
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhsuk-frontend{% endblock %}
+
+{% block content %}
+
+<div class="content-block measure">
+
+  <form action="" method="post" class="form">
+
+    <div class="error-summary">
+      <h2 class="error-heading">There’s a problem</h2>
+      <p>
+        Enter your long-term conditions
+      </p>
+    </div>
+
+    <h1 class="nhsuk-heading-l">What are they?</h1>
+
+    <div class="form-group -errors">
+      <textarea rows="8"></textarea>
+      <p class="form-hint" style="text-align: right;">1200 character limit</p>
+    </div>
+
+    <div class="form-group">
+      <button type="submit" class="button">Next</button>
+    </div>
+
+  </form>
+
+</div>
+
+{% endblock %}
+
+{% set suppress_feedback = false %}

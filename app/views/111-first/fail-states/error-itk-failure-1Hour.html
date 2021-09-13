@@ -1,0 +1,102 @@
+{% set suppress_feedback = true %}
+
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhsuk-frontend{% endblock %}
+
+{% block content %}
+
+<div class="measure">
+
+  <div class="content-block">
+    <div class="callout callout--attention">
+      <h2 class="h2">
+        Sorry, there’s a problem with the service
+      </h2>
+      <p>
+        We couldn’t send your details.
+      </p>
+    </div>
+  </div>
+  <div class="callout callout--warning">
+    Go to A&E now
+  </div>
+  <div class="service-details-container">
+
+    <div class="details-1 service-details">
+      <div class="unit address">
+        <p>
+          <b>A&E (accident and emergency)</b><br>
+          Leeds Teaching Hospitals NHS Trust<br>
+          Great George Street<br>
+          Leeds<br>
+          LS1 3EX
+        </p>
+      </div>
+      <div class="unit">
+        {% set opening = "Open 24 hours"%}
+        {% set suppress_full = true %}
+        {% include 'service-display/_components/opening-hours.html' %}
+      </div>
+    </div>
+
+    <div class="geo">
+      <div id="service-location" class="map-frame"></div>
+    </div>
+
+        <div class="details-2 service-details">
+          <div class="unit">
+            <br>
+            <p>
+          <a href="#">Get directions (opens in a new tab or window)</a></p>
+          </div>
+        </div>
+    </div>
+
+  </div>
+
+</div>
+
+{% endblock %}
+{% block body_after %}
+  {% include '_partials/_partial-collapse-script.html' %}
+
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDP454skpvnlft08MDIcZG_khm-sBHmFbM"></script>
+  <script>
+    var serviceLat = 53.801732;
+    var serviceLng = -1.551858;
+    var userLat = 53.804741;
+    var userLng = -1.564623;
+    $(function() {
+      mapObj = new google.maps.Map(document.getElementById('service-location'), {
+        center: {
+          lat: serviceLat,
+          lng: serviceLng
+        },
+        zoom: 16,
+        maxZoom: 18,
+        zoomControl: true,
+        mapTypeControl: false,
+        scaleControl: true,
+        streetViewControl: false,
+        rotateControl: false,
+        fullscreenControl: false
+      });
+      var bounds = new google.maps.LatLngBounds();
+      var service = new google.maps.Marker({
+        position: new google.maps.LatLng(serviceLat, serviceLng),
+        map: mapObj
+      });
+      bounds.extend(service.position);
+      var user = new google.maps.Marker({
+        position: new google.maps.LatLng(userLat, userLng),
+        map: mapObj,
+        icon: '/images/icon-maps-user-location.png'
+      });
+      bounds.extend(user.position);
+      mapObj.fitBounds(bounds);
+    });
+  </script>
+{% endblock %}

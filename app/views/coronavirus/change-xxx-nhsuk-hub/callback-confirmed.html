@@ -1,0 +1,127 @@
+{% set suppress_feedback = true %}
+
+{% set tel = "07979 654 789" %}
+{% if session.callBooking.tel %}
+  {% set tel = session.callBooking.tel %}
+{% endif %}
+
+{% extends '_layouts/layout.html' %}
+
+{% block body_css_classes %}nhsuk-frontend{% endblock %}
+
+{% block content %}
+<div class="content-block measure">
+
+  <h1 class="nhsuk-heading-xl">You should get a call within [NUM] hours</h1>
+
+  <p>
+    It was booked at <span id="timestamp">{{ now }}</span>.
+  </p>
+  <script type="text/javascript">
+    var now = new Date()
+      .toLocaleTimeString('en-US', { hour: 'numeric', hour12: true, minute: 'numeric' })
+      .toLowerCase()
+      .replace(/:/g, '.');
+    document.getElementById('timestamp').textContent = now;
+  </script>
+
+  <p>
+    The COVID clinical response service will call {{ tel }}. The number may show as
+    ‘unknown’ on your display.
+  </p>
+
+  <div class="callout callout--info">
+    <p>
+      You need to stay away from other people.
+    </p>
+    <p>
+      <a href="https://www.nhs.uk/conditions/coronavirus-covid-19/self-isolation-advice/">
+        Read more self-isolation advice on NHS.UK
+      </a>
+    </p>
+  </div>
+
+  <details>
+    <summary><span>Why does it take so long?</span></summary>
+    <div>
+      <p>
+        The COVID clinical response service is very busy at the moment. The most
+        seriously ill people are called back first.You are in a queue and you
+        will be called as soon as possible.
+      </p>
+    </div>
+  </details>
+
+  <details>
+    <summary><span>What if I don’t get a call back within [WAIT TIME]?</span></summary>
+    <div>
+      <p>
+        If you don’t hear back in [WAIT TIME], use the service again to book another call.
+      </p>
+      -->
+    </div>
+  </details>
+
+  <details>
+    <summary><span>What if miss the call?</span></summary>
+    <div>
+      <p>
+        The COVID clinical response service will try to call up to 3 times. They
+        will leave a message to say they have tried to call you, but you won’t
+        be able to return their call. If you miss all of the calls, you need to
+        start again using the online service.
+      </p>
+    </div>
+  </details>
+
+  <details>
+    <summary><span>What if I feel worse while I am waiting?</span></summary>
+    <div>
+      <p>
+        If you don’t get a call within [WAIT TIME] and you start to feel worse,
+        use the service again to tell us about your new symptoms.
+      </p>
+    </div>
+  </details>
+
+  <div class="callout callout--attention nhsuk-u-margin-top-6 nhsuk-u-margin-bottom-6">
+    <h2 class="nhsuk-heading-l">
+      Apply for a coronavirus test
+    </h2>
+    <p>
+      The test will show if you have the virus now.
+    </p>
+    <p>
+      You can get the test by either:
+    </p>
+    <ul>
+      <li>
+        going to a drive-through testing centre if you have a car
+      </li>
+      <li>
+        getting a home test kit sent to you
+      </li>
+    </ul>
+    <a class="nhsuk-action-link__link" href="#">
+      <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M0 0h24v24H0z" fill="none"></path>
+        <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+      </svg>
+      <span class="nhsuk-action-link__text">Apply for a test on GOV.UK</span>
+    </a>
+  </div>
+
+  <h3 class="nhsuk-u-visually-hidden">
+    Advice about coronavirus on NHS.UK
+  </h3>
+  <p>
+    NHS.UK has the latest advice and general information about coronavirus.
+  </p>
+  <p>
+    <a href="https://www.nhs.uk/something">
+      Go to NHS.UK for more coronavirus information and services
+    </a>
+  </p>
+
+</div>
+{% endblock %}

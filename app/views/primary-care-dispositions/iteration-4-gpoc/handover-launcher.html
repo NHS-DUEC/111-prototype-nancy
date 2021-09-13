@@ -1,0 +1,87 @@
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhsuk-frontend{% endblock %}
+
+{% block content %}
+
+<div class="measure">
+
+  <div class="content-block">
+
+    <h1 class="nhsuk-heading-l">
+      <span class="heading-prefix">{{ session.usersGP.name }}</span>
+      {% if session.gpoc.brand === 'econsult' %}
+        Contact your GP online
+      {% else %}
+        Book an online consultation
+      {% endif %}
+    </h1>
+
+    <div class="callout callout--info">
+      <p>
+        Your GP uses&nbsp;
+        <img src=/images/{{ session.gpoc.brand }}-logo.png style="display: inline; max-width: 25%; vertical-align: middle" />
+        {% if session.gpoc.brand === 'virtually' %}&nbsp;for online consultations{% endif %}
+      </p>
+    </div>
+
+    <details>
+      <summary>What is {{ session.gpoc.brand }}?</summary>
+      <div>
+        {% if session.gpoc.brand === 'econsult' %}
+        <p>
+          The type of online consultation you have depends on your GP. Your
+          surgery’s website uses a tool called econsult. This usually gives the
+          GP enough extra information so they can help you by email or phone.
+        </p>
+        {% elif session.gpoc.brand === 'virtually' %}
+        <p>
+          The type of online consultation you have depends on your GP. Your GP
+          surgery offers phone, messaging and video consultations over the
+          internet using a website or app called Virtually.
+        </p>
+        {% endif %}
+      </div>
+    </details>
+
+    <h2 class="nhsuk-heading-m shunt-2">Sharing your details</h2>
+    <p>
+      {% if session.gpoc.brand === 'econsult' %}
+        If you use your GP’s econsult tool, we’ll pass on some information about you.
+      {% elif session.gpoc.brand === 'virtually' %}
+        If you book an online consultation we’ll share some details with
+        {{ session.gpoc.brand | capitalize }} and {{ session.usersGP.name }}.
+      {% endif %}
+    </p>
+    <p>
+      We’ll share your:
+    </p>
+    <ul>
+      <li>date of birth</li>
+      <li>postcode</li>
+      <li>sex</li>
+      <li>111 online question responses</li>
+    </ul>
+
+    <div class="shunt-2">
+      {% if session.gpoc.type === 'nhsuk' %}
+        <a href="https://nhs111-gpoc.herokuapp.com/booking-virtually/start?gp={{ session.usersGP.name }}" class="button">
+          Book using {{ session.gpoc.brand | capitalize }}
+        </a>
+      {% else %}
+        <a href="/gpoc/launch" class="button">
+          {% if session.gpoc.brand === 'econsult' %}
+            Use econsult
+          {% else %}
+            Book using {{ session.gpoc.brand | capitalize }}
+          {% endif %}
+        </a>
+      {% endif %}
+    </div>
+  </div>
+
+</div>
+
+{% endblock %}

@@ -13,5 +13,5 @@ module.exports = {
   useHttps: 'true',
 
   // Cookie warning - update link to service's cookie page.
-  cookieText: 'We use cookies to make this site simpler. <a href="#" title="Find out more about cookies">Find out more about cookies</a>'
+  cookieText: 'We use cookies to make this site simpler. <a href="javascript: return false;" title="Find out more about cookies">Find out more about cookies</a>'
 }

@@ -1,0 +1,118 @@
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhsuk-frontend{% endblock %}
+
+{% block content %}
+<div class="content-block measure clearfix">
+
+  <h1>Confirm {% if session.proxy == true %}their{% else %}your{% endif %} booking</h1>
+
+  <p>
+    <b>A&E (accident and emergency)</b><br>
+    City hospital, Birmingham<br>
+    Dudley Road<br>
+    Birmingham<br>
+    B18 7QH
+  </p>
+  <dl class="check-details">
+    <div class="-row">
+      <dt class="-key">
+        Time slot
+      </dt>
+      <dd class="-value">
+        2pm to 3pm
+      </dd>
+      <dd class="-actions">
+        <a href="javascript: return false;">
+          Change<span class="visuallyhidden"> name</span>
+        </a>
+      </dd>
+    </div>
+    </dl>
+    <div class="content-seperator content-seperator--equalvertspacing--large"></div>
+
+  <!-- ##################################################################### -->
+  <!-- single user, at home -->
+  <dl class="check-details">
+    <div class="-row">
+      <dt class="-key">
+        Name
+      </dt>
+      <dd class="-value">
+        Sarah Philips
+      </dd>
+      <dd class="-actions">
+        <a href="javascript: return false;">
+          Change<span class="visuallyhidden"> name</span>
+        </a>
+      </dd>
+    </div>
+    <div class="-row">
+      <dt class="-key">
+        Date of birth
+      </dt>
+      <dd class="-value">
+        5 January 1978
+      </dd>
+      <dd class="-actions">
+        <a href="javascript: return false;">
+          Change<span class="visuallyhidden"> date of birth</span>
+        </a>
+      </dd>
+    </div>
+    <!--
+    <div class="-row">
+      <dt class="-key">
+        Sex
+      </dt>
+      <dd class="-value">
+        Female
+      </dd>
+      <dd class="-actions">
+        <a href="javascript: return false;">
+          Change<span class="visuallyhidden"> sex</span>
+        </a>
+      </dd>
+    </div>
+    -->
+    <div class="-row">
+      <dt class="-key">
+        Home postcode
+      </dt>
+      <dd class="-value">
+        RG7 4DG
+      </dd>
+      <dd class="-actions">
+        <a href="javascript: return false;">
+          Change<span class="visuallyhidden"> postcode</span>
+        </a>
+      </dd>
+    </div>
+    <div class="-row">
+      <dt class="-key">
+        Number
+      </dt>
+      <dd class="-value">
+        07945 123 321
+      </dd>
+      <dd class="-actions">
+        <a href="javascript: return false;">
+          Change<span class="visuallyhidden"> number to call</span>
+        </a>
+      </dd>
+    </div>
+  </dl>
+
+  <p class="nhsuk-u-font-size-16">
+    By confirming these details you agree to share them with the NHS and trusted partners.
+  </p>
+
+  <div class="form-group -controls">
+    <a href="/111-first/booking-into-ed/confirmation-ed-3rd" class="button">Confirm booking</a>
+  </div>
+
+</div>
+
+{% endblock %}

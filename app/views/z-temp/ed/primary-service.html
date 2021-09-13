@@ -32,46 +32,14 @@
     </div>
     <div class="directions small">
       <p>
-        <a href="#">3.1 miles away &mdash; get directions</a><br>
-        <a href="#">Change my location</a>
+        <a href="javascript: return false;">3.1 miles away &mdash; get directions</a><br>
+        <a href="javascript: return false;">Change my location</a>
       </p>
     </div>
     <div class="hours small">
       <p>
         8am to 10:30pm every day
       </p>
-      <!--
-      <table class="compact">
-        <tr>
-          <th scope="row">Monday</th>
-          <td>8am to 10:30pm</td>
-        </tr>
-        <tr>
-          <th scope="row">Tuesday</th>
-          <td>8am to 10:30pm</td>
-        </tr>
-        <tr>
-          <th scope="row">Wednesday</th>
-          <td>8am to 10:30pm</td>
-        </tr>
-        <tr>
-          <th scope="row">Thursday</th>
-          <td>8am to 10:30pm</td>
-        </tr>
-        <tr>
-          <th scope="row">Friday</th>
-          <td>8am to 10:30pm</td>
-        </tr>
-        <tr>
-          <th scope="row">Saturday</th>
-          <td>8am to 10:30pm</td>
-        </tr>
-        <tr>
-          <th scope="row">Sunday</th>
-          <td>8am to 10:30pm</td>
-        </tr>
-      </table>
-      -->
       <p class="contact">
         Web: <a href="http://www.localcaredirect.org/centre/st-georges-centre-urgent-care/">www.localcaredirect.org</a><br>
         Tel: 0330 311 5106
@@ -82,9 +50,9 @@
   <!-- boilerplate service type text -->
   <div class="measure">
     <details>
-      <summary>
+      <summary><span>
         More information about this service
-      </summary>
+      </span></summary>
       <div>
         <p>
           Urgent treatment centres (also called minor injury units) are staffed by GPs.
@@ -105,73 +73,11 @@
   <div class="content-seperator content-seperator--equalvertspacing--large"></div>
 
   <div class="measure">
-    <h2>Care advice</h2>
-
-    <!-- START CARE ADVICE -->
-
-    <div class="care-advice-output">
-      <details>
-        <summary>Breathlessness</summary>
-        <div>
-          <ul>
-            <li>
-              Sit as upright as is comfortable.
-            </li>
-            <li>
-              If an inhaler or a spacer is used for chest problems, follow the
-              instructions about &quot;what to do if your breathing gets worse&quot;.
-            </li>
-            <li>
-              Never use medicines which have been prescribed for someone else.
-            </li>
-          </ul>
-        </div>
-      </details>
-
-      <details>
-        <summary>Medication, pain and/or fever</summary>
-        <div>
-          <ul>
-            <li>
-                Paracetamol or ibuprofen can be used to relieve pain or a fever.
-                Don’t take if you’ve been told not to, or you’ve already taken some.
-                Read the instructions on the packet, or talk to a pharmacist.
-            </li>
-          </ul>
-        </div>
-      </details>
-
-      <details>
-        <summary>Headache</summary>
-        <div>
-          <ul>
-            <li>
-              A heated pad or covered hot water bottle on the back of your neck may
-              help ease the pain.
-            </li>
-            <li>
-              Call 999 if:
-              <ul>
-                <li>
-                  The person becomes very drowsy, isn’t responding normally or is
-                  having a fit.
-                </li>
-                <li>
-                  The person becomes severely ill with new marks under the skin which
-                  look like bruising or bleeding.
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-      </details>
-    </div>
-
-    <!-- END CARE ADVICE -->
+    {% include 'service-display/_components/care-advice.html' %}
 
     <div class="callout callout--info">
       <p>
-        If you get worse start again using <a href="#">any new symptoms.</a>
+        If you get worse start again using <a href="javascript: return false;">any new symptoms.</a>
       </p>
     </div>
 

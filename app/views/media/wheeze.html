@@ -1,0 +1,73 @@
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhsuk-frontend{% endblock %}
+
+{% block content %}
+
+<div class="content-block measure">
+
+  <h1 class="nhsuk-heading-l">
+    Are you short of breath or can you hear a whistling or wheezing noise coming
+    from your chest?
+  </h1>
+
+
+  <div class="callout callout--info">
+    <p>
+      We’re looking for breathing problems not caused by a cold or blocked nose.
+      Short of breath means you may be panting or gasping for breath or can hear
+      noises coming from your chest when you breathe out.
+    </p>
+    <details class="media">
+      <summary class="small">Hear what wheezing sounds like</span></summary>
+      <div class="shunt">
+        <audio controls>
+          <source src="/media-files/polyphonic-wheeze.mp3" type="audio/mp3">
+          <source src="/media-files/polyphonic-wheeze.ogg" type="audio/ogg">
+          <p>
+            Your browser doesn't support HTML5 audio. Here is a
+            <a href="/media-files/polyphonic-wheeze.mp3">link to the audio</a>
+            instead.
+          </p>
+        </audio>
+      </div>
+    </details>
+  </div>
+
+  <form action="question-handler" method="post" class="form">
+
+    <div class="form-group">
+      <fieldset>
+        <label class="block-label">
+          <input name="answer" value="" type="radio" class="selection-button-radio">
+          <span>
+            Yes
+          </span>
+        </label>
+        <label class="block-label">
+          <input name="answer" value="" type="radio" class="selection-button-radio">
+          <span>
+            I don’t know
+          </span>
+        </label>
+        <label class="block-label">
+          <input name="answer" value="" type="radio" class="selection-button-radio">
+          <span>
+            No
+          </span>
+        </label>
+      </fieldset>
+    </div>
+
+    <div class="form-group">
+      <p><button type="submit" class="button">Next</button></p>
+      <p><a href="javascript: return false;">Change my previous answer</a></p>
+    </div>
+
+  </form>
+
+</div>
+
+{% endblock %}

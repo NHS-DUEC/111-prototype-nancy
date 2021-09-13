@@ -1,7 +1,8 @@
 {% extends '_layouts/layout.html' %}
 
-{% block page_title %}
-{% endblock %}
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhsuk-frontend{% endblock %}
 
 {% block content %}
 
@@ -16,7 +17,9 @@
     </div>
   {% endif %}
   <fieldset id="dob-group">
-    <legend><h1>What is your date of birth?</h1></legend>
+    <legend>
+      <h1 class="nhsuk-heading-l">What is {% if session.proxy == true %}their{% else %}your{% endif %} date of birth?</h1>
+    </legend>
     <div class="form-group -date {% if error %}-errors{% endif %}">
       <div>
         <label for="dob-day">Day</label>

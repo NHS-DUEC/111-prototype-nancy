@@ -1,0 +1,51 @@
+{% set suppress_feedback = true %}
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhsuk-frontend{% endblock %}
+
+{% block content %}
+
+<div class="measure">
+
+  <div class="content-block">
+    <h1 class="nhsuk-heading-xl">Thanks for agreeing to take our survey</h1>
+
+    <p>
+      Before you start, there are a few things you need to know:
+    </p>
+
+    <h2 class="nhsuk-heading-m">If you need medical help call 111</h2>
+    <p>
+      We don’t monitor the survey every day, and won’t see comments you leave
+      about your symptoms or if you ask for medical help.
+    </p>
+
+    <h2 class="nhsuk-heading-m">We won't know who you are from your answers</h2>
+    <p>
+      Our survey uses the topic that you chose and the advice you got from 111
+      online to make the questions relevant to you. Everything you say is
+      confidential.
+    </p>
+    <p>
+      If you agree to do a follow-up survey we’ll ask for your email address.
+      We won’t share your email address with anyone else.
+    </p>
+
+    <h2 class="nhsuk-heading-m">We are responsible for your data</h2>
+    <p>
+      Our <a href="javascript:return false;">privacy policy</a> explains
+      how we keep your data safe. Survey data is securely stored by a
+      company called Qualtrics, but we are responsible for what happens
+      to it.
+    </p>
+
+    <div class="shunt-2">
+      <a href="javascript:return false;" class="button">Start survey</a>
+    </div>
+
+  </div>
+</div>
+
+{% endblock %}

@@ -8,9 +8,11 @@ module.exports = router
 
 router.post('/proxy', function(req, res) {
   if (req.body['proxy'] === 'true') {
+    req.session.proxy = true;
     res.redirect('/start/proxy-message');
   } else if (req.body['proxy'] === 'false') {
-    res.redirect('/start/emergency-check');
+    req.session.proxy = false;
+    res.redirect('/start/date-of-birth');
   } else {
     res.render('start/proxy.html', {
       error : true

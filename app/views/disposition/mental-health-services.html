@@ -38,8 +38,8 @@
     </div>
     <div class="directions small">
       <p>
-        <a href="#">6.2 miles away - get directions</a><br>
-        <a href="#">Change my location</a>
+        <a href="javascript: return false;">6.2 miles away - get directions</a><br>
+        <a href="javascript: return false;">Change my location</a>
       </p>
     </div>
     <div class="hours small">
@@ -50,9 +50,9 @@
   <!-- boilerplate service type text -->
   <div class="measure">
     <details>
-      <summary>
+      <summary><span>
         More information about this service
-      </summary>
+      </span></summary>
       <div>
         <p>
           This is a service with trained mental health specialists. CAMHS are
@@ -75,13 +75,8 @@
   <div class="content-seperator content-seperator--equalvertspacing--large"></div>
 
   <div class="measure">
-
-    <div class="callout callout--info">
-      <p>
-        If your symptoms get worse, call 111
-      </p>
-    </div>
-
+    {% set acuity = "high" %}
+    {% include 'service-display/_components/worsening-symptoms.html' %}
   </div>
 
 </div>

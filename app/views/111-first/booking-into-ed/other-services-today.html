@@ -1,0 +1,183 @@
+{% set suppress_feedback = true %}
+
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhsuk-frontend{% endblock %}
+
+{% block content %}
+
+<div class="content-block">
+  <div class="measure">
+    <a href="javascript:window.history.back();" class="button-back">Back</a>
+    <h1>Other ways to get help</h1>
+    <!-- timing info -->
+    <div class="callout callout--warning">
+      Get help now
+    </div>
+  </div>
+
+  <div class="multiple-service-listing">
+
+    <!-- A place you go **************************************************** -->
+    <!-- “JUST VISIT” ****************************************************** -->
+    <div class="collapse-title">
+      <div class="service-listing">
+        <b>A&E (accident and emergency)</b><br>
+        New Queen Elizabeth Hospital
+        <div class="service-pertinent">
+          <span class="small">11 miles away</span>
+        </div>
+        <span class="collapse-title-indicator-verbose">
+          <span class="show">More information</span>
+          <span class="hide">Hide</span>
+        </span>
+      </div>
+    </div>
+    <div class="collapse-content">
+      <div class="service-details-container">
+        <div class="details-1 service-details">
+          <div class="unit">
+            <p class="small measure">
+              A&E is for critical or life-threatening injuries or illnesses. Also known
+              as the emergency department or casualty.
+            </p>
+            <div class="content-seperator content-seperator--white content-seperator--equalvertspacing"></div>
+          </div>
+          <div class="unit address">
+            <p>
+              <b>A&E (accident and emergency)</b><br>
+              New Queen Elizabeth hospital<br>
+              Mindelsohn Way<br>
+              Edgbaston<br>
+              Birmingham<br>
+              B15 2WB
+            </p>
+          </div>
+          <div class="unit">
+            {% set opening = "Open 24 hours"%}
+            {% set suppress_full = true %}
+            {% include 'service-display/_components/opening-hours.html' %}
+          </div>
+        </div>
+        <div class="subroutine measure"></div>
+        <div class="geo">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2431.4883160760537!2d-1.945540584195052!3d52.45218327980135!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4870bdb874b7ec95%3A0xce9356af4e09413b!2sQueen%20Elizabeth%20Hospital%3A%20Emergency%20Department!5e0!3m2!1sen!2suk!4v1596114018464!5m2!1sen!2suk" width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+        </div>
+        <div class="details-2 service-details">
+          <div class="unit">
+            <b class="form-hint">Remember to book before you go</b>
+            <a class="nhsuk-action-link__link" href="slot-variations/pick-slot-12-2hour">
+              <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M0 0h24v24H0z" fill="none"></path>
+                <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+              </svg>
+              <span class="nhsuk-action-link__text">Book your slot</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="collapse-title">
+      <div class="service-listing">
+        <b>A&E (accident and emergency)</b><br>
+        Birmingham Heartlands Hospital
+        <div class="service-pertinent">
+          <span class="small">15 miles away</span>
+        </div>
+        <span class="collapse-title-indicator-verbose">
+          <span class="show">More information</span>
+          <span class="hide">Hide</span>
+        </span>
+      </div>
+    </div>
+    <div class="collapse-content">
+      <div class="service-details-container">
+        <div class="details-1 service-details">
+          <div class="unit">
+            <p class="small measure">
+              A&E is for critical or life-threatening injuries or illnesses. Also known
+              as the emergency department or casualty.
+            </p>
+            <div class="content-seperator content-seperator--white content-seperator--equalvertspacing"></div>
+          </div>
+          <div class="unit address">
+            <p>
+              <b>A&E (accident and emergency)</b><br>
+              Birmingham Heartlands Hospital<br>
+              Bordesley Green East<br>
+              Bordesley Green<br>
+              Birmingham<br>
+              B9 5SS
+            </p>
+          </div>
+          <div class="unit">
+            {% set opening = "Open 24 hours"%}
+            {% set suppress_full = true %}
+            {% include 'service-display/_components/opening-hours.html' %}
+          </div>
+        </div>
+        <div class="subroutine measure"></div>
+        <div class="geo">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2430.0191902321462!2d-1.8319219841500973!3d52.47878824703499!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4870bafe01a03c97%3A0x7295aa3c50f7415b!2sBirmingham%20Heartlands%20Hospital!5e0!3m2!1sen!2suk!4v1596115253985!5m2!1sen!2suk" width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+
+        </div>
+        <div class="details-2 service-details">
+          <div class="unit">
+            <b class="form-hint">Remember to book before you go</b>
+            <a class="nhsuk-action-link__link" href="slot-variations/pick-slot-12-1hour">
+              <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M0 0h24v24H0z" fill="none"></path>
+                <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+              </svg>
+              <span class="nhsuk-action-link__text">Book your slot</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+  <br>
+  <div class="measure">
+    <p>
+      These services are available in [postcode]. <a href="javascript: return false;">Change my location</a>
+    </p>
+    <details>
+      <summary>Why are these services recommended?</summary>
+      <div>
+        <p>
+          We show you services that can help with your symptoms.
+        </p>
+        <p>
+          You might not see a place you expected to, or one you know is nearer. We
+          only show services that are open right now and have told us they’ve got
+          space to see you.
+        </p>
+      </div>
+    </details>
+  </div>
+
+  <div class="content-seperator content-seperator--equalvertspacing--large"></div>
+
+  <div class="measure">
+    {% include 'service-display/_components/care-advice.html' %}
+  </div>
+
+  {% set acuity = "high" %}
+  {% include 'service-display/_components/worsening-symptoms.html' %}
+
+</div>
+
+{% endblock %}
+
+{% block footer %}
+  {% include '_includes/survey-banner.html' %}
+{% endblock %}
+
+{% block body_after %}
+  {% include '_partials/_partial-collapse-script.html' %}
+{% endblock %}

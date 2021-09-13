@@ -13,7 +13,6 @@ module.exports = router
 router.get('/', function(req, res) {
   // zero out a namespaced session obj
   req.session.callBooking = {};
-  req.session.callBooking.who = '';
   req.session.callBooking.name = {};
   req.session.callBooking.name.firstname = '';
   req.session.callBooking.name.secondname = '';
@@ -28,7 +27,6 @@ router.get('/', function(req, res) {
 router.post('/', function(req, res) {
   // zero out a namespaced session obj
   req.session.callBooking = {};
-  req.session.callBooking.who = '';
   req.session.callBooking.name = {};
   req.session.callBooking.name.firstname = '';
   req.session.callBooking.name.secondname = '';
@@ -166,6 +164,9 @@ router.get('/route-address', function(req, res) {
 // 1: at home and have given a postcode
 
 router.get('/confirm-home-address', function(req, res) {
+  if (req.query.backstopTest) {
+    req.session.postcode = req.query.backstopTest
+  }
   var query = req.session.postcode.replace(/\s+/g, '').toLowerCase();
   request('https://api.getAddress.io/v2/uk/' + query + '/?api-key=' + process.env.POSTCODE_API + '&format=true', function (error, response, body) {
     if (!error) {
@@ -205,6 +206,9 @@ router.post('/confirm-home-single-address', function(req, res) {
 // 2: somewhere else and have given a postcode
 
 router.get('/confirm-location-address', function(req, res) {
+  if (req.query.backstopTest) {
+    req.session.postcode = req.query.backstopTest
+  }
   var query = req.session.postcode.replace(/\s+/g, '').toLowerCase();
   request('https://api.getAddress.io/v2/uk/' + query + '/?api-key=' + process.env.POSTCODE_API + '&format=true', function (error, response, body) {
     if (!error) {
@@ -289,6 +293,10 @@ router.post('/home-postcode', function(req, res) {
 // Confirm phone number
 
 router.get('/confirm-number', function(req, res) {
+  if (req.query.backstopTest) {
+    req.session.callBooking = {};
+    req.session.callBooking.tel = req.query.backstopTest
+  }
   if (req.query['selected']) {
     req.session.userAddressIndex = req.query['selected']
   }

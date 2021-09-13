@@ -1,0 +1,127 @@
+{% set suppress_feedback = true %}
+
+{% set tel = "07979 654 789" %}
+{% if session.callBooking.tel %}
+  {% set tel = session.callBooking.tel %}
+{% endif %}
+
+{% extends '_layouts/layout.html' %}
+
+{% block body_css_classes %}nhsuk-frontend{% endblock %}
+
+{% block content %}
+<div class="content-block measure">
+
+  <h1>You should get a call within [NUM] hours</h1>
+
+  <p>
+    It was booked at <span id="timestamp">{{ now }}</span>.
+  </p>
+  <script type="text/javascript">
+    var now = new Date()
+      .toLocaleTimeString('en-US', { hour: 'numeric', hour12: true, minute: 'numeric' })
+      .toLowerCase()
+      .replace(/:/g, '.');
+    document.getElementById('timestamp').textContent = now;
+  </script>
+
+  <p>
+    The COVID clinical response service will call {{ tel }}. The number may show as
+    ‘unknown’ on your display.
+  </p>
+
+  <div class="callout callout--info">
+    <p>
+      You need to stay away from other people.
+      <a href="https://www.nhs.uk/conditions/coronavirus-covid-19/self-isolation-advice/">
+        Read more stay at home advice on NHS.UK.
+      </a>
+    </p>
+  </div>
+
+  <details>
+    <summary><span>Why does it take so long?</span></summary>
+    <div>
+      <p>
+        The COVID clinical response service is very busy at the moment. The most
+        seriously ill people are called back first.You are in a queue and you
+        will be called as soon as possible.
+      </p>
+    </div>
+  </details>
+
+  <details>
+    <summary><span>What if I don’t get a call back within [NUM] hours?</span></summary>
+    <div>
+      <!-- 2 HOURS -->
+      <p>
+        If you don’t hear back in 2 hours, use the service again to book another call.
+      </p>
+      <!-- 4 HOURS -->
+      <p>
+        If you don’t hear back within 4-6 hours, use the service again to to book another call.
+      </p>
+      <!-- 4 HOURS -->
+      <p>
+        You should get a call back within a day. If you don’t, use the service
+        again to book another call.
+      </p>
+    </div>
+  </details>
+
+  <details>
+    <summary><span>What if miss the call?</span></summary>
+    <div>
+      <p>
+        The COVID clinical response service will try to call up to 3 times. They
+        will leave a message to say they have tried to call you, but you won’t
+        be able to return their call. If you miss all of the calls, you need to
+        start again using the online service.
+      </p>
+    </div>
+  </details>
+
+  <details>
+    <summary><span>What if I feel worse while I am waiting?</span></summary>
+    <div>
+      <!-- 2 HOURS -->
+      <p>
+        If you don’t get a call within 2 hours and you start to feel worse,
+        call 999 and tell them you have coronavirus symptoms.
+      </p>
+      <!-- 4 HOURS -->
+      <p>
+        TBC
+      </p>
+      <!-- 12 HOURS -->
+      <p>
+        If you start to feel worse, use the service again to tell us about your
+        new symptoms.
+      </p>
+    </div>
+  </details>
+
+  <div class="content-seperator content-seperator--equalvertspacing--large"></div>
+
+  <h2 class="nhsuk-heading-l">
+    Get an isolation note to give to your employer
+  </h2>
+  <p>
+    You can send an isolation note to your employer as proof you need to stay
+    off work because of coronavirus.
+  </p>
+  <p>
+    You do not need to get a note from a GP.
+  </p>
+  <p>
+    <a class="nhsuk-action-link__link" href="https://111.nhs.uk/isolation-note">
+      <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M0 0h24v24H0z" fill="none"></path>
+        <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+      </svg>
+      <span class="nhsuk-action-link__text">Get an isolation note</span>
+    </a>
+  </p>
+
+</div>
+{% endblock %}

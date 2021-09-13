@@ -2,7 +2,7 @@
 
 {% block page_title %}{% endblock %}
 
-{% block body_css_classes %}{% endblock %}
+{% block body_css_classes %}nhsuk-frontend{% endblock %}
 
 {% block content %}
 
@@ -17,8 +17,8 @@
       </div>
     {% endif %}
     <div class="form-group {% if error %}-errors{% endif %}">
-      <h1>
-        <label for="postcode">What’s your postcode?</label>
+      <h1 class="nhsuk-heading-l">
+        <label for="postcode">What’s {% if session.proxy == true %}their{% else %}your{% endif %} postcode?</label>
       </h1>
       {% if error %}
         <p class="error-hint">Enter a postcode</p>

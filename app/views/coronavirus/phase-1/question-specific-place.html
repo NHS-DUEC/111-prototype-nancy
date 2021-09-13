@@ -1,0 +1,50 @@
+{% set use_question_feedback = true %}
+
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhsuk-frontend{% endblock %}
+
+{% block content %}
+
+<div class="content-block measure">
+
+  <h1 class="nhsuk-heading-l">
+    Were you in Wuhan or Hubei province?
+  </h1>
+
+  <form action="" method="post" class="form">
+
+    <div class="form-group">
+      <fieldset>
+        <label class="block-label">
+          <input id="" name="answer" value="1" type="radio" class="selection-button-radio">
+          <span>
+            Yes
+          </span>
+        </label>
+        <label class="block-label">
+          <input id="" name="answer" value="0" type="radio" class="selection-button-radio">
+          <span>
+            No
+          </span>
+        </label>
+      </fieldset>
+    </div>
+
+    <div class="form-group">
+      <p><button type="submit" class="button">Next</button></p>
+    </div>
+
+  </form>
+
+</div>
+
+{% endblock %}
+
+{% set suppress_feedback = true %}
+{% block custom_feedback %}
+  {% set feedback_title = 'Help us improve this question' %}
+  {% include 'coronavirus/_components/feedback.html' %}
+{% endblock %}

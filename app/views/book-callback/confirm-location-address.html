@@ -2,16 +2,17 @@
 
 {% block page_title %}{% endblock %}
 
-{% block body_css_classes %}nhs-redesign{% endblock %}
+{% block body_css_classes %}nhsuk-frontend{% endblock %}
 
 {% block content %}
 
 <div class="content-block measure">
-  <h1>What is the address of your location?</h1>
-  <p>
-    You’ve told us you’re not at home, letting us know the address where you are
-    lets us send help if needed.
-  </p>
+  <h1 class="nhsuk-heading-l">Where are {% if session.proxy == true %}they{% else %}you{% endif %} right now?</h1>
+  <div class="callout callout--info">
+    <p>
+      If we know the address we can send help if we need to.
+    </p>
+  </div>
 </div>
 
 <div class="address-listing">
@@ -38,7 +39,7 @@
 
 <div class="content-block measure">
   <p>
-    <a href="/book-callback/address-not-found">I’m not at any of these places</a>
+    <a href="/book-callback/address-not-found">{% if session.proxy == true %}They’re{% else %}I’m{% endif %} not at any of these places</a>
   </p>
 </div>
 

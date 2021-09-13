@@ -1,25 +1,44 @@
-.service-details {
-
+.service-details-container {
   margin-top: $baseline-grid-unit*3;
-  padding: $baseline-grid-unit/2 0;
-  border: 0;
-  background-color: $grey-5;
+  margin-bottom: $baseline-grid-unit*4;
 
   @include media(large) {
-    margin-top: $baseline-grid-unit*6;
-    padding: 0;
-    border-left: $baseline-grid-unit solid $grey-4;
+    margin: $baseline-grid-unit*6 0;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(3);
+  }
+
+  .details-1 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+  }
+
+  .flag {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+
+    &.callout {
+      margin: 0 0 $baseline-grid-unit 0;
+    }
   }
 
   .geo {
-    @include media(large) {
-      grid-column-start: 2;
-      grid-column-end: 4;
-      grid-row-start: 1;
-      grid-row-end: 4;
-    }
+    grid-column-start: 3;
+    grid-column-end: 6;
+    grid-row-start: 2;
+    grid-row-end: 4;
+  }
+
+  .details-2 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 3;
+    grid-row-end: 4;
   }
 
   .map-frame {
@@ -36,60 +55,49 @@
       border-bottom: 0;
     }
   }
+}
 
+.service-details {
+  padding: $baseline-grid-unit/2 0;
+  border: 0;
+  background-color: $grey-5;
+  @include media(large) {
+    padding: 1px 0;
+    border-left: $baseline-grid-unit solid $grey-4;
+  }
   .unit {
     padding: 0 $baseline-grid-unit*4;
-    @include media(large) {
-      grid-column-start: 1;
-      grid-column-end: 2;
-    }
-  }
-
-  .address {
-    @include media(large) {
-      grid-row-start: 1;
-      grid-row-end: 2;
-    }
-  }
-
-  .hours {
-    @include media(large) {
-      grid-row-start: 2;
-      grid-row-end: 3;
-    }
-  }
-
-  .directions {
-    @include media(large) {
-      grid-row-start: 3;
-      grid-row-end: 4;
-      align-self: end;
-    }
   }
 
   // modifiers for a "remote" service
   &.--remote {
     padding: 1px 0;
+    margin-bottom: $baseline-grid-unit*4;
     @include media(large) {
       display: block;
+      margin-bottom: $baseline-grid-unit*6;
     }
 
     .tel-cta {
-      @extend .h1;
+      @extend h2;
       margin-top: 0 !important;
-
-      &.--appointment {
-        @extend .h2;
-      }
     }
   }
 }
+.details-1.service-details .unit:first-of-type {
+  padding-top: $baseline-grid-unit*6;
+}
+.details-2.service-details .unit:first-of-type {
+  padding-bottom: $baseline-grid-unit*6;
+}
 
-.service-appointment-flag {
-  border-left: $baseline-grid-unit solid $nhs-blue;
-  padding: $baseline-grid-unit*3;
-  margin-top: $baseline-grid-unit*2;
-  @include media(large) {
-    margin-top: $baseline-grid-unit*4;
-  }
+.service-pertinent {
+  margin: $baseline-grid-unit 0;
+}
+
+.flag-contact-first {
+  color: $white;
+  background-color: $blue;
+  padding: $baseline-grid-unit/2 $baseline-grid-unit;
+  border-radius: 2px;
 }

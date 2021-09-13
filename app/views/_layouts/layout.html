@@ -19,15 +19,18 @@
 
     {% include '_includes/masthead.html' %}
 
+    {% block banner %}{% endblock %}
 
     <main id="content" role="main" class="content">
-      {% include '_includes/phase-banner.html' %}
-      {% block content %}{% endblock %}
+      <div>
+        {% block content %}{% endblock %}
+      </div>
     </main>
 
     {% if not suppress_feedback %}
       {% include '_includes/feedback.html' %}
     {% endif %}
+    {% block custom_feedback %}{% endblock %}
 
     {% block footer %}{% endblock %}
 

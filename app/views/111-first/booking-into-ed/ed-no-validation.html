@@ -1,0 +1,40 @@
+{% set suppress_feedback = true %}
+
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhsuk-frontend{% endblock %}
+
+{% block content %}
+
+<div class="content-block">
+
+  <div class="callout callout--attention measure">
+    <h1 class="nhsuk-heading-l">Go to an A&E (accident and emergency) department now</h1>
+  </div>
+  <p>If you don't know where to go you can:
+    <ul>
+      <li> <a href="#">find your nearest A&E (accident and emergency) department on NHS.UK</a></li>
+      <li> <a href="#">see other ways to get help</a></li>
+      </ul>
+      </p>
+
+  <div class="content-seperator content-seperator--equalvertspacing--large"></div>
+
+  <div class="measure">
+    {% include 'service-display/_components/care-advice.html' %}
+  </div>
+
+  <div class="measure">
+    {% set acuity = "high" %}
+    {% include 'service-display/_components/worsening-symptoms.html' %}
+  </div>
+
+</div>
+
+{% endblock %}
+
+{% block footer %}
+{% include '_includes/survey-banner.html' %}
+{% endblock %}

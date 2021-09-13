@@ -1,0 +1,67 @@
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhsuk-frontend{% endblock %}
+
+{% block content %}
+
+<div class="measure">
+
+  <div class="content-block">
+    <h1 class="nhsuk-heading-l">About coronavirus (COVID-19)</h1>
+    <p>
+      Read general advice such as:
+    </p>
+    <ul>
+      <li>how it spreads</li>
+      <li>how to avoid infection</li>
+    </ul>
+    <p>
+      <a href="#">
+        Get information about coronavirus (COVID-19)
+      </a> or<br>
+      <a href="#">
+        read answers to common questions about it.
+      </a>
+    </p>
+
+    <div class="content-seperator content-seperator--equalvertspacing--large"></div>
+
+    <h2 class="nhsuk-heading-l">Find out what to do if:</h2>
+    <ul>
+      <li>you think you have symptoms</li>
+      <li>you might have been exposed to the virus when travelling</li>
+    </ul>
+    <p>
+      We’ll ask you a few questions and tell you what to do next.
+    </p>
+    <p>
+      <a class="nhsuk-action-link__link" href="javascript: return false;">
+        <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M0 0h24v24H0z" fill="none"></path>
+          <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+        </svg>
+        <span class="nhsuk-action-link__text">Start now</span>
+      </a>
+    </p>
+
+    <div class="content-seperator content-seperator--equalvertspacing--large"></div>
+
+    <h3 class="nhsuk-heading-s">Advice in other parts of the UK</h3>
+    <ul>
+      <li><strong>Scotland:</strong> call your GP surgery or 111 (NHS 24) if it’s closed</li>
+      <li><strong>Wales:</strong> call 111</li>
+      <li><strong>Northern Ireland:</strong> call 0300 200 7885</li>
+    </ul>
+  </div>
+
+</div>
+
+{% endblock %}
+
+{% set suppress_feedback = true %}
+{% block custom_feedback %}
+  {% set feedback_title = 'Help us improve this page' %}
+  {% include 'coronavirus/_components/feedback.html' %}
+{% endblock %}

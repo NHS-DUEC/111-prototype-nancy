@@ -1,0 +1,35 @@
+{% set suppress_feedback = true %}
+
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhsuk-frontend{% endblock %}
+
+{% block content %}
+
+<div class="content-block measure">
+  <h1 class="nhsuk-heading-xl">Stay at home</h1>
+  <p>
+    7 days or for the duration of symptoms.<br>
+    At least for the next 7 days.<br>
+    If symptoms continue stay at home infinitely.
+    7 day important cut point.
+  </p>
+  <div class="callout callout--attention">
+    <p>
+      To protect yourself and others, <b>do not go</b> to a GP, pharmacy or hospital
+    </p>
+  </div>
+
+  <div class="content-seperator content-seperator--equalvertspacing--large"></div>
+
+  <div>
+    <a href="#" class="button">Next</a>
+  </div>
+
+</div>
+
+{% endblock %}
+
+{% set suppress_feedback = true %}

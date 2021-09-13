@@ -1,0 +1,11 @@
+<h2>More ways to get help</h2>
+<p>
+  {% if other_services_message == "services" %}
+    If you do not want to use the recommended service, see
+  {% elif other_services_message == "trumped" %}
+    You can contact your GP, or see
+  {% else %}
+    If you can’t get an appointment within the time recommended, see
+  {% endif %}
+  <a href="{{ other_services_url }}">other things you can do.</a>
+</p>

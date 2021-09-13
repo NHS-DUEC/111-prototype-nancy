@@ -1,0 +1,56 @@
+{
+  "questionset" : "skin-problems",
+  "disposition" : "/primary-care-dispositions/iteration-4-gpoc/primary-care-dx05-2-hours",
+  "pathways" : [
+    "PW1771",
+    "PW1772"
+  ],
+  "questions" : [
+    {
+      "question" : "What is the main problem?",
+      "help" : "You can only pick one answer.",
+      "answers" : [
+        "I have a rash, spots, red or flaky skin or blisters",
+        "I have an itch",
+        "My skin is yellow",
+        "I have lumps on my skin",
+        "I bruise easily and for no reason",
+        "Something else"
+      ]
+    },
+    {
+      "question" : "Has a doctor told you that getting an infection might be very serious?",
+      "help" : "This means you have a condition that weakens your immune system. For example having chemotherapy, had an organ transplant, have HIV/AIDS or had your spleen removed.",
+      "answers" : [
+        "Yes",
+        "I'm not sure",
+        "No"
+      ]
+    },
+    {
+      "question" : "Is the rash made up of blisters?",
+      "help" : "Blisters are small pockets of clear fluid under a layer of skin.",
+      "answers" : [
+        "Yes",
+        "I'm not sure",
+        "No"
+      ]
+    },
+    {
+      "question" : "Have you got more than 3 blisters or ulcers in your mouth or throat?",
+      "answers" : [
+        "Yes",
+        "I'm not sure",
+        "No"
+      ]
+    },
+    {
+      "question" : "Do you have new blisters around your eye?",
+      "answers" : [
+        "Yes",
+        "I'm not sure",
+        "No"
+      ]
+    }
+  ]
+}

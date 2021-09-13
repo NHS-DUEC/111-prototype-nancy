@@ -1,0 +1,36 @@
+{% set suppress_feedback = true %}
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}
+{% endblock %}
+
+{% block body_css_classes %}nhsuk-frontend{% endblock %}
+
+{% block content %}
+
+<div class="content-block measure">
+  <h1 class="nhsuk-heading-xl">A nurse from the COVID-19 service would like to check in with you</h1>
+  <p>
+    You don’t need urgent help, but a nurse would like to give you a call to make sure you’re ok.
+  </p>
+  <p>
+    When you book a call the nurse will:
+  </p>
+  <ul>
+    <li>know what you’ve answered so far</li>
+    <li>check that you haven’t got any worse</li>
+    <li>tell you if you need to get help</li>
+  </ul>
+  <p>
+    You should get a call within 24 hours.
+  </p>
+
+  <div class="form-group -controls nhsuk-u-margin-top-8">
+    <a href="#" class="button">Book a nurse call</a>
+  </div>
+
+</div>
+
+
+
+{% endblock %}

@@ -1,0 +1,140 @@
+{% set suppress_feedback = true %}
+
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhsuk-frontend{% endblock %}
+
+{% block content %}
+
+<div class="content-block">
+  <div class="measure">
+    <!-- Only display 'Back' if validation is present? -->
+    <a href="javascript: return false;" class="button-back">Back</a>
+    <h1>Where to get help</h1>
+    <!-- timing info -->
+    <div class="callout callout--warning">
+      Get help now
+    </div>
+
+    {% include 'pathways-r19/_components/its-unlikely.html' %}
+
+  </div>
+
+  <div class="service-details --remote">
+
+    <div class="details-1">
+      <div class="unit address">
+        <p></p>
+          <b>Evening and weekend GP</b>
+        <div class="service-pertinent">
+          <span>GP out of hours - Sandhurst Patients Only</span>
+        </div>
+        <div class="service-pertinent">
+        <span class="small">Telephone service</span>
+        </div>
+        <br>
+      </div>
+      <div class="unit">
+        <p class="small measure">
+          This is a GP service available outside normal working hours (out of hours) and over weekends and public holidays.
+        </p>
+        <div class="content-seperator content-seperator--white content-seperator--equalvertspacing"></div>
+      </div>
+      <div class="unit">
+        {% set opening = "Open until 11pm"%}
+        {% set suppress_full = true %}
+        {% include 'service-display/_components/opening-hours.html' %}
+      </div>
+    </div>
+    <div class="details-2">
+      <div class="unit">
+        <small class="form-hint">This service needs some details from you.<br>
+        To use it, fill in the form and they’ll be in touch.</small>
+        <a class="nhsuk-action-link__link" href="#">
+          <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+          </svg>
+          <span class="nhsuk-action-link__text">Use this service</span>
+          <p></p>
+        </a>
+      </div>
+    </div>
+
+  </div>
+  <!-- boilerplate service type text and 'before you go' -->
+
+  {% include 'service-display/_components/why-this-one.html' %}
+
+  {% include 'service-display/_components/change-location.html' %}
+  <p>If you can't use the phone, <a href="#">find your nearest A&E (accident and emergency) department on NHS.UK</a></p>
+
+  <div class="content-seperator content-seperator--equalvertspacing--large"></div>
+
+  <div class="measure">
+    <h2>More ways to get help </h2>
+    <p>If you do not want to use the recommended service, <a href="#">see other things you can do</a></p>
+
+  </div>
+
+  <div class="content-seperator content-seperator--equalvertspacing--large"></div>
+
+  <div class="measure">
+    {% include 'service-display/_components/care-advice.html' %}
+  </div>
+
+  <div class="measure">
+    {% set acuity = "high" %}
+    {% include 'service-display/_components/worsening-symptoms.html' %}
+  </div>
+
+</div>
+
+{% endblock %}
+
+{% block footer %}
+{% include 'service-display/_components/micro-survey.html' %}
+{% endblock %}
+
+{% block body_after %}
+  {% include '_partials/_partial-collapse-script.html' %}
+
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDP454skpvnlft08MDIcZG_khm-sBHmFbM"></script>
+  <script>
+    var serviceLat = 53.801732;
+    var serviceLng = -1.551858;
+    var userLat = 53.804741;
+    var userLng = -1.564623;
+    $(function() {
+      mapObj = new google.maps.Map(document.getElementById('service-location'), {
+        center: {
+          lat: serviceLat,
+          lng: serviceLng
+        },
+        zoom: 16,
+        maxZoom: 18,
+        zoomControl: true,
+        mapTypeControl: false,
+        scaleControl: true,
+        streetViewControl: false,
+        rotateControl: false,
+        fullscreenControl: false
+      });
+      var bounds = new google.maps.LatLngBounds();
+      var service = new google.maps.Marker({
+        position: new google.maps.LatLng(serviceLat, serviceLng),
+        map: mapObj
+      });
+      bounds.extend(service.position);
+      var user = new google.maps.Marker({
+        position: new google.maps.LatLng(userLat, userLng),
+        map: mapObj,
+        icon: '/images/icon-maps-user-location.png'
+      });
+      bounds.extend(user.position);
+      mapObj.fitBounds(bounds);
+    });
+  </script>
+{% endblock %}

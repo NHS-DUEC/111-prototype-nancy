@@ -1,0 +1,164 @@
+{% set suppress_feedback = true %}
+
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhsuk-frontend{% endblock %}
+
+{% block content %}
+
+<div class="content-block">
+  <div class="measure">
+    <h1>Your confirmation</h1>
+    <div class="callout callout--attention">
+      <p>
+        You must arrive at the time stated or you'll have to wait for longer.
+      </p>
+    </div>
+
+    <div class="service-booking-container">
+      <div class="qr-code service-details">
+        <img src="/images/qr-code-example.png">
+      </div>
+      <div class="booking-details">
+        <dl class="check-details">
+          <div class="-row">
+            <dt class="-key">
+              Time slot
+            </dt>
+            <dd class="-value">
+              2pm to 4pm
+            </dd>
+            </dl>
+            <dl class="check-details">
+          <div class="-row">
+            <dt class="-key">
+              Reference number
+            </dt>
+            <dd class="-value">
+              ######
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </div>
+  <div class="service-details-container">
+
+    <div class="details-1 service-details">
+      <div class="unit address">
+        <p>
+          <b>A&E (accident and emergency)</b><br>
+          City hospital, Birmingham<br>
+          Dudley Road<br>
+          Birmingham<br>
+          B18 7QH
+        </p>
+      </div>
+      <div class="unit">
+        {% set opening = "Open 24 hours"%}
+        {% set suppress_full = true %}
+        {% include 'service-display/_components/opening-hours.html' %}
+      </div>
+    </div>
+
+    <div class="geo">
+      <div class="map-frame">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9718.158976286779!2d-1.9412695557458626!3d52.487468669492515!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4870bce188d998bd%3A0x9e6eee3678148c92!2sBirmingham%20City%20Hospital!5e0!3m2!1sen!2suk!4v1596112618807!5m2!1sen!2suk" width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+      </div>
+    </div>
+
+    <div class="details-2 service-details">
+      <div class="unit directions">
+        <br>
+        <p>
+          <a href="javascript: return false;" target="_blank">
+            Get directions <span class="small">(opens a new tab or window)</span>
+          </a>
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+  <p>
+    We’ve sent a confirmation to [text/email]
+  </p>
+  <div class="content-seperator content-seperator--equalvertspacing--large"></div>
+
+  <div class="measure">
+    <h2>What happens when you get there</h2>
+    <p>
+      You’ll be asked some questions when you get there and told where to wait.
+    </p>
+    <p>
+      Take a face covering with you, in case you have to wear one.
+    </p>
+    <div class="callout callout--info">
+      <p>
+        Sometimes, people arrive at A&E needing urgent help for life threatening
+        conditions. This could mean they’re seen first and you have to wait a bit longer.
+      </p>
+    </div>
+  </div>
+
+  <div class="content-seperator content-seperator--equalvertspacing--large"></div>
+
+  <div class="measure">
+    {% include 'service-display/_components/care-advice.html' %}
+  </div>
+
+  <div class="measure">
+    {% set acuity = "high" %}
+    {% include 'service-display/_components/worsening-symptoms.html' %}
+  </div>
+
+</div>
+
+{% endblock %}
+
+{% block footer %}
+{% include 'service-display/_components/micro-survey.html' %}
+{% endblock %}
+
+{% block body_after %}
+  {% include '_partials/_partial-collapse-script.html' %}
+
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDP454skpvnlft08MDIcZG_khm-sBHmFbM"></script>
+  <script>
+    var serviceLat = 53.801732;
+    var serviceLng = -1.551858;
+    var userLat = 53.804741;
+    var userLng = -1.564623;
+    $(function() {
+      mapObj = new google.maps.Map(document.getElementById('service-location'), {
+        center: {
+          lat: serviceLat,
+          lng: serviceLng
+        },
+        zoom: 16,
+        maxZoom: 18,
+        zoomControl: true,
+        mapTypeControl: false,
+        scaleControl: true,
+        streetViewControl: false,
+        rotateControl: false,
+        fullscreenControl: false
+      });
+      var bounds = new google.maps.LatLngBounds();
+      var service = new google.maps.Marker({
+        position: new google.maps.LatLng(serviceLat, serviceLng),
+        map: mapObj
+      });
+      bounds.extend(service.position);
+      var user = new google.maps.Marker({
+        position: new google.maps.LatLng(userLat, userLng),
+        map: mapObj,
+        icon: '/images/icon-maps-user-location.png'
+      });
+      bounds.extend(user.position);
+      mapObj.fitBounds(bounds);
+    });
+  </script>
+{% endblock %}

@@ -1,14 +1,9 @@
 #global-header {
   @extend %contain-floats;
   border-bottom: 3px solid $nhs-blue;
+  padding: $leading*3 0;
   padding-top: $leading*4;
-  padding: $leading*3;
-  padding-left:0px;
-  padding-right:0px;
-
-  @include media(large) {
-  }
-
+  margin-bottom: $baseline-grid-unit*8;
   @include media(mid) {
     padding-top: $leading*2;
   }
@@ -17,24 +12,18 @@
 .header-container {
   @extend %block;
   padding-top: $leading*2;
-
-
-
 }
 
 .header-logo {
   display: block;
   margin-bottom: $leading/2;
   float: left;
-
+  margin-right: 0px;
   img {
     display: block;
     width: 79px;
     height: 32px;
   }
-
-    margin-right:0px;
-
 }
 
 .service-name {
@@ -42,10 +31,8 @@
   color: $grey-1;
   margin-left: $leading*1;
   margin-right: $leading;
-
   @include media(mid) {
     display: inline;
     line-height: 32px;
   }
 }
-

@@ -1,0 +1,62 @@
+{% set use_question_feedback = true %}
+
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhsuk-frontend{% endblock %}
+
+{% block content %}
+
+<div class="content-block measure">
+
+  <h1 class="nhsuk-heading-l">
+    Have you been in close contact with someone who has been told they have
+    coronavirus (COVID-19)?
+  </h1>
+
+  <div class="callout callout--info">
+    <p>Close contact with a confirmed case means:</p>
+    <ul>
+      <li>living in the same house</li>
+      <li>face-to-face contact, for example, talking for more than a few minutes</li>
+      <li>being coughed on</li>
+      <li>being within 2 metres of the person for more than 15 minutes</li>
+      <li>contact with their body fluids</li>
+    </ul>
+  </div>
+
+  <form action="" method="post" class="form">
+
+    <div class="form-group">
+      <fieldset>
+        <label class="block-label">
+          <input id="" name="answer" value="1" type="radio" class="selection-button-radio">
+          <span>
+            Yes
+          </span>
+        </label>
+        <label class="block-label">
+          <input id="" name="answer" value="0" type="radio" class="selection-button-radio">
+          <span>
+            No
+          </span>
+        </label>
+      </fieldset>
+    </div>
+
+    <div class="form-group">
+      <p><button type="submit" class="button">Next</button></p>
+    </div>
+
+  </form>
+
+</div>
+
+{% endblock %}
+
+{% set suppress_feedback = true %}
+{% block custom_feedback %}
+  {% set feedback_title = 'Help us improve this question' %}
+  {% include 'coronavirus/_components/feedback.html' %}
+{% endblock %}

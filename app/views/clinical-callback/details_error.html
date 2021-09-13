@@ -16,10 +16,10 @@
       <div class="error-summary">
         <div>
           <h3 class="heading-large">There's a problem</h3>
-          <p><a href="#">Please select who needs help</a></p>
-          <p><a href="#">Please enter a telephone number</a></p>
-          <p><a href="#">Please enter a date of birth</a></p>
-          <p><a href="#">Please enter a postcode</a></p>
+          <p><a href="javascript: return false;">Please select who needs help</a></p>
+          <p><a href="javascript: return false;">Please enter a telephone number</a></p>
+          <p><a href="javascript: return false;">Please enter a date of birth</a></p>
+          <p><a href="javascript: return false;">Please enter a postcode</a></p>
         </div>
       </div>
   
@@ -155,7 +155,7 @@
 
           <div class="postcode-inline-change">
             <input type="text" id="postcode" name="postcode" value="{{ session.homeAddress.postcode }}" class="-small postcode">
-            <a href="#" class="button -bordered">Change postcode</a>
+            <a href="javascript: return false;" class="button -bordered">Change postcode</a>
           </div>
 
         </div>

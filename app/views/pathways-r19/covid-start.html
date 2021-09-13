@@ -1,0 +1,95 @@
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhsuk-frontend{% endblock %}
+
+{% block content %}
+
+<div class="measure">
+
+  <div class="content-block">
+
+    <h1 class="nhsuk-heading-xl">
+      Check your symptoms
+    </h1>
+    <p>
+      We will ask you some question to check if it might be coronavirus, and
+      tell you what to do next.
+    </p>
+    <div>
+      <a class="button" href="/pathways-r19/handle-covid-start">
+        Start now
+      </a>
+    </div>
+
+    <div class="content-seperator content-seperator--equalvertspacing--large"></div>
+
+    <h2 class="nhsuk-heading-l">
+      <span class="nhsuk-caption-l">
+        On NHS.UK:
+      </span>
+      Advice about coronavirus (COVID-19)
+    </h2>
+    <p>
+      NHS.UK has the latest advice and general information about coronavirus.
+    </p>
+    <p>
+      <a href="https://www.nhs.uk/something">
+        Go to NHS.UK for more coronavirus information and services
+      </a>
+    </p>
+
+    <div class="content-seperator content-seperator--equalvertspacing--large"></div>
+
+    <h2 class="nhsuk-heading-l">
+      Get an isolation note
+    </h2>
+    <h3 class="nhsuk-heading-s">
+      If you have symptoms
+    </h3>
+    <p>
+      If you need time off work <a href="#">check your symptoms first</a> and
+      we'll tell you how to get a note to give to your employer.
+    </p>
+    <h3 class="nhsuk-heading-s">
+      If you live with someone with symptoms
+    </h3>
+    <p>
+      You can also <a href="#">get an isolation note</a> if you have to stay at
+      home because someone you live with has symptoms.
+    </p>
+
+    <div class="content-seperator content-seperator--equalvertspacing--large"></div>
+
+    <h3 class="nhsuk-heading-s">Advice in other parts of the UK</h3>
+    <!-- NOTE updated links -->
+    <ul>
+      <li>
+        <a href="https://www.nhsinform.scot/illnesses-and-conditions/infections-and-poisoning/coronavirus-covid-19">
+          Check your symptoms in Scotland
+        </a>
+      </li>
+      <li>
+        <a href="https://www.nhsdirect.wales.nhs.uk/SelfAssessments/symptomcheckers/?ScName=CoronaVirusCOVID19&SCTId=175">
+          Check your symptoms in Wales
+        </a>
+      </li>
+      <li>
+        <a href="https://www.publichealth.hscni.net/news/covid-19-coronavirus">
+          Northern Ireland
+        </a>
+      </li>
+    </ul>
+
+  </div>
+
+</div>
+
+{% endblock %}
+
+{% set suppress_feedback = true %}
+{% block custom_feedback %}
+  {% set feedback_title = 'Help us improve this page' %}
+  {% include 'coronavirus/_components/feedback.html' %}
+{% endblock %}

@@ -36,6 +36,15 @@ router.get('/scenario-002-sexual-assault', function(req, res) {
   res.redirect('check-question');
 });
 
+router.get('/scenario-003-primary-care', function(req, res) {
+  // zero out a namespaced session obj
+  req.session.userJourney = {};
+  /*raw = fs.readFileSync('./data/user-journeys/scenario-001-ed.json');
+  journeyModel = JSON.parse(raw);
+  req.session.userJourney = journeyModel*/
+  res.redirect('/start');
+});
+
 // Part 1: check the question ++++++++++++++++++++++++++++++++++++++++++++++++++
 
 router.get('/check-question', function(req, res) {

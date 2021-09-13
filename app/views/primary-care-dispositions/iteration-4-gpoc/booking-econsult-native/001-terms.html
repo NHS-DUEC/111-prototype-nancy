@@ -1,0 +1,741 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>eConsult</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="shortcut icon" href="https://hedgeendmedicalcentre.webgp.com/assets/nhs/favicon-0993e8e58ef26218aff90cb9f9c7510e.ico"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="https://hedgeendmedicalcentre.webgp.com/assets/nhs/apple-touch-icon-17bee912378d6aef82964ff7c42f5038.png"/>
+    <link rel="icon" type="image/png" sizes="32x32" href="https://hedgeendmedicalcentre.webgp.com/assets/nhs/favicon-32x32-8289fb39ebcaff0a98ce2b0921609370.png"/>
+    <link rel="icon" type="image/png" sizes="16x16" href="https://hedgeendmedicalcentre.webgp.com/assets/nhs/favicon-16x16-b4f843a325943b19b10d30881d4e2cd6.png"/>
+    <link rel="manifest" href="https://hedgeendmedicalcentre.webgp.com/assets/nhs/manifest-7fe59e2c62a9554313cc999368cfba42.json"/>
+    <link rel="mask-icon" color="#5bbad5" href="https://hedgeendmedicalcentre.webgp.com/assets/nhs/safari-pinned-tab-bc05a5eb9c8a22077d665d007ca35bf1.svg"/>
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" href="/stylesheets/econsult.css">
+    <style type="text/css">
+      @font-face {
+        font-family: 'fontello-nhs';
+        src: url("/fonts/fontello-nhs.woff") format("woff");
+        font-weight: normal; font-style: normal;
+      }
+    </style>
+
+
+    <script type="text/javascript" src="https://hedgeendmedicalcentre.webgp.com/assets/application-3180467a48c50e48c1da09f7189eccb6.js" ></script>
+
+
+    <!--[if lte IE 8]>
+    <style>
+        body { max-height: 100%; float: left; position: relative; height: auto; }
+        html { height: auto; }
+    </style>
+    <![endif]-->
+    <!--[if lte IE 9]>
+        <script type="text/javascript" src="https://hedgeendmedicalcentre.webgp.com/assets/respond.min-a2684e9b8fa50d6d11c56a9ada068528.js" ></script>
+    <![endif]-->
+    <script>
+    if (navigator.userAgent.indexOf('MSIE') !== -1 || navigator.appVersion.indexOf('Trident/') > 0) {
+        if (navigator.userAgent.match('MSIE 10.0;')) {
+            $('html').addClass('ie10');
+        }
+        if (navigator.userAgent.match('MSIE 9.0;')) {
+            $('html').addClass('ie9');
+        }
+        if (navigator.userAgent.match('MSIE 8.0;')) {
+            var root = document.getElementsByTagName( 'html' )[0];
+            root.setAttribute( 'class', 'ie8' );
+        }
+
+    }
+
+    // Add touch support class to mobile devices to deal with sticky hover issues
+
+    var touchsupport = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0);
+    if (touchsupport){ // browser doesn't support touch
+        document.documentElement.className += "touch-support";
+    }
+    </script>
+
+
+
+
+
+
+        <meta name="robots" content="noindex, nofollow"/>
+
+
+
+
+
+
+
+
+</head>
+
+<body id="defaultBody">
+
+
+<noscript aria-hidden="true">
+    <meta HTTP-EQUIV="Refresh" CONTENT="0;URL=/noscript">
+</noscript>
+
+
+<!--[if lte IE 8]>
+<div style="position: absolute;
+    background: rgb(0, 101, 173);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;"></div>
+<div style="background: red;
+    position: absolute;
+    background: white;
+    top: 50px;
+    width: 50%;
+    padding: 60px;
+    margin-left: 25%;
+    box-sizing: border-box;
+    z-index: 1001;">
+    <h1>Your browser is no longer supported. Unfortunately you won't be able to use this site.</h1>
+    <h3>What can you do now?</h3>
+    <p>You can access this site by <a href="http://www.browsehappy.com" target="_blank" rel="noopener noreferrer">switching to any modern browser</a>. If you're using Internet Explorer, you will be able to access basic features from version 9 and above. </p>
+    <h3>Why isn't this browser supported?</h3>
+    <p>Older versions of Internet Explorer are unable to provide the features and security needed to give you a good experience on this site. </p>
+</div>
+<![endif]-->
+
+
+
+
+<header  aria-label="main-header" role="banner">
+
+    <a href="#content" class="sr-only">Skip to main content</a>
+    <div class="notice-banner-info notice-banner-ie">
+        <div class="wrapper">
+            We offer limited support for your version of the Internet Explorer browser. You can still use the site and complete a GP consultation, but
+            not everything will work and look great. If you can, try to <a href="http://www.browsehappy.com" target="_blank" rel="noopener noreferrer">upgrade to a modern browser</a>
+        </div>
+    </div>
+
+
+        <div class="contact-top wrapper">
+            <button id="mobileMenuTrigger" class="nav-trigger-mobile menu-btn"><div class="icon icon-menu"></div> <span class="sr-only">Menu</span></button>
+<nav class="pushy pushy-right" data-focus="#first-link" aria-label="Primary">
+    <div class="pushy-content">
+        <ul>
+            <li><a href="javascript: return false;" onClick="eConsult.reactConsultation.clearSessionStorage()">Home</a></li>
+            <li><a href="javascript: return false;">Consult about your condition</a></li>
+            <li><a href="javascript: return false;">Request general advice</a></li>
+            <li><a href="javascript: return false;" onClick="eConsult.reactConsultation.clearSessionStorage()">Administrative queries</a></li>
+            <li><a href="javascript: return false;">Consult for your child</a></li>
+            <li><a href="javascript: return false;">How it works</a></li>
+
+                <li>
+                    <a href="javascript: return false;">Contact NHS 111</a>
+                </li>
+
+
+                <li><a href="javascript: return false;" class="practice-website external-link">Practice website</a></li>
+
+        </ul>
+        <div class="contact-details-nav">
+            <span>Telephone: </span>01234 123 123
+
+
+        </div>
+    </div>
+</nav>
+<div class="site-overlay"></div>
+
+        </div>
+        <div class="wrapper-title">
+            <div class="wrapper">
+                <h1 class="title-text">
+                    <a href="/" onClick="eConsult.reactConsultation.clearSessionStorage()">{{ session.usersGP.name }}</a>
+                </h1>
+            </div>
+        </div>
+
+</header>
+
+
+<div class="modal fade" id="sessionAlert" role="complementary" aria-label="session-timeout-notification">
+    <div class="modal-dialog notice-modal-demo" role="document">
+        <div class="modal-content">
+
+            <div class="modal-body">
+                <h1>Your consultation has been in progress for over 60 minutes, do you wish to continue working on it?</h1>
+                <button type="button" class="btn" onclick="keepAliveReset();">Yes, keep my consultation open</button>
+                <div><a href="/" class="btn-prev">End my consultation (my data will be lost)</a></div>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+
+        <header class="header-highlight" aria-label="page-header">
+            <div class="wrapper">
+                <div class="header-highlight-title">
+                    <h1>We're about to ask you a few questions about your problem</h1>
+                </div>
+            </div>
+        </header>
+
+        <section id="content" class="wrapper consultation-wrapper cleared">
+
+        <div class="row">
+            <div class="col col--xs-12 col--sm-12 col--md-9 col--lg-9">
+
+        <h1 id="privacyWarning" class="messageBox error hide">
+            To continue, you must read and agree to the privacy notice and consent to the terms
+        </h1>
+
+        <p class="intro-text">{{ session.usersGP.name }} will respond to you by phone or email
+
+                    <strong>before 6:30PM on Monday, 9th of December.</strong>
+
+            </p>
+        <p class="intro-text">Your answers will be sent securely to your practice.</p>
+        <div class="consultation-box" id="consultationRules">
+            <div class="messageBox error hide"></div>
+            <div class="field-wrapper field-wrapper-checkbox">
+                <div class="checkbox-wrapper disclaimerWrapper">
+                    <input class="checkbox-input-plain consultationRule-item" id="privacyConfirm" name="privacyConfirm" type="checkbox" aria-required="true"/>
+                    <label class="checkbox-label-plain" for="privacyConfirm">
+                        I have read the <a id="privacyLink" href="#" data-toggle="modal" data-target="#privacy" onclick="new VirtualPageView(true).sendVirtualPageView(['consult/conjunctivitis/viewPrivacyNotice'],'Privacy link clicked');">privacy notice</a>,
+                        and I consent to eConsult Health Ltd (an NHS-approved third-party organisation) using my personal and health data to provide an online consultation. I can withdraw my consent at any time by abandoning the form.
+                    </label>
+                </div>
+            </div>
+            <div class="field-wrapper field-wrapper-checkbox">
+                <div class="checkbox-wrapper disclaimerWrapper">
+                    <input class="checkbox-input-plain consultationRule-item" id="sharingConfirm" name="sharingConfirm" type="checkbox" aria-required="true"/>
+                    <label class="checkbox-label-plain" for="sharingConfirm">
+                        I consent to eConsult Health Ltd sharing my personal and health data with {{ session.usersGP.name }}.
+                    </label>
+                </div>
+            </div>
+
+            <a href="javascript: return false;" id="startConsultation">
+                <button type="button" class="btn btn-xlarge">Start</button>
+            </a>
+        </div>
+
+            </div>
+        </div>
+
+
+    <script type="text/javascript" src="https://hedgeendmedicalcentre.webgp.com/assets/pc/pc-flow-cb3b3328efd17c350ed52d82f8d63744.js" ></script>
+
+
+
+        </section>
+
+
+
+
+
+        <div class="modal fade" id="privacy" role="complementary" aria-label="privacy-notification">
+            <div class="modal-dialog notice-modal-terms" role="document">
+                <div class="modal-content">
+                    <button id="privacyClose" type="button" class="btn-close" data-dismiss="modal">x</button>
+                    <div class="modal-body static">
+
+<h1>Consent for specific processing</h1>
+<p>This and the below Privacy Notice explains the ways in which we, eConsult Health Limited, trading as eConsult intend to process your data, as a controller, in order to deliver the services using this website. We do not need your consent when we process your personal data for the purpose of fulfilling our contractual obligations to you, complying with our own legal obligations, or for our own legitimate interests.</p>
+<p>Our processing activities listed detail the consent you agree to:
+    <ol>
+        <li>I agree to you using my data, including health related data, to provide an online consultation. I can withdraw my consent at any time <strong>before submitting the form by simply abandoning the form. </strong></li>
+        <li>I agree that my information, including health data, may be shared with the GP I select or that I may receive instead a recommendation to seek more urgent care. This does not affect my right or freedom to consult my GP</li>
+    </ol>
+</p>
+
+<h1>eConsult Primary Care Privacy Notice</h1>
+
+<h2>INTRODUCTION</h2>
+
+<p>Welcome to eConsult Health Limited’s privacy notice.</p>
+
+<p>eConsult Health Limited, trading under eConsult and WebGP, respects your privacy and is committed to protecting your personal data. This privacy notice will inform you as to how we look after your personal data when you visit our website and tell you about your privacy rights and how the law protects you.</p>
+
+<p>This privacy notice is provided in a layered format so you can click through to the specific areas set out below.  Please also use the Glossary to understand the meaning of some of the terms used in this privacy notice.</p>
+
+<ol>
+    <li><a href="#information">IMPORTANT INFORMATION AND WHO WE ARE</a></li>
+    <li><a href="#data">THE DATA WE COLLECT ABOUT YOU</a></li>
+    <li><a href="#collection">HOW IS YOUR PERSONAL DATA COLLECTED</a></li>
+    <li><a href="#use">HOW WE USE YOUR PERSONAL DATA</a></li>
+    <li><a href="#disclosures">DISCLOSURES OF YOUR PERSONAL DATA</a></li>
+    <li><a href="#international">INTERNATIONAL TRANSFERS</a></li>
+    <li><a href="#security">DATA SECURITY</a></li>
+    <li><a href="#retention">DATA RETENTION</a></li>
+    <li><a href="#rights">YOUR LEGAL RIGHTS</a></li>
+    <li><a href="#glossary">GLOSSARY</a></li>
+</ol>
+
+<h2 id="information">1. IMPORTANT INFORMATION AND WHO WE ARE</h2>
+
+<h3>PURPOSE OF THIS PRIVACY NOTICE</h3>
+
+<p>This privacy notice aims to give you information on how eConsult Health Limited collects and processes your personal data through your use of the eConsult primary care website.
+The eConsult primary care website is not intended for children.  Any data relating to a child needs to be provided by their legal guardian.
+It is important that you read this privacy notice together with any other privacy notice or fair processing notice we may provide on specific occasions when we are collecting or processing personal data about you so that you are fully aware of how and why we are using your data. This privacy notice supplements the other notices and is not intended to override them.</p>
+
+<h3>CONTROLLER</h3>
+
+<p>eConsult Health Limited is the controller and responsible for the eConsult primary care website.</p>
+
+<p>We have appointed a data protection officer (DPO) who is responsible for overseeing questions in relation to this privacy notice. If you have any questions about this privacy notice, including any requests to exercise <em>your legal rights</em>, please contact the DPO using the details set out below.</p>
+
+<h3>CONTACT DETAILS</h3>
+
+<p>Our full details are:</p>
+<p>Full name of legal entity: eConsult Health Limited</p>
+<p>Email address: <a href="mailto:privacy@webgp.com" target="_blank">privacy@webgp.com</a></p>
+<p>Postal address: 3rd Floor, Moorfoot House, 221 Marsh Wall, London E14 9FJ</p>
+<p>Telephone number: <strong>020 3126 4406</strong></p>
+
+<p>You have the right to make a complaint at any time to the Information Commissioner’s Office (ICO), the UK supervisory authority for data protection issues (<a href="http://www.ico.org.uk" target="_blank">www.ico.org.uk</a>). We would, however, appreciate the chance to deal with your concerns before you approach the ICO, so please contact us at <a href="mailto:privacy@webgp.com" target="_blank">privacy@webgp.com</a> in the first instance.</p>
+
+<h3>CHANGES TO THE PRIVACY NOTICE AND YOUR DUTY TO INFORM US OF CHANGES</h3>
+
+<p>This version was last updated in October 2019.</p>
+
+<p>It is important that the personal data we hold about you is accurate and current. Please keep us informed if your personal data changes during your relationship with us.</p>
+
+<h3>THIRD-PARTY LINKS</h3>
+
+<p>This website may include links to third-party websites, plug-ins and applications. Clicking on those links or enabling those connections may allow third parties to collect or share data about you. We do not control these third-party websites and are not responsible for their privacy statements. When you leave our website, we encourage you to read the privacy notice of every website you visit.</p>
+
+
+<h2 id="data">2. THE DATA WE COLLECT ABOUT YOU</h2>
+
+<p>Personal data, or personal information, means any information about an individual from which that person can be identified. It does not include data where the identity has been removed (anonymous data).</p>
+<p>We may collect, use, store and transfer different kinds of personal data about you which we have grouped together, as follows:</p>
+
+<ol>
+    <li><strong>Identity Data</strong> includes name, gender, date of birth, address, telephone number, email, optional NHS number.</li>
+    <li><strong>Contact Data</strong> includes email address and telephone numbers.</li>
+    <li><strong>Technical Data</strong> includes internet protocol (IP) address, your login data, browser type and version, time zone setting and location, browser plug-in types and versions, operating system and platform and other technology on the devices you use to access this website.</li>
+    <li><strong>Special Categories of Data</strong> includes sensitive medical details such as symptoms, conditions, biometrics, family history, medication and any other health data you provide to us by filling the form on the website.</li>
+    <li><strong>Usage Data</strong> includes information about how you use our website, products and services.</li>
+</ol>
+
+<p>We also collect, use and share <strong>Aggregated Data</strong> such as statistical or demographic data for any purpose. Aggregated Data may be derived from your personal data but is not considered personal data in law as this data does <strong>not</strong> directly or indirectly reveal your identity. For example, we may aggregate your Usage Data to calculate the percentage of users accessing a specific website feature. However, if we combine or connect Aggregated Data with your personal data so that it can directly or indirectly identify you, we treat the combined data as personal data which will be used in accordance with this privacy notice.</p>
+
+<p>Please note that if you access our service using your NHS login details, the identity verification services are managed by NHS Digital. NHS Digital is the controller for any personal information you provided to NHS Digital to get an NHS login account and verify your identity, and uses that personal information solely for that single purpose. For this personal information, our role is a “processor” only and we must act under the instructions provided by NHS Digital (as the “controller”) when verifying your identity. To see NHS Digital’s Privacy Notice and Terms and Conditions, please <a href="https://account.login.nhs.uk/#/account/termsofuse/privacynotice" target="_blank">click here</a>. This restriction does not apply to the personal information you provide to us separately.</p>
+
+<h3>IF YOU FAIL TO PROVIDE PERSONAL DATA</h3>
+
+<p>Where we need to collect personal data in order for the information to be forwarded via the eConsult website to the GP practice you have chosen and you fail to provide that data when requested, we may not be able to send the information to the GP practice.  This does not affect your ability and freedom to visit your medical practitioner.</p>
+
+
+<h2 id="collection">3. HOW IS YOUR PERSONAL DATA COLLECTED?</h2>
+
+<p>We use different methods to collect data from and about you including through:</p>
+<ol>
+    <li><strong>Direct interactions</strong>. You may give us your Identity, Contact and Special Categories of Data by filling in forms or by <strong>Automated technologies or interactions</strong>. As you interact with our website, we may automatically collect Technical Data about your equipment, browsing actions and patterns. We collect this personal data by using cookies, server logs and other similar technologies. We may also receive Technical Data about you if you visit other websites employing our cookies. Please see our <a href="#cookies">cookie policy</a> for further details.</li>
+    <li><strong>Third parties or publicly available sources</strong>. We may receive personal data about you from various third parties and public sources as set out below such as Survey Gizmo, if you have chosen to take the optional survey we send you.</li>
+</ol>
+
+
+<h2 id="use">4. HOW WE USE YOUR PERSONAL DATA</h2>
+
+<p>We will only use your personal data when the law allows us to. Most commonly, we will use your personal data in the following circumstances:</p>
+
+<ol>
+    <li>Where we need to perform the contract we are about to enter into or have entered into with you.</li>
+    <li>Where it is necessary for our legitimate interests (or those of a third party) and your interests and fundamental rights do not override those interests.</li>
+    <li>Where we need to comply with a legal or regulatory obligation.</li>
+    <li>Where you provide your consent (when using our website)</li>
+</ol>
+
+<p>Click <a href="#glossary">here</a> to find out more about the types of lawful basis that we will rely on to process your personal data.</p>
+<p>In relation to <strong>Special Category of Data</strong>, we rely on your explicit consent.
+In order to operate the website and online consultation, we use <strong>profiling and automated decision making tools</strong>. Further information on the use of automated decision making and profiling can be found by clicking <a href="#automatedDecisionMaking">here</a>.</p>
+
+<h3>PURPOSES FOR WHICH WE WILL USE YOUR PERSONAL DATA</h3>
+
+<p>We have set out below, in a table format, a description of all the ways we plan to use your personal data, and which of the legal bases we rely on to do so. We have also identified what our legitimate interests are where appropriate.</p>
+<p>Note that we may process your personal data for more than one lawful ground depending on the specific purpose for which we are using your data. Please contact us at <a href="mailto:privacy@webgp.com" target="_blank">privacy@webgp.com</a> if you need details about the specific legal ground we are relying on to process your personal data where more than one ground has been set out in the table below.</p>
+
+<div class="table-wrapper">
+<table>
+    <tr>
+        <th>Purpose/Activity</th>
+        <th>Type of data</th>
+        <th>Lawful basis for processing including basis of legitimate interest</th>
+        <th>Retention period</th>
+    </tr>
+    <tr>
+        <td>To enable you to have access to an online consultation and, using profiling and automated decision making, either to send your details to your chosen GP practice, which may be via a third party such as Advanced (see Section 10) or instead to recommend that you seek more urgent care</td>
+        <td>
+            (a) Identity<br/>
+            (b) Contact<br/>
+            (c) Special Category of Data
+        </td>
+        <td>Consent/Explicit Consent</td>
+        <td>
+            Identity and Contact information are held for a maximum of 5 weeks, to enable safe processing, after which they are automatically deleted.
+            We only control and process the Special Category of Data until you complete your online consultation, as the information is deleted from our systems as soon as it is sent to the GP practice or third party processor as soon as the recommendation to seek more urgent care has been displayed to you.
+            The third party processor will retain the Special Category of Data as well as contact data and identity data, until it is accessed by your GP practice.
+        </td>
+    </tr>
+    <tr>
+        <td>To provide you with technical support at your request when using our website</td>
+        <td>(a) Identity</td>
+        <td>Necessary to perform the contract with you</td>
+        <td>6 years</td>
+    </tr>
+    <tr>
+        <td>To manage our relationship with you by asking you to leave a review or take a survey</td>
+        <td>
+            (a) Identity<br/>
+            (b) Contact<br/>
+            (c) Profile
+        </td>
+        <td>Consent</td>
+        <td>7 days (identity, contact, profile)</td>
+    </tr>
+    <tr>
+        <td>To manage our relationship with you by reviewing the survey results received from Survey Gizmo</td>
+        <td>
+            (a) Identity<br/>
+            (b) Contact<br/>
+            (c) Profile
+        </td>
+        <td>Consent</td>
+        <td>2 months after the survey results are received</td>
+    </tr>
+    <tr>
+        <td>To obtain feedback on our product from users</td>
+        <td>Anonymous data</td>
+        <td>N/A</td>
+        <td>Up to 1 year</td>
+    </tr>
+    <tr>
+        <td>To administer and protect our business and this website (including troubleshooting, data analysis, testing, system maintenance, support, reporting and hosting of data)</td>
+        <td>
+            (a) Identity<br/>
+            (b) Contact<br/>
+            (c) Technical
+        </td>
+        <td>Necessary for our legitimate interests (for running our business, provision of administration and IT services, network security, to prevent fraud and in the context of a business reorganisation or group restructuring exercise)</td>
+        <td>Up to 6 years</td>
+    </tr>
+</table>
+</div>
+
+<h3 id="cookies">COOKIES</h3>
+
+<p>You can set your browser to refuse all or some browser cookies, or to alert you when websites set or access cookies. If you disable or refuse cookies, please note that some parts of this website may become inaccessible or not function properly. </p>
+
+<h4>Strictly Necessary Cookies</h4>
+<div class="table-wrapper">
+<table>
+    <tr>
+        <th>Cookie</th>
+        <th>Name</th>
+        <th>Purpose</th>
+        <th>More information</th>
+    </tr>
+    <tr>
+        <td>jsessionid</td>
+        <td>Session ID</td>
+        <td>The cookie is essential for the user (once they have logged in) to be identified by our server, so that they can view their private data.</td>
+        <td>The cookie exists solely for the length of the session, which expires after 30 minutes of inactivity.</td>
+    </tr>
+</table>
+</div>
+
+<h4>Statistics Cookies</h4>
+<div class="table-wrapper">
+<table>
+    <tr>
+        <th>Cookie</th>
+        <th>Name</th>
+        <th>Purpose</th>
+    </tr>
+    <tr>
+        <td>_ga, __utma, __utmz, _gat</td>
+        <td>Google Analytics</td>
+        <td>Aggregated, anonymised user tracking</td>
+    </tr>
+    <tr>
+        <td>_pk_id, _pk_ref, _pk_ses</td>
+        <td>Piwik/Matomo</td>
+        <td>Aggregated, anonymised user tracking, </td>
+    </tr>
+    <tr>
+        <td>_hjUserId, _hjClosedSurveyInvites, _hjDonePolls, _hjMinimizedPolls, _hjDoneTestersWidgets, _hjMinimizedTestersWidgets, _hjIncludedInSample</td>
+        <td>HotJar</td>
+        <td>Collects public information about what users are doing on the site, in order to improve our service</td>
+    </tr>
+</table>
+</div>
+<h3 id="automatedDecisionMaking">AUTOMATED DECISION MAKING AND PROFILING</h3>
+
+<p>The Identity Data, Contact Data and Special Category of Data you provide to us are used to determine whether you should seek more urgent care or be put in contact with a GP, using automated decision making and profiling technology. The profiling and automated decision making are based on a number of criteria developed with medical doctors and are updated on a regular basis in line with medical developments.  If you require more information on the profiling and automated decision making, you can contact us at <a href="mailto:privacy@webgp.com" target="_blank">privacy@webgp.com</a>.</p>
+
+<p>This profiling and automated decision making does not have a legal or other significant effect on you as, irrespective of the outcome of such profiling and automated decision making, you are free to visit your GP for a consultation. You can also fill in another form to provide different, updated information on the website and you can also speak to your GP and provide them with any information.</p>
+
+<h3>CHANGE OF PURPOSE</h3>
+
+<p>We will only use your personal data for the purposes for which we collected it, unless we reasonably consider that we need to use it for another reason and that reason is compatible with the original purpose. If you wish to get an explanation as to how the processing for the new purpose is compatible with the original purpose, please contact us at <a href="mailto:privacy@webgp.com" target="_blank">privacy@webgp.com</a>.</p>
+
+<p>If we need to use your personal data for an unrelated purpose, we will notify you and we will explain the legal basis which allows us to do so.</p>
+
+<p>Please note that we may process your personal data without your knowledge or consent, in compliance with the above rules, where this is required or permitted by law.</p>
+
+
+<h2 id="disclosures">5. DISCLOSURES OF YOUR PERSONAL DATA</h2>
+
+<p>We may have to share your personal data with the parties set out below for the purposes set out in the table in paragraph 4 above.</p>
+
+<ol>
+    <li>External Third Parties as set out in the <a href="#glossary">Glossary</a>.</li>
+    <li>Third parties to whom we may choose to sell, transfer, or merge parts of our business or our assets. Alternatively, we may seek to acquire other businesses or merge with them. If a change happens to our business, then the new owners may use your personal data in the same way as set out in this privacy notice.</li>
+</ol>
+
+<p>We require all third parties to respect the security of your personal data and to treat it in accordance with the law. We do not allow our third-party service providers to use your personal data for their own purposes and only permit them to process your personal data for specified purposes and in accordance with our instructions.</p>
+
+
+<h2 id="international">6. INTERNATIONAL TRANSFERS</h2>
+
+<p>We do not transfer your personal data outside the European Economic Area (EEA).</p>
+
+
+<h2 id="security">7. DATA SECURITY</h2>
+
+<p>We have put in place appropriate security measures to prevent your personal data from being accidentally lost, used or accessed in an unauthorised way, altered or disclosed. In addition, we limit access to your personal data to those employees, agents, contractors and other third parties who have a business need to know. They will only process your personal data on our instructions and they are subject to a duty of confidentiality.</p>
+
+<p>We have put in place procedures to deal with any suspected personal data breach and will notify you and any applicable regulator of a breach where we are legally required to do so.</p>
+
+
+<h2 id="retention">8. DATA RETENTION</h2>
+
+<h3>HOW LONG WILL YOU USE MY PERSONAL DATA FOR?</h3>
+
+<p>We will only retain your personal data for as long as necessary to fulfil the purposes we collected it for, including for the purposes of satisfying any legal, accounting, or reporting requirements.</p>
+
+<p>To determine the appropriate retention period for personal data, we consider the amount, nature, and sensitivity of the personal data, the potential risk of harm from unauthorised use or disclosure of your personal data, the purposes for which we process your personal data and whether we can achieve those purposes through other means, and the applicable legal requirements.</p>
+
+<p>Details of retention periods for different aspects of your personal data are set out in the table in paragraph 4 above.</p>
+
+<p>In some circumstances we may anonymise your personal data (so that it can no longer be associated with you) for research or statistical purposes in which case we may use this information indefinitely without further notice to you.</p>
+
+
+<h2 id="rights">9. YOUR LEGAL RIGHTS</h2>
+
+<p>Under certain circumstances, you have rights under data protection laws in relation to your personal data. Please click on the links below to find out more about these rights:</p>
+
+<ol>
+    <li><a href="https://ico.org.uk/for-organisations/guide-to-the-general-data-protection-regulation-gdpr/individual-rights/right-of-access/" target="_blank">Request access to your personal data</a></li>
+    <li><a href="https://ico.org.uk/for-organisations/guide-to-the-general-data-protection-regulation-gdpr/individual-rights/right-to-rectification/" target="_blank">Request correction of your personal data</a></li>
+    <li><a href="https://ico.org.uk/for-organisations/guide-to-the-general-data-protection-regulation-gdpr/individual-rights/right-to-erasure/" target="_blank">Request erasure of your personal data</a></li>
+    <li><a href="https://ico.org.uk/for-organisations/guide-to-the-general-data-protection-regulation-gdpr/individual-rights/right-to-object/" target="_blank">Object to processing of your personal data</a></li>
+    <li><a href="https://ico.org.uk/for-organisations/guide-to-the-general-data-protection-regulation-gdpr/individual-rights/right-to-restrict-processing/" target="_blank">Request restriction of processing your personal data</a></li>
+    <li><a href="https://ico.org.uk/for-organisations/guide-to-the-general-data-protection-regulation-gdpr/individual-rights/right-to-data-portability/" target="_blank">Request transfer of your personal data</a></li>
+    <li>Right to withdraw consent</li>
+</ol>
+
+<p>If you wish to exercise any of the rights set out above, please <a href="mailto:privacy@webgp.com" target="_blank">contact us at privacy@webgp.com</a>.</p>
+
+<h3>NO FEE USUALLY REQUIRED</h3>
+
+<p>You will not have to pay a fee to access your personal data (or to exercise any of the other rights). However, we may charge a reasonable fee if your request is clearly unfounded, repetitive or excessive. Alternatively, we may refuse to comply with your request in these circumstances.</p>
+
+<h3>WHAT WE MAY NEED FROM YOU</h3>
+
+<p>We may need to request specific information from you to help us confirm your identity and ensure your right to access your personal data (or to exercise any of your other rights). This is a security measure to ensure that personal data is not disclosed to any person who has no right to receive it. We may also contact you to ask you for further information in relation to your request to speed up our response.</p>
+
+<h3>TIME LIMIT TO RESPOND</h3>
+
+<p>We try to respond to all legitimate requests within one month. Occasionally it may take us longer than a month if your request is particularly complex or you have made a number of requests. In this case, we will notify you and keep you updated.</p>
+
+
+<h2 id="glossary">10. GLOSSARY</h2>
+
+<h3>LAWFUL BASIS</h3>
+
+<p><strong>Legitimate Interest</strong> means the interest of our business in conducting and managing our business to enable us to give you the best service/product and the best and most secure experience. We make sure we consider and balance any potential impact on you (both positive and negative) and your rights before we process your personal data for our legitimate interests. We do not use your personal data for activities where our interests are overridden by the impact on you (unless we have your consent or are otherwise required or permitted to by law). You can obtain further information about how we assess our legitimate interests against any potential impact on you in respect of specific activities by <a href="mailto:privacy@webgp.com" target="_blank">contacting us at privacy@webgp.com</a>. </p>
+
+<p><strong>Performance of Contract</strong> means processing your data where it is necessary for the performance of a contract to which you are a party or to take steps at your request before entering into such a contract.</p>
+
+<p><strong>Comply with a legal or regulatory obligation</strong> means processing your personal data where it is necessary for compliance with a legal or regulatory obligation that we are subject to.</p>
+
+<p><strong>Consent</strong> means a consent you have provided for the particular processing activity.</p>
+
+<p>Explicit Consent means a consent you have provided explicitly for the particular processing activity relating to Special Categories of Data.</p>
+
+<h3>THIRD PARTIES</h3>
+
+<h3>EXTERNAL THIRD PARTIES</h3>
+
+<ol>
+    <li>Service providers acting as processors based in the EU who provide IT and system administration services, such as Advanced Health and Care Limited, trading as Advanced or Docman.</li>
+    <li>GP practice (chosen by you) acting as a controller who will receive the online consultation form you fill in on our website, unless we recommend that you go to seek more urgent care. The GP practice may have an extended practice network that they decide to share the consultation with. Please refer to your GP practice privacy notice for further detail.</li>
+    <li>Please note that the information you provide on this website is sent to the GP practice (which may be via Advanced, a third party hosting provider) that YOU have selected.  We are not responsible if you select a practice that you are not registered with as a patient and/or if, as a result, you do not get a response from that practice.  We are not responsible either for any delay or lack of response by the practice you have selected. If your GP practice fails to retrieve your data from Advanced, Advanced will contact the practice.</li>
+    <li>Email service provider, who will send confirmation emails to you (identity, contact, profile, special categories of data)</li>
+    <li>Third party survey providers, such as Survey Gizmo</li>
+</ol>
+
+<h3>YOUR LEGAL RIGHTS</h3>
+
+<p>You have the right to:</p>
+
+<p><strong>Request access</strong> to your personal data (commonly known as a “data subject access request”). This enables you to receive a copy of the personal data we hold about you and to check that we are lawfully processing it.</p>
+
+<p><strong>Request correction</strong> of the personal data that we hold about you. This enables you to have any incomplete or inaccurate data we hold about you corrected, though we may need to verify the accuracy of the new data you provide to us.</p>
+
+<p><strong>Request erasure</strong> of your personal data. This enables you to ask us to delete or remove personal data where there is no good reason for us continuing to process it. You also have the right to ask us to delete or remove your personal data where you have successfully exercised your right to object to processing (see below), where we may have processed your information unlawfully or where we are required to erase your personal data to comply with local law. Note, however, that we may not always be able to comply with your request of erasure for specific legal reasons which will be notified to you, if applicable, at the time of your request.</p>
+
+<p><strong>Object to processing</strong> of your personal data where we are relying on a legitimate interest (or those of a third party) and there is something about your particular situation which makes you want to object to processing on this ground as you feel it impacts on your fundamental rights and freedoms. You also have the right to object where we are processing your personal data for direct marketing purposes. In some cases, we may demonstrate that we have compelling legitimate grounds to process your information which override your rights and freedoms.</p>
+
+<p><strong>Request restriction</strong> of processing of your personal data. This enables you to ask us to suspend the processing of your personal data in the following scenarios: (a) if you want us to establish the data’s accuracy; (b) where our use of the data is unlawful but you do not want us to erase it; (c) where you need us to hold the data even if we no longer require it as you need it to establish, exercise or defend legal claims; or (d) you have objected to our use of your data but we need to verify whether we have overriding legitimate grounds to use it.</p>
+
+<p><strong>Request the transfer</strong> of your personal data to you or to a third party. We will provide to you, or a third party you have chosen, your personal data in a structured, commonly used, machine-readable format. Note that this right only applies to automated information which you initially provided consent for us to use or where we used the information to perform a contract with you.</p>
+
+<p><strong>Withdraw consent</strong> at any time where we are relying on consent to process your personal data. However, this will not affect the lawfulness of any processing carried out before you withdraw your consent. If you withdraw your consent, we may not be able to provide certain products or services to you. We will advise you if this is the case at the time you withdraw your consent.</p>
+
+
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+
+
+
+
+
+
+
+        <script type="text/javascript" src="https://hedgeendmedicalcentre.webgp.com/assets/suppressEmojis-0fc1729bd598f4513c4e47ac2565b398.js" ></script>
+
+
+
+
+
+
+
+
+<footer class="footer-primary" id="footerSecondary">
+    <!-- eConsult: release 6.39.0 -->	<div class="wrapper">
+        <nav class="footer-list" id="footerList" aria-label="footer-nav">
+            <ul>
+                <li><a href="mailto:support&#64;webgp.com">Technical support</a></li>
+                <li><a href="javascript: return false;">Help us improve</a></li>
+            </ul>
+            <ul>
+                <li><a href="javascript: return false;">Accessibility</a></li>
+                <li><a href="javascript: return false;">Disclaimer</a></li>
+                <li><a href="javascript: return false;">Privacy policy</a></li>
+                <li><a href="javascript: return false;">Terms of use</a></li>
+            </ul>
+        </nav>
+        <div class="footer-small-wrapper">
+            <img src="https://hedgeendmedicalcentre.webgp.com/assets/portal/eConsult-logo-45143f349c51b6628867641cfec8c17b.svg" alt="eConsult logo" class="footer-small-logo"/>
+            <div>
+                <button class="footer-list-toggle-button" id="footerListToggleButton" onClick="eConsult.reactConsultation.toggleFooterListMenu()">Privacy policy, Terms and more</button>
+                <small class="footer-cr">Copyright &copy; eConsult Health Ltd 2019</small>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+<script type="text/javascript" src="https://hedgeendmedicalcentre.webgp.com/assets/reactConsultation-133552a1501a177c070eb9e602f12440.js" ></script>
+<script type="text/javascript" src="https://hedgeendmedicalcentre.webgp.com/assets/patientCore-a4c1bc8f52a09ab68ccc37fba1de4f5a.js" ></script>
+
+
+
+
+<script type="application/javascript">
+        $('document').ready(function() {
+            eConsult.reactConsultation.clearSessionStorage(); // If user has started a new consultation clear the QPP consultation from sessionStorage
+            eConsult.pcFlow.initPrivacyDisclaimers(false, '{{ session.usersGP.name }}');
+            $('#completedConsultation').modal('hide');
+
+        });
+    </script><script >
+     $('document').ready(function() {
+
+            // Consultation guide
+
+             var faqSec = $('#consultationGuide'),
+             faqTrig = $('#guideTrigger'),
+             faqClose = $('#howtoCloseTrigger');
+
+            faqSec.hide();
+
+             faqTrig.click(function(){
+                 faqSec.slideToggle();
+                 return false;
+             });
+
+             faqClose.click(function(){
+                 faqSec.slideUp();
+             });
+
+
+            // Fix wizard to top of page
+            var  $breadcrumbWiz =  $("#breadcrumbWizard"),
+                 $contentArea =  $("#content"),
+                 contentPos = $contentArea.offset(),
+                 window_w = $(window).width();
+
+            if ( window_w > 480 ) {
+                $(window).scroll(function () {
+                    if ($(window).scrollTop() >= contentPos.top) {
+                        $breadcrumbWiz.addClass("fixed");
+                    } else {
+                        $breadcrumbWiz.removeClass("fixed");
+                    }
+                });
+            }
+
+     });
+</script><script >
+        var keepAliveTimeout = 3;
+        var keepAliveFrequency = 900000;
+
+        var keepAliveIterations = 0;
+        var keepAliveInterval;
+        var keepAliveReset = function() {
+            keepAliveIterations = 0;
+            keepAliveInterval = setInterval(function() {keepAliveFunction()}, keepAliveFrequency);
+            $('#sessionAlert').modal('hide');
+            $('#sessionAlert').trigger('timeout-modal-hidden');
+            $.ajax({
+                    url: "/keepAlive",
+                    method: "POST"
+            });
+        }
+        var keepAliveFunction = function() {
+            if (keepAliveIterations++ < keepAliveTimeout) {
+                $.ajax({
+                    url: "/keepAlive",
+                    method: "POST"
+                });
+            } else {
+                // Prompt user to keep session alive, if they confirm, reset keepAliveIteratons to zero
+                $('#sessionAlert').modal('show');
+                $('#sessionAlert').trigger('timeout-modal-opened');
+                clearInterval(keepAliveInterval);
+                //console.log("Cancelling keep alive interval");
+            }
+        };
+
+        $('document').ready(function() {
+            // Keep alive Ajax call
+            keepAliveInterval = setInterval(function() {keepAliveFunction()}, keepAliveFrequency);
+        });
+    </script>
+</body>
+</html>

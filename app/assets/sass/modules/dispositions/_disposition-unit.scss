@@ -27,15 +27,17 @@
     left: 0;
     width: $baseline-grid-unit*6;
     height: $baseline-grid-unit*6;
+    line-height: $baseline-grid-unit*6;
     border-radius: 100%;
-    border: $baseline-grid-unit/2 solid $grey-5;
+    border: $baseline-grid-unit/2 solid $grey-3;
     background-color: $white;
     text-align: center;
     @include media(mid) {
       width: $baseline-grid-unit*8;
       height: $baseline-grid-unit*8;
+      line-height: $baseline-grid-unit*8;
       border-radius: 100%;
-      border: $baseline-grid-unit solid $grey-5;
+      border: $baseline-grid-unit solid $grey-3;
       background-color: $white;
       text-align: center;
     }
@@ -47,8 +49,8 @@
     top: $baseline-grid-unit*7;
     left: ($baseline-grid-unit*4) - 2;
     z-index: 1;
-    border-left: solid $baseline-grid-unit/2 $grey-5;
-    height: 100%;
+    border-left: solid $baseline-grid-unit/2 $grey-3;
+    height: 102%;
     @include media(mid) {
       top: $baseline-grid-unit*9;
       left: ($baseline-grid-unit*5) - 2;

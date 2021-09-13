@@ -1,0 +1,50 @@
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhsuk-frontend{% endblock %}
+
+{% block content %}
+
+<div class="measure">
+
+  <div class="content-block">
+    <h1>We’ve found services that can help</h1>
+    <p>
+      To help the pharmacist or nurse decide if it's safe to give you the
+      medicine they'll:
+    </p>
+    <ul>
+      <li>check your records to see what you're regularly prescribed</li>
+      <li>ask you some questions to make sure you're ok</li>
+    </ul>
+
+    <h2>Pay standard NHS charges with a referral</h2>
+    <p>
+      Some pharmacists are working with the NHS to charge standard prices for
+      emergency repeat prescriptions.
+    </p>
+    <p>
+      You can refer yourself if there’s one in your area.
+    </p>
+    <p>
+      Other places might ask you to pay for a private prescription,
+      even if you are usually exempt.
+    </p>
+  </div>
+  <div class="shunt-2">
+
+    {% if session.emergency_prescription_journey_type === 'goto' %}
+      {% set url = 'service/goto/goto-service-view' %}
+    {% elif session.emergency_prescription_journey_type === 'cas' %}
+      {% set url = 'service/cas/cas-start' %}
+    {% else %}
+      {% set url = 'service/numsas/numsas-service-view-stage-1' %}
+    {% endif %}
+
+    <a href="{{ url }}" class="button">Show me services that can help</a>
+  </div>
+
+</div>
+
+{% endblock %}

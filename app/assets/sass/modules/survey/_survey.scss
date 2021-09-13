@@ -1,0 +1,16 @@
+.micro-survey {
+  background-color: $grey-5;
+}
+
+.microsurvey-unit {
+  border-top: $baseline-grid-unit solid tint($yellow, 50);
+}
+
+.inline-radios .block-label {
+  display: inline-block;
+  margin-left: 40px;
+
+  &:first-of-type {
+    margin-left: 0;
+  }
+}

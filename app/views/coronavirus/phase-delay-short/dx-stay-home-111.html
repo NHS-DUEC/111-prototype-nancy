@@ -1,0 +1,77 @@
+{% set suppress_feedback = true %}
+
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhsuk-frontend{% endblock %}
+
+{% block content %}
+
+<div class="content-block measure">
+
+  <h1 class="nhsuk-heading-xl">Call 111 and speak to a nurse</h1>
+
+  <div class="callout callout--warning">
+    <p>
+      The phone service will be very busy but you <b>must</b> wait to speak to someone.
+      Tell 111 that you are calling about coronavirus symptoms.
+    </p>
+  </div>
+
+  <p>
+    Your symptoms suggest that you might have a coronavirus infection.
+  </p>
+
+  <p>
+    The nurse will:
+  </p>
+
+  <ul>
+    <li>ask you more about your symptoms</li>
+    <li>tell you what to do next</li>
+  </ul>
+
+
+  <div class="callout callout--info">
+    <p>
+      You need to stay away from other people until you have spoken to 111.
+    </p>
+    <p>
+      <a href="https://www.nhs.uk/conditions/coronavirus-covid-19/self-isolation-advice/">Read
+      more stay at home advice on NHS.UK.</a>
+    </p>
+  </div>
+
+  <div class="callout callout--attention nhsuk-u-margin-bottom-6">
+    <p>
+      To protect others, <b>do not go</b> to a GP, pharmacy or hospital
+    </p>
+  </div>
+
+  <h2 class="nhsuk-heading-l">
+    Get an isolation note to give to your employer
+  </h2>
+  <p>
+    You can send an isolation note to your employer as proof you need to stay
+    off work because of coronavirus.
+  </p>
+  <p>
+    You do not need to get a note from a GP.
+  </p>
+  <p>
+    <a class="nhsuk-action-link__link" href="https://111.nhs.uk/isolation-note">
+      <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M0 0h24v24H0z" fill="none"></path>
+        <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+      </svg>
+      <span class="nhsuk-action-link__text">Get an isolation note</span>
+    </a>
+  </p>
+
+
+</div>
+
+{% endblock %}
+
+{% set suppress_feedback = true %}

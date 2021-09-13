@@ -1,0 +1,26 @@
+{% set suppress_feedback = true %}
+
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhs-redesign{% endblock %}
+
+{% block content %}
+
+<div class="measure">
+
+  <div class="content-block">
+
+    <div class="callout callout--attention">
+      <h1 class="h2">
+        Your details have already been sent
+      </h1>
+    </div>
+    <p>
+      [service specific messaging]
+    </p>
+  </div>
+
+</div>
+{% endblock %}

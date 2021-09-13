@@ -1,0 +1,111 @@
+{% set suppress_feedback = true %}
+
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhsuk-frontend{% endblock %}
+
+{% block content %}
+
+<style type="text/css">
+
+</style>
+
+<div class="content-block">
+  <div class="measure">
+    <!-- Only display 'Back' if validation is present? -->
+    <a href="javascript: return false;" class="button-back">Back</a>
+    <h1>Where to get help</h1>
+    <!-- timing info -->
+    <div class="callout callout--warning">
+      {% raw %}
+        {{ timing_info }}
+      {% endraw %}
+    </div>
+  </div>
+
+  <div class="service-details --remote">
+    <div class="unit">
+      <p>
+        {% raw %}{{ service_name }}{% endraw %}
+        <br>
+        {% raw %}{{ service_address_line_1 }}{% endraw %}<br>
+        {% raw %}{{ service_address_line_2 }}{% endraw %}<br>
+        {% raw %}{{ service_address_line_3 }}{% endraw %}<br>
+        {% raw %}{{ service_address_line_4 }}{% endraw %}<br>
+        {% raw %}{{ service_postcode }}{% endraw %}
+      </p>
+    </div>
+    <div class="unit">
+      {% raw %}
+        {{ opening_hours }}
+      {% endraw %}
+    </div>
+    <div class="unit">
+      <p>
+        {% raw %}
+          {{ distance }}
+        {% endraw %}
+      </p>
+    </div>
+    <div class="unit">
+      <div class="form-hint measure">
+        <p>
+          {% raw %}{{ service_cta_message }}{% endraw %}
+        </p>
+      </div>
+      <p>
+        <a href="javascript: return false;" class="action-link">
+          <span>{% raw %}{{ service_cta }}{% endraw %}</span>
+          <svg class="nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+          </svg>
+        </a>
+      </p>
+    </div>
+  </div>
+
+  <!-- boilerplate service type text and 'before you go' -->
+  <div class="measure">
+    <p>
+      {% raw %}
+        {{ service_type_boilerplate_text }}
+      {% endraw %}
+    </p>
+  </div>
+
+  {% include 'service-display/_components/change-location.html' %}
+
+  <div class="content-seperator content-seperator--equalvertspacing--large"></div>
+
+  <div class="measure">
+    {% set other_services_url = "/service-display/other-services" %}
+    {% set other_services_message = "services" %}
+    {% include 'service-display/_components/other-services.html' %}
+  </div>
+
+  <div class="content-seperator content-seperator--equalvertspacing--large"></div>
+
+  <div class="measure">
+    {% include 'service-display/_components/care-advice.html' %}
+  </div>
+
+  <div class="content-seperator content-seperator--equalvertspacing--large"></div>
+
+  <div class="measure">
+    <p>{% raw %}{{ worsening_symptoms_component }}{% endraw %}</p>
+  </div>
+
+</div>
+
+{% endblock %}
+
+{% block footer %}
+{% include '_includes/survey-banner.html' %}
+{% endblock %}
+
+{% block body_after %}
+  {% include '_partials/_partial-collapse-script.html' %}
+{% endblock %}

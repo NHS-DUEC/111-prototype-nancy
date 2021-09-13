@@ -1,0 +1,19 @@
+{% set suppress_feedback = true %}
+{% set tel = "07979 654 789" %}
+{% set timeframe = "12 hours" %}
+{% set show_care_advice = true %}
+{% set show_worsening = false %}
+
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhs-redesign{% endblock %}
+
+{% block content %}
+  {% include 'callback-confirmation-examples/_components/master.html' %}
+{% endblock %}
+
+{% block footer %}
+{% include '_includes/survey-banner.html' %}
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}{% endblock %}
+
+{% block content %}
+
+<div class="content-block measure">
+  {% if error %}
+    <div class="error-summary">
+      <h2 class="error-heading">There’s a problem</h2>
+      <p>
+        Tell us if your GP or usual pharmacy is open
+      </p>
+    </div>
+  {% endif %}
+
+  <h1 class="h2">Can you contact your GP or usual pharmacy?</h1>
+
+  <div class="callout callout--info">
+    <p>
+      Your GP or usual pharmacy can tell you how to get
+      an emergency prescription, even if you're away from home.  
+    </p>
+  </div>
+
+  <form method="post">
+    <fieldset class="form-group shunt {% if error %}-errors{% endif %}">
+      {% if error %}
+        <p class="error-hint">Choose one option</p>
+      {% endif %}
+      <label class="block-label">
+        <input id="regular-avenues-open" name="regular-avenues-open" value="true" type="radio" class="selection-button-radio">
+        <span>Yes</span>
+      </label>
+      <label class="block-label">
+        <input id="regular-avenues-open" name="regular-avenues-open" value="false" type="radio" class="selection-button-radio">
+        <span>No</span>
+      </label>
+    </fieldset>
+    <div class="form-group">
+      <button type="submit" class="button">Next</button>
+    </div>
+  </form>
+</div>
+
+{% endblock %}

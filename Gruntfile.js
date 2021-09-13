@@ -1,3 +1,5 @@
+const sass = require('node-sass');
+
 module.exports = function (grunt) {
 
   require('load-grunt-tasks')(grunt);
@@ -7,6 +9,7 @@ module.exports = function (grunt) {
     sass: {
       dev: {
         options: {
+          implementation: sass,
           includePaths: [],
           outputStyle: 'expanded'
         },
@@ -54,7 +57,7 @@ module.exports = function (grunt) {
         script: 'server.js',
         options: {
           ext: 'js, json',
-          ignore: ['node_modules/**', 'app/assets/**', 'public/**'],
+          ignore: ['node_modules/**', 'app/assets/**', 'public/**', 'backstop_data/**'],
           args: grunt.option.flags()
         }
       }

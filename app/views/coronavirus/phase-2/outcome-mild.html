@@ -1,0 +1,34 @@
+{% set suppress_feedback = true %}
+
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhsuk-frontend{% endblock %}
+
+{% block content %}
+
+<div class="content-block measure">
+  <h1 class="nhsuk-heading-xl">Book a coronavirus test</h1>
+  <p>
+    We need to ask for some details so we can arrange a test. But as your
+    symptoms are mild you can look after yourself at home as you would with
+    flu.
+  </p>
+  <p>
+    To manage your symptoms while you wait you can:
+  </p>
+  <ul>
+    <li>take paracetamol</li>
+    <li>drink water</li>
+    <li>get lots of rest</li>
+  </ul>
+  <p>You will be contacted in 24 hours</p>
+  <p>
+    <a href="javascript: return false;" class="button">Fill in my details now</a>
+  </p>
+</div>
+
+{% endblock %}
+
+{% set suppress_feedback = true %}

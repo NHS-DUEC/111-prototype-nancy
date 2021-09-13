@@ -8,6 +8,9 @@ details {
     cursor: pointer;
     color: $nhs-blue;
 
+    span {
+      text-decoration: underline;
+    }
 
     &:focus {
       outline: 0;

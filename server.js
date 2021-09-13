@@ -20,8 +20,17 @@ var forcedCallback = require('./app/routes/forced-callback');
 var callbackOffered = require('./app/routes/callback-offered');
 var bookCallback = require('./app/routes/book-callback');
 var serviceDisplay = require('./app/routes/service-display');
+var primaryCareDispositions = require('./app/routes/primary-care-dispositions');
+var gpoc = require('./app/routes/gpoc');
+
+var emergencyPrescriptionWizard = require('./app/routes/emergency-prescription-wizard');
+var gpLookup = require('./app/routes/gp-lookup');
 
 var userJourneys = require('./app/routes/user-journeys');
+
+var coronavirus = require('./app/routes/coronavirus');
+var pathwaysR19 = require('./app/routes/pathways-r19');
+var edBooking = require('./app/routes/ed-booking');
 
 var app = express()
 
@@ -32,6 +41,7 @@ var appEnvironment = process.env.NODE_ENV || 'development'
 var useAuth = process.env.USE_AUTH || config.useAuth
 var useHttps = process.env.USE_HTTPS || config.useHttps
 var gpLookupURL = process.env.GP_LOOKUP_URL
+var gpocNHSUKurl = process.env.GPOC_NHSUK_URL
 var mapsKey = process.env.GOOGLE_MAPS_API_KEY
 
 appEnvironment = appEnvironment.toLowerCase()
@@ -68,6 +78,7 @@ app.use(function (req, res, next) {
   res.locals.cookieText = config.cookieText
   res.locals.session = req.session
   res.locals.jsNow = new Date();
+  res.locals.gpLookupURL = gpLookupURL;
   next()
 })
 
@@ -106,8 +117,17 @@ app.use('/forced-callback', forcedCallback);
 app.use('/callback-offered', callbackOffered);
 app.use('/book-callback', bookCallback);
 app.use('/service-display', serviceDisplay);
+app.use('/primary-care-dispositions', primaryCareDispositions);
+app.use('/gpoc', gpoc);
+
+app.use('/emergency-prescription-wizard', emergencyPrescriptionWizard);
+app.use('/gp-lookup', gpLookup);
 
 app.use('/user-journeys', userJourneys);
+
+app.use('/coronavirus', coronavirus);
+app.use('/pathways-r19', pathwaysR19);
+app.use('/111-first', edBooking);
 
 // auto render any view that exists
 app.get(/^\/([^.]+)$/, function (req, res) {

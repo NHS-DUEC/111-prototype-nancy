@@ -1,0 +1,50 @@
+{% set suppress_feedback = true %}
+
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhsuk-frontend{% endblock %}
+
+{% block content %}
+
+<div class="content-block measure">
+  <h1 class="nhsuk-heading-xl">
+    There’s been a problem
+  </h1>
+  <p>
+    Sending your information failed. Try again later.
+  </p>
+
+  <div class="callout callout--attention">
+    <p>
+      To protect yourself, <b>do not go</b> to a GP, pharmacy or hospital
+    </p>
+  </div>
+
+  <div class="content-seperator content-seperator--equalvertspacing--large"></div>
+
+  <h3 class="nhsuk-heading-s">Advice in other parts of the UK</h3>
+  <!-- NOTE updated links -->
+  <ul>
+    <li>
+      <a href="https://www.nhsinform.scot/illnesses-and-conditions/infections-and-poisoning/coronavirus-covid-19">
+        Check your symptoms in Scotland
+      </a>
+    </li>
+    <li>
+      <a href="https://www.nhsdirect.wales.nhs.uk/SelfAssessments/symptomcheckers/?ScName=CoronaVirusCOVID19&SCTId=175">
+        Check your symptoms in Wales
+      </a>
+    </li>
+    <li>
+      <a href="https://www.publichealth.hscni.net/news/covid-19-coronavirus">
+        Northern Ireland
+      </a>
+    </li>
+  </ul>
+</div>
+
+{% endblock %}
+
+{% set suppress_feedback = true %}

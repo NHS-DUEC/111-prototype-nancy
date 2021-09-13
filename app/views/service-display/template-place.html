@@ -1,0 +1,154 @@
+{% set suppress_feedback = true %}
+
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhsuk-frontend{% endblock %}
+
+{% block content %}
+
+<div class="content-block">
+  <div class="measure">
+    <!-- Only display 'Back' if validation is present? -->
+    <a href="javascript: return false;" class="button-back">Back</a>
+    <h1>Where to get help</h1>
+    <!-- timing info -->
+    <div class="callout callout--warning">
+      {% raw %}
+        {{ timing_info }}
+      {% endraw %}
+    </div>
+  </div>
+
+  <div class="subroutine measure">
+    <div class="callout callout--attention">
+      {% raw %}
+        {{ service_pertinent_messaging }}
+      {% endraw %}
+    </div>
+  </div>
+
+  <div class="service-details-container">
+
+    <div class="details-1 service-details">
+      <div class="unit address">
+        <p>
+          {% raw %}{{ service_name }}{% endraw %}
+          <br>
+          {% raw %}{{ service_address_line_1 }}{% endraw %}<br>
+          {% raw %}{{ service_address_line_2 }}{% endraw %}<br>
+          {% raw %}{{ service_address_line_3 }}{% endraw %}<br>
+          {% raw %}{{ service_address_line_4 }}{% endraw %}<br>
+          {% raw %}{{ service_postcode }}{% endraw %}
+        </p>
+        <p>
+          <a href="javascript: return false;">{% raw %}{{ service_telephone }}{% endraw %}</a>
+        </p>
+      </div>
+      <div class="unit">
+        {% raw %}
+          {{ opening_hours }}
+        {% endraw %}
+      </div>
+    </div>
+
+    <div class="geo">
+      <div id="service-location" class="map-frame"></div>
+    </div>
+
+    <div class="details-2 service-details">
+      <div class="unit directions">
+        <p>
+          {% raw %}
+            {{ distance }}
+          {% endraw %}
+          <br>
+          <a href="javascript: return false;" target="_blank">
+            Get directions <span class="small">(opens a new tab or window)</span>
+          </a>
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- boilerplate service type text and 'before you go' -->
+  <div class="measure">
+    <p>
+      {% raw %}
+        {{ service_type_boilerplate_text }}
+      {% endraw %}
+    </p>
+  </div>
+
+  {% include 'service-display/_components/change-location.html' %}
+
+  <div class="content-seperator content-seperator--equalvertspacing--large"></div>
+
+  <div class="measure">
+    {% set other_services_url = "/service-display/other-services" %}
+    {% set other_services_message = "services" %}
+    {% include 'service-display/_components/other-services.html' %}
+  </div>
+
+  <div class="content-seperator content-seperator--equalvertspacing--large"></div>
+
+  <div class="measure">
+    {% include 'service-display/_components/care-advice.html' %}
+  </div>
+
+  <div class="content-seperator content-seperator--equalvertspacing--large"></div>
+
+  <div class="measure">
+    <p>{% raw %}{{ worsening_symptoms_component }}{% endraw %}</p>
+  </div>
+
+</div>
+
+{% endblock %}
+
+{% block footer %}
+{% include '_includes/survey-banner.html' %}
+{% endblock %}
+
+{% block body_after %}
+  {% include '_partials/_partial-collapse-script.html' %}
+
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDP454skpvnlft08MDIcZG_khm-sBHmFbM"></script>
+  <script>
+    var serviceLat = 53.801732;
+    var serviceLng = -1.551858;
+    var userLat = 53.804741;
+    var userLng = -1.564623;
+    $(function() {
+      mapObj = new google.maps.Map(document.getElementById('service-location'), {
+        center: {
+          lat: serviceLat,
+          lng: serviceLng
+        },
+        zoom: 16,
+        maxZoom: 18,
+        zoomControl: true,
+        mapTypeControl: false,
+        scaleControl: true,
+        streetViewControl: false,
+        rotateControl: false,
+        fullscreenControl: false
+      });
+      var bounds = new google.maps.LatLngBounds();
+      var service = new google.maps.Marker({
+        position: new google.maps.LatLng(serviceLat, serviceLng),
+        map: mapObj
+      });
+      bounds.extend(service.position);
+      var user = new google.maps.Marker({
+        position: new google.maps.LatLng(userLat, userLng),
+        map: mapObj,
+        icon: '/images/icon-maps-user-location.png'
+      });
+      bounds.extend(user.position);
+      mapObj.fitBounds(bounds);
+    });
+  </script>
+{% endblock %}

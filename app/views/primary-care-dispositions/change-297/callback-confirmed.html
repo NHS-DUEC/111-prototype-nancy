@@ -1,0 +1,47 @@
+{% set suppress_feedback = true %}
+
+{% set tel = "07979 654 789" %}
+{% if session.callBooking.tel %}
+  {% set tel = session.callBooking.tel %}
+{% endif %}
+
+{% extends '_layouts/layout.html' %}
+
+{% block body_css_classes %}nhsuk-frontend{% endblock %}
+
+{% block content %}
+<div class="content-block measure">
+
+  <h1 class="nhsuk-heading-xl">You’ll get a call today</h1>
+
+  <p>
+    The pharmacist will call {{ tel }}. The number might show as ‘unknown’ on your display.
+  </p>
+
+  <h2 class="nhsuk-heading-l">
+    What happens next
+  </h2>
+
+  <p>
+    You’re in the call back queue, and will be spoken to during the working
+    day, or early evening.
+  </p>
+
+  <p>
+    The pharmacist will try 3 times to get in touch with you. They’ll cancel
+    the request if they can’t get through.
+  </p>
+
+  <p class="nhsuk-u-margin-bottom-10">
+    They’ll know the reason why you booked the call, but might ask you some more
+    questions so they can give you the right help.
+  </p>
+
+  <div class="content-seperator content-seperator--equalvertspacing--large"></div>
+
+  <div class="measure">
+    {% include 'service-display/_components/care-advice.html' %}
+  </div>
+
+</div>
+{% endblock %}

@@ -2,7 +2,7 @@
 
 {% block page_title %}{% endblock %}
 
-{% block body_css_classes %}nhs-redesign{% endblock %}
+{% block body_css_classes %}nhsuk-frontend{% endblock %}
 
 {% block content %}
 
@@ -11,13 +11,17 @@
     <div class="error-summary">
       <h2 class="error-heading">There’s a problem</h2>
       <p>
-        Tell us if this where you are or not.
+        Tell us if this where {% if session.proxy == true %}they{% else %}you{% endif %} are or not.
       </p>
     </div>
   {% endif %}
-  <h1>Are you here?</h1>
 
-  <p>We’re checking in case we need to send help.</p>
+  <h1 class="nhsuk-heading-l">Are {% if session.proxy == true %}they{% else %}you{% endif %} here?</h1>
+  <div class="callout callout--info">
+    <p>
+      If we know the address we can send help if we need to.
+    </p>
+  </div>
 
   <p>
     {% for addressLine in session.addressResults[0] %}

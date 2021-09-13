@@ -1,0 +1,44 @@
+{% set suppress_feedback = true %}
+
+{% extends '_layouts/layout.html' %}
+
+{% block page_title %}{% endblock %}
+
+{% block body_css_classes %}nhsuk-frontend{% endblock %}
+
+{% block content %}
+
+<!--
+  dx01125 AND dx1214
+-->
+
+<div class="content-block measure">
+
+  <h1 class="nhsuk-heading-xl error-hint">Phone 999 now for an ambulance</h1>
+
+  <div class="callout callout--alert">
+    <p>
+      You <b>must</b> tell the operator that you might have coronavirus symptoms.
+    </p>
+  </div>
+
+  <p>The 999 operator will ask:</p>
+  <ul>
+    <li>where you are</li>
+    <li>for your phone number in case you get cut off</li>
+  </ul>
+
+  <p>
+    The ambulance crew might arrive wearing protective clothing so that the
+    virus is not spread.
+  </p>
+
+  <p>
+    <b>Do not</b> go to a GP or hospital instead of calling for an ambulance.
+  </p>
+
+</div>
+
+{% endblock %}
+
+{% set suppress_feedback = true %}

@@ -2,47 +2,58 @@
 
 {% block page_title %}{% endblock %}
 
-{% block body_css_classes %}nhs-redesign{% endblock %}
+{% block body_css_classes %}nhsuk-frontend{% endblock %}
 
 {% block content %}
 
 <div class="content-block measure">
-  {% if error %}
-    <div class="error-summary">
-      <div>
-        <h2 class="error-heading">There’s a problem</h2>
-        <p>
-          <a href="#address_0">Enter a full address.</a>
-        </p>
-      </div>
-    </div>
-  {% endif %}
-
   <form method="post" class="shunt">
-    <h1>
-      <label for="address_1">
-        Address
-      </label>
-    </h1>
+
+    <div class="error-summary">
+      <h2 class="error-heading">There’s a problem</h2>
+      <p>
+        Enter your address
+      </p>
+    </div>
+
     <fieldset>
-      <div class="form-group {% if error %}-errors{% endif %}">
-        <input type="text" id="address_0" name="address_0" autocomplete="off" value="">
-        <input type="text" id="address_1" name="address_1" autocomplete="off" value="">
-        <input type="text" id="address_2" name="address_2" autocomplete="off" value="">
-        <input type="text" id="address_3" name="address_3" autocomplete="off" value="">
-        <input type="text" id="address_4" name="address_4" autocomplete="off" value="">
-      </div>
-      <div class="form-group {% if error %}-errors{% endif %}">
-        <label for="postcode">
+      <legend>
+        <h1 class="nhsuk-heading-l">
+          What is your home address?
+        </h1>
+      </legend>
+
+      <div class="form-group -errors">
+        <label for="address-line-1">
+          Building and street <span class="visuallyhidden">line 1 of 2</span>
+        </label>
+        <input id="address-line-1" name="address-line-1" type="text">
+
+        <label for="address-line-2">
+          <span class="visuallyhidden">Building and street line 2 of 2</span>
+        </label>
+        <input id="address-line-2" name="address-line-2" type="text">
+
+        <label for="address-town">
+          Town or city
+        </label>
+        <input id="address-town" name="address-town" type="text">
+
+        <label for="address-county">
+          County
+        </label>
+        <input id="address-county" name="address-county" type="text">
+        
+        <label for="address-postcode">
           Postcode
         </label>
-        <input type="text" id="postcode" name="postcode" class="-small" autocomplete="off" value="{{ session.addressPostcode }}">
+        <input class="-small" id="address-postcode" name="address-postcode" type="text">
       </div>
+
     </fieldset>
     <div class="form-group shunt-2">
       <button type="submit" class="button">Next</button>
     </div>
   </form>
 </div>
-
 {% endblock %}
